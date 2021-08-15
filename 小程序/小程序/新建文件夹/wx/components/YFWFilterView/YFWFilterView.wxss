@@ -1,0 +1,256 @@
+/* components/YFWFilterView.wxss */
+.topView{
+  display: flex;
+  width: 100vw;
+  z-index: 99;
+  flex-direction: row;
+  flex-wrap:wrap;
+  justify-content: space-around;
+
+}
+.topViewItem{
+  display: flex;
+  flex-direction: row;
+  height: 100rpx;
+  /* width: 25vw; */
+  justify-content: center;
+  align-items: center;
+  background-color:white;
+  flex:1;
+}
+.topViewItem .topViewItemTitleSelect{
+  color: #33DB9B;
+  font-size: 30rpx;
+}
+.topViewItem .topViewItemTitleUnselect{
+  color: #333333;
+  font-size: 30rpx;
+}
+.topViewItem .topViewItemIcon{
+  display: inline-flex;
+  margin-left: 8rpx;
+  width: 10rpx;
+  height: 22rpx;
+}
+.topViewItem .topViewItemIcon2{
+  display: inline-flex;
+  margin-left: 8rpx;
+  width: 10rpx;
+  height: 10rpx;
+}
+.topViewItem .topViewItemScreenIcon {
+  display: inline-flex;
+  margin-left: 8rpx;
+  width: 22rpx;
+  height: 24rpx;
+}
+.topViewItem .topViewItemImage{
+  width: 36rpx;
+  height: 36rpx;
+}
+.topCategoryBgView{
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0,0,0,0.2);
+}
+.topCategoryView{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 150rpx;
+  width: 100vw;
+  justify-content: space-around;
+  align-items: center;
+  background-color:white;
+  padding-bottom: 30rpx;
+}
+.categoryItemView{
+  display: flex;
+  width: 28vw;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30rpx;
+}
+.labelView{
+  display:flex;
+  border: solid #999999 1rpx;
+  border-radius: 20rpx;
+  margin-left: 13rpx;
+}
+.labelView_select{
+  border: solid #33DB9B 1rpx;
+}
+.labelText{
+  display:block;
+  font-size:24rpx;
+  color:#333333;
+  text-align:center;
+  line-height:20rpx;
+  margin:10rpx 40rpx 10rpx 40rpx;
+  height:20rpx;
+}
+.labelText_select{
+  color:#33DB9B;
+}
+.choosewrapper{
+  margin-top: 30rpx;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #eee;
+}
+.paddingnone{
+  padding-bottom: 0rpx;
+}
+.chooseSpecification{
+  color: black;
+  font-size: 26rpx;
+  background-color: #fafafa;
+  border-radius: 15px;
+  margin-left: 30rpx;
+  width: 163px;
+  text-align: center;
+  height: 30px;
+  line-height: 30px;
+  
+}
+.shadowWrapper{
+  background-color: black;
+  opacity: 0.33;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 999;
+  display: none;
+}
+.showshadow{
+  display: block !important;
+}
+.showanimate{
+  display: block !important;
+  transition: all .5s;
+  height: 500rpx !important;
+}
+.disanimate{
+  /* transition: all .5s;
+  height:0rpx !important; */
+  display: none;
+}
+.specifationList{
+  background-color: #fafafa;
+  height:0rpx;
+  z-index: 99999;
+  width: 100%;
+  padding-top: 12px;
+}
+.icon_arrow_down{
+  width: 22rpx;
+  height: 13rpx;
+  vertical-align: center;    
+
+}
+.fz{
+  transform: rotate(180deg);
+}
+.fontcolor{
+  color: #33DB9B;
+  border-radius: 15px 15px 0px 0px;
+}
+.searchIcon{
+  width: 38rpx;
+  height: 30rpx;
+
+}
+.topViewSearchInput {
+  height: 28rpx;
+  width: 80vw;
+  margin-left: 21rpx;
+  margin-right: 88rpx;
+  background-color: white;
+  caret-color: #1fdb9b;
+  color: #666666;
+  font-size: 28rpx;
+  
+  }
+  .search{
+    height: 33px;
+    border-radius: 34rpx;
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    align-items: center;
+    width: 306px;
+    margin: 0 auto;
+    
+  }
+  .spesearchIcon {
+    width: 38rpx;
+    height: 30rpx;
+    margin-left: 40rpx;
+    
+    }
+    .specilist{
+      display: flex;
+      width: 100vw;
+      flex-direction: row;
+      flex-wrap:wrap;
+      justify-content: flex-start;
+      overflow: scroll;
+      height: 340rpx;
+      width: 306px;
+      margin: 0 auto;
+      align-content: flex-start;
+    }
+    .spewrapper{
+      width: 50%;
+      padding-top: 28rpx;
+      padding-bottom: 16rpx;
+      font-size: 14px;
+      
+    }
+    .spechooseIcon{
+      width: 26rpx;
+      height: 17rpx;
+      margin-left: 20rpx;
+      padding-right: 10rpx;
+    }
+    .gzselected{
+      color:#33DB9B;
+    }
+    .showChoose{
+      display:inline-block;
+    }
+    .hideChoose{
+      display: none;
+    }
+    .showall{
+      display: block;
+    }
+    .bottom_container{
+      flex-direction: row;
+      display: flex;
+    }
+.bottom_content{
+  width:50%;
+  height:100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  background-color: white;
+}
+.bottom_left{
+  background-color: white;
+}
+.bottom_right{
+  background-color: #33DB9B;
+  color: white;
+}
+.choosedItem{
+  color: #1fdb9b;
+  background-color: #e8fbf5;
+  border: 1rpx solid #1fdb9b;
+  
+}
+.textover{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis; 
+}

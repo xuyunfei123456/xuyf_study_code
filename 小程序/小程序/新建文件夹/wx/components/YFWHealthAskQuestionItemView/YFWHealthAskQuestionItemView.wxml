@@ -1,0 +1,51 @@
+<view class='container'>
+  <block wx:for="{{data}}">
+    <view class='my-box' bindtap='clickItemMethod' data-id='{{item.id}}' wx:if="{{froms==='pharmacist_ask'}}">
+      <text class='item-text'>{{item.title}}</text>
+      <view class='my-box-context'>
+        <text class='box-context-one'>{{item.reply_count}}</text>
+        <text class='box-context-two'>条回复</text>
+        <text class='box-context-thress'>{{item.time}}</text>
+      </view>
+      <view class='line-view'></view>
+    </view>
+    <view class='mybox' bindtap='clickItemMethod' data-id='{{item.id}}' wx:if="{{froms===''}}">
+      <view class='title-view'>
+        <image class='title_icon' ></image>
+        <text>  {{item.title}}</text>
+        <image class='title_icon1' src='/images/icon_wen.png'></image>
+      </view>
+      <view class='doctor-ask' wx:if="{{item.status == '已回复' || item.status == '已采纳'}}">
+        <view class='doctor-view'>
+          <view class='doctor-item'>
+            <image src='{{item.intro_image}}'></image>
+            <text class='doctor-text'>{{item.name}}</text>
+            <view class='doctor-item-view'>
+              <text style="color:{{item.type_name==='药师'?'#dab96b':'#ec8028'}}">{{item.type_name}}</text>
+            </view>
+            <view class='shop-name'>{{item.practice_unit}}</view>
+          </view>
+          
+        </view>
+        <view class='reply_content'>{{item.reply_content}}</view>
+      </view>
+      <view class='bottom-view'>
+        <text class='bottom-left-view'>{{item.time}}</text>
+        <view class='bottom-right-view'>
+          <view class='bottom-right-status'>
+            <image src='/images/yfwsk/inf999.png' mode='aspectFit' wx:if="{{item.status === '待回复' || item.status === '未回复'}}"></image>
+             <image src='/images/yfwsk/infgreen.png' mode='aspectFit' wx:if="{{item.status === '已回复'}}"></image>
+             <image src='/images/yfwsk/caina.png' mode='aspectFit' wx:if="{{item.status === '已采纳'}}"></image>
+            <text style="color:{{item.status === '已回复'?'#1fdb9b':item.status === '已采纳'?'#feac4c':'#999999'}}">{{item.status}}</text>
+          </view>
+          <view class='reply_count'>
+            <text class='reply-count-text'>{{item.reply_count}}</text>
+            <text class='reply-count-txt'>条回复</text>
+            <image src='/images/icon_arrow_more.png'></image>
+          </view>
+        </view>
+      </view>
+      <view class='bottom-line'></view>
+    </view>
+  </block>
+</view>

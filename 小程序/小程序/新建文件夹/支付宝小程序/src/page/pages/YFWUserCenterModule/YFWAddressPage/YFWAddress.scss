@@ -1,0 +1,318 @@
+page {
+    background-color: #faf9f9;
+   
+  }
+  
+  .container {
+    width: 100%;
+    position: fixed;
+  }
+  
+  
+  .container_name {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 104px;
+    background-color: #fff;
+    align-items: center;
+  }
+  
+  .customer_left {
+    font-size: 30px;
+    color: #999;
+    width: 120px;
+    margin-left: 32px;
+  }
+
+  .customer_left_ios {
+    font-size: 30px;
+    color: #999;
+    width: 140px;
+    margin-left: 32px;
+  }
+  
+  .item_right {
+    font-size: 30px;
+    color: #333;
+    margin-top: -4px;
+    margin-left: 40px;
+  }
+
+  .item_right_address {
+    padding-left: 8px;
+    font-size: 30px;
+    color: #333;
+    margin-top: -4px;
+    margin-left: 40px;
+  }
+
+  .item_right_android {
+    padding-left: 8px;
+    font-size: 36px;
+    color: #333;
+    margin-top: -4px;
+    margin-left: 40px;
+  }
+
+  .item_right_swan{
+    font-size: 30px;
+    color: #333;
+    margin-left: 40px;
+  }
+  
+  .container_mobile {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 104px;
+    background-color: #fff;
+    align-items: center;
+  }
+  
+  .customer_mobile {
+    font-size: 30px;
+    width: 160px;
+    margin-left: 20px;
+  }
+  
+  .item_mobile {
+    font-size: 25px;
+    margin-left: 40px;
+    margin-top: 15px;
+  }
+  
+  .section {
+    background-color: #fff;
+    height: 104px;
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+  }
+  .picker{
+    font-size:30px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    
+  }
+  
+  .area {
+    font-size: 25px;
+    margin-left: 40px;
+  }
+  
+  .container_address {
+    display: flex;
+    width: 100%;
+    height: 200px;
+    background-color: #fff;
+  
+  }
+  
+  .customer_address {
+    font-size: 30px;
+    color: #999;
+    margin-left: 32px;
+    margin-top: 30px;
+  }
+  .detail-address_alipay{
+    margin-right:30px;
+    margin-left:40px;
+    margin-top: 22px;
+    height:100px;
+    font-size:30px;
+    display:inline-block;
+  }
+  .detail-address{
+    margin-right:30px;
+    margin-left:40px;
+    margin-top: 30px;
+    height:100px;
+    font-size:30px;
+    display:inline-block;
+  }
+  .detail-address-tt{
+    margin-right:30px;
+    margin-left:40px;
+    height:100px;
+    font-size:30px;
+    display:inline-block;
+  }
+  .textarea_ios{
+    margin-top:-18px;
+    margin-left:-10px;
+    height:100px;
+    width: 60vw;
+  }
+  .textarea_android{
+    margin-left:-10px;
+    height:100px;
+    width: 60vw;
+  }
+  .textarea_address_ailpay{
+    margin-left:-10px;
+    height:100px;
+    width: 60vw;
+    margin-top:-2px;
+  }
+  
+  .divLine {
+    margin-left: 32px;
+    background-color: #ccc;
+    opacity: 0.1;
+    height: 2px;
+  }
+  
+  .default_address {
+    width: 100%;
+    height: 100px;
+    background-color: #fff;
+  }
+  
+  .def_address {
+    font-size: 30px;
+    color: #999;
+    width: 100%;
+    margin-left: 32px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    padding-top: 28px;
+    display: flex;
+  }
+  
+  .def {
+    font-size: 30px;
+    margin-left: 20px;
+  }
+  .def_center{
+    font-size: 30px;
+    margin-left: 20px;
+    margin-top: 3px;
+  }
+  
+  .address-save {
+    position: fixed;
+    border-radius: 2px;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  .btnBtom {
+    background-color: #faf9f9;
+  }
+  
+  .top_menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top:30px;
+  }
+  
+  .top_line {
+    background-color: #ccc;
+    opacity: 0.3;
+    margin-left: 35px;
+    height: 2px;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .sele {
+    display: inline-flex;
+    margin-left: 13px;
+    margin-right: 13px;
+  }
+  
+  .address_content {
+    color: #333;
+    font-size: 30px;
+    margin-left: 35px;
+    line-height: 80px;
+  }
+  
+  .confirm_btn {
+    text-align: right;
+    color: #999;
+    font-size: 28px;
+    flex: 1;
+    margin-right: 30px;
+  }
+  .icon-checkbox{
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    min-height: 42px;
+  }
+  .address-add {
+    width: 100%;
+    color: white;
+    font-size: 34px;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .btnBtom {
+    
+    width: 90%;
+    margin-left: 5%;
+    height: 80px;
+    border-radius: 50px;
+    background: linear-gradient(to right, #00c891, #1fdb9b);
+    box-shadow: 0px 8px 30px rgba(31, 219, 155, 0.5);
+    
+    align-items: center;
+    display: flex;
+  }
+  .bottom_empty {
+    height: 50px;
+    width: 100%
+  }
+  .bottom_container {
+    background-color: #fafafa;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+  }
+  
+  .modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+  }
+  
+  .modal-back {
+    position: absolute;
+    top: 0;
+    display: flex;
+    height: 50%;
+    width: 100%;
+    overflow: hidden;
+    z-index: 800;
+    background-color: rgba(0,0,0,0.4);
+  }
+  
+   .modal-content {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+    width: 100%;
+    background-color: #fff;
+    overflow: hidden;
+    z-index: 800;
+  }
+  .bottom{
+    height: 100%;
+    width: 100%;
+  }
+  .scrollView{
+    width:100%;
+    height: 80%;
+    -webkit-overflow-scrolling: touch;
+    overflow: scroll;
+  }

@@ -1,0 +1,649 @@
+/* pages/YFWShopCarModule/YFWShopCarPage/YFWShopCar.wxss */
+/* page */
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: space-between;
+}
+
+.page-body {
+  width: 100%;
+  flex-grow: 1;
+  overflow-x: hidden;
+	background-color: #fafafa;
+}
+
+/* Widget */
+.icon-checkbox{
+  width: 42rpx;
+  height: 42rpx;
+  min-width: 42rpx;
+  min-height: 42rpx;
+  padding-left:22rpx; 
+  padding-right:13rpx; 
+}
+.medicine_type_icon {
+  width: 52rpx;
+  height: 22rpx;
+	margin-right: 8rpx;
+	margin-bottom: 5rpx;
+}
+.hint-gold{
+  padding-left:20rpx; 
+  padding-right:24rpx; 
+  font-family: SourceHanSansCN-Regular;
+	font-size: 24rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0rpx;
+	color: #feac4c;
+  height: 42rpx;
+}
+.hint-overdue{
+  margin-top: 5rpx;
+  margin-left: 70rpx;
+  width: 58rpx;
+	height: 27rpx;
+	background-color: #cccccc;
+	border-radius: 13rpx;
+	font-family: SourceHanSansCN-Regular;
+	font-size: 19rpx;
+	font-weight: normal;
+	font-stretch: normal;
+  text-align: center;
+	line-height: 27rpx;
+	letter-spacing: 0rpx;
+	color: #ffffff;
+}
+.quantity-text{
+  position: absolute;
+  top:70rpx;
+  right:21rpx;
+	font-family: SourceHanSansCN-Regular;
+	font-size: 21rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0rpx;
+	color: #999999;
+}
+.card-shadow-view{
+  background-color: #ffffff;
+	box-shadow: 0rpx 0rpx 15rpx 0rpx 
+		rgba(204, 204, 204, 0.2);
+	border-radius: 14rpx;
+}
+.view-quantity {
+	width: 152rpx;
+	height: 46rpx;
+	border-radius: 3rpx;
+  position: absolute;
+  bottom:21rpx;
+  right:21rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+	border-top: solid 2rpx #DDDDDD;
+  border-bottom:solid 2rpx #DDDDDD;
+}
+.view-quantity .text{
+	width: 46rpx;
+	line-height: 46rpx;
+  text-align: center;
+	border-radius: 3rpx;
+  border-left: solid 2rpx #DDDDDD;
+  border-right: solid 2rpx #DDDDDD;
+	font-family: SourceHanSansCN-Regular;
+	font-size: 34rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0rpx;
+	color: #999999;
+}
+.view-quantity .input{
+	width: 50rpx;
+	height: 46rpx;
+  padding-left: 5rpx;
+  padding-right: 5rpx;
+	line-height: 46rpx;
+  text-align: center;
+  font-family: SourceHanSansCN-Regular;
+	font-size: 27rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0rpx;
+	color: #333333;
+}
+
+/* shop-car-list */
+.shop-car-list{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.shop-car-list .item-shop{
+  width: 100vw;
+  padding-left: 24rpx;
+  padding-right: 24rpx;
+  margin-bottom: 42rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+	background-color: #ffffff;
+}
+.shop-car-list .item-shop .shop-title{
+  width: 702rpx;
+  height: 82rpx;  
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  font-family: SourceHanSansCN-Medium;
+	font-size: 29rpx;
+	font-weight: bold;
+	font-stretch: normal;
+	letter-spacing: 0rpx;
+	color: #333333;
+}
+.shop-car-list .item-shop .shop-item-top{
+  width: 590rpx;
+  padding-bottom: 19rpx;
+  display: flex; 
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+	font-family: SourceHanSansCN-Regular;
+	font-size: 24rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0rpx;
+	color: #666666;
+}
+.shop-car-list .item-shop .shop-item-top .freepostage {
+  content: '包邮';
+  width: 64rpx;
+  min-width: 64rpx;
+  height: 24rpx;
+  margin-left: 75rpx;
+  margin-right: 14rpx;
+	background-image: linear-gradient(-90deg, 
+		#2c5cf1 0%, 
+		#7c64f7 100%), 
+	linear-gradient(
+		#488bff, 
+		#488bff);
+	background-blend-mode: normal, 
+		normal;
+	border-radius: 11rpx;
+  text-align: center;
+  line-height: 24rpx;
+	font-family: SourceHanSansCN-Regular;
+	font-size: 19rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0rpx;
+	color: #ffffff;
+}
+.shop-car-list .item-shop .shop-item-top .addOn{
+  content: '满减';
+  width: 64rpx;
+  min-width: 64rpx;
+  height: 24rpx;
+  margin-left: 75rpx;
+  margin-right: 14rpx;
+	background-image: linear-gradient(90deg, 
+		#faab81 0%, 
+		#fad16e 100%), 
+	linear-gradient(
+		#feac4c, 
+		#feac4c);
+	background-blend-mode: normal, 
+		normal;
+	border-radius: 11rpx;
+  text-align: center;
+  line-height: 24rpx;
+	font-family: SourceHanSansCN-Regular;
+	font-size: 19rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0rpx;
+	color: #ffffff;
+
+}
+
+/* medicines-items */
+.item-medicines-items{
+  width: 702rpx;
+  padding-top: 28rpx;
+  padding-bottom: 28rpx;
+  margin-bottom: 15rpx;
+	background-color: #ffffff;
+	box-shadow: 0rpx 0rpx 15rpx 0rpx
+		rgba(204, 204, 204, 0.2);
+	border-radius: 14rpx;
+}
+.item-medicines-items .medicines-item{
+  width: 701rpx;
+	height: 167rpx;
+}
+
+/* package-item */
+.package-item-bottom-bar{
+	width: 700rpx;
+	height: 118rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+	font-family: SourceHanSansCN-Regular;
+	font-size: 24rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0rpx;
+	color: #333333;
+}
+.package-item-bottom-bar .quantity{
+	width: 700rpx;
+	height: 71rpx;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+	background-color: #ffffff;
+	border-radius: 0rpx 0rpx 14rpx 14rpx;
+}
+.package-item-bottom-bar .quantity .package {
+  content: '套装';
+	width: 84rpx;
+	height: 29rpx;
+  margin-left: 80rpx;
+  margin-right: 20rpx;
+  line-height: 29rpx;
+  text-align: center;
+	background-image: linear-gradient(-90deg, 
+		#ff8881 0%, 
+		#ea5065 100%), 
+	linear-gradient(
+		#e5e5e5, 
+		#e5e5e5);
+	background-blend-mode: normal, 
+		normal;
+	box-shadow: 0rpx 1rpx 3rpx 0rpx 
+		rgba(226, 108, 108, 0.3);
+	border-radius: 14rpx;	
+	font-family: MicrosoftYaHei;
+	font-size: 21rpx;
+	font-weight: lighter;
+	font-stretch: normal;
+	letter-spacing: 0rpx;
+	color: #ffffff;
+  
+}
+.package-item-bottom-bar .quantity .treatment {
+	width: 84rpx;
+	height: 29rpx;
+	margin-left: 80rpx;
+	margin-right: 20rpx;
+	line-height: 29rpx;
+	text-align: center;
+	background: linear-gradient(-90deg, #7adbff 0%, #488bff 100%), linear-gradient( #e5e5e5, #e5e5e5);
+	border-radius: 14rpx;
+	font-family: MicrosoftYaHei;
+	font-size: 21rpx;
+	color: #ffffff;
+}
+.package-item-bottom-bar .quantity .title{
+  width:310rpx;
+  overflow:hidden;
+  white-space:nowrap;
+  text-overflow: ellipsis;
+}
+.package-item-bottom-bar .price-text{
+  margin-right: 20rpx;
+	font-family: SourceHanSansCN-Bold;
+	font-size: 29rpx;
+	font-weight: bold;
+	font-stretch: normal;
+	letter-spacing: 0rpx;
+	color: #ff3300;
+}
+.package-item-bottom-bar .price-text .small {
+	font-family: SourceHanSansCN-Bold;
+	font-size: 25rpx;
+	font-weight: bold;
+	letter-spacing: 0rpx;
+	color: #ff3300;
+}
+.package-item-bottom-bar .reserve {
+  width: calc(100% - 80rpx);
+  padding-top: 5rpx;
+	font-family: SourceHanSansCN-Regular;
+	font-size: 21rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0rpx;
+	color: #ff3300;
+}
+
+/* sidebar */
+.sidebar-bottom{
+  display:flex;
+  height:167rpx;
+  flex-direction:row;
+  align-items:center;
+  justify-content: center;
+}
+.sidebar-bottom .collect{
+  position: relative;
+  height:100%;
+  width:50%;
+  background:#a1a1a1;
+	font-size: 29rpx;
+  font-weight: normal;
+  text-align:center;
+  color:#ffffff;
+}
+.sidebar-bottom .collect:before{
+  content: '移入收藏';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.sidebar-bottom .delete{
+  height:100%;
+  width:50%;
+  position: relative;
+	font-size: 29rpx;
+  font-weight: normal;
+  background:#ff3301;
+  text-align:center;
+  color:#ffffff;
+}
+.sidebar-bottom .delete:before{
+  content: '删除';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* medicines-info */
+.medicines-info{
+	width: 700rpx;
+	height: 167rpx; 
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  position: relative;
+}
+.medicines-info .image{
+	width: 140rpx;
+	height: 140rpx;
+}
+.medicines-info .message{
+  height: 100%;
+  margin-left: 20rpx;
+  display: flex;
+  flex-direction: column; 
+  justify-content: start;
+}
+.medicines-info .message .title{
+  margin-top: 25rpx;
+  width: 304rpx;
+  font-family: SourceHanSansCN-Medium;
+	font-size: 26rpx;
+	font-weight: bold;
+	font-stretch: normal;
+	letter-spacing: -1rpx;
+	color: #000000;
+}
+.medicines-info .medicine_title {
+	float: left;
+}
+.medicines-info .medicine_title text, image {
+	vertical-align: middle;
+  display: inline-block;
+}
+.medicines-info .medicine_title .medicines_ac_url {
+	width: 56rpx;
+  height: 24rpx;
+  margin-bottom: 8rpx;
+}
+.medicines-info .message .standard{
+  padding-top: 5rpx;
+	font-family: SourceHanSansCN-Regular;
+	font-size: 21rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0rpx;
+	color: #999999;
+}
+.medicines-info .price{
+  position: absolute;
+  top:24rpx;
+  right:21rpx;
+	font-family: SourceHanSansCN-Bold;
+	font-size: 29rpx;
+	font-weight: bold;
+	font-stretch: normal;
+	letter-spacing: 0rpx;
+	color: #ff3300;
+}
+.medicines-info .discount{
+  position: absolute;
+  top:58rpx;
+  right:21rpx;
+	font-family: SourceHanSansCN-Bold;
+	font-size: 19rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0rpx;
+	color: #ff3300;
+}
+/* shop-car-bottom-bar */
+.shop-car-bottom-bar{
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  bottom: 0rpx;
+  width: 750rpx; 
+	height: 101rpx;
+  z-index: 999;
+	background-color: #ffffff;
+}
+.shop-car-bottom-bar .select{
+  display: flex;
+  min-width: 109rpx;
+  justify-content:center; 
+  align-items:center;
+  padding-left: 24rpx;
+	font-family: SourceHanSansCN-Medium;
+	font-size: 25rpx;
+	font-weight: bold;
+	font-stretch: normal;
+	letter-spacing: 0rpx;
+	color: #333333;
+}
+.shop-car-bottom-bar .price-text{
+  flex:1; 
+  padding-left: 12rpx; 
+  padding-right: 20rpx;
+  display: flex;
+	align-items:flex-end;
+	justify-content: center;
+  flex-direction: column;
+}
+.shop-car-bottom-bar .price-text .text{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+	font-family: SourceHanSansCN-Medium;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+  -webkit-text-overflow:ellipsis;
+  overflow:hidden;
+	font-size: 29rpx;
+	font-weight: bold;
+	font-stretch: normal;
+	letter-spacing: 0rpx;
+	color: #333333;
+}
+.shop-car-bottom-bar .price-text .text .text-big{
+  font-family: SourceHanSansCN-Regular;
+	font-size: 33rpx;
+	font-weight: bold;
+	letter-spacing: 0rpx;
+	color: #ff3300;
+}
+.shop-car-bottom-bar .price-text .text .text-small{
+  font-family: SourceHanSansCN-Regular;
+	font-size: 27rpx;
+	font-weight: bold;
+	letter-spacing: 0rpx;
+	color: #ff3300;
+}
+.shop-car-bottom-bar .price-text .hint{
+	font-family: SourceHanSansCN-Regular;
+	font-size: 24rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0rpx;
+	color: #999999;
+}
+.shop-car-bottom-bar .submit-button{
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  min-width: 237rpx;
+	height: 101rpx;
+  line-height: 101rpx;
+	background-image: linear-gradient(90deg, 
+		#ff3300 0%, 
+		#ff6e4a 100%), 
+	linear-gradient(
+		#cccccc, 
+		#cccccc);
+	background-blend-mode: normal, normal;
+  text-align: center;
+  font-family: SourceHanSansCN-Medium;
+	font-size: 29rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0rpx;
+	color: #ffffff;
+}
+
+/*shop-car-empty*/
+.shop-car-empty{
+  height: 487rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.shop-car-empty .view-no-message{
+	line-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fafafa;
+  color: #999999;
+	font-size: 25rpx; 
+}
+.shop-car-empty .image-no-message{
+  height: 250rpx;
+  width: 282rpx;  
+}
+.shop-car-empty .button{
+  position: relative;
+	width: 154rpx;
+	height: 45rpx;
+  line-height: 45rpx;
+  margin-top: 24rpx;
+	border-radius: 22rpx;	
+  background: #fff;
+  text-align: center;
+	font-family: "SourceHanSansCN-Normal";
+	font-size: 24rpx;
+	color: #26af73; 
+  border: 3rpx solid #29C775;
+  z-index: 0;
+}
+
+/*shop-car-loading*/
+.shop-car-loading{
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  bottom: calc(50vh - 35rpx);
+  left: calc(50vw - 35rpx);
+  width: 70rpx; 
+	height: 70rpx;
+  z-index: 999;
+	background-color: transparent;
+}
+/* 商品推荐列表*/
+.recommend-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative
+}
+.recommend-list .header_line {
+  margin-bottom: 34rpx;
+  align-items: flex-start;
+  justify-content: flex-start;
+  display: flex;
+}
+.recommend-list .question-swiper-item {
+  flex-direction: row;
+  display: flex;
+  flex-wrap: wrap; 
+}
+.recommend-list .question-swiper-item .question-content-item {
+  width: 46%;
+  margin-left: 2%;
+  margin-right: 2%;
+  padding-bottom: 20rpx;
+  border-radius: 16rpx;
+}
+
+.activity{
+	display: flex;
+	flex-direction: row;
+	padding: 10px 0px;
+	background-color: #fdf8c5;
+	position: fixed;
+	top: 0;
+	z-index: 100000;
+	align-items: center;
+	width: 100%;
+}
+.activityText{
+	color: #EABD1C;
+	font-size: 24rpx;
+	padding-left: 10rpx;
+}
+.promit{
+	padding: 10px;
+	position: fixed;
+	background-color: #fdf8c5;
+	color: #EABD1C;
+	width: 100%;
+	font-size: 24rpx;
+	height: 17px;
+	z-index: 100;
+}
+.shop_bt_discount {
+	font-size: 20rpx;
+	color: #333;
+}
+.activity_arrow{
+  margin-right: 4%;
+  right: 0rpx;
+  position: absolute;
+  width: 16rpx;
+  height: 28rpx;
+}

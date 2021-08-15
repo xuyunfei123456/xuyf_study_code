@@ -1,0 +1,49 @@
+<!--pages/YFWHomeFindModule/YFWCategoryPage/YFWCategory.wxml-->
+<view class='headerview'>
+  <view class='navgationview'></view>
+  <view class='container'>
+      <view class='left-list-view'>
+        <view class='left'>
+        <scroll-view class='left-list' scroll-x="false" scroll-y="true">
+          <block wx:for="{{data}}" wx:key="{{data.key}}">
+            <view class='left-context'>
+              <view bindtap='pressRow' data-index="{{index}}">
+                <view class="leftline-select {{index==selectIndex?'leftline':''}}"></view>
+                <text class="left-text {{index==selectIndex?'left-text-select':''}}" >{{item.name}}</text>
+              </view>
+            </view>
+          </block>
+        </scroll-view>
+        </view>
+      </view>
+      <view class='right-list-view'>
+        <view class='right'>
+          <scroll-view class='right-list' scroll-x="false" scroll-y="true">
+            <block wx:for="{{data}}" wx:key="{{data.key}}">
+              <view class='context' wx:if="{{index==selectIndex}}" bindtap='pushCategory' id='{{item.id}}' data-name='{{item.name}}'>
+                  <image src='{{item.app_category_ad[0].img_url}}'></image> 
+              </view>
+              <view class='class-type'  wx:if="{{index==selectIndex}}">
+                <block wx:for="{{item.categories}}" wx:key="{{item.id}}">
+                  <view class='class-type-context' bindtap='pushCategory' id='{{item.id}}' data-name='{{item.name}}'>
+                    <view class='class-context-text'>
+                      <titleView title="{{item.name}}" fontSize="{{34}}"/>
+                    </view>
+                    <text class='more-text'>更多</text>
+                  </view>
+                  <view class='goods-view'>
+                    <block wx:for="{{item.categories}}" wx:key="{{item.id}}">
+                      <view class='goods-context' bindtap='pushCategory' id='{{item.id}}' data-name='{{item.name}}'>
+                        <image src='{{item.intro_image}}'></image>
+                        <text>{{item.name}}</text>
+                      </view>
+                    </block>
+                  </view>
+                </block>
+              </view>
+            </block>
+          </scroll-view>
+        </view>
+      </view>
+  </view>
+</view>

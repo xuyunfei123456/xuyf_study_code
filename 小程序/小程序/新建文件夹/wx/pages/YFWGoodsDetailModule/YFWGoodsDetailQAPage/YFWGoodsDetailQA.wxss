@@ -1,0 +1,102 @@
+/* pages/YFWGoodsDetailModule/YFWGoodsQuestion/YFWGoodsQuestionController.wxss */
+.question {
+  width: 100vw;
+  height: 100vh;
+  background-color: #fafafa;
+  /* display: flex; */
+}
+
+.question-top {
+  width: 100vw;
+  height: 100rpx;
+  display: flex;
+  flex-direction: row;
+  background-color: #fafafa;
+  white-space: nowrap;
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  -webkit-overflow-scrolling: touch;
+}
+
+.question-top-item {
+  align-items: center;
+  justify-content: center;
+  /* padding: 0 20rpx; */
+  width: 164rpx;
+  height: 100rpx;
+  display: inline-flex;
+}
+
+.selected {
+  color: #1fdb9b;
+  font-weight: bold;
+  /* border-bottom: #1fdb9b */
+}
+
+.question-content {
+  width: 100vw;
+  position: fixed;
+  top: 100rpx;
+  background-color: #fafafa;
+}
+
+.question-swiper-item {
+  width: 100vw;
+  background-color: #fafafa;
+  -webkit-overflow-scrolling: touch;
+}
+
+.question-content-item {
+  width: 600rpx;
+  display: block;
+  margin-left: 25rpx;
+  margin-right: 25rpx;
+  margin-bottom: 25rpx;
+  padding-left: 40rpx;
+  padding-top: 60rpx;
+  padding-right: 60rpx;
+  padding-bottom: 20rpx;
+  background-color: #fff;
+  border-radius: 16rpx;
+}
+
+.question-content-view {
+  /* width: 600rpx; */
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start; 
+  padding-bottom: 25rpx;
+}
+
+.question-content-icon {
+  width: 32rpx;
+  height: 32rpx;
+  margin-right: 16rpx;
+  margin-top: 5rpx;
+}
+
+.question-content-title {
+  width: 600rpx;
+  display: flex;
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #333333;
+  line-height: 40rpx;
+}
+
+.question-content-answer {
+  width: 600rpx;
+  display: flex;
+  font-size: 26rpx;
+  color: #333333;
+  line-height: 40rpx;
+}
+
+.question-empty {
+  width: 100vw;
+  height: 30rpx;
+  background-color: #fafafa
+}
+

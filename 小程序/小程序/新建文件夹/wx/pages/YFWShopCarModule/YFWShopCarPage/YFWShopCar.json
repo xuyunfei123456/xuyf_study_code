@@ -1,0 +1,14 @@
+{
+  "navigationBarBackgroundColor": "#49ddb8",
+  "navigationBarTitleText": "购物车",
+  "navigationBarTextStyle": "white",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "YFWSidebar": "../../../components/YFWSidebar/YFWSidebar",
+    "YFWCouponModal": "/components/YFWCouponModal/YFWCouponModal",
+    "collection_goods": "/components/GoodsItemView/CollectionGoodsItem",
+    "titleView": "/components/YFWTitleView/YFWTitleView",
+    "authentication": "/components/YFMauthentication/YFMauthentication"
+  }
+  
+}

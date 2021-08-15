@@ -1,0 +1,107 @@
+.card_wrapper{
+    background-color: #ffffff;
+    border-radius: 7px;
+    display: flex;
+    flex-direction: column;
+}
+.header{
+    display: flex;
+    flex-direction: row;
+    margin-left: 10.333px;
+    padding-top: 17px;
+    .storePic{
+        height: 40px;
+        width: 53.667px;
+    }
+    .titleAndTime{
+        width: 266.333px;
+        margin-left: 10px;
+        .header_name{
+            color: #333333;
+            font-size: 15px;
+            width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .timeAndDistance{
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            .header_time_row{
+                display: flex;
+                flex-direction: row;
+                margin-top: 7.333px;
+                .header_time_pic{
+                  width: 13.333px; 
+                  height: 14.334px;
+                }
+                .header_time{
+                    color: #333333;
+                    font-size: 12px;
+                    padding-left: 5.667px;
+                    .timeText{
+                        padding-left: 6px;
+                    }
+                }
+            }
+
+            .header_distance{
+                color: #999;
+                font-size: 12px;
+            }
+            .nodistance{
+                font-size: 12px;
+                color: #ff3300;
+            }
+            .distanceOrder{
+                color: #00b187;
+                font-size: 12px;
+            }
+        }
+    }
+}
+.bottom{
+    width: 330px;
+    margin-top: 17.333px;
+    margin-left: 10.333px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .bottom_left{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        .bottom_addressPic{
+            height: 18.333px;
+            width: 14.333px;
+        }
+        .bottom_address{
+            color: #333;
+            font-size: 13px;
+            padding-left: 6.333px;
+            overflow : hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            width: 230px;
+        }
+    }
+    .action{
+        border: 0.333px solid #00b187;
+        width: 71.667px;
+        height: 21.333px;
+        line-height: 21.333px;
+        text-align: center;
+        color: #00b187;
+        font-size:12px ;
+        border-radius: 10.667px;
+    }
+    .arrow{
+       height: 10.667px;
+       width: 6px; 
+       vertical-align: middle;
+       margin-left: 2px;
+    }
+}

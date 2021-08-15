@@ -1,0 +1,227 @@
+page {
+  background-color: #fafafa;
+}
+
+.myPosition {
+  position: relative;
+  width: 100%;
+  height: 230rpx;
+  margin-bottom: 80rpx;
+}
+
+.myFlex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.jsBg {
+  width: 100%;
+  height: 200rpx;
+  position: absolute;
+}
+
+.addTitle, .user {
+  width: 94%;
+  left: 50%;
+  margin-left: -47%;
+  position: absolute;
+}
+
+.addTitle {
+  font-size: 26rpx;
+  color: #fff;
+  font-weight: 600;
+  top: 40rpx;
+}
+
+.user {
+  height: 190rpx;
+  background-color: #fff;
+  border-radius: 20rpx;
+  top: 86rpx;
+  z-index: 1;
+  box-shadow: 0rpx 0rpx 6rpx rgba(214, 211, 211, 0.3);
+  overflow: hidden;
+}
+
+.shouH {
+  width: 100%;
+  bottom: 0;
+  position: absolute;
+  left: 0;
+}
+
+.zuoB {
+  width: 20rpx;
+  /* float: left; */
+  height: 20rpx;
+  position: absolute;
+  top: 50%;
+  margin-top: -10rpx;
+  right: 104%;
+}
+
+.arrowsRight {
+  width: 25rpx;
+  float: right;
+  margin-top: 69rpx;
+  margin-right: 35rpx;
+}
+
+.phoneNum {
+  margin-left: 25rpx;
+}
+
+.user_left {
+  font-size: 25rpx;
+}
+.address_detault {
+  width: 58rpx;
+  height: 28rpx;
+  margin-left: 26rpx;
+  vertical-align:middle;
+}
+.user_leftOne {
+  font-weight: 600;
+  margin-left: 40rpx;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+}
+
+.user_leftTwo {
+  font-size: 22rpx;
+  color: #999;
+  margin-top: 25rpx;
+  width: 90%;
+  margin-left: 40rpx;
+  /* overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; */
+}
+
+.outBox {
+  float: left;
+  margin-left: 25rpx;
+  margin-top: 30rpx;
+}
+
+.cell {
+  box-shadow: 0rpx 0rpx 10px rgba(204, 204, 204, 0.2);
+  margin-left: 26rpx;
+  margin-right: 26rpx;
+  border-radius: 18rpx;
+  overflow: hidden;
+  padding-bottom: 46rpx;
+  position: relative;
+  margin-bottom: 20rpx;
+  background-color: white;
+}
+
+.shop_container {
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  height: 84rpx;
+  display: flex;
+}
+
+.shop_icon {
+  width: 28rpx;
+  height: 28rpx;
+  margin-left: 20rpx;
+}
+
+.shop_title {
+  color: #333;
+  font-size: 30rpx;
+  font-weight: bold;
+  flex: 1;
+  display: flex;
+  margin-left: 19rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.separator {
+  width: 100%;
+  height: 1px;
+  background-color: #ccc;
+  opacity: 0.2;
+}
+
+.content {
+  flex-direction: row;
+  align-items: center;
+  display: flex;
+  margin-left: 66rpx;
+  margin-top: 40rpx;
+}
+
+.content_title {
+  color: #333;
+  font-size: 24rpx;
+}
+
+.content_value {
+  color: #999;
+  font-size: 20rpx;
+  margin-left: 14rpx;
+}
+
+.content_money {
+  color: #f30;
+  font-weight: bold;
+  font-size: 24rpx;
+}
+
+.action_upload {
+  position: absolute;
+  width: 180rpx;
+  height: 46rpx;
+  bottom: 120rpx;
+  right: 26rpx;
+  border: thin solid #1fdb9b;
+  border-radius: 23rpx;
+  background-color: white;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.weak {
+  color: #b0f6de;
+  border-color: #b0f6de;
+}
+
+.action_pay {
+  position: absolute;
+  width: 208rpx;
+  height: 74rpx;
+  bottom: 34rpx;
+  right: 14rpx;
+  display: flex;
+}
+
+.action_text {
+  color: white;
+  font-size: 24rpx;
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  top: 15rpx;
+}
+
+.action_bg {
+  width: 100%;
+  height: 100%;
+}
+
+.action_upload_text {
+  color: #1fdb9b;
+  font-size: 24rpx;
+  text-align: center;
+}

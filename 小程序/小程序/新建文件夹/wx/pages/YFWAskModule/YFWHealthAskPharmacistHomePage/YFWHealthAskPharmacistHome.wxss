@@ -1,0 +1,115 @@
+/* pages/YFWAskModule/YFWHealthAskPharmacistHomePage/YFWHealthAskPharmacistHome.wxss */
+
+/* pages/YFWAskModule/myAskAns/myAskAns.wxss */
+
+page {
+  background-color: #f8f8f8;
+}
+
+.title {
+  margin-top: 30rpx;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+}
+
+.hedPort {
+  width: 90rpx;
+  float: left;
+  margin-left: 30rpx;
+  margin-top: 20rpx;
+}
+
+.telRght {
+  float: right;
+  width: 80%;
+}
+
+.isname {
+  border-bottom: 1px solid #ccc;
+}
+
+.isname, .isQuion {
+  font-size: 26rpx;
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+  color: #999;
+}
+
+.isQuion {
+  padding-right: 15rpx;
+}
+
+.isname {
+  font-size: 26rpx;
+}
+
+.aaqDel {
+  /* float: left; */
+  display: inline-block;
+  margin-left: 8%;
+  vertical-align: middle;
+}
+
+.hospital {
+  color: #1da4c6;
+  max-width: 300rpx;
+  /* float: right; */
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.docName {
+  color: #1fdb9b;
+  margin-left: 0rpx;
+}
+
+.isQuion image {
+  width: 26rpx;
+  height: 26rpx;
+  margin-right: 8rpx;
+}
+
+.flt {
+  float: left;
+}
+
+.isfltRght {
+  margin-left: 23rpx;
+}
+
+.replyDel {
+  width: 100%;
+  margin: 20rpx auto;
+  background-color: #f3f3f3;
+  font-size: 26rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+  color: #646464;
+  line-height: 37rpx;
+  /* font-weight: 600 */
+}
+
+.replyDel text {
+  color: #1fdb9b;
+}
+
+.timeRght {
+  width: 100%;
+  color: #999;
+  font-size: 26rpx;
+}
+
+.noBorder {
+  border-bottom: 0rpx solid #fff !important;
+}
+
+.borBotm {
+  width: 95%;
+  height: 2rpx;
+  background-color: #ccc;
+  float: right;
+}
+
+.clear {
+  clear: both;
+}

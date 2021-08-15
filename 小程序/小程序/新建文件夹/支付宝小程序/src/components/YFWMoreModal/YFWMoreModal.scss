@@ -1,0 +1,62 @@
+$float-layout-timer: 300ms;
+
+.more-modal {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  visibility: hidden;
+  transition: visibility $float-layout-timer cubic-bezier(0.36, 0.66, 0.04, 1);
+}
+
+.more-modal .more-modal-conent {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  position: absolute;
+  right: 0;
+  top: 0;
+  opacity: 0;
+  transition: opacity $float-layout-timer ease-in;
+}
+
+.more-modal .more-modal-arrow {
+  width: 40px;
+  height: 20px;
+  margin-top: 80px;
+  margin-right: 4vw;
+  z-index: 10;
+}
+
+.more-modal .more-modal-list {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #ccc;
+  background-color: #ffffff;
+  margin-right: 3vw;
+}
+
+.more-modal .more-modal-list .more-modal-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 250px;
+  height: 80px;
+}
+
+.more-modal .more-modal-list .more-modal-item .more-modal-item-icon {
+  width: 40px;
+  height: 40px;
+  margin: 0 30px;
+}
+
+.more-modal .more-modal-list .more-modal-item .more-modal-item-name {
+  font-size: 26px;
+  color: #333333;
+}

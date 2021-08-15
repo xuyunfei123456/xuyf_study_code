@@ -1,0 +1,52 @@
+<view class="bg">
+  <image src="../../../../images/rankbanner.png" class="imgbg"></image>
+  <view class="explainWrapper">
+    <view class="explain" bindtap="explainarea">奖励说明</view>
+    <view class="record" bindtap="txRecord">提现记录</view>
+  </view>
+  <view class="money">{{total_money}}</view>
+  <view class="money_tip">累计奖励</view>
+  <view class="prizeDetail">
+    <view class="waitPrize">待奖励：{{Cashback}}</view>
+    <view class="hasPrized">可用奖励：{{valid_balance}}</view>
+  </view>
+</view>
+<view class="operation">
+  <view class="apply" bindtap="apply">申请提现</view>
+  <view class="rank" bindtap="rank">兑换积分</view>
+</view>
+<view class='explain_txt' style="color:'#333333;font-size:28rpx">奖励明细<view class='under'></view></view>
+<view class="list">
+  <view wx:for="{{dataList}}" class="listItem" style="border-bottom:{{index+1 == dataList.length ? 'none':''}}">
+    <view class="first">
+      <view style="font-size:24rpx;color:#333333">{{item.dict_invite_settle_status == 0 ?'待奖励':item.dict_invite_settle_status == 1 ? '奖励成功':'奖励失败'}}</view>
+      <view style="font-size:24rpx;color:rgb(153,153,153)"><text class="tmoney">{{item.tMoney || 0}}</text>元</view>
+    </view>
+    <view class="second">
+      <view style="font-size:24rpx;color:#999999">{{item.create_time}}</view>
+      <view style="font-size:24rpx;color:#999999">{{item.mobile || ''}}</view>
+    </view>
+  </view>
+  <view wx:if="{{dataList.length == 0}}" style="color:#cccccc;font-size:30rpx;text-align:center;padding-top:66rpx">暂无记录</view>
+</view>
+<view class="showexplain" wx:if="{{showexplain}}">
+  <view class="explain_content">
+    <view class="wexplain_title">奖励说明</view>
+    <view class="explain_item">
+      <view class="explain_item_content">奖励说明：</view>
+      <view class="explain_item_content borderbottom">好友订单支付成功后，您将获得订单支付商品金额相应比例的奖励金，待订单确认收货后，现金奖励成功，使用方式如下</view>
+      <view class="explain_item_content">1.奖励金额可直接抵扣订单金额</view>
+      <view class="explain_item_content">2.兑换平台积分（1元兑换100积分）</view>
+      <view class="explain_item_content borderbottom">3.申请提现至个人支付宝账户</view>
+    </view>
+    <view class="attention">
+      <view class="explain_item_content_orange">注意</view>
+      <view class="explain_item_content_orange">1.提现申请每日可以申请一次，每次提现账户余额不低于20元</view>
+      <view class="explain_item_content_orange">2.提现金额将在3-5个工作日至您的提现账号</view>
+      <view class="explain_item_content_orange">3.根据国家规定结算申请将自动代扣代缴个税20%</view>
+    </view>
+    <view class="close" bindtap="explainarea">
+      关闭
+    </view>
+  </view>
+</view>

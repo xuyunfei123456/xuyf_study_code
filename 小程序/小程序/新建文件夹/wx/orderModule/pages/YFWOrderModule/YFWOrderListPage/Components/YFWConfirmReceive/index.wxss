@@ -1,0 +1,280 @@
+page {
+  background-color: #fafafa;
+}
+
+.top_bg {
+  position: fixed;
+  width: 100%;
+  height: 340rpx;
+}
+
+
+.divLine {
+  background: #fff;
+  width: 100%;
+  height: 16rpx;
+}
+
+.scroll {
+  overflow: scroll;
+  padding-bottom: 150rpx;
+  -webkit-overflow-scrolling: touch;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  width:90%;
+  height: 129px;
+  border-radius: 14rpx;
+  box-shadow: 0rpx 8rpx 20rpx rgba(204, 204, 204, 0.6);
+  margin: 0 auto;
+  margin-top: 24rpx;
+}
+.flex{
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 70rpx;
+}
+.flex_left{
+  width:50%;
+}
+.flex_right{
+  width: 50%;
+}
+.name{
+  font-size: 40rpx;
+  padding-left: 50rpx;
+  padding-top: 78rpx;
+  color: #666666;
+}
+.tagimg{
+  width: 60rpx;
+  height:25rpx;
+  margin-right:7rpx;
+}
+.tags{
+  display: flex;
+  flex-direction: row;
+  padding-left: 50rpx;
+  padding-top: 23rpx;
+}
+.operation{
+  padding-top: 15rpx;
+  padding-left: 71rpx;
+}
+.delete{
+  border: 1px solid #00c891;
+  color: #00c891;
+  border-radius: 22rpx;
+  display: inline-block;
+  width: 96rpx;
+  height: 43rpx;
+  line-height: 43rpx;
+  text-align: center;
+  font-size: 26rpx;
+}
+.edit{
+  border: 1px solid #666;
+  color: '#666';
+  width: 96rpx;
+  height: 43rpx;
+  line-height: 43rpx;
+  border-radius: 22rpx;
+  margin-left: 11rpx;
+  text-align: center;
+  display: inline-block;
+  font-size: 26rpx;
+}
+
+.faleAndAge{
+  margin-left: 71rpx;
+  padding-top: 36rpx;
+}
+.sex{
+  font-size: 24rpx;
+  color: #666666;
+}
+.age{
+  padding-left: 18rpx;
+  font-size: 24rpx;
+  color: #666666;
+}
+.seximg{
+  width: 22rpx;
+  height:21rpx;
+  margin-right:16rpx;
+}
+
+.mobile{
+  padding-top: 30rpx;
+  margin-left: 71rpx;
+  font-size: 22rpx;
+}
+.mobileimg{
+  width: 14rpx;
+  height:21rpx;
+  margin-right:19rpx;
+}
+.phone{
+  font-size: 26rpx;
+  color: #666666;
+}
+.address-add {
+  width: 100%;
+  color: white;
+  font-size: 34rpx;
+  font-weight: bold;
+  text-align: center;
+}
+
+.btnBtom {
+  width: 90%;
+  margin-left: 5%;
+  height: 80rpx;
+  border-radius: 50rpx;
+  background: linear-gradient(to right, #00c891, #1fdb9b);
+  box-shadow: 0rpx 8rpx 30rpx rgba(31, 219, 155, 0.5);
+  align-items: center;
+  display: flex;
+}
+
+.bottom_empty {
+  height: 50rpx;
+  width: 100%;
+}
+
+.bottom_container {
+  background-color: #fafafa;
+  position: fixed;
+  bottom: 0rpx;
+  width: 100%;
+}
+.foot{
+  text-align: center;
+padding-top: 20rpx;
+color: #666666;
+font-size: 20rpx;
+
+}
+.noinfo{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+  
+}
+.nodata{
+  width: 167px;
+  height:167px;
+}
+.imgtext{
+  margin-top: 20px;
+  color: #999;
+  font-size: 13px;
+}
+
+
+.tip{
+  height: 43px;
+  display: flex;
+  flex-direction: row;
+  background-color: #faf8dc;
+  padding: 6px 14px;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  
+}
+.tipText{
+  color: #feac4c;
+  position: relative;
+  padding-right: 6px;
+  font-size: 26rpx;
+}
+.fontsmall{
+  font-size: 22rpx;
+}
+.explain{
+  position: absolute;
+  bottom: 0px;
+  right: 18px;
+  color: #378cff;
+  font-size: 12px;  
+}
+.tipArrow{
+  height: 14px;
+  width: 8px;
+}
+.step{
+  height: 67px;
+  display: flex;
+  background-color: #ffffff;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2px;
+}
+.stepimg1{
+  width: 19px;
+  height: 24px;
+  vertical-align: bottom;
+}
+.stepimg2{
+  width: 22px;
+  height: 22px;
+  vertical-align: bottom;
+}
+.stepimg3{
+  width: 23px;
+  height: 23px;
+  vertical-align: bottom;
+}
+.stepText{
+  color: #1fdb9b;
+  padding-left: 6px;
+  font-size: 28rpx;
+}
+.stepArrow{
+  padding-left: 20px;
+  padding-right: 17px;
+  color: #1fdb9b;
+}
+.goodpic{
+  align-self: center;
+  padding-left: 18rpx;
+  width: 103px;
+  height: 103px;
+}
+.des{
+  margin-left: 22rpx;
+  width: 207px;
+}
+.goodName{
+  font-size: 15px;
+  color: #000000;
+  padding-top: 12px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+}
+.goodSize{
+  font-size: 11px;
+  color: #666666;
+  padding-top: 11px;
+}
+.goodInput{
+  border: 1px solid #b5b5b5;
+  width: 90%;
+  margin-top: 19px;
+  border-radius: 6px;
+  height: 27px;
+  padding-left:10px;
+}
+.placeTip{
+  font-size: 20rpx;
+  color: #cccccc;
+}

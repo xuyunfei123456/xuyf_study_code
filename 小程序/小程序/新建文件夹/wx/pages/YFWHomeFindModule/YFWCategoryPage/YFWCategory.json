@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "titleView": "/components/YFWTitleView/YFWTitleView"
+  },
+  "navigationBarTitleText": "商品分类",
+  "navigationBarBackgroundColor": "#49ddb8",
+  "navigationBarTextStyle": "white"
+}

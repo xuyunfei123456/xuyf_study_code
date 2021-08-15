@@ -1,0 +1,11 @@
+<!--orderModule/pages/YFWGroupModule/YFWGroupIndex/component/Price/Price.wxml-->
+<view class="price">
+    <view class="newPrice">
+        <text class="small">￥</text>
+        <text class="">{{newBefore}}.</text>
+        <text class="small">{{newAfter}}</text>
+    </view>
+    <view wx:if="{{hasNewPrice}}" class="delPrice">
+        ￥{{price}}
+    </view>
+</view>

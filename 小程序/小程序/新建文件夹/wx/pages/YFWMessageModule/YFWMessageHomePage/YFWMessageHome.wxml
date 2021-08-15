@@ -1,0 +1,16 @@
+<!--pages/YFWMessageModule/YFWMessageHomePage/YFWMessageHome.wxml-->
+<view class="page-list">
+  <view style="height:9rpx"></view>
+  <view wx:for="{{dataArray}}" wx:key="key" class="page-list-item" bindtap="clickedItem" data-item="{{item}}">
+    <button wx:if="{{item.msg_type_id == '-1'}}" class="button" open-type="contact" session-from="wx_app" hover-class="none"/>
+    <image class="image" src="{{item.icon}}" />
+    <view class='text-view'>
+      <text class="text">{{item.msg_type}}</text>
+      <view style="display:flex;flex-direction:row;align-items: center;">
+        <view class="red-point"  wx:if='{{item.total_count>0}}'/>
+        <rich-text class="msg-text" nodes="{{item.content}}" ></rich-text>
+      </view>
+    </view>
+    <image class="image-go" src="/images/icon_message_go.png" />
+  </view>
+</view>

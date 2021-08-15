@@ -1,0 +1,60 @@
+<!--components/YFWCouponModal/YFWCouponModal.wxml-->
+<YFWActionModal id="coupon" title="优惠">
+    <view wx:if="{{isShowDiscount&&(discounts.length>0||freepostages.length>0)}}" class='detail-padding-13 detail-column-view'>
+        <view class="detail-title">促销</view>
+        <view bindtap="toshopAllGoods" data-storeid="{{storeID}}" wx:if="{{discounts.length>0}}" class='detail-row-view detail-margin-bottom-15 detail-align-start'>
+          <view class='detail-discount-title detail-discount-back-yellow'>满减</view>
+          <view class='detail-dark-text detail-13-text'>{{discounts}}</view>
+          <view style="flex:1"/>
+          <image style="margin-right: 26rpx; width: 16rpx; height:28rpx" mode='widthFix'src='/images/icon_arrow_more.png'></image>
+        </view>
+        <view bindtap="toshopAllGoods" data-storeid="{{storeID}}" wx:if="{{freepostages.length>0}}" class='detail-row-view detail-margin-bottom-15 detail-align-start'>
+          <view class='detail-discount-title detail-discount-back-blue'>包邮</view>
+          <view class='detail-dark-text detail-13-text'>{{freepostages}}</view>
+          <view style="flex:1"/>
+          <image style="margin-right: 26rpx; width: 16rpx; height:28rpx" mode='widthFix'src='/images/icon_arrow_more.png'></image>
+        </view>
+    </view>
+    <view wx:if="{{receiveingCoupon.length>0}}">
+      <view class='modal-title'>可领取优惠券</view> 
+      <block wx:for="{{receiveingCoupon}}" wx:key="index">
+        <view class='modal-coupon-view'>
+          <view class='modal-coupon-left'>
+            <view class='modal-coupon-unit '>¥</view>
+            <view class='modal-coupon-amount'>{{item.price}}</view>
+          </view>
+          <view class='modal-coupon-right'>
+            <view class='modal-coupon-top-view'>
+              <view class='modal-coupon-type'>{{item.coupons_type==1 ? "店铺" : "单品"}}</view>
+              <view class='modal-coupon-title'>{{item.title}}</view>
+            </view>
+            <view class='modal-coupon-bottom-view'>
+              <view class='modal-coupon-time'>{{item.start_time}}-{{item.end_time}}</view>
+              <view class='modal-coupon-receiveing' bindtap='receiveCoupon' data-coupon='{{item}}'>点击领取</view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+    <view wx:if="{{receivedCoupon.length>0}}">
+      <view class='modal-title'>已领取优惠券</view> 
+      <block wx:for="{{receivedCoupon}}" wx:key="index">
+        <view class='modal-coupon-view'>
+          <view class='modal-coupon-left'>
+            <view class='modal-coupon-unit '>¥</view>
+            <view class='modal-coupon-amount'>{{item.price}}</view>
+          </view>
+          <view class='modal-coupon-right'>
+            <view class='modal-coupon-top-view'>
+              <view class='modal-coupon-type'>{{item.coupons_type==1 ? "店铺" : "单品"}}</view>
+              <view class='modal-coupon-title'>{{item.title}}</view>
+            </view>
+            <view class='modal-coupon-bottom-view'>
+              <view class='modal-coupon-time'>{{item.start_time}}-{{item.end_time}}</view>
+              <view class='modal-coupon-received'>已领取</view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+</YFWActionModal>

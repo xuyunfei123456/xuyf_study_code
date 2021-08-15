@@ -1,0 +1,65 @@
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, .3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.content{
+  width: 556.666rpx;
+  height: 696.666rpx;
+  border-radius: 30rpx;
+  background-color: #ffffff;
+  z-index: 99999999;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.ava{
+  width: 217rpx;
+  height: 217rpx;
+  margin-top: 65.334rpx;
+}
+.title{
+  font-size: 42rpx;
+  color: #333333;
+  padding-top: 49.334rpx;
+  font-weight: bolder;
+}
+.tip{
+  font-size: 26rpx;
+  color: #999999;
+  padding-top: 42.664rpx;
+  width: 420.666rpx;
+  text-align: center;
+}
+.btnBtom {
+  width: 396.666rpx;
+  height: 70rpx;
+  border-radius: 50rpx;
+  background: linear-gradient(to right, #00c891, #1fdb9b);
+  box-shadow: 0rpx 8rpx 30rpx rgba(31, 219, 155, 0.5);
+  align-items: center;
+  display: flex;
+  margin-top: 71.334rpx;
+}
+.cer-add {
+  width: 100%;
+  color: white;
+  font-size: 34rpx;
+  font-weight: bold;
+  text-align: center;
+}
+.returnTips_close{
+  width: 28rpx;
+  height: 28rpx;
+  position: absolute;
+  right: 22rpx;
+  top: 22rpx;
+}

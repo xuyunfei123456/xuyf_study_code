@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "title-view": "../../../../components/YFWTitleView/YFWTitleView"
+  },
+  "navigationBarTitleText": "处方信息",
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black"
+}

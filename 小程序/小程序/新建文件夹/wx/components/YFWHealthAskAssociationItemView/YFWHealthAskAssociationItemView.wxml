@@ -1,0 +1,25 @@
+<view class='modal-back' hidden='{{!isShow}}' bindtap='hideModal' id='father' catchtouchmove='moveAction'>
+  <view class='modal-content' catchtap='hideModal'>
+    <view class='content'>
+      <view class='content-view'>
+       
+      </view>
+       <view class='textarea'>
+             <form bindsubmit="formSubmit">
+                       <textarea name='textarea' placeholder-class="referPlace" placeholder='请输入追问内容' value='{{textValue}}'>
+       
+          </textarea>
+                    <view class='content-bottom'>
+            <view class='content-bottom-view '>
+              <text>/500</text>
+            </view>
+            <!-- <view class='content-bottom-center' bindtap='submitMethod'>追问</view> -->
+                <button class="content-bottom-center" form-type="submit">
+                  <text  class='text'>追问</text>
+                </button>
+          </view>
+             </form>
+        </view>
+    </view>
+  </view>
+</view>

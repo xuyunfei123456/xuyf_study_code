@@ -1,0 +1,31 @@
+<image src='../../../../images/rankbanner.png' class='bgc'></image>
+<view class="rank">
+  <view class="rank_title">可用积分</view>
+  <view class="rank_val">{{valid_point}}</view>
+  <view class="rank_frooze">冻结积分：{{lock_point}} 分</view>
+</view>
+<view class="rank_section">
+  <block wx:for="{{tab}}" wx:key='{{item.value}}'>
+    <view bindtap="tabClick" data-item='{{item}}'>
+        <view class='explain_txt' style="color:{{index == activeindex ? '#333333':'#999999'}}">{{item.name}}<view wx:if="{{index == activeindex}}" class='under'></view></view>
+    </view>
+  </block>
+</view>
+<view class="rank_list">
+  <view class="rank_list_title">
+    <view class="rank_list_title_name">类型</view>
+    <view class="rank_list_title_name">积分</view>
+    <view class="rank_list_title_name">时间</view>
+  </view>
+  <view class="noMore"  wx:if="{{nodata == 2}}" style="height:{{scrollHieght}};line-height:{{scrollHieght}}">暂时没有积分明细</view>
+  <scroll-view class="scroll" scroll-y="true"  style="height:{{scrollHieght}}">
+    <view wx:for="{{data}}" class='rank_list_value'>
+      <view class="rank_list_title_name">{{item.rule_cname}}</view>
+      <view class="rank_list_title_name"
+        style="color:{{item._color == 'red' ? '#ff0000':'#1fdb9b'}};font-weight:bolder;">{{item._rank}}</view>
+      <view class="rank_list_title_name">{{item.time}}</view>
+    </view>
+    <view class="getMore" bindtap="requestNextPage" wx:if="{{getMore == 1}}">查看更多</view>
+  </scroll-view>
+
+</view>

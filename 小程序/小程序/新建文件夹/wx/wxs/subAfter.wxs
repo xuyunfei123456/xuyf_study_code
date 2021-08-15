@@ -1,0 +1,11 @@
+var subAfter = function (val) {
+  if (val == undefined || val.length == 0) {
+    return;
+  } else if (val.length > 0) {
+
+    var arrs = val.split('').slice(-2).join('')
+    return arrs
+  }
+}
+
+module.exports.subAfter = subAfter;

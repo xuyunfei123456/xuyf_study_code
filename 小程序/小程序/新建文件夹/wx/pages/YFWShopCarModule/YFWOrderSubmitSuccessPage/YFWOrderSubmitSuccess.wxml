@@ -1,0 +1,59 @@
+<view class='myPosition'>
+<image src='../../../images/jsBg.png' class='jsBg'></image>
+<view class='takeAdd'>
+<view class='addTitle'>收货地址</view>
+<view class='user'>
+
+
+<view class='outBox'>
+  <view class='user_left'>
+    <view class='user_leftOne'>
+    <image src='/images/zuoB.png' class='zuoB' mode='widthFix'></image>
+      <text>{{addressInfo.name}}</text>
+      <text class='phoneNum'>{{addressInfo.mobile}}</text>
+      <image wx:if='{{addressInfo.is_default == "1"}}' class='address_detault' src='/images/Label_moren.png'></image>
+    </view>
+    <view class='user_leftTwo'>{{"地址："+addressInfo.address}}</view>
+
+  </view>
+</view>
+<image src='../../../images/shouhua.png' mode='widthFix' class='shouH'></image>
+
+</view>
+</view>
+</view>
+
+<block wx:for="{{dataArray}}">
+  <view class='cell'>
+      <view class='shop_container'>
+        <image class='shop_icon' src='../../../images/shops.png'></image>
+        <view class='shop_title'>{{item.title}}</view>
+      </view>
+      <view class='separator'></view>
+      <view class='content'>
+        <view class='content_title'>订单:</view>
+        <text class='content_value'>{{item.orderno}}</text>
+      </view>
+      <view class='content'>
+        <view class='content_title'>数量:</view>
+        <text class='content_value'>{{item.medicineQty}}</text>
+      </view>
+      <view class='content'>
+        <view class='content_title'>金额:</view>
+        <text class='content_money'>{{'￥'+item.total_price}}</text>
+      </view>
+      <view wx:if='{{item.buttons.length == 1}}' class='action_pay' data-inquiry='{{item.inquiryid}}' data-order-id='{{item.orderno}}' data-info='{{item.buttons[0]}}' bindtap='itemClickAction' >
+        <image class='action_bg' src='../../../images/button_pay.png' ></image>
+        <view class='action_text'>{{item.buttons[0].title}}</view>
+      </view>
+      <view wx:elif='{{item.buttons.length > 1}}'>
+        <view class='{{item.buttons[0].is_weak=="true"?"action_upload weak":"action_upload"}}' data-order-id='{{item.orderno}}' data-info='{{item.buttons[0]}}' bindtap='itemClickAction'>
+          <view class='{{item.buttons[0].is_weak=="true"?"action_upload_text weak":"action_upload_text"}}'>{{item.buttons[0].title}}</view>
+        </view>
+        <view class='action_pay' data-order-id='{{item.orderno}}' data-inquiry='{{item.inquiryid}}' data-info='{{item.buttons[1]}}' bindtap='itemClickAction' >
+          <image class='action_bg' src='../../../images/button_pay.png' ></image>
+        <view class='action_text'>{{item.buttons[1].title}}</view>
+      </view>
+      </view>
+  </view>
+</block>

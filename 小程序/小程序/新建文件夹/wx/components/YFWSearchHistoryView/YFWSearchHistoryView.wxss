@@ -1,0 +1,88 @@
+.container {
+  width: 100vw;
+  height: 100%;
+}
+.scroll {
+  width: 100%;
+  height: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+.hotWords-view {
+  margin: 51rpx auto 25rpx 0rpx;
+  display: flex;
+
+}
+.hotWords-view text{
+  font-size: 30rpx;
+  color: #333333
+}
+.hotWords-context {
+  margin-left: 25rpx;
+  width: 93%;
+  flex: 1;
+  display: flex;
+  flex-flow: row wrap;
+}
+.hotWords-context-view {
+  border-radius: 29rpx;
+  background-color: #fafafa;
+  margin-bottom: 16rpx;
+  margin-right: 16rpx;
+  min-width: 80rpx;
+  max-width: 300rpx;
+  height: 58.667rpx;
+}
+.hotWords-context-view text{
+  font-size: 24rpx;
+  color: #666666;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  line-height:58.667rpx;
+  padding: 0rpx 38.667rpx;
+}
+.historyWords-view {
+  margin: 70rpx auto 0rpx 0rpx;
+  display: flex;
+  height: 60rpx;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.historyWords-view text{
+  font-size: 30rpx;
+  color: #333333;
+  display: block
+}
+.clear-view {
+  margin-right: 34rpx;
+  display: flex;
+  justify-content: flex-end
+}
+.historyWords-view .image-view{
+  width: 26rpx;
+  height: 27rpx;
+}
+.deleteAll{
+  color: #666666;
+}
+.complete{
+  color: #ff3300;
+}
+.operation{
+  display: flex;
+  font-size: 24rpx;
+}
+.deleteLine{
+  border-left: 1px solid #666666;
+  margin: 0 10rpx;
+  height: 20rpx;
+  margin-top: 8rpx;
+}
+.deleteIcon{
+  width: 20rpx;
+  height: 20rpx;
+  margin-left: 20rpx;
+}

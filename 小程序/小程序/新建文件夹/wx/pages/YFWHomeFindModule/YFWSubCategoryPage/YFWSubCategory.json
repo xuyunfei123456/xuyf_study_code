@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "goods_view": "/components/GoodsItemView/YFWGoodsListView",
+    "more_view": "/components/YFWMoreView/YFWMoreView",
+    "filterBoxModal": "/components/YFWFilterBoxModal/YFWFilterBoxModal"
+  },
+  "navigationBarBackgroundColor": "#49ddb8",
+  "navigationBarTextStyle": "white",
+  "enablePullDownRefresh": false
+}

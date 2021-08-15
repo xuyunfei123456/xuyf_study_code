@@ -1,0 +1,97 @@
+.container {
+    width: 100vw;
+    height: 100%;
+}
+.scroll {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    -webkit-overflow-scrolling: touch;
+}
+.hotWords-view {
+    margin: 51px auto 25px 0px;
+    display: flex;
+
+}
+.hotWords-view text{
+    font-size: 30px;
+    color: #333333
+}
+.hotWords-context {
+    margin-left: 25px;
+    width: 93%;
+    flex: 1;
+    display: flex;
+    flex-flow: row wrap;
+}
+.hotWords-context-view {
+    display: flex;
+    padding: 18px 38px;
+    border-radius: 29px;
+    background-color: #fafafa;
+    margin-bottom: 16px;
+    margin-right: 16px;
+    min-width: 80px;
+    justify-content: center;
+    align-items: center;
+    max-width: 300px
+}
+.hotWords-context-view text{
+    font-size: 24px;
+    color: #666666;
+    display: flex;
+    text-overflow: -o-ellipsis-lastline;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    align-content: center;
+    line-height: 30px;
+
+}
+.historyWords-view {
+    margin: 70px auto 0px 0px;
+    display: flex;
+    height: 60px;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.historyWords-view text{
+    font-size: 30px;
+    color: #333333;
+    display: block
+}
+.clear-view {
+    margin-right: 34px;
+    height: 60px;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 24px;
+    color: #666666;
+}
+.clear-left{
+    display: flex;
+}
+.cut-off-rule{
+    margin-left: 6px;
+    margin-right: 6px;
+}
+.completeBtn{
+    color: #ff3300;
+}
+.historyWords-view .image-view{
+    width: 26px;
+    height: 27px;
+}
+.closeHistoryWordsShow{
+    width: 21px;
+    height: 21px;
+    margin-left: 15px;
+}
+.closeHistoryWordsHide{
+    width: 0px;
+    height: 21px;
+    margin-left: 0px;
+}

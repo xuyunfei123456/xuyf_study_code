@@ -1,0 +1,44 @@
+{
+  "desc": "关于本文件的更多信息，请参考文档 https://developers.weixin.qq.com/miniprogram/dev/framework/sitemap.html",
+  "rules": [
+    {
+      "action": "disallow",
+      "page": "pages/YFWLoginModule/YFWLoginPage/YFWLogin"
+    },
+
+    {
+      "action": "disallow",
+      "page": "pages/YFWLoginModule/YFWAuthorLoginPage/YFWAuthorLogin"
+    },
+
+    {
+      "action": "disallow",
+      "page": "pages/YFWLoginModule/YFWBindPhonePage/YFWBindPhone"
+    },
+
+    {
+      "action": "disallow",
+      "page": "pages/YFWMessageModule/YFWMessageHomePage/YFWMessageHome"
+    },
+
+    {
+      "action": "disallow",
+      "page": "pages/YFWOrderModule/YFWOrderSerchPage/YFWOrderSerch"
+    },
+
+    {
+      "action": "disallow",
+      "page": "pages/YFWShopCarModule/YFWShopCarPage/YFWShopCar"
+    },
+
+    {
+      "action": "disallow",
+      "page": "pages/YFWUserCenterModule/YFWUserCenterPage/YFWUserCenter"
+    },
+
+    {
+      "action": "disallow",
+      "page": "pages/YFWUserCenterModule/YFWAccountManagementPage/YFWAccountManagement"
+    }
+  ]
+}

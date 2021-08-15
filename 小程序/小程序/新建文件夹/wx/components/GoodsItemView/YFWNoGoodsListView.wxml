@@ -1,0 +1,42 @@
+<wxs module="filter">
+  function goodsType(froms) {
+    if (froms == 'category'){
+      return{
+        showcar: false,
+        showstore:true
+      }
+    } else if (froms == 'shop_all_goods'){
+      return {
+        showcar: true,
+        showstore: false
+      }
+    }else if (froms == 'search'){
+      return{
+        showcar: false,
+        showstore:true
+      }
+    }
+  }
+  module.exports = {
+    goodsType: goodsType
+  }
+</wxs>
+<scroll-view class='scrollView' scroll-y='true' bindscrolltolower="">
+  <view>
+    <view class='no-result'>
+      <image src='https://c1.yaofangwang.net/common/images/miniapp/ic_no_goods_shops.png'></image>
+      <text>抱歉，没有找到商品哦~</text>
+    </view>
+    <view class='about-shop-view'>
+      <titleView title="热门搜索" />
+    </view>
+  </view>
+  <block wx:for='{{list}}' wx:key='' wx:if='{{listType}}'>
+    <list_goods data='{{item}}' showcar='{{filter.goodsType(froms).showcar}}' showstore='{{filter.goodsType(froms).showstore}}' />
+  </block>
+  <view class='collectionView' wx:if='{{!listType}}'>
+    <view class='collectionItemView' wx:for="{{list}}" wx:key=''>
+      <collection_goods data='{{item}}' showcar='{{filter.goodsType(froms).showcar}}' showstore='{{filter.goodsType(froms).showstore}}' />
+    </view>
+  </view>
+</scroll-view>

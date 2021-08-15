@@ -1,0 +1,21 @@
+<!--pages/YFWLoginModule/YFWAuthorLoginPage/YFWAuthorLogin.wxml-->
+
+<view class='container'>
+  <view class='top_view_img'>
+    <image class='top_img' src="https://c1.yaofangwang.net/common/images/miniapp/logo_icon.jpg" mode='scaleToFill' />
+  </view>
+  <view class='bottom_view'>
+    <button class='view-wx-login'open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">
+      <image class='img-wx-login' src='../../../images/logo_wx.png'></image>
+      <text class="btn-wx-login">微信用户快捷登录</text>
+    </button>
+    <view class='view-phone-login' bindtap='bindPhoneLogin'>
+      <image class='img-phone-login' src='../../../images/logo_phone.png'></image>
+      <text class="btn-phone-login">手机号登录/注册</text>
+    </view>
+  </view>
+    <!-- loading图 -->
+    <view class="loadingbg" catchtap="handleCatchTap" wx:if="{{loading}}">
+      <image src='/images/loading_cycle.gif'  class='shop-car-loading' />
+    </view>
+</view>

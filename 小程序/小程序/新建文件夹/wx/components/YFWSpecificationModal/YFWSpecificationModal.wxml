@@ -1,0 +1,14 @@
+<!--components/YFWSpecificationModal/YFWSpecificationModal.wxml-->
+<YFWActionModal id="coupon" title="说明书">
+    <view class="model-specification">
+        <view class="model-specification-main">
+            <view wx:for="{{order}}" wx:key="{{item}}" class="model-specification-article">
+                <view class="model-specification-title">【{{item}}】</view>
+                <view class="model-specification-text">{{guide[item]}}</view>
+            </view>
+        </view>
+        <view class="model-specification-footer">
+            <view class="model-specification-confirm" bindtap="hideModal">确定</view>
+        </view>
+    </view>
+</YFWActionModal>

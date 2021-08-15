@@ -1,0 +1,183 @@
+.trend {
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  padding-bottom: 5vw;
+}
+
+.trend .trend-card-view {
+  width: 84vw;
+  height: auto;
+  padding: 5vw;
+  margin: 3vw 3vw 0;
+  box-shadow: 0px 0px 30px rgba(204, 204, 204, 0.5);
+  border-radius: 14px;
+}
+
+.trend .trend-card-view .trend-store {
+  max-width: 50vw;
+}
+
+.trend .trend-card-view .trend-time {
+  padding: 0 6px;
+  border-radius: 6px;
+  background: linear-gradient(to right, #ff9a67,#ff605e);
+  box-shadow: 0px 8px 16px rgba(255,138,101,0.5);
+  margin-left: 10px;
+  max-height: 28px;
+}
+
+.trend .trend-card-view .trend-time-item {
+  width: 120px;
+  border-radius: 14px;
+  border: solid 2px #1fdb9b;
+  font-size: 22px;
+  line-height: 38px;
+  box-shadow: 0px 8px 16px rgba(31,219,155,0.5);
+  margin-left: 10px;
+  text-align: center;
+  vertical-align: middle;
+  color: #1fdb9b;
+}
+
+.trend .trend-card-view .trend-time-item-select {
+  color: #ffffff;
+  background-color: #1fdb9b;
+}
+
+.trend .trend-card-view .trend-sort-icon {
+  width: 24px;
+  height: auto;
+}
+
+.trend .trend-card-view .trend-buy {
+  padding: 4px 15px;
+  border-radius: 20px;
+  border: solid 2px #ff8364;
+}
+
+.trend .trend-card-view .trend-charts {
+  width: 84vw;
+  height: auto;
+}
+
+.trend-line-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.trend-width-84 {
+  width: 84vw;
+}
+
+.trend-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.trend-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.trend-wrap {
+  flex-wrap: wrap;
+}
+
+.trend-content-center {
+  justify-content: center;
+}
+
+.trend-content-end {
+  justify-content: flex-end;
+}
+
+.trend-content-between {
+  justify-content: space-between;
+}
+
+.trend-algin-center {
+  align-items: center;
+}
+
+.trend-algin-end {
+  align-items: flex-end;
+}
+
+.trend-dark-text {
+  color: #333333;
+}
+
+.trend-normal-text {
+  color: #666666;
+}
+
+.trend-light-text {
+  color: #999999;
+}
+
+.trend-white-text {
+  color: #ffffff;
+}
+
+.trend-red-text {
+  color: #ff3300;
+}
+
+.trend-orange-text {
+  color: #ff8364;
+}
+
+.trend-green-text {
+  color: #1fdb9b;
+}
+
+.trend-15-text {
+  font-size: 30px;
+  line-height: 38px;
+}
+
+.trend-14-text {
+  font-size: 28px;
+  line-height: 30px;
+}
+
+.trend-13-text {
+  font-size: 26px;
+}
+
+.trend-12-text {
+  font-size: 24px;
+}
+
+.trend-10-text {
+  font-size: 20px;
+  line-height: 28px;
+}
+
+.trend-bold-text {
+  font-weight: bold;
+}
+
+.trend-margin-top-5 {
+  margin-top: 10px;
+}
+
+.trend-margin-top-10 {
+  margin-top: 20px;
+}
+
+.trend-margin-right-5 {
+  margin-right: 10px;
+}
+
+.trend-margin-top-15 {
+  margin-top: 30px;
+}
+
+.trend-margin-bottom-25 {
+  margin-bottom: 50px;
+}

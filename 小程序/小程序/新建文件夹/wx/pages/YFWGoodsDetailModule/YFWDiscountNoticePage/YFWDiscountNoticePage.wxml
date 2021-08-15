@@ -1,0 +1,29 @@
+<view class="container">
+  <view class="current-view">
+    <text class="price-title">当前价格: </text>
+    <text class="price">¥{{current_price}}</text>
+  </view>
+  <view class="context-view">
+    <text class="price-title q-title">期望价格: ¥</text>
+    <input
+      class="input-view"
+      maxlength="10"
+      type="digit"
+      confirm-type="done"
+      placeholder="低于此价格会通知您"
+      placeholder-class="place-view"
+      value="{{price}}"
+      bindinput="changeInputText"
+      bindblur="blurInputText"
+    />
+    <text class="msg-text">{{msg}}</text>
+    <view bindtap="inputClear" wx:if="{{price.length>0}}" class="d-view">
+      <image class="" src="/images/search_del.png"/>
+    </view>
+  </view>
+  <text class="next-warn">低于此价格我们会通知你</text>
+  <view class='confirmButton' bindtap='onConfirm'>
+    <text>确定</text>
+  </view>
+</view>
+

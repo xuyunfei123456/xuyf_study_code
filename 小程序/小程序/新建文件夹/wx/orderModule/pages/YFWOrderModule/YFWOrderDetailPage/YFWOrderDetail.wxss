@@ -1,0 +1,686 @@
+page {
+  background: #fff;
+}
+
+.top_status_parent {
+  width: 100%;
+  height: 285rpx;
+  background-color: #49ddb8;
+  display: flex;
+  flex-direction: column;
+}
+
+.order_status {
+  display: flex;
+  flex-direction: row;
+  margin-top: 45rpx;
+  align-items: center;
+  justify-content: center;
+}
+
+.order_status .icon {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.order_status .text {
+  font-size: 36rpx;
+  color: #fff;
+  margin-left: 18rpx;
+}
+
+.address_info_parent {
+  width: 700rpx;
+  height: auto;
+  margin-left: 25rpx;
+  position: relative;
+  background-color: #fff;
+  border-radius: 14rpx;
+  box-shadow: 0rpx 7rpx 15rpx 0rpx rgba(204, 204, 204, 0.6);
+  margin-top: -135rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.logistics {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 29rpx;
+  margin-right: 24rpx;
+  margin-top: 37rpx;
+}
+
+.logistics .text {
+  font-size: 29rpx;
+  color: #999;
+}
+
+.logistics .next {
+  width: 13rpx;
+  height: 24rpx;
+}
+
+.user_info {
+  margin-top: 56rpx;
+  margin-left: 29rpx;
+  margin-right: 24rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.address_icon {
+  width: 27rpx;
+  height: 27rpx;
+  margin-right: 25rpx;
+}
+
+.address_detail {
+  display: flex;
+  flex-direction: column;
+  font-size: 29rpx;
+  color: #333;
+  font-family: SourceHanSansCN-Medium;
+  font-weight: bold;
+}
+
+.address_detail .top {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.address_detail .top .phone {
+  margin-left: 39rpx;
+}
+
+.address_detail .bottom {
+  margin-top: 19rpx;
+  font-size: 25rpx;
+  margin-left: 49rpx;
+  color: #999;
+  font-weight: normal;
+}
+
+.bottom_image {
+  width: 695rpx;
+  margin-left: 2.5rpx;
+  height: 8rpx;
+  margin-top: 48rpx;
+}
+
+.rx_info {
+  margin-top: 30rpx;
+  width: 700rpx;
+  background-color: #fff;
+  border-radius: 14rpx;
+  margin-left: 25rpx;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10rpx 0;
+  box-shadow: 0rpx 3rpx 15rpx 0rpx rgba(204, 204, 204, 0.6);
+}
+
+.rx_info image {
+  width: 30rpx;
+  height: 30rpx;
+  margin: 25rpx;
+}
+
+.rx_info text {
+  font-size: 26rpx;
+  color: #666;
+  flex: 1;
+}
+
+.shop_title {
+  display: flex;
+  flex-direction: row;
+  width: 700rpx;
+  margin-left: 25rpx;
+  align-items: center;
+  margin-top: 45rpx;
+}
+
+.shop_title .shop_icon {
+  width: 28rpx;
+  height: 28rpx;
+}
+
+.shop_title .shop_name {
+  width: 640rpx;
+  height: 29rpx;
+  color: #333;
+  font-size: 29rpx;
+  display: block;
+  line-height: 29rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-weight: bold;
+  margin-left: 12rpx;
+}
+
+.medicine_list {
+  margin-top: 18rpx;
+  width: 700rpx;
+  background-color: #fff;
+  box-shadow: 0rpx 3rpx 15rpx 0rpx rgba(204, 204, 204, 0.6);
+  border-radius: 14rpx;
+  margin-left: 25rpx;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 20rpx;
+}
+
+.traffic_icon {
+  width: 100rpx;
+  height: 40rpx;
+}
+
+.traffic_name {
+  font-size: 30rpx;
+  color: #999;
+  margin-left: 10rpx;
+  width: 520rpx;
+  display: block;
+  line-height: 29rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+
+.medicineList_item {
+  margin-left: 15rpx;
+  margin-top: 25rpx;
+  margin-right: 25rpx;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+}
+
+.medecine_image {
+  width: 140rpx;
+  height: 140rpx;
+}
+
+.medicine_info {
+  display: flex;
+  flex-direction: column;
+}
+
+.medicine_info .top {
+  margin-left: 20rpx;
+  width: 500rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.medicine_type_icon {
+  width: 52rpx;
+  height: 22rpx;
+  margin-right: 10rpx;
+}
+
+.medicien_name {
+  font-weight: bold;
+  color: #333;
+  margin-left: 8rpx;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  max-width: 370rpx;
+  font-size: 26rpx;
+}
+
+.Goodsprice {
+  font-size: 28rpx;
+  color: #333;
+  font-weight: bold;
+}
+
+.smallPrice {
+  font-size: 22rpx;
+  color: #333;
+  font-weight: bold;
+}
+
+.medicine_info .bottom {
+  margin-left: 20rpx;
+  width: 500rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 10rpx;
+}
+
+.medicine_info .periodOfValidity {
+  width: 500rpx;
+  margin-top: 10rpx;
+  font-size: 26rpx;
+  color: #999;
+  display: flex;
+  flex-direction: row;
+  margin-left: 20rpx;
+}
+
+.medecine_standard {
+  font-size: 26rpx;
+  color: #999;
+}
+
+.medecine_qty {
+  font-size: 26rpx;
+  color: #999;
+}
+
+.splite_view {
+  width: 650rpx;
+  height: 1rpx;
+  background-color: #f5f5f5;
+  margin-left: 25rpx;
+  margin-top: 25rpx;
+}
+
+.packgeParent {
+  display: flex;
+  flex-direction: column;
+}
+
+.packageName {
+  display: flex;
+  flex-direction: row;
+  margin-left: 25rpx;
+  align-items: center;
+  margin-top: 25rpx;
+}
+
+.packageType {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 84rpx;
+  height: 29rpx;
+  background-image: linear-gradient(-90deg, #ff8881 0%, #ea5065 100%),
+                      linear-gradient(#e5e5e5, #e5e5e5);
+  background-blend-mode: normal, normal;
+  box-shadow: 0rpx 1rpx 3rpx 0rpx rgba(226, 108, 108, 0.3);
+  border-radius: 14rpx;
+  font-size: 21rpx;
+  font-weight: normal;
+  letter-spacing: 0rpx;
+  color: #fff;
+}
+
+.course_costume{
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 84rpx;
+  height: 29rpx;
+  background-image: linear-gradient(-90deg, rgba(72,139,255,1),rgba(122,219,255,1) ),
+                      linear-gradient(#e5e5e5, #e5e5e5);
+  background-blend-mode: normal, normal;
+  box-shadow: 0rpx 1rpx 3rpx 0rpx rgba(226, 108, 108, 0.3);
+  border-radius: 14rpx;
+  font-size: 21rpx;
+  font-weight: normal;
+  letter-spacing: 0rpx;
+  color: #fff;
+}
+
+.tansButton {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  background: transparent;
+  color: transparent;
+}
+
+.packageName_text {
+  color: #666;
+  margin-left: 20rpx;
+}
+
+.packageName_text {
+  color: #666;
+  margin-left: 20rpx;
+  font-size: 20rpx;
+}
+
+.contactCustomerServic {
+  width: 649rpx;
+  margin-left: 53rpx;
+  margin-top: 36rpx;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 30rpx;
+  position: relative
+}
+
+.contactCustomerServic .icon {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.contactCustomerServic .tip {
+  width: 170rpx;
+  height: 28rpx;
+  font-family: SourceHanSansCN-Normal;
+  font-size: 29rpx;
+  font-weight: normal;
+  font-stretch: normal;
+  letter-spacing: -1rpx;
+  color: #333;
+  margin-left: 15rpx;
+}
+
+.contactCustomerServic .next {
+  width: 13rpx;
+  height: 24rpx;
+}
+
+.heightSplite_view {
+  width: 100%;
+  height: 28rpx;
+  background-color: #f5f5f5;
+}
+
+.receiptInfo {
+  width: 649rpx;
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+  margin-left: 50rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.receiptype {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 25rpx;
+  color: #333;
+}
+
+.receiptype .next {
+  width: 13rpx;
+  height: 24rpx;
+}
+
+.receiptTypeValue {
+  color: #999;
+}
+
+.receipheader {
+  display: flex;
+  flex-direction: row;
+  font-size: 25rpx;
+  color: #333;
+  margin-top: 27rpx;
+}
+
+.priceInfoParent {
+  width: 697rpx;
+  margin-top: 30rpx;
+  margin-left: 50rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.priceInfoItem {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 30rpx;
+}
+
+.priceTypeBold {
+  font-size: 25rpx;
+  color: #333;
+  font-weight: bold;
+}
+
+.priceSmallPriceBold {
+  font-size: 20rpx;
+  color: #999;
+  font-weight: bold;
+  margin-right: 20rpx;
+  line-height: 20rpx;
+}
+
+.priceSmallPrice {
+  font-size: 20rpx;
+  color: #999;
+  margin-right: 20rpx;
+  line-height: 20rpx;
+}
+
+.priceType {
+  font-size: 25rpx;
+  color: #333;
+}
+
+.priceBold {
+  font-size: 25rpx;
+  color: #999;
+  font-weight: bold;
+}
+
+.price {
+  font-size: 25rpx;
+  color: #999;
+}
+
+.splite {
+  width: 700rpx;
+  height: 2rpx;
+  background-color: #e5e5e5;
+}
+
+.orderToatal {
+  margin-top: 30rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 650rpx;
+  margin-right: 50rpx;
+  margin-bottom: 30rpx;
+}
+
+.orderToatal .tips {
+  font-family: SourceHanSansCN-Regular;
+  font-size: 29rpx;
+  font-weight: normal;
+  font-stretch: normal;
+  letter-spacing: 0rpx;
+  color: #333;
+  margin-right: 0rpx;
+}
+
+.orderToatal .price {
+  font-family: SourceHanSansCN-Medium;
+  font-size: 28rpx;
+  font-weight: normal;
+  font-stretch: normal;
+  letter-spacing: 0rpx;
+  color: #f30;
+  margin-right: 0rpx;
+}
+
+.orderToatal .smallPrice {
+  font-family: SourceHanSansCN-Medium;
+  font-size: 22rpx;
+  font-weight: normal;
+  font-stretch: normal;
+  letter-spacing: 0rpx;
+  color: #f30;
+  margin-right: 0rpx;
+}
+
+.orderStatus {
+  widows: 697rpx;
+  margin-top: 30rpx;
+  margin-left: 54rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.left {
+  font-family: SourceHanSansCN-Normal;
+  font-size: 25rpx;
+  font-weight: normal;
+  font-stretch: normal;
+  letter-spacing: 0rpx;
+  color: #333;
+}
+
+.right {
+  font-family: SourceHanSansCN-Normal;
+  font-size: 25rpx;
+  font-weight: normal;
+  font-stretch: normal;
+  letter-spacing: 0rpx;
+  color: #999;
+  margin-right: 47rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.acceptanceCriteria {
+  width: 100%;
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.acceptanceCriteria .dark {
+  font-family: SourceHanSansCN-Regular;
+  font-size: 26rpx;
+  font-weight: normal;
+  font-stretch: normal;
+  letter-spacing: 0rpx;
+  color: #333;
+}
+
+.light_text {
+  font-family: SourceHanSansCN-Regular;
+  font-size: 26rpx;
+  font-weight: normal;
+  letter-spacing: 0rpx;
+  color: #1fdb9b;
+}
+
+.FillView {
+  width: 100%;
+  height: 120rpx;
+  background-color: #f5f5f5;
+}
+
+.bottomLayout {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 110rpx;
+  z-index: 999;
+  background-color: #fff;
+  border-top: 2rpx solid #e5e5e5;
+  align-items: center;
+  position: fixed;
+  bottom: 0rpx;
+}
+
+.buttonListLayout {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 110rpx;
+  z-index: 999;
+  background-color: #fff;
+  justify-content: center;
+}
+
+.scheduled_days_itemLayout {
+  display: flex;
+  flex-direction: column;
+  width: 650rpx;
+  margin-top: 19rpx;
+  margin-left: 25rpx;
+}
+
+.scheduled_days_itemLayout .tipsLayout {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  font-size: 26rpx;
+}
+
+.scheduled_days_itemLayout .tipsLayout .tips {
+  color: #333;
+  min-width: 140rpx;
+}
+
+.scheduled_days_itemLayout .tipsLayout .value {
+  color: #999;
+}
+
+.scheduledButtonLayout {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  margin-top: 10rpx;
+}
+
+.scheduledButtonLayout .darkbutton {
+  height: 40rpx;
+  border-radius: 20rpx;
+  width: 100rpx;
+  font-size: 24rpx;
+  color: #666;
+  border: 2rpx solid #666;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 30rpx;
+}
+
+.scheduledButtonLayout .light {
+  height: 40rpx;
+  border-radius: 20rpx;
+  width: 100rpx;
+  font-size: 24rpx;
+  color: #1fdb9b;
+  border: 2rpx solid #1fdb9b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 30rpx;
+}
+
+.copyButton {
+  border: 2rpx solid #1fdb9b;
+  font-size: 22rpx;
+  color: #1fdb9b;
+  border-radius: 15rpx;
+  height: 26rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 47rpx;
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+  justify-content: center;
+}

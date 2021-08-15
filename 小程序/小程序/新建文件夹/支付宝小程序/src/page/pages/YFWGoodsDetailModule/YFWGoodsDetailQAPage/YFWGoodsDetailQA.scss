@@ -1,0 +1,72 @@
+.qa {
+  width: 100%;
+  height: 100%;
+  background-color: #fafafa;
+}
+
+.top-scroll {
+  width: 100%;
+  height: 100px;
+  white-space: nowrap;
+  // background-color: #fafafa;
+}
+
+.top-scroll .top-item {
+  display: inline-block;  
+}
+
+.top-scroll .top-item .top-item-button {
+  display: flex;
+  height: 100px;
+  justify-content: center;
+  align-items: center;
+}
+
+.qa-content {
+  position: fixed;
+  left: 0;
+  top: 100px;
+  right: 0;
+  bottom: 0;
+}
+
+.qa-content .qa-swiper {
+  width: 100%;
+  height: 100%;
+  background-color: #fafafa;
+}
+
+.qa-content .qa-swiper .qa-item {
+  margin: 0px 25px 30px 25px;
+  padding: 40px;
+  border-radius: 16px;
+  background-color: #ffffff;
+}
+
+.qa-content .qa-swiper .qa-item .qa-item-row {
+  display: flex;
+  flex-direction: row;
+  padding: 15px 0;
+}
+
+.qa-content .qa-swiper .qa-item .qa-item-row .qa-icon {
+  min-width: 32px;
+  max-width: 32px;
+  min-height: 32px;
+  max-height: 32px;
+  margin-right: 16px;
+  margin-top: 5px;
+}
+
+.qa-content .qa-swiper .qa-item .qa-item-row .qa-qusetion {
+  font-size: 30px;
+  font-weight: bold;
+  color: #333333;
+}
+
+.qa-content .qa-swiper .qa-item .qa-item-row .qa-answer {
+  font-size: 26px;
+  line-height: 38px;
+  font-weight: normal;
+  color: #333333;
+}

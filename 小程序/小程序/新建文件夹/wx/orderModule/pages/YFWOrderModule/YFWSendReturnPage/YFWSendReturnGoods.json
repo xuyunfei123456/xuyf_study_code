@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "yfwBaseModal": "../../../../components/YFWBaseModal/YFWBaseModal"
+  },
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "寄回商品",
+  "navigationBarBackgroundColor": "#49ddb8",
+  "enablePullDownRefresh": false
+}

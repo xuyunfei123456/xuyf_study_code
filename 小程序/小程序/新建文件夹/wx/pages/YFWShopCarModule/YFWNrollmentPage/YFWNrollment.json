@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+
+  },
+  "navigationBarBackgroundColor": "#49ddb8",
+  "navigationBarTitleText": "疫情防控药品登记",
+  "navigationBarTextStyle": "white"
+}

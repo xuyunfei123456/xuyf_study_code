@@ -1,0 +1,141 @@
+.top_bg {
+  position: fixed;
+  width: 100%;
+  height: 340rpx;
+  top: 0;
+  z-index: -1;
+}
+
+.invoice-content {
+  width: 84vw;
+  margin: 34rpx 3vw 0;
+  padding: 30rpx 5vw;
+  border-radius: 14rpx;
+  background-color: #fff;
+  box-shadow: 0rpx 6rpx 20rpx rgba(204, 204, 204, 0.5);
+}
+
+.invoice-st {
+  font-size: 28rpx;
+  color: #333;
+}
+
+.invoice-st-desc {
+  color: #1fdb9b;
+  font-weight: 500;
+}
+
+.invoice-logistics {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.invoice-lg {
+  padding: 4rpx 24rpx;
+  border-radius: 30rpx;
+  font-size: 24rpx;
+  color: #666;
+  font-weight: 500;
+  border: solid 1rpx #666;
+}
+
+.invoice-tt {
+  width: 175rpx;
+  margin-top: 25rpx;
+}
+
+.invoice-setup {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 70vw;
+  margin: 30rpx 7vw 0;
+  position: relative;
+}
+
+.invoice-setup view {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.invoice-setup image {
+  width: 80rpx;
+  height: 80rpx;
+  margin-bottom: 20rpx;
+}
+
+.invoice-line {
+  position: absolute;
+  top: 40rpx;
+  height: 2rpx;
+  width: 66vw;
+  left: 2vw;
+  background-color: #a6a9a8;
+}
+
+.invoice-info {
+  display: flex;
+  flex-direction: column;
+  padding-left: 20rpx;
+  position: relative;
+}
+
+.invoice-look {
+  position: absolute;
+  right: 0;
+  bottom: -4rpx;
+  padding: 4rpx 24rpx;
+  border-radius: 30rpx;
+  font-size: 24rpx;
+  color: #666;
+  font-weight: 500;
+  border: solid 1rpx #666;
+}
+
+.invoice-info text {
+ margin: 20rpx 0 0 20rpx;
+}
+
+.invoice-explain {
+  display: flex;
+  flex-direction: column;
+  padding: 30rpx 3vw;
+}
+
+.invoice-explain text {
+  margin-top: 6rpx;
+}
+
+.invoice-explain-tt {
+  font-weight: 500;
+  margin-bottom: 8rpx;
+}
+
+.text-12 {
+  font-size: 24rpx;
+}
+
+.text-14 {
+  font-size: 28rpx;
+}
+
+.text-bold {
+  font-weight: 500;
+}
+
+.text-color-3 {
+  color: #333;
+}
+
+.text-color-6 {
+  color: #666;
+}
+
+.text-color-9 {
+  color: #999;
+}

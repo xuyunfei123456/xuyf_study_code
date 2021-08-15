@@ -1,0 +1,7 @@
+<image src='https://c1.yaofangwang.net/common/images/miniapp/user_center_payback_ok.png' class='img' mode='aspectFit'>
+</image>
+
+<view class='tips'>{{tips}}</view>
+
+<view class='button' bindtap='jumpToOrderDetal'>查看订单详情
+</view>

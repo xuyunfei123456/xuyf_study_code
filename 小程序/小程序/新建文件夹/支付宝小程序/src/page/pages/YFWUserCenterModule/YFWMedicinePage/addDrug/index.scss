@@ -1,0 +1,649 @@
+page {
+  background-color: #faf9f9;
+ 
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-bottom: 34px;
+  border-radius: 14px;
+  box-shadow: 0px 8px 20px rgba(204, 204, 204, 0.6);
+  margin-top: 20px;
+}
+
+
+.container_name {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 104px;
+  background-color: #fff;
+  align-items: center;
+}
+
+.customer_left {
+  font-size: 26px;
+  color: black;
+  width: 160px;
+  min-width: 160px;
+  margin-left: 32px;
+}
+
+.item_right {
+  font-size: 30px;
+  color: #333;
+}
+
+.container_mobile {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 104px;
+  background-color: #fff;
+  align-items: center;
+}
+
+.customer_mobile {
+  font-size: 30px;
+  width: 160px;
+  margin-left: 20px;
+}
+
+.item_mobile {
+  font-size: 25px;
+  margin-left: 40px;
+  margin-top: 15px;
+}
+
+.section {
+  background-color: #fff;
+  height: 104px;
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+}
+.picker{
+  font-size:30px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  
+}
+
+.area {
+  font-size: 25px;
+  margin-left: 40px;
+}
+
+.container_address {
+  display: flex;
+  width: 100%;
+  height: 200px;
+  background-color: #fff;
+
+}
+
+.customer_address {
+  font-size: 30px;
+  color: #999;
+  margin-left: 32px;
+  margin-top: 26px;
+}
+.detail-address{
+  margin-right:30px;
+  margin-left:40px;
+  margin-top:30px;
+  height:100px;
+  font-size:30px;
+  display:inline-block;
+}
+.textarea_ios{
+  margin-top:-18px;
+  margin-left:-10px;
+  height:100px;
+  width: 60vw;
+}
+.textarea_android{
+  margin-left:-10px;
+  height:100px;
+  width: 60vw;
+}
+
+.divLine {
+  margin-left: 32px;
+  background-color: #ccc;
+  opacity: 0.1;
+  height: 2px;
+}
+
+.default_address {
+  width: 100%;
+  height: 100px;
+  background-color: #fff;
+}
+
+.def_address {
+  font-size: 30px;
+  color: #999;
+  width: 100%;
+  margin-left: 32px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  padding-top: 28px;
+  display: flex;
+}
+
+.def {
+  font-size: 30px;
+  margin-left: 20px;
+}
+
+.address-save {
+  position: fixed;
+  border-radius: 2px;
+  bottom: 0;
+  width: 100%;
+}
+.top_menu {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top:30px;
+}
+
+.top_line {
+  background-color: #ccc;
+  opacity: 0.3;
+  margin-left: 35px;
+  height: 2px;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.sele {
+  display: inline-flex;
+  margin-left: 13px;
+  margin-right: 13px;
+}
+
+.address_content {
+  color: #333;
+  font-size: 30px;
+  margin-left: 35px;
+  line-height: 80px;
+}
+
+.confirm_btn {
+  text-align: right;
+  color: #999;
+  font-size: 28px;
+  flex: 1;
+  margin-right: 30px;
+}
+.icon-checkbox{
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  min-height: 36px;
+  vertical-align: middle;
+}
+.address-add {
+  width: 100%;
+  color: white;
+  font-size: 34px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.btnBtom {
+  width: 90%;
+  margin-left: 5%;
+  height: 80px;
+  border-radius: 50px;
+  background: linear-gradient(to right, #00c891, #1fdb9b);
+  box-shadow: 0px 8px 30px rgba(31, 219, 155, 0.5);
+  align-items: center;
+  display: flex;
+}
+.bottom_empty {
+  height: 50px;
+  width: 100%
+}
+.bottom_container {
+  background-color: #fafafa;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  height: 140px;
+}
+
+
+.modal-back {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modal .modal-content {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  height: 50%;
+  width: 100%;
+  background-color: #fff;
+  overflow: hidden;
+  max-height: 1000px;
+  z-index: 800;
+}
+.scrollView{
+  display:flex;
+  width:100%;
+  height: 800px;
+  flex-wrap: wrap;
+  -webkit-overflow-scrolling: touch;
+}
+.scroll{
+  -webkit-overflow-scrolling: touch;
+  height: 1260px;
+}
+.notice{
+  background-color: #faf8dc;
+  color:  #feac4c;
+  height:60px;
+  line-height:60px;
+  padding-left: 30px;
+  font-size: 26px;
+}
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+}
+.modal2 {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999999;
+}
+.shadowview{
+  background-color: black;
+  opacity: 0.5;
+  height: 100%;
+}
+.contentview{
+  background-color: white;
+  height: 1000px;
+  border-radius: 10px 10px 0 0;
+  transition: all 0.5s;
+  position: fixed;
+  bottom: -1000px;  
+  z-index: 999999;
+  width: 100%;
+}
+.contentshow{
+  background-color: white;
+  height: 1000px;
+  border-radius: 10px 10px 0 0;
+  transition: all 0.5s;
+  position: fixed;
+  bottom: 0px;  
+  z-index: 99999999;
+}
+.nameAndclose{
+  display: flex;
+  flex-direction: row;
+  height: 60px;
+  line-height: 60px;
+  color: black;
+}
+.name{
+  width:90vw;
+  text-align: center;
+  color: black;
+  padding-top: 6px;
+  font-size: 30px;
+
+}
+.close{
+  width: 10vw;
+  text-align: right;
+  padding-right: 20px;
+  color: #666;
+  font-size: 30px;
+}
+.historyDisease{
+  display: flex;
+  flex-direction: row;
+  border-bottom: 2px solid #eee;
+  padding: 20px 6px;
+  margin-left: 20px;
+
+
+}
+.diseaseName{
+  color: black;
+  width: 56vw;
+  padding-left: 10px;
+  font-size:28px
+}
+.choose1{
+  width: 20vw;
+}
+.has,.hasnot{
+  padding-left: 10px;
+  font-size: 26px;
+}
+.medicine-add {
+  width: 90%;
+  margin-left: 5%;
+  height: 80px;
+  border-radius: 50px;
+  background: linear-gradient(to right, #00c891, #1fdb9b);
+  box-shadow: 0px 8px 30px rgba(31, 219, 155, 0.5);
+  align-items: center;
+  display: flex;
+  color: white;
+  justify-content: center;
+}
+.defualtuse{
+  font-size: 26px;
+  padding-left: 14px;
+  color:'#333333';
+}
+.setdrug{
+  text-align: center;
+}
+.nodata{
+  color: #999;
+  font-size: 26px;
+}
+.not_input{
+  color: #999;
+}
+.sexchoose{
+  display: flex;
+  flex-direction: row;
+}
+.addHistoryDisease{
+  display: flex;
+  flex-direction: row;
+}
+.chooseitemName{
+  color: #1fdb9b;
+  background-color: #e8fbf5;
+  border: 1px solid #1fdb9b;
+  padding: 4px 20px;
+  border-radius: 20px;
+}
+.unchooseitemname{
+  color: #666666;
+  background-color: #fafafa;
+  border: none;
+  padding: 4px 20px;
+  border-radius: 20px;
+}
+.diseaseItem{
+  margin-right: 20px;
+  margin-bottom: 30px;
+}
+.resultForChoosed{
+  padding-left: 20px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+}
+.unchoosed{
+  background-color: #fafafa;
+  color: #333;
+  border: none;
+}
+
+.contentview2{
+  background-color: white;
+  height: 1200px;
+  border-radius: 10px 10px 0 0;
+  transition: all 0.5s;
+  position: fixed;
+  bottom: -1200px;  
+  z-index: 99999999;
+  width: 100%;
+}
+.contentshow2{
+  background-color: white;
+  height: 1200px;
+  border-radius: 10px 10px 0 0;
+  transition: all 0.5s;
+  position: fixed;
+  bottom: 0px;  
+  z-index: 99999999;
+}
+.searchDisease{
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+.searchInput{
+  caret-color: #1fdb9b;
+  background-color: #F5F5F5;
+  width: 90%;
+  border-radius: 40px;
+  height: 50px;
+  padding-left: 20px;
+}
+.scrollView2{
+  display: flex;
+  width: 100%;
+  height: 930px;
+
+}
+
+.searchResult{
+  color: black;
+  padding-left: 10px;
+  font-size: 28px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #999;
+  padding-top: 20px;
+  
+}
+.listdisEase{
+  padding: 10px 0px;
+  word-break: break-all;
+}
+.hasDataFlag{
+  align-self: flex-start;
+  padding-top: 10px;
+}
+.datasStyle{
+  height:auto;
+}
+.tagcla{
+  width:100px;
+  height:43px;
+  line-height: 43px;
+  text-align: center;
+  color: #00c891;
+  border: 2px solid #00c891;
+  background-color: white;
+  border-radius: 20px;
+  font-size: 26px;
+  margin-right:19px;
+  display: inline-block;
+}
+.tagchoose{
+  color: white;
+  background-color: #00c891;
+  box-shadow: 0px 8px 30px rgba(31, 219, 155, 0.5);
+}
+input[disabled]{
+  color: #999;
+}
+.placeholdercla{
+  color: #cccccc;
+}
+.placeholder{
+  font-size: 26px;
+}
+.tip{
+  width: 637px;
+  height: 393px;
+  background-color: white;
+  box-shadow: 0px 8px 20px rgba(204, 204, 204, 0.6);
+  z-index: 999999999;
+  position: absolute;
+  left: 50%;
+  margin-left: -319px;
+  top: 400px;
+}
+.tipwrapper{
+  position: relative;
+}
+.tiptext{
+  font-size: 34px;
+  color: #333333;
+  text-align: center;
+  margin-top: 50px;
+}
+.resultmsg{
+  width:485px;
+  height: 56px;
+  font-size: 26px;
+  color: #333333;
+  margin: 0 auto;
+  margin-top: 69px;
+  margin-bottom: 66px;
+  text-align: center;
+}
+.confirmR{
+  width: 160px;
+  height: 62px;
+  border-radius: 30px;
+  color: white;
+  background-color: #00c891;
+  font-size: 30px;
+  text-align: center;
+  line-height: 62px;
+  margin: 0px auto;
+}
+.shownone{
+  display: none;
+}
+.alignleft{
+  text-align: left;
+  display: inline-block;
+}
+.tzzz{
+  position: absolute;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 9999999;
+  height: 100%;
+  width: 100%;
+  top: 0;
+}
+.tznotice{
+  width: 637px;
+  height: 393px;
+  background-color:white;
+  box-shadow: 0px 8px 20px rgba(204, 204, 204, 0.6);
+  z-index: 999999999;
+  position: absolute;
+  left: 50%;
+  margin-left: -319px;
+  top: 400px;
+}
+.tzwrapper{
+  position: relative;
+  background-color: white;
+  text-align: center;
+  width: 637px;
+  position: absolute;
+  left: 50%;
+  margin-left: -319px;
+  top: 400px;
+  border-radius: 14px;
+
+}
+.tztext{
+  color: #333;
+  font-size: 30px;
+  margin: 20px 0px;
+  font-weight: 500;
+}
+.tzmsg{
+  border-top: 2px solid #ccc;
+  border-bottom: 2px solid #ccc;
+  padding: 20px 0px;
+  color: #333;
+  font-size:26px;
+  font-weight: 300;
+}
+.cer_success{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.3);
+  top: 0px;
+  z-index: 9999;
+}
+.cermodal{
+  width: 636px;
+  height: 500px;
+  border-radius: 14px;
+  background-color: #ffffff;
+  margin: 0 auto;
+  margin-top: 260px;
+  position:relative
+}
+.ver_tip{
+	font-size: 34px;
+  color: #333333;
+  padding-top: 50px;
+  text-align: center;
+}
+.ver_success_text{
+  font-size: 24px;
+	color: #999999;
+  text-align: center;
+}
+.cer-add {
+  width: 100%;
+  color: white;
+  font-size: 30px;
+  text-align: center;
+}
+.cerinfo{
+  width: 452px;
+  height: 170px;
+  background-color: #f5f5f5;
+  margin: 24px auto;
+}
+.cername{
+  font-size: 24px;
+  color: #333333;
+  margin-left: 28px;
+ padding-top: 42px;
+}
+.ceridcard{
+  font-size: 24px;
+  color: #333333;
+  margin-left: 28px;
+  padding-top: 32px;
+}
+.returnTips_close{
+  width: 28px;
+  height: 28px;
+  position: absolute;
+  right: 18.6px;
+  top: 22px;
+}

@@ -1,0 +1,87 @@
+page {
+    background-color: #faf9f9;
+  }
+  
+  .containers {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .contact-us {
+    height: 210px;
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .img-information {
+    width: 130px;
+    height: 130px;
+    margin-left: 30px;
+  }
+  
+  .online-service {
+    font-size: 30px;
+    margin-left: 40px;
+    color: #000;
+  }
+  
+  .img-navigate {
+    float: right;
+    width: 28px;
+    height: 28px;
+    position: absolute;
+    right: 0;
+    margin-right: 20px;
+  }
+  
+  .divLine {
+    background: #ddd;
+    width: 100%;
+    height: 1px;
+  }
+  
+  .view-bottom {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 24%;
+  }
+  .view-phone{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .phone {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .tv-phone {
+    font-size: 28px;
+    margin-left: 20px;
+    color: #666;
+    text-align: center;
+  }
+  .view-email{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 13px;
+  }
+  .email {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .tv-email {
+    font-size: 28px;
+    margin-left: 20px;
+    color: #666;
+  }
+  

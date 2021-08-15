@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "titleView": "../../../../components/YFWTitleView/YFWTitleView",
+    "YFWSidebar": "../../../../components/YFWSidebar/YFWSidebar",
+    "priceView": "/components/YFWPriceView/YFWPriceView"
+  },
+  "navigationBarBackgroundColor": "#49ddb8",
+  "navigationBarTitleText": "浏览历史",
+  "navigationBarTextStyle": "white"
+}

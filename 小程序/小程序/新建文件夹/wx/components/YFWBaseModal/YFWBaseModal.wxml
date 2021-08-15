@@ -1,0 +1,15 @@
+<view class='modal-mask' wx:if='{{show}}' bindtap='close'>
+  <view class='modal-content'>
+    <view class='main-content'>
+      <text class='tips_text'>{{tips_text}}</text>
+    </view>
+    <view class='splite_view'></view>
+    <view class='modal-footer' >
+      <view class='left' bindtap='closeView' wx:if="{{needLeftButton}}">取消
+      </view>
+      <view class='splite' wx:if="{{needLeftButton}}"></view>
+      <view class='right' bindtap='onRightButtonClick'>确认
+      </view>
+    </view>
+  </view>
+</view>

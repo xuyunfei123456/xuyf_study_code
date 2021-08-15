@@ -1,0 +1,60 @@
+<!-- components/GoodsItemView/YFWGoodsListView.wxml -->
+<wxs module="filter">
+  function goodsType(froms) {
+    if (froms == 'category'){
+      return{
+        showcar: false,
+        showstore:true,
+        showCode: true
+      }
+    } else if (froms == 'shop_all_goods' || froms == 'shop_search'){
+      return {
+        showcar: true,
+        showstore: false,
+        showCode: false
+      }
+    }else if (froms == 'search'){
+      return{
+        showcar: false,
+        showstore:true,
+        showCode: true
+      }
+    }
+  }
+  module.exports = {
+    goodsType: goodsType
+  }
+</wxs>
+<view class='mainView'>
+  <filter_view bind:changeSortType="changeSortType" showSpecification="{{showSpecification}}" showSpecification2="{{showSpecification2}}" bind:changeListType="changeListType" bind:openControlPanel="openControlPanel" froms="{{froms}}" />
+  <view class='shopCarTip' wx:if="{{showShopCarTips}}">
+    <view class='carLeft' wx:if="{{shopCarTipsInfo.freepostage.length>0||shopCarTipsInfo.add_on.length>0}}">
+      <view>{{shopCarTipsInfo.freepostage}}</view>
+      <view>{{shopCarTipsInfo.add_on}}</view>
+    </view>
+    <view class='carRight' bindtap='toShopCar'>去购物车</view>
+  </view>
+  <view wx:elif="{{showConditionTips}}" class='shopCarTip'>
+  <view class='carLeft'>
+      <view>{{conditionTips}}</view>
+    </view>
+    <view class='carRight' bindtap='toOrderSettle'>去结算</view>
+  </view>
+  <view wx:if="{{associationGoodsData.length>0&&showType == 'goods'}}">
+    <noGoodsListView  list="{{nogoodslist}}" id="noGoodsView" froms="search" />
+  </view>
+  <scroll-view wx:else class='scrollView' scroll-y='true' bindscrolltolower="requestNextPage">
+    <block wx:for='{{list}}' wx:key='' wx:if='{{listType}}'>
+      <list_goods showConditionTips="{{showConditionTips}}" showSpecification2="{{showSpecification2}}" data='{{item}}' dataIndex='{{index+1}}' showcar='{{filter.goodsType(froms).showcar}}' showstore='{{filter.goodsType(froms).showstore}}' showCode='{{filter.goodsType(froms).showCode}}' bind:callBack="refreshTips" />
+    </block>
+    <view class='collectionView' wx:if='{{!listType}}'>
+      <view class='collectionItemView' wx:for="{{list}}" wx:key=''>
+        <collection_goods data='{{item}}' showConditionTips="{{showConditionTips}}" showSpecification2="{{showSpecification2}}" dataIndex='{{index+1}}' showcar='{{filter.goodsType(froms).showcar}}' showstore='{{froms == "shop_all_goods" || froms == "shop_search" ? false:true}}' bind:callBack="refreshTips" />
+      </view>
+    </view>
+    <view class="onloading">
+      <image wx:if="{{pageEnd ? false : true}}" class="loading-icon" src='/images/loading_cycle.gif' />
+      <view wx:else class="loadover">没有更多商品了~</view>
+    </view>
+  </scroll-view>
+</view>

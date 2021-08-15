@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "titleView": "../../../../components/YFWTitleView/YFWTitleView"
+  },
+  "navigationBarTitleText": "设置",
+  "navigationBarBackgroundColor": "#49ddb8",
+  "navigationBarTextStyle": "white"
+}

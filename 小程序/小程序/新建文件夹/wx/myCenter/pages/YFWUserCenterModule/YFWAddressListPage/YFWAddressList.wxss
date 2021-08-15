@@ -1,0 +1,163 @@
+page {
+  background-color: #fafafa;
+}
+
+.top_bg {
+  position: fixed;
+  width: 100%;
+  height: 340rpx;
+  top: 0;
+  z-index: -1;
+}
+
+/* 横着的分割View样式 */
+
+/*分割线样式*/
+
+.divLine {
+  background: #fff;
+  width: 100%;
+  height: 16rpx;
+}
+
+.scroll {
+  overflow: scroll;
+  padding-bottom: 150rpx;
+  -webkit-overflow-scrolling: touch;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  margin-bottom: 34rpx;
+  border-radius: 14rpx;
+  box-shadow: 0rpx 8rpx 20rpx rgba(204, 204, 204, 0.6);
+}
+
+.button_parent {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-top: 30rpx;
+  margin-bottom: 40rpx;
+  align-items: center;
+}
+
+.action {
+  font-size: 20rpx;
+  margin-right: 60rpx;
+  border-radius: 50rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  padding-top: 5rpx;
+  padding-bottom: 5rpx;
+}
+
+.edite {
+  color: #16c08e;
+  margin-right: 40rpx;
+  border: solid #16c08e 1rpx;
+}
+
+.delete {
+  color: #666;
+  float: right;
+  border: solid #666 1rpx;
+}
+
+.container-id {
+  font-size: 25rpx;
+  margin-left: 10rpx;
+  margin-top: 20rpx;
+  width: 20rpx;
+}
+
+.container-top {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-top: 50rpx;
+}
+
+.container-name {
+  font-size: 30rpx;
+  color: #333;
+  margin-left: 30rpx;
+  float: left;
+  width: 130rpx;
+  flex-wrap: nowrap;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.container-phone {
+  font-size: 30rpx;
+  color: #333;
+}
+
+.container-address {
+  font-size: 24rpx;
+  color: #666;
+  flex: 1;
+  margin-right: 20rpx;
+}
+
+.container-detail {
+  margin-left: 162rpx;
+  height: 100rpx;
+  flex-direction: row;
+  display: flex;
+  margin-top: 20rpx;
+}
+
+.container-default {
+  color: #1fdb9b;
+  font-size: 20rpx;
+  border: solid #1fdb9b 2rpx;
+  padding-left: 4rpx;
+  padding-right: 4rpx;
+  height: 29rpx;
+  border-radius: 14rpx;
+  text-align: center;
+}
+
+.divLine {
+  background: #fcfcfc;
+  margin-left: 5rpx;
+  margin-right: 5rpx;
+}
+
+.address-add {
+  width: 100%;
+  color: white;
+  font-size: 34rpx;
+  font-weight: bold;
+  text-align: center;
+}
+
+.btnBtom {
+  width: 90%;
+  margin-left: 5%;
+  height: 80rpx;
+  border-radius: 50rpx;
+  background: linear-gradient(to right, #00c891, #1fdb9b);
+  box-shadow: 0rpx 8rpx 30rpx rgba(31, 219, 155, 0.5);
+  align-items: center;
+  display: flex;
+}
+
+.bottom_empty {
+  height: 50rpx;
+  width: 100%;
+}
+
+.bottom_container {
+  background-color: #fafafa;
+  position: fixed;
+  bottom: 0rpx;
+  width: 100%;
+}

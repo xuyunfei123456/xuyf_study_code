@@ -1,0 +1,229 @@
+<wxs src='../../../../wxs/sublie.wxs' module='tools' />
+<wxs src='../../../../wxs/subAfter.wxs' module='toAfter' />
+<view class='top_status_parent'>
+  <view class='order_status'>
+    <image src="{{orderStatusImage}}" class='icon' mode='aspectFit'>
+    </image>
+    <text class='text'>{{orderStatustText}}</text>
+  </view>
+</view>
+<view class='address_info_parent'>
+  <view class='logistics' bindtap='checkLogstics' wx:if="{{showLogisticsStatus}}">
+    <text class='text' wx:if="{{!haveLogistsInfo}}">暂无快递信息</text>
+    <image src="{{traffic_icon}}" class='traffic_icon'></image>
+    <view wx:if="{{haveLogistsInfo}}" class='traffic_name'>{{traffic_name}} 单号:{{trafficno}}</view>
+    <view style="flex:1"></view>
+    <image src='/images/uc_next.png' class='next'></image>
+  </view>
+  <view class='user_info'>
+    <view class='address_detail'>
+      <view class='top'>
+        <image class='address_icon' src='/images/order_detail_location.png' mode='aspectFit'>
+        </image>
+        <view>{{user_name}}</view>
+        <view class='phone'>{{user_phone}}</view>
+      </view>
+      <view class='bottom'>{{order_address_detaial}}
+      </view>
+    </view>
+  </view>
+  <view class='scheduled_days_itemLayout'>
+    <view class='tipsLayout' wx:if="{{scheduled_days_item_desc_tips&&scheduled_days_item_desc_value&&showLogisticsStatus}}">
+      <view class='tips'>{{scheduled_days_item_desc_tips}}：</view>
+      <view class='value'>{{scheduled_days_item_desc_value}}</view>
+    </view>
+    <view class='scheduledButtonLayout'>
+      <view style='flex:1'> </view>
+      <block wx:for="{{scheduled_days_item.buttons}}" wx:for-index="idx">
+        <view class="{{idx == 0 ?'light' :'darkbutton'}}" bindtap='scheduledButtonClick' data-position='{{idx}}'>{{item.text}}</view>
+      </block>
+    </view>
+  </view>
+  <image src='/images/shouhuo_mail.png' class='bottom_image'></image>
+</view>
+
+<view wx:if="{{showRx}}" class="rx_info" bindtap="handleRxInfoClick">
+  <image src="{{rx_status_item.image_type==0 ? '/images/icon_warning.png' : '/images/sx_icon_baozhang.png'}}" mode="widthFix"></image>
+  <text wx:if="{{rx_status_item.value}}">{{rx_status_item.value}}\n<text style="color: #999" wx:if="{{rx_status_item.rx_prompt}}">{{rx_status_item.rx_prompt}}</text></text>
+  <image src='/images/uc_next.png' style="width: 14rpx;height:28rpx"></image>
+</view>
+
+<view class='shop_title' bindtap='jumpToShopDetail'>
+  <image class='shop_icon' src='/images/bottom_icon_dianpu.png'>
+  </image>
+  <text class='shop_name'>{{shop_title}}</text>
+</view>
+
+<view class='medicine_list'>
+  <block wx:for="{{medicineList}}" wx:key="{{item.shop_goods_id}}">
+    <view class='medicineList_item' bindtap='jumpToGoodsDetail' data-goodsId="{{item.store_medicineid}}">
+      <image src="{{item.intro_image+'_300x300.jpg'}}" class="medecine_image" mode='aspectFit'>
+      </image>
+      <view class='medicine_info'>
+        <view class='top'>
+          <rich-text class='medicien_name'>
+            <image wx:if="{{item.dict_medicine_type == 1||item.dict_medicine_type == 3}}" src='/images/ic_drug_track_label.png' class='medicine_type_icon'>
+            </image>
+            <image wx:if="{{item.dict_medicine_type == 2}}" src='/images/ic_drug_track_label.png' class='medicine_type_icon'>
+            </image>
+            <image wx:if="{{item.dict_medicine_type == 0}}" src='/images/ic_drug_OTC.png' class='medicine_type_icon'>
+            </image>{{item.medicine_name}}</rich-text>
+          <view style="flex:1"></view>
+          <text class='smallPrice'>¥<text class='Goodsprice'>{{tools.sub(item.unit_price)}}.</text>
+          <text class='smallPrice'>{{toAfter.subAfter(item.unit_price)}}</text></text>
+        </view>
+        <view class='bottom'>
+          <view class='medecine_standard'>{{item.standard}}
+          </view>
+          <view style='flex:1'></view>
+          <view class='medecine_qty'>x{{item.qty}}
+          </view>
+        </view>
+        <view class='periodOfValidity' wx:if="{{item.periodto}}">有效期至：{{item.periodto}}
+            </view>
+      </view>
+    </view>
+  </block>
+  <view class='splite_view' wx:if="{{havePackage}}"></view>
+  <block wx:for="{{packmedicine_list}}" wx:key="{{item.packageid}}">
+    <view class='packgeParent'>
+      <view class='packageName'>
+        <view class="{{item.package_type == 0?'packageType':'course_costume'}}">{{item.package_type == 0?'套餐':'多件装'}}</view>
+        <view class='packageName_text'>{{item.smp_name}}</view>
+      </view>
+      <block wx:for="{{item.medicine_list}}" wx:key="{{item.shop_goods_id}}">
+        <view class='medicineList_item' bindtap='jumpToGoodsDetail' data-goodsId="{{item.store_medicineid}}">
+          <image src="{{item.intro_image+'_300x300.jpg'}}" class="medecine_image" mode='aspectFit'>
+          </image>
+          <view class='medicine_info'>
+            <view class='top'>
+              <rich-text class='medicien_name'>
+                <image wx:if="{{item.dict_medicine_type == 1}}" src='/images/ic_drug_track_label.png' class='medicine_type_icon'>
+                </image>
+                <image wx:if="{{item.dict_medicine_type == 2}}" src='/images/ic_drug_track_label.png' class='medicine_type_icon'>
+                </image>
+                <image wx:if="{{item.dict_medicine_type == 0}}" src='/images/ic_drug_OTC.png' class='medicine_type_icon'>
+                </image>{{item.medicine_name}}</rich-text>
+              <view style="flex:1"></view>
+              <text class='Goodsprice'>¥{{item.unit_price}}</text>
+            </view>
+            <view class='bottom'>
+              <view class='medecine_standard'>{{item.standard}}
+              </view>
+              <view style='flex:1'></view>
+              <view class='medecine_qty'>x{{item.qty}}
+              </view>
+            </view>
+            <view class='periodOfValidity' wx:if="{{item.periodto}}">有效期至：{{item.periodto}}
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </block>
+</view>
+<view class='contactCustomerServic' wx:if="{{contactSoler!='-1'&&store_phone.length>0&&dict_advisory_notice==0}}" bindtap='call'>
+  <image class='icon' src='/images/order_detail_store_phone.png'>
+  </image>
+  <view class='tip'>拨打商家电话</view>
+  <view style='flex:1'></view>
+  <image src='/images/uc_next.png' class='next' mode='aspectFit'></image>
+</view>
+<view class='contactCustomerServic' bindtap="message" wx:if="{{contactSoler!='-1'&&dict_advisory_notice!=0}}">
+  <image class='icon' src='/images/message.png'>
+  </image>
+  <view class='tip'>联系商家</view>
+  <view style='flex:1'></view>
+  <image src='/images/uc_next.png' class='next' mode='aspectFit'></image>
+</view>
+<view class='heightSplite_view'></view>
+<view class='receiptInfo' bindtap="handleInvoiceClick">
+  <view class='receiptype'>
+    <text>发票类型：<text class='receiptTypeValue'>{{invoiceShowName}}</text></text>
+    <image wx:if="{{needreceipt}}" src="/images/uc_next.png" class='next' mode='aspectFit'></image>
+  </view>
+  <!-- <view class='receipheader'>发票抬头：
+    <view class='receiptTypeValue'>{{invoice_applicant}}</view>
+  </view> -->
+</view>
+<view class='heightSplite_view'></view>
+
+<view class='priceInfoParent'>
+  <block wx:for="{{priceInfoData}}" wx:key="index">
+    <view class='priceInfoItem'>
+      <view class="{{item.type == '商品总价'? 'priceTypeBold':'priceType'}}">{{item.type}}</view>
+      <view style='flex:1'></view>
+      <text class="{{item.type == '商品总价'? 'priceSmallPriceBold':'priceSmallPrice'}}">¥<text class="{{item.type == '商品总价'? 'priceBold':'price'}}">{{tools.sub(item.price)}}.</text>
+      <text class="{{item.type == '商品总价'? 'priceSmallPriceBold':'priceSmallPrice'}}">{{toAfter.subAfter(item.price)}}</text></text>
+    </view>
+  </block>
+  <view class='splite'></view>
+  <view class='orderToatal'>
+    <view style='flex:1'></view>
+    <view class='tips'>订单总金额：</view>
+    <text class='smallPrice'>¥<text class='price'>{{tools.sub(total_price)}}.</text>
+    <text class='smallPrice'>{{toAfter.subAfter(total_price)}}</text></text>
+  </view>
+</view>
+<view class='heightSplite_view'></view>
+
+<view class='orderStatus'>
+  <view class='priceInfoItem'>
+    <view class='left'>订单编号</view>
+    <view style='flex:1'></view>
+    <view class='right' style='margin-right: 10rpx;'>{{orderno}}</view>
+    <view class='copyButton' bindtap="copyOderNo">复制</view>
+  </view>
+  <block wx:for="{{statusList}}" wx:key="{{item.dict_order_status}}">
+    <view class='priceInfoItem'>
+      <view class='left'>{{item.dict_order_status_name}}</view>
+      <view style='flex:1'></view>
+      <view class='right'>
+        <view>{{item.create_time}}
+        </view>
+        <view>{{item.description}}
+        </view>
+      </view>
+    </view>
+  </block>
+</view>
+<view class='heightSplite_view' wx:if="{{dict_sckf_off}}"></view>
+<view class='contactCustomerServic' wx:if="{{dict_sckf_off}}">
+  <image class='icon' src='/images/order_detail_service.png'>
+  </image>
+  <view class='tip'>联系商城客服</view>
+  <view style='flex:1'></view>
+  <image src='/images/uc_next.png' class='next' mode='aspectFit'></image>
+  <button open-type="contact" session-from="wx_app" class='tansButton'>微信客服</button>
+</view>
+<view class='heightSplite_view'></view>
+<view class='acceptanceCriteria' bindtap="jumpToH5">
+  <text class='dark'>请按照<text class='light_text'>《药房网商城商品验收标准》</text>对货品进行签收</text>
+</view>
+
+<view class='heightSplite_view'></view>
+<view class='FillView'></view>
+<view class='bottomLayout'>
+  <view class='buttonListLayout'>
+    <order_buttons 
+    datas="{{datas}}" 
+    showButtons="{{showButtons}}" 
+    bind:orderApplyReturn="applyReturn" 
+    hideButtons="{{hideButtons}}" 
+    bind:orderReceived='orderReceived' 
+    bind:orderDelete="onOrderDelete" 
+    bind:onOrderPayNot="onOrderPayNot" 
+    showHideButtonsTips="{{hideButtons.length>0}}" 
+    bind:showHideButtons="onHideButtonsClick" 
+    pageFrom="orderDetail" 
+    unreceive="{{unreceive}}"/>
+  </view>
+  <view style='width:20rpx;height:110rpx;'></view>
+</view>
+
+
+<order_applay_return_modal id="applyReturnOrderModal" bind:checkPhone="checkPhoneNum" />
+<yfwBaseModal id="orderReceived" bind:test="onBaseModalRightButtonClick" />
+<yfwBaseModal id="orderDelete" bind:test="onDeleteRightButtonClick" />
+<yfwBaseModal id="orderPayNot" bind:test="onOrderPayNotMpdelRightButtonClick" needLeftButton="{{false}}" />
+<hideButtons id="hideButtons" datas="{{datas}}" bind:orderApplyReturn="applyReturn" bind:orderDelete="onOrderDelete" bind:orderReceived='orderReceived' bind:onOrderPayNot="onOrderPayNot" />

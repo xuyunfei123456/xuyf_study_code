@@ -1,0 +1,69 @@
+<view class='modal-back' hidden='{{!isShow}}' animation="{{animationData}}" bindtap='hideModal' catchtouchmove='preventD'>
+  <view wx:if='{{showAll}}' class='top_container' catchtap='true'>
+    <image class='top_back' src='/images/top_back_green.png' bindtap='backAction'>back</image>
+    <view class='top_title'>{{showType=="Aliascn"?brandsName:showType=="ss"?manufacturersName:specificationsName}}</view>
+  </view>
+  <scroll-view style='overflow-y: scroll;-webkit-overflow-scrolling: touch;top:{{showAll ? 100:0}}rpx' scroll-y scroll-into-view='{{scrollIntoViewID}}' class='modal-content' catchtap='true'>
+    <view class='box-content' style="margin-bottom:{{showAll ? 0:160}}rpx">
+      <block wx:if='{{!showAll}}'>
+        <text class='Manufacturers-title'>{{brandsName}}</text>
+        <view class='brands-content'>
+          <block wx:for="{{topDrugArray}}" wx:key='{{index}}'>
+            <view bindtap='itemClickAction' data-type='Aliascn' data-info='{{item}}' data-index='{{index}}' class='content {{item.isShowAll?"more":item.select=="select"?"select":""}}'>
+              <view>{{item.name}}</view>
+            </view>
+          </block>
+        </view>
+        <text class='Manufacturers-title'>{{manufacturersName}}</text>
+        <view class='brands-content'>
+          <block wx:for="{{topManufacturerDataArray}}" wx:key='{{index}}'>
+            <view bindtap='itemClickAction' data-type='ss' style="width:44%" data-info='{{item}}' data-index='{{index}}' class='content {{item.isShowAll?"more":item.select == "select"?"select":""}}'>
+              <view>{{item.name}}</view>
+            </view>
+          </block>
+        </view>
+        <text class='Manufacturers-title' wx:if="{{showSpecification}}">{{specificationsName}}</text>
+        <view class='brands-content' wx:if="{{showSpecification}}">
+          <block wx:for="{{topspecificationArray}}" wx:key='{{index}}'>
+            <view bindtap='itemClickAction' style="width:44%" data-type='specification' data-info='{{item}}' data-index='{{index}}' class='content {{item.isShowAll?"more":item.select == "select"?"select":""}}'>
+              <view>{{item.title}}</view>
+            </view>
+          </block>
+        </view>
+      </block>
+      <block wx:else>
+        <view class='center_content'>
+          <block wx:for='{{showType=="Aliascn"?sectionDrugNameArray:showType=="ss"?sectionManufacturerArray:sectionspecificationArray}}' wx:key='{{index}}'>
+            <view wx:if='{{showType !="specification"}}' class='section_header' id='{{item.key}}'>{{item.key}}</view>
+            <block wx:for='{{item.data}}' wx:key='{{index}}'>
+              <view bindtap='itemClickAction' data-type='{{showType}}' data-info='{{item}}' data-index='{{item.index}}' class='cell'>
+                <view class='cell_title {{item.select=="select"?"cell_title_select":""}}'>
+                  {{item.title}}
+                </view>
+                <image wx:if='{{item.select=="select"}}' class='cell_select' src='/images/duihao.png'></image>
+              </view>
+              <view class='cell_line'></view>
+            </block>
+          </block>
+        </view>
+      </block>
+    </view>
+  </scroll-view>
+  <view wx:if='{{showIndex}}' class='indexes' catchtap='ss'>
+    <view class='indexes_container'>
+      <block wx:for='{{showType=="Aliascn"?sectionDrugNameArray:sectionManufacturerArray}}'>
+        <view class='indexes_content' catchtap='indexesSelectAction' data-info='{{item.key}}'>
+          {{item.key}}
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class='bottom_container' catchtap='true'>
+    <view bindtap='resetAction' class='bottom_content bottom_left'>
+      <view>重置</view>
+    </view>
+    <view bindtap='confirmAction' class='bottom_content bottom_right'>
+      <view>确定</view>
+    </view>
+  </view>
+</view>

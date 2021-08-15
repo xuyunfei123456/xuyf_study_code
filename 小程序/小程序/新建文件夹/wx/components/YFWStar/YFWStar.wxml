@@ -1,0 +1,22 @@
+<!--components/YFWStar/YFWStar.wxml-->
+<wxs module="filter">
+  function getStarsCount(stars){
+    return Math.ceil(stars)
+  }
+  module.exports = {
+    getStarsCount: getStarsCount
+  }
+</wxs>
+<view class='root_view'>
+  <view class='total_stars_view'>
+    <block wx:for="{{total}}" wx:key=''>
+      <image class='start' src='/images/nearly_star_disenable.png' style='left:{{index==0?0:index*(starSpacing+starSize)}}rpx'></image>
+    </block>
+  </view>
+  <view class='stars_view' style='width:{{(starSpacing+starSize)*stars-starSpacing/stars}}rpx'>
+    <block wx:for="{{filter.getStarsCount(stars)}}" wx:key=''>
+      <image class='start' src='/images/sx_star.png' style='left:{{index==0?0:index*(starSpacing+starSize)}}rpx;height:{{starSize}}rpx;width:{{starSize}}rpx'></image>
+    </block>
+  </view>
+  <view style='width:{{(starSpacing+starSize)*total}}rpx'></view>
+</view>

@@ -1,0 +1,30 @@
+/* components/YFWMessageRedPointView/YFWMessageRedPointView.wxss */
+.top_content_right {
+  height: 44rpx;
+  width: 44rpx;
+  position: absolute;
+  right: 6px;
+  top: 10rpx;
+}
+ .redPoint_view {
+  position: absolute;
+  top: 4rpx;
+  right: -2rpx;
+  min-width: 26rpx;
+  height: 26rpx;
+  /* padding: 2rpx; */
+  background-color: red;
+  border-top-left-radius: 12rpx;
+  border-top-right-radius: 12rpx;
+  border-bottom-left-radius: 0rpx;
+  border-bottom-right-radius: 12rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.messageCount {
+  color: white;
+  display: flex;
+  font-size: 20rpx;
+}

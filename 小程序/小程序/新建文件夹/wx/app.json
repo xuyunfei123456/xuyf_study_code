@@ -1,0 +1,197 @@
+{
+  "pages": [
+    "pages/YFWHomeFindModule/YFWHomePage/YFWHome",
+    "pages/index/taskList",
+    "pages/YFWAskModule/YFWHealthAskHomePage/YFWHealthAskHome",
+    "pages/YFWAskModule/YFWHealthAskSearchPage/YFWHealthAskSearch",
+    "pages/YFWAskModule/YFWHealthMyAskPage/YFWHealthMyAsk",
+    "pages/YFWAskModule/YFWHealthAskDetailPage/YFWHealthAskDetail",
+    "pages/YFWAskModule/YFWHealthAskQuestionsPage/YFWHealthAskQuestions",
+    "pages/YFWAskModule/YFWHealthAskPharmacistHomePage/YFWHealthAskPharmacistHome",
+    "pages/YFWAskModule/YFWHealthAskAllQuestionPage/YFWHealthAskAllQuestion",
+    "pages/YFWAskModule/YFWHealthAskCategoryQuestionPage/YFWHealthAskCategoryQuestion",
+    "pages/YFWGoodsDetailModule/YFWGoodsDetailQAPage/YFWGoodsDetailQA",
+    "pages/YFWGoodsDetailModule/YFWGoodsDetailPage/YFWGoodsDetail",
+    "pages/YFWHomeFindModule/YFWFindYaoPage/YFWFindYao",
+    "pages/YFWLoginModule/YFWLoginPage/YFWLogin",
+    "pages/YFWMessageModule/YFWMessageHomePage/YFWMessageHome",
+    "pages/YFWMessageModule/YFWMessageListPage/YFWMessageList",
+    "pages/YFWStoreModule/YFWShopDetailHomePage/YFWShopDetailHome",
+    "pages/YFWStoreModule/YFWShopDetailIntroPage/YFWShopDetailIntro",
+    "pages/YFWStoreModule/YFWShopDetailAllGoodsListPage/YFWShopDetailAllGoodsList",
+    "pages/YFWShopCarModule/YFWShopCarPage/YFWShopCar",
+    "pages/YFWShopCarModule/YFWOrderSettlementPage/YFWOrderSettlement",
+    "pages/YFWShopCarModule/YFWOrderSubmitSuccessPage/YFWOrderSubmitSuccess",
+    "pages/YFWSellersListModule/YFWSellersListViewPage/YFWSellersListView",
+    "pages/YFWHomeFindModule/YFWSearchPage/YFWSearch",
+    "pages/index/taskdetail",
+    "pages/YFWSellersListModule/YFWPriceTrendViewPage/YFWPriceTrendView",
+    "pages/YFWLoginModule/YFWBindPhonePage/YFWBindPhone",
+    "pages/YFWHomeFindModule/YFWCategoryPage/YFWCategory",
+    "pages/YFWUserCenterModule/YFWUserCenterPage/YFWUserCenter",
+    "pages/YFWSellersListModule/YFWChoseMerchantPage/YFWChoseMerchant",
+    "pages/YFWHomeFindModule/YFWAroundStorePage/YFWAroundStore",
+    "pages/YFWHomeFindModule/YFWSubCategoryPage/YFWSubCategory",
+    "components/YFWWebView/YFWWebView",
+    "pages/YFWGoodsDetailModule/YFWGoodsAllCommentsPage/YFWGoodsAllComments",
+    "pages/YFWGoodsDetailModule/YFWDiscountNoticePage/YFWDiscountNoticePage",
+    "pages/YFWLoginModule/YFWAuthorLoginPage/YFWAuthorLogin",
+    "pages/YFWShopCarModule/YFWInquiryInfoPage/YFWInquiryInfoPage",
+    "pages/video/video",
+    "pages/YFWGzhMenu/YFWGzhMenu"
+  ],
+  "subpackages": [
+    {
+      "root": "myCenter",
+      "name": "myCenter",
+      "pages": [
+        "pages/YFWUserCenterModule/HealthHuiHotTopic/HealthHuiHotTopic",
+        "pages/YFWUserCenterModule/HealthHuiSearchPage/HealthHuiSearch",
+        "pages/YFWUserCenterModule/YFWHealthHuiPage/YFWHealthHui",
+        "pages/YFWUserCenterModule/YFWSetPage/YFWSet",
+        "pages/YFWUserCenterModule/YFWAccountManagementPage/YFWAccountManagement",
+        "pages/YFWUserCenterModule/YFWMyComplaintPage/YFWMyComplaint",
+        "pages/YFWUserCenterModule/YFWMyEvaluationPage/YFWMyEvaluation",
+        "pages/YFWUserCenterModule/YFWComplaintDetailsPage/YFWComplaintDetails",
+        "pages/YFWUserCenterModule/YFWMyCollectionPage/YFWMyCollection",
+        "pages/YFWUserCenterModule/YFWRecentBrowsePage/YFWRecentBrowse",
+        "pages/YFWUserCenterModule/YFWMyPointsPage/YFWMyPoints",
+        "pages/YFWUserCenterModule/YFWMyCouponPage/YFWMyCoupon",
+        "pages/YFWUserCenterModule/YFWMyCouponRecordPage/YFWMyCouponRecord",
+        "pages/YFWUserCenterModule/YFWAboutUsPage/YFWAboutUs",
+        "pages/YFWUserCenterModule/YFWModifyTheNamePage/YFWModifyTheName",
+        "pages/YFWUserCenterModule/YFWModifyThePhonePage/YFWModifyThePhone",
+        "pages/YFWUserCenterModule/YFWModifyTheQQPage/YFWModifyTheQQ",
+        "pages/YFWUserCenterModule/YFWChangeThePasswordPage/YFWChangeThePassword",
+        "pages/YFWUserCenterModule/YFWFeedBackPage/YFWFeedBack",
+        "pages/YFWUserCenterModule/YFWContactUsPage/YFWContactUs",
+        "pages/YFWUserCenterModule/YFWModifyThePhoneNextPage/YFWModifyThePhoneNext",
+        "pages/YFWUserCenterModule/YFWAddressListPage/YFWAddressList",
+        "pages/YFWUserCenterModule/YFWAddressPage/YFWAddress",
+        "pages/YFWUserCenterModule/YFWMedicinePage/index",
+        "pages/YFWUserCenterModule/YFWMedicinePage/addDrug/index",
+        "pages/YFWUserCenterModule/cancellation/index",
+        "pages/YFWUserCenterModule/accountverify/index",
+        "pages/YFWUserCenterModule/YFWMyPointsDetail/YFWMyPointsDetail",
+        "pages/YFWUserCenterModule/YFWInvitationPage/YFWInvitation",
+        "pages/YFWUserCenterModule/YFWInvitationPage/YFWInvitationOldUser",
+        "pages/YFWUserCenterModule/YFWInvitationPage/YFWInvitationNewUser",
+        "pages/YFWUserCenterModule/YFWInvitatioReappearancePage/YFWInvitatioReappearance",
+        "pages/YFWUserCenterModule/YFWInvitationPage/YFWLLTX",
+        "pages/YFWUserCenterModule/YFWInvitationPage/YFWTxRecord",
+        "pages/YFWUserCenterModule/YFWInvitationPage/YFWExchangePoints",
+        "pages/YFWUserCenterModule/otherMiniAppPay/otherMiniAppPay"
+      ]
+    },
+    {
+      "root": "orderModule",
+      "name": "orderModule",
+      "pages": [
+        "pages/YFWOrderModule/YFWOrderListPage/YFWOrderLis",
+        "pages/YFWOrderModule/YFWLogisticsDetailsPage/YFWLogisticsDetails",
+        "pages/YFWOrderModule/YFWSuccessfulreceiptPage/YFWSuccessfulReceipt",
+        "pages/YFWOrderModule/YFWOrderEvaluationPage/YFWOrderEvaluation",
+        "pages/YFWOrderModule/YFWComplaintOrderPage/YFWComplaintOrder",
+        "pages/YFWOrderModule/YFWComplaintOrderPage/complainDetail/index",
+        "pages/YFWOrderModule/YFWOrderDetailPage/YFWOrderDetail",
+        "pages/YFWOrderModule/YFWOrderSerchPage/YFWOrderSearch",
+        "pages/YFWOrderModule/YFWApplicationForReturnPage/ApplicationForReturn",
+        "pages/YFWOrderModule/YFWDetailsOfRefundPage/YFWDetailsOfRefund",
+        "pages/YFWOrderModule/YFWRefundNegotiationPage/YFWRefundNegotiationPage",
+        "pages/YFWOrderModule/YFWSendReturnPage/YFWSendReturnGoods",
+        "pages/YFWOrderModule/YFWChooseReturnTypePage/YFWChooseReturnTypePage",
+        "pages/YFWOrderModule/YFWEditeReturnPage/YFWEditeReturnPage",
+        "pages/YFWOrderModule/YFWConfirmReceiptPage/YFWConfirmReceipt",
+        "pages/YFWOrderModule/YFWCheckBatchPage/YFWCheckBatch",
+        "pages/YFWOrderModule/YFWReturnGoodsPage/YFWReturnGoods",
+        "pages/YFWOrderModule/YFWOrderListPage/Components/YFWConfirmReceive/index",
+        "pages/YFWOrderModule/YFWInvoiceDetailPage/YFWInvoiceDetailPage",
+        "pages/YFWOrderModule/YFWInvoiceDetailPage/YFWInvoicePage",
+        "pages/YFWOrderModule/YFWOrderDetailPage/Components/Message/index",
+        "pages/YFWOrderModule/YFWRefundLogisticsCompanyPage/YFWRefundLogisticsCompany",
+        "pages/YFWOrderModule/YFWCheckOrderStatusPage/YFWCheckOrderStatusPage",
+        "pages/YFWOrderModule/YFWUploadPrescriptionInfoPage/YFWUploadPrescriptionInfo",
+        "pages/YFWOrderModule/YFWCancleOrderPage/YFWCancleOrderPage",
+        "pages/YFWOrderModule/YFWEditeReturnWithOutGoodsPage/YFWEditeReturnWithOutGoodsPage",
+        "pages/YFWOrderModule/YFWPrescriptionDetailPage/YFWPrescriptionDetailPage",
+        "pages/YFWGroupModule/YFWGroupIndex/GroupIndex",
+        "pages/YFWGroupModule/YFWGroupDetail/groupDetail",
+        "pages/YFWGroupModule/YFWGroupGoodsDetail/groupGoodsDetail"
+      ]
+    }
+  ],
+  "preloadRule": {
+    "pages/YFWUserCenterModule/YFWUserCenterPage/YFWUserCenter": {
+      "packages": [
+        "myCenter",
+        "orderModule"
+      ]
+    }
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于就近推荐服务"
+    },
+    "scope.address": {
+      "desc": "获取您的地址为您设置收货地址"
+    },
+    "scope.invoiceTitle": {
+      "desc": "自动获取发票抬头"
+    },
+    "scope.invoice": {
+      "desc": "自动获取发票"
+    },
+    "scope.writePhotosAlbum": {
+      "desc": "保存商品图片"
+    },
+    "scope.camera": {
+      "desc": "用于扫码查找商品"
+    }
+  },
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#49ddb8",
+    "navigationBarTitleText": "药房网商城",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#fff"
+  },
+  "tabBar": {
+    "selectedColor": "#27BF8F",
+    "backgroundColor": "#fff",
+    "borderStyle": "white",
+    "list": [
+      {
+        "selectedIconPath": "images/tab/bottom_home_selected@3x.png",
+        "iconPath": "images/tab/bottom_home@3x.png",
+        "pagePath": "pages/YFWHomeFindModule/YFWHomePage/YFWHome",
+        "text": "首页"
+      },
+      {
+        "selectedIconPath": "images/tab/bottom_Seek_selected@3x.png",
+        "iconPath": "images/tab/bottom_Seek@3x.png",
+        "pagePath": "pages/YFWHomeFindModule/YFWFindYaoPage/YFWFindYao",
+        "text": "找药"
+      },
+      {
+        "selectedIconPath": "images/tab/bottom_cart_selected@3x.png",
+        "iconPath": "images/tab/bottom_cart@3x.png",
+        "pagePath": "pages/YFWShopCarModule/YFWShopCarPage/YFWShopCar",
+        "text": "购物车"
+      },
+      {
+        "selectedIconPath": "images/tab/bottom_user_selected@3x.png",
+        "iconPath": "images/tab/bottom_user@3x.png",
+        "pagePath": "pages/YFWUserCenterModule/YFWUserCenterPage/YFWUserCenter",
+        "text": "我的"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "debug": false,
+  "sitemapLocation": "sitemap.json"
+}

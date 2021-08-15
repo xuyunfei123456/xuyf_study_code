@@ -1,0 +1,361 @@
+page {
+  background-color: #fafafa
+}
+
+.goodsDelWrapper {
+  width: 100vw;
+  background-color: #f5f5f5;
+  position: relative;
+}
+
+.medicine_banner_imgs {
+  width: 100%;
+  height: 580rpx;
+  background-color: #ffffff;
+}
+
+.banner_container {
+  width: 100%;
+  height: 100%;
+}
+
+.banner_content {
+  width: 100%;
+  height: 100%;
+}
+
+.detail_decoration {
+  width: 100%;
+  height: 101rpx;
+  position: relative;
+}
+
+.price_hurdle {
+  width: 100%;
+  height: 100%;
+}
+
+.detail_decoration_shop_del {
+  position: absolute;
+  left: 33rpx;
+  bottom: 0rpx;
+  font-size: 24rpx;
+  color: #fffefe;
+  height: 100%;
+  box-sizing: border-box;
+  padding-top: 6rpx;
+}
+
+.shop_price {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.current_price {
+  font-weight: bold;
+  margin-right: 15rpx;
+  font-size: 32rpx;
+}
+
+.original_price {
+  margin-bottom: -12rpx;
+  position: relative;
+}
+
+.original_price::after {
+  content: "";
+  position: absolute;
+  width: 110%;
+  height: 2rpx;
+  background-color: #fffefe;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 12rpx;
+}
+
+.price_font_big {
+  font-size: 40rpx;
+}
+
+.detail_decoration_group_num {
+  position: absolute;
+  height: 100%;
+  left: 72.8%;
+  bottom: 0rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.group_num_pic {
+  width: 32rpx;
+  height: 29rpx;
+}
+
+.group_num_del {
+  color: #ff2e5d;
+  font-size: 28rpx;
+  margin-left: 11rpx;
+}
+
+.group_num {
+  font-size: 32rpx;
+  font-weight: bold;
+}
+
+.shop_area {
+  width: 100%;
+  box-sizing: border-box;
+  padding-top: 39rpx;
+  padding: 39rpx 24rpx 27rpx 24rpx;
+  color: #333333;
+  background-color: #ffffff;
+  margin-bottom: 20rpx;
+}
+
+.drug_type_pic {
+  width: 55rpx;
+  height: 24rpx;
+}
+
+.shop_area_one {
+  margin-bottom: 30rpx;
+  font-size: 29rpx;
+  line-height: 24rpx;
+}
+
+.shop_area_drug_name {
+  margin-left: 8rpx;
+}
+
+.shop_area_two,
+.shop_area_thr {
+  margin-bottom: 21rpx;
+  font-size: 26rpx;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.shop_area_title,
+.fn_major_title {
+  font-weight: bold;
+  margin-right: 15rpx;
+}
+
+.spec_del {
+  margin-right: 15rpx;
+}
+
+.shop_area_four {
+  color: #999999;
+  font-size: 24rpx;
+}
+.out_area{
+  width: 100%;
+  padding-bottom: 20rpx;
+  box-sizing: border-box;
+}
+.fn_major {
+  color: #333333;
+  font-size: 26rpx;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  padding: 40rpx 44rpx 39rpx 27rpx;
+}
+
+.fn_major_title {
+  flex-shrink: 0;
+}
+
+.fn_major_del {
+  line-height: 35rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+.tabs_area{
+  width: 100%;
+  color: #333333;
+  min-height: 100vh;
+  padding-bottom: 110rpx;
+  box-sizing: border-box;
+}
+.tabs_header{
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  height: 96rpx;
+  background-color: #ffffff;
+ width: 100%;
+ z-index: 9;
+}
+.tabs_item{
+  position: relative;
+  width: 33.333%;
+  height: 100%;
+}
+.tab_item_title{
+width: 100%;
+  font-size: 28rpx;
+  line-height: 96rpx;
+  text-align: center;
+  z-index: 1;
+  position: absolute;
+  left: 0rpx;
+  top: 0rpx;
+}
+.tab_item_title_underLine{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 127rpx;
+  height: 11rpx;
+  bottom: 32rpx;
+  background-image: linear-gradient(90deg,  #4bfdf2 0%, #4bff8f 100%), linear-gradient(#94ffc4, #94ffc4);
+  box-shadow: 2rpx 3rpx 6rpx 0rpx rgba(131, 241, 219, 0.59);
+}
+.tab_content{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0rpx 24rpx;
+  color: #333333;
+}
+.tab_content_title{
+font-size: 25rpx;
+font-weight: bold;
+margin-top: 34rpx;
+}
+.tab_content_del{
+  background-color: #ffffff;
+  border-radius: 13rpx;
+  margin-top: 22rpx;
+  padding: 7rpx 20rpx 30rpx 27rpx;
+  box-sizing: border-box;
+}
+.basic_info{
+  margin-top: 20rpx;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  font-size: 23rpx;
+}
+.basic_info_title{
+  width: 100rpx;
+  margin-right: 40rpx;
+  color: #999999;
+}
+.basic_info_del{
+  color: #333333;
+}
+.tab_drug_info{
+  padding: 20rpx;
+}
+.drug_info_pic{
+  max-width: 100%;
+  height: 533rpx;
+  margin-top: 20rpx;
+}
+.fixed_tabs_header{
+  position: fixed;
+  left: 0rpx;
+  top: 0rpx;
+}
+.tab_content_padtop{
+  padding-top: 96rpx;
+}
+.spe_book_item{
+  margin-top: 20rpx;
+}
+.spe_book_title{
+  font-weight: bold;
+  font-size: 23rpx;
+  color: #333333;
+}
+.spe_book_content{
+  font-size: 23rpx;
+  color: #333333;
+  margin-top: 16rpx;
+}
+.tab_content_title {
+  color: #333333;
+  margin-top: 20rpx;
+}
+.serve_tab_content{
+  font-size: 25rpx;
+  color: #333333;
+  margin-top: 16rpx;
+}
+.return_item{
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.dot_circle{
+  width: 12rpx;
+  height: 12rpx;
+  border-radius: 50%;
+ margin-right: 6rpx;
+ flex-shrink: 0;
+ margin-top: 10rpx;
+}
+.dot_circle_red{
+  background-color: #e7431a;
+}
+.dot_circle_green{
+  background-color: #32df74;
+}
+.tabs_bom{
+  position: fixed;
+  width: 100%;
+  bottom: 0rpx;
+  padding-bottom: constant(safe-area-inset-bottom); /*兼容 IOS<11.2*/
+  padding-bottom: env(safe-area-inset-bottom); /*兼容 IOS>11.2*/
+  left: 0rpx;
+  height: 100rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  background-color: #ffffff;
+}
+.tabs_bom_left{
+  flex: 1;
+  color: #333333;
+  font-size: 22rpx;
+  text-align: center;
+  background-color: #ffffff;
+  height: 100rpx;
+  box-sizing: border-box;
+  padding-top: 15rpx;
+}
+.tabs_bom_home{
+  width: 33rpx;
+  height: 39rpx;
+  margin-bottom: 9rpx;
+}
+.tabs_bom_right{
+  background-image: linear-gradient(270deg, #ff5a71 0%, #ff2d5d 50%, #ff0048 100%);
+  flex: 1;
+  text-align: center;
+  color: #ffffff;
+  font-size: 29rpx;
+  line-height: 100rpx;
+  height: 100rpx;
+}
+.tab_del_qualification{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.store_qualification_pic{
+  width: 40%;
+  height: 230rpx;
+  border-radius: 8rpx;
+}

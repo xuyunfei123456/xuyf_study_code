@@ -1,0 +1,142 @@
+<view wx:if="{{returnType==1}}" class="top_menu">
+  <view class="top_align" bindtap="_typeChangeAction" data-type="{{1}}">
+    <YFWTitleView fontWeight='500' fontSize='30' title='未收货' lineHeight='25' showLine='{{selectType == 1}}'></YFWTitleView>
+  </view>
+  <!-- 无物流信息只显示未收货 -->
+  <view wx:if="{{ReturnTypeAfterSend !== '2'}}" class="top_align" bindtap="_typeChangeAction" data-type="{{2}}">
+    <YFWTitleView fontWeight='500' fontSize='30' title='已收货' lineHeight='25' showLine='{{ selectType == 2}}'></YFWTitleView>
+  </view>
+  <view wx:else class="top_align"></view>
+</view>
+
+<block wx:if="{{returnType==1}}">
+  <view class="medicine-view">
+    <block wx:for="{{medicines}}" wx:key="medicine">
+      <view class="medicine-item" style="{{index==medicines.length-1 ? 'border-bottom: solid 1rpx #fff;' : ''}}">
+        <image class="medicine-img" style="left:0" src="{{item.image}}" mode="aspectFit"></image>
+        <view class="medicine-np" style="margin-left:20vw;width:68vw">
+          <text class="medicine-name">{{item.name}}</text>
+          <text class="medicine-price">¥{{item.price}}</text>
+        </view>
+        <view class="medicine-sq" style="margin-left:20vw;width:68vw">
+          <text>{{item.standard}}</text>
+          <text>x{{item.quantity}}</text>
+        </view>
+      </view>
+    </block>
+  </view>
+</block>
+<block wx:else>
+  <view class="medicine-view medicine-top">
+    <block wx:for="{{medicines}}" wx:key="medicine">
+      <view class="medicine-item" data-item="{{item}}" data-index="{{index}}" catchtap="handleMedicineClick" style="{{index==medicines.length-1 ? 'border-bottom: solid 1rpx #fff;' : ''}}">
+        <view class="medicine-icon"><image src="{{item.active ? '/images/icon_choose.png' : '/images/icon_unchoose.png'}}"></image></view>
+        <image class="medicine-img" src="{{item.image}}" mode="aspectFit"></image>
+        <view class="medicine-np">
+          <text class="medicine-name">{{item.name}}</text>
+          <text class="medicine-price">¥{{item.price}}</text>
+        </view>
+        <view class="medicine-sq">
+          <text>{{item.standard}}</text>
+          <view class="medicine-quantity" catchtap="handleCatchTap">
+            <text class="quantity-sd" data-item="{{item}}" data-index="{{index}}" catchtap="handleSubMedicineQuantity">-</text>
+            <input class="quantity-input" type="number" data-item="{{item}}" data-index="{{index}}" bindinput="handleInputMedicineQuantity" bindblur="handleInputMedicineQuantityEnd" value="{{item.amount}}"></input>
+            <text class="quantity-sd" data-item="{{item}}" data-index="{{index}}"  catchtap="handleAddMedicineQuantity">+</text>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</block>
+
+<view class="tipContainer">
+  <view class="tip-title">
+    <image src="/images/tip.png" class="tip-img"/>
+    <text class="text-14 weight-500 tip-color ml-10">温馨提示</text>
+  </view>
+  <block wx:for="{{(returnType==1&&selectType==1)?noReceiveTips:receiveTips}}" we:key="">
+    <view class="tip-context">
+      <view class="tip-d"></view>
+      <text class="text-12 text-light">{{item}}</text>
+    </view>
+  </block>
+</view>
+
+<view class="reason-view" bindtap="handleShowReasonModal">
+  <text class="reason-tt">退款原因</text>
+  <text class="reason">{{selectReason.reason}}</text>
+  <image class="reason-icon" src="/images/around_detail_icon.png"></image>
+</view>
+
+<view class="reason-pro">{{selectReason.promptinfo}}</view>
+
+<view class="money-v">
+  <text class="money-title">退款金额：</text>
+  <text class="money" style="font-size:20rpx">¥</text>
+  <text wx:if="{{selectType==1}}" class="money">{{orderTotal}}</text>
+  <input wx:else value="{{inputMoney}}" bindinput="handleMoneyInput" bindblur="handleMoneyInputEnd" class="money-input" type="digit"></input>
+</view>
+<text class="money-desc">最多 {{orderTotal}} 元(含运费及包装费)</text>
+
+<block wx:if="{{selectType==2}}">
+  <block wx:if="{{selectReason.is_upload_img}}">
+    <view class="cert-title">
+      <YFWTitleView fontWeight='500' fontSize='26' title='上传凭证' showLine='true'></YFWTitleView>
+    </view>
+    <view class="cert-view">
+      <block wx:for="{{certImages}}" wx:key="certImage">
+        <view class="cert-item" bindtap="handleLookBigImage" data-type="cert" data-item="{{item}}" data-index="{{index}}">
+          <image src="{{item.localPath}}" mode="aspectFit"></image>
+          <view class="cert-del" catchtap="handleDeleteImage" data-type="cert" data-item="{{item}}" data-index="{{index}}"><image src="/images/ic_pic_del.png"></image></view>
+        </view>
+      </block>
+      <image wx:if="{{certImages.length<3}}" bindtap="handleUploadCertImage" data-type="cert" src="/images/upload_photo2.png"></image>
+    </view>
+  </block>
+
+  <block wx:if="{{selectReason.is_show_upload_img_report}}">
+    <view class="cert-title" style="width: 218rpx">
+      <YFWTitleView fontWeight='500' fontSize='26' title='上传检验报告' showLine='true'></YFWTitleView>
+    </view>
+    <view class="cert-view">
+      <block wx:for="{{reportImages}}" wx:key="reportImage">
+        <view class="cert-item" bindtap="handleLookBigImage" data-type="report" data-item="{{item}}" data-index="{{index}}">
+          <image src="{{item.localPath}}" mode="aspectFit"></image>
+          <view class="cert-del" catchtap="handleDeleteImage" data-type="report" data-item="{{item}}" data-index="{{index}}"><image src="/images/ic_pic_del.png"></image></view>
+        </view>
+      </block>
+      <image wx:if="{{reportImages.length<3}}" bindtap="handleUploadCertImage" data-type="report" src="/images/upload_photo3.png"></image>
+    </view>
+  </block>
+</block>
+
+<view class="bottom-view">
+  <view class='post_button' bindtap='handleConfirmReturnApply'>
+    <view class='text'>提交</view>
+  </view>
+</view>
+
+<view hidden="{{!showReasonModal}}" id="reason-modal" class="reason-modal" catchtap="handleCloseReasonModal" catchtouchmove="handleCatchTap">
+  <view class="reason-content" id="reason-modal-content" catchtap="handleCatchTap">
+    <view class="reason-header">
+      <text>退款原因</text>
+      <view bindtap="handleCloseReasonModal"><image src="/images/search_del.png"></image></view>
+    </view>
+    <view wx:if="{{selectType==2}}" class="reason-type">
+      <block wx:for="{{goodsReason.reasons}}" wx:key="reasonType">
+        <view class="reason-type-item" bindtap="handleReasonTypeClick" data-item="{{item}}" data-index="{{index}}">
+          <YFWTitleView fontWeight='500' fontSize='28' title='{{item.name}}' showLine='{{index==goodsReason.index}}'></YFWTitleView>
+        </view>
+      </block>
+    </view>
+    <scroll-view scroll-y class="reason-scroll">
+      <block wx:for="{{modalReasons.reasons}}" wx:key="reasonItem">
+        <view class="reason-item" bindtap="handleReasonItemClick" data-item="{{item}}" data-index="{{index}}">
+          <text>{{item.reason}}</text>
+          <image src="{{index==modalReasons.index ? '/images/icon_choose.png' : '/images/icon_unchoose.png'}}"></image>
+        </view>
+      </block>
+    </scroll-view>
+    <view class="reason-confirm" bindtap="handleConfirmReason">确定</view>
+  </view>
+</view>

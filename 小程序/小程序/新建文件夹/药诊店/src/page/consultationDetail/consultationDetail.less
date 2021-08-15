@@ -1,0 +1,341 @@
+.consultationDetail {
+  background: #f5f5f5;
+  height: 100vh;
+  width: 100%;
+  .wrapper {
+    position: absolute;
+    top: 56.67px;
+    bottom: 75px;
+    width: 100%;
+
+    .doctor_info{
+      margin-top: 10px;
+      height: 77px;
+      border-radius: 7px;
+      background: #fff;
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      box-shadow: 0 2px 13.067px 0.267px rgba(0, 0, 0, 0.04);
+      align-items: center;
+      .jswz{
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 18.333px;
+        width: 60px;
+      }
+      .doctor_ava{
+        height: 50px;
+        width: 50px;
+        margin-left: 16px;
+      }
+      .doctor_job{
+        color: #333;
+        font-weight: bold;
+        margin-left: 10px;
+        .doctor_name{
+          font-size: 16px;          
+        }
+        .doctor_level{
+          font-size: 14px;
+          padding-left: 6px;
+        }
+      }
+      .doctor_company{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding-top: 8.333px;
+        font-weight: 400;
+        .company_level{
+          width: 25.667px;
+          height: 12px;
+          border-radius: 6px;
+          background: linear-gradient(135deg,rgb(101,162,250),rgb(51,105,255));
+          line-height: 12px;
+          text-align: center;
+          font-size: 10px;
+          color: #fff;
+        }
+        .doctor_company_name{
+          padding-left: 1.662px;
+          font-size: 13px;
+          color: #333333;
+          .doctor_belong{
+            padding-left: 10px;
+          }
+        }
+      }
+    }
+    .consultation_detail{
+      border-radius: 7px;
+      padding-top: 23.333px;
+      padding-left: 16px;
+      box-sizing: border-box;
+      font-size: 14px;
+      background: #fff;
+      margin-top: 13.333px;
+      .sick{
+        border-bottom: 1.667px solid #eee;
+        padding-bottom: 13.333px;
+      }
+      .disease{
+        padding-top: 13.333px;
+        align-items: flex-start;
+      }
+      .picarr{
+        padding-top: 13px;
+        padding-bottom: 10px;
+        .rx_pic{
+          width:80.667px;
+          height:80.667px;
+          border-radius: 4px;
+          margin-left: 13.333px;
+          margin-bottom: 10px;
+        }
+      }
+    }
+    .order_detail{
+      background: #fff;
+      margin-top: 10px;
+      border-radius: 7px;
+      box-sizing: border-box;
+      padding: 23.667px 0 0 16.667px;
+      .order_no{
+        .copy{
+          width: 14px;
+          height: 16px;
+          vertical-align: middle;
+          margin-left: 5px;
+          flex-shrink: 0;
+        }
+      }
+      .order_time{
+        padding-top: 20.333px;
+        border-bottom: 1.667px solid #eee;
+        padding-bottom: 22px;
+      }
+      .pay_mode{
+        padding-top: 19.333px;
+      }
+      .pay_time{
+        padding-top: 20px;
+        border-bottom: 1.667px solid #eee;
+        padding-bottom: 22px;
+      }
+      .consultation_money{
+        padding-top: 21px;
+      }
+      .consultation_coupon{
+        padding-top: 20px;
+      }
+    }
+    .pay_money{
+      padding-top: 23px;
+      text-align: right;
+      color: rgb(255,51,0);
+      font-weight: bold;
+      padding-bottom: 12.667px;
+      .pay_title{
+        font-size: 14px;
+        color: #666;
+      }
+      .money_sumbol{
+        font-size: 16px;
+        padding-left: 13px;
+      }
+      .money_int{
+        font-size: 20px;
+      }
+      .money_float{
+        padding-right: 16px;
+      }
+    }
+    .radio{
+      height: 50px;
+      font-size: 14px;
+      .radio_left{
+        color: #333;
+        font-weight: bold;
+      }
+      .radio_right{
+        color: #999;
+        padding-right: 16px;
+      }
+    }
+    .radio_wrapper{
+      margin-top: 10px;
+      background: #fff;
+    }
+  }
+  .bottom_area {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 0;
+    height: 65px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #fff;
+    .other {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 78.667px;
+      height: 28.667px;
+      .dot {
+        height: 3.167px;
+        width: 16.333px;
+
+      }
+      .hideBtns_wrapper {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        bottom: 23px;
+        width: 68.333px;
+        .hide_btns {
+          box-shadow: 0 2px 6.553px 0.133px rgba(0, 0, 0, 0.06);
+          padding-left: 11.333px;
+          padding-top: 13.333px;
+          border-radius: 7px;
+          background: #fff;
+          .hide_btns_item {
+            color: #333;
+            font-size: 12px;
+            padding-bottom: 13.333px;
+          }
+        }
+        .arrow {
+          width: 0;
+          height: 0;
+          border-width: 12px 8px 0 8px;
+          border-style: solid;
+          border-color: #fff transparent transparent transparent;
+          transform: translateX(28px);
+          filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.06));
+        }
+      }
+    }
+    .btns {
+      padding-right: 16px;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      .btn {
+        width: 78.667px;
+        height: 28.667px;
+        line-height: 28.667px;
+        text-align: center;
+        border-radius: 14.333px;
+        font-size: 13px;
+        color: #666;
+        font-weight: 400;
+        border: 1px solid #bbb;
+        margin-left: 13.333px;
+      }
+    }
+  }
+  .flexrow {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+  }
+  .consultationDetail_item_left{
+    color: #666;
+    font-weight: normal;
+    min-width: 60px;
+  }
+  .consultationDetail_item_right{
+    color: #333;
+    font-weight: bold;
+    padding-right: 15.667px;
+  }
+  .money_sumbol{
+    font-size: 13px;
+  }
+  .money_int{
+    font-size: 15.533px;
+  }
+  .money_float{
+    font-size: 13px;
+  }
+  .radio_content{
+    padding: 19.333px 16.333px;
+    padding-bottom: 0;
+    .radio_top{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      .radio_top_left{
+        .radio_name{
+          font-size: 14px;
+          color: #333;
+          font-weight: bold;
+        }
+        .radio_time{
+          font-size: 12px;
+          color: #999;
+          padding-top: 8px;
+        }
+      }
+      .radio_top_right{
+        height: 28.667px;
+        width: 28.667px;
+      }
+    }
+
+  }
+  .radio_tota_time{
+    justify-content: space-between;
+    display: flex;
+    font-size: 12px;
+    color: #999;
+    padding: 0 15px;
+    margin-top: -8px;
+    padding-bottom: 20px;
+  }
+  .topContent{
+    position: fixed;
+    top: 0;
+    height: 56.667px;
+    width: 100%;
+    .status{
+      position: relative;
+      width: 100%;
+      height: 56.667px;
+      .status_img{
+        width: 100%;
+        height: 56.667px;
+      }
+      .status_text{
+        position: absolute;
+        height: 56.667px;
+        width: 375px;
+        top: 0;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        .status_text_pic{
+          height: 22.667px;
+          margin-left: 16.333px;
+          margin-right: 7px;
+        }
+        .status_text_content{
+          font-size: 20px;
+          color: #fff;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+  .greenbtn{
+    color: #00b187 !important;
+    border: 2rpx solid #00b187 !important;
+  }
+}

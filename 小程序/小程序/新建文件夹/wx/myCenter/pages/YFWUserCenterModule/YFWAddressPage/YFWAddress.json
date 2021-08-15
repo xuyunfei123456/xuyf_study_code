@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "YFWActionModal": "../../../../components/YFWActionModal/YFWActionModal",
+    "YFWTitleView": "/components/YFWTitleView/YFWTitleView"
+  },
+  "navigationBarBackgroundColor": "#49ddb8",
+  "navigationBarTextStyle": "white"
+}

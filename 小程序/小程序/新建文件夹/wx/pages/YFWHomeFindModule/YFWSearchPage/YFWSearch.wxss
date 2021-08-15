@@ -1,0 +1,103 @@
+/* pages/YFWHomeFindModule/YFWSearchPage/YFWSearch.wxss */
+page{
+  background-color: white
+}
+.container {
+  width: 100vw;
+  height: 100vh;
+}
+.toSearchView {
+  display: flex;
+  flex-direction: row;
+  background-color: #49ddb8;
+  height: 100rpx;
+  align-items: center;
+  position: fixed
+}
+.topSearchInputView{
+  height: 67rpx;
+  width: 80vw;
+  border-radius: 34rpx;
+  display: flex;
+  flex-direction: row;
+  margin-left: 25rpx;
+  background-color: white;
+  align-items: center;
+}
+.searchIcon {
+  margin-left: 18rpx;
+  width: 38rpx;
+  height: 30rpx;
+}
+.topViewSearchInput{
+  display: block;
+  height: 28rpx;
+  width: 80vw;
+  margin-left: 21rpx;
+  margin-right: 88rpx;
+  background-color: white;
+  caret-color: #1fdb9b;
+  color: #666666;
+  font-size: 28rpx;
+}
+.search-del {
+  display: block;
+  margin-right: 20rpx;
+  width: 40rpx;
+  height: 30rpx;
+  opacity: 0.4;
+}
+.qr_sys {
+  display: block;
+  margin-right: 32rpx;
+  width: 48rpx;
+  height: 32rpx;
+}
+.inputplaceholder {
+  font-size: 28rpx;
+  color: #cccccc;
+  display: block;
+  height: 28rpx;
+  width: 80vw;
+}
+.topViewSearchBotton{
+  display: flex;
+  height: 100rpx;
+  width: 15vw;
+  padding-left: 22rpx;
+  padding-right: 37rpx;
+  align-items: center;
+  justify-content: center;
+}
+.topViewSearchBotton text {
+  font-size: 34rpx;
+  color: white;
+}
+.topViewSearchBotton image {
+  width: 42rpx;
+  height: 42rpx;
+}
+.scroll {
+  position: fixed;
+  width: 100%;
+  bottom: 0rpx;
+  display: flex;
+  top:100rpx;
+}
+.kind-white{
+  display: flex;
+  height: 100rpx;
+  width: 15vw;
+}
+.kind-text{
+  display: flex;
+  height: 100rpx;
+  width: 70vw;
+  justify-content: center;
+  align-items: center;
+  
+}
+.kind-text text{
+  font-size: 30rpx;
+  color: white
+}

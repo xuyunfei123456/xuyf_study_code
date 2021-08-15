@@ -1,0 +1,77 @@
+/* pages/YFWLoginModule/YFWLoginPage/YFWLogin.wxss */
+
+.container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  background: #fff
+}
+
+.top_view_img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.top_img {
+  width: 610px;
+  height: 502px;
+  margin-top: 170px;
+}
+
+.bottom_view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.text-login {
+  flex-direction: column;
+  display: flex;
+  text-align: left;
+  font-size: 24px;
+  color: #666;
+  margin-left: 70px;
+  margin-right: 70px;
+  margin-top: 70px;
+  line-height: 44px;
+  font-family: SourceHanSansCN-Normal;
+}
+
+.btn-login {
+  height: 82px;
+  width: 90%;
+  background-color: #1fdb9b;
+  font-size: 32px;
+  color: #fff;
+  margin-top: 41px;
+  align-items: center
+}
+.btn-login::after{
+  border: none; 
+}
+.view-phone-login {
+  height: 82px;
+  width: 90%;
+  margin-top: 41px;
+  margin-left: 5%;
+  margin-right: 5%;
+  // border: 2px #1fdb9b solid;
+  background: #1fdb9b;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+}
+.btn-phone-login {
+  font-size: 30px;
+  color: #ffffff;
+  margin-left: 40%;
+}
+.img-phone-login {
+  width: 28px;
+  height: 48px;
+  position: absolute;
+  left: 32%;
+}

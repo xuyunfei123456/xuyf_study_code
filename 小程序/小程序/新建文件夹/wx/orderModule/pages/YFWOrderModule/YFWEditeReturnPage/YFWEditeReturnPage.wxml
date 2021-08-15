@@ -1,0 +1,131 @@
+<wxs src='../../../../wxs/sublie.wxs' module='tools' />
+<wxs src='../../../../wxs/subAfter.wxs' module='toAfter' />
+<view class='topLayout'>
+  <view class='topReturnTypeLayout'>
+    <text class='tips'>退货类型：<text class='typeValue'>{{returnType == 'returnGoods'?'我要退货':'我要退款（无需退货）'}}</text></text>
+  </view>
+</view>
+
+<view class='returnGoodsInfo'>
+  <view class='title'>
+    <view class='text'>退货商品及数量</view>
+    <view class='bottom'></view>
+  </view>
+  <view class='goodsList'>
+    <block wx:for="{{goodsList}}" wx:key="{{item.order_medicineno}}" wx:for-index="idx">
+      <view class='goodsListItem'>
+        <image wx:if="{{item.checked}}" src='/images/chooseBtn.png' class='checkStatus' mode='aspectFit'  bindtap='chooseReturnGoods' data-index="{{idx}}"></image>
+        <image wx:if="{{!item.checked}}" src='/images/icon_unchoose.png' class='unCheckStatus' mode='aspectFit'  bindtap='chooseReturnGoods' data-index="{{idx}}"></image>
+        <image src='{{item.image}}_300x300.jpg' class='goodsImage'></image>
+        <view class='medicienInfoLayout'>
+          <view class='top'>
+            <rich-text class='medicien_name'>
+              <image wx:if="{{item.dict_medicine_type == 1}}" src='/images/ic_drug_track_label.png' class='medicine_type_icon'>
+              </image>
+              <image wx:if="{{item.dict_medicine_type == 2}}" src='/images/ic_drug_track_label.png' class='medicine_type_icon'>
+              </image>
+              <image wx:if="{{item.dict_medicine_type == 0}}" src='/images/ic_drug_OTC.png' class='medicine_type_icon'>
+              </image>{{item.name}}</rich-text>
+            <text class='smallPrice'>¥<text class='Goodsprice'>{{tools.sub(item.price)}}.</text><text class='smallPrice'>{{toAfter.subAfter(item.price)}}</text></text>
+          </view>
+          <view class='bottom'>
+            <view class='quantity' wx:if="{{!item.showEditeBox}}">{{item.quantity}}</view>
+            <view class='editeReturnQty' wx:if="{{item.showEditeBox}}">
+              <view class='subtract' style="color:{{item.defaultReturnQty>1?'#333':'#999'}}" bindtap="subtract" data-index="{{idx}}">-
+              </view>
+              <view class='editeSplite'>
+              </view>
+              <input class='numberInput' value='{{item.defaultReturnQty}}' bindconfirm="onIputTextChange"  bindblur="onIputTextChange" type='number' confirm-type='done' data-index="{{idx}}">
+              </input>
+              <view class='editeSplite'>
+              </view>
+              <view class='add' style="color:{{item.defaultReturnQty == item.quantity?'#999':'#333'}}" bindtap="add" data-index='{{idx}}'>+
+              </view>
+            </view> 
+            <view wx:if="{{item.showEditeBox}}">退货数量:</view>
+            <view wx:if="{{!item.showEditeBox}}">退货数量:</view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
+
+<view class='returnReason'>
+  <view class='returnReasonType'>
+    <block wx:for="{{reasonType}}" wx:for-index="idx" wx:key="{{idx}}">
+      <view class='reasonItem' bindtap='changeReasonType' data-index="{{idx}}">
+        <view class='reasonTitle'>
+          <view class='reasonText'>{{item}}</view>
+          <view wx:if="{{checkedReasonTypePosition == idx}}" class='reasonBottom'></view>
+        </view>
+      </view>
+    </block>
+  </view>
+  <view class='returnDetailReason'>
+    <block wx:for="{{reasonList}}" wx:for-index="idx" wx:key="{{idx}}">
+      <view class='ItemLayout' bindtap='chooseReturnReason' data-index="{{idx}}">
+        <view class="{{checkedReasonPosition == idx?'checkedTips':'unCheckedTips'}}">{{item.reason}}
+        </view>
+        <image wx:if="{{checkedReasonPosition == idx}}" src='/images/chooseBtn.png' class='checkedImage'></image>
+      </view>
+      <view class='splite' wx:if="{{idx!=reasonListLength-1}}">
+      </view>
+    </block>
+  </view>
+</view>
+
+<view class='upLoadVoucher' wx:if="{{needRenderVoucher}}">
+  <view class='title' style='margin-bottom:20rpx'>
+    <view class='text'>上传凭证</view>
+    <view class='bottom' style='width:130rpx;'></view>
+  </view>
+  <view class='tips'>{{promptinfo}}</view>
+  <view class='voucherLayout'>
+    <block wx:for="{{voucherImageArray}}" wx:for-index="idx">
+      <view class='postPicLayout'>
+        <image class='uploadIcon' src='{{item}}' bindtap='showBigPic' data-item='{{item}}' data-type='voucher'>
+        </image>
+        <image class='deletPic' src='/images/ic_pic_del.png' bindtap='deleteVoucherPic' data-index='{{idx}}'>
+        </image>
+      </view>
+    </block>
+    <image src='/images/upload_photo2.png' class='uploadIcon' bindtap='postVoucherImage'  wx:if="{{voucherImageArray.length<3}}"></image>
+  </view>
+</view>
+
+<view class='upLoadVoucher' wx:if="{{needRenderReport}}">
+  <view class='title' style='margin-bottom:20rpx'>
+    <view class='text'>上传检验报告</view>
+    <view class='bottom' style='width:180rpx;'></view>
+  </view>
+  <view class='tips'>{{prompt_info_report}}</view>
+  <view class='voucherLayout'>
+    <block wx:for="{{reportImageArray}}" wx:for-index="idx">
+      <view class='postPicLayout'>
+        <image class='uploadIcon' src='{{item}}' bindtap='showBigPic' data-item='{{item}}' data-type='report'>
+        </image>
+        <image class='deletPic' src='/images/ic_pic_del.png' bindtap='deleteReportPic' data-index='{{idx}}'>
+        </image>
+      </view>
+    </block>
+    <image src='/images/upload_photo3.png' class='uploadIcon' bindtap='postReportImage'></image>
+  </view>
+</view>
+
+<view class='moneyInfo'>
+  <view class='top'>
+    <view class='tips'>退款金额：</view>
+    <text class='value-normal'>最多<text class='value'>{{order_total}}</text>元（含运费及包装费<text class='value'>{{package_shipping_total}}</text>元）</text>
+  </view>
+  <view class='top' style='margin-top:40rpx;'>
+    <view class='tips'>其他金额：</view>
+    <input class='value' style='color:#333333' placeholder='请填写准确退款金额' placeholder-class='inputHolder' type='digit' bindinput='onInputChange' value='{{otherMoney}}'></input>
+  </view>
+</view>
+
+<view class='postButton' bindtap='postApplyReturnInfo'>
+  <view class='text'>提交</view>
+</view>
+
+<view class='fillBottom'></view>

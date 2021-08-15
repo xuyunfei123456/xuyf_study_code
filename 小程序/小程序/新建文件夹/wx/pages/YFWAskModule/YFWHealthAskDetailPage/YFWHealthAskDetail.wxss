@@ -1,0 +1,369 @@
+/* pages/YFWAskModule/progrmDel/progrmDel.wxss */
+page{
+  background-color: #f8f8f8;
+}
+.out-skip {
+  width: 100%;
+  position: relative;
+}
+.topView {
+  display: flex;
+  width: 100vw;
+  height: 100rpx;
+  position: fixed;
+  z-index: 99;
+  top: 0rpx;
+  background-color: #49ddb8;
+  flex-direction: row;
+  justify-content: space-between
+
+}
+.topSearchView {
+  margin: auto 26rpx 22rpx 22rpx;
+  height: 68rpx;
+  flex: 1;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+}
+.search_input_view {
+  background-color: white;
+  margin-left: 0rpx;
+  margin-right: 22rpx;
+  height: 68rpx;
+  display: flex;
+  flex: 1;
+  border-radius: 34rpx;
+  flex-direction: row;
+  align-items: center;
+}
+.search_icon {
+  width: 28rpx;
+  height: 30rpx;
+  margin-left: 18rpx;
+  display: flex;
+}
+.placeholder {
+  color: #cccccc;
+  font-size: 28rpx;
+  margin-left: 10rpx;
+  display: flex;
+  max-width: 70%;
+  overflow: hidden; 
+  text-overflow: ellipsis;
+  white-space: nowrap; 
+}
+.search-text {
+  margin-right: 0rpx;
+  width: 92rpx;
+  height: 42rpx;
+  display: flex;
+
+}
+.search-text text {
+  margin-left: 24rpx;
+  color: #fff;
+  font-size: 28rpx;
+}
+.title-view {
+  margin-bottom: 26rpx;
+  margin-left: 46rpx;
+  margin-right: 46rpx;
+  position: relative;
+}
+.title-view text {
+  font-size: 30rpx;
+  color: #333333;
+  margin-left: 0rpx;
+  
+}
+.title_icon {
+  height: 50rpx;
+  width: 50rpx; 
+}
+.title_icon1 {
+  height: 50rpx;
+  width: 50rpx;
+  top:15rpx;
+  left: -8rpx;
+  position: absolute
+}
+.top-view {
+  margin-top: 100rpx;
+  background-color: white;
+  padding-top: 30rpx;
+  
+}
+.ask-sex {
+  flex-direction: row;
+  flex: 1;
+  align-items: center;
+  margin-right: 46rpx;
+  display: flex;
+}
+.ask-sex image {
+  width: 60rpx;
+  height: 60rpx;
+  margin-left: 46rpx;
+}
+.ask-sex text {
+  font-size: 24rpx;
+  color: #999999;
+  margin-left: 22rpx;
+
+}
+.ask-sex-text {
+  margin-left: 42rpx;
+}
+.reply-quey {
+  margin: 20rpx 46rpx 0rpx 46rpx;
+  padding-bottom: 20rpx;
+  font-size: 24rpx;
+  color: #333333
+}
+.rel-view {
+  margin-top: 14rpx;
+  background-color: #ffffff;
+  flex-direction: column
+}
+.relp-view {
+  flex-direction: row;
+  align-items: center;
+  height: 66rpx;
+  display: flex;
+}
+.relp-view view {
+  margin-left: 10rpx;
+  font-size: 26rpx;
+  color: #333333
+}
+.relp-view image {
+  margin-left: 36rpx;
+  margin-top: 10rpx;
+}
+.rel-title {
+  width: 100%;
+  height: 66rpx;
+  flex-direction: row;
+  align-items: center;
+  font-size: 26rpx;
+  color: #333333;
+  display: flex;
+  padding-left: 46rpx;
+  
+}
+.question-swiper-item {
+  flex-direction: row;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.question-content-item {
+  width: 46%;
+  margin-left: 20rpx;
+  padding-bottom: 20rpx;
+}
+
+.question-content-view {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start; 
+  padding-bottom: 25rpx;
+}
+.hedPort{
+  width: 140rpx;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}
+.line-view {
+  height: 2rpx;
+  background-color: #f5f5f5
+}
+.doctor-ask {
+  flex-direction: column;
+  margin-top: 24rpx;
+  padding-bottom: 40rpx;
+  background-color: white;
+}
+.doctor-view {
+  flex-direction: row;
+  align-items: center;
+  margin-right: 46rpx;
+  }
+.doctor-item {
+  flex-direction: row;
+  align-items: center;
+  display: flex;
+  
+}
+.doctor-item image {
+  width: 60rpx;
+  height: 60rpx;
+  margin-left: 46rpx;
+  border-radius: 30rpx;
+  display: flex;
+}
+.doctor-text {
+  margin-left: 20rpx;
+  display: flex;
+  align-items: center;
+  height: 42rpx
+}
+.doctor-text text {
+  font-size: 24rpx;
+  color: #999999;
+}
+.doctor-item-view {
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+  border-radius: 6rpx;
+  background-color: #f5f5f5;
+  margin-left: 20rpx;
+  display: flex;
+}
+.doctor-item-view text {
+  font-size: 22rpx;
+  color: #dab96b;
+}
+.shop-name {
+  margin-left: 6rpx;
+  overflow: hidden; 
+  text-overflow: ellipsis;
+  white-space: nowrap; 
+  font-size: 22rpx;
+  color: #999999;
+  flex: 1;
+  height: 42rpx;
+  padding-top: 8rpx;
+}
+.shop-name text{
+  margin-left: 6rpx;
+  overflow: hidden; 
+  text-overflow: ellipsis;
+  white-space: nowrap; 
+  font-size: 22rpx;
+  color: #999999;
+  flex: 1;
+}
+.reply_content{
+  margin-left: 46rpx;
+  margin-right: 58rpx;
+  font-size: 24rpx;
+  color: #333333;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;  
+}
+.relative-view {
+  width: 88%;
+  height: 160rpx;
+  flex-direction: row;
+  margin-left: 46rpx;
+  white-space: nowrap;
+  display: inline-block;
+  -webkit-overflow-scrolling: touch;
+}
+.relative-view-context {
+  width: 160rpx;
+  height: 160rpx;
+  display: inline-block;
+} 
+.relative-view-context-view {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 160rpx;
+  height: 160rpx;
+  display: flex;
+}
+.relative-view-context-view image{
+  width: 100rpx;
+  height: 100rpx;
+}
+.relative-view-context-text{
+  margin-top: 10rpx;
+  font-size: 22rpx;
+  color: #999999;
+}
+.append-view {
+  background-color: #fafafa;
+  margin: 20rpx 46rpx;
+
+}
+.append-view-context {
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  flex-direction: column;
+}
+.append-view-text {
+  font-size: 26rpx;
+  margin-left: 20rpx;
+  color: #999999;
+}
+.appendreply-view {
+  margin-top: 20rpx;
+  font-size: 26rpx;
+  margin-left: 20rpx;
+  color: #999999;
+
+}
+.button-view {
+  flex-direction: row;
+  align-items: center;
+  margin-top: 16rpx;
+  justify-content: space-between;
+  display: flex;
+}
+.button-context {
+  flex-direction: row;
+  align-items: center;
+  margin-left: 22rpx;
+  display: flex;
+}
+.button-context-text {
+  margin-left: 46rpx;
+  font-size: 22rpx;
+  color: #999999;
+  margin-right: 46rpx;
+}
+.button-context-view {
+  flex-direction: row;
+  align-items: center;
+  display: flex;
+  padding: 24rpx;
+}
+.button-context-view text {
+  font-size: 22rpx;
+  color: #1fdb9b
+}
+.mag-button {
+  margin-left: 0rpx;
+}
+.mag-button image{
+  width: 22rpx;
+  height: 30rpx;
+  margin-left: 46rpx;
+}
+.mag-button text {
+  font-size: 22rpx;
+  margin-left: 46rpx;
+  margin-right: 46rpx;
+  color: #999999;
+}
+.justify {
+  justify-content: flex-end
+}
+.title_ask-text {
+  color: #999999;
+}
+.botmLine {
+  width: 100%;
+  height: 2rpx;
+  background-color: #fff;
+}
+.botmLine view {
+  margin: 0rpx 46rpx;
+  background-color: #f5f5f5;
+  height: 2rpx;
+}

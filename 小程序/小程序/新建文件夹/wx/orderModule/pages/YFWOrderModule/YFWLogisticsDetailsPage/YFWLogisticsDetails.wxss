@@ -1,0 +1,350 @@
+page{
+  background-color: #F5F5F5
+}
+
+.topParent{
+  width: 750rpx;
+  height: 328rpx;
+  background-color: #F5F5F5;
+  position: fixed;
+  z-index: 100
+}
+
+.topInfo {
+  width: 700rpx;
+  height: 266rpx;
+  background-color: #ebebeb;
+  box-shadow: 0rpx 7rpx 15rpx 0rpx rgba(204, 204, 204, 0.6);
+  position: fixed;
+  top: 42rpx;
+  left: 25rpx;
+  z-index: 111
+}
+
+.coverTopView {
+  position: fixed;
+  width: 700rpx;
+  height: 266rpx;
+  top: 42rpx;
+  left: 25rpx;
+  display: flex;
+  flex-direction: column;
+  z-index: 222
+}
+.fillView{
+  width: 750rpx;
+  height: 308rpx;
+}
+
+.coverTopView .status {
+  display: flex;
+  flex-direction: row;
+  width: 700rpx;
+  height: 50rpx;
+}
+
+.coverTopView .status .text_tips {
+  font-size: 24rpx;
+  color: #666;
+  height: 50rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 20rpx;
+}
+
+.coverTopView .logo {
+  width: 210rpx;
+  height: 50rpx;
+  border-top-left-radius: 14rpx;
+  border-top-right-radius: 14rpx;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.coverTopView .logo .image {
+  width: 144rpx;
+  height: 40rpx;
+  margin-top: 10rpx;
+}
+
+.coverTopView .message {
+  background-color: #fff;
+  width: 700rpx;
+  height: 226rpx;
+  border-bottom-left-radius: 14rpx;
+  border-bottom-right-radius: 14rpx;
+}
+
+.coverTopView .message .parent {
+  display: flex;
+  flex-direction: row;
+  margin-left: 15rpx;
+  margin-right: 30rpx;
+  margin-top: 40rpx;
+  align-items: center;
+  height: 131rpx;
+  width: 655rpx;
+}
+
+.coverTopView .message .parent .image {
+  width: 131rpx;
+  height: 131rpx;
+}
+
+.coverTopView .message .parent .detail {
+  display: flex;
+  flex-direction: column;
+  margin-left: 23rpx;
+  width: 62%;
+  overflow: hidden;
+}
+
+.coverTopView .message .parent .detail .trafficNumTips {
+  font-size: 24rpx;
+  color: #333;
+}
+
+.coverTopView .message .parent .detail .trafficNumValue {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.customerService {
+  width: 75rpx;
+  height: 75rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.image_icon {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.customerService .text {
+  font-size: 18rpx;
+  color: #999;
+  margin-top: 12rpx;
+}
+
+.tarfficeNumParent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+}
+
+.fz_icon {
+  width: 22rpx;
+  height: 24rpx;
+  margin-left: 10rpx;
+}
+
+.trafficInfoList {
+  width: 700rpx;
+  margin-left: 25rpx;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0rpx 7rpx 15rpx 0rpx rgba(204, 204, 204, 0.6);
+  margin-top: 20rpx;
+  background-color: #fff;
+  border-radius: 14rpx;
+}
+
+.trafficInfoList .titleParent {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-between;
+  margin-left: 45rpx;
+  margin-right: 45rpx;
+  margin-top: 50rpx;
+}
+
+.trafficInfoList .titleParent .tips {
+  font-size: 24rpx;
+  color: #333;
+  font-family: SourceHanSansCN-Medium;
+}
+
+.refreshIcon {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.splite {
+  width: 620rpx;
+  margin-left: 40rpx;
+  height: 2rpx;
+  background-color: #E5E5E5;
+  margin-top: 24rpx;
+}
+
+.trafficListParent {
+  margin-left: 40rpx;
+  height: 1rpx;
+  color: #ccc;
+  margin-top: 24rpx;
+}
+
+.trafficListParent {
+  width: 620rpx;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  margin-top: 28rpx;
+}
+
+.trafficItem {
+  display: flex;
+  flex-direction: row;
+}
+
+.trafficItem .left {
+  width: 14rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.trafficItem .left .pointLight {
+  width: 14rpx;
+  height: 14rpx;
+  border-radius: 7rpx;
+  background-color: #45dfac;
+  margin-top: 10rpx;
+}
+
+.trafficItem .left .pointDark {
+  width: 14rpx;
+  height: 14rpx;
+  border-radius: 7rpx;
+  background-color: #ccc;
+  margin-top: 10rpx;
+}
+
+.trafficItem .left .line {
+  width: 2rpx;
+  background-color: #ccc;
+  flex: 1;
+  margin-bottom: -10rpx;
+}
+
+.trafficItem .right {
+  width: 540rpx;
+  height: auto;
+  margin-left: 40rpx;
+  display: flex;
+  flex-direction: column;
+  margin-top: 5rpx;
+  margin-bottom: 25rpx;
+}
+
+.trafficItem .right .tipsLight {
+  font-size: 20rpx;
+  color: #1fdb9b;
+}
+
+.trafficItem .right .tipsDark {
+  font-size: 20rpx;
+  color: #8d8d8d;
+}
+
+.trafficItem .right .times {
+  font-size: 20rpx;
+  color: #8d8d8d;
+  margin-top: 5rpx;
+}
+
+.bottomTips {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30rpx;
+}
+
+.bottomTips .icon {
+  width: 20rpx;
+  height: 20rpx;
+}
+
+.bottomTips .text {
+  font-size: 20rpx;
+  color: #ccc;
+}
+
+.bottom_ads {
+  width: 750rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 25rpx;
+  margin-top: 30rpx;
+  background-color: #F5F5F5
+}
+
+.ad_tips_text {
+  font-size: 28rpx;
+  color: #333;
+  font-weight: bold;
+  z-index: 99;
+}
+
+.ad_tips_text_bottom {
+  background-image: linear-gradient(270deg, #4bfdf2 0%, #4bff8f 100%), linear-gradient(#fff, #fff);
+  background-blend-mode: normal, normal;
+  width: 112rpx;
+  height: 12rpx;
+  margin-top: -8rpx;
+  box-shadow: 0rpx 7rpx 15rpx 0rpx rgba(131, 241, 219, 0.59);
+}
+
+.collectionItemView {
+  display: inline-block;
+  vertical-align: top;
+  flex-direction: column;
+  width: 50%;
+  margin: 7rpx 0;
+  border-radius: 20rpx;
+  justify-content: center;
+}
+
+.collectionItemView:nth-of-type(odd) {
+  margin-left: -14rpx;
+  margin-right: 14rpx;
+}
+
+.collectionView {
+  padding: 7rpx 14rpx 7rpx 28rpx;
+}
+
+.trafficEmptyView{
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.trafficEmptyView .iamge{
+  width: 340rpx;
+  height: 340rpx;
+  margin-top: 10rpx;
+}
+
+.trafficEmptyView .text{
+  margin-top: 40rpx;
+  color: #999;
+  font-size: 26rpx;
+  margin-bottom: 40
+}

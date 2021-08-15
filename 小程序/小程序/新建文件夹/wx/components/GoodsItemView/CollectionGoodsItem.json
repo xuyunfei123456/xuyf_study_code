@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "priceView": "/components/YFWPriceView/YFWPriceView"
+  }
+}

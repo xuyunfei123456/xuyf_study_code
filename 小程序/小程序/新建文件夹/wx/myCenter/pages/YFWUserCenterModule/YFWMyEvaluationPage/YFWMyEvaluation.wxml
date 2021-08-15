@@ -1,0 +1,56 @@
+<view>
+  <view wx:if="{{!loading && (dataArray==null||dataArray.length==0)}}" class='view-no-data'>
+    <image class="image-no-data" src='https://c1.yaofangwang.net/common/images/miniapp/ic_no_message.png' />
+    <text>暂无评价</text>
+  </view>
+  <view wx:else class="list">
+    <block wx:for="{{dataArray}}" wx:key="key">
+      <view class="item">
+        <view class='view-item'>
+          <view class='view-order' bindtap='clickEvaBtn' data-item='{{item}}'>
+            <text class="text-order">订单:</text>
+            <text class="text-orderNum">{{item.orderno}}</text>
+            <image style='width:28rpx;height:28rpx' class='to-jump' src='../../../../images/icon_arrow_right_gary.png'></image>
+          </view>
+          <view class="view-business">
+            <text>商家:</text>
+            <text class="text-business">{{item.title}}</text>
+          </view>
+          <view class='item-item'>
+            <view class='customer-servce'>
+              <text>客户服务</text>
+              <starScore stars='{{item.services_star}}' starSize='{{24}}' starSpacing='{{30}}' class='stars' />
+            </view>
+
+            <view class='customer-servce'>
+              <text>发货速度</text>
+              <starScore stars='{{item.send_star}}' starSize='{{24}}' starSpacing='{{30}}' class='stars' />
+            </view>
+            <view class='customer-servce'>
+              <text>物流速度</text>
+              <starScore stars='{{item.logistics_star}}' starSize='{{24}}' starSpacing='{{30}}' class='stars' />
+            </view>
+
+
+            <view class='customer-servce'>
+              <text>商品包装</text>
+              <starScore stars='{{item.package_star}}' starSize='{{24}}' starSpacing='{{30}}' class='stars' />
+
+            </view>
+          </view>
+          <view class='view-comment'>
+            <text class='text-comment'>评价内容:</text>
+            <text class='context'>{{item.content}}</text>
+          </view>
+        </view>
+      </view>
+    </block>
+    <view class="foot">
+      <text wx:if='{{showFoot==1}}' class="text">没有更多了</text>
+      <text wx:elif='{{showFoot==2}}' class="text">加载更多...</text>
+      <text wx:else class="text"> </text>
+    </view>
+  </view>
+  <!-- loading图 -->
+  <image src='/images/loading_cycle.gif' wx:if="{{loading}}" class='loading' />
+</view>

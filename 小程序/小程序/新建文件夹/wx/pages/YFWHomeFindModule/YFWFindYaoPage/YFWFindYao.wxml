@@ -1,0 +1,72 @@
+<!--pages/YFWHomeFindModule/YFWFindYaoPage/YFWFindYao.wxml-->
+<view class='container'>
+  <view class='top_container_another'>
+    <view class='top_content'>
+
+      <view bindtap='bindSearchTap' class='top_search_another' style="width:90%;flex:none">
+        <image class='top_search_left_icon' src='/images/top_bar_search.png'></image>
+        <text class='top_search_title'>批准文号、通用名、商品名、症状</text>
+        <view class='top_search_right' catchtap='bindScanTap'>
+          <image class='top_search_scan' src='/images/qr_sys.png'></image>
+        </view>
+      </view>
+      <YFWMessageRedPointView messagecount='{{messageCount}}' mtop='20' />
+    </view>
+  </view>
+
+  <view class='scroll_view'>
+    <scroll-view scroll-x="false" scroll-y="true" class='list_view' scroll-top>
+      <block wx:for="{{dataSource}}" wx:key="{{item.id}}">
+        <view class='header_view' bindtap="{{item.id==0?'toCategoryMethod':item.id==1?'nearShopMethod':''}}" data-index="{{0}}">
+          <!-- <text class='header_text'>{{item.key}}</text> -->
+          <view class='header_text'>
+            <titleView title="{{item.key}}" />
+          </view>
+
+          <image src='/images/around_detail_icon.png' class='header_icon' wx:if="{{item.id==0}}"></image>
+          <image src='/images/around_detail_icon.png' class='header_icon' wx:if="{{item.id==1}}"></image>
+        </view>
+        <view class='findyao' wx:if="{{item.id==0}}">
+          <block wx:for="{{item.data}}" wx:key="key">
+            <image src='{{item.img}}' class='find_class' bindtap='toCategoryMethod' data-index="{{index}}"></image>
+          </block>
+        </view>
+        <view class='find_near' wx:if="{{item.id==1}}">
+          <block wx:for="{{shopData}}" wx:key="key">
+            <view class='find_near_contextView' bindtap='toShopDetaiMethod' data-item="{{item}}" id="{{item.id}}">
+              <view class='find_near_img'>
+                <image src='{{item.logo_img_url}}' class='find_near_icon' mode='aspectFit'></image>
+              </view>
+              <view class='find_near_context'>
+                <text class='find_shop_title'>{{item.title}}</text>
+                <text class='find_shop_loaction'>{{item.distance}}</text>
+                <view class='find_shop_status'>
+                  <image src='/images/check_checked.png' class='logistics_status_icon'></image>
+                  <text class='logistics_status_text'>  已签约       </text>
+                  <image src='/images/findyao/sort_icon_star.png' class='evaluation_icon'></image>
+                  <text class='evaluation_text'> {{item.star}}</text>
+                </view>
+              </view>
+              <image src='/images/findyao/sort_icon_jdkk.png' class='find_jdkk'></image>
+            </view>
+
+          </block>
+        </view>
+        <view class='findyao_disease' wx:if="{{item.id==2}}">
+          <block wx:for="{{item.data}}" wx:key="key">
+            <image src='{{item.img}}' class='find_jibi' bindtap='toSubCategoryMethod' id="{{item.id}}" data-name="{{item.name}}"></image>
+          </block>
+        </view>
+        <view class='findyao_next' wx:if="{{item.id==3}}">
+          <block wx:for="{{item.data}}" wx:key="key">
+            <image src='{{item.img}}' class='find_hot_image' bindtap='toSearchMethod' data-name="{{item.name}}"></image>
+          </block>
+        </view>
+      </block>
+      	<!-- 占位 -->
+	  <!-- <view style="height:{{tabbarHeight}}px;width100%"></view> -->
+    <view style="height:{{0}}px;width100%"></view>
+    </scroll-view>
+  </view>
+
+</view>

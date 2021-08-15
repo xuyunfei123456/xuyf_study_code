@@ -1,0 +1,69 @@
+<!-- components/YFWFilterView.wxml -->
+<view class='topView'>
+  <view class='topViewItem' bindtap='changeSortType' data-id='0'>
+    <text class="{{selectTab==0?'topViewItemTitleSelect':'topViewItemTitleUnselect'}}">默认</text>
+  </view>
+  <view class='topViewItem' bindtap='changeSortType' data-id='1'>
+    <text class="{{selectTab==1?'topViewItemTitleSelect':'topViewItemTitleUnselect'}}">价格</text>
+    <image wx:if="{{priceIconType==1}}" class='topViewItemIcon' src="/images/order_by_plus.png" />
+    <image wx:if="{{priceIconType==2}}" class='topViewItemIcon' src="/images/order_by_minus.png" />
+    <image wx:if="{{priceIconType==0}}" class='topViewItemIcon' src="/images/order_by_default.png" />
+  </view>
+  <view class='topViewItem' bindtap='changeSortType' data-id='2' wx:if="{{froms=='search'}}">
+    <text class="{{selectTab==2?'topViewItemTitleSelect':'topViewItemTitleUnselect'}}">报价数</text>
+    <image wx:if="{{sellerIconType==1}}" class='topViewItemIcon' src="/images/order_by_minus.png" />
+    <image wx:if="{{sellerIconType==2}}" class='topViewItemIcon' src="/images/order_by_plus.png" />
+    <image wx:if="{{sellerIconType==0}}" class='topViewItemIcon' src="/images/order_by_default.png" />
+  </view>
+  <view class='topViewItem' bindtap='changeSortType' data-id='3' wx:if="{{froms=='shop_all_goods'}}">
+    <text class="{{selectTab==3?'topViewItemTitleSelect':'topViewItemTitleUnselect'}}">分类</text>
+    <image wx:if="{{selectTab==3}}" class='topViewItemIcon2' src="/images/shop_search_green.png" />
+    <image wx:else class='topViewItemIcon2' src="/images/shop_search_gray.png" />
+  </view>
+  <view class='topViewItem' bindtap='changeListType'>
+    <image wx:if='{{listType}}' class='topViewItemImage' src='/images/YFWStoreModule/medicine_map_gray.png' />
+    <image wx:else class='topViewItemImage' src='/images/YFWStoreModule/medicine_list_gray.png' />
+  </view>
+  <view class='topViewItem' bindtap='openControlPanel' wx:if="{{froms=='search'||froms=='category'}}">
+    <text class='topViewItemTitleUnselect'>筛选</text>
+    <image class='topViewItemScreenIcon' src='/images/choose_kind.png'></image>
+  </view>
+  <view wx:if='{{menuOpen}}' class='topCategoryBgView' bindtap='closeCategoryView' id='father'>
+    <view class='topCategoryView' catchtap='closeCategoryView'>
+      <view class='categoryItemView' wx:for='{{categoryArray}}' wx:key='{{item.id}}'>
+        <view class="labelView {{categoryID==item.id?'labelView_select':''}}" bindtap='categoryClick' id='{{item.id}}'>
+          <text class="labelText {{categoryID==item.id?'labelText_select':' '}}">{{item.name}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="choosewrapper {{gzchoosed ? 'paddingnone':''}}" wx:if="{{showSpecification&&showSpecification2}}">
+  <view class="chooseSpecification {{gzchoosed ? 'fontcolor':''}} {{choosedflag ? 'choosedItem':''}}" bindtap="clickSpecification">
+    {{choosedName}}
+    <image class="icon_arrow_down {{gzchoosed ? 'fz':''}}" src="/images/{{ gzchoosed || choosedflag ? 'arrow_down_choosed':'icon_arrow_down'}}.png" />
+  </view>
+  <view class="specifationList {{gzchoosed ? 'showanimate':'disanimate'}}">
+    <view class="search">
+      <image class='spesearchIcon' src='/images/YFWStoreModule/top_bar_search.png' mode='aspectFit' />
+      <input placeholder='输入规格' class='topViewSearchInput' placeholder-class='inputplaceholder' value="{{searchText}}" bindinput='onChangeText' bindblur='onEndEditing' bindconfirm='searchClick' auto-focus='{{true}}' bindfocus='onFocus' confirm-type='{{search}}'></input>
+    </view>
+    <view class="specilist">
+      <view wx:for='{{specificationData}}' wx:key='{{index}}' bindtap='itemClickAction' data-index='{{item.index}}' class="spewrapper {{item.hide ?'hideChoose':'showall'}}">
+        <view class="textover {{item.select == 'select'? 'gzselected':''}}">
+          <image class="spechooseIcon {{item.select == 'select'? 'showChoose':'hideChoose'}}" src='/images/specifationChoosed.png' mode='aspectFit' />
+          {{item.title}}
+        </view>
+      </view>
+    </view>
+    <view class='bottom_container' catchtap='true'>
+      <view bindtap='resetAction' class='bottom_content bottom_left'>
+        <view>重置</view>
+      </view>
+      <view bindtap='confirmAction' class='bottom_content bottom_right'>
+        <view>确定</view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="shadowWrapper {{gzchoosed ? 'showshadow':''}}"></view>

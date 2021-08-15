@@ -1,0 +1,38 @@
+<view class='top_image_bg'>
+  <view class='topTips'>
+    <view class='topTipsText' wx:if="{{prompt.length>0}}">{{prompt}}</view>
+  </view>
+  <view class='order_status' style='margin-top: {{prompt.length>0?10:70}}rpx'>
+    <image src='/images/order_status_icon_success.png' class='icon'>
+    </image>
+    <text class='text'>{{title}}</text>
+  </view>
+  <view wx:if='{{type=="paySuccess"}}' class='pay_status'>
+    <view class='pay_info_content' >
+      <image src='/images/icon_wallet.png' class='pay_info_icon'>
+      </image>
+      <text class='pay_info_text'>支付方式:{{payInfo.payment_name}}</text>
+    </view>
+    <view class='pay_info_content'>
+      <image src='/images/icon_price.png' class='pay_info_icon'>
+      </image>
+      <text class='pay_info_text'>支付金额:{{payInfo.total_price}}</text>
+    </view>
+  </view>
+  <view class='top_buttons' style='{{type=="paySuccess"?"margin-top:20rpx":""}}'>
+    <block wx:for="{{buttonArray}}">
+      <view class='left_button' bindtap='onButtonClick' data-item='{{item}}'>{{item.text}}
+      </view>
+    </block>
+  </view>
+</view>
+<view class='bottom_ads'>
+  <view class='ad_tips_text'>精选商品</view>
+  <view class='ad_tips_text_bottom'></view>
+</view>
+<view></view>
+<view class='collectionView'>
+  <view class='collectionItemView' wx:for="{{recommendData}}" wx:key='key'>
+    <recommendList data='{{item}}' showcar="{{false}}" showstore="{{true}}" />
+  </view>
+</view>

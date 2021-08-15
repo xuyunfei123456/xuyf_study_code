@@ -1,0 +1,6 @@
+<!--pages/index/taskdetail.wxml-->
+<view>
+  <block wx:for="{{datasource.items}}" wx:key="*this">
+    <button bindtap='toDetail' data-item='{{item}}' data-moduleurl='{{datasource.moduleurl}}'>{{item.name}}</button>
+  </block>
+</view>

@@ -1,0 +1,39 @@
+.goodsItem{
+    width: 200px;
+    height: 242px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 28px;
+  }
+.shopPrint{
+    width: 100%;
+    height: 135px;
+    background-size: 100%;
+    background-position: initial;
+    background-repeat: no-repeat;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+  }
+  .shopName{
+    color: #333333;
+    font-size: 22px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin-bottom: 0px;
+    width: 150px;
+    margin: 18px auto;
+  }
+  .rmbSign{
+    margin-right: 5px;
+  }
+  .shopPrice{
+    color: #ff3300;
+    font-size: 26px;
+    margin-bottom: 0px;
+    width: 150px;
+    margin: 18px auto;
+    font-weight: bold;
+  }

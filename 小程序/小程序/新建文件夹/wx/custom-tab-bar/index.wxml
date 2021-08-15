@@ -1,0 +1,12 @@
+<!--miniprogram/custom-tab-bar/index.wxml-->
+<view class="tab-bar">
+  <view wx:for="{{list}}" wx:key="index" class="tab-bar-item" data-path="{{item.pagePath}}" data-index="{{index}}"
+    bindtap="switchTab" style="{{index == 1 && hasActivity? 'margin-right:8%' : index == 2 && hasActivity ? 'margin-left:8%' : 'none'}}">
+    <image src="{{selected === index ? item.selectedIconPath : item.iconPath}}"></image>
+    <view style="color: {{selected === index ? selectedColor : color}}">{{item.text}}</view>
+    <view class="carCount" wx:if="{{index == 2 && carCount}}">{{carCount}}</view>
+  </view>
+  <view class="activityBtn" wx:if="{{hasActivity}}">
+    <image mode="aspectFit" src="{{url}}" bindtap="activityClick"></image>
+  </view>
+</view>

@@ -1,0 +1,174 @@
+/* pages/YFWMessageModule/YFWMessageListPage/YFWMessageList.wxss */
+.view-no-message{
+	height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fafafa;
+  color: #999999;
+	font-size: 22rpx; 
+}
+
+.image-no-message{
+  height: 300rpx;
+  width: 300rpx;
+  margin-top: 42%;
+  margin-bottom: 20rpx;
+}
+
+.list{
+  min-height: calc(100vh - 53rpx);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 35rpx;
+  padding-bottom: 18rpx;
+  background-color: #fafafa;
+}
+
+.item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 18rpx;
+  margin-bottom: 70rpx;
+}
+
+.date-text{
+  width: 220rpx;
+	height: 30rpx;
+  margin-bottom: 24rpx;
+  padding-left: 16rpx;
+  padding-right: 16rpx;
+	border-radius: 25rpx;
+	font-family: "SourceHanSansCN-Normal";
+	font-size: 22rpx;
+  font-weight: normal;
+  text-align: center;
+	background-color: #dddddd;
+	color: #ffffff
+}
+
+.message-view{
+  width: 640rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  padding-top: 35rpx;
+  padding-bottom: 35rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 13rpx;
+	background-color: #ffffff;
+  box-shadow: 0rpx 7rpx 15rpx 0rpx rgba(204, 204, 204, 0.3);
+}
+
+.message-image{
+  position: relative;
+  width: 100%;
+  height: 300rpx;
+}
+
+.message-image.center-text {
+  position: absolute;
+  top:0;
+  padding-top: 25%;
+  width: 100%;
+  height: 50%;
+	background-color: rgba(52, 52, 52, 0.5);
+  text-align: center;
+  color:#ffffff;
+	font-size: 23rpx;
+  font-weight: bold;
+	margin-top:-9rpx;
+}
+
+.message-text{
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical; 
+  padding-left: 0rpx;
+  padding-right: 12rpx;
+  padding-top: 14rpx;
+	width: 100%;
+  height: 60rpx;
+  line-height: 30rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+	font-family: "SourceHanSansCN-Normal";
+	font-size: 23rpx;
+	color: #999999
+}
+
+.dividing-line{
+	height: 2rpx;
+  margin-top: 12rpx;
+  margin-bottom: 12rpx;
+	background-color: #dddddd;
+}
+
+.red-point {
+	width: 15rpx;
+	height: 15rpx;
+  min-width: 15rpx;
+  border-radius: 15rpx;
+	background-image: linear-gradient(-45deg, 
+		#fcac64 0%, 
+		#fe7737 100%), 
+	linear-gradient(
+		#ffffff, 
+		#ffffff);
+	background-blend-mode: normal, 
+		normal;
+}
+
+.hit-text {
+  width: 100%;
+	font-size: 27rpx;
+  font-weight: bold;
+	color: #333333;
+}
+
+.icon-arrow{
+  min-width: 26rpx;
+	width: 26rpx;
+	height: 26rpx;
+}
+
+.foot{
+  height: 20rpx;
+  margin-top: 20rpx;
+  margin-bottom: 70rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.foot .text{
+  color: #999999;
+	font-size: 22rpx; 
+  text-align: center;
+}
+.container-row{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.container-colum{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*loading*/
+.loading{
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  bottom: calc(50vh - 35rpx);
+  left: calc(50vw - 35rpx);
+  width: 70rpx; 
+	height: 70rpx;
+  z-index: 999;
+	background-color: transparent;
+}

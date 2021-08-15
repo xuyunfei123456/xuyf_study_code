@@ -1,0 +1,54 @@
+/* pages/YFWAskModule/allHotQ/allHotQ.wxss */
+
+page {
+  background-color: #e7e5e5;
+}
+
+.Qhead {
+  background-color: #fff;
+  min-height: 200rpx;
+  padding-bottom: 20rpx;
+  padding-top: 20rpx;
+}
+
+.hotWth {
+  width: 95%;
+  margin: 0rpx auto;
+}
+
+.mrOn {
+  width: 20rpx;
+  margin-left: 10rpx;
+}
+
+.QheadSon {
+  margin-left: 24rpx;
+  width: 110rpx;
+  height: 57rpx;
+  margin-right: 0rpx;
+  font-size: 22rpx;
+  line-height: 53rpx;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.btnCol {
+  background-color: #fff;
+  color: #1fdb9b;
+  font-size: 26rpx;
+  margin-top: 30rpx;
+}
+
+.newMargin {
+  margin-top: 25rpx;
+}

@@ -1,0 +1,35 @@
+<view>
+  <view wx:if="{{!loading && (dataArray==null||dataArray.length==0)}}" class='view-no-data'>
+    <image class="image-no-data" src='https://c1.yaofangwang.net/common/images/miniapp/ic_no_message.png' />
+    <text>暂无投诉</text>
+  </view>
+  <view wx:else class="list">
+    <block wx:for="{{dataArray}}" wx:key="key">
+      <view class="item" bindtap='clickCompBtn' data-item="{{item}}">
+        <view class='view-item'>
+          <view class='view-order'>
+            <text class="text-order">订单:</text>
+            <text class="text-orderNum">{{item.orderno}}</text>
+            <text class="text-order-type {{item.dict_complaints_status=='0'?'text-state0':item.dict_complaints_status=='1'?'text-state1':item.dict_complaints_status=='3'?'text-state1':'text-stateother'}}">{{item.dict_complaints_status_name}}</text>
+          </view>
+          <view class="view-complant">
+            <text>投诉:</text>
+            <text class="text-orderNum">{{item.title}}</text>
+          </view>
+          <view class='view-content'>
+            <text class="date-text">内容:</text>
+            <text class="text-orderNum">{{item.content}}</text>
+            <image style='width:28rpx;height:28rpx' class='to-jump' src='../../../../images/icon_arrow_right_gary.png'></image>
+          </view>
+        </view>
+      </view>
+    </block>
+    <view class="foot">
+      <text wx:if='{{showFoot==1}}' class="text">没有更多了</text>
+      <text wx:elif='{{showFoot==2}}' class="text">加载更多...</text>
+      <text wx:else class="text"> </text>
+    </view>
+  </view>
+  <!-- loading图 -->
+  <image src='/images/loading_cycle.gif' wx:if="{{loading}}" class='loading' />
+</view>

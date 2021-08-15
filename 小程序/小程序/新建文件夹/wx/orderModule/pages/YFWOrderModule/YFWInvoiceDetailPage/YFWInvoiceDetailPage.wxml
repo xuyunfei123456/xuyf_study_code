@@ -1,0 +1,53 @@
+<image class='top_bg' src='https://c1.yaofangwang.net/common/images/miniapp/dingdan_bj.png'></image>
+
+<view class="invoice-content">
+  <text class="invoice-st">发票状态：<text class="invoice-st-desc">{{status}}</text></text>
+  <view wx:if="{{showLogistics}}" class="invoice-logistics">
+    <text decode="true" class="text-14 text-color-3">配送单位：<text class="text-bold">{{invoiceInfo.traffic_name}}</text>\n物流单号：<text class="text-bold">{{invoiceInfo.trafficno}}</text></text>
+    <view class="invoice-lg" bindtap="handleLookLogistics">查物流</view>
+  </view>
+</view>
+
+<view class="invoice-content">
+  <view class="invoice-tt"><titleView title="开票说明" fontSize="28" fontWeight="500" /></view>
+  <view class="invoice-setup">
+    <view class="invoice-line"></view>
+    <view>
+      <image src="/images/invoice_1.png"></image>
+      <text class="text-12 text-color-6">订单下单</text>
+    </view>
+    <view>
+      <image src="/images/invoice_2.png"></image>
+      <text class="text-12 text-color-6">订单发货</text>
+    </view>
+    <view>
+      <image src="/images/invoice_3.png"></image>
+      <text class="text-12 text-color-6">商家开具</text>
+    </view>
+    <view>
+      <image src="/images/invoice_4.png"></image>
+      <text class="text-12 text-color-6">查看发票</text>
+    </view>
+  </view>
+</view>
+
+<view class="invoice-content">
+  <view class="invoice-tt"><titleView title="发票信息" fontSize="28" fontWeight="500" /></view>
+  <view class="invoice-info">
+    <text decode="true" class="text-12 text-color-9">发票类型&nbsp;&nbsp;<text class="text-color-3">{{invoiceType}}</text></text>
+    <text decode="true" class="text-12 text-color-9">发票抬头&nbsp;&nbsp;<text class="text-color-3">{{invoiceName}}</text></text>
+    <text decode="true" class="text-12 text-color-9">身份证号&nbsp;&nbsp;<text class="text-color-3">{{invoiceCode}}</text></text>
+    <text decode="true" class="text-12 text-color-9">发票内容&nbsp;&nbsp;<text class="text-color-3">商品明细</text></text>
+    <view wx:if="{{invoiceEtax}}" bindtap="handleLookInvoice" class="invoice-look">查看发票</view>
+  </view>
+</view>
+
+<view class="invoice-explain">
+  <text class="text-12 text-color-6 invoice-explain-tt">发票须知：</text>
+  <text class="text-12 text-color-9">1.发票金额不含优惠券、满减、积分等优惠扣减金额；</text>
+  <text class="text-12 text-color-9">2.商家若无法开具电子普通发票，则开具纸质发票，发票随货寄出或者发货后2日内寄出，若未收到可要求商家补开并寄出；</text>
+  <text class="text-12 text-color-9">3.电子发票：</text>
+  <text class="text-12 text-color-9">(1)电子普通发票是税局认可的有效付款凭证，其法律效力、基本用途、基本使用规定同纸质发票，可支持报销入账，如需纸质发票可自行打印下载；</text>
+  <text class="text-12 text-color-9">(2)电子普通发票则在发货后2日内开出，若商家未开出可联系商家开出；</text>
+  <text class="text-12 text-color-9">(3)用户可点击“我的订单-查看发票”查询，分享链接至电脑端下载打印。</text>
+</view>

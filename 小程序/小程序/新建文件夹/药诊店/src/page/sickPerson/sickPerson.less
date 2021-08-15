@@ -1,0 +1,402 @@
+.item {
+    border-bottom: 1px solid #f5f5f5;
+    font-size: 14px;
+    color: #333333;
+    padding-left: 20.333px;
+    height: 40px;
+}
+
+button::after {
+    border: none;
+}
+
+.flex {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.sign {
+    width: 75%;
+    .flex();
+    margin-left: 27.667px;
+
+    .sign_check {
+        width: 17px;
+        height: 17px;
+        margin-right: 7.333px;
+    }
+
+    .sign_two {
+        margin-left: 68.333px;
+    }
+}
+
+.wrapper {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background-color: #f5f5f5;
+
+    .scrollArea {
+        width: 100%;
+        padding-bottom: 70px;
+        background-color: #f5f5f5;
+        padding-top: 30px;
+        margin-bottom: constant(safe-area-inset-bottom);
+        /*兼容 IOS<11.2*/
+        margin-bottom: env(safe-area-inset-bottom);
+        .notice {
+            width: 100%;
+            height: 30px;
+            color: #fc9924;
+            font-size: 12px;
+            background-color: #fff3da;
+            position: fixed;
+            top: 0;
+            z-index:99;
+            .flex();
+
+            .horn_ico {
+                width: 11.667px;
+                height: 12px;
+                margin-left: 19.667px;
+            }
+
+            .notice_txt {
+                margin-left: 8.667px;
+            }
+        }
+
+        .sicker {
+            width: 100%;
+            background-color: #ffffff;
+            padding: 10px 0px;
+
+            .noChange {
+                color: #999999 !important
+            }
+
+            ;
+
+            .sickItem {
+                position:relative;
+                .flex();
+                justify-content: space-between !important;
+                .item();
+
+                .title {
+                    flex-shrink: 0;
+                }
+
+                .sign {
+                    .sign();
+                }
+
+                .input {
+                    height: 40px;
+                    padding: 0px;
+                    font-size: 12px;
+                    width: 75%;
+                }
+                .unit{
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    right: 17px;
+                    color: #999999;
+                }
+                .at-input__input {
+                    font-size: 14px;
+                }
+            }
+
+        }
+
+        .illList {
+            width: 100%;
+            background-color: #ffffff;
+            margin-top: 10px;
+
+            .illItem {
+                .flex();
+                justify-content: space-between !important;
+                .item();
+
+                .title {
+                    flex-shrink: 0;
+                }
+
+                .sign {
+                    .sign();
+                }
+
+            }
+            .addList{
+                .flex();
+                padding: 6.667px 3.667px;
+                flex-wrap: wrap;
+
+                .type{
+                    margin-left: 8.333px;
+                    border-radius: 14px;
+                    font-size: 12px;
+                    color: #333;
+                    height: 29.333px;
+                    line-height: 29.333px;
+                    min-width: 80.667px;
+                    text-align: center;
+                    background-color: #fafafa;
+                    margin-top: 10px;
+                    flex-shrink: 0;
+                    padding: 0px 19px;
+                    box-sizing: border-box;
+                    border: 1px solid transparent;
+                    box-sizing: border-box;
+                }
+                .ty_act{
+                    border: 1px solid #00b187;
+                    background-color: #e5f7f3;
+                    color: #00b187;
+                }
+                .addBtn{
+                    width: 78.667px;
+                    height: 29.333px;
+                    border: 1px solid #00b187;
+                    border-radius: 14px;
+                    box-sizing: border-box;
+                    position: relative;
+                    margin-left: 8.333px;
+                    margin-top: 10px;
+                    .txt{
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%,-50%);
+                        color: #00b187;
+                        font-size: 20px;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+
+        .relation {
+            width: 100%;
+            background-color: #ffffff;
+            margin-top: 10px;
+
+            .relationItem {
+                .flex();
+                .item();
+
+                .title {
+                    flex-shrink: 0;
+                }
+
+                .tabs {
+                    .flex();
+                    margin-left: 12.333px;
+
+                    .tabItem {
+                        border-radius: 10.417px;
+                        border: 1px solid #6cd9b2;
+                        color: #1fdb9b;
+                        height: 21.333px;
+                        line-height: 21.333px;
+                        padding: 0px 13.667px;
+                        margin-left: 9.667px;
+                    }
+
+                    .onTabItem {
+                        background: linear-gradient(to right, #28e1a4, #1fdb9b);
+                        color: #ffffff;
+                        box-shadow: 0px 0px 3.333px rgba(31, 219, 155, 0.5);
+                    }
+                }
+
+            }
+
+        }
+
+        .bottomAreaAdd {
+            width: 100%;
+            height: 50px;
+            position: fixed;
+            bottom: 0px;
+            background-color: #f5f5f5;
+            /*兼容 IOS<11.2*/
+            padding-bottom: env(safe-area-inset-bottom);
+            /*兼容 IOS>11.2*/
+            .saveBtn {
+                width: 350.333px;
+                height: 42px;
+                line-height: 42px;
+                background: linear-gradient(to right, #00b187, #3acb8f);
+                font-size: 17px;
+                color: #fff;
+                font-weight: bold;
+                text-align: center;
+                margin: 0 auto;
+                border-radius: 21px;
+    
+            }
+        }
+        .bottomAreaEdit{
+            width: 100%;
+            height: 50px;
+            position: fixed;
+            bottom: 0px;
+            background-color: #f5f5f5;
+            .flex();
+            justify-content: center;
+            padding-bottom: constant(safe-area-inset-bottom);
+            /*兼容 IOS<11.2*/
+            padding-bottom: env(safe-area-inset-bottom);
+            /*兼容 IOS>11.2*/
+            .delBtn{
+                height: 40px;
+                line-height: 40px;
+                font-size: 16px;
+                color: #00b187;
+                border: 1px solid #00b187;
+                border-radius: 20px;
+                box-sizing: border-box;
+                font-weight: bold;
+                padding: 0px 46px;
+            }
+            .saveBtn{
+                height: 40px;
+                line-height: 40px;
+                background: linear-gradient(to right, #00b187, #3acb8f);
+                border-radius: 20px;
+                font-size: 16px;
+                color: #ffffff;
+                font-weight: bold;
+                padding: 0px 46px;
+                margin-left: 33px;
+            }
+        }
+        .modalDel {
+            .at-modal__container {
+                width: 305px;
+                color: #333;
+
+                .at-modal__content {
+                    font-size: 15px;
+                    min-height: initial;
+                    max-height: initial;
+                    text-align: center;
+                }
+
+                .at-modal__action {
+                    height: 50px;
+                    .content{
+                        font-size: 16px;
+                        color: #000;
+                        font-weight: bold;
+                    }
+                    Button {
+                        height: 30px;
+                        line-height: 30px;
+                        border-radius: 20px;
+                        font-size: 15px;
+                        min-width: 78px;
+                        flex: inherit;
+                        padding: 0px 40px;
+                        box-sizing: border-box;
+                        border: 1px solid #00b187;
+                    }
+
+                    .confirm {
+                        color: #ffffff;
+                        background-color: #00b187;
+
+                    }
+
+                    .cancel {
+                        color: #00b187;
+                        background-color: #fff;
+                   
+                    }
+
+                }
+            }
+            .at-modal__footer::before{
+                border: none;
+            }
+        }
+
+
+    }
+    .layoutAddList{
+        .at-float-layout__container{
+       padding-bottom: constant(safe-area-inset-bottom);
+    //   /*兼容 IOS<11.2*/
+    padding-bottom: env(safe-area-inset-bottom);
+    //   /*兼容 IOS>11.2*
+        }
+        .at-float-layout .layout-header{
+            background-color: #ffffff;
+        }
+        .at-float-layout .layout-header__title{
+            text-align: center;
+            padding-right: 0px;
+            font-size: 15px;
+        }
+        .at-float-layout .layout-header__btn-close {
+            right: 0px;
+        }
+        .at-float-layout .layout-header__btn-close::before, .at-float-layout .layout-header__btn-close::after{
+            width: 15px;
+        }
+        .at-float-layout .layout-page__content{
+            min-height: 600px;
+
+        }
+        .searchArea{
+            position: fixed;
+            width: 100%;
+            background-color: #ffffff;
+            top: 50px;
+            .input{
+                width: 95%;
+                border-radius: 18px;
+                margin: 10px auto;
+                font-size: 14px;
+                background: #fafafa;
+                box-sizing: border-box;
+                padding: 0px 10px;
+                color: #333333;
+                height: 30px;
+                min-height: 30px;
+                line-height: 30px;
+            }
+            .searchDel{
+                    width: 16px;
+                    height: 16px;
+                    position: absolute;
+                    right: 20px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    z-index: 99;
+            }
+        }
+  .searchResultList{
+      width: 100%;
+      height: 460px;
+      padding-top: 40px;
+
+      .searchResultListItem{
+          font-size: 14px;
+          border-bottom:1px solid #eeeeee;
+          width: 95%;
+          margin: 0 auto;
+          height: 30px;
+          line-height: 30px;
+          padding: 0px 12px;
+          box-sizing: border-box;
+      }
+  }
+    }
+}

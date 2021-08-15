@@ -1,0 +1,43 @@
+<view class="container">
+  <view bindtap="jumpToExamples" class="prompt-view">
+    <text class="prompt-t1">彰显平台规范和监管责任，提高商家服务质量，请如实根据商品包装盒上的【产品批号】填写</text>
+    <image class="prompt-img" src="/images/icon_arrow_y.png"/>
+    <text class="prompt-t2">查看批号说明</text>
+  </view>
+  <view class="header-view">
+    <view class="header-view-align">
+      <image mode="aspectFit" class="header-img1" src="/images/icon_form.png"/>
+      <text class="header-view-text" decode = "{{true}}">填写批号&nbsp;&nbsp;&nbsp;&nbsp;></text>
+    </view>
+    <view class="header-view-align">
+      <image mode="aspectFit" class="header-img2" src="/images/icon_receipt.png"/>
+      <text class="header-view-text" decode = "{{true}}">确认收货&nbsp;&nbsp;&nbsp;&nbsp;></text>
+    </view>
+    <view class="header-view-align">
+      <image class="header-img3" src="/images/icon_award.png"/>
+      <text class="header-view-text" decode = "{{true}}">翻牌抽奖</text>
+    </view>
+  </view>
+  <block wx:for="{{dataArray}}" wx:key="{{index}}">
+    <view class="context-view">
+      <image class="img-view"></image>
+      <view>
+        <text class="name-text">阿斯顿建立京津冀实弹射击大声的哭了</text>
+        <text class="standard-text">0.2/g</text>
+        <input
+          confirm-type="done" 
+          maxlength="50"
+          placeholder="请如实填写，若有多个逗号分开"
+          placeholder-style="color:#cccccc"
+          class="input-view"
+          bindinput="onChangeText"
+        ></input>
+      </view>
+    </view>
+  </block>
+  <view class='bottomLayout'>
+      <view class='post_button' bindtap='onComfire'>
+        <view class='text'>确认收货</view>
+      </view>
+  </view>
+</view>

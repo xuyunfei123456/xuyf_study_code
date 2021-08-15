@@ -1,0 +1,14 @@
+.buton_green{
+  font-size: 22rpx;
+  color: #1fdb9b;
+  border: #1fdb9b solid 1rpx;
+  width: 160rpx;
+  margin-left: 20rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding-top: 4rpx;
+  padding-bottom: 4rpx;
+  border-radius: 22rpx;
+}

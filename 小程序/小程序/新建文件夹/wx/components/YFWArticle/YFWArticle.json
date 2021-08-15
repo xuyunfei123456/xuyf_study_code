@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "HealthHuiAtricleCards":"/components/HealthHuiArticleCards/HealthHuiArticleCards"
+  }
+}

@@ -1,0 +1,1 @@
+    <view class='buton_green' bindtap="orderPay">付款{{timestr}}</view>

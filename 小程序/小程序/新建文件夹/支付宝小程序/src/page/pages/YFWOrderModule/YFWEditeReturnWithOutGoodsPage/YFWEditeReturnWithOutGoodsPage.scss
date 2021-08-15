@@ -1,0 +1,183 @@
+.topLayout {
+    width: 750px;
+    height: 285px;
+    background-color: #49ddb8;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .topReturnTypeLayout {
+    margin-top: 30px;
+    width: 700px;
+    margin-left: 25px;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 14px;
+    box-shadow: 0px 7px 15px 0px rgba(204, 204, 204, 0.6);
+  }
+  
+  .topReturnTypeLayout .tips {
+    font-size: 28px;
+    color: #333;
+    font-family: SourceHanSansCN-Normal;
+    margin-left: 40px;
+  }
+  
+  .topReturnTypeLayout .typeValue {
+    font-size: 28px;
+    color: #999;
+    font-family: SourceHanSansCN-Normal;
+  }
+  
+  .returnReasonLayout {
+    width: 700px;
+    height: auto;
+    margin-left: 25px;
+    position: relative;
+    background-color: #fff;
+    border-radius: 14px;
+    box-shadow: 0px 7px 15px 0px rgba(204, 204, 204, 0.6);
+    margin-top: -135px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .title {
+    margin-left: 40px;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 26px;
+  }
+  
+  .title .text {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    z-index: 99;
+    margin-left: 10px;
+  }
+  
+  .title .bottom {
+    width: 176px;
+    background-image: linear-gradient(270deg, #4bfdf2 0%, #4bff8f 100%), linear-gradient(#fff, #fff);
+    background-blend-mode: normal, normal;
+    height: 12px;
+    margin-top: -8px;
+    box-shadow: 0px 7px 15px 0px rgba(131, 241, 219, 0.59);
+  }
+  
+  
+  .reasonList{
+    margin-left: 40px;
+    margin-top: 15px;
+    margin-right: 40px;
+    width: 620px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 40px;
+  }
+  
+  .reasonItem{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 100px;
+  }
+  
+  .checkedIcon{
+    width: 40px;
+    height: 40px;
+  }
+  
+  .reasonText{
+    font-size: 28px;
+    color: #999999;
+  }
+  
+  .checkedReasonText{
+    font-size: 28px;
+    color: #333333;
+  }
+  
+  .splite{
+    height: 2px;
+    background-color: #E5E5E5;
+    width: 620px;
+  }
+  
+  .promptinfo{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .promptinfoValue{
+    display: flex;
+    flex-direction: row;
+    margin-top: 40px;
+  }
+  .warning_icon{
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+  }
+  
+  .tips{
+    font-size: 24px;
+    color: #999999;
+  }
+  
+  .returnMoneyLayout{
+    width: 700px;
+    height: 95px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #FFF;
+    border-radius: 14px;
+    box-shadow: 0px 7px 15px 0px rgba(204, 204, 204, 0.6);
+    margin-top: 35px;
+    margin-left: 25px;
+  }
+  
+  .returnMoneyLayout .tips{
+    font-size: 28px;
+    color: #333333;
+    margin-left: 40px;
+  }
+  
+  .returnMoneyLayout .money{
+    font-size: 28px;
+    color: #ff3300;
+    margin-left: 30px;
+  }
+  
+  .postButton {
+    width: 700px;
+    height: 84px;
+    background-image: linear-gradient(270deg, #00c891 0%, #1fdb9b 100%), linear-gradient(#fff, #fff);
+    background-blend-mode: normal, normal;
+    box-shadow: 0px 7px 15px 0px rgba(31, 219, 155, 0.5);
+    border-radius: 42px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 250px;
+    margin-left: 25px;
+  }
+  
+  .postButton .text {
+    font-size: 34px;
+    color: #fff;
+  }
+  
+  .fillBottom{
+    width: 100vw;
+    height: 100px;
+  }

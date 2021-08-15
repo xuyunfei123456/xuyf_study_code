@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "HealthHuiAtricleCards":"/components/HealthHuiArticleCards/HealthHuiArticleCards"
+  },
+  "navigationBarTitleText": "健康汇",
+  "navigationBarBackgroundColor": "#49ddb8",
+  "navigationBarTextStyle": "white"
+}

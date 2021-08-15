@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "more_view": "/components/YFWMoreView/YFWMoreView"
+  },
+      "navigationBarTitleText": "提问",
+    "navigationBarBackgroundColor": "#49ddb8",
+    "navigationBarTextStyle": "white",
+      "onReachBottomDistance": 90
+}

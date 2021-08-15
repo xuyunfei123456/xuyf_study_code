@@ -1,0 +1,139 @@
+<wxs src='../../../../wxs/sublie.wxs' module='tools' />
+<wxs src='../../../../wxs/subAfter.wxs' module='toAfter' />
+<view class="top-container">
+  <image class='topLayout' src="https://c1.yaofangwang.net/common/images/yb-minmap-icons/shouhuo_bj.png"></image>
+  <text class="top-status top-margin">{{status_desc}}</text>
+  <text class="top-desc top-margin">{{status_time}}</text>
+  <text wx:if="{{return_reply&&return_reply.length>0}}" class="top-desc top-margin">{{'拒绝原因：'+return_reply}}</text>
+  <view wx:if="{{process}}" class="logic-container return-container">
+    <view class="top-money">退款金额：
+      <text class='smallPrice red-money'>¥<text class='Goodsprice red-money'>{{tools.sub(return_money)}}.</text><text class='smallPrice red-money'>{{toAfter.subAfter(return_money)}}</text></text>
+    </view>
+    <text class="top-money-desc">{{description}}</text>
+  </view>
+  <text wx:elif="{{!logicInfo}}" class="top-desc top-margin top-last">{{description}}</text>
+</view>
+<view class="logic-container" wx:if="{{logicInfo}}">
+  <view class='nameAndPhone'>
+      <view>{{logicInfo.name}}</view>
+      <view>{{logicInfo.phone}}</view>
+  </view>
+  <view class='address' >
+    {{logicInfo.address}}
+  </view>
+  <image class="line-img" src="/images/shouhuo_mail.png"></image>
+</view>
+<view class="logic-container" bindtap="showLogicAction" wx:if="{{trafficInfo}}">
+  <view class='nameAndPhone'>
+      <view>{{trafficInfo.info}}</view>
+  </view>
+  <view class="arrow-icon">
+    <image class="icon" src="/images/icon_arrow_right_gary.png"></image>
+  </view>
+  <view class='status' >
+    {{trafficInfo.status}}
+  </view>
+  <image class="line-img" src="/images/shouhuo_mail.png"></image>
+</view>
+<text wx:if="{{logicInfo}}" class="top-desc top-desc-another">{{description}}</text>
+<view class='buttonsLayout' wx:if="{{button_list.length>0}}">
+  <block wx:for="{{button_list}}" wx:for-index="idx" wx:key="{{idx}}">
+    <view class="{{(item.value == 'updateReturnGoods'||item.value == 'orderReturnSend' ||item.value == 'orderReturnSendUpdate') ? 'buttonLight' : 'buttonDark'}}" bindtap='onButtonClick' data-type="{{item.value}}">{{item.name}}
+    </view>
+  </block>
+</view>
+<view class="process-container" wx:if="{{process}}">
+  <view class="gray-line">
+    <view class="green-line"></view>
+  </view>
+  <view class="status">
+    <block wx:for="{{process}}" wx:for-index="sdx" wx:key="{{sdx}}">
+      <view class="item">
+        <image class="status-icon" src="{{(sdx+1<process.length)?'/images/icon_check_green_on.png':'/images/icon_check_green_off.png'}}"></image>
+        <view class="msg">{{item.msg}}</view>
+        <view class="time">{{item.timeStr}}</view>
+      </view>
+    </block>
+  </view>
+  
+</view>
+<view class='detail-container' bindtap="showNegotiationAction">
+  <view class='item'>
+    <image class="icon" src="/images/icon_warning_green.png"></image>
+    <view class='type'>协商详情</view>
+    <image class="arrow" src="/images/around_detail_icon.png"></image>
+  </view>
+</view>
+
+ <view class='title'>
+    <view class='text'>退款信息</view>
+</view>
+<view class='returnGoodsListLayout' >
+  <view class='goodsList'>
+    <block wx:for="{{goodsList}}" wx:for-index="idx" wx:key="{{idx}}">
+      <view class='goodsListItem'>
+        <image class='goodsImage' mode="aspectFit" src="{{item.image}}">
+        </image>
+        <view class='goodsInfoText'>
+          <view class='top'>
+              <rich-text class='medicien_name'>
+                <image wx:if="{{item.dict_medicine_type == 1 || item.dict_medicine_type == 3}}" src='/images/ic_drug_track_label.png' class='medicine_type_icon'>
+                </image>
+                <image wx:if="{{item.dict_medicine_type == 2}}" src='/images/ic_drug_track_label.png' class='medicine_type_icon'>
+                </image>
+                <image wx:if="{{item.dict_medicine_type == 0}}" src='/images/ic_drug_OTC.png' class='medicine_type_icon'>
+                </image>{{item.medicine_name}}</rich-text>
+              <view style="flex:1"></view>
+              <text class='smallPrice'>¥<text class='Goodsprice'>{{tools.sub(item.price)}}.</text><text class='smallPrice'>{{toAfter.subAfter(item.price)}}</text></text>
+            </view>
+            <view class="bottom">
+              <view class="stand">{{item.standard}}</view>
+              <view class='qty'>{{'x'+item.quantity}}</view>
+            </view>
+        </view>
+      </view>
+    </block>
+  </view>
+  <view class='itemLayout'>
+    <view class='type'>退款类型：</view>
+    <view class='value'>{{need_return_status}}</view>
+  </view>
+  <view class='itemLayout'>
+    <view class='type'>退款原因：</view>
+    <view class='value'>{{return_reason}}</view>
+  </view>
+  <view class='itemLayout'>
+    <view class='type'>退款金额：</view>
+    <view class='value'>￥{{return_money}}</view>
+  </view>
+  <view class='itemLayout'>
+    <view class='type'>申请时间：</view>
+    <view class='value'>{{apply_time}}</view>
+  </view>
+  <view class='itemLayout'>
+    <view class='type'>退款编号：</view>
+    <view class='value'>{{order_returnno}}</view>
+  </view>
+</view>
+
+
+
+<view class='fillBottomView'></view>
+
+<yfwBaseModal id="cancelReturn" bind:test="onBaseModalRightButtonClick"  />
+<yfwBaseModal id="cimfirmModel" bind:test="rightButtonClick" needLeftButton="{{false}}"/>
+
+<YFWActionModal id="onSend" title="填写退货物流">
+  <view class="invoice-info" bindtap="showLogisticAction">
+    <text class="invoice-info-tt">物流公司:</text>
+    <input value="{{selectLogistics.name}}" disabled="true" class="invoice-info-tt invoice-info-v invoice-info-ll invoice-info-in" placeholder="请选择物流公司" placeholder-style="color: #999"></input>
+    <image class="invoice-info-arrow" src="/images/icon_arrow_right_gary.png"></image>
+  </view>
+  <view class="line-separator"></view>
+  <view class="invoice-info">
+    <text class="invoice-info-tt">物流单号:</text>
+    <input value="{{logistic_no}}" bindinput="handleLogisticCodeInput" maxlength="100" class="invoice-info-tt invoice-info-v invoice-info-ll invoice-info-in" placeholder="请填写物流单号" placeholder-style="color: #999"></input>
+  </view>
+  <view class="empty-flex"></view>
+  <view class="invoice-action" bindtap="handleSendConfirm">确定</view>
+</YFWActionModal>

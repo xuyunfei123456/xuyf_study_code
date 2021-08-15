@@ -1,0 +1,20 @@
+<view class="wrapper">
+  <view class="goods_img" style="height:{{imgWrapperHeight}}rpx;">
+    <image class="img" src="{{postdata.intro_image}}" mode='widthFix' lazy-load="{{true}}"></image>
+    <image wx:if="{{hasActivity}}" class="activity_img" src="{{postdata.imgurl}}" mode='widthFix' lazy-load="{{true}}"></image>
+  </view>
+  <view class="name_wrapper">
+    <image lazy-load="{{true}}"
+      wx:if="{{postdata.dict_medicine_type == 1 || postdata.dict_medicine_type == 2 || postdata.dict_medicine_type == 3|| postdata.dict_medicine_type == 0}}" class="name_img" src="{{postdata.dict_medicine_type == 0 ? '/images/ic_drug_OTC.png':(postdata.dict_medicine_type == 1 || postdata.dict_medicine_type == 2 || postdata.dict_medicine_type == 3) ? '/images/ic_drug_track_label.png':''}}">
+    </image>
+    <view class="name">{{postdata.name}}</view>
+  </view>
+  <view class="standard">{{postdata.standard}}</view>
+  <view class="price">
+    <view class="nowPrice">￥{{postdata.price}}起</view>
+    <view class="oldPrice"></view>
+  </view>
+  <view class="shopnum" wx:if="{{postdata.shop_num}}">
+    {{postdata.shop_num}}<text class="shop_num_text">个商家在售</text>
+  </view>
+</view>

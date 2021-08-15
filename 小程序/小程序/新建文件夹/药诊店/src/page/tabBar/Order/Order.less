@@ -1,0 +1,376 @@
+.order {
+  background: #f5f5f5;
+  height: 100vh;
+  .choosed {
+    color: #00b187;
+  }
+  .shadow {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+  }
+  .filter {
+    transition: height 0.3s;
+    position: fixed;
+    top: 0;
+    height: 40px;
+    width: 100%;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    .filter_top {
+      box-sizing: border-box;
+      padding-top: 13.333px;
+      display: flex;
+      flex-direction: row;
+      text-align: center;
+      font-size: 14px;
+      font-weight: bold;
+      color: #333;
+      height: 40px;
+      .choosed_num {
+        height: 11.667px;
+        width: 11.667px;
+        box-shadow: 0 0 0 1px #00b187;
+        font-size: 10px;
+        border-radius: 50%;
+        color: #00b187;
+        line-height: 11.667px;
+        margin-right: 2.333px;
+        margin-top: 5px;
+      }
+      .filter_left {
+        width: 50%;
+      }
+      .filter_right {
+        .filter_name {
+          margin-right: 2.333px;
+        }
+        display: flex;
+        flex-direction: row;
+        width: 50%;
+        justify-content: center;
+        .filter_icon {
+          height: 11.667px;
+          width: 10.667px;
+          margin-top: 5px;
+        }
+      }
+    }
+    .filter_list {
+      animation: fade-in;
+      animation-duration: 0.3s; /*动画持续时间*/
+      -webkit-animation: fade-in 0.3s; /*针对webkit内核*/
+      margin-top: 26.333px;
+      padding-left: 28.333px;
+      .filter_list_item {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 15px;
+        .filter_list_item_text {
+          color: #333;
+          font-size: 14px;
+        }
+        .choosed {
+          color: #00b187;
+        }
+      }
+    }
+    .status_wrapper {
+      animation: fade-in;
+      animation-duration: 0.3s; /*动画持续时间*/
+      -webkit-animation: fade-in 0.3s; /*针对webkit内核*/
+      height: 291.333px;
+      .status_list {
+        margin-top: 17.333px;
+        padding-left: 12px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        height: 173.333px;
+        align-content: flex-start;
+        .status_list_item {
+          width: 80.667px;
+          height: 29.333px;
+          background: #fafafa;
+          border-radius: 14px;
+          color: #333;
+          font-size: 12px;
+          margin-right: 9.333px;
+          margin-bottom: 9.667px;
+          line-height: 29.333px;
+          text-align: center;
+        }
+        .choosed {
+          background-color: #e5f7f3;
+          box-shadow: 0 0 0 1px #00b187;
+          color: #00b187;
+        }
+      }
+    }
+
+    .buttons {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      .btn {
+        text-align: center;
+        height: 48px;
+        width: 120px;
+        border-radius: 24px;
+        line-height: 48px;
+        font-size: 16px;
+      }
+      .reset {
+        box-shadow: 0 0 0 0.667px #666;
+        color: #333;
+      }
+      .confirm {
+        color: #fff;
+        background: linear-gradient(
+          270deg,
+          rgb(57, 189, 129),
+          rgb(0, 177, 135)
+        );
+      }
+    }
+  }
+  .scroll {
+    position: absolute;
+    margin-top: 40px;
+    bottom: 0;
+    .list {
+      margin-top: 10px;
+      background: #fff;
+      padding: 17.667px 12.333px 19.667px 12px;
+      width: 100%;
+      box-sizing: border-box;
+      border-radius: 14.333px;
+      .titleLine {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 18.333px;
+        .left {
+          display: flex;
+          flex-direction: row;
+          .typePic {
+            width: 49.667px;
+            height: 19.333px;
+            line-height: 19.333px;
+            text-align: center;
+            color: #fff;
+            font-size: 11px;
+            font-weight: bold;
+            border-radius: 3.333px;
+          }
+          .shopSend {
+            background: linear-gradient(
+              135deg,
+              rgb(101, 162, 250),
+              rgb(51, 105, 255)
+            );
+          }
+          .bySelf {
+            background: linear-gradient(
+              135deg,
+              rgb(250, 210, 101),
+              rgb(255, 137, 51)
+            );
+          }
+          .storeName {
+            font-size: 15px;
+            color: #333;
+            font-weight: bold;
+            padding-left: 4px;
+          }
+        }
+        .right {
+          font-size: 13px;
+          color: #333;
+        }
+      }
+      .listCard {
+        height: 46.667px;
+        margin-bottom: 20px;
+      }
+      .total {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 23px;
+        align-items: center;
+        .num {
+          color: #999;
+          font-size: 13px;
+          padding-right: 10px;
+        }
+        .size {
+          color: #999;
+          font-size: 13px;
+        }
+        .sum {
+          padding-right: 6px;
+        }
+        .price_int {
+          color: #333;
+          font-size: 13px;
+          font-weight: bold;
+        }
+        .price_float {
+          font-size: 11px;
+          font-weight: bold;
+        }
+      }
+      .operation {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        .button {
+          padding: 0 10px;
+          height: 28.667px;
+          border: 1px solid #bbb;
+          border-radius: 14.333px;
+          line-height: 28.667px;
+          text-align: center;
+          margin-left: 13.333px;
+          color: #666;
+          font-size: 14px;
+        }
+        .right {
+          display: flex;
+          justify-content: flex-end;
+        }
+        .left {
+          position: relative;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 78.667px;
+          height: 28.667px;
+          .hideBtns_wrapper {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            bottom: 23px;
+            width: 68.333px;
+            .hide_btns {
+              box-shadow: 0 2px 6.553px 0.133px rgba(0, 0, 0, 0.06);
+              padding-left: 11.333px;
+              padding-top: 13.333px;
+              border-radius: 7px;
+              background: #fff;
+              .hide_btns_item {
+                color: #333;
+                font-size: 12px;
+                padding-bottom: 13.333px;
+              }
+            }
+            .arrow {
+              width: 0;
+              height: 0;
+              border-width: 12px 8px 0 8px;
+              border-style: solid;
+              border-color: #fff transparent transparent transparent;
+              transform: translateX(28px);
+              filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.06));
+            }
+          }
+        }
+      }
+    }
+  }
+  .noList {
+    position: absolute;
+    top: 50px;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    width: 100%;
+    .nolist_bg {
+      height: 99px;
+      width: 96px;
+      margin-top: 132px;
+    }
+    .nodata_tips {
+      color: #666;
+      font-size: 14px;
+      padding: 27px 0;
+    }
+    .nolistBtn {
+      width: 125px;
+      height: 37px;
+      background: linear-gradient(270deg, rgb(57, 189, 129), rgb(0, 177, 135));
+      font-size: 14px;
+      color: #fff;
+      font-weight: bold;
+      border-radius: 19px;
+      text-align: center;
+      line-height: 37px;
+    }
+  }
+  .sendTypeAni {
+    transition: height 0.3s;
+    height: 159px;
+  }
+  .statesAni {
+    transition: height 0.3s;
+    height: 291.333px;
+  }
+  .correct {
+    width: 13.667px;
+    height: 10px;
+    margin-right: 6px;
+  }
+  .showAni {
+    transition: all 1s;
+  }
+  .hideAni {
+    display: none;
+  }
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    } /*初始状态 透明度为0*/
+    40% {
+      opacity: 0;
+    } /*过渡状态 透明度为0*/
+    100% {
+      opacity: 1;
+    } /*结束状态 透明度为1*/
+  }
+  .trangle_down {
+    width: 5px;
+    height: 4.667px;
+    vertical-align: middle;
+    margin-left: 6.333px;
+  }
+  .dot {
+    height: 3.167px;
+    width: 16.333px;
+  }
+  .rotate {
+    transform: rotate(180deg);
+  }
+  .bottom_tip {
+    height: 47.333px;
+    width: 100%;
+    color: #666;
+    font-size: 12px;
+    text-align: center;
+    line-height: 47.333px;
+  }
+  .border_green {
+    color: #00b187 !important;
+    border-color: #00b187 !important;
+  }
+}

@@ -1,0 +1,10 @@
+<view class="wrapper">
+  <view class="goods_img" style="height:{{imgWrapperHeight}}rpx;">
+    <image class="img" src="{{img}}" mode='widthFix' lazy-load="{{true}}"></image>
+  </view>
+  <view class="name">{{name}}</view>
+  <view class="price">
+    <view class="nowPrice">￥{{price}}</view>
+    <view class="oldPrice"></view>
+  </view>
+</view>

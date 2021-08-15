@@ -1,0 +1,80 @@
+<!--pages/healthy/searchPage/searchPage.wxml-->
+<view class='searBox'>
+  <view class='topSearch'>
+
+ <view class='isInput'>
+    <view class="searchSack">
+      <image src='{{srcEarch}}'></image>
+      <input placeholder="请输入疾病或症状" bindinput='bindinput' value='{{inputValue}}' placeholder-style='color:#999' />
+    </view>
+       <button class='searchBtn fc-greNum' bindtap='onSearch'>搜索</button>
+ </view>
+       <!-- 搜索下拉框 -->
+<view class='box scrollview scroTop' hidden="{{hideScroll}}">
+    <!-- <scroll-view scroll-y="true" class="scrollview" hidden="{{hideScroll}}"> -->
+      <block wx:for='{{bindSource}}'>
+        <view class='resultS'>
+          <image src='{{srcEarch}}' class='mySearch inlMidle'></image>
+          <view data-item="{{item}}" bindtap="itemtap" class="itemview inlMidle">{{item.title}}</view>
+          <view class='clearBoth'></view>
+        </view>
+      </block>
+    <!-- </scroll-view> -->
+</view>
+ 
+<!-- 搜索结果列表 -->
+
+
+
+  <view class='newQAll newMargin scrollview' hidden="{{hideScrollTwo}}">
+    <!-- 最新问题列表 -->
+    <view class='replyQuey' wx:for='{{searchList}}' wx:key='unique' bindtap='replyQuey' data-item='{{item}}'>
+      <view class='replyOne'>{{item.title}}</view>
+      <view class='replyTwo'>
+        <view class='replyNum'>{{item.reply_count}}条回复</view>
+
+        <view class='repState repCol_gray' wx:if="{{item.status==='待回复'}}">
+          <view class='QuesImg'>
+            <image src='../../../images/yfwsk/inf999.png'></image>
+            <view class='Quesname'>{{item.status}}</view>
+            <view class='clearBoth'></view>
+          </view>
+        </view>
+
+        <view class='repState repCol_gren' wx:if="{{item.status==='已回复'}}">
+          <view class='QuesImg'>
+            <image src='../../../images/yfwsk/infgreen.png'></image>
+            <view class='Quesname'>{{item.status}}</view>
+            <view class='clearBoth'></view>
+          </view>
+        </view>
+
+        <view class='repState repCol_red' wx:if="{{item.status==='已采纳'}}">
+          <view class='QuesImg'>
+            <image src='../../../images/yfwsk/caina.png'></image>
+            <view class='Quesname'>{{item.status}}</view>
+            <view class='clearBoth'></view>
+          </view>
+        </view>
+
+        <view class='replyTime'>{{item.update_time}}</view>
+
+      </view>
+    </view>
+      <view class='nomore' wx:if='{{loadhidden}}'> 加载中...</view>
+  <view class='nomore' wx:if='{{hidden}}'>没有更多了</view>
+  </view>
+
+
+
+
+    <view class='clearBoth'></view>
+  </view>
+  <!-- 热搜 -->
+  <view class='outHot' hidden='{{homeHidden}}'>
+    <view class='topSearch topSLeft'>热搜</view>
+    <view class='hotCont'>
+      <view class='hot-search' wx:for="{{sehotCont}}" wx:key="union" bindtap='onHotcont' data-item='{{item}}'>{{item.department_name}}</view>
+    </view>
+  </view>
+</view>

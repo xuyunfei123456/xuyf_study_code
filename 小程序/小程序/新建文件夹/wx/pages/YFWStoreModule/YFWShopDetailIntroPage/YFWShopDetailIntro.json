@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "starScore": "../../../components/YFWStar/YFWStar",
+    "more_view": "/components/YFWMoreView/YFWMoreView"
+  },
+  "navigationBarBackgroundColor": "#49ddb8",
+  "navigationBarTitleText": "药房网商城",
+  "navigationBarTextStyle": "white"
+}

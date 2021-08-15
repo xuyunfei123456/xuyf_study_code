@@ -1,0 +1,17 @@
+
+<!-- {{fromes == 'orderDetail'?bottom:top}}:{{top}}rpx; left:{{left}}rpx -->
+
+<view wx:if="{{show}}" class='hide_buttons_outside' bindtap='closeView'>
+<view class='hide_buttons_parent' style="{{style}}">
+  <view class='top_triangle' wx:if="{{showDerictionTop == 'top'}}">
+  </view>
+  <view class='buttons'>
+      <block wx:for="{{hideButtons}}" wx:for-index="idx">
+        <view class='buttons_item' bindtap='onHideButtonClick' data-type="{{item.value}}" data-item="{{datas}}">{{item.text}}</view>
+        <view class='splite' wx:if="{{idx != hideButtons.length-1}}"></view>
+      </block>
+  </view>
+  <view class='bottom_triangle' wx:if="{{showDerictionTop == 'bottom'}}">
+  </view>
+</view>
+</view>

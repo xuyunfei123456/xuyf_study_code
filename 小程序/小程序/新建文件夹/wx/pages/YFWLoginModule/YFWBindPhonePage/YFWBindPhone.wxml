@@ -1,0 +1,30 @@
+<!--pages/YFWLoginModule/YFWBindPhonePage/YFWBindPhone.wxml-->
+<view class='container'>
+	<view class='view_phone'>
+		<text>绑定手机号</text>
+	</view>
+	<view class='view_input_phone'>
+		<input placeholder="请输入手机号" data-name='account' value='{{account}}' name="account" type="number" focus='{true}' maxlength='11' bindinput='phone_num'></input>
+		<view class='bottom_line_1px'></view>
+	</view>
+
+	<view class='view_input_yzm'>
+		<view class='input_yzm'>
+			<input placeholder="请输入验证码" data-name='yzm' value='{{yzm}}' name="yzm" type="number" maxlength='6' bindinput='yzm_num'></input>
+			<view class='bottom_line_1px'></view>
+		</view>
+
+		<button class='btn_yzm' disabled='{{disabled}}' bindtap='sendYZMCode'>{{getYZMCode}}</button>
+
+	</view>
+	<button class="btn_bind"  lang="zh_CN" bindtap="getLogin">绑定</button>
+</view>
+
+
+<view class="shadow" wx:if="{{errorFlag}}">
+	<view class="tipWrapper">
+		<image src="/images/tip_warn.png" class="tippic"></image>
+		<view class="tipText">{{errormsg}}</view>
+    <image src="/images/returnTips_close.png" class="close" bindtap="closeshadow"></image>
+	</view>
+</view>

@@ -1,0 +1,11 @@
+<!--page/one/index.wxml-->
+<view class="item" style="width:{{itemWidth}};height:{{height+'rpx'}};overflow:hidden;">
+  <view class="item-bottom" style="width:{{itemWidth}};height:{{height+'rpx'}}">
+    <view style="width:{{itemBottomWidth}};height:{{height+'rpx'}};overflow:hidden">
+      <slot name="bottom"></slot>
+    </view>
+  </view>
+  <view  style=" width:{{itemWidth}};height:{{height+'rpx'}};transform:{{transform}}" class="item-top" bindtouchmove="touchmove" bindtouchend="touchend" bindtouchstart="touchstart">
+    <slot name="top"></slot>
+  </view>
+</view>

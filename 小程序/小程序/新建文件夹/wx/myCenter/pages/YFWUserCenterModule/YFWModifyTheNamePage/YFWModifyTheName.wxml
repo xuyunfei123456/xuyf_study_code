@@ -1,0 +1,50 @@
+<view class="container">
+  <view class="self" wx:if="{{personSelfFlag}}">
+        <text>实名认证</text>
+        <view class="selfCercition" bindtap="selfCer">本人认证</view>
+  </view>
+  <view class="tip" wx:if="{{selfCerFlag}}">为保证您的账号安全，请完成实名认证，确认此账户是本人使用</view>
+  <view class="tip" wx:if="{{userDrugList.length != 0}}">如下是已实名的用药人，可直接选择认证，一旦完成则不可更改</view>
+  <view class="name" wx:if="{{userDrugList.length == 0 && !selfCerFlag}}"><text style="padding-left:32rpx">姓名：{{name}}</text></view>
+  <view class="idcard" wx:if="{{idcardFlag}}"><text style="padding-left:32rpx">身份证号：{{idcard}}</text></view>
+  <view class="selfCer" wx:if="{{selfCerFlag}}">
+    <view class="customer_left">姓名：</view>
+    <view class="item_right">
+      <input type='text' name="realname" placeholder-style='placeholdercla' placeholder-class="placeholder"
+        maxlength='10'  bindblur="nameChange" placeholder="请输入姓名" />
+    </view>
+  </view>
+  <view class="selfCer" wx:if="{{selfCerFlag}}">
+    <view class="customer_left">身份证号：</view>
+    <view class="item_right">
+      <input type='idcard' name="idcard" placeholder-style='placeholdercla' placeholder-class="placeholder" value="{{idcard}}"
+        maxlength='18' bindblur="idcardChange" placeholder="请输入18位身份证号码" />
+    </view>
+  </view>
+  <view class="druglist" wx:if="{{userDrugList.length!=0}}">
+    <block wx:for="{{userDrugList}}" wx:for-index="data" wx:key='{{item.id}}'>
+      <view class="listWrapper" bindtap='cilckCircle' data-key='{{item.id}}'>
+        <image class='icon-checkbox'  src="{{item.checked?'/images/icon_choose.png':'/images/icon_unchoose.png'}} " />
+        <view class="listName">{{item.real_name}}</view>
+        <view class="listsex">{{item.dict_sex == 1 ? '男':'女'}}</view>
+        <view class="listCard">{{item.idcard_no}}</view>
+      </view>
+    </block>
+  </view>
+  <view class='bottom_container' wx:if="{{selfCerFlag || userDrugList.length !=0}}">
+    <view bindtap="certification" class='btnBtom'>
+      <view class="cer-add">完成认证</view>
+    </view>
+    <view class='bottom_empty'></view>
+  </view>
+</view>
+<view class="cer_success" wx:if="{{knowFlag}}">
+  <view class="modal">
+    <image src="../../../../images/returnTips_close.png" class="returnTips_close" bindtap="know" />
+    <view class="ver_tip">提示</view>
+    <view class="ver_success_text">您已实名认证成功</view>
+    <view bindtap="know" style="width:50%;margin:40px auto" class='btnBtom'>
+      <view class="cer-add">确定</view>
+    </view>
+  </view>
+</view>

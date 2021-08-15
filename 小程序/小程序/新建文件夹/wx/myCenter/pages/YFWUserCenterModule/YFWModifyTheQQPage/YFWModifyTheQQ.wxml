@@ -1,0 +1,10 @@
+<view class="container">
+  
+   <view class ="container-name">
+       <input class="newName" value="{{qq}}" bindinput="bindChange_qq" placeholder="请输入新的QQ号码" type="number"/>  
+   </view>
+
+  <view class="commit">
+    <button class="address-save" bindtap="save">保存</button>
+  </view>
+</view>

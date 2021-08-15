@@ -1,0 +1,30 @@
+<view class="articleItem" bindtap="onClickArticleIKeyMethod" data-name="{{postCardData}}">
+  <view class="articleItem_top">
+    <image class="articlePic" src="{{postCardData.upload_img}}"></image>
+    <view class="articleItem_top_right">
+      <view class="articleTitle">{{postCardData.title}}</view>
+      <view class="articleSummary">{{postCardData.summary}}</view>
+      <view class="articleComment">
+          <view class="commentLeft">
+
+            <view class="commentDel">
+              <image src="/images/articlehits.png" class="commentIcon"></image>
+              <text class="commentNum">{{postCardData.hits}}</text>
+            </view>
+            <view class="commentCircle"></view>
+            <view class="commentDel commentLike">
+              <image src="/images/articledianzan.png" class="commentIcon"></image>
+              <text class="commentNum">{{postCardData.likes}}</text>
+            </view>
+
+          </view>
+          <view class="commentTime">{{postCardData.update_time}}</view>
+        </view>
+    </view>
+  </view>
+  <view class="articleLabels">
+          <block wx:for="{{postCardData.topic_name}}" wx:key="">
+            <view class="articleLabelItem" catchtap="goHotTopicClick" data-name="{{item}}">#<text>{{item}}</text>#</view>
+          </block>
+        </view>
+</view>

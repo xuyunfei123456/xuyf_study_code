@@ -1,0 +1,8 @@
+module.exports = function(str, len, end = '...') {
+    if(str.length > len) {
+        return str.slice(0, len) + end
+    } else {
+        return str
+    }
+    
+}

@@ -1,0 +1,38 @@
+<view class='container'>
+  <scroll-view class='scroll' scroll-y="true">
+    <view wx:if="{{hotWords.length>0}}">
+      <view class='hotWords-view'>
+        <titleView title="热门搜索"/>
+      </view>
+      <view class='hotWords-context'>
+        <block wx:for="{{hotWords}}" wx:key="{{index}}">
+          <view class='hotWords-context-view' bindtap='clickHotItemMethod' data-name='{{item}}'>
+            <text>{{item}}</text>
+          </view>
+        </block>
+      </view>
+    </view>
+    <view wx:if="{{historyWords.length>0}}">
+      <view class='historyWords-view'>
+        <titleView title="历史搜索"/>
+        <view class="clear-view">
+          <image src='/images/ico_delete.png' class='image-view' wx:if="{{types == 1}}" bindtap='clearHistoryMethod'></image>
+          <view class="operation" wx:if="{{types == 2}}">
+            <view class="deleteAll" bindtap="deleteAll">全部删除</view>
+            <view class="deleteLine"></view>
+            <view class="complete" bindtap="completeDelete">完成</view>
+          </view>
+        </view>   
+      </view>
+      <view class='hotWords-context'>
+        <block wx:for="{{historyWords}}" wx:key="{{index}}">
+          <view class='hotWords-context-view'>
+            <text bindtap='clickHistoryItemMethod' data-name='{{item}}'>{{item._newsType=='article' ? '' : item.showType == 'goods' ? '商品' : '商家'}}{{' '+item.value}}</text>
+            <image wx:if="{{types == 2}}" src="/images/returnTips_close.png" class="deleteIcon" bindtap="deletesingle" data-info="{{item.key}}"></image>
+          </view>
+        </block>
+      </view>
+    </view>
+    
+  </scroll-view>
+</view>

@@ -1,0 +1,10 @@
+/* pages/video/video.wxss */
+page{
+  overflow: hidden;
+}
+.back{
+  width: 20rpx;
+  height: 36rpx;
+  position: absolute;
+  left: 7%;
+}

@@ -1,0 +1,20 @@
+<view class="containers">
+  <!-- 分割线 -->
+  <view class="divLine"></view>
+  <button class="contact-us" open-type="contact" session-from="wx_app">
+    <image class="img-information" src="../../../../images/xx_khfw.png"></image>
+    <view class="online-service">在线客服</view>
+    <image class="img-navigate" src="../../../../images/around_detail_icon.png"></image>
+  </button>
+  <view class='view-bottom'>
+    <view class='view-phone'>
+      <image class="phone" src="../../../../images/icon_phone.png"></image>
+      <text class="tv-phone">{{serviceMobile}}</text>
+    </view>
+
+    <view class='view-email'>
+      <image class="email" src="../../../../images/icon_emial.png"></image>
+      <text class="tv-email">{{service_mailbox}}</text>
+    </view>
+  </view>
+</view>

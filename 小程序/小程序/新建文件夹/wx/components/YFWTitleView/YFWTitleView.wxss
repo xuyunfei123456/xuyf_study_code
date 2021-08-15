@@ -1,0 +1,30 @@
+/* components/YFWTitleView.wxss */
+.root{
+  display: flex;
+  flex-direction: column;
+  padding: 0 30rpx;
+}
+.text_title{
+  height: 30rpx;
+  line-height: 30rpx;  
+  display:inline-block;
+  font-size:30rpx;
+  color:#333333;
+  margin-bottom: -6rpx;
+  z-index:10;
+  text-align: center;
+}
+.text_image{
+  display: flex;
+  height: 16rpx;
+  width:120%;
+  margin-left: -8%;
+  z-index:1;
+}
+.line_image {
+  height: 8rpx;
+  width: 60%;
+  margin-left: 20%;
+  margin-top: 16rpx;
+  z-index: 1;
+}

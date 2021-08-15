@@ -1,0 +1,141 @@
+page {
+  background-color: #faf9f9;
+}
+
+.view-no-data {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fafafa;
+  color: #999;
+  font-size: 22rpx;
+}
+
+.image-no-data {
+  height: 300rpx;
+  width: 300rpx;
+  margin-top: 42%;
+  margin-bottom: 20rpx;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.item {
+  width: 94%;
+  border-radius: 15rpx;
+  background-color: #fff;
+  margin-top: 34rpx;
+  padding-bottom: 40rpx;
+  box-shadow: 0rpx 2rpx 2rpx 2rpx rgba(0, 0, 0, 0.15);
+}
+
+.view-item {
+  display: flex;
+  flex-direction: column;
+  margin-left: 40rpx;
+  margin-top: 40rpx;
+  font-size: 26rpx;
+  color: #999;
+}
+
+.view-order {
+  display: flex;
+  flex-direction: row;
+}
+
+.text-orderNum {
+  color: #1fdb9b;
+  margin-left: 6rpx;
+}
+
+.text-order-type {
+  position: absolute;
+  right: 0;
+  margin-right: 8%;
+  color: #999;
+}
+
+.view-business {
+  margin-top: 18rpx;
+}
+
+.text-business {
+  color: #333;
+  margin-left: 6rpx;
+}
+
+.to-jump {
+  position: absolute;
+  right: 0;
+  margin-right: 8%;
+  color: #999;
+}
+
+.item-item {
+  display: flex;
+  margin-top: 20rpx;
+  flex-direction: column;
+  margin-left: 8rpx;
+  color: #333;
+}
+
+.item-item .customer-servce {
+  margin-top: 44rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.view-comment {
+  margin-top: 51rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.text-comment {
+  font-size: 30rpx;
+  color: #333;
+}
+
+.view-comment .context {
+  font-size: 26rpx;
+  color: #333;
+  margin-top: 28rpx;
+}
+
+.stars {
+  margin-left: 50rpx;
+}
+
+.foot {
+  height: 20rpx;
+  margin-top: 20rpx;
+  margin-bottom: 70rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.foot .text {
+  color: #999;
+  font-size: 22rpx;
+  text-align: center;
+}
+
+.loading {
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  bottom: calc(50vh - 35rpx);
+  left: calc(50vw - 35rpx);
+  width: 70rpx;
+  height: 70rpx;
+  z-index: 999;
+  background-color: transparent;
+}

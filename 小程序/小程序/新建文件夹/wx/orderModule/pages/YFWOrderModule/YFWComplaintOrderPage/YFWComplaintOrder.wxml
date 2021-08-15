@@ -1,0 +1,20 @@
+<view class='topLayout'></view>
+<view class='wrapper'>
+  <view class="titleview">
+    <view class='reasonTitle'>
+      <view class='reasonTitleText'>投诉内容</view>
+      <view class='reasonBottom'></view>
+    </view>
+  </view>
+  <view class="listwrapper">
+    <block wx:for="{{typeinfo}}">
+      <view class="list {{index == typeinfo.length-1 ? 'nobottom':''}}" bindtap="turnto" data-id="{{item.dict_complaints_type}}">
+        <view class="left">
+          <view class="name">{{item.complaints_name}}</view>
+          <view class="tip">{{item.description}}</view>
+        </view>
+        <image class="arrow" src="/images/uc_next.png"></image>
+      </view>
+    </block>
+  </view>
+</view>

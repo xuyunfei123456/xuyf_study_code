@@ -1,0 +1,107 @@
+/* pages/YFWUserCenterModule/YFWModifyThePhoneNextPage/YFWModifyThePhoneNext.wxss */
+page {
+  background-color: #faf9f9;
+}
+
+
+
+.phone {
+  font-size: 25rpx;
+  margin-top: 65rpx;
+  width: 60%;
+}
+
+.mobile {
+  font-size: 25rpx;
+}
+
+.show-mobile {
+  float: right;
+  margin-top: -38rpx;
+  font-size: 25rpx;
+}
+
+.confirm_pho {
+  font-size: 25rpx;
+  float: right;
+  margin-right: 370rpx;
+  margin-top: -32rpx;
+}
+
+.commit {
+  width: 100%;
+  margin-top: 80rpx;
+}
+
+.address-commit {
+  font-size: 30rpx;
+  margin-top: 120rpx;
+  border-radius: 50rpx;
+  height: 80rpx;
+  width: 90%;
+  background-color: #49ddb8;
+  color: white;
+}
+
+.container-phone {
+  font-size: 25rpx;
+  margin-left: 80rpx;
+  margin-top: 80rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.container-yzm {
+  font-size: 25rpx;
+  margin-left: 80rpx;
+  margin-top: 30rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.confirm-code {
+  font-size: 25rpx;
+  color: #999;
+}
+
+.placeholder-code {
+  font-size: 25rpx;
+  color: #999;
+}
+
+.get_line {
+  position: absolute;
+  right: 0;
+  margin-right: 25%;
+  font-size: 25rpx;
+  color: #cdc9c9;
+}
+
+.get_Code {
+  position: absolute;
+  right: 0;
+  margin-right: 10%;
+}
+
+.get-Code_ol {
+  font-size: 25rpx;
+  color: #49ddb8;
+}
+
+.divLine {
+  background: #f3f1f1;
+  margin-top: 25rpx;
+  height: 1rpx;
+  width: 80%;
+}
+
+.row {
+  font-size: 25rpx;
+  text-align: center;
+  margin-top: 260rpx;
+  color: #a8a8a8;
+}
+
+.row-sl {
+  font-size: 25rpx;
+}

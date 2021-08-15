@@ -1,0 +1,41 @@
+<view class='parent_css'>
+
+  <view class='medicine_info'>
+    <image class='medicine_image' src='{{img_url}}'>
+    </image>
+    <view class='info'>
+      <text>订单：<text class='order_no'>{{orderno}}</text></text>
+      <text style='margin-top:10rpx'>商家：<text class='order_no'>{{shop_title}}</text></text>
+      <text class='price'>¥{{order_total}}</text>
+    </view>
+  </view>
+
+  <view class='dash_line'></view>
+  <view class='evaluation_item'>
+    <text class='type_text'>客户服务</text>
+    <starScore id="service"></starScore>
+  </view>
+  <view class='evaluation_item'>
+    <text class='type_text'>发货速度</text>
+    <starScore id = "send"></starScore>
+  </view>
+  <view class='evaluation_item'>
+    <text class='type_text'>物流速度</text>
+    <starScore id = "logist"></starScore>
+  </view>
+  <view class='evaluation_item'>
+    <text class='type_text'>商品包装</text>
+    <starScore id="package"></starScore>
+  </view>
+
+  <view class='input_parent'>
+    <textarea value='{{inputText}}' placeholder='写下本次的购物体验，您的评价内容和打分都将是其他网友的参考依据，并影响该商家的服务评分。' placeholder-class='input_placeholde' class='input_edite' adjust-position="true" bindinput='onTextChange'></textarea>
+  </view>
+  <text class='tips_text'>*您的评价内容将匿名展示</text>
+
+  <view></view>
+</view>
+
+<view class='post_button' bindtap='postEvaluation'>
+    <text class='text'>提交</text>
+</view>

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "starScore":"../../../../components/YFWStarScore/YFWStarScore"
+  },
+  "navigationBarTitleText": "订单评价"
+}

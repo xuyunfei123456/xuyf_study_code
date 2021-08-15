@@ -1,0 +1,82 @@
+.OrderListCard{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .OrderListCard_left{
+        display: flex;
+        flex-direction: row;
+        .pic{
+            border: 0.3px solid #f0f0f0;
+            height: 47px;
+            width: 47px;
+            display: flex;
+            border-radius: 6px;
+            .img{
+                width: 40px;
+                margin: auto;
+            }
+        }
+        .content{
+            margin-left: 13px;
+            .title{
+                display: flex;
+                flex-direction: row;
+                color: #333;
+                font-size: 13px;
+                margin-top: 6px;
+                align-items: center;
+                font-weight: bold;
+                .medicine_type{
+                    height: 12px;
+                    width: 20px;
+                }
+                .brandName{
+                    margin-left: 4px;
+                }
+                .goods_name{
+                    padding-left: 4px;
+                }
+            }
+            .standard{
+                color: #333;
+                font-size: 12px;
+                margin-top: 6px;
+            }
+            .lnListLeft{
+                margin-top: 15px;
+                .lotNumber{
+                    margin-top: 7px;
+                    font-size: 13px;
+                    color: #00b187;
+                }
+            }
+      
+        }
+    }
+    .OrderListCard_right{
+        .price{
+            color: #333;
+            font-size: 12px;
+            font-weight: bold;
+            margin-top: 12px;
+            .float{
+                font-size: 10px;
+            }
+        }
+        .lnListRight{
+            margin-top: 33px;
+            .num{
+                color:#999;
+                font-size: 10px;
+                text-align: right;
+                margin-top: 6px;
+            }
+        }
+  
+        .stand_right{
+            margin-top: 24px;
+        }
+    }
+}

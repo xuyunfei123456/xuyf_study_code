@@ -1,0 +1,40 @@
+.noMore{
+  height: 100%;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .noMore_text{
+    font-size: 12px;
+    color: #666;
+    padding: 0 10px;
+    width: auto;
+    z-index: 99;
+  }
+  .noMore_line{
+    position: absolute;
+    top: 50%;
+    height: 1px;
+    background: #c4c4c4;
+    width: 60%;
+  }
+  .noMore_text:before {
+    content: "";
+    position: absolute;
+    background-image: linear-gradient(to right,rgba(196,196,196,0.2),rgba(196,196,196,0.5),rgba(196,196,196,1));
+    left: 10%;
+    right: 60%;
+    height: 1px;
+    top: 50%;
+    }
+    .noMore_text:after {
+    content: "";
+    position: absolute;
+    background-image: linear-gradient(to left,rgba(196,196,196,0.2),rgba(196,196,196,0.5),rgba(196,196,196,1));
+    left: 60%;
+    right: 10%;
+    height: 1px;
+    top: 50%;
+    }
+}

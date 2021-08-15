@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "Price": "./components/Price/Price"
+  },
+  "navigationBarTitleText": "拼团",
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black"
+}

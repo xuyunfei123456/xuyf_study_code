@@ -1,0 +1,458 @@
+page{
+    background-color: #F5F5F5
+  }
+  
+  .topLayout {
+    width: 750rpx;
+    height: 200rpx;
+    background-color: #49ddb8;
+    position: absolute;
+    top: 0px;
+  }
+  .jytip{
+    margin-left: 12px;
+    margin-right: 12px;
+    background-color: #faf8dc;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 7px;
+    padding: 10px;
+    margin-top: 20px;
+  }
+  .tippic{
+    width: 40px;
+    height: 27px;
+  }
+  .tiptext{
+    font-size: 12px;
+    color: #feac4c;
+    padding-left: 9px;
+  }
+  .part {
+    margin-left: 12px;
+    margin-right: 12px;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 14rpx;
+    box-shadow: 0rpx 7rpx 15rpx 0rpx rgba(204, 204, 204, 0.6);
+    position: relative;
+    margin-top: 20px;
+    padding-left: 12px;
+    padding-right: 14px;
+  }
+  
+  .orderNumLayout {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 40px;
+  }
+  .mobile{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+    padding-top: 17px;
+    padding-bottom: 17px;
+  }
+  .type {
+    font-size: 14px;
+    color: #333333;
+    font-weight: normal;
+  }
+  
+  .orderShopLayout {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 32px;
+    align-items: center;
+  }
+  
+  .chooseComplaintReason {
+    margin-top: 35rpx;
+    width: 700rpx;
+    margin-left: 25rpx;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 14rpx;
+    box-shadow: 0rpx 7rpx 15rpx 0rpx rgba(204, 204, 204, 0.6);
+  }
+  
+  .reasonTitle {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25rpx;
+    margin-top: 50rpx;
+    margin-left: 40rpx;
+  }
+  
+  .reasonTitleText {
+    font-size: 28rpx;
+    color: #333;
+    font-weight: bold;
+    z-index: 99;
+  }
+  
+  .reasonBottom {
+    background-image: linear-gradient(270deg, #4bfdf2 0%, #4bff8f 100%), linear-gradient(#fff, #fff);
+    background-blend-mode: normal, normal;
+    width: 125rpx;
+    height: 12rpx;
+    margin-top: -8rpx;
+    box-shadow: 0rpx 7rpx 15rpx 0rpx rgba(131, 241, 219, 0.59);
+  }
+  
+  .complaintType{
+    margin-left: 40rpx;
+    margin-top: 15rpx;
+    margin-right: 40rpx;
+    width: 620rpx;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 40rpx;
+  }
+  
+  .reasonItem{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 100rpx;
+  }
+  
+  .checkedIcon{
+    width: 40rpx;
+    height: 40rpx;
+  }
+  
+  .reasonText{
+    font-size: 28rpx;
+    color: #999999;
+  }
+  
+  .checkedReasonText{
+    font-size: 28rpx;
+    color: #333333;
+  }
+  
+  .splite{
+    height: 2rpx;
+    background-color: #E5E5E5;
+    width: 620rpx;
+  }
+  
+  .complaintInputLayout{
+    margin-top: 35rpx;
+    width: 700rpx;
+    margin-left: 25rpx;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 14rpx;
+    box-shadow: 0rpx 7rpx 15rpx 0rpx rgba(204, 204, 204, 0.6);
+  }
+  
+  .tips{
+    font-size: 24rpx;
+    color: #999999;
+    opacity:0.9;
+  }
+  
+  .inputClass{
+    font-size: 28rpx;
+    color: #333333;
+    margin-left: 16rpx;
+    height: 90px;
+    margin-top: 11px;
+  }
+  
+  .postPic{
+    width: 620rpx;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    margin-top: 17px;
+    position: relative;
+  }
+  
+  .addPicIcon{
+    width: 180rpx;
+    height: 180rpx;
+  }
+  
+  .postPicLayout{
+    width: 180rpx;
+    height: 180rpx;
+    display: flex;
+    flex-direction: column;
+    margin-right: 26rpx;
+  }
+  
+  .deletPic{
+    width: 30rpx;
+    height: 30rpx;
+   position: relative;
+   margin-top: -180rpx;
+   margin-left: 150rpx;
+   z-index: 99
+  }
+  
+  .postButton {
+    width: 700rpx;
+    height: 84rpx;
+    background-image: linear-gradient(270deg, #00c891 0%, #1fdb9b 100%), linear-gradient(#fff, #fff);
+    background-blend-mode: normal, normal;
+    box-shadow: 0rpx 7rpx 15rpx 0rpx rgba(31, 219, 155, 0.5);
+    border-radius: 42rpx;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100rpx;
+    margin-left: 25rpx;
+  }
+  
+  .postButton .text {
+    font-size: 32rpx;
+    color: #fff;
+    font-weight: bold;
+  }
+  
+  .fillBottom{
+    width: 100%;
+    height: 100rpx;
+  }
+
+
+  .need{
+    color: red;
+  }
+  .question{
+    font-size: 14px;
+    color: #333333;
+    padding-right: 7px;
+  }
+  .arrow{
+    transform: rotate(90deg);
+    height: 13px;
+    width: 8px;
+    vertical-align: middle;
+  }
+  .val{
+    padding-right: 12px;
+  }
+  .line{
+    height: 1px;
+    width: 100%;
+    margin-top: 20px;
+    background-color: #cccccc;
+    opacity: 0.1;
+  } 
+  .reason{
+    font-size: 14px;
+    color: #999999;
+    padding-right: 7px;
+  }
+  .mtop{
+    margin-top: 16px;
+  }
+  .count{
+    text-align: right;
+    margin-bottom: 20px;
+    color: #999999;
+    font-size: 12px;
+  }
+  .help{
+    opacity: 0.9;
+    font-size: 12px;
+    color: #feac4c;
+    margin-top: 10px;
+    padding-bottom: 33px;
+  }
+.mobile_holder{
+  font-size: 14px;
+  color: #999999;
+  font-weight: normal;
+}
+.mobilecla{
+  padding-left: 8px;
+}
+
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  background-color: black;
+  opacity: 0.3;
+}
+.contentview{
+  background-color: white;
+  height: 460px;
+  border-radius: 10rpx 10rpx 0 0;
+  transition: all 0.5s;
+  position: fixed;
+  bottom: -460px;  
+  z-index: 99999999;
+  width: 100%;
+}
+.expcontain{
+  background-color: white;
+  height: 500px;
+  border-radius: 10rpx 10rpx 0 0;
+  transition: all 0.5s;
+  position: fixed;
+  bottom: -500px;  
+  z-index: 99999999;
+  width: 100%;
+}
+.contentshow{
+  bottom: 0rpx;  
+}
+.nameAndclose{
+  display: flex;
+  flex-direction: row;
+  height: 60rpx;
+  line-height: 60rpx;
+  color: black;
+  padding-bottom:25px;
+}
+.name{
+  width:90vw;
+  text-align: center;
+  color: black;
+  padding-top:15px;
+  font-size: 28rpx;
+
+}
+.close{
+  width: 10vw;
+  text-align: right;
+  padding-right: 20rpx;
+  color: #666;
+  font-size: 30rpx;
+  margin-top: 6px;
+}
+.searchResult{
+  color: #999999;
+  font-size: 28rpx;
+  padding-bottom: 19px;
+}
+.black{
+  color: #333333;
+}
+.choosed{
+  width: 20px;
+  height: 20px;
+}
+.row{
+  margin-top: 19px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 1px solid;
+  border-color: rgba(240,240,240,0.1);
+}
+.add {
+  width: 90%;
+  margin-left: 5%;
+  height: 80rpx;
+  border-radius: 50rpx;
+  background: linear-gradient(to right, #00c891, #1fdb9b);
+  box-shadow: 0rpx 8rpx 30rpx rgba(31, 219, 155, 0.5);
+  align-items: center;
+  display: flex;
+  color: white;
+  justify-content: center;
+  z-index: 999999999;
+}
+.scrollView2{
+  display: flex;
+  width: 100%;
+  height: 650rpx;
+}
+.hide{
+  display: none;
+}
+.top40{
+  margin-top: 40px;
+}
+.otherreason{
+  color: #333333;
+}
+.wratext{
+  color: #999999;
+  font-size: 12px;
+  padding-right: 6px;
+}
+.jyword{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-right: 24px;
+  align-items: center;
+  margin-top: 20px;
+}
+.ask{
+  width: 14px;
+  height: 14px;
+}
+.pad40{
+  padding-bottom: 40px;
+}
+.exptitle{
+  font-size: 12px;
+  color:rgb(51,51,51);
+}
+.expsubtitle{
+  font-size: 12px;
+  color: #333333;
+  margin-top: 22px;
+}
+.listitem{
+  font-size: 12px;
+  color: #666666;
+  line-height: 18px;
+}
+.expcon{
+  display: flex;
+  flex-direction: column;
+  margin-top: 11px;
+}
+.explist{
+  padding-left: 33px;
+  padding-top: 25px;
+}
+.iknow{margin-top: 40px;}
+.pd40{
+  padding-bottom: 40px;
+}
+.picDescribe {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 180rpx;
+  height: 180rpx;
+}
+
+.describtion {
+  font-size: 9px;
+  color: #999999;
+  text-align: center;
+}
+.pd10{
+  padding-bottom: 10px;
+}

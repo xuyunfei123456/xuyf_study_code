@@ -1,0 +1,187 @@
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background-color: #f5f5f5;
+
+  .top_bg {
+    width: 100%;
+    height: 205px;
+  }
+  .navigation {
+    position: absolute;
+    width: 100%;
+    top: 0;
+
+    .naviTitle {
+      .backWrapper {
+        position: absolute;
+        left: 12px;
+        width: 40px;
+        height: 23px;
+        .left_white {
+          width: 11.667px;
+          height: 17.333px;
+        }
+      }
+
+      display: flex;
+      justify-content: center;
+      color: white;
+      font-weight: bolder;
+    }
+  }
+  .storeCard {
+    .flex();
+    align-items: flex-start;
+    background-color: #ffffff;
+    box-shadow: 0px 5px 5px rgba(54, 175, 120, 0.17);
+    border-radius: 10px;
+    box-sizing: border-box;
+    position: absolute;
+    top: 94px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 351px;
+    padding: 17px 15.333px 16px 10.333px;
+
+    .storeCard_left {
+      .store_logo {
+        width: 84.333px;
+        height: 60px;
+      }
+    }
+
+    .storeCard_right {
+      .storeCard_name {
+        color: #333333;
+        font-size: 18px;
+        width: 225px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        margin-top: 4.333px;
+        font-weight: bold;
+      }
+
+      .storeCard_distance {
+        color: #999999;
+        font-size: 14px;
+        margin-top: 5px;
+      }
+
+      .storeCard_area {
+        .flex();
+        align-items: flex-start;
+        font-size: 13px;
+        color: #333333;
+        margin-top: 10px;
+        position: relative;
+
+        .address_logo {
+          width: 11.333px;
+          height: 14.333px;
+          margin-top: 3px;
+        }
+
+        .area {
+          width: 202px;
+          margin-right: 7.667px;
+        }
+
+        .right_gray {
+          width: 6px;
+          height: 10.667px;
+          position: absolute;
+          right: 0px;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+    }
+  }
+
+  .storeDel {
+    width: 351px;
+    box-sizing: border-box;
+    border-radius: 7px;
+    margin: 0 auto;
+    padding: 18px 19.667px 30.667px 18.669px;
+    margin-top: 28px;
+    background-color: #ffffff;
+
+    .store_del_ol {
+      .flex();
+
+      .seller_del {
+        flex: 1;
+        .seller_name {
+          font-size: 14px;
+          color: #333333;
+        }
+
+        .seller_area {
+          font-size: 12px;
+          color: #666666;
+          margin-top: 6.333px;
+        }
+      }
+
+      .store_del_line {
+        width: 1.667px;
+        height: 28.333px;
+        margin-left: 30px;
+        margin-right: 30px;
+        background-color: #bfbfbf;
+      }
+
+      .storePhone {
+        width: 23.333px;
+        height: 23px;
+      }
+    }
+
+    .do_dt {
+      font-size: 12px;
+      color: #333333;
+      margin-right: 11px;
+      min-width: 50px;
+    }
+
+    .do_time {
+      .flex();
+      justify-content: flex-start;
+      margin-top: 33.667px;
+
+      .time {
+        font-size: 12px;
+        color: #00b187;
+        font-weight: bold;
+      }
+    }
+
+    .do_show {
+      .flex();
+      align-items: flex-start;
+      justify-content: flex-start;
+      margin-top: 14.667px;
+
+      .do_pic {
+        .flex();
+        flex-wrap: wrap;
+        .picItem {
+          width: 67.333px;
+          height: 67.333px;
+          border-radius: 3px;
+          margin-right: 11px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+page{
+  background-color: #F5F5F5;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  width: 750px;
+  align-items: center;
+  text-align: center
+}
+
+.img{
+  width: 170px;
+  height: 170px;
+  margin-top: 60px;
+}
+
+.tips{
+  font-size: 30px;
+  color:#333;
+  margin-top: 40px;
+}
+
+.button{
+  width: 590px;
+  background-color: #16c08e;
+  height: 90px;
+  margin-top: 60px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  color: #FFF;
+  display: flex;
+  border-radius: 6px;
+}

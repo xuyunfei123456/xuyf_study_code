@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "titleView": "../../../../components/YFWTitleView/YFWTitleView"
+  },
+  "navigationBarTitleText": "发票详情",
+  "navigationBarBackgroundColor": "#49ddb8",
+  "navigationBarTextStyle": "white"
+}

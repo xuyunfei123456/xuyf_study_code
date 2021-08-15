@@ -1,0 +1,5 @@
+<view class='emptyViewLayout'>
+  <image class='image_icon' src='https://c1.yaofangwang.net/common/images/miniapp/ic_no_order.png' mode='aspectFit'></image>
+  <view class='tips_text'>{{type == 'search'?'没有相关订单':'暂无订单'}}</view>
+  <view class='jump_button' bindtap='jumpToHome'>去首页逛逛</view>
+</view>

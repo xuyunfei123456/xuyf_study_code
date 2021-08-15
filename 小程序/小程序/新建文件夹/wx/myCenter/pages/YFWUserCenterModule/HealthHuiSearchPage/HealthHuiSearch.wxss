@@ -1,0 +1,86 @@
+page{
+  background-color: white
+}
+.container {
+  width: 100vw;
+  height: 100vh;
+}
+.toSearchView {
+  display: flex;
+  flex-direction: row;
+  height: 100rpx;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  background-color: #ffffff;
+  z-index: 99;
+}
+.topSearchInputView{
+  height: 66.667rpx;
+  width: 500.667rpx;
+	border-radius: 33.333rpx;
+	border: solid 2rpx #1fdb9b;
+  display: flex;
+  flex-direction: row;
+  margin-left: 64.667rpx;
+  background-color: white;
+  align-items: center;
+}
+.searchIcon {
+  margin-left: 18.667rpx;
+	width: 28.667rpx;
+	height: 30rpx;
+}
+.topViewSearchInput{
+  display: block;
+  height: 28rpx;
+  width: 50vw;
+  margin-left: 9.333rpx;
+  margin-right: 20rpx;
+  background-color: white;
+  caret-color: #1fdb9b;
+  color: #666666;
+  font-size: 28rpx;
+}
+.topViewSearchBotton{
+ padding: 0rpx 40.667rpx;
+ height: 58.667rpx;
+ line-height: 58.667rpx;
+ margin-left: 25.333rpx;
+ background-image: linear-gradient(90deg, 
+ #4fdace 0%, 
+ #4addbd 30%, 
+ #45dfab 100%);
+border-radius: 29.333rpx;
+}
+.topViewSearchBotton text {
+  font-size: 28rpx;
+  color: white;
+}
+.inputplaceholder {
+  font-size: 28rpx;
+  color: #cccccc;
+  display: block;
+  height: 28rpx;
+  width: 80vw;
+}
+.search-del {
+  display: block;
+  margin-right: 26rpx;
+	width: 28rpx;
+	height: 28rpx;
+  opacity: 0.4;
+}
+.scroll {
+  position: fixed;
+  width: 100%;
+  bottom: 0rpx;
+  display: flex;
+  top:100rpx;
+}
+.scrollRecommand{
+  width: 100%;
+  bottom: 0rpx;
+  display: flex;
+  top:100rpx;
+}

@@ -1,0 +1,47 @@
+<!-- component/ListGoodsItem.wxml -->
+<view class='listItemView' bindtap='toGoodsDetail' id='father'>
+  <view class='leftView'>
+    <image class='itemImage' src='{{data.goods_image}}'></image>
+  </view>
+  <view class='rightView'>
+    <view class='medicineName'>
+      <image wx:if="{{data.activity_img_url.length>0}}" class="medicine_ac_url" src="{{data.activity_img_url}}" mode="widthFix"></image>
+      {{data.goods_name}}
+    </view>
+    <view class="medicineStandards" style="color:{{dataIndex%3 == 1 && showSpecification2?'#a5953e':dataIndex%3 == 2 && showSpecification2? '#2f779d':'#999'}}" wx:if='{{showstanders}}'>
+      {{data.goods_standard}}
+    </view>
+    <view style="color: #999999;font-size: 24rpx;">{{data.model.trocheType}}</view>
+    <view class="medicineAuthorizedCode" wx:if='{{showCode}}'>{{data.goods_authorized_code}}</view>
+        <view style="color: #999999;font-size: 24rpx;">{{data.model.companyName}}</view>
+    <view class="activity" wx:if='{{data.isShowCart}}'>
+      <view class="freeExpress" wx:if='{{data.model.free_logistics_desc}}'>{{data.model.free_logistics_desc}}</view>
+      <view class="coupon" wx:if='{{data.model.activity_desc}}'>
+        {{data.model.activity_desc}}
+      </view>
+    </view>
+    <view class='itemRightBottomView'>
+      <view class='priceView'>
+        <!-- <text class='itemPrice'>{{data.goods_price}}</text> -->
+        <priceView price="{{data.goods_price}}" fontSize="34" discount="{{data.goods_discount}}" />
+        <view class="fxcss" wx:if='{{data.isShowCart&&data.model.originData.price_desc}}'>{{data.model.originData.price_desc}}</view>
+        <!-- <view class='labelView' wx:if='{{data.goods_discount.length>0?true:false}}'><text class='labelText'>{{data.goods_discount}}</text></view> -->
+      </view>
+      <image wx:if='{{data.isShowCart}}' class='shop_car' catchtap='toGoodsDetail' src='/images/bijia/gwche.png'></image>
+      <!-- <view wx:elif='{{data.store_title.length>0}}'></view> -->
+      <view wx:if='{{data.store_title.length>0}}'></view>
+      <view class='store' wx:elif='{{showstore}}'>
+        <text class='storetext'>{{data.goods_stories}}</text>
+        个商家在售
+      </view>
+    </view>
+    <view wx:if='{{data.store_title.length > 0}}' class='shop_container'>
+      <view class='shop_default'>推荐</view>
+      <view class='shop_title'>{{data.store_title}}</view>
+      <block>
+        <view class='shop_more' catchtap='showMoreAction' data-info='{{data}}'>查看更多商家</view>
+        <image class='shop_arrow' src='/images/around_detail_icon.png'></image>
+      </block>
+    </view>
+  </view>
+</view>

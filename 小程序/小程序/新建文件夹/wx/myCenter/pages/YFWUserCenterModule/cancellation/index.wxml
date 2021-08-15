@@ -1,0 +1,33 @@
+<view>
+	<view class="notice">
+		<view class="noticeTitle">您提交注销申请前，请仔细确认以下须知</view>
+		<view class="list">
+			<view class="listItem">
+				1. 账号注销前，请将所有未完结订单（待付款、待发货、待收货、退货退款中）/未完结投诉，处理完成后方可申请
+			</view>
+			<view class="listItem">
+				2. 账号注销后，将清空手机号、用户名等账号信息和所有订单记录，此账户将无法再登入
+			</view>
+		</view>
+
+	</view>
+	<view class="item">
+		<view class='explain_txt'>注销原因<view class='under'></view>
+		</view>
+		<view class="textarea">
+			<textarea style="width:100%;height:200rpx" value='{{reason}}' bindinput="onTextInput" placeholder="请填写您的注销原因和意见，我们会妥善听取您的建议优化我们的产品" />
+			</view>
+		</view>
+		<view class="bottom">
+				<view class="applycancel" bindtap="applycancel">申请注销</view>
+		</view>
+
+</view>
+
+<view class="shadow" wx:if="{{cancelFlag}}">
+	<view class="tipWrapper">
+	<image src="/images/tip_warn.png" class="tippic"></image>
+		<view class="tipText">{{cancelReason}}</view>
+		<view class="tipBtn" bindtap="hideShadow">知道了</view>
+	</view>
+</view>

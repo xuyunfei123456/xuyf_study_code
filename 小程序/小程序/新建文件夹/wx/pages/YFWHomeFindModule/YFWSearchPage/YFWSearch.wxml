@@ -1,0 +1,70 @@
+<!-- pages/YFWHomeFindModule/YFWSearchPage/YFWSearch.wxml -->
+<view class='container'>
+  <view wx:if="{{searchValue.length==0}}">
+    <view class='toSearchView'>
+      <view class='topSearchInputView'>
+        <image class='searchIcon' src='/images/YFWStoreModule/top_bar_search.png' mode='aspectFit' />
+        <input placeholder="{{placeholder}}" class='topViewSearchInput' placeholder-class='inputplaceholder' value="{{searchText}}" bindinput='onChangeText' bindblur='onEndEditing' bindconfirm='searchClick' auto-focus='{{focusFlag}}' bindfocus='onFocus' confirm-type='{{search}}'></input>
+        <image class='search-del' wx:if="{{type==2}}" src='/images/search_del.png' bindtap='removeKeywords'></image>
+        <image class='qr_sys' wx:if="{{searchText.length>0?(type==3):(searchEndtype==1)}}" src='/images/qr_sys.png' bindtap='bindScanTap'></image>
+      </view>
+      <view class='topViewSearchBotton' bindtap="{{type==3?'openUtilityMenu':'searchClick'}}" data-keyWord='{{searchText}}'>
+        <text wx:if="{{type!=3}}">搜索</text>
+        <image wx:if="{{type==3}}" src='/images/more_white.png' mode='aspectFit' id='more_image'></image>
+      </view>
+    </view>
+    <view wx:if="{{type==1}}" class='scroll'>
+      <searchHistoryView hotWords="{{hotWords}}" historyWords="{{historyWords}}" id="searchHistoryView" bind:clickHotItemMethod='clickHotItemMethod' bind:clickHistoryItemMethod='clickHistoryItemMethod' bind:clearHistoryMethod='clearHistoryMethod' />
+    </view>
+    <view wx:if="{{type==2}}" class='scroll'>
+      <searchRelevantWordsView data="{{relevantData}}" id="searchRelevantWordsView" shop_id="{{shopID}}" keyWords="{{searchText}}" bind:clickHotItemMethod='clickHotItemMethod' bind:clickSearchShopMethod='clickSearchShopMethod' />
+    </view>
+    <view wx:if="{{type==3}}" class='scroll'>
+      <!-- <view wx:if="{{associationGoodsData.length>0&&showType == 'goods'}}">
+        <noGoodsListView bind:changeSortType="changeSortType" bind:openControlPanel="openControlPanel" id="noGoodsView" froms="search" />
+      </view> -->
+      <!-- <view wx:else>
+        <block wx:if="{{list.length>0}}">
+          <goods_view bind:changeSortType="changeSortType" showSpecification="{{showSpecification}}" showSpecification2="{{showSpecification2}}" bind:requestNextPage="requestNextPage" bind:openControlPanel="openControlPanel" id="goodsView" froms="{{shopID.length>0?'shop_search':'search'}}" wx:if="{{showType == 'goods'}}" />
+        </block>
+        <view wx:if="{{showType == 'shop'}}">
+          <view wx:if="{{list.length>0||associationShopsData.length==0}}" class='scroll'>
+            <searchShopResult model="{{list}}" isResult="{{true}}" id="searchShopResult" bind:requestNextPage="requestNextPage" />
+          </view>
+          <view wx:else class='scroll'>
+            <searchShopResult model="{{associationShopsData}}" isResult="{{false}}" />
+          </view>
+        </view>
+      </view> -->
+        <goods_view bind:changeSortType="changeSortType" nogoodslist="{{nogoodslist}}" associationGoodsData="{{associationGoodsData}}"  showType="{{showType}}" showSpecification="{{showSpecification}}" showSpecification2="{{showSpecification2}}" bind:requestNextPage="requestNextPage" bind:openControlPanel="openControlPanel" id="goodsView" froms="{{shopID?'shop_search':'search'}}" wx:if="{{showType == 'goods'}}" />
+      <view wx:if="{{showType == 'shop'}}">
+        <view wx:if="{{list.length>0||associationShopsData.length==0}}" class='scroll'>
+          <searchShopResult model="{{list}}" isResult="{{true}}" id="searchShopResult" bind:requestNextPage="requestNextPage" />
+        </view>
+        <view wx:else class='scroll'>
+          <searchShopResult model="{{associationShopsData}}" isResult="{{false}}" />
+        </view>
+      </view>
+    </view>
+    <more_view id="moreview" />
+    <filterBoxModal showSpecification="{{showSpecification}}" bind:changeFilter='changeFilter' id="filterBox" keywords="{{searchText}}" froms="YFWSearchDetailListView" />
+  </view>
+  <view wx:else>
+    <view class='toSearchView'>
+      <view class='kind-white'></view>
+      <view class='kind-text'>
+        <text>{{searchValue}}</text>
+      </view>
+      <view class='topViewSearchBotton' bindtap="openUtilityMenu">
+        <image src='/images/more_white.png' mode='aspectFit' id='more_image'></image>
+      </view>
+    </view>
+    <view class='scroll'>
+      <block wx:if="{{list.length>0}}">
+        <goods_view bind:changeSortType="changeSortType" bind:requestNextPage="requestNextPage" bind:openControlPanel="openControlPanel" id="goodsView" froms="search" />
+      </block>
+    </view>
+    <more_view id="moreview" />
+    <filterBoxModal bind:changeFilter='changeFilter' id="filterBox" keywords="{{searchValue}}" froms="YFWSearchDetailListView" />
+  </view>
+</view>

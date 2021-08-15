@@ -1,0 +1,7 @@
+{
+  "usingComponents": { 
+  },
+  "navigationBarTitleText": "安全管理",
+  "navigationBarBackgroundColor": "#49ddb8",
+  "navigationBarTextStyle": "white"
+}

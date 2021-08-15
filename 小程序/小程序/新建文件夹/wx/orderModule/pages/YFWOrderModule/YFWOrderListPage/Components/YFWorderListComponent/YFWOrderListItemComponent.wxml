@@ -1,0 +1,29 @@
+<wxs src='../../../../../../wxs/sublie.wxs' module='tools' />
+<wxs src='../../../../../../wxs/subAfter.wxs' module='toAfter' />
+<view class="medicine_list">
+  <image class='medicine_image' src='{{listData.img_url}}'></image>
+  <view>
+    <view class='medicine_info_top'>
+      <rich-text class='medicien_name'>
+        <image wx:if="{{listData.PrescriptionType == 1}}" src='/images/ic_drug_track_label.png' class='medicine_type_icon'>
+        </image>
+        <image wx:if="{{listData.PrescriptionType == 2}}" src='/images/ic_drug_track_label.png' class='medicine_type_icon'>
+        </image>
+        <image wx:if="{{listData.PrescriptionType == 0}}" src='/images/ic_drug_OTC.png' class='medicine_type_icon'>
+        </image>
+        <image wx:if="{{listData.activity_img_url.length>0}}" src='{{listData.activity_img_url}}' class='medicine_ac_icon'>
+        </image>
+        {{listData.title}}</rich-text>
+      <view style="flex:1"></view>
+      <text class='smallPrice'>¥<text class='price'>{{tools.sub(listData.price)}}.</text><text class='smallPrice'>{{toAfter.subAfter(listData.price)}}</text></text>
+      <!-- <text class='price'>¥{{listData.price}}</text> -->
+    </view>
+    <view class='medicine_info_bottom'>
+      <text class='medicine_standard'>{{listData.standard}}</text>
+      <view style="flex:1"></view>
+      <text class='qty'>x{{listData.quantity}}</text>
+    </view>
+  </view>
+  <view>
+  </view>
+</view>

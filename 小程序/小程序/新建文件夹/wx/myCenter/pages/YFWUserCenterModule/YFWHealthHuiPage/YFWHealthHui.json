@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "YfwWaterfallGoods": "/components/YfwWaterfallGoods/YfwWaterfallGoods"
+  },
+  "navigationBarTitleText": "健康汇",
+  "navigationBarBackgroundColor": "#23D397",
+  "enablePullDownRefresh": true
+}

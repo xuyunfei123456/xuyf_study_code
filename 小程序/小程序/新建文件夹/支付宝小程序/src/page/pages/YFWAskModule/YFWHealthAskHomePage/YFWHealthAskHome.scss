@@ -1,0 +1,300 @@
+/* pages/healthy/heaIndex/heaIndex.wxss */
+page{
+  background-color: #f8f8f8;
+}
+.topView {
+  display: flex;
+  width: 100vw;
+  height: 100px;
+  position: fixed;
+  z-index: 99;
+  top: 0px;
+  background-color: #49ddb8;
+  flex-direction: row;
+  justify-content: space-between
+
+}
+.topSearchView {
+  margin: auto 26px 22px 22px;
+  height: 68px;
+  flex: 1;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+}
+.search_input_view {
+  background-color: white;
+  margin-left: 0px;
+  margin-right: 22px;
+  height: 68px;
+  display: flex;
+  flex: 1;
+  border-radius: 34px;
+  flex-direction: row;
+  align-items: center;
+}
+.search_icon {
+  width: 28px;
+  height: 30px;
+  margin-left: 18px;
+  display: flex;
+}
+.placeholder {
+  color: #cccccc;
+  font-size: 28px;
+  margin-left: 10px;
+  display: flex;
+  max-width: 70%;
+  overflow: hidden; 
+  text-overflow: ellipsis;
+  white-space: nowrap; 
+}
+.search-text {
+  margin-right: 0px;
+  width: 92px;
+  height: 42px;
+  display: flex;
+
+}
+.search-text text {
+  margin-left: 24px;
+  color: #fff;
+  font-size: 28px;
+}
+.health-view {
+ width: 100vw;
+ display: flex;
+ position: fixed;
+ bottom: 116px;
+ top: 168px;
+ flex-direction: column
+}
+.health-top-view {
+  height: 68px;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  white-space: nowrap;
+  position: fixed;
+  top: 100px;
+  -webkit-overflow-scrolling: touch;
+}
+.select-text {
+  display: inline-flex;
+  width: 250px;
+  margin-top: 19px;
+  justify-content: center
+}
+.health-top-context {
+  width: 100vw;
+  height: 220px;
+  display: flex;
+  margin-bottom: 14px;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: white;
+  position: relative;
+}
+.health-top-image {
+  position: absolute;
+  top: 56px;
+  right: 12px;
+  height: 80px;
+  width: 180px;
+}
+.health-top-mine {
+  margin-left: 46px;
+  margin-top: 30px;
+  font-size: 32px;
+  color: #333333;
+  font-weight: 600;
+}
+.health-top-mineView {
+  margin-top: 36px;
+  margin-bottom: 22px;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 46px;
+  display: flex;
+
+}
+.health-top-mineView image {
+  width: 60px;
+  height: 60px;
+  border-radius: 30px; 
+  background-color: #f8f8f9
+}
+.health-top-mineView text {
+  font-size: 24px;
+  color: #999999;
+  margin-left: 20px;
+}
+.healyh-context {
+  width: 100vw;
+  height: 100%;
+  background-color: white;
+  display: flex;
+  -webkit-overflow-scrolling: touch;
+}
+.last-new {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  -webkit-overflow-scrolling: touch;
+  
+}
+.muInput, .topSearch, .hotCont, .outAlldpart, .btnMyask, .docDel, .newQTel,
+.replyQuey {
+  width: 90%;
+}
+
+.myBox {
+  height: auto;
+  display: flex;
+}
+
+.muInput {
+  border: 2px solid #e4e4e4;
+  height: 60px;
+  margin: 0px auto;
+  border-radius: 10px;
+}
+
+.navGator, .onTop {
+  width: 100%;
+  margin-top: 100px;
+  background-color: #fff;
+}
+
+.onTop {
+  /* border-top: 1px solid #ccc; */
+  padding-top: 30px;
+  padding-bottom: 22px;
+}
+
+.clearBoth {
+  clear: both;
+}
+
+.icon_Input {
+  width: 30px;
+  height: 30px;
+display:inline-block;
+vertical-align:middle;
+  margin-left: 20px;
+}
+
+.txt_input {
+  font-size: 28px;
+  line-height: 60px;
+display:inline-block;
+vertical-align:middle;
+  margin-left: 20px;
+  color: #999;
+}
+
+.btn_input {
+  width: 150px;
+  height: 100%;
+  float: right;
+  text-align: center;
+  /* display: inline-block; */
+  font-size: 28px;
+  line-height: 60px;
+  color: #fff;
+}
+
+.outAlldpart {
+  margin: 20px auto;
+  /* border: 1px solid red; */
+  text-align: center;
+}
+
+.txt_alDpart {
+  display: inline-block;
+  font-size: 28px;
+}
+
+.arRight {
+  width: 24px;
+  height: 20px;
+  display: inline-block;
+}
+
+.downAsk {
+  margin-top: 20px;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  width: 100%;
+  height: auto;
+  background-color: #fff;
+}
+
+.docDel {
+  margin: 25px auto;
+}
+
+.isDoctor {
+  float: left;
+  font-size: 28px;
+  line-height: 60px;
+}
+
+.myaskQuey {
+  float: right;
+  width: auto;
+  height: 60px;
+  font-size: 28px;
+  line-height: 60px;
+}
+
+.docLecture {
+  width: 100%;
+  height: 180px;
+  margin-top: 20px;
+}
+.colHot{
+  color: #000
+}
+.btnPading{
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+.bottom-button {
+  position: fixed;
+  background-color: #ffffff;
+  width: 100%;
+  height: 116px;
+  flex-direction: column;
+  bottom: 0px;
+}
+.bottom-button-line {
+  width: 100%;
+  height: 2px;
+  background-color: #f8f8f9
+}
+.bottom-button-context {
+  flex-direction: row;
+  align-items: center;
+  height: 114px;
+  width: 100%;
+  display: flex;
+}
+.bottom-button-view {
+  align-items: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column
+}
+.bottom-button-view image{
+  width: 44px;
+  height: 44px;
+}
+.bottom-button-view text {
+  font-size: 24px;
+  color: #333333;
+  margin-top: 6px;
+}

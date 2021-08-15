@@ -1,0 +1,28 @@
+<view class="confirm">
+  已认证手机: {{mobile}}</view>
+
+<view class="container-name">
+  <input class="confirm-code"  value='{{yzm}}' data-name='yzm' type="number"  bindinput="yzm_num" placeholder="请输入验证码" maxlength="6" />
+  <view class="get_line">
+    <text class="get-Code_sl">|</text>
+  </view>
+
+  <view class="get_Code" bindtap='getCode'>
+    <text class="get-Code_ol">{{getYZMCode}}</text>
+  </view>
+</view>
+
+
+<view class="container">
+  <!-- 分割线 -->
+  <view class="divLine"></view>
+</view>
+
+
+<view class="row">
+  <text class="row-sl">若原手机已停用，请联系商城客服修改</text>
+</view>
+
+<view class="commit">
+  <button class="address-commit" bindtap="commit">提交</button>
+</view>

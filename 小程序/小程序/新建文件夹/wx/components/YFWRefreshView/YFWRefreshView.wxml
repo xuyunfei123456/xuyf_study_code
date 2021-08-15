@@ -1,0 +1,9 @@
+<!--components/YFWRefreshView/YFWRefreshView.wxml-->
+<view style='height:{{dynamicHeight}}rpx;position: relative;' class="refresh-container">
+  <view class='refresh-layout' style='height:{{refreshHeight}}rpx;'>
+    <image class='loading_cycle' src='/images/loading_cycle.gif'></image>
+    <!-- <view class="refresh-loading" hidden="{{0!=pullState}}"></view>
+    <text class="refresh-tips">{{pullState==1?'下拉刷新...':pullState==0?'正在刷新...':'松开刷新...'}}</text> -->
+  </view>
+  <image class='bg_image' src='/images/loading_bg.png'></image>
+</view>

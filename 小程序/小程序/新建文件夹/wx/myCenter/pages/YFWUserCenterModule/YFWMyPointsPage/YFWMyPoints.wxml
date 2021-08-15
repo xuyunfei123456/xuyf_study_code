@@ -1,0 +1,18 @@
+<image src='https://c1.yaofangwang.net/common/images/miniapp/dingdan_bj.png' class='bgc'></image>
+<view class='integral'>
+<view class='integral_F'>当前积分</view>
+<view class='integral_S'>
+<image src='https://c1.yaofangwang.net/common/images/miniapp/jifen.png' mode='widthFix'></image>
+<view class='integral_Txt'>{{myJF}}</view>
+</view>
+</view>
+
+<view class='integral explain'>
+<view class='explain_txt'>什么是商城积分<view class='under'></view></view>
+<view class='explain_Del'>
+商城积分是指用户在网站及客户端购物、评价、参加活动等情况下给予的奖励。在消费时，积分可直接用于抵扣订单金额，每单最高抵扣订单金额的90%
+</view>
+</view>
+<view class="rankDetail" bindtap="rankDetail">
+  查看积分明细
+</view>

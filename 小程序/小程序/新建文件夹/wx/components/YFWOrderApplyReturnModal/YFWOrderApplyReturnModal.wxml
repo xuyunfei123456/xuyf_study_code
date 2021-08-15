@@ -1,0 +1,21 @@
+<view class='modal-mask' wx:if='{{show}}'>
+  <view class='modal-content'>
+    <view class='main-content'>
+      <view class='delete_parent'>
+        <image src='/images/returnTips_close.png' class='delete' bindtap='closeView'></image>
+      </view>  
+      <text class='text_one'>为确保您的账户安全，</text>
+      <text class='text_two'>请输入手机号中间四位数字</text>
+      <text class='text_three'>您的注册手机号：{{phone}}</text>
+      <view class='code_parent' bindtap='openKeyboard'>
+        <block wx:for="{{codes}}" wx:key="{{item}}">
+          <view class='verify-text' style='margin-left:{{index==0?0:50}}rpx' catchtap="focusInput">{{item}}</view>
+        </block>
+      </view>
+    </view>
+    <view class='modal-footer'>
+      <!-- <view class='confirm_button' bindtap='checkNumber'>确  定</view> -->
+    </view>
+  </view>
+</view>
+<input value='{{inputValue}}' type='number' adjust-position="true" confirm-type="done" focus="{{isFocus}}" bindinput="listenKeyInput" class='input'></input>

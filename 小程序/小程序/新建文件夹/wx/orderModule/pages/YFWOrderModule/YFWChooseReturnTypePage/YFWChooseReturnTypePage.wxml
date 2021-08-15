@@ -1,0 +1,43 @@
+<!-- <view class="top_bg">
+  <view class='tips'>{{screenType == 'areGoodsReceived'?'亲，请确认您收到货了吗？':'请选择退款类型'}}</view>
+</view>
+
+<view class='returnTypeLayout'>
+  <view class='typeItemTop' bindtap='chooseType' data-position='0'>
+    <view class="{{chooseTypePosition == 0? 'typeTextChoosed':'typeTextUnChoosed'}}">
+    {{screenType == 'areGoodsReceived'?'已收到货':'我要退货'}}
+    </view>
+    <image class='choosedIcon' src='/images/check_checked.png' wx:if="{{chooseTypePosition == 0}}"></image>
+  </view>
+  <view class='splite'></view>
+  <view class='typeItemBottom' bindtap='chooseType' data-position='1'>
+    <view class="{{chooseTypePosition == 1? 'typeTextChoosed':'typeTextUnChoosed'}}">
+    {{screenType == 'areGoodsReceived'?'未收到货':'我要退款（无需退货）'}}
+    </view>
+    <image class='choosedIcon' src='/images/check_checked.png' wx:if="{{chooseTypePosition == 1}}"></image>
+  </view>
+</view>
+
+<view wx:if="{{screenType == 'returnType' && needRenderBack}}" class='return' bindtap='returnAction'>
+  <view class='text'>上一步</view>
+</view>
+
+<view class='next' bindtap='nextAction'>
+  <view class='text'>下一步</view>
+</view> -->
+<view class="container">
+  <scroll-view scroll-y class="scroll">
+    <view class="top_view">
+      <YFWTitleView fontWeight='500' fontSize='30' title='退货/款类型' lineHeight='25'></YFWTitleView>
+    </view>
+    <view class="operationContainer">
+      <block wx:for="{{operation}}" wx:key="">
+        <view class="operation" bindtap="operationAction" data-info="{{item}}">
+          <image class="icon_view" src="{{item.icon}}"></image>
+          <text class="operationText">{{item.title}}</text>
+          <image class="arrow" src="/images/icon_arrow_right_gary.png" mode='aspectFit'></image>
+        </view>
+      </block>
+    </view>
+  </scroll-view>
+</view>

@@ -1,0 +1,322 @@
+
+<view class="topColumn" id="topColumn"  style="background-image:url({{hatAndWordsBg[0].img_url}});background-size:100% {{topHeight}}px">
+	<view class="navbar" style="height:{{navHeight}}px;background:{{hatAndWordsBg.length == 0 ? '#49ddb8':''}}">
+	<view class="nameAndAddress" style="padding-top:{{navTop}}px;height:{{jnHeight}}px;">
+		<image class="logo" src="/images/logoname.png"></image>
+		<view class="line"></view>
+		<image class='top_content_left_icon' mode='aspectFit' src='/images/sy_location_icon.png'></image>
+		<view class="address" style="width:{{addressWith}}px" wx:if="{{!fixed}}">{{locationInfo}}</view>
+	</view>
+</view>
+<view class="searchWrapper" style="background:{{hatAndWordsBg.length == 0 ? '#49ddb8':''}}">
+	<view bindtap='searchAction' class='top_search {{fixed?"animationSearch":""}}'
+		style="top:{{fixed?navTop:''}}px;width:{{fixed?topsearchWidth:'100%'}}px">
+		<image class='top_search_left_icon' src='/images/top_bar_search.png'></image>
+		<text class='top_search_title'>批准文号、通用名、商品名、症状</text>
+		<view class='top_search_right' catchtap='scanCodeAction'>
+			<image class='top_search_scan' src='/images/qr_sys.png'></image>
+		</view>
+	</view>
+</view>
+<view class="hotWordWrapper" wx:if="{{!hotwordFixed}}" style="background:{{hatAndWordsBg.length == 0 ? '#49ddb8':''}}">
+	<view style="margin: 0 20rpx">
+		<scroll-view class="hotWord" enable-flex="true" wx:if="{{!hotwordFixed}}" scroll-x="true">
+			<block wx:for="{{hotWordSearch}}" wx:key="{{item.name}}">
+				<view class="hotwordSin" bindtap="hotwordClick" data-info="{{item}}">
+					<image wx:if="{{item.img_url}}" src="{{item.img_url}}"
+						style="height:{{(item.img_height/3)*2}}rpx;width:{{(item.img_width/3)*2 }}rpx"></image>
+					<view wx:if="{{!item.img_url}}" class='hot-font' style="color:{{!item.backgroundcolor ? 'white' :item.backgroundcolor}};">
+						{{item.name}}</view>
+				</view>
+			</block>
+
+		</scroll-view>
+	</view>
+</view>
+</view>
+
+<refreshView id='refreshView' backgroundColor="#000" bind:onRefresh="onPullDownRefresh" bind:onPullState="_pullState"
+	bind:onshowTop="onshowTop" />
+
+<scroll-view scroll-y='true' bindscroll="mainScroll" scroll-top="{{scrollTop}}" bindtouchstart='handletouchstart'
+	bindtouchmove='handletouchmove' bindtouchend='handletouchend' bindtouchcancel='handletouchcancel'
+	style="width:100%;height:{{topScrollHeight}}px;-webkit-overflow-scrolling: touch;" class='scroll'>
+	<block wx:for="{{allData}}" wx:key="a+{{index}}">
+		<block wx:if="{{item.widgettype == 18 }}">
+			<!-- 霸屏广告 -->
+			<view class="bpgg" bindtap="bpggClick" data-postdata="{{item.data[0]}}"
+				wx:if="{{item.data&&item.data[0]&&item.data[0].img_url}}"
+				style="margin-top:{{item.data[0].top}}rpx;margin-bottom:{{item.data[0].bottom}}rpx">
+				<image class="bpggImg" mode='widthFix' src="{{item.data[0].img_url}}"></image>
+			</view>
+		</block>
+		<block wx:elif="{{item.widgettype == 15 }}">
+			<!-- 金刚区 -->
+			<view class="activityJgq" wx:if="{{jgqInfo.xcx_show}}"
+				style="margin-top:{{item.top || 0}}rpx;margin-bottom:{{item.bottom}}rpx">
+				<image class="jgqbg" wx:if="{{jgqInfo.jgqBg}}" src="{{jgqInfo.jgqBg}}"></image>
+				<view class="jgq_scroll_wrapper">
+					<scroll-view class="jgq_icon_wrapper" enable-flex="{{true}}" scroll-x="true" bindscroll="bannerScroll">
+						<block wx:for="{{jgqInfo.data}}">
+							<view class="jgq_single_menu" bindtap="menuClickAction" data-info='{{item}}'>
+								<image src="{{item.img_url}}" class="jgq_single_menu_size" lazy-load="{{true}}"></image>
+								<view class="jgq_single_menu_name"
+									style="color:{{jgqInfo.jgqBg ? item.backgroundcolor ? item.backgroundcolor :'#666666' : '#666666'}}">
+									{{item.name}}</view>
+							</view>
+						</block>
+					</scroll-view>
+				</view>
+				<view class="bannerIndexWrapper" wx:if="{{jgqInfo.data.length>10}}">
+					<view class="bannerIndex">
+						<view class="bannerIndex_now" style="width:{{bannerNowWidth}}rpx;margin-left:{{bannerNowLeft}}rpx"></view>
+					</view>
+				</view>
+			</view>
+		</block>
+		<block wx:elif="{{item.widgettype == 14 }}">
+			<!-- 轮播 -->
+			<view class='banner' style="margin-top:{{item.top || 20}}rpx;margin-bottom:{{item.bottom}}rpx" wx:if="{{banners&&banners.length!=0}}">
+				<image wx:if="{{_bannerBgData.img_url}}" mode="widthFix" src="{{_bannerBgData.img_url}}" class="bannerBgData">
+				</image>
+				<view class="bannerContainer">
+					<swiper class='banner_container' bindchange='bannerChangeAction' circular='true' indicator-dots='{{false}}'
+						autoplay='{{false}}' interval='{{2000}}' duration='{{100}}'>
+						<block wx:for="{{banners}}" wx:key="{{item.img_url}}">
+							<swiper-item>
+								<image src='{{item.img_url}}' mode='widthFix' class='banner_content' data-info='{{item}}'
+									bindtap='bannerClickAction'></image>
+							</swiper-item>
+						</block>
+					</swiper>
+					<view class='banner_dots_container'>
+						<block wx:for="{{banners}}" wx:key="{{item.img_url}}">
+							<view wx:if='{{bannerSelectName == item.img_url}}' class='banner_dots_select'>
+								<view class='banner_dots_select_one'></view>
+								<view class='banner_dots_select_two'></view>
+							</view>
+							<view wx:else class='banner_dots'></view>
+						</block>
+					</view>
+				</view>
+			</view>
+		</block>
+		<block wx:elif="{{item.widgettype == 11 }}">
+			<!-- 秒杀 -->
+			<view class="msWrapper" style="margin-top:{{item.top || 20}}rpx;margin-bottom:{{item.bottom}}rpx"
+				wx:if="{{msData&&msData.msDataItem.length!=0}}">
+				<view class="ms_img_wrapper">
+					<image src="{{msData.imgurl}}" class="ms_img">
+					</image>
+					<view class="msGoodsWrapper">
+						<scroll-view enable-flex="{{true}}" scroll-x="true" class="msGoodsScroll">
+							<block wx:for="{{msData&&msData.msDataItem}}">
+								<YfwNormalGoods imgWrapperHeight="158.666" img="{{item.intro_image}}" name="{{item.name}}"
+									wx:key="{{item.name}}" price="{{item.price}}" />
+							</block>
+							<view class="white"> </view>
+						</scroll-view>
+					</view>
+				</view>
+			</view>
+		</block>
+		<block wx:elif="{{item.widgettype == 26 }}">
+			<!-- 限时福利 -->
+
+			<view class="msWrapper" style="margin-top:{{item.top || 20}}rpx;margin-bottom:{{item.bottom}}rpx"
+				wx:if="{{welfareData&&welfareData.welfareDatatem.length!=0}}">
+				<view class="ms_img_wrapper">
+					<image src="{{welfareData.imgurl}}" class="ms_img">
+					</image>
+					<view class="msGoodsWrapper">
+						<scroll-view enable-flex="{{true}}" scroll-x="true" class="msGoodsScroll">
+							<block wx:for="{{welfareData&&welfareData.welfareDatatem}}" wx:key="{{item.name}}">
+								<view class="msGood" bindtap="msGoodClick" data-info="{{item}}">
+									<YfwNormalGoods imgWrapperHeight="158.666" img="{{item.intro_image}}" name="{{item.name}}"
+										price="{{item.price}}" />
+								</view>
+							</block>
+							<view class="white"> </view>
+						</scroll-view>
+					</view>
+				</view>
+			</view>
+		</block>
+		<block wx:elif="{{item.widgettype == 16 }}">
+			<!-- 1拖2 -->
+			<view class="oneWithTwo" wx:if="{{oneWithTwoData.data&&oneWithTwoData.data.length!=0}}"
+				style="margin-top:{{item.top || 0}}rpx;margin-bottom:{{item.bottom}}rpx">
+				<view class="oneWithTwo_wrapper">
+					<view class="oneWithTwo_nameRow" wx:if="{{oneWithTwoData.name}}">
+						<view class="oneWithTwo_name">{{oneWithTwoData.name}}</view>
+						<image wx:if="{{oneWithTwoData.dh_imgurl}}" mode="widthFix" src="{{oneWithTwoData.dh_imgurl}}"
+							class="oneWithTwo_icon"></image>
+					</view>
+					<view class="oneWithTwo_content" style="margin-top:{{oneWithTwoData.name?null:40}}rpx">
+						<view class="oneWithTwo_content_left" bindtap="oneWithTwoClick" data-info="{{oneWithTwoData.data[0]}}">
+							<image class="oneWithTwo_content_left_img"
+								src="{{oneWithTwoData.data&&oneWithTwoData.data[0]&&oneWithTwoData.data[0].img_url}}"></image>
+						</view>
+						<view class="oneWithTwo_content_right">
+							<view class="oneWithTwo_content_right_top" bindtap="oneWithTwoClick"
+								data-info="{{oneWithTwoData.data[1]}}">
+								<image class="oneWithTwo_content_right_top_img"
+									src="{{oneWithTwoData.data&&oneWithTwoData.data[1]&&oneWithTwoData.data[1].img_url}}"></image>
+							</view>
+							<view class="oneWithTwo_content_right_bottom" bindtap="oneWithTwoClick"
+								data-info="{{oneWithTwoData.data[2]}}">
+								<image class="oneWithTwo_content_right_bottom_img"
+									src="{{oneWithTwoData.data&&oneWithTwoData.data[2]&&oneWithTwoData.data[2].img_url}}"></image>
+							</view>
+						</view>
+					</view>
+				</view>
+			</view>
+		</block>
+		<block wx:elif="{{item.widgettype == 19 }}">
+			<!-- 拼团 -->
+			<view class="groupWork" wx:if="{{groupWorkData.groupWorkDataItem&&groupWorkData.groupWorkDataItem.length!=0}}"
+				style="margin-top:{{item.top || 0}}rpx;margin-bottom:{{item.bottom}}rpx">
+				<view class="groupWork_wrapper">
+					<view class="groupWork_wrapper_nameRow">
+						<view class="groupWork_wrapper_name">{{groupWorkData.name}}</view>
+					</view>
+					<view class="groupWork_content">
+						<scroll-view enable-flex="{{true}}" scroll-x="true" class="msGoodsScroll">
+							<block wx:for="{{groupWorkData.groupWorkDataItem}}">
+								<view class="groupWork_good" bindtap="groupWorkClick" data-info="{{item}}" wx:key="{{item.name}}">
+									<YfwNormalGoods imgWrapperHeight="158.666" img="{{item.intro_image}}" name="{{item.name}}"
+										price="{{item.price}}" />
+								</view>
+							</block>
+							<view class="white"> </view>
+						</scroll-view>
+					</view>
+				</view>
+			</view>
+		</block>
+		<block wx:elif="{{item.widgettype == 20 }}">
+			<!-- 背景商品广告 -->
+			<view class="barWrapper" wx:if="{{barData.barDataItem&&barData.barDataItem.length!=0}}"
+				style="margin-top:{{item.top}}rpx;margin-bottom:{{item.bottom}}rpx">
+				<view class="barWrapper_head">
+					<view class="barWrapper_head_imgWrapper" wx:if="{{barBgData.img_url}}">
+						<image src="{{barBgData.img_url}}" mode="widthFix" class="barWrapper_head_img"></image>
+					</view>
+					<view class="barWrapper_content">
+						<block wx:for="{{barData.barDataItem}}">
+							<view class="barWrapper_good" wx:key="{{item.name}}">
+								<YfwNormalGoods imgWrapperHeight="158.666" img="{{item.intro_image}}" name="{{item.name}}"
+									price="{{item.price}}" />
+							</view>
+						</block>
+					</view>
+				</view>
+			</view>
+		</block>
+		<block wx:elif="{{item.widgettype == 17 }}">
+			<!-- 1拖1 -->
+			<view class="coupon" style="margin-top:{{item.top || 0}}rpx;margin-bottom:{{item.bottom}}rpx">
+				<view class="coupon_wrapper">
+					<view class="coupon_wrapper_nameRow">
+						<view class="coupon_wrapper_name">{{couponData.name}}</view>
+					</view>
+					<view class="coupon_content">
+						<view class="coupon_left" bindtap="couponLeft" data-info="{{couponData.data[0]}}">
+							<image class="coupon_left_img" src="{{couponData.data&&couponData.data[0]&&couponData.data[0].img_url}}">
+							</image>
+						</view>
+						<view class="coupon_right" bindtap="couponLeft" data-info="{{couponData.data[1]}}">
+							<image class="coupon_right_img" src="{{couponData.data&&couponData.data[1]&&couponData.data[1].img_url}}">
+							</image>
+						</view>
+					</view>
+				</view>
+			</view>
+		</block>
+		<block wx:elif="{{item.widgettype == 21 }}">
+			<!-- 瀑布流 -->
+			<view class="waterfall" style="margin-top:{{item.top || 30}}rpx;margin-bottom:{{item.bottom}}rpx" wx:if="{{welfareHeaderData&&welfareHeaderData.length!=0}}">
+				<!-- 头部滚动 -->
+				<scroll-view scroll-x="true" enable-flex="true" class='waterfull_scroll'>
+					<block wx:for="{{welfareHeaderData}}" wx:key="{{item.name}}">
+						<view class="welfareHeader_name_out" bindtap="waterfallHeadClick" data-index="{{index}}">
+							<view class="welfareHeader_name_wrapper">
+								<view class="welfareHeader_name {{index == waterfall_index ? 'welfareHeader_name_checked':''}}"
+									style="color:{{item.color ? item.color : '#333333'}}">{{item.name}}</view>
+								<view class="welfareHeader_name_bottom" wx:if="{{index == waterfall_index}}"></view>
+							</view>
+						</view>
+					</block>
+				</scroll-view>
+				<view class="waterfall_wrapper">
+					<!-- 两列 -->
+					<view class="waterfall_list">
+						<view class="waterfall_list_left">
+							<block wx:for="{{waterfall_leftData[waterfall_index]}}" wx:key="{{item.img_url}}">
+								<view wx:if="{{item.widgettype == 23}}" class="leftlist noPadding" data-info="{{item}}"
+									bindtap="waterfallClick">
+									<image src="{{item.img_url}}" style="height:{{item.height}}rpx;width:100%;border-radius:14rpx">
+									</image>
+								</view>
+								<view wx:elif="{{item.widgettype == 24}}" class="leftlist noPadding" data-info="{{item}}"
+									bindtap="waterfallClick" style="height:{{item.height}}rpx;width:340rpx">
+									<view class="videoWrapper" style="height:{{item.height}}rpx;width:340rpx">
+										<image src="{{item.img_url}}" class="videoWrapper"></image>
+										<image class="playvideo" src="/images/playvedio.png" data-info="{{item}}" bindtap="playvideo">
+										</image>
+										<!-- <video custom-cache="false" src="{{item.value}}" data-info="{{'video'+index}}" bindfullscreenchange="fullscreenchange"
+											style="width:100%;height:100%;border-radius:14rpx;" object-fit="fill" poster="{{item.img_url}}" bindplay="playvideo"></video> -->
+									</view>
+								</view>
+								<view wx:else class="noraml_goods leftlist" data-info="{{item}}" bindtap="waterfallClick">
+									<YfwWaterfallGoods imgWrapperHeight="281.334" hasActivity="item.widgettype == 25 ? true:false"
+										postdata="{{item}}" />
+								</view>
+							</block>
+						</view>
+						<view class="waterfall_list_right">
+							<block wx:for="{{waterfall_rightData[waterfall_index]}}" wx:key="{{item.img_url}}">
+								<view wx:if="{{item.widgettype == 23}}" class="rightlist noPadding" data-info="{{item}}"
+									bindtap="waterfallClick">
+									<image src="{{item.img_url}}" style="height:{{item.height}}rpx;width:100%;border-radius:14rpx">
+									</image>
+								</view>
+								<view wx:elif="{{item.widgettype == 24}}" class="rightlist noPadding" data-info="{{item}}"
+									bindtap="waterfallVideoClick" style="height:{{item.height}}rpx;width:340rpx" id="{{'avideo'+index}}">
+									<view class="videoWrapper" style="height:{{item.height}}rpx;width:340rpx">
+										<image src="{{item.img_url}}" class="videoWrapper"></image>
+										<image class="playvideo" src="/images/playvedio.png" data-info="{{item}}" bindtap="playvideo">
+										</image>
+										<!-- <video custom-cache="false" src="{{item.value}}" data-info="{{'video'+index}}" bindfullscreenchange="fullscreenchange"
+											style="width:100%;height:100%;border-radius:14rpx;" object-fit="fill" poster="{{item.img_url}}" bindplay="playvideo"></video> -->
+									</view>
+								</view>
+								<view wx:else class="rightlist noraml_goods" data-info="{{item}}" bindtap="waterfallClick">
+									<YfwWaterfallGoods imgWrapperHeight="281.334" hasActivity="item.widgettype == 25 ? true:false"
+										postdata="{{item}}" />
+								</view>
+							</block>
+						</view>
+					</view>
+				</view>
+			</view>
+		</block>
+	</block>
+	<image class='bottom_ad' mode='aspectFit' src='{{zizhiInfo.imageurl}}' bindtap='zizhiAction'
+		wx:if="{{firstrequtFlag&&zizhiInfo.imageurl}}">
+	</image>
+	<!-- 占位 -->
+	<view style="height:{{tabbarHeight}}px;width:100%"></view>
+</scroll-view>
+<view>
+	<authentication id='authentication' />
+</view>
+<view bindtap="gotoInvite"   bindtouchmove="inviteMove" bindtouchcancel="inviteOver" bindtouchend="inviteOver" catch:touchmove class="ads_itemImage"   style="left:{{write[0]}}px;top:{{write[1]}}px;transform:translateX({{hasMove?direction == 'right' ? '50%' : '-50%' : 0}});">
+<image src="{{ads_itemImage}}" style="width:100%;height:100%"></image>
+</view>
+
+
+
+<!-- <view bindtap="testturnto" class="testturnto">开发专用测试文字开发专用测试文字</view> -->
+<view bindtap="goGoodsDel" class="testturnto">跳转</view>

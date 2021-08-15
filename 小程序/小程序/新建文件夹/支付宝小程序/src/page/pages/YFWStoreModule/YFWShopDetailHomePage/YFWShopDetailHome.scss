@@ -1,0 +1,195 @@
+.container{
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+
+}
+.bottom-action{
+  padding-bottom: constant(safe-area-inset-bottom); /*兼容 IOS<11.2*/
+  padding-bottom: env(safe-area-inset-bottom); /*兼容 IOS>11.2*/
+}
+.store-search-view {
+  width: 65%;
+  height: 70px;
+  margin: 15px 30px;
+  padding: 0 20px;
+  background-color: #ffffff;
+  border-radius: 35px;
+}
+
+.store-search-view .store-search-icon {
+  width: 30px;
+  height: 30px;
+}
+
+.store-search-view .store-search-text {
+  margin-left: 20px;
+  font-size: 30px;
+  color: #cccccc;
+}
+
+.store-more-view {
+  width: 100px;
+  height: 100px;
+}
+
+.store-more-view .store-more-icon {
+  width: 40px;
+  height: 8px;
+}
+
+.store-info-view {
+  flex: 1;
+  padding: 0 30px;
+}
+
+.store-info-view .store-title {
+  display: inline-flex;
+  width: 350px;
+  height: 70px;
+  line-height: 34px;
+  font-size: 30px;
+  color: #ffffff;
+}
+
+.store-info-view .store-collection {
+  width: 130px;
+  height: 50px;
+}
+
+.store-score-view {
+  flex: 1;
+  background-color: #ffffff;
+  height: 120rpx;
+  margin: 20rpx 30rpx;
+  border-radius: 20rpx;
+}
+
+.store-score-view .store-score-item {
+  flex: 1;
+  height: 92px;
+}
+
+.store-coupon-view {
+  display: flex;
+  flex: 1;
+  height: 120rpx;
+  padding: 10rpx 0;
+}
+
+.store-coupon-view  .store-coupon-item {
+  display: inline-block;
+  width: 300px;
+  height: 120px;
+  padding-left: 30px;
+}
+
+.store-coupon-view  .store-coupon-item .store-coupon-back {
+  background-image: url('https://c1.yaofangwang.net/common/images/miniapp/coupon_bg.png');
+  background-size: 100% 100%;
+  width: 300px;
+  height: 100%;
+}
+
+.store-coupon-view  .store-coupon-item .store-coupon-content {
+  width: 150px;
+  height: 100px;
+  padding-top: 10px;
+}
+
+.store-coupon-view  .store-coupon-item .store-coupon-content .store-coupon-money {
+  font-size: 40px;
+  line-height: 40px;
+  color: #ffffff;
+}
+
+.store-coupon-view  .store-coupon-item .store-coupon-content .store-coupon-name {
+  font-size: 20px;
+  line-height: 40px;
+  color: #ffffff;
+}
+
+.store-category-item {
+  display: inline-block;
+  width: 130px;
+  height: 100%;
+  padding-left: 30px;
+}
+
+.store-category-item .store-category-item-content {
+  width: 130px;
+  height: 100%;
+}
+
+.store-category-item .store-category-item-content .store-category-name {
+  font-size: 30px;
+  line-height: 60px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.store-category-item .store-category-item-content .store-category-labe-selected {
+  width: 60px;
+  height: 8px;
+  background-color: #ffffff;
+}
+
+.store-category-item .store-category-item-content .store-category-labe-normal {
+  width: 60px;
+  height: 8px;
+  background-color: transparent;
+}
+
+.store-medicine-view {
+  display: flex;
+  height: 484px;
+}
+
+.store-medicine-view .store-medicine-item {
+  width: 47vw;
+  padding: 0 0 2vw 2vw;
+  display: inline-block;
+  position: relative;
+}
+
+.store-medicine-view .store-medicine-item .store-medicine-status {
+  display: flex;
+  padding: 4px 10px;
+  border-radius: 20px;
+  position: absolute;
+  top: 10px;
+  right: 12px;
+}
+
+.store-medicine-view .store-medicine-item .store-medicine-status .store-medicine-status-title {
+  font-size: 22px;
+  line-height: 22px;
+}
+
+.store-bottom-action-item {
+  width: 30%;
+  height: 100%;
+}
+
+.store-bottom-action-item .store-bottom-action-icon {
+  width: 40px;
+  height: 40px;
+}
+
+.store-bottom-action-item .store-bottom-action-name {
+  font-size: 20px;
+  line-height: 20px;
+  color: #333333;
+}
+::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+.height-50 {
+  height: 100rpx;
+}
+.store-logos {
+  height: 100rpx;
+}

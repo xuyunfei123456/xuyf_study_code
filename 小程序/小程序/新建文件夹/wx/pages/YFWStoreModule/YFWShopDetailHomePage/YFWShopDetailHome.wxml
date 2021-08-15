@@ -1,0 +1,140 @@
+<!--pages/YFWStoreModule/YFWShopDetailHomePage/YFWShopDetailHome.wxml-->
+<wxs module="filter">
+	function getColor(goodType) {
+		var color = ''
+		switch (goodType) {
+			case '热销':
+				color = 'rgb(255,51,0)'
+				break;
+			case '促销':
+				color = 'rgb(254,172,76)'
+				break;
+			case '新品':
+				color = 'rgb(31,219,155)'
+				break;
+			case '推荐':
+				color = 'rgb(72,139,255)'
+				break;
+			default:
+				color = 'rgb(255,51,0)'
+				break;
+		}
+		return color
+	}
+	module.exports = {
+		getColor: getColor
+	}
+</wxs>
+<view class='container'>
+	<view class='containerView'>
+		<view id='headerView'>
+			<view class='topSearchView'>
+				<view class='topSearchInputView'>
+					<image class='searchIcon' src='/images/YFWStoreModule/top_bar_search.png' mode='aspectFit' />
+					<input disabled='true' class='topViewSearchInput' placeholder-class='inputplaceholder' placeholder="搜索店铺内商品" bindinput='bindKeyInput' bindtap='toSearch' />
+				</view>
+				<view class='topViewMore' bindtap='showMore'>
+					<image class='more' src='/images/more_white.png' id='more_image' />
+				</view>
+			</view>
+			<view class='shopInfoView'>
+				<image class='shopImage' src='{{shopInfo.logo_img_url}}' mode='widthFix' />
+				<text class='shopName'>{{shopInfo.title}}</text>
+				<image class='collectImg' src="{{shopInfo.is_favorite?'/images/sx_image_collect_sellected.png':'/images/sx_image_collect.png'}}" bindtap='collectStore' />
+			</view>
+			<view class='shopRateInfo'>
+				<view class='rateView'>
+					<view class='rateItem'>
+						<text class='point'>{{shopInfo.service_star}}分</text>
+						<text class='point_name'>客户服务</text>
+					</view>
+					<view class='rateItem'>
+						<text class='point'>{{shopInfo.delivery_star}}分</text>
+						<text class='point_name'>发货速度</text>
+					</view>
+					<view class='rateItem'>
+						<text class='point'>{{shopInfo.shipping_star}}分</text>
+						<text class='point_name'>物流速度</text>
+					</view>
+					<view class='rateItem'>
+						<text class='point'>{{shopInfo.package_star}}分</text>
+						<text class='point_name'>商品包装</text>
+					</view>
+				</view>
+			</view>
+			<view wx:if="shopInfo.coupons_list.length > 0" class='couponView'>
+				<scroll-view class='couponScroll' scroll-y='false' scroll-x="false" bindscrolltolower="">
+					<image class='couponItem' wx:for='{{shopInfo.coupons_list}}' wx:key='' src='https://c1.yaofangwang.net/common/images/miniapp/coupon_bg.png'>
+						<view class='couponInfoView'>
+							<text class='couponMoney'>￥{{item.money}}</text>
+							<text class='couponTitle'>{{item.title}}</text>
+						</view>
+						<view class="getCoupon" bindtap="getCoupon" data-id='{{item.id}}'>
+
+						</view>
+					</image>
+				</scroll-view>
+			</view>
+		</view>
+
+		<view class='goodsView' style="height:{{isIphoneX?screenHeight-listHeight-60:screenHeight-listHeight}}rpx">
+			<scroll-view class='goodsView-top' scroll-x scroll-into-view="item-{{selectIndex}}">
+				<block wx:for="{{dataSource}}" wx:for-index="index" wx:key="{{item.id}}">
+					<view class="goodsView-top-item" bindtap="changeIndex" data-index='{{index}}' id="item-{{index}}">{{item.name}}
+						<label class="lineRoll {{index == selectIndex ? 'selected' : ''}}" />
+					</view>
+				</block>
+			</scroll-view>
+			<swiper current="{{selectIndex}}" class='goodsView-content' style="height:{{isIphoneX?screenHeight-listHeight-200-60:screenHeight-listHeight-200}}rpx" bindchange='swiperChangIndex'>
+				<block wx:for="{{dataSource}}" wx:key="{{item.id}}">
+					<swiper-item>
+						<scroll-view class="goodsView-swiper-item" scroll-y bindscrolltolower="requestNextPage">
+							<view class='collectionView'>
+								<view class='collectionItemView' wx:for="{{dataSource[index].items}}" wx:key=''>
+									<collection_goods data='{{item}}' showstore='{{false}}' showCompany='{{false}}' showcar='{{false}}' bindcustomevent='goodsItemClick' />
+									<view wx:if="{{item.store_medicine_status}}" class='labelView' style="border-color:{{filter.getColor(item.store_medicine_status)}};color:{{filter.getColor(item.store_medicine_status)}}">{{item.store_medicine_status}}</view>
+								</view>
+							</view>
+							<view class="onloading" wx:if="{{index!=0}}">
+								<view class="load-wrap">
+									<view wx:if="{{pageEnd ? false : true}}" class="loading-icon">
+										<view class="hide-block"></view>
+									</view>
+									<view wx:else class="load-wrap">
+										<view class="loadover">没有更多商品了~</view>
+									</view>
+								</view>
+							</view>
+							<view wx:else class="onloading">
+								<view class="load-wrap">
+										<view class="loadover">没有更多商品了~</view>
+									</view>
+							</view>
+						</scroll-view>
+					</swiper-item>
+				</block>
+			</swiper>
+		</view>
+		<view class='bottomView'>
+			<view class='bottomItem' bindtap='toShopInfo'>
+				<image class='bottomImage' src='/images/bottom_icon_dianpu.png' />
+				<text class='bottomName'>商家简介</text>
+			</view>
+			<view class='bottomItem' bindtap='toGoodsList'>
+				<image class='bottomImage' src='/images/bottom_icon_all.png' />
+				<text class='bottomName'>全部商品</text>
+			</view>
+			<button open-type="contact" session-from="wx_app" style='background-color:white;padding:0rpx'>
+				<view class='bottomItem'>
+					<image class='bottomImage' src='/images/bottom_icon_zixun.png' />
+					<text class='bottomName'>在线咨询</text>
+				</view>
+			</button>
+		</view>
+	</view>
+	<image class='shop_bg_img' src='/images/shop_bg.jpg' style="height:{{listHeight+300}}rpx" />
+	<more_view id="moreview" />
+</view>
+<view>
+	<authentication id='authentication' />
+</view>

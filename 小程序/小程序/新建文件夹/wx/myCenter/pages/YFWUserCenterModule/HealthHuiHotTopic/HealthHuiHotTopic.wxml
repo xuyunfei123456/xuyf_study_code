@@ -1,0 +1,15 @@
+<view class="articleWrapper">
+  <scroll-view scroll-y="true" class="articleRecommend" bindscrolltolower="requestNextPage">
+    <view class="article_topic">
+      <image src="{{article_topic_bgc}}" class="article_topic_bgc"></image>
+      <view class="article_topic_name">{{article_topic_name}}</view>
+    </view>
+    <block wx:for="{{articleHotWords}}">
+      <HealthHuiAtricleCards catch:goHotTopicClick="clickTitle" bind:onClickArticleIKeyMethod="onClickHotWordsItem" postCardData="{{item}}" data-info="{{item}}"></HealthHuiAtricleCards>
+    </block>
+<view class="onloading">
+  <image wx:if="{{articleHotWords.length!=0&&pageEnd==false}}" class="loading-icon" src='/images/loading_cycle.gif' />
+      <view wx:if="{{articleHotWords.length==0||pageEnd==true}}" class="loadover">没有更多数据了~</view>
+</view>
+  </scroll-view>
+</view>

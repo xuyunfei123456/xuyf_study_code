@@ -1,0 +1,48 @@
+<view class='container'>
+  <scroll-view class='scroll' scroll-y="true" bindscrolltolower="{{isResult==true?'requestNextPage':''}}">
+    <view wx:if="{{!isResult}}">
+      <view class='no-result'>
+        <image src='https://c1.yaofangwang.net/common/images/miniapp/ic_no_goods_shops.png'></image>
+        <text>抱歉，没有找到商家哦~</text>
+      </view>
+      <view class='about-shop-view'>
+        <titleView title="相关商家" />
+      </view>
+    </view>
+    <block wx:for="{{model}}" wx:key="{{}}">
+      <view class='result-view'>
+          <view class='topView'>
+            <image src="{{item.logo_img_url}}" class='logo-url'></image>
+            <text class='title'>{{item.title}}</text>
+            <view class='kind'></view>
+            <view class='clickshop' bindtap='toShopDetail' data-id='{{item.id}}'>
+              <text>进入店铺</text>
+            </view>
+          </view>
+          <view class='context'>
+            <block wx:for="{{item.goods_items}}" wx:key="">
+              <view class='goods-view' bindtap='toShopGoodDetail' data-id='{{item.id}}'>
+               <image src='{{item.intro_image}}'></image>
+               <text class='goods-view-title'>{{item.namecn}}</text>
+               <!-- <text class='goods-view-price'>{{'¥'+item.price}}</text> -->
+               <view class='goods-view-price'>
+                <priceView price="{{item.price}}" fontSize="22"/>
+               </view>
+              
+              </view>
+            </block>
+          </view>
+      </view>
+    </block>
+    <view class="onloading" wx:if="{{isResult==true}}">
+      <view class="load-wrap">
+        <view wx:if="{{pageEnd ? false : true}}" class="loading-icon">
+          <view class="hide-block"></view>
+        </view>
+        <view wx:else class="load-wrap">
+          <view class="loadover">没有更多商品了~</view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

@@ -1,0 +1,85 @@
+/* components/GoodsItemView/YFWGoodsListView.wxss */
+.mainView{
+  display: flex;
+  height: 100%;
+  width: 100vw;
+  flex-direction: column
+}
+.shopCarTip{
+  display:flex;
+  width:100vw;
+  min-height: 100rpx;
+  z-index:29;
+  top: 200rpx;
+  flex-direction:row;
+  flex-wrap:wrap;
+  justify-content:space-around;
+  background-color: #faf8dc
+}
+.carLeft{
+  display: flex;
+  flex: 4;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 30rpx;
+  color: #FEAC4C;
+  line-height: 44rpx;
+  padding-left: 50rpx;
+}
+.carRight{
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  font-size: 30rpx;
+  color: #C1AD5C;
+  line-height: 44rpx;
+  padding-right:20rpx;
+}
+
+.scrollView{
+  display: flex;
+  -webkit-overflow-scrolling: touch;
+  height: 90%;
+}
+.collectionView{
+  background-color: #fafafa;
+  padding: 7rpx 14rpx 7rpx 28rpx;
+}
+.collectionView .collectionItemView{
+  display: inline-block;
+  vertical-align: top;  
+  flex-direction: column;
+  /* overflow: hidden; */
+  width: 50%;
+  margin: 7rpx 0;
+  border-radius: 20rpx;
+  justify-content: center;
+}
+.collectionView .collectionItemView:nth-of-type(odd) {
+  margin-left: -14rpx;
+  margin-right: 14rpx;
+}
+
+.onloading {
+  display: flex;
+  height: 50rpx;
+  width: 100vw;
+  background-color: #ffffff;
+  align-items: center;
+  justify-content: center;
+}
+.loading-icon {
+  /* animation: onloading-view linear 1.6s 0s infinite;
+  -webkit-animation: onloading-view linear 1.6s 0s infinite; */
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+  position: relative;
+  /* border-radius: 50%; */
+  /* border: 5rpx solid #0BA756; */
+}
+.loadover {
+  font-size: 24rpx;
+  color: #999999;
+}

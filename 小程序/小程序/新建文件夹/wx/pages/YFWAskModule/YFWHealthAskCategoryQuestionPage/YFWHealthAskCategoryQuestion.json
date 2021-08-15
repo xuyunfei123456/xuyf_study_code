@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+      "more_view": "/components/YFWMoreView/YFWMoreView",
+      "healthAskCategory": "/components/YFWHealthAskCategory/YFWHealthAskCategory",
+      "HealthAskQuestionItemView": "/components/YFWHealthAskQuestionItemView/YFWHealthAskQuestionItemView"
+  },
+        "navigationBarTitleText": "科室问题",
+        "navigationBarBackgroundColor": "#49ddb8",
+        "navigationBarTextStyle": "white",
+        "onReachBottomDistance": 90
+}

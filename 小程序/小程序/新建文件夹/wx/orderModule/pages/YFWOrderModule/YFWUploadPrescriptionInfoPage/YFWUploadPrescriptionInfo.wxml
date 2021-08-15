@@ -1,0 +1,30 @@
+<!--pages/YFWOrderModule/YFWUploadPrescriptionInfoPage/YFWUploadPrescriptionInfo.wxml-->
+<view class='top_tip'>{{dataInfo.prompt_info}}</view>
+<view class='container'>
+  <view class='content'>商家: <view class='shop_name'>{{dataInfo.title}}</view></view>
+  <view class='line'></view>
+  <view class='content'>订单:
+    <text class='gray'> {{dataInfo.orderno}}</text>
+  </view>
+  <view class='line'></view>
+  <view class='drug_container'>
+    <block wx:for='{{dataInfo.medicine_list}}'>
+      <view class='drug_content'>
+        <view class='drug_content_left'>{{item.goods_name}}</view>
+        <view class='drug_content_right'>x{{item.qty}}</view>
+      </view>
+    </block>
+  </view>
+</view>
+<view class='container'>
+  <view class='upload_title'>上传处方照片</view>
+  <view class='upload_image'>
+    <image wx:if='{{!imagePath}}' bindtap='uploadImageAction' class='upload_image' src='/images/upRx_photo.png'></image>
+    <image wx:else class='upload_image' src='{{imagePath}}'></image>
+    <image wx:if='{{imagePath}}' catchtap='delectImageAction' class='upload_delect' src='/images/search_del.png'></image>
+  </view>
+</view>
+
+  <view bindtap="commitAction" class='btnBtom'>
+    <view class="address-add">提交</view>
+  </view>

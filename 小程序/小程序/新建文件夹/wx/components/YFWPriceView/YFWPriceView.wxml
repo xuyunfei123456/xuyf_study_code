@@ -1,0 +1,10 @@
+<!--components/YFWPriceView/YFWPriceView.wxml-->
+<view class='price-view'>
+  <view class='price'>
+    <view class='price-view-price' style="color:{{isInvalid ? '#ccc' : priceColor?priceColor:'#ff3300'}}; font-size:{{fontSize-6}}rpx; line-height:{{fontSize-4}}rpx;">¥</view>
+    <view class='price-view-price' style="color:{{isInvalid ? '#ccc ': priceColor?priceColor:'#ff3300'}}; font-size:{{fontSize}}rpx; line-height:{{fontSize}}rpx;">{{interger_part}}</view>
+    <view class='price-view-price' style="color:{{isInvalid ? '#ccc' : priceColor?priceColor:'#ff3300'}}; font-size:{{fontSize-6}}rpx; line-height:{{fontSize-4}}rpx;">.{{decimal_part}}</view>
+  </view>
+  <view class="price-view-discount" style="color:{{isInvalid ? '#ccc' : discountColor?discountColor:'#ff6d60'}}; font-size:{{fontSize*2/3}}rpx; line-height:{{fontSize*2/3}}rpx; border: solid 2rpx {{isInvalid ? '#ccc' : discountColor?discountColor:'#ff6d60'}};" wx:if="{{discount.length>0}}">{{discount}}</view>
+  <view wx:if="{{isInvalid}}" class='price-view-invalid' style="font-size:{{fontSize*2/3}}rpx; line-height:{{fontSize*2/3}}rpx">失效</view>
+</view>

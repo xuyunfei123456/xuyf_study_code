@@ -1,0 +1,145 @@
+.listItemView{
+    display: flex;
+    width: 100vw;
+    align-items: center;
+    background-color: white;
+}
+.listItemView .leftView{
+    display: flex;
+    height: 200px;
+    width: 26%;
+    justify-content: center;
+    align-items: center;
+}
+.listItemView .rightView{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    justify-content: center;
+    padding-bottom: 20px;
+    border-bottom: solid 2px #f7f7f7;
+}
+.itemImage{
+    width: 140px;
+    height: 140px;
+}
+.medicineName{
+    color: #333333;
+    font-size: 30px;
+    margin-top: 30px;
+    margin-right: 20px;
+      /* 显示两行： */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  /* 多出部分显示省略号... */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.medicineStandards{
+    color: #666666;
+    font-size: 24px;
+    margin-top: 2px;
+}
+.medicineAuthorizedCode{
+    color: #999999;
+    font-size: 24px;
+    margin-top: 2px;
+}
+.medicine-type {
+    color: #999999;
+    font-size: 32px;
+}
+.itemRightBottomView{
+    display: flex;
+    flex-direction: row;
+    margin-top: 12px;
+    left: 0px;
+    right: 0px;
+    height: 40px;
+    justify-content:space-between;
+}
+.priceViews{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+}
+.itemPrice{
+    color: #FF3300;
+    font-size: 34px;
+}
+.carView{
+    position: absolute;
+    right: 20px;
+    display: flex;
+    padding: 0 20px;
+}
+.addCar{
+    width: 40px;
+    height: 40px;
+}
+.labelView{
+    display:flex;
+    border: solid #FF3B00 1px;
+    border-radius: 10px;
+    margin-left: 13px;
+}
+.labelText{
+    display:block;
+    font-size:20px;
+    color:#FF3B00;
+    text-align:center;
+    line-height:14px;
+    margin:7px 2px 7px 2px;
+    height:14px;
+}
+.store{
+    position: absolute;
+    right: 20px;
+    font-size: 24px;
+    text-align: left;
+    color: #999999;
+}
+.storetext{
+    color: #1fdf9b;
+}
+.shop_container {
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+  
+}
+.shop_default {
+    min-width: 46px;
+    min-height: 22px;
+    background-color: #379dd8;
+    border-radius: 16px;
+    color: white;
+    font-size: 16px;
+    padding:2px 10px;
+    text-align:center;
+}
+.shop_title {
+    color: #666;
+    font-size: 24px;
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-left: 4px;
+}
+.shop_more {
+    color: #1fdf9b;
+    font-size: 24px;
+}
+.shop_arrow {
+    width: 12px;
+    height: 22px;
+    margin-left: 4px;
+}
+.shop_car {
+    width: 44px;
+    height: 44px;
+    margin-top: -10px;
+}

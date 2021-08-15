@@ -1,0 +1,807 @@
+<!--pages/YFWGoodsDetailModule/YFWGoodsDetailPage/YFWGoodsDetail.wxml-->
+<!-- 空白view -->
+<view wx:if="{{isShowWhite}}" class='detail-white-view'></view>
+<view class='detail-view'>
+  <!-- 购物车、更多 -->
+  <view wx:if="{{dataSource.isShowTopItem}}" class="top-view" id="topTabView">
+    <view class='top-lr-width'></view>
+    <view hidden='{{!dataSource.isShowTopItem}}' class='top-center-view'>
+      <view class='top-center-item' bindtap='topViewIndexChange' data-index='0'>
+        <view class="{{dataSource.topIndex==0 ? 'top-center-title-select' : 'top-center-title-normal'}}">商品</view>
+        <view class="{{dataSource.topIndex==0 ? 'top-center-line-select' : 'top-center-line-normal'}}"></view>
+      </view>
+      <view class='top-center-item' bindtap='topViewIndexChange' data-index='1'>
+        <view class="{{dataSource.topIndex==1 ? 'top-center-title-select' : 'top-center-title-normal'}}">评价</view>
+        <view class="{{dataSource.topIndex==1 ? 'top-center-line-select' : 'top-center-line-normal'}}"></view>
+      </view>
+      <view class='top-center-item' bindtap='topViewIndexChange' data-index='2'>
+        <view class="{{dataSource.topIndex==2 ? 'top-center-title-select' : 'top-center-title-normal'}}">详情</view>
+        <view class="{{dataSource.topIndex==2 ? 'top-center-line-select' : 'top-center-line-normal'}}"></view>
+      </view>
+    </view>
+    <view class='top-right-view top-lr-width'>
+      <view class='top-right-view-item' bindtap='lookShopCartDetail'>
+        <image lazy-load="{{true}}"  src='/images/YFWGoodsDetailModule/goods_deail_cart.png' class='top-view-image' mode='aspectFit'></image>
+        <view wx:if="{{dataSource.shop_cart_count > 0}}" class='top-view-cart'>
+          {{dataSource.shop_cart_count > 99 ? "99+" : dataSource.shop_cart_count }}</view>
+      </view>
+      <view class='top-right-view-item' bindtap='lookMoreView' id='more_image'>
+        <image lazy-load="{{true}}"  src='/images/YFWGoodsDetailModule/goods_deail_more.png' class='top-view-image' mode="aspectFit"></image>
+      </view>
+    </view>
+  </view>
+  <view wx:else class="top-view-opa" id="topTabView">
+    <view class='top-lr-width'></view>
+    <view class='top-right-view top-lr-width'>
+      <view class='top-right-view-item' bindtap='lookShopCartDetail'>
+        <image lazy-load="{{true}}"  src='/images/YFWGoodsDetailModule/goods_deail_cart.png' class='top-view-image' mode='aspectFit'></image>
+        <view wx:if="{{dataSource.shop_cart_count > 0}}" class='top-view-cart'>
+          {{dataSource.shop_cart_count > 99 ? "99+" : dataSource.shop_cart_count }}</view>
+      </view>
+      <view class='top-right-view-item' bindtap='lookMoreView' id='more_image'>
+        <image lazy-load="{{true}}"  src='/images/YFWGoodsDetailModule/goods_deail_more.png' class='top-view-image' mode="aspectFit"></image>
+      </view>
+    </view>
+  </view>
+  <!-- 图片 -->
+  <view class='swiper-content'>
+    <swiper class='swiper-content-swiper' circular='true' bindchange='medicineImageChangeIndex'>
+      <block wx:for='{{dataSource.medicine_images}}' wx:key='index'>
+        <swiper-item>
+          <image lazy-load="{{true}}"  src='{{item}}' class='swiper-content-item' mode='aspectFit' bindtap='showBigImage'
+            data-images='{{dataSource.medicine_images}}' data-current='{{item}}' data-type='medicine'></image>
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class='swiper-content-number'>{{dataSource.medicine_image_index}}</view>
+  </view>
+  <!-- 品质保障、提供发票 -->
+  <scroll-view scroll-x class='detail-service-view'>
+    <block wx:for='{{dataSource.medicine_services}}' wx:key='index'>
+      <view class='detail-image-title-view detail-service-iitem detail-dark-text detail-12-text'
+        bindtap="showReturnPayModal" data-item='{{item}}'>
+        <image lazy-load="{{true}}"  class='detail-service-icon' mode='widthFix' src='/images/YFWGoodsDetailModule/goods_deail_service.png'>
+        </image>
+        {{item}}
+        <image lazy-load="{{true}}"  wx:if="{{item == '退货款规则'}}" class="detail-arrow-icon" mode='widthFix'
+          src='/images/icon_arrow_more.png' />
+      </view>
+    </block>
+  </scroll-view>
+  <!-- 商品价格、名称、疗效 -->
+  <view class='detail-column-view'>
+    <view class='detail-price'>
+      <priceView price="{{dataSource.medicine_info.price}}" fontSize="38"
+        discount="{{dataSource.medicine_info.discount}}"></priceView>
+      <image lazy-load="{{true}}"  wx:if="{{dataSource.is_seckill}}" class="detail-miaosha" src="/images/miaosha.png"></image>
+      <view class="detail-empty-flex"></view>
+      <!-- 降价通知 -->
+      <!-- <view bindtap="jumpDiscountNotice" class="detail-low-content" data-price="{{dataSource.medicine_info.price}}">
+        <image lazy-load="{{true}}"  src='/images/jjtz_icon.png'/>
+        <text>降价通知</text>
+      </view> -->
+      <!-- <image lazy-load="{{true}}"  src='/images/YFWGoodsDetailModule/goods_deail_share.png' class='detail-price-share'></image>
+      <button class='detail-price-share-button' open-type='share'></button> -->
+    </view>
+    <!-- 优惠劵、促销 -->
+    <view class="detail-column-view"
+      wx:if="{{dataSource.medicine_coupons.length>0 || dataSource.medicine_discount.length>0 ||dataSource.medicine_freepostage_list.length>0}}">
+      <view
+        wx:if="{{dataSource.medicine_coupons.length>0 || dataSource.medicine_discount.length>0 ||dataSource.medicine_freepostage_list.length>0}}"
+        class="detail-coupon-content-view" bindtap="showCouponModal">
+        <view class='detail-coupon-itemview'>
+          <view wx:if="{{dataSource.medicine_coupons.length>0}}" class='detail-discount-coupon'>
+            <text style="font-size: 24rpx; color: #FF6363; text-align: center; margin-right: 2rpx;">劵</text>
+            <view class="detail-coupon-title" />
+            <text
+              style="font-size: 24rpx; color: #FF6363; margin-left: 3rpx">{{dataSource.medicine_coupons[0].name}}</text>
+          </view>
+          <view wx:if="{{dataSource.medicine_show_discount.length>0}}" class='detail-discount-activity'>
+            {{dataSource.medicine_show_discount[0].name}}</view>
+          <view wx:if="{{dataSource.medicine_freepostage_list.length>0}}" class='detail-discount-freepostage'>
+            <text>{{dataSource.medicine_freepostage_list[0].name}}</text>
+          </view>
+        </view>
+        <view class="detail-check-view">
+          <text style="font-size: 28rpx; color: #999;">{{dataSource.medicine_coupons.length==0?'包邮说明':'领劵'}}</text>
+          <image lazy-load="{{true}}"  src='/images/around_detail_icon.png' class='detail-detail-icon'></image>
+        </view>
+
+      </view>
+    </view>
+    <view class='detail-column-view detail-medicine-info-view'>
+      <image lazy-load="{{true}}" src='/images/YFWGoodsDetailModule/goods_deail_share.png' class='detail-price-share'></image>
+      <button class='detail-price-share-button' open-type='share'></button>
+      <view class='detail-image-title-view detail-dark-text detail-15-text detail-bold-text detail-margin-right-130'>
+        <image lazy-load="{{true}}"  wx:if="{{dataSource.medicine_info.medicine_type != -1 && dataSource.medicine_info.medicine_icon}}"
+          src='{{dataSource.medicine_info.medicine_icon}}' class="detail-medicine-icon" mode='widthFix'></image>
+        <image lazy-load="{{true}}"  wx:if="{{dataSource.medicine_info.activity_img_url.length>0}}"
+          src='{{dataSource.medicine_info.activity_img_url}}' class="detail-medicine-icon" mode='widthFix'></image>
+        {{dataSource.medicine_info.medicine_name}}
+        
+      </view>
+      <wxs module="ellipsis" src="/wxs/ellipsis.wxs"></wxs>
+      <view 
+        style="margin-top: 40rpx" 
+        wx:if="{{dataSource.medicine_info.medicine_indications.length>0}}"
+        class='detail-dark-text detail-12-text detail-medicine-indications'>
+        {{hasSpecification ? ellipsis(dataSource.medicine_info.medicine_indications, 45) : dataSource.medicine_info.medicine_indications}}
+        <view wx:if="{{hasSpecification}}" style="display: inline-block" bindtap="showGuideModal">
+          <text class="detail-medicine-indications-controls">查看说明书</text>
+          <image 
+          lazy-load="{{true}}"  
+          src="../../../images/YFWGoodsDetailModule/goods_deail_arrow_red.png" 
+          style="vertical-align: middle;width:12rpx;height:22rpx;margin-left:10rpx"></image>
+          </view>
+        </view>
+      <view 
+        wx:if="{{dataSource.medicine_info.medicine_typedesc.length>0}}" 
+        bindtap="lookMedicineService"
+        class='detail-light-text detail-12-text detail-medicine-indications'
+        style="display:flex;align-items:center">
+        <view>
+          {{dataSource.medicine_info.medicine_typedesc}}
+        </view>
+        <image lazy-load="{{true}}"  src="../../../images/wenhao.png" style="width:22rpx;height:22rpx;margin-left:10rpx"></image>
+      </view>
+    </view>
+  </view>
+  <view class='detail-line'></view>
+  <!-- 运费、库存 -->
+  <view class='detail-content-view'>
+    <view class='detail-row-view detail-margin-bottom-15'>
+      <view class='detail-light-text detail-13-text detail-margin-right-20 detail-min-width-26'>运费</view>
+      <view class='detail-dark-text detail-13-text detail-margin-right-10'>
+        {{dataSource.medicine_logistics.logisyics_amount}}</view>
+      <view class='detail-logistics-line detail-margin-right-10'></view>
+      <view class='detail-dark-text detail-13-text detail-margin-right-10'>{{dataSource.medicine_logistics.start_city}}
+      </view>
+      <view class='detail-image-title-view detail-dark-text detail-13-text'>
+        <image lazy-load="{{true}}"  src='/images/YFWGoodsDetailModule/goods_deail_fly.png' class='detail-service-icon' mode='widthFix'>
+        </image>
+        {{dataSource.medicine_logistics.end_city}}
+      </view>
+    </view>
+    <view class='detail-row-view'>
+      <view class='detail-light-text detail-13-text detail-margin-right-20 detail-min-width-26'>库存</view>
+      <view class='detail-dark-text detail-13-text detail-margin-right-10'>{{dataSource.medicine_inventory.inventory}}
+      </view>
+      <view wx:if="{{dataSource.medicine_inventory.limitation>0}}"
+        class='detail-yellow-text detail-13-text detail-margin-right-10'>
+        ({{dataSource.limit_buy_prompt}})</view>
+      <!-- <view wx:if="{{dataSource.medicine_info.medicine_period_to.length>0}}" class='detail-normal-text detail-13-text detail-margin-right-10'>有效期至</view> -->
+      <view wx:if="{{dataSource.medicine_info.medicine_period_to.length>0}}" class='detail-dark-text detail-13-text'>
+        {{dataSource.medicine_info.medicine_period_to}}</view>
+    </view>
+  </view>
+  <view class='detail-line'></view>
+  <!-- 商品参数 -->
+  <view class='detail-content-view'>
+    <view class='detail-row-view'>
+      <view class='detail-light-text detail-13-text detail-margin-right-20 detail-min-width-26'>参数</view>
+      <view class='detail-column-view' style="padding-bottom:0rpx">
+        <view class='detail-row-view'>
+          <view class='detail-medicine-params-title detail-normal-text detail-13-text'>
+            {{dataSource.medicine_info.medicine_authorizetionTitle}}</view>
+          <view class=' detail-dark-text detail-13-text detail-margin-bottom-10'>
+            {{dataSource.medicine_info.medicine_authorizetion}}</view>
+        </view>
+        <view class='detail-row-view'>
+          <view class='detail-medicine-params-title detail-normal-text detail-13-text'>规格</view>
+          <view class=' detail-dark-text detail-13-text detail-margin-bottom-10'>
+            {{dataSource.medicine_info.medicine_standard}}</view>
+        </view>
+        <view wx:if="{{paramFlag}}">
+          <view class='detail-row-view'>
+            <view class='detail-medicine-params-title detail-normal-text detail-13-text'>剂型/型号</view>
+            <view class=' detail-dark-text detail-13-text detail-margin-bottom-10'>
+              {{dataSource.medicine_info.medicine_dosage_form}}</view>
+          </view>
+          <view class='detail-row-view'>
+            <view class='detail-medicine-params-title detail-normal-text detail-13-text'>生产企业</view>
+            <view class=' detail-dark-text detail-13-text detail-margin-bottom-10'>
+              {{dataSource.medicine_info.medicine_manufacturer}}</view>
+          </view>
+          <view wx:if='{{dataSource.medicine_info.bentrusted_name}}' class='detail-row-view'>
+            <view class='detail-medicine-params-title detail-normal-text detail-13-text'>上市许可人</view>
+            <view class=' detail-dark-text detail-13-text detail-margin-bottom-10'>
+              {{dataSource.medicine_info.bentrusted_name}}</view>
+          </view>
+          <view wx:if='{{dataSource.medicine_info.medicine_period}}' class='detail-row-view'>
+            <view class='detail-medicine-params-title detail-normal-text detail-13-text'>有效期</view>
+            <view class=' detail-dark-text detail-13-text detail-margin-bottom-10'>
+              {{dataSource.medicine_info.medicine_period}}</view>
+          </view>
+          <view wx:if='{{dataSource.medicine_info.medicine_waring}}'
+            class='detail-image-title-view detail-yellow-text detail-12-text'>
+            <image lazy-load="{{true}}"  src='/images/YFWGoodsDetailModule/goods_deail_vacation.png' class='detail-service-icon'
+              mode='widthFix'></image>
+            {{dataSource.medicine_info.medicine_waring}}
+          </view>
+          <view wx:if='{{dataSource.medicine_info.medicine_vacation}}'
+            class='detail-image-title-view detail-yellow-text detail-12-text'>
+            <image lazy-load="{{true}}"  src='/images/YFWGoodsDetailModule/goods_deail_vacation.png' class='detail-service-icon'
+              mode='widthFix'></image>
+            {{dataSource.medicine_info.medicine_vacation}}
+          </view>
+          <view wx:if='{{dataSource.medicine_info.medicine_notice}}'
+            class='detail-image-title-view detail-light-text detail-12-text'>
+            <image lazy-load="{{true}}"  src='/images/YFWGoodsDetailModule/goods_deail_notice.png' class='detail-service-icon'
+              mode='widthFix'></image>
+            {{dataSource.medicine_info.medicine_notice}}
+          </view>
+        </view>
+      </view>
+      <view bindtap="changeParamFlag" class="openAndClose">
+        <text style="padding-right:10rpx">展开</text>
+        <image lazy-load="{{true}}"  src="/images/down_arrow.png" style="height:12rpx;width:24rpx;" class="{{paramFlag ? 'trans':''}}">
+        </image>
+      </view>
+    </view>
+  </view>
+  <view class='detail-line'></view>
+  <!-- 优惠券、促销 -->
+  <!-- <view wx:if="{{dataSource.medicine_coupons.length>0 || dataSource.medicine_show_discount.length>0}}" class='detail-coupon-discount-view'>
+    <view wx:if="{{dataSource.medicine_coupons.length>0}}" class="detail-coupon-content-view" bindtap="showCouponModal">
+      <view class='detail-light-text detail-13-text detail-margin-right-20 detail-min-width-26 detail-coupon-bottom'>领券</view>
+      <scroll-view class='detail-content-start detail-coupon-itemview'>
+        <block wx:for="{{dataSource.medicine_coupons}}" wx:key="index">
+          <view class='detail-discount-coupon'>{{item.name}}</view>
+        </block>
+      </scroll-view> 
+      <image lazy-load="{{true}}"  src='/images/around_detail_icon.png' class='detail-detail-icon detail-coupon-bottom'></image>
+    </view>
+    <view wx:if="{{dataSource.medicine_show_discount.length>0}}" class="detail-discount-content-view" bindtap="showDiscountModal">
+      <view class='detail-light-text detail-13-text detail-margin-right-20 detail-min-width-26 detail-margin-top-10'>促销</view>
+      <view class='detail-column-view'>
+        <block wx:for='{{dataSource.medicine_show_discount}}' wx:key='index'>
+          <view class="detail-row-view detail-content-start detail-margin-top-10">
+            <view wx:if="{{item.type==0}}" class='detail-discount-title detail-discount-back-yellow'>满减</view>
+            <view wx:else class='detail-discount-title detail-discount-back-blue'>包邮</view>
+            <view class='detail-dark-text detail-13-text detail-discount-des'>{{item.title}}</view>
+          </view>
+        </block>
+      </view>
+      <image lazy-load="{{true}}"  src='/images/around_detail_icon.png' class='detail-detail-icon detail-margin-top-10'></image>
+    </view>
+  </view>
+  <view wx:if="{{dataSource.medicine_coupons.length>0 || dataSource.medicine_show_discount.length>0}}" class='detail-line'></view> -->
+  <!-- 单品、套餐、多件装 -->
+  <view class='detail-package-content-view'>
+    <view class='detail-package-title-view' bindtap='showCommboModal' id="addCart">
+      <view class='detail-light-text detail-13-text detail-margin-right-20 detail-min-width-26'>选择</view>
+      <view class='detail-dark-text detail-13-text detail-width-300'>{{firstShowFlag ? dataSource.medicine_selectInfo.name:dataSource.medicine_selectInfo.modalName}}</view>
+      <image lazy-load="{{true}}"  src='/images/around_detail_icon.png' class='detail-detail-icon'></image>
+    </view>
+    <view class='detail-package-view'>
+      <block wx:for="{{dataSource.medicine_style.medicine_packages}}" wx:key="index">
+        <view class='detail-package-item' bindtap='showCommboModal' id="addCart">{{item.name}}</view>
+      </block>
+    </view>
+  </view>
+  <view class='detail-line'></view>
+  <!-- 商家信息 -->
+  <view class='detail-content-view'>
+    <view class='detail-row-view '>
+      <image lazy-load="{{true}}"  src='{{dataSource.medicine_store.store_logo}}' class='detail-store-logo' mode='aspectFit'></image>
+      <view class='detail-column-view'>
+        <view class='detail-row-view detail-content-between'>
+          <view class='detail-dark-text detail-15-text detail-bold-text detail-store-name'>
+            {{dataSource.medicine_store.store_name}}</view>
+          <view class='detail-row-view detail-content-center' bindtap='showStoreModal'>
+            <view class='detail-13-text detail-yellow-subtitle'>查看资质</view>
+            <image lazy-load="{{true}}"  src='/images/YFWGoodsDetailModule/goods_deail_arrow_yellow.png' class='detail-detail-icon-red'>
+            </image>
+          </view>
+        </view>
+        <view class='detail-row-view detail-content-start'>
+          <block wx:for="{{dataSource.medicine_store.store_score_images}}" wx:key="index">
+            <image lazy-load="{{true}}"  src='{{item}}' class='detail-store-star'></image>
+          </block>
+        </view>
+      </view>
+    </view>
+    <scroll-view class='detail-store-medicine-view' scroll-x>
+      <block wx:for="{{dataSource.medicine_store.store_recommend_medicine}}" wx:key="index">
+        <view class='detail-store-medicine-item' bindtap='lookMedicineDetail' data-item='{{item}}'>
+          <view class='detail-store-medicine-item-view'>
+            <image lazy-load="{{true}}"  src='{{item.intro_image}}' class='detail-store-medicine-image'></image>
+            <view class='detail-store-medicine-name'>{{item.medicine_name}}</view>
+            <view class='detail-store-medicine-price'>
+              <priceView price="{{item.price}}" fontSize="22"></priceView>
+            </view>
+          </view>
+        </view>
+      </block>
+    </scroll-view>
+    <view class='detail-row-view detail-store-button-view'>
+      <view class='detail-store-button-back'>
+        <view class='detail-store-button-all detail-row-view' bindtap='lookStoreAllMedicine'>
+          <image lazy-load="{{true}}"  src='/images/YFWGoodsDetailModule/goods_deail_all.png' class='detail-store-button-icon'></image>
+          <view class='detail-green-text detail-15-text detail-bold-text'>全部商品</view>
+        </view>
+      </view>
+      <view class='detail-store-button-back detail-row-view detail-store-button-store' bindtap='lookStore'>
+        <image lazy-load="{{true}}"  src='/images/YFWGoodsDetailModule/goods_deail_store.png' class='detail-store-button-icon'></image>
+        <view class='detail-white-text detail-15-text detail-bold-text'>进入店铺</view>
+      </view>
+    </view>
+  </view>
+  <view class='detail-line'  id="goodsQuestion"></view>
+  <!-- 常见问题-->
+  <view class='detail-content-view' bindtap='lookAllQuestion'>
+    <view class='detail-row-view detail-content-between'>
+      <view class='detail-dark-text detail-15-text'>常见问题({{dataSource.medicine_question}})</view>
+      <view class='detail-row-view detail-content-center'>
+        <view class='detail-13-text detail-red-subtitle '>查看全部</view>
+        <image lazy-load="{{true}}"  src='/images/YFWGoodsDetailModule/goods_deail_arrow_red.png' class='detail-detail-icon-red'></image>
+      </view>
+    </view>
+  </view>
+  <view class='detail-line-1'></view>
+  <!-- 顾客评论  -->
+  <view class='detail-content-view' bindtap='lookAllComment'>
+    <view class='detail-row-view detail-content-between'>
+      <view class='detail-dark-text detail-15-text'>顾客评论({{dataSource.medicine_comment.count}})</view>
+      <view class='detail-row-view detail-content-center'>
+        <view class='detail-13-text detail-red-subtitle '>查看全部</view>
+        <image lazy-load="{{true}}"  src='/images/YFWGoodsDetailModule/goods_deail_arrow_red.png' class='detail-detail-icon-red'></image>
+      </view>
+    </view>
+    <view>
+      <block wx:for="{{dataSource.medicine_comment.comment_list}}" wx:key='index'>
+        <view class='detail-margin-top-20'>
+          <view class='detail-row-view detail-content-between'>
+            <view class='detail-row-view detail-content-center'>
+              <image lazy-load="{{true}}"  src='{{item.intro_image}}' class='detail-comment-icon'></image>
+              <view class='detail-10-text detail-normal-text'>{{item.account_name}}</view>
+            </view>
+            <view class='detail-light-text detail-10-text'>{{item.create_time}}</view>
+          </view>
+          <view class='detail-dark-text detail-13-text detail-margin-top-10'>{{item.content}}</view>
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class='detail-line' id="goodsBaseInfo"></view>
+  <!-- 基本信息、说明书、服务保障 悬浮占位 -->
+  <view hidden='{{!dataSource.isSuspensionBaseInfo}}' style='opacity:0;'>
+    <view class='detail-base-service'>
+      <block wx:for="{{dataSource.medicine_detail}}" wx:key="index">
+        <view wx:if="{{item.isShow == 1}}" class="detail-base-service-item" data-index='{{index}}'
+          bindtap='changeGoodsDetailInfo'>
+          <titleView title='{{item.title}}' fontWeight="bold" showLine="{{index==dataSource.medicine_detail_index}}" />
+        </view>
+      </block>
+    </view>
+    <view wx:if="{{dataSource.medicine_detail[dataSource.medicine_detail_index].notice.length>0}}"
+      class='detail-base-notice detail-12-text'>{{dataSource.medicine_detail[dataSource.medicine_detail_index].notice}}
+    </view>
+  </view>
+  <!-- 基本信息、说明书、服务保障 -->
+  <view class="{{dataSource.isSuspensionBaseInfo ? 'detail-base-servic-fixed' : ''}}">
+    <view class='detail-base-service'>
+      <block wx:for="{{dataSource.medicine_detail}}" wx:key="index">
+        <view wx:if="{{item.isShow == 1}}" class="detail-base-service-item" data-index='{{index}}'
+          bindtap='changeGoodsDetailInfo'>
+          <titleView title='{{item.title}}' fontWeight="bold" largeStyle="{{index==dataSource.medicine_detail_index}}"
+            showLine="{{index==dataSource.medicine_detail_index}}" />
+        </view>
+      </block>
+    </view>
+    <view wx:if="{{dataSource.medicine_detail[dataSource.medicine_detail_index].notice.length>0}}"
+      class='detail-base-notice detail-12-text'>{{dataSource.medicine_detail[dataSource.medicine_detail_index].notice}}
+    </view>
+  </view>
+  <!-- <view class='detail-line'></view> -->
+  <!-- 基本信息、说明书、服务保障 -->
+  <view class='detail-content-gray-view' style="padding-bottom:{{activityItem.content&&activityHieght ? activityHieght : ''}}px">
+    <!-- 基本信息 -->
+    <view wx:if="{{dataSource.medicine_detail_index==0}}" class='detail-column-view'>
+      <view class='detail-13-text detail-bold-text detail-dark-text detail-margin-left-13'>
+        {{dataSource.medicine_detail[0].title}}</view>
+      <view class='detail-border-content'>
+        <block wx:for="{{dataSource.medicine_detail[0].items}}" wx:key="index">
+          <view class='detail-row-view detail-content-start detail-margin-top-10'>
+            <view class='detail-baseinfo-item-title detail-12-text detail-light-text'>{{item.title}}</view>
+            <view class='detail-baseinfo-item-subtitle detail-12-text detail-dark-text'>{{item.subtitle}}</view>
+          </view>
+        </block>
+      </view>
+      <block wx:for="{{dataSource.medicine_detail[0].medicine_image_list}}" wx:key="index">
+        <view class='detail-border-content detail-content-center'>
+          <image lazy-load="{{true}}"  src='{{item}}' class='detail-baseinfo-item-image' mode='aspectFit'></image>
+        </view>
+      </block>
+    </view>
+    <!-- 说明书 -->
+    <view wx:if="{{dataSource.medicine_detail_index==1}}" class='detail-column-view'>
+      <view class='detail-13-text detail-bold-text detail-dark-text detail-margin-left-13'>
+        {{dataSource.medicine_detail[1].title}}</view>
+      <view class='detail-border-content'>
+        <block wx:for="{{dataSource.medicine_detail[1].items}}" wx:key="index">
+          <view class='detail-column-view detail-margin-top-10'>
+            <view class='detail-13-text detail-dark-text detail-bold-text detail-margin-bottom-5'>{{item.title}}</view>
+            <text class='detail-12-text detail-normal-text'>{{item.subtitle}}</text>
+          </view>
+        </block>
+      </view>
+    </view>
+    <!-- 服务保障 -->
+    <view wx:if="{{dataSource.medicine_detail_index==2}}" class='detail-column-view'>
+      <view class='detail-13-text detail-bold-text detail-dark-text detail-margin-left-13'>
+        {{dataSource.medicine_detail[2].promise.title}}</view>
+      <view class='detail-border-content-promise'>
+        <view class='detail-column-view detail-base-service-view'>
+          <block wx:for="{{dataSource.medicine_detail[2].promise.items}}" wx:key="index">
+            <view class='detail-row-view detail-content-start detail-margin-top-15 detail-margin-bottom-5'>
+              <image lazy-load="{{true}}"  src='{{item.icon}}' class='detail-base-service-icon'></image>
+              <view class='detail-12-text detail-dark-text detail-bold-text'>{{item.title}}</view>
+            </view>
+            <view class='detail-12-text detail-normal-text'>{{item.content}}</view>
+          </block>
+        </view>
+        <image lazy-load="{{true}}"  src='{{dataSource.medicine_detail[2].promise.qualification.icon}}' class='detail-base-service-quali'
+          bindtap='lookplatformQualification'></image>
+      </view>
+      <view wx:if="{{dataSource.medicine_detail[2].store_qualification.items.length>0}}"
+        class='detail-column-view detail-margin-top-20'>
+        <view class='detail-13-text detail-bold-text detail-dark-text detail-margin-bottom-5 detail-margin-left-13'>
+          {{dataSource.medicine_detail[2].store_qualification.title}}</view>
+        <view class='detail-store-quali-view'>
+          <block wx:for="{{dataSource.medicine_detail[2].store_qualification.items}}" wx:key="index">
+            <view class='detail-store-quali-item' bindtap='showBigImage'
+              data-images='{{dataSource.medicine_detail[2].store_qualification.items}}'
+              data-current='{{item.image_url}}' data-type='qualification'>
+              <image lazy-load="{{true}}"  src='{{item.image_url}}' class='detail-store-quali-item-image' mode='aspectFit'></image>
+              <view class='detail-store-quali-item-name'>{{item.image_name}}</view>
+            </view>
+          </block>
+        </view>
+      </view>
+      <view wx:if="{{dataSource.medicine_detail[2].store_images.items.length>0}}" class='detail-column-view'>
+        <view
+          class='detail-13-text detail-bold-text detail-dark-text detail-margin-bottom-5 detail-margin-top-10 detail-margin-left-13'>
+          {{dataSource.medicine_detail[2].store_images.title}}</view>
+        <view class='detail-store-live-view'>
+          <block wx:for="{{dataSource.medicine_detail[2].store_images.items}}" wx:key="index">
+            <view class='detail-store-live-item detail-border-content'>
+              <image lazy-load="{{true}}"  src='{{item.image_url}}' class='detail-store-live-item-image' mode='aspectFit'
+                bindtap='showBigImage' data-images='{{dataSource.medicine_detail[2].store_images.items}}'
+                data-current='{{item.image_url}}' data-type='store'></image>
+            </view>
+          </block>
+        </view>
+      </view>
+      <view class='detail-13-text detail-bold-text detail-dark-text detail-margin-top-10 detail-margin-left-13'>
+        {{dataSource.medicine_detail[2].returned_standard.title}}</view>
+      <view class='detail-border-content'>
+        <view class='detail-12-text detail-bold-text detail-dark-text detail-margin-bottom-5 detail-margin-top-10'>
+          {{dataSource.medicine_detail[2].returned_standard.return_policy.title}}</view>
+        <view class='detail-12-text detail-normal-text'>
+          {{dataSource.medicine_detail[2].returned_standard.return_policy.content}}</view>
+        <view class='detail-12-text detail-bold-text detail-dark-text detail-margin-bottom-5 detail-margin-top-10'>
+          {{dataSource.medicine_detail[2].returned_standard.return_condition.title}}</view>
+        <view class='detail-column-view'>
+          <block wx:for="{{dataSource.medicine_detail[2].returned_standard.return_condition.items}}" wx:key="index">
+            <view class='detail-row-view detail-align-start'>
+              <view class="{{index%2 == 0 ? 'detail-return-red-circle' : 'detail-return-green-circle'}}"></view>
+              <view class='detail-12-text detail-normal-text detail-return-content-width'>{{item}}</view>
+            </view>
+          </block>
+        </view>
+        <view class='detail-12-text detail-bold-text detail-dark-text detail-margin-bottom-5 detail-margin-top-10'>
+          {{dataSource.medicine_detail[2].returned_standard.return_explain.title}}</view>
+        <view class='detail-12-text detail-normal-text'>
+          {{dataSource.medicine_detail[2].returned_standard.return_explain.content}}</view>
+        <view class='detail-12-text detail-bold-text detail-dark-text detail-margin-bottom-5 detail-margin-top-10'>
+          {{dataSource.medicine_detail[2].returned_standard.return_process.title}}</view>
+        <view class='detail-column-view'>
+          <block wx:for="{{dataSource.medicine_detail[2].returned_standard.return_process.items}}" wx:key="index">
+            <view class='detail-row-view detail-align-start'>
+              <view class="detail-return-green-circle"></view>
+              <view class='detail-12-text detail-normal-text'>{{item}}</view>
+            </view>
+          </block>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='detail-line-50'></view>
+  <view wx:if="{{isIphoneX}}" class='detail-iphx-view'></view>
+
+  <!-- 活动区域 -->
+  <view class="activeity" style="bottom:{{activityHieght}}px" wx:if="{{activityItem.content&&activityHieght}}">
+    <view style="flex-shrink:0;">
+      <image lazy-load="{{true}}"  src="{{activityItem.img_url}}"
+        style="height:{{activityItem.img_height || 20}}rpx;width:{{activityItem.img_width || 20}}rpx" class=""></image>
+    </view>
+
+    <view class="activity_content">{{activityItem.content}}</view>
+    <image lazy-load="{{true}}"  src="/images/icon_arrow_y.png" class="activity_arrow" wx:if="{{activityItem.url}}"
+      bindtap="activityRedirect"></image>
+  </view>
+  <!-- 底部操作按钮 咨询、店铺、收藏、购物车、购买 -->
+  <view class='detail-bottom-view' id="bottomOperate" wx:if="{{verFlag!=0}}">
+    <view wx:if="{{dataSource.medicine_info.medicine_promptinfo.length>0}}" class="detail-bottom-dontsale-info">
+      {{dataSource.medicine_info.medicine_promptinfo}}</view>
+    <view class='detail-bottom-view-top-line'></view>
+    <view class='detail-row-view'>
+      <view class='detail-row-view detail-bottom-left-view'>
+        <block wx:if="{{verFlag == 2}}">
+          <view class='detail-bottom-left-view-item'>
+            <image lazy-load="{{true}}"  src='/images/YFWGoodsDetailModule/goods_deail_consult.png' class='detail-bottom-left-view-item-icon'
+              mode='widthFix'></image>
+            <view class='detail-10-text detail-bold-text detail-dark-text'>咨询</view>
+            <button open-type="contact" session-from="wx_app" class='detail-bottom-left-view-button'></button>
+            <!-- <button class='detail-bottom-left-view-button'
+            session-from="sobot|{{serviceInfo.nickName}}|{{serviceInfo.avatarUrl}}|{{serviceInfo.params}}|transfer_action={{serviceInfo.transfer_action}}|platform_action={{serviceInfo.platform_action}}|partnerid={{serviceInfo.partnerid}}|robotid={{serviceInfo.robotid}}"
+            open-type="contact"
+          ></button> -->
+          </view>
+        </block>
+
+        <view class='detail-bottom-left-view-item' bindtap='lookStore'>
+          <image lazy-load="{{true}}"  src='/images/YFWGoodsDetailModule/goods_deail_shop.png' class='detail-bottom-left-view-item-icon'
+            mode='widthFix'></image>
+          <view class='detail-10-text detail-bold-text detail-dark-text'>店铺</view>
+        </view>
+        <view class='detail-bottom-left-view-item' bindtap='collectionMedicine'>
+          <image lazy-load="{{true}}" 
+            src="{{dataSource.isCollection ? '/images/YFWGoodsDetailModule/goods_deail_collect-select.png' : '/images/YFWGoodsDetailModule/goods_deail_collect-normal.png' }}"
+            class='detail-bottom-left-view-item-icon' mode='widthFix'></image>
+          <view class='detail-10-text detail-bold-text detail-dark-text'>{{dataSource.isCollection ? "已收藏" : "收藏"}}
+          </view>
+        </view>
+      </view>
+      <view wx:if="{{dataSource.medicine_status == 0}}" class='detail-bottom-right-view'></view>
+      <view wx:elif="{{dataSource.medicine_status == 1}}" class='detail-bottom-right-view'>
+        <block wx:if="{{verFlag == 1}}">
+          <view wx:if="{{dataSource.medicine_info.medicine_type <=0}}" class='detail-row-view'>
+            <view class='detail-bottom-cart-view detail-15-text detail-bold-text' bindtap='showCommboModal' id="addCart"
+              data-type='cer'>加入购物车</view>
+            <view class=' detail-bottom-buy-view detail-15-text detail-bold-text' bindtap='showCommboModal' id="buyNow"
+              data-type='cer'>立即购买</view>
+          </view>
+          <view wx:else class='detail-bottom-consult-view' style="background-color:#999;cursor:not-allowed">暂不预约
+          </view>
+        </block>
+        <block wx:if="{{verFlag == 2}}">
+          <view wx:if="{{wx_rx_is_buy || dataSource.medicine_info.medicine_type < 0}}" class='detail-row-view'>
+            <view class='detail-bottom-cart-view detail-15-text detail-bold-text' bindtap='showCommboModal' id="addCart"
+              data-type='cer'>{{dataSource.medicine_info.medicine_type>0?'加入需求单':'加入购物车'}}</view>
+            <view class=' detail-bottom-buy-view detail-15-text detail-bold-text' bindtap='showCommboModal' id="buyNow"
+              data-type='cer'>{{dataSource.medicine_info.medicine_type>0?'提交需求':'立即购买'}}</view>
+          </view>
+          <view wx:else class='detail-bottom-consult-view' bindtap="{{dataSource.isLogin?'':'consultAction'}}">
+            在线咨询
+            <button open-type="contact" session-from="wx_app" class='detail-bottom-consult'
+              wx:if="{{dataSource.isLogin}}"></button>
+          </view>
+        </block>
+
+      </view>
+
+      <view wx:else class='detail-bottom-right-view'>
+        <view class='detail-bottom-dontsale-view detail-15-text detail-bold-text'>{{dataSource.prohibit_sales_btn_text}}
+        </view>
+      </view>
+    </view>
+    <view wx:if="{{isIphoneX}}" class='detail-iphx-view'></view>
+  </view>
+</view>
+
+<!-- 弹出框 -->
+<!-- 顶部查看更多 -->
+<YFWMoreView id="moreView"></YFWMoreView>
+<!-- 优惠券活动弹出层 -->
+<YFWCouponModal id='couponModal' coupons="{{dataSource.medicine_coupons}}"
+  discounts="{{dataSource.medicine_discountStr}}" freepostages="{{dataSource.medicine_freepostageStr}}"
+  isShowDiscount="{{true}}" storeID="{{dataSource.medicine_store.store_id}}" priceInShop="{{dataSource.medicine_info.price}}"></YFWCouponModal>
+<!-- 促销活动弹出层 -->
+<YFWActionModal id="discountModal" title="促销">
+  <view class='detail-padding-13 detail-column-view'>
+    <block wx:for="{{dataSource.medicine_discount}}" wx:key="index">
+      <view class='detail-row-view detail-margin-bottom-15 detail-align-start'>
+        <view wx:if="{{item.type==0}}" class='detail-discount-title detail-discount-back-yellow'>满减</view>
+        <view wx:else class='detail-discount-title detail-discount-back-blue'>包邮</view>
+        <view class='detail-dark-text detail-13-text'>{{item.title}}</view>
+      </view>
+    </block>
+  </view>
+</YFWActionModal>
+<YFWSpecificationModal 
+id="specificationModal" 
+order="{{specificationOrder}}"
+guide="{{dataSource.medicine_info.medicine_guide}}">
+</YFWSpecificationModal>
+<!-- 选择单品、套餐、多件装 -->
+<view hidden='{{!dataSource.isShowCommboModal}}' class='modal' catchtouchmove='true'>
+  <view class='modal-back' bindtap='hideCommboModal' animation="{{opacityAnimation}}"></view>
+  <view class='modal-content' animation="{{translateAnimation}}" catchtap='true' style="height:{{dataSource.medicine_style.medicine_combo.length == 0 ? ((dataSource.medicine_info.length == 0 || dataSource.medicine_style.medicine_treatment.length == 0)? 56:70):80}}%">
+    <view class='modal-head'>
+      <image lazy-load="{{true}}"  src='{{dataSource.medicine_images[0]}}' class='modal-image' mode='aspectFit'></image>
+      <view class='modal-info'>
+        <view class='detail-dark-text detail-13-text detail-bold-text'>{{dataSource.medicine_info.medicine_name}}</view>
+        <view class='detail-light-text detail-12-text detail-margin-bottom-10'>
+          {{dataSource.medicine_info.medicine_authorizetion}}</view>
+        <priceView price="{{dataSource.medicine_selectInfo.price}}"></priceView>
+        <view class='detail-dark-text detail-12-text'>{{dataSource.medicine_selectInfo.modalName}}</view>
+      </view>
+      <image lazy-load="{{true}}"  src='/images/returnTips_close.png' class='modal-close' bindtap='hideCommboModal'></image>
+    </view>
+    <scroll-view class='modal-center-view' scroll-y style="height:40%">
+      <view class='detail-column-view modal-center-padding'>
+        <view class='detail-dark-text detail-13-text detail-margin-bottom-10'>选择单品</view>
+        <view class='modal-wrap-view'>
+          <view class="{{dataSource.medicine_selectInfo.type==0?'modal-standard-select':'modal-standard-normal'}}"
+            bindtap='selectPackageStyle' id="single">{{dataSource.medicine_info.medicine_standard}} <text
+              class='modal-period'
+              >{{dataSource.medicine_info.medicine_period_to}}</text>
+          </view>
+        </view>
+      </view>
+      <view wx:if="{{dataSource.medicine_style.medicine_combo.length>0}}"
+        class='detail-column-view detail-margin-top-10 modal-center-padding'>
+        <view class='detail-dark-text detail-13-text detail-margin-bottom-10'>选择套餐</view>
+        <scroll-view class='modal-commbo-view' scroll-x>
+          <block wx:for="{{dataSource.medicine_style.medicine_combo}}" wx:key="index">
+            <view
+              class="{{dataSource.medicine_selectInfo.type==1&&dataSource.medicine_selectInfo.selectIndex==index?'modal-commbo-select':'modal-commbo-normal'}}"
+              bindtap='selectPackageStyle' id="commbo" data-index='{{index}}' data-item='{{item}}'>{{item.name_aliase}}
+            </view>
+          </block>
+        </scroll-view>
+        <view wx:if="{{dataSource.medicine_selectInfo.type==1}}" class='modal-commbo'>
+          <view class='detail-column-view'>
+            <view class='detail-dark-text detail-13-text detail-margin-bottom-5'>
+              {{dataSource.medicine_selectInfo.selectModel.name}}</view>
+            <view class='detail-row-view detail-content-start detail-margin-bottom-5'>
+              <priceView price="{{dataSource.medicine_selectInfo.selectModel.price}}"></priceView>
+              <view class='detail-normal-text detail-12-text detail-margin-left-10'>
+                原价：¥{{dataSource.medicine_selectInfo.selectModel.original_price}}</view>
+            </view>
+            <block
+              wx:for="{{dataSource.medicine_style.medicine_combo[dataSource.medicine_selectInfo.selectIndex].medicine_list}}"
+              wx:key="index">
+              <view class='detail-row-view modal-commbo-item'>
+                <image lazy-load="{{true}}"  src='{{item.image_url}}' class='modal-commbo-image'></image>
+                <view class='modal-commbo-item-view'>
+                  <view class='detail-dark-text detail-12-text'>{{item.medicine_name}}</view>
+                  <view class='detail-row-view detail-content-between'>
+                    <view class='detail-normal-text detail-12-text' wx:if="{{item.period_to}}">¥{{item.price}} 有效期至：{{item.period_to}}</view>
+                    <view class='detail-normal-text detail-12-text detail-margin-right-10'>x{{item.quantity}}</view>
+                  </view>
+                </view>
+              </view>
+            </block>
+          </view>
+        </view>
+      </view>
+      <view wx:if="{{dataSource.medicine_style.medicine_treatment.length>0}}"
+        class='detail-column-view detail-margin-top-10 modal-center-padding'>
+        <view class='detail-dark-text detail-13-text detail-margin-bottom-10'>多件装</view>
+        <view class='modal-wrap-view'>
+          <block wx:for="{{dataSource.medicine_style.medicine_treatment}}" wx:key="index">
+            <view
+              class="{{dataSource.medicine_selectInfo.type==2&&dataSource.medicine_selectInfo.selectIndex==index?'modal-standard-select':'modal-standard-normal'}}"
+              bindtap='selectPackageStyle' id="treatment" data-index='{{index}}' data-item='{{item}}'>{{item.name}}
+              <view class='modal-period' wx:if="{{dataSource.medicine_info.medicine_period_to.length>0}}">
+                {{dataSource.medicine_info.medicine_period_to}}</view>
+            </view>
+          </block>
+        </view>
+      </view>
+    </scroll-view>
+    <view class='modal-quantity-view'>
+      <view class='detail-row-view'>
+        <view class='detail-dark-text detail-13-text detail-margin-right-20'>数量</view>
+        <view class='detail-light-text detail-13-text'>库存:{{dataSource.medicine_inventory.inventory}}</view>
+        <view wx:if="{{dataSource.medicine_inventory.limitation>0}}" class='detail-yellow-text detail-13-text'>
+          （限购{{dataSource.medicine_inventory.limitation}}件）</view>
+      </view>
+      <view class='detail-row-view modal-change'>
+        <view class='modal-sub-add' bindtap='changeBuyQuantity' id='subQuantity'>-</view>
+        <input class='modal-quantity' value="{{dataSource.medicine_selectInfo.quantity}}" type="number"
+          bindinput='inputBuyQuantity' bindblur='quantityEndEditting'></input>
+        <view class='modal-sub-add' bindtap='changeBuyQuantity' id='addQuantity'>+</view>
+      </view>
+    </view>
+    <view wx:if="{{dataSource.medicine_status == 0}}" class='detail-bottom-right-view'></view>
+    <block wx:elif="{{dataSource.medicine_status == 1}}">
+      <block wx:if="{{verFlag == 1}}">
+        <view wx:if="{{dataSource.medicine_info.medicine_type <= 0}}" class='detail-row-view'>
+          <view wx:if="{{dataSource.medicine_selectInfo.isBuy}}" class='modal-bottom-buy'
+            bindtap='immediatelyBuyMedicine'>加入购物车</view>
+          <view wx:else class='modal-bottom-cart' bindtap='addShopCart'>立即购买</view>
+        </view>
+        <view wx:else class='detail-bottom-consult-view' style="background-color:#999;cursor:not-allowed">暂不预约
+        </view>
+      </block>
+      <block wx:if="{{verFlag == 2}}">
+        <view wx:if="{{wx_rx_is_buy || dataSource.medicine_info.medicine_type < 0}}" class='detail-row-view'>
+          <view wx:if="{{dataSource.medicine_selectInfo.isBuy}}" class='modal-bottom-buy'
+            bindtap='immediatelyBuyMedicine'>{{dataSource.medicine_info.medicine_type >0?'提交需求':'立即购买'}}</view>
+          <view wx:else class='modal-bottom-cart' bindtap='addShopCart'>
+            {{dataSource.medicine_info.medicine_type >0?'加入需求单':'加入购物车'}}</view>
+        </view>
+        <view wx:else class='modal-bottom-nocart' bindtap="{{dataSource.isLogin?'':'consultAction'}}">在线咨询
+          <button open-type="contact" session-from="wx_app" class='detail-bottom-consult'
+            wx:if="{{dataSource.isLogin}}"></button>
+        </view>
+      </block>
+    </block>
+    <view wx:else class='detail-bottom-dontsale-view detail-15-text detail-bold-text'>
+      {{dataSource.prohibit_sales_btn_text}}</view>
+  </view>
+</view>
+<!-- 退款货款规则弹框 -->
+<view hidden='{{!dataSource.isShowReturnModal}}' class='modal' catchtouchmove='true'>
+  <view class='modal-back' bindtap='hideReturnModal' animation="{{opacityAnimation}}"></view>
+  <view class='modal-content' animation="{{translateAnimation}}" catchtap='true'>
+    <view class='modal-return-head'>
+      <view class="modal-view"></view>
+      <view class="modal-title">服务说明</view>
+      <view bindtap="hideReturnModal" class="modal-view">
+        <image lazy-load="{{true}}"  class="modal-close" src='/images/search_del.png' />
+      </view>
+    </view>
+    <scroll-view class='modal-center-view' scroll-y>
+      <block wx:for='{{dataSource.medicine_services}}' wx:key='index'>
+        <view class='modal-return-view'>
+          <image lazy-load="{{true}}"  mode='widthFix' src='/images/YFWGoodsDetailModule/goods_deail_service.png'></image>
+          <text>{{item}}</text>
+        </view>
+      </block>
+      <view class="modal-return-warn">依据《药品经营质量管理规范》第三章第八节相关规定：药品一经售出、无质量问题、不退不换</view>
+    </scroll-view>
+  </view>
+</view>
+<!-- 查看商家资质、商家实景 -->
+<view hidden='{{!dataSource.isShowStoreModal}}' class='modal' catchtouchmove='true'>
+  <view class='modal-back' bindtap='hideStoreModal' animation="{{opacityAnimation}}"></view>
+  <view class='modal-store-content' animation="{{translateAnimation}}" catchtap='true'>
+    <view class='modal-store-head'>
+      <view class="{{dataSource.medicine_store.store_modal.type==1 ? 'modal-store-select' : 'modal-store-noraml'}}"
+        bindtap='showStoreQuanlityOrLive' id="quanlity">商家资质</view>
+      <view class="{{dataSource.medicine_store.store_modal.type==2 ? 'modal-store-select' : 'modal-store-noraml'}}"
+        bindtap='showStoreQuanlityOrLive' id="live">店铺实景</view>
+    </view>
+    <view wx:if="{{dataSource.medicine_store.store_modal.image_list.length==0}}" class='modal-store-center-empty'>
+      <image lazy-load="{{true}}"  src='/images/YFWGoodsDetailModule/goods_deail_empty_quality.png' class='modal-empty-image'
+        mode='aspectFit'></image>
+      <view class='modal-empty-name'>{{dataSource.medicine_store.store_modal.name}}</view>
+    </view>
+    <view wx:else class='modal-store-center'>
+      <view wx:if="{{!dataSource.medicine_store.store_modal.isShowLeft}}" class='modal-store-direction'></view>
+      <view wx:else class='modal-store-direction' bindtap='changeAptitudeIndex' id="arrow_left">
+        <image lazy-load="{{true}}"  src='/images/YFWGoodsDetailModule/goods_deail_arrow_left.png' class='modal-direction-image'></image>
+      </view>
+      <swiper class='modal-store-swipper' current="{{dataSource.medicine_store.store_modal.index}}"
+        bindchange='aptitudeChangeIndex'>
+        <block wx:for="{{dataSource.medicine_store.store_modal.image_list}}" wx:key="index">
+          <swiper-item>
+            <image lazy-load="{{true}}"  src='{{item.image_url}}' class='modal-sipper-image' mode='aspectFit'
+              bindtap='qualificationModalItemClick' data-images='{{dataSource.medicine_store.store_modal.image_list}}'
+              data-current='{{item.image_url}}' data-type='qualification'></image>
+          </swiper-item>
+        </block>
+      </swiper>
+      <view wx:if="{{!dataSource.medicine_store.store_modal.isShowRight}}" class='modal-store-direction'></view>
+      <view wx:else class='modal-store-direction' bindtap='changeAptitudeIndex' id="arrow_right">
+        <image lazy-load="{{true}}"  src='/images/YFWGoodsDetailModule/goods_deail_arrow_right.png' class='modal-direction-image'></image>
+      </view>
+    </view>
+    <view class='modal-store-bottom' bindtap='hideStoreModal'>关闭</view>
+  </view>
+</view>
+<!-- loading -->
+<view hidden='{{!isLoading}}' class='modal' catchtouchmove='true'>
+  <view class='modal-loading-content'>
+    <image lazy-load="{{true}}"  src='/images/loading_cycle.gif' class='modal-loding'></image>
+  </view>
+</view>
+
+<view>
+  <authentication id='authentication' />
+</view>

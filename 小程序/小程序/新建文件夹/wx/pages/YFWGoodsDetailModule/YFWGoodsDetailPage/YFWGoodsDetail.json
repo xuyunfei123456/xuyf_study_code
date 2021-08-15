@@ -1,0 +1,13 @@
+{
+  "usingComponents": {
+    "YFWActionModal": "/components/YFWActionModal/YFWActionModal",
+    "YFWCouponModal": "/components/YFWCouponModal/YFWCouponModal",
+    "YFWSpecificationModal": "/components/YFWSpecificationModal/YFWSpecificationModal",
+    "YFWMoreView": "/components/YFWMoreView/YFWMoreView",
+    "titleView": "/components/YFWTitleView/YFWTitleView",
+    "priceView": "/components/YFWPriceView/YFWPriceView",
+    "authentication": "/components/YFMauthentication/YFMauthentication"
+  },
+  "navigationBarTitleText": "",
+  "backgroundColor": "#fafafa"
+}

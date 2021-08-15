@@ -1,0 +1,94 @@
+.top-view{
+    display: flex;
+    width: 100vw;
+    z-index: 99;
+    flex-direction: row;
+    flex-wrap:wrap;
+    justify-content: space-around;
+  
+  }
+  .topViewItem{
+    display: flex;
+    flex-direction: row;
+    height: 100px;
+    /* width: 25vw; */
+    justify-content: center;
+    align-items: center;
+    background-color:white;
+    flex:1;
+  }
+  .topViewItem .topViewItemTitleSelect{
+    color: #33DB9B;
+    font-size: 30px;
+  }
+  .topViewItem .topViewItemTitleUnselect{
+    color: #333333;
+    font-size: 30px;
+  }
+  .topViewItem .topViewItemIcon{
+    display: inline-flex;
+    margin-left: 8px;
+    width: 10px;
+    height: 22px;
+  }
+  .topViewItem .topViewItemIcon2{
+    display: inline-flex;
+    margin-left: 8px;
+    width: 10px;
+    height: 10px;
+  }
+  .topViewItem .topViewItemScreenIcon {
+    display: inline-flex;
+    margin-left: 8px;
+    width: 22px;
+    height: 24px;
+  }
+  .topViewItem .topViewItemImage{
+    width: 36px;
+    height: 36px;
+  }
+  .topCategoryBgView{
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0,0,0,0.2);
+  }
+  .topCategoryView{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 150px;
+    width: 100vw;
+    justify-content: space-around;
+    align-items: center;
+    background-color:white;
+    padding-bottom: 30px;
+  }
+  .categoryItemView{
+    display: flex;
+    width: 28vw;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+  }
+  .labelView{
+    display:flex;
+    border: solid #999999 1px;
+    border-radius: 20px;
+    margin-left: 13px;
+  }
+  .labelView_select{
+    border: solid #33DB9B 1px;
+  }
+  .labelText{
+    display:block;
+    font-size:24px;
+    color:#333333;
+    text-align:center;
+    line-height:20px;
+    margin:10px 40px 10px 40px;
+    height:20px;
+  }
+  .labelText_select{
+    color:#33DB9B;
+  }

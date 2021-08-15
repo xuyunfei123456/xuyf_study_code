@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "footerView": "/components/YFWFooterView/YFWFooterView"
+  },
+  "navigationBarTitleText": "全部评论",
+  "enablePullDownRefresh": true,
+  "backgroundColor": "#fafafa"
+}

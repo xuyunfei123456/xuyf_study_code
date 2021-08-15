@@ -1,0 +1,217 @@
+<view class="yellowtip">
+  根据《上海市公共卫生应急管理条例》，为落实疫情防控要求，需要您如实填写以下内容，如有隐瞒或虚报，将依法追究责任。
+</view>
+<view class="purpletip" wx:if="{{needenrollment_prompt}}">
+  <image class="sign_tip" src="../../../images/Icon_warning_Drug_Regist.png"></image>{{needenrollment_prompt}}
+</view>
+<view class="wrapper" style="height:{{contentHeight}}">
+  <block wx:if="{{!hasPatient}}">
+    <view class="row">
+      <view class="title">用药人姓名</view>
+      <input class="input" type="text" placeholder="请输入用药人真实姓名" value="{{name}}" bindinput="nameChange" />
+    </view>
+    <view class="row">
+      <view class="title">身份证号</view>
+      <input class="input" type="text" placeholder="请输入用药人身份证号" maxlength='18' value="{{idcard}}"
+        bindinput="idcardChange" />
+    </view>
+    <view class="row">
+      <view class="title">手机号</view>
+      <input class="input" type="text" placeholder="请输入手机号" maxlength="11" bindinput="mobileChange"
+        value="{{mobile}}" />
+    </view>
+  </block>
+  <view class="row">
+    <view class="title">用药目的</view>
+    <view bindtap="purpose">
+      <image data-index="1" class="sign_check"
+        src="{{purpose == 1 ? '../../../images/sign_checked.png':'../../../images/sign_check.png'}}"></image>治疗
+      <image data-index="2" class="sign_check" style="margin-left:20rpx"
+        src="{{purpose == 2 ? '../../../images/sign_checked.png':'../../../images/sign_check.png'}}"></image>预防储备
+    </view>
+  </view>
+  <!-- <view class="row" style="position:relative">
+    <view class="title">体温</view>
+    <input class="input" type="text" style="padding-right:20px" placeholder="请输入当前体温" bindinput="twChange"
+      value="{{tw}}" />
+    <view style="position:absolute;right:0px">℃</view>
+  </view> -->
+  <view class="row" wx:if="{{purpose == 1}}">
+    <view class="title">症状</view>
+    <view bindtap="zzClick" style="font-size:28rpx">
+      <image data-index="fs" class="sign_check"
+        src="{{fs ? '../../../images/sign_square_checked.png':'../../../images/sign_square_check.png'}}"></image>发热
+      <image data-index="ks" class="sign_check"
+        src="{{ks ? '../../../images/sign_square_checked.png':'../../../images/sign_square_check.png'}}"></image>咳嗽
+      <image data-index="xm" class="sign_check"
+        src="{{xm ? '../../../images/sign_square_checked.png':'../../../images/sign_square_check.png'}}"></image>胸闷
+        <image data-index="is_fl" class="sign_check"
+        src="{{is_fl ? '../../../images/sign_square_checked.png':'../../../images/sign_square_check.png'}}"></image>乏力
+      <image data-index="other" class="sign_check"
+        src="{{other ? '../../../images/sign_square_checked.png':'../../../images/sign_square_check.png'}}"></image>其他
+    </view>
+  </view>
+  <view wx:if="{{other&&purpose == 1}}" style="position:relative">
+    <textarea class="opinion" bindinput="zzChange" value="{{zzms}}" maxlength='200' placeholder="请描述症状"></textarea>
+    <view class="hasInput">{{hasInput}}/200</view>
+  </view>
+  <view class="row">
+    <view class="title">从事行业</view>
+    <view class="chooseItem" bindtap="jobchoose">
+      <view wx:if="{{jobvalue}}">{{jobvalue}}</view>
+      <view wx:else>
+        请选择
+        <image class='rightImage' src='/images/uc_next.png' />
+      </view>
+    </view>
+  </view>
+  <view class="row">
+    <view class="title">30天内是否去过中高风险地区</view>
+    <view bindtap="dangerarea">
+      <image data-index="1" class="sign_check"
+        src="{{dangerarea == 1 ? '../../../images/sign_checked.png':'../../../images/sign_check.png'}}"></image>是
+      <image data-index="2" class="sign_check" style="margin-left:20rpx"
+        src="{{dangerarea == 2 ? '../../../images/sign_checked.png':'../../../images/sign_check.png'}}"></image>否
+    </view>
+  </view>
+  <view class="row">
+    <view class="title">30天内是否有境外/接触史</view>
+    <view bindtap="outarea">
+      <image data-index="1" class="sign_check"
+        src="{{outarea == 1 ? '../../../images/sign_checked.png':'../../../images/sign_check.png'}}"></image>是
+      <image data-index="2" class="sign_check" style="margin-left:20rpx"
+        src="{{outarea == 2 ? '../../../images/sign_checked.png':'../../../images/sign_check.png'}}"></image>否
+    </view>
+  </view>
+  <view class="row">
+    <view class="title">是否本市常驻人口</view>
+    <view bindtap="is_resident">
+      <image data-index="1" class="sign_check"
+        src="{{is_resident == 1 ? '../../../images/sign_checked.png':'../../../images/sign_check.png'}}"></image>是
+      <image data-index="2" class="sign_check" style="margin-left:20rpx"
+        src="{{is_resident == 2 ? '../../../images/sign_checked.png':'../../../images/sign_check.png'}}"></image>否
+    </view>
+  </view>
+    <view class="row">
+    <view class="title">是否本人治疗使用</view>
+    <view bindtap="is_ownuse">
+      <image data-index="1" class="sign_check"
+        src="{{is_ownuse == 1 ? '../../../images/sign_checked.png':'../../../images/sign_check.png'}}"></image>是
+      <image data-index="2" class="sign_check" style="margin-left:20rpx"
+        src="{{is_ownuse == 2 ? '../../../images/sign_checked.png':'../../../images/sign_check.png'}}"></image>否
+    </view>
+  </view>
+  <view class="row">
+    <view class="title">来自何地</view>
+    <view bindtap="areaClick">
+      <view class="picker" wx:if="{{userAddress}}">
+        {{userAddress}}
+      </view>
+      <view class="picker" wx:else style="color:#999999">
+        请选择
+        <image class='rightImage' src='/images/uc_next.png' />
+      </view>
+    </view>
+  </view>
+  <view class="row" style="border:none">
+    <view class="title">最近一次来自目的地的日期</view>
+    <picker mode="date" value="{{date}}" start="{{startDate}}" bindchange="bindDateChange">
+      <view class="picker" wx:if="{{date}}">
+        {{date}}
+      </view>
+      <view class="picker" wx:else style="color:#999999">
+        请选择
+        <image class='rightImage' src='/images/uc_next.png' />
+      </view>
+    </picker>
+  </view>
+</view>
+
+<view class="bottom">
+  <view class="sign_tip_wrapper" style="color:#ff3300">
+    <image bindtap="agreeInfo" class="sign_check2"
+      src="{{agreeFlag ? '../../../images/sign_square_checked.png':'../../../images/sign_square_check.png'}}"></image>
+    {{'我承诺以上填写内容均真实有效，否则承担一切法律责任'}}
+  </view>
+
+  <view class="action" bindtap="handleConfirm">
+    <text>保存</text>
+  </view>
+</view>
+
+<view class="jobWrapper" wx:if="{{jobFlag}}" catchtap="closejob">
+  <view style="position:relative;height:100%;width:100%">
+    <view class="kob_content {{jobFlag2 ? 'showloading':'hideloading'}}" catchtap="handleCatchTap">
+      <view class="jobtitle">
+        请选择从事行业
+        <view class="clickview" bindtap="closejob">
+          <image src="/images/returnTips_close.png" class="close"></image>
+        </view>
+      </view>
+
+      <view class="listWrapper" bindtap="listClick">
+        <block wx:for="{{_workArr}}">
+          <view class="jobline" data-id="{{item}}">{{item}}</view>
+        </block>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="jobWrapper" wx:if="{{areaFlag}}" catchtap="closearea">
+  <view style="position:relative;height:100%;width:100%">
+    <view class="kob_content {{areaFlag2 ? 'showloading':'hideloading'}}" catchtap="handleCatchTap">
+      <view class="areatitle">
+        请选择来自何地
+        <view class="clickview" bindtap="closearea">
+          <image src="/images/returnTips_close.png" class="close"></image>
+        </view>
+
+      </view>
+      <view class="from">
+        <view data-type='1' bindtap="secendClick">
+          <view class="second_title" style="color:{{second_type == 1 ?'#1fdb9b':'black'}}">中国大陆</view>
+          <view class="border_bottom" style="opacity:{{second_type == 1 ? '1':'0'}}"></view>
+        </view>
+        <view style="margin-left:80rpx" data-type='2' bindtap="secendClick">
+          <view class="second_title" style="color:{{second_type == 2 ?'#1fdb9b':'black'}}">港澳台及海外</view>
+          <view class="border_bottom" style="opacity:{{second_type == 2 ? '1':'0'}}"></view>
+        </view>
+        <view class='confirm_btn'><text bindtap='confirmAction'>确定</text></view>
+      </view>
+      <view wx:if="{{second_type == 1}}">
+        <view class='top_menu'>
+          <view class='sele' bindtap="changeSelectAddressType" data-type='province'>
+            <view style="color:{{selectAddressType == 'province' ? '#1fdb9b':'black'}}">{{selectProvince}}</view>
+          </view>
+          <view class='sele' bindtap="changeSelectAddressType" data-type='city'>
+            <view style="color:{{selectAddressType == 'city' ? '#1fdb9b':'black'}}">{{selectCity}}</view>
+          </view>
+          <view class='sele' bindtap="changeSelectAddressType" data-type='districts'>
+            <view style="color:{{selectAddressType == 'districts' ? '#1fdb9b':'black'}}">{{selectDistricts}}</view>
+          </view>
+        </view>
+        <view class='areaWrapper'>
+          <block
+            wx:for='{{selectAddressType == "province"?provinceArray:selectAddressType == "city"?cityArray:districtsArray}}'>
+            <view class='jobline listall'
+              style='{{(selectProvince==item.region_name||selectCity==item.region_name||selectDistricts==item.region_name)?"color:red;":""}}'
+              bindtap='selectCityAction' data-name='{{item.region_name}}' data-id='{{item.id}}'>{{item.region_name}}
+            </view>
+          </block>
+        </view>
+      </view>
+      <view wx:if="{{second_type == 2}}">
+        <view class='areaWrapper'>
+          <block
+            wx:for='{{htmArr}}'>
+            <view class='jobline listall'
+              style='{{htmName == item.region_name?"color:red;":""}}'
+              bindtap='selecthtmArr' data-name='{{item.region_name}}' data-id='{{item.id}}'>{{item.region_name}}
+            </view>
+          </block>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

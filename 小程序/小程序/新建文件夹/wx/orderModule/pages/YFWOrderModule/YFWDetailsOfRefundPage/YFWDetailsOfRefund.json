@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "yfwBaseModal":"../../../../components/YFWBaseModal/YFWBaseModal",
+    "YFWActionModal": "../../../../components/YFWActionModal/YFWActionModal"
+  },
+    "navigationBarTitleText": "退货/退款详情",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black"
+  
+}

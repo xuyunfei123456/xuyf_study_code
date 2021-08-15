@@ -1,0 +1,58 @@
+<!--pages/healthy/heaIndex/heaIndex.wxml-->
+<view class='myBox'>
+  <view class='topView'>
+   <view class='topSearchView' bindtap='goSearch'>
+    <view class='search_input_view'>
+      <image class='search_icon' src='/images/search.png'></image>
+      <text class='placeholder'>请输入疾病或症状</text>
+    </view>
+    <view class='search-text'>
+      <text>搜索</text>
+    </view>
+   </view>
+  </view>
+  <scroll-view class='health-top-view' scroll-x="true" scroll-y="false" scroll-into-view="item-{{selectIndex}}">
+    <block wx:for="{{dataSource}}" wx:for-index="index" wx:key="{{item.id}}">
+      <view class='select-text' bindtap="changeQuestionIndex" data-index='{{index}}'>
+        <YFWTitleView title='{{item.name}}' fontWeight='{{index == selectIndex?"500":"normal"}}' showLine='{{index == selectIndex}}' lineHeight='25'></YFWTitleView>
+      </view>
+    </block>
+  </scroll-view>
+  <view class='health-view'>
+    <view class='health-top-context' bindtap='btnMyQA'>
+      <text class='health-top-mine'>我的问答</text>
+      <view class='health-top-mineView'>
+        <image src='{{datainfo.last_ask[0].intro_image}}'></image>
+        <text>{{datainfo.last_ask[0].name}}  {{datainfo.last_ask[0].reply_time}}回答了问题</text>
+      </view>
+      <image src='/images/yfwsk/wytw.png' class='health-top-image'></image>
+    </view>
+    <swiper current='{{selectIndex}}' class='healyh-context' bindchange='swiperChangIndex'>
+      <block wx:for="{{dataSource}}" wx:key="{{item.id}}">
+        <swiper-item>
+          <scroll-view class='last-new' wx:if='{{selectIndex==0}}' scroll-x="false" scroll-y="true">
+            <HealthAskQuestionItemView data="{{datainfo.new_ask_items}}" />
+          </scroll-view>
+          <scroll-view class='last-new' wx:if='{{selectIndex==1}}' scroll-x="false" scroll-y="true">
+            <HealthAskQuestionItemView data="{{datainfo.popular_ask_items}}" />
+          </scroll-view>
+          <healthAskAllDepartView data='{{dataArray}}' wx:if='{{selectIndex==2}}'/>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class='bottom-button'>
+    <view class='bottom-button-line'></view>
+    <view class='bottom-button-context'>
+      <view class='bottom-button-view' bindtap='clickMyAskMethod'>
+        <image src='/images/yfwsk/wenda.png'></image>
+        <text>问答</text>
+      </view>
+      <view class='bottom-button-view' bindtap='clickMyMethod'>
+        <image src='/images/yfwsk/health_mine.png'></image>
+        <text>我的</text>
+      </view>
+    </view>
+  </view>
+
+</view>

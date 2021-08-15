@@ -1,0 +1,92 @@
+<wxs src='../../../../wxs/sublie.wxs' module='tools' />
+<wxs src='../../../../wxs/subAfter.wxs' module='toAfter' />
+<view class='serchLayout'>
+  <view class='serchParent'>
+    <view class='serchView'>
+      <image class='icon' src='/images/search.png'></image>
+      <input value='{{keywords}}' class='tips' placeholder='商品名称/批准文号/商家名称' placeholder-class='placeHodle' confirm-type='search' bindinput="listenKeyInput" focus="{{focus}}" bindconfirm='onSearchClick'></input>
+      <image class='icon' src='/images/search_del.png' wx:if="{{showDeletIcon}}" bindtap='clearInputText'></image>
+    </view>
+    <view class='tips' bindtap='serchOrder'>搜索
+    </view>
+  </view>
+</view>
+<view class='fillView'>
+</view>
+<view class='serchOrderList'>
+  <emptyView wx:if="{{showEmptyView == true}}" type="search">
+  </emptyView>
+  <view wx:elif="{{showEmptyView == false}}">
+    <block wx:for="{{dataArray}}" wx:key='key' wx:for-index="idx">
+      <view class="item" style="margin-top:{{(orderStatus == 'unpaid'&&idx == 0)? 0:20}}rpx">
+        <view class="shop_title_info" bindtap='jumpToShopDetail' data-shopId='{{item.shop_id}}'>
+          <image class='shop_icon' src="/images/bottom_icon_dianpu.png"></image>
+          <text class='shop_title'>{{item.shop_title}}</text>
+          <view style="flex:1"></view>
+          <text class="{{(item.status_name == '交易取消' || item.status_name == '交易失败' ||item.status_name=='失效')?'order_status_dark':'order_status_green'}}">{{item.status_name}}</text>
+        </view>
+        <view class='listParent' bindtap='onOrderListItemClick' data-orderNo='{{item.order_no}}'>
+          <block wx:for="{{item.goods_items[0]}}" wx:for-item="innerItem" wx:key="{{innerItem.shop_goods_id}}">
+            <view class='listParent' bindtap='onOrderListItemClick' data-orderNo='{{item.order_no}}'>
+              <medicine_list listData="{{innerItem}}"></medicine_list>
+            </view>
+          </block>
+          <!-- 套餐 -->
+          <block wx:for="{{item.package_goods_items}}" wx:key="{{item.packageid}}">
+            <view class='package_name'>
+              <view class='packge_type_tips'>{{item.package_type_name}}</view>
+              <view class='packge_name'>{{item.package_name}}</view>
+            </view>
+            <block wx:for="{{item.data}}" wx:key="{{item.package_id}}">
+              <medicine_list listData="{{item}}"></medicine_list>
+            </block>
+          </block>
+          <!-- 多件装 -->
+          <block wx:for="{{item.course_pack_goods_items}}" wx:key="{{item.packageid}}">
+            <view class='package_name'>
+              <view class='course_costume'>{{item.package_type_name}}</view>
+              <view class='packge_name'>{{item.package_name}}</view>
+            </view>
+            <block wx:for="{{item.data}}" wx:key="{{item.package_id}}">
+              <view class='listParent'>
+                <medicine_list listData="{{item}}"></medicine_list>
+              </view>
+            </block>
+          </block>
+          <view class='medicine_total'>
+            <text class='smallPrice'>¥<text class='right_text'>{{tools.sub(item.order_total)}}.</text>
+            <text class='smallPrice'>{{toAfter.subAfter(item.order_total)}}</text></text>
+            <text class='left_text'>共{{item.goods_count}}件商品 总价：</text>
+          </view>
+        </view>
+        <!-- 底部按钮 -->
+        <view class='scheduled_days_itemLayout' wx:if="{{item.send_info.button_items.length>0}}">
+          <view class='tips'>{{item.send_info.desc}}</view>
+          <view class='scheduledButtonLayout'>
+            <block wx:for="{{item.send_info.button_items}}" wx:for-item="tap" wx:for-index="idx">
+              <view class='buttons' bindtap='onScheduledButtonClick' data-position='{{idx}}' data-index='{{item.itemIndex}}' data-orderNo='{{item.order_no}}'>{{tap.text}}</view>
+            </block>
+          </view>
+        </view>
+        <view class='fillView' style='height:40rpx;'></view>
+        <button_list datas="{{item.orderBottomTipsData}}" showButtons="{{item.show_butons}}" hideButtons="{{item.hide_buttons}}" showHideButtonsTips="{{item.showHideButtonsTips}}" bind:orderApplyReturn="applyReturn" bind:orderReceived='orderReceived' bind:showHideButtons="onHideButtonsClick"
+          bind:onOrderPayNot="onOrderPayNot"></button_list>
+      </view>
+    </block>
+    <view>
+      <view class="onloading" wx:if="{{showBottomLoading}}">
+        <view class="load-wrap">
+          <view class="loading-icon" wx:if="{{loadType == 1}}">
+            <view class="hide-block"></view>
+          </view>
+        </view>
+        <view style='margin-left:10rpx'>{{loadType == 1?'正在加载更多数据...':'没有更多了'}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<order_applay_return_modal id="applyReturnOrderModal" bind:checkPhone="checkPhoneNum" />
+<yfwBaseModal id="orderReceived" bind:test="onBaseModalRightButtonClick" />
+<yfwBaseModal id="orderPayNot" bind:test="onOrderPayNotMpdelRightButtonClick" needLeftButton="{{false}}" />
+<hideButtons id=hideButtons "/>

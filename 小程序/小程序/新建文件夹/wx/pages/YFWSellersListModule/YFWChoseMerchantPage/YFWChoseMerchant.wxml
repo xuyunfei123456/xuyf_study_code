@@ -1,0 +1,40 @@
+<!--pages/YFWSellersListModule/YFWChoseMerchantPage/YFWChoseMerchant.wxml-->
+<view class='header'>
+
+  <view class="nav_btn {{isCheck==='' ? 'selected' : ''}}" data-id='' bindtap='onselect'>默认</view>
+  <view class="nav_btn {{isCheck==='1' ? 'selected' : ''}}" data-id='1' bindtap='onselect'>距离</view>
+  <view class="nav_btn {{isCheck==='2' ? 'selected' : ''}}" data-id='2' bindtap='onselect'>评价</view>
+  <view  class="nav_btn {{isCheck==='3' ? 'selected' : ''}}" data-id='3' bindtap='onselect'>价格</view>
+</view>
+
+
+
+
+
+<view class='box'>
+  <scroll-view class='sv' scroll-y='true'>
+
+<block wx:for="{{items}}" wx:key="{{index}}">
+<view class='myList'>
+<view class='storeName'>{{item.name}}</view>
+<view class='shopDel myFlex'>
+<view class='delLfet'>
+<text>商品总价：</text>
+<text class='delMony'>¥{{item.price}}</text>
+<text>运费：</text>
+<text>{{item.yf}}元</text>
+</view>
+<image class='delRight' src='../../../images/bijia/gwche.png' mode='widthFix'></image>
+</view>
+</view>
+</block>
+<view class='clearBoth'></view>
+  <view class='nomore' wx:if='{{loadhidden}}'> 加载中...</view>
+  <view class='nomore' wx:if='{{hidden}}'>没有更多了</view>
+  </scroll-view>
+</view>
+<view>
+</view>
+
+
+

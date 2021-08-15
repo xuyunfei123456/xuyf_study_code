@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "YFWActionModal": "../../../components/YFWActionModal/YFWActionModal",
+    "YFWSpecificationModal": "/components/YFWSpecificationModal/YFWSpecificationModal",
+    "YFWPriceView":"/components/YFWPriceView/YFWPriceView"
+  },
+  "navigationBarBackgroundColor": "#49ddb8",
+  "navigationBarTitleText": "",
+  "navigationBarTextStyle": "white",
+  "onReachBottomDistance": 90
+}

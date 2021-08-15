@@ -1,0 +1,15 @@
+<!--pages/YFWStoreModule/YFWShopDetailAllGoodsListVC.wxml-->
+<view class='container'>
+  <view class='topSearchView'>
+    <view class='topSearchInputView'>
+      <image class='searchIcon' src='/images/YFWStoreModule/top_bar_search.png' mode='aspectFit'/>
+      <input class='topViewSearchInput' placeholder-class='inputplaceholder'  placeholder="搜索店铺内商品" bindinput='bindKeyInput' bindconfirm='search' />
+    </view>
+    <view class='topViewSearchBotton'>
+      <text class='searchBottonText' bindtap='search'>搜索</text>  
+    </view>
+  </view>
+  <view style="height:-webkit-calc(100% - 100rpx)">
+  <goods_view bind:changeSortType="changeSortType" bind:requestNextPage="requestNextPage" id="goodsView" froms='shop_all_goods' showShopCarTips="{{showShopCarTips}}" shopCarTipsInfo="{{shopCarTipsInfo}}" conditionTips="{{conditionTips}}"  showConditionTips="{{showConditionTips}}" bind:refreshTips="getShopCarTips"/>
+  </view>
+</view>

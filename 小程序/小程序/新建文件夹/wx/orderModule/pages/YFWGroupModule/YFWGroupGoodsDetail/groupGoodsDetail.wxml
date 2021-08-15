@@ -1,0 +1,165 @@
+<view class="goodsDelWrapper">
+  <view class="medicine_banner_imgs">
+      <swiper indicator-dots="{{false}}"
+        autoplay="{{mbi_autoplay}}" interval="{{mbi_interval}}" duration="{{mbi_duration}}" class="banner_container">
+        <block wx:for="{{banners_lists}}">
+          <swiper-item>
+          <image src="{{item}}" mode="widthFix" class="banner_content"></image>
+          </swiper-item>
+        </block>
+      </swiper>
+  </view>
+  <view class="detail_decoration">
+    <image src="/images/price_hurdle.png" class="price_hurdle"></image>
+    <view class="detail_decoration_shop_del">
+      <view class="pack_type">{{priceMap.amount}}件装</view>
+      <view class="shop_price">
+        <view class="current_price">¥<text class="price_font_big">{{nowPriceInt}}</text><text>.{{nowPriceDec}}</text></view>
+        <view class="original_price" wx:if="{{dict_group_buy_medicine==2}}">¥<text>{{discountPrice}}</text></view>
+      </view>
+    </view>
+    <view class="detail_decoration_group_num">
+      <image src="/images/del_two_group.png" class="group_num_pic"></image>
+      <view class="group_num_del"><text class="group_num">{{offeredCount}}</text>人成团</view>
+    </view>
+  </view>
+  <view class="out_area">
+  <view class="shop_area">
+    <view class="shop_area_one"><block><image src="{{medicineInfo.dict_medicine_type>=0 ? medicineInfo.dict_medicine_type==0 ? '/images/ic_drug_OTC.png' : '/images/ic_drug_track_label.png' : ''}}" class="drug_type_pic"></image></block><text class="shop_area_drug_name">{{medicineInfo.alias_name}}</text></view>
+    <view class="shop_area_two">
+      <text class="shop_area_title">规格</text>
+     <view class="shop_area_del">
+      <text class="spec_del">{{medicineInfo.troche_type}}</text>
+      <text>{{medicineInfo.sm_standard}}</text>
+     </view>
+    </view>
+    <view class="shop_area_thr">
+      <text class="shop_area_title">库存</text>
+     <view class="shop_area_del">
+      <text>{{inventory}}</text>
+     </view>
+    </view>
+    <view class="shop_area_four">
+   {{medicineInfo.dict_medicine_type>=0 ? medicineInfo.dict_medicine_type==0 ? OTChint : RXhint : ''}}
+    </view>
+  </view>
+</view>
+<view class="out_area">
+  <view class="fn_major">
+    <text class="fn_major_title">主治功能</text>
+    <view class="fn_major_del">{{medicineInfo.applicability}}</view>
+  </view>
+</view>
+  <view class="tabs_area">
+<view class="tabs_header {{fixedTabsHeader ? 'fixed_tabs_header' : ''}}" id="tabs_header">
+<block wx:for="{{tabs}}" wx:key="{{item.id}}">
+<view class="tabs_item" data-name="{{item}}" bindtap="onChangeTabs">
+  <view class="tab_item_title">{{item.title}}</view>
+  <view class="tab_item_title_underLine" wx:if="{{item.id==isShowTabLine}}"></view>
+</view>
+</block>
+</view>
+<scroll-view class="tab_content {{fixedTabsHeader ? 'tab_content_padtop' : ''}}">
+<block wx:if="{{isShowTabLine==0}}">
+<view class="tab_content_del">
+  <view class="tab_content_title">基本信息</view>
+  <block wx:for="{{tabs[0].items}}">
+   <view class="basic_info">
+    <view class="basic_info_title">{{item.title}}</view>
+    <view class="basic_info_del">{{item.subtitle}}</view>
+   </view>
+  </block>
+</view>
+<view class="tab_content_del tab_drug_info">
+  <block wx:for="{{banners_lists}}">
+    <image src="{{item}}" class="drug_info_pic"></image>
+  </block>
+</view>
+</block>
+<block wx:if="{{isShowTabLine==1}}">
+  <view class="tab_content_del">
+  <view class="tab_content_title">说明书</view>
+  <view class="tab_content_del">
+<block wx:for="{{speBookArr}}" wx:key="{{index}}">
+<view class="spe_book_item">
+  <view class="spe_book_title">{{item.title}}</view>
+  <view class="spe_book_content" wx:if="{{index==0}}"><text>{{drugName}}</text></view>
+  <view class="spe_book_content" wx:else>{{item.content}}</view>
+</view>
+</block>
+  </view>
+  </view>
+</block>
+<block wx:if="{{isShowTabLine==2}}">
+  <!-- 药房网商城承诺 -->
+  <view class="tab_content_title">{{tabs[2].promise.title}}</view>
+  <view class="tab_content_del">
+    <block wx:for="{{tabs[2].promise.items}}">
+      <view class="tab_content_title">{{item.title}}</view>
+      <view class="serve_tab_content">{{item.content}}</view>
+    </block>
+  </view>
+  <!-- 商家资质 -->
+  <view class="tab_content_title">{{tabs[2].store_qualification.title}}</view>
+<view class="tab_content_del tab_del_qualification">
+  <block wx:for="{{tabs[2].store_qualification.items}}">
+    <image class="store_qualification_pic">{{item}}</image>
+  </block>
+</view>
+  <!-- 商家实景 -->
+  <view class="tab_content_title">{{tabs[2].store_images.title}}</view>
+  <view class="tab_content_del">
+  <block wx:for="{{tabs[2].store_images.items}}">
+    <view>{{item}}</view>
+  </block>
+</view>
+<!-- 退换货标准 -->
+<view class="tab_content_title">{{tabs[2].returned_standard.title}}</view>
+<!-- 退换货政策 -->
+<view class="tab_content_del">
+  <view class="tab_content_title">{{tabs[2].returned_standard.return_policy.title}}</view>
+  <view class="serve_tab_content">{{tabs[2].returned_standard.return_policy.content}}</view>
+</view>
+<!-- 退换货条件 -->
+<view class="tab_content_del">
+  <view class="tab_content_title">{{tabs[2].returned_standard.return_condition.title}}</view>
+  <view class="serve_tab_content">
+    <block wx:for="{{tabs[2].returned_standard.return_condition.items}}" wx:key="index">
+      <view class="return_item">
+        <view class="dot_circle dot_circle_red" wx:if="{{item.dot==true}}"></view>
+        <view class="dot_circle dot_circle_green" wx:if="{{item.dot==false}}"></view>
+        <view>{{item.tel}}</view>
+      </view>
+    </block>
+  </view>
+</view>
+<!-- 特殊说明 -->
+<view class="tab_content_del">
+  <view class="tab_content_title">{{tabs[2].returned_standard.return_explain.title}}</view>
+  <view class="serve_tab_content">{{tabs[2].returned_standard.return_explain.content}}</view>
+</view>
+<!-- 退换货流程 -->
+<view class="tab_content_del">
+  <view class="tab_content_title">{{tabs[2].returned_standard.return_process.title}}</view>
+  <view class="serve_tab_content">
+    <block wx:for="{{tabs[2].returned_standard.return_process.items}}" wx:key="index">
+      <view class="return_item">
+        <view class="dot_circle dot_circle_green"></view>
+        <view>{{item}}</view>
+      </view>
+    </block>
+  </view>
+</view>
+</block>
+</scroll-view>
+  </view>
+  <view class="tabs_bom">
+    <view class="tabs_bom_left">
+      <image src="/images/pintuan_home.png" class="tabs_bom_home"></image>
+      <view>拼团首页</view>
+    </view>
+    <view class="tabs_bom_right">
+     立即参团
+    </view>
+  </view>
+</view>

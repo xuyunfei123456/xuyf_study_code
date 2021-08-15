@@ -1,0 +1,35 @@
+.modal-back {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 100rpx;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+}
+.modal-content {
+  background-color: white;
+  padding: 18rpx 6rpx 36rpx 6rpx;
+}
+.content-view {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-flow: row wrap;
+}
+.category-view {
+  margin: 22rpx;
+  width: 26%;
+  height: 58rpx;
+  background-color: #fafafa;
+  border-radius: 28rpx;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+.category-view text{
+  font-size: 24rpx;
+  color: #333333;
+}

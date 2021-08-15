@@ -1,0 +1,16 @@
+<!--components/YFWActionModal/YFWActionModal.wxml-->
+<view class='modal' hidden='{{!isShow}}' catchtouchmove='myTouchMove'>
+  <view class='modal-back' animation="{{opacityAnimation}}" bindtap='hideModal'></view>
+  <view class='modal-content my-class alignCenter' animation="{{translateAnimation}}" style="background-color:{{bgcolor?bgcolor:'#f8f8f8'}}">
+    <view class='modal-head'>
+      <view class='modal-view'></view>
+      <view class='modal-title'>{{title}}</view>
+      <view class='modal-view' bindtap='hideModal'>
+        <image src='/images/returnTips_close.png' class='modal-close-icon'></image>
+      </view>
+    </view>
+    <scroll-view class='modal-content-content' scroll-y>
+      <slot></slot>
+    </scroll-view>
+  </view>
+</view>

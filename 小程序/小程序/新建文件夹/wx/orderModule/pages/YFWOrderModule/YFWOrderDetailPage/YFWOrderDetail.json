@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "order_buttons":"../YFWOrderListPage/Components/YFWOderListBottomTips/OrderBottomTips",
+    "hideButtons": "../YFWOrderListPage/Components/YFWOrderListHideButtonsModel/YFWOrderListHideButtonsModel",
+    "order_applay_return_modal": "../../../../components/YFWOrderApplyReturnModal/YFWOrderApplyReturnModal",
+    "yfwBaseModal":"../../../../components/YFWBaseModal/YFWBaseModal"
+  },
+  "navigationBarTitleText": "订单详情",
+  "navigationBarBackgroundColor": "#49ddb8",
+  "navigationBarTextStyle": "white"
+}

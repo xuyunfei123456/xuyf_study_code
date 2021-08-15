@@ -1,0 +1,82 @@
+<view>
+  <view class="list">
+    <view class="item" bindtap='clickCompBtn' data-item="{{item}}">
+      <view class='view-item'>
+        <view class='view-complant'>
+          <text>投诉:</text>
+          <text class="text-complant">{{dataArray.title}}</text>
+        </view>
+        <view class="view-complant">
+          <text>编号:</text>
+          <text class="text-complant">{{dataArray.orderno}}</text>
+        </view>
+        <view class="view-complant">
+          <text>类型:</text>
+          <text class="text-complant">{{type}}</text>
+        </view>
+        <view class="view-complant">
+          <text>状态:</text>
+          <text
+            class="text-state {{dataArray.dict_complaints_status=='0'?'text-state0':dataArray.dict_complaints_status=='1'?'text-state1':dataArray.dict_complaints_status=='3'?'text-state1':'text-stateother'}}">{{dataArray.dict_complaints_status_name}}</text>
+        </view>
+        <view class="view-complant">
+          <text>时间:</text>
+          <text class="text-complant">{{dataArray.create_time}}</text>
+        </view>
+        <view class="view-complant-content">
+          <view class="title-content">
+            <titleView title='投诉内容:' fontWeight="700" />
+          </view>
+          <text class="text-content">{{dataArray.content}}</text>
+        </view>
+
+        <view class="scroll-images {{dataProofImages.length==0?'hidden':''}}">
+          <view class="proof-imgs">
+            <titleView title='举证图片:' fontWeight="700" />
+          </view>
+          <scroll-view scroll-x="true" class="scrollview" scroll-with-animation="true">
+            <block wx:for="{{dataProofImages}}" wx:key="index">
+              <image class='item-images' bindtap='bigProofPicture' data-list="{{dataProofImages}}" data-src="{{item}}"
+                src='{{item}}'></image>
+            </block>
+          </scroll-view>
+        </view>
+      </view>
+    </view>
+
+    <view class="view-business-inter {{dataArray.length<=0||dataArray.reply_content=='' ? 'hidden': ''}} ">
+      <view class="busness-title-content">
+        <titleView title='商家解释:' fontWeight="700" />
+      </view>
+      <text class='busness-inter-content'>{{dataArray.reply_content}}</text>
+      <view class="scroll-images {{dataReplyImages.length==0?'hidden':''}}">
+        <view class="reply-imgs">
+          <titleView title='举证图片:' fontWeight="700" />
+        </view>
+        <scroll-view scroll-x="true" class="scrollview" scroll-with-animation="true">
+          <block wx:for="{{dataReplyImages}}" wx:key="index">
+            <image class='reply-item-images' bindtap='bigReplyImages' data-list="{{dataReplyImages}}"
+              data-src="{{item}}" src='{{item}}'></image>
+          </block>
+        </scroll-view>
+      </view>
+      <text class='busness-inter-time'>{{dataArray.reply_time}}</text>
+    </view>
+
+    <view class="view-mall-process {{dataArray.length<=0||dataArray.admin_reply_content=='' ? 'hidden': ''}} ">
+      <view class="busness-title-content">
+        <titleView title='商城处理:' fontWeight="700" />
+      </view>
+      <text class='busness-inter-content'>{{dataArray.admin_reply_content}}</text>
+      <text class='busness-inter-time'>{{dataArray.admin_reply_time}}</text>
+    </view>
+
+    <view class="view-cancel-complaint {{canCancel?'':'hidden'}}" bindtap='cancelComplaint'>
+      <text class='text-cancel-complaint'>撤销投诉</text>
+    </view>
+  </view>
+
+
+</view>
+
+<cancleComplaitModal id='cancleComplaitModal' bind:cancelComplaint="onCancelComplaint" />

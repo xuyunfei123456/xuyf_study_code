@@ -1,0 +1,27 @@
+<view class="wrapper">
+	<view class="tip">申请注销前需进行账号验证确认</view>
+	<view class="confirm">已认证手机: {{mobile}}</view>
+
+	<view class="container-mobile" wx:if="{{!mobile}}">
+		<input class="" value='{{phone}}' type="number" bindinput="inputVal" data-type="phone" placeholder="请输入手机号码" maxlength="11" />
+	</view>
+	<view class="container-name">
+		<input class="confirm-code" value='{{yzm}}' type="number" bindinput="inputVal" data-type="yzm" placeholder="请输入验证码" maxlength="6" />
+		<view class="get_Code {{disabled?'disableClick':''}}" bindtap='getCode' disabled>{{getYZMCode}}</view>
+	</view>
+
+
+	<view class="row">
+		若原手机已停用，请联系商城客服修改
+	</view>
+
+	<button class="address-commit" bindtap="commit">提交</button>
+</view>
+
+<view class="shadow" wx:if="{{successFlag}}">
+	<view class="tipWrapper">
+	<image src="/images/tip_success.png" class="tippic"></image>
+		<view class="tipText">您的账户注销成功</view>
+		<view class="tipBtn" bindtap="hideShadow">确定</view>
+	</view>
+</view>

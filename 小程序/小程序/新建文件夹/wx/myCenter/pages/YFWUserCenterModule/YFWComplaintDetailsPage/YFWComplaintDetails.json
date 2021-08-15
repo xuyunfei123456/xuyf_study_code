@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "titleView": "../../../../components/YFWTitleView/YFWTitleView",
+    "cancleComplaitModal":"./Conponents/CancelCompolaintModal"
+  },
+  "navigationBarTitleText": "我的投诉" ,
+  "navigationBarBackgroundColor":"#49ddb8",
+  "navigationBarTextStyle": "white"
+}

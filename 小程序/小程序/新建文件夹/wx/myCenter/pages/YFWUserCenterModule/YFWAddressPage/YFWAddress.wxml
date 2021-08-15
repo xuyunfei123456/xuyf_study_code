@@ -1,0 +1,75 @@
+<view class="container">
+
+  <view class="container_name">
+    <view class="customer_left">姓名</view>
+    <view class="item_right">
+      <input name="name" maxlength='16' value="{{addressModel.name}}" bindinput="bindChange_name" placeholder="请输入姓名" />
+    </view>
+  </view>
+    <view class="divLine"></view>
+
+  <view class="container_mobile">
+    <view class="customer_left">手机号码</view>
+    <view class="item_right">
+      <input type='number' name="mobile" maxlength='11' value="{{addressModel.mobile}}" bindinput="bindChange_mobile" placeholder="请输入手机号码" />
+    </view>
+  </view>
+    <view class="divLine"></view>
+
+  <view class="section" bindtap='selectAddressAction'>
+    <view class="customer_left" name="regionid" value="{{addressModel.regionid}}">所在地区</view>
+    <view class="item_right">{{userAddress}}</view>
+  </view>
+    <view class="divLine"></view>
+
+
+  <view class="container_address">
+    <view class="customer_address">详细地址</view>
+    <view class="detail-address">
+      <input name="address"  value="{{addressModel.userAddressDetail}}" bindinput="bindChange_address" placeholder="请填写详细地址，不少于5个字" />
+      <!-- <textarea id="addressArea" class="{{isIOS?'textarea_ios':'textarea_android'}}" maxlength='50' name="address" value="{{addressModel.userAddressDetail}}" bindinput="bindChange_address" placeholder="请填写详细地址，不少于5个字"/> -->
+    </view>
+  </view>
+
+  <view class="default_address">
+    <view class="def_address" bindchange="checkradioChange">
+      <!-- <radio bindtap="bindtap1" checked="{{check}}"></radio> -->
+      <image class='icon-checkbox' bindtap='clickRadioAction' src="{{isDefault?'/images/icon_choose.png':'/images/icon_unchoose.png'}} " />
+      <view class="def" bindtap='clickRadioAction'>设为默认地址</view>
+    </view>
+
+  </view>
+
+</view>
+<!-- <button bindtap="save" type="primary" class="address-save">保存</button> -->
+<view class='bottom_container'>
+  <view bindtap="save" class='btnBtom'>
+    <view class="address-add">保存</view>
+  </view>
+  <view class='bottom_empty'></view>
+</view>
+
+
+<view hidden='{{addressHidden}}' class='modal' catchtouchmove='true'>
+  <view class='modal-back' bindtap='hideAddress' animation="{{opacityAnimation}}"></view>
+  <view class='modal-content' animation="{{translateAnimation}}" catchtap='true'>
+    <view class='top_menu'>
+        <view class='sele' bindtap="changeSelectAddressType" data-type='province'>
+          <YFWTitleView title='{{selectProvince}}' lineHeight='25' showbottom="{{selectProvince == '省份' ? false :true }}"></YFWTitleView>
+        </view>
+        <view class='sele' bindtap="changeSelectAddressType" data-type='city'>
+          <YFWTitleView title='{{selectCity}}' showbottom="{{selectCity == '城市' ? false :true }}" lineHeight='25'></YFWTitleView>
+        </view>
+        <view class='sele' bindtap="changeSelectAddressType" data-type='districts'>
+          <YFWTitleView title='{{selectDistricts}}' showbottom="{{selectDistricts == '区县' ? false :true }}" lineHeight='25'></YFWTitleView>
+        </view>
+        <view class='confirm_btn' bindtap='confirmAction' >确定</view>
+      </view>
+      <view class='top_line'></view>
+      <scroll-view scroll-y class='scrollView'>
+        <block wx:for='{{selectAddressType == "province"?provinceArray:selectAddressType == "city"?cityArray:districtsArray}}'>
+          <view class='address_content' style='{{(selectProvince==item.region_name||selectCity==item.region_name||selectDistricts==item.region_name)?"color:red;":""}}' bindtap='selectCityAction' data-name='{{item.region_name}}' data-id='{{item.id}}'>{{item.region_name}}</view>
+        </block>
+      </scroll-view>
+  </view>
+</view>

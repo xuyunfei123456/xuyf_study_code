@@ -1,0 +1,48 @@
+<!--pages/YFWSellersListModule/YFWPriceTrendViewPage/YFWPriceTrendView.wxml-->
+<view class='trend-view'>
+  <view class='trend-content'>
+    <view class='trend-title-font trend-dark'>{{dataSource.medicine_name}}</view>
+    <view class='trend-store-view'>
+      <view class='trend-light trend-subtitle-font'>{{dataSource.medicine_store}}</view>
+      <view class='trend-subtitle-font trend-time-view'>{{dataSource.trend_time}}</view>
+    </view>
+    <view class='trend-count-view'>
+      <view class='trend-count-item'>
+        <view class='trend-light trend-title-font trend-center'>均价</view>
+        <view class='trend-red trend-title-font trend-center'>
+          {{dataSource.price}}
+          <image class='trend-sort-icon' src='{{dataSource.price_icon}}'></image>
+        </view>
+      </view>
+      <view class='trend-count-item'>
+        <view class='trend-light trend-title-font trend-center'>浏览次数</view>
+        <view class='trend-dark trend-title-font trend-center'>{{dataSource.visit_count}}</view>
+      </view>
+      <view class='trend-count-item'>
+        <view class='trend-light trend-title-font trend-center'>在售商家</view>
+        <view class='trend-dark trend-title-font trend-center'>{{dataSource.store_count}}</view>
+      </view>
+    </view>
+  </view>
+  <view class='trend-content'>
+    <view class='trend-title-font trend-dark'>价格趋势</view>
+    <view class='trend-button-view '>
+      <view class='trend-button-time'>时间</view>
+      <view class="trend-button-item {{dataSource.time_selected_index==0 ? 'button-selected' : 'button-normal'}}" data-index='0' bindtap='changeTrendTime'>近一个月</view>
+      <view class="trend-button-item {{dataSource.time_selected_index==1 ? 'button-selected' : 'button-normal'}}" data-index='1' bindtap='changeTrendTime'>近三个月</view>
+      <view class="trend-button-item {{dataSource.time_selected_index==2 ? 'button-selected' : 'button-normal'}}" data-index='2' bindtap='changeTrendTime'>近一年</view>
+    </view>
+    <view class='trend-charts-view'>
+      <canvas class='trend-charts' canvas-id="lineCanvas" disable-scroll="true" bindtouchstart='showChartValue'></canvas>
+    </view>
+  </view>
+  <view class='trend-content'>
+    <view class='trend-desc-title'>
+      <view class='trend-title-font trend-dark'>指数解读</view>
+      <view class='trend-buy trend-subtitle-font trend-center' bindtap='toBuyMedicine'>去购买</view>
+    </view>
+    <view class='trend-desview'>
+      <view class='trend-subtitle-font trend-light'>{{dataSource.trend_decription}}</view>
+    </view>
+  </view>
+</view>

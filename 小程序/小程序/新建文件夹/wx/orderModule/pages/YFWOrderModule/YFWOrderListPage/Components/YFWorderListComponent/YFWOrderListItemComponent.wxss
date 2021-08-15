@@ -1,0 +1,84 @@
+.medicine_list {
+  display: flex;
+  flex-direction: row;
+}
+
+.medicine_list .medicine_image {
+  width: 134rpx;
+  height: 134rpx;
+  margin-left: 12rpx;
+  margin-top: 20rpx;
+  min-width: 134rpx;
+  min-height: 134rpx;
+}
+
+.medicine_list .medicine_info_top {
+  margin-left: 20rpx;
+  margin-top: 34rpx;
+  display: flex;
+  flex-direction: row;
+  font-size: 26rpx;
+  width: 538rpx;
+}
+
+.medicine_type_icon {
+  width: 52rpx;
+  height: 22rpx;
+  margin-right: 10rpx;
+}
+
+.medicine_ac_icon {
+  width: 56rpx;
+  height: 26rpx;
+  margin-bottom: -2rpx;
+}
+
+.medicine_list .medicine_info_top .medicien_name {
+  font-weight: bold;
+  color: #333;
+  margin-left: 8rpx;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  max-width: 354rpx;
+}
+
+.medicine_list .medicine_info_bottom .medicine_standard {
+  color: #999;
+}
+
+.order_list .item .medicine_list .medicine_info_right {
+  margin-top: 34rpx;
+  display: flex;
+  flex-direction: column;
+  font-size: 26rpx;
+}
+
+.medicine_list .medicine_info_top .price {
+  font-size: 28rpx;
+  color: #333;
+  font-weight: bold;
+}
+
+.medicine_list .medicine_info_bottom {
+  margin-left: 20rpx;
+  margin-top: 18rpx;
+  display: flex;
+  flex-direction: row;
+  font-size: 26rpx;
+  width: 538rpx;
+  align-items: center;
+}
+
+.medicine_list .medicine_info_bottom .qty {
+  font-size: 26rpx;
+  color: #999;
+}
+
+.smallPrice {
+  font-size: 22rpx;
+  color: #333;
+  font-weight: bold;
+}

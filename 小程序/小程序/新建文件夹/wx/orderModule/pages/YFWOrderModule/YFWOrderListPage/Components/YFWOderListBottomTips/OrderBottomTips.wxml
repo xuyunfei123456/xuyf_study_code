@@ -1,0 +1,13 @@
+<view class='button_list'>
+  <block wx:for="{{showButtons}}" wx:key="key">
+    <view wx:if="{{item.value == 'order_pay'||item.value == 'order_pay_not'}}">
+    <CountDownView waitpaytime="{{item.waitpaytime}}" bind:orderPay="orderPay" orderNo="{{datas.order_no}}" value="{{item.value}}" bind:orderPayNot = "orderPayNot" prompt_info = "{{item.prompt_info}}"/>
+    </view>
+    <view  wx:if="{{(item.value != 'order_pay'&&item.value != 'order_pay_not'&&item.value!='order_received')}}" class="{{(item.value == 'order_received' || item.value == 'order_evaluation'||item.value == 'order_pay_not'||item.value == 'order_buy_again')?'buton_green':(item.is_weak?'weak_button':'buton_dark')}}" bindtap='onBottomButonClick' data-type="{{item.value}}" data-item="{{datas}}">{{item.text}}</view>
+    <image wx:if="{{item.value=='order_received'}}" class="receive" src="/images/reward.png" bindtap='onBottomButonClick' data-type="{{item.value}}" data-item="{{datas}}"></image>
+  </block>
+  <view style="flex:1"></view>
+  <view class='hide_button_parent' wx:if="{{showHideButtonsTips}}" bindtap='showHideButton' data-id="{{datas.order_no}}" data-index="{{datas.itemIndex}}">
+  <image  id='{{datas.order_no}}' src='/images/hide_buton_tips.png' style="margin-left:{{pageFrom == 'orderDetail'?60:0}}rpx" class='hide_button' ></image>
+  </view>
+</view>

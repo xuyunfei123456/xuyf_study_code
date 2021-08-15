@@ -1,0 +1,10 @@
+<view class='main'>
+  <image class='top' src='https://c1.yaofangwang.net/common/images/miniapp/icon_about_content.jpg' mode='scaleToFill'></image>
+  <image class='middle' src='/images/icon_about_fix.png' mode='scaleToFill'></image> 
+  <image class='bottom' src='/images/icon_about_bottom.png' mode='scaleToFill'></image>
+</view>
+<view class="yfw">@2007-{{currentYear}}药房网商城版权所有</view>
+<view class="yb">上海伊邦医药信息科技有限公司</view>
+ 
+
+

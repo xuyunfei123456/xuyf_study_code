@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hello react</title>
+    <style>
+        ul{
+            width: 200px;
+            overflow-y: auto;
+            height: 150px;
+        }
+        li{
+            width: 100%;
+            height: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="list"></div>
+    <!-- 引入react核心库 -->
+    <script src="../js/react.development.js"></script>
+    <!-- 引入react-dom，用于支持react操作dom -->
+    <script src="../js/react-dom.development.js"></script>
+    <script src="../js//prop-types.js"></script>
+    <!-- babel将jsx转义为js -->
+    <script src="../js/babel.min.js"></script>
+
+    <script type="text/babel"> //注意，此处为babel
+    class List extends React.Component{
+        state={
+           list:[]
+        }
+        getSnapshotBeforeUpdate(){
+            return this.refs.list.scrollHeight
+        }
+        componentDidUpdate(preProps,preState,height){
+            this.refs.list.scrollTop+=this.refs.list.scrollHeight-height
+        }
+        componentDidMount(){
+            setInterval(()=>{
+                const {list}=this.state;
+              const news='新闻'+(list.length+1);
+                this.setState({
+                    list:[news,...list]
+                })
+            },1000)
+        }
+        
+        render(){
+            const {list}=this.state;
+            return(
+           <div>
+           <ul ref='list'>
+            {
+                list.map((item,index) =>{
+                    return(
+                        <li>{item}</li>
+                    )
+                })
+            }
+            </ul>
+           </div>
+            )
+        }
+    }
+    ReactDOM.render(<List />,document.getElementById('list'))
+    </script>
+</body>
+
+</html>

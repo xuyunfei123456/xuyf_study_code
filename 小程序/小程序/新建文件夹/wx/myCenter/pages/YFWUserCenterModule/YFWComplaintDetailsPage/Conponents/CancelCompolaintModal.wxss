@@ -1,0 +1,93 @@
+.modal-mask {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 999;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  width: 590rpx;
+  height: auto;
+  background-color: #fff;
+  border-radius: 14rpx;
+  align-items: center;
+}
+
+.closeIconLayout {
+  width: 590rpx;
+  height: 60rpx;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.closeTap {
+  width: 60rpx;
+  height: 60rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.closeIcon {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.warnningIcon {
+  width: 120rpx;
+  height: 120rpx;
+  margin-top: 10rpx;
+}
+
+.topTips {
+  font-size: 28rpx;
+  color: #333;
+  margin-top: 50rpx;
+}
+
+.bottomTips {
+  font-size: 28rpx;
+  color: #333;
+  margin-top: 10rpx;
+}
+
+.buttonLayout {
+  display: flex;
+  flex-direction: row;
+  width: 500rpx;
+  justify-content: space-between;
+  margin-top: 70rpx;
+  margin-bottom: 40rpx;
+}
+
+.leftButton {
+  border-radius: 30rpx;
+  height: 60rpx;
+  width: 200rpx;
+  border: 2rpx solid #1fdb9b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30rpx;
+  color: #1fdb9b;
+}
+
+.rightButton {
+  border-radius: 30rpx;
+  height: 60rpx;
+  width: 200rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30rpx;
+  color: #FFFFFF;
+  background-color: #1fdb9b
+}

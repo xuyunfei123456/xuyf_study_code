@@ -1,0 +1,98 @@
+/* pages/YFWMessageModule/YFWMessageHomePage/YFWMessageHome.wxss */
+
+.page-list {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fafafa;
+}
+
+.page-list-item {
+  width: 700rpx;
+  height: 178rpx;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;  
+  margin-top: 27rpx;
+  background-color: #fff;
+  box-shadow: 0rpx 7rpx 15rpx 0rpx rgba(204, 204, 204, 0.1);
+  border-radius: 7rpx;
+}
+
+.image {
+  width: 85rpx;
+  height: 86rpx;
+  margin-left: 29rpx;
+  border: solid 0rpx #ccc;
+}
+
+.image-go {
+  width: 68rpx;
+  height: 68rpx;
+  padding-top: 13rpx;
+  border: solid 0rpx #ccc;
+}
+
+.text-view {
+  width: 415rpx;
+  display: flex;
+  flex-direction: column;
+  margin-left: 32rpx;
+  margin-right: 32rpx;
+}
+
+.text {
+  height: 29rpx;
+  font-family: SourceHanSansCN-Medium;
+  font-weight: bolder;
+  overflow: hidden;
+  line-height: 29rpx;
+  font-size: 29rpx;
+  font-stretch: normal;
+  letter-spacing: 0rpx;
+  color: #333;
+}
+
+.msg-text {
+  height: 28rpx;
+  margin-top: 23rpx;
+  font-family: SourceHanSansCN-Normal;
+  font-size: 25rpx;
+  font-weight: normal;
+  font-stretch: normal;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  line-height: 24rpx;
+  letter-spacing: 0rpx;
+  color: #999;
+}
+
+.red-point {
+	width: 15rpx;
+	height: 15rpx;
+  min-width: 15rpx;
+  margin-top: 23rpx;
+  margin-right: 9rpx;
+  border-radius: 15rpx;
+	background-image: linear-gradient(-45deg, 
+		#fcac64 0%, 
+		#fe7737 100%), 
+	linear-gradient(
+		#ffffff, 
+		#ffffff);
+	background-blend-mode: normal, 
+		normal;
+}
+
+.button{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  background: transparent;
+  color: transparent;
+}

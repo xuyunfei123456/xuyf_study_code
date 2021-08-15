@@ -1,0 +1,53 @@
+<wxs module="filter">
+  function getImageUrl(url) {
+    if(url.indexOf("default")>=0){
+      return url
+    }else{
+      return url + '_300x300.jpg'
+    }   
+
+  }
+  module.exports = {
+    getImageUrl: getImageUrl
+  }
+</wxs>
+<view class='container'>
+  <view class='itemView' wx:for="{{dateArray}}" wx:key="">
+    <view class='titleview'>
+      <titleView title='{{item}}'/>
+    </view>
+    <YFWSidebar wx:for="{{goodsArray[index]}}" wx:key="" width="700" bottomWidth="240" height="200" bind:onOpen="onSidebarOpen" id="side{{item.shop_goods_id}}">
+      <view slot="top">
+        <template is="medicinesInfo" data="{{item}}" />
+      </view>
+      <view slot="bottom">
+        <template is="itemBottom" data="{{item}}" />
+      </view>
+    </YFWSidebar>
+  </view>
+  <view class="clearAll" bindtap='clearAll' wx:if="{{dateArray.length>0}}">清空</view>
+  <view class='emptyView' wx:if="{{dateArray.length == 0}}">
+    <image src='https://c1.yaofangwang.net/common/images/miniapp/ic_no_footprint.png' class='emptyImage'/>
+    <view class='emptyTitle'>暂无浏览记录</view>
+    <view class='emptyBottom' bindtap='toHome'>去首页逛逛</view>
+  </view>
+</view>
+
+<template name="medicinesInfo">
+  <view class='listItemView' bindtap='toGoodsDetail' id='{{item.shop_goods_id}}'>
+    <image class="goods_image" src="{{filter.getImageUrl(item.img_url)}}" />
+      <view class="rightView">
+        <view class="goods_name">{{item.name_cn}}</view>
+        <view class="goods_shop_name">商家: {{item.shop_name}}</view>
+        <view class='goods_price'>
+          <priceView price="{{item.medicine_price}}" fontSize="34"/>
+        </view>
+      </view>
+  </view>
+</template>
+
+<template name="itemBottom">
+  <view class='sidebar-bottom' style="height:{{height+'rpx'}}">
+    <view class='delete' data-item='{{item}}' bindtap='onDeleteitem'/>
+  </view>
+</template>

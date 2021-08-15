@@ -1,0 +1,60 @@
+<!--pages/YFWAskModule/YFWHealthAskPharmacistHomePage/YFWHealthAskPharmacistHome.wxml-->
+<!--pages/YFWAskModule/myAskAns/myAskAns.wxml-->
+  <view class='outSkip'>
+    <more_view id='onSkip' />
+    <view class='topViewSBotm'>
+      <view class='iSkip' bindtap='openUtilityMenu'>
+        <image class='moreView' src='/images/more_white.png' mode='aspectFit' id='more_image'></image>
+      </view>
+    </view>
+  </view>
+<view class='bg-whit clearfix title'>
+  <image src='{{docImg}}' mode='widthFix' class='hedPort'></image>
+  <view class='telRght'>
+    <view class='isname clearfix'>
+      <view class='docName aaqDel'>{{docID.name}}</view>
+      <view class='docProfe aaqDel'>{{docID.type}}</view>
+      <view class='hospital aaqDel' bindtap='onHospital' data-item='{{docID}}'>{{docID.practice_unit}}</view>
+    </view>
+    <view class='isQuion clearfix'>
+      <view class='flt'>
+        <image class='inlMidle' src='../../../images/yfwsk/infgreen.png'></image>
+        <text class='inlMidle'>已回复问题:{{docID.reply_count}}条</text></view>
+      <view class='flt isfltRght'>
+        <image class='inlMidle' src='../../../images/yfwsk/caina.png'></image>
+        <text class='inlMidle'>被采纳问题:{{docID.reply_accepted_count}}条</text></view>
+    </view>
+
+  </view>
+</view>
+<!-- 热门问题 -->
+
+<view class='newQAll'>
+  <view class='newQuestion'>
+
+
+    <view class='newQTel'>
+      <text class='newQTxt'>全部问题</text>
+      <view class='clearBoth'></view>
+    </view>
+
+  </view>
+  <!-- 热门问题列表 -->
+  <block wx:for='{{ansList}}' wx:key='index' data-item='{{item}}'>
+    <view class='replyQuey noBorder'>
+
+      <view class='replyOne'>{{item.title}}</view>
+      <view class='replyDel'>
+        <text>回答：</text> {{item.reply_content}}
+      </view>
+      <view class='replyTwo replyFex'>
+        <view class='replyTime timeRght'>{{item.create_time}}</view>
+      </view>
+
+    </view>
+    <view class='borBotm'></view>
+    <view class='clear'></view>
+  </block>
+</view>
+<view class='nomore' wx:if='{{loadhidden}}'> 加载中...</view>
+<view class='nomore' wx:if='{{hidden}}'>没有更多了</view>

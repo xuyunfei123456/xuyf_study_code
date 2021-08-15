@@ -1,0 +1,51 @@
+<!--pages/YFWAskModule/deskQtion/deskQtion.wxml-->
+<!--pages/YFWAskModule/allHotQ/allHotQ.wxml-->
+  <view class='outSkip'>
+  
+    <!-- <more_view id='onSkip' /> -->
+    <healthAskCategory id='category' wx:if='{{showView}}' data='{{classCont.items}}' bind:itemClick='itemClick'/>
+    <view class='top-view'>
+      <view class='officeTop'>
+        <view class="hide{{showView?'':'show'}} btnCol" bindtap="onChangeShowState" id='category_view'>
+          <text class='inlMidle'>{{isclassfy.department_name}}</text>
+          <image src='../../../images/arrow_up.png' class='mrOn inlMidle' mode='widthFix'></image>
+        </view>
+        <view class="hide{{showView?'show':''}} btnCol" bindtap="onChangeShowState" >
+          <text class='inlMidle'>{{isclassfy.department_name}}</text>
+          <image src='../../../images/arrow_down.png' class='mrOn inlMidle' mode='widthFix'></image>
+        </view>
+      </view>
+      <view class='right-ask' bindtap='toAskQuestion'>提问</view>
+      <!-- <view class='iSkip' bindtap='openUtilityMenu'>
+        <image class='moreView' src='/images/more_white.png' mode='aspectFit' id='more_image'></image>
+      </view> -->
+    </view>
+  </view>
+
+  <view>
+
+
+    <view class='newQAll newMargin'>
+      <HealthAskQuestionItemView data="{{replyQuey}}" />
+    </view>
+    <!-- <view class='nomore'>
+      <loading hidden="{{hidden}}" bindchange="loadingChange">
+      
+      </loading>
+    </view> -->
+    <view class='no-more' wx:if='{{loadhidden}}'> 加载中...</view>
+    <view class='no-more' wx:if='{{hidden}}'>没有更多了</view>
+    <view class='bottom-button'>
+    <view class='bottom-button-line'></view>
+    <view class='bottom-button-context'>
+      <view class='bottom-button-view' bindtap='toAskQuestion'>
+        <image src='/images/yfwsk/wenda.png'></image>
+        <text>问答</text>
+      </view>
+      <view class='bottom-button-view' bindtap='btnMyQA'>
+        <image src='/images/yfwsk/health_mine.png'></image>
+        <text>我的</text>
+      </view>
+    </view>
+  </view>
+  </view>

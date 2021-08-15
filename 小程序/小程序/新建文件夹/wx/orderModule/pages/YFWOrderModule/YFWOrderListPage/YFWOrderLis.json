@@ -1,0 +1,15 @@
+{
+  "usingComponents": {
+    "medicine_list": "./Components/YFWorderListComponent/YFWOrderListItemComponent",
+    "button_list": "./Components/YFWOderListBottomTips/OrderBottomTips",
+    "order_applay_return_modal": "../../../../components/YFWOrderApplyReturnModal/YFWOrderApplyReturnModal",
+    "yfwBaseModal": "../../../../components/YFWBaseModal/YFWBaseModal",
+    "hideButtons": "./Components/YFWOrderListHideButtonsModel/YFWOrderListHideButtonsModel",
+    "emptyView": "./Components/YFWOrderListEmptyView/YFWOrderListEmptyView",
+    "YFWTitleView": "../../../../components/YFWTitleView/YFWTitleView"
+  },
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "我的订单",
+  "navigationBarBackgroundColor": "#49ddb8",
+  "enablePullDownRefresh": false
+}

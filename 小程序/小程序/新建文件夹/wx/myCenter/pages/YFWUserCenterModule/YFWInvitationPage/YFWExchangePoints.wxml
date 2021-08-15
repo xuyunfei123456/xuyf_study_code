@@ -1,0 +1,22 @@
+<!--myCenter/pages/YFWUserCenterModule/YFWInvitationPage/YFWExchangePoints.wxml-->
+<view style="margin-top:20rpx">
+  <view class="row bottom">
+    <view class="tip">可用奖励</view>
+    <view class="value" style="display:flex;align-items:center">
+      <input class="input" type="text"  bindinput="prizeChange" value="{{prize}}" />
+      <text>元</text>
+    </view>
+  </view>
+  <view class="row">
+    <view class="tip">可兑换积分</view>
+    <view class="value"><text style="color:rgb(255,51,0)">{{invite_exchange_point}}</text> 积分</view>
+  </view>
+</view>
+<view class="explain">1元=100积分</view>
+<view class="explain" style="margin-top:16rpx">请确认兑换金额，兑换成功后奖励金额将不可返还。</view>
+<view class='bottom_container'>
+  <view bindtap="submitChange" class='btnBtom'>
+    <view class="changepoints">确认兑换</view>
+  </view>
+  <view class='bottom_empty'></view>
+</view>

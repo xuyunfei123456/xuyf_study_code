@@ -1,0 +1,64 @@
+<view class="topwrapper">
+  <view class="hasInfo" wx:if="{{userDrugList.length !=0}}">
+    <scroll-view class="scroll" scroll-y="false">
+      <view wx:for="{{userDrugList}}" wx:key="{{index}}">
+        <view bindtap='clickItemAction' data-info='{{item}}' class='container'>
+          <view class="flex">
+            <view class="flex_left">
+              <view class="name">
+                <text>{{item.real_name}}</text>
+              </view>
+              <view class="tags">
+                <view>
+                  <image src="{{picUrl[item.relation_label]}}" class="tagimg" />
+                </view>
+                <view wx:if="{{item.dict_bool_default == 1}}">
+                  <image src="/images/drugPerson/current.png" class="tagimg" />
+                </view>
+                <view wx:if="{{item.dict_bool_certification == 1}}">
+                  <image src="/images/drugPerson/certify.png" class="tagimg" />
+                </view>
+                <view wx:else>
+                  <image src="/images/drugPerson/uncertify.png" class="tagimg" />
+                </view>
+              </view>
+            </view>
+            <view class="flex_right">
+              <view class="operation">
+                <view class="delete" bindtap='deleteUser' data-id='{{item.id}}'>删除</view>
+                <view class="edit" bindtap='editUser' data-id='{{item.id}}'>编辑</view>
+              </view>
+              <view class="faleAndAge">
+                <image src="/images/drugPerson/icon_user.png" class="seximg" />
+                <text class="sex">{{item.dict_sex == 1 ? '男':'女'}}</text>
+                <text class="age">{{item.age}}岁</text>
+              </view>
+              <view class="mobile">
+                <image src="/images/drugPerson/icon_phone.png" class="mobileimg" />
+                <text class="phone">{{item.mobile}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="foot">
+        <text wx:if='{{showFoot==1}}' class="text">没有更多了</text>
+        <text wx:elif='{{showFoot==2}}' class="text">加载更多...</text>
+        <text wx:else class="text"></text>
+      </view>
+    </scroll-view>
+  </view>
+  <view wx:else class="noinfo" style="height:{{ktxWindowHeight}}">
+    <image class="nodata" src="{{'https://c1.yaofangwang.net/common/images/yb-minmap-icons/nouseDrug.png'}}">
+    </image>
+    <view class="imgtext">
+      {{'无用药人信息，请添加'}}
+    </view>
+  </view>
+  <view class='bottom_container'>
+    <view bindtap="add" class='btnBtom'>
+      <view class="address-add">添加用药人</view>
+    </view>
+    <view class='bottom_empty'></view>
+  </view>
+</view>

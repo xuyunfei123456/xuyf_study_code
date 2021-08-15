@@ -1,0 +1,43 @@
+page{
+  background-color: #F5F5F5
+}
+.container {
+  width: 100%;
+  height: 100%;
+}
+.batch-image {
+  margin-top: 40rpx;
+  margin-left: 26rpx;
+  width: 93%;
+  height: 55vw;
+}
+.warn-context {
+  margin-top: 60rpx;
+  margin-left: 26rpx;
+  margin-right: 26rpx;
+  border-radius: 14rpx;
+  background-color: #ededed;
+  padding: 26rpx 32rpx;
+  display: flex;
+  flex-direction: column;
+
+}
+.align-center {
+  display: flex;
+  flex-direction: row;
+  align-items: center
+}
+.wen-view {
+  width: 24rpx;
+  height: 24rpx;
+}
+.warn-title {
+  font-size: 28rpx;
+  color: #85a694;
+  font-weight: bold;
+}
+.warn-text {
+  font-size: 24rpx;
+  color: #999;
+  font-weight: normal;
+}

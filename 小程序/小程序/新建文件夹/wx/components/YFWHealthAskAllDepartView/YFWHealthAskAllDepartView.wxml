@@ -1,0 +1,31 @@
+<view class='container'>
+  <scroll-view scroll-x="false" scroll-y="true" class='scroll-left'>
+    <block wx:for="{{data}}" wx:key="{{data.key}}">
+      <view class='left-context'>
+        <view bindtap='pressRow' data-index="{{index}}">
+          <view class="leftline-select {{index==selectIndex?'leftline':''}}"></view>
+              <text class="left-text {{index==selectIndex?'left-text-select':''}}" >{{item.department_name}}</text>
+          </view>
+      </view>
+    </block>
+  </scroll-view>
+  <scroll-view scroll-x="false" scroll-y="true" class='scroll-right'>
+    <view class='right-topView' bindtap='toDetail' data-item='{{data[selectIndex]}}'>
+      <view class='right-department'>
+        <text>{{data[selectIndex].department_name}}</text>
+      </view>
+      <view class='right-jumpView'>
+        <text>查看所有问题</text>
+        <image src='/images/icon_arrow_more.png'></image>
+      </view>
+      
+    </view>
+    <view class='right-context'>
+      <block wx:for="{{data[selectIndex].items}}" wx:for-item="cell" wx:key='index'>
+        <view class='right-context-view' data-item='{{data[selectIndex]}}' data-cell='{{cell}}' bindtap='toDetail'>
+          <text>{{cell.department_name}}</text>
+        </view>
+      </block>
+    </view>
+  </scroll-view>
+</view>

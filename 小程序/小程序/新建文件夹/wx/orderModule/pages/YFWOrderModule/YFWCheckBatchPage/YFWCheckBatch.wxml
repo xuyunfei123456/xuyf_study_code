@@ -1,0 +1,11 @@
+<view class="container">
+  <image class="batch-image" src="https://c1.yaofangwang.net/common/images/yb-minmap-icons/image_batch_examples.jpg"/>
+  <view class="warn-context">
+    <view class="align-center">
+      <image src="/images/tip.png" class="wen-view"></image>
+      <text class="warn-title" style="padding-left:6px">填写产品批号说明</text>
+    </view>
+    <text class="warn-title" decode = "{{true}}">&nbsp;.&nbsp;&nbsp;<text class="warn-text">请如实根据商品包装盒上的【产品批号】填写</text></text>
+    <text class="warn-title" decode = "{{true}}">&nbsp;.&nbsp;&nbsp;<text class="warn-text">若多次被核实未根据规范填写，会取消参与抽奖资格</text></text>
+  </view>
+</view>

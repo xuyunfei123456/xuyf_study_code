@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "starScore": "../../../../components/YFWStar/YFWStar"
+  },
+  "navigationBarTitleText": "我的评价",
+  "navigationBarBackgroundColor": "#49ddb8",
+  "navigationBarTextStyle": "white",
+  "enablePullDownRefresh": true
+}

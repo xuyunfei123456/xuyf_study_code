@@ -1,0 +1,26 @@
+<!--components/YFWMoreView/YFWMoreView.wxml-->
+<view class='modal-back' hidden='{{!isShow}}' bindtap='hideModal' id='father' catchtouchmove='moveAction'>
+  <view class='modal-content' catchtap='hideModal' style='margin-top:{{margin_top}}rpx;right:{{margin_right}}rpx'>
+    <view class='modal-content-item' bindtap='toMessage'>
+      <image class='item-image' src='/images/pop1.png'/>
+      <text class='item-title'>消息</text>
+    </view>
+    <view class='modal-content-item' bindtap='toHome'>
+      <image class='item-image' src='/images/pop2.png'/>
+      <text class='item-title'>首页</text>
+    </view>
+    <view class='modal-content-item' bindtap='toCategory'>
+      <image class='item-image' src='/images/pop3.png'/>
+      <text class='item-title'>商品分类</text>
+    </view>
+    <view class='modal-content-item' bindtap='toCar'>
+      <image class='item-image' src='/images/pop4.png'/>
+      <text class='item-title'>购物车</text>
+    </view>
+    <view class='modal-content-item' bindtap='toUserCenter'>
+      <image class='item-image' src='/images/pop5.png'/>
+      <text class='item-title'>我的</text>
+    </view>
+    <image class='angle' src='/images/more_view_angle.png'/>
+  </view>
+</view>

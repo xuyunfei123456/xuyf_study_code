@@ -1,0 +1,81 @@
+/* pages/YFWSellersListModule/YFWChoseMerchantPage/YFWChoseMerchant.wxss */
+page {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+ .myFlex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.header {
+  background: #fff;
+  height: 50px;
+  width: 100%;
+  display: flex;
+  z-index: 2;
+  border-bottom: 1rpx solid #ccc;
+  border-top: 1rpx solid #ccc;
+}
+ 
+.header .nav_btn {
+  flex: 1;
+  text-align: center;
+  line-height: 50px;
+  color: #000;
+  font-size: 25rpx;
+}
+ 
+.box {
+  background: #fff;
+  flex: 1;
+  height: 100px;
+}
+ 
+.sv {
+  background-color: #fff;
+  height: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+.myList{
+  border-bottom: 1rpx solid #ccc;
+  width: 98%;
+  padding-bottom: 5rpx;
+  float: right;
+}
+.storeName{
+  font-size: 30rpx;
+  width: 96%;
+  margin: 12rpx auto;
+}
+.shopDel{
+  width: 96%;
+  font-size: 23rpx;
+    margin: 12rpx auto;
+}
+.delLfet text{
+font-size: 23rpx;
+color: #999;
+}
+.delRight{
+  width: 50rpx;
+}
+.delLfet .delMony{
+  color: #ff0000;
+  font-size:24rpx;
+  margin-right: 18rpx;
+}
+.header .nav_btn.selected{
+  color: #0bad2a
+}
+::-webkit-scrollbar
+{
+width: 6rpx;
+height: 0px;
+}
+::-webkit-scrollbar-thumb{
+  background-color: #ccc;
+}

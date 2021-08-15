@@ -1,0 +1,35 @@
+.modal-back {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 100px;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+}
+.modal-content {
+  background-color: white;
+  padding: 18px 6px 36px 6px;
+}
+.content-view {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-flow: row wrap;
+}
+.category-view {
+  margin: 22px;
+  width: 26%;
+  height: 58px;
+  background-color: #fafafa;
+  border-radius: 28px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+.category-view text{
+  font-size: 24px;
+  color: #333333;
+}

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "YFWActionModal": "/components/YFWActionModal/YFWActionModal",
+    "titleView": "/components/YFWTitleView/YFWTitleView"
+  },
+  "navigationBarTitleText": "就诊信息"
+}

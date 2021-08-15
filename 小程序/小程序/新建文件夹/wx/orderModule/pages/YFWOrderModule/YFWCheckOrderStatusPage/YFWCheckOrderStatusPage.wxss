@@ -1,0 +1,34 @@
+page{
+  background-color: #F5F5F5;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  width: 750rpx;
+  align-items: center;
+}
+
+.img{
+  width: 170rpx;
+  height: 170rpx;
+  margin-top: 60rpx;
+}
+
+.tips{
+  font-size: 30rpx;
+  color:#333;
+  margin-top: 40rpx;
+}
+
+.button{
+  width: 590rpx;
+  background-color: #16c08e;
+  height: 90rpx;
+  margin-top: 60rpx;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 30rpx;
+  color: #FFF;
+  display: flex;
+  border-radius: 6rpx;
+}

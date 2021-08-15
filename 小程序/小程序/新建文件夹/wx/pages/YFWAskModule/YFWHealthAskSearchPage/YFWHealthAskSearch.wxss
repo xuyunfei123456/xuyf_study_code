@@ -1,0 +1,122 @@
+/* pages/healthy/searchPage/searchPage.wxss */
+
+page {
+  background-color: #fff;
+  position: relative;
+}
+
+.searchBtn {
+  background-color: #49ddb8;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 12rpx;
+  color: #fff;
+}
+
+.searchSack {
+  width: 76%;
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 32rpx;
+  /* border: 1px solid #e4e4e4; */
+  background-color: #fff;
+}
+
+.searchSack input {
+  background-color: #fff;
+  font-size: 28rpx;
+  display: inline-block;
+  vertical-align: middle;
+  height: 64rpx;
+  text-align: left;
+  margin-left: 15rpx;
+}
+
+.searchSack image {
+  /* width: 6%; */
+  width: 30rpx;
+  height: 30rpx;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: -180rpx;
+}
+
+.topSearch {
+  width: 100%;
+  font-size: 30rpx;
+  margin: 0rpx auto;
+  text-align: center;
+  margin-top: 70rpx;
+}
+
+.searBox {
+  position: relative;
+}
+.hot-search {
+  margin-right: 20rpx;
+  margin-top: 10rpx;
+  /* padding: 13rpx 15rpx; */
+  line-height: 66rpx;
+  padding-left: 15rpx;
+  padding-right: 15rpx;
+  background-color: #fafafa;
+  color: #333333;
+  border-radius: 26rpx;
+  font-size: 24rpx;
+  
+  
+}
+.isInput {
+  position: fixed;
+  top: 0rpx;
+  width: 100%;
+  left: 50%;
+  margin-left: -50%;
+  z-index: 99;
+  background-color: #49ddb8;
+}
+
+.topSLeft {
+  text-align: left;
+  padding-left: 5%;
+  margin-top: 170rpx !important;
+}
+
+.itemview {
+  text-align: left;
+  font-size: 26rpx;
+  border-bottom: 2rpx solid #ebebeb;
+  width: 90%;
+  float: right;
+  line-height: 45rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.mySearch {
+  width: 30rpx;
+  position: absolute;
+  left: 36rpx;
+  top: 50%;
+  margin-top: -15rpx;
+  height: 30rpx;
+}
+
+.resultS {
+  width: 100%;
+  position: relative;
+  margin-top: 22rpx;
+}
+
+.scrollview {
+  width: 100%;
+  height: 100%;
+  /* position: absolute; */
+  background-color: #fff;
+  margin-top: 70rpx;
+}
+.scroTop{
+  margin-top: 110rpx !important
+}

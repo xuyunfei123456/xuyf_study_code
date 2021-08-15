@@ -1,0 +1,13 @@
+<view class='root_view'>
+  <block wx:for="{{starScores}}">
+    <view class='startParent' bindtap='onStarClick' data-position="{{item}}">
+      <image class='start' src='/images/sx_star.png' ></image>
+    </view>
+  </block>
+  <block wx:for="{{unStartScores}}">
+  <view class='startParent' bindtap='onUnStarClick' data-position="{{item}}">
+    <image class='start' src='/images/dd_icon_staring.png' ></image>
+    </view>
+  </block>
+  <text class='score_text'>{{score_text}}</text>
+</view>

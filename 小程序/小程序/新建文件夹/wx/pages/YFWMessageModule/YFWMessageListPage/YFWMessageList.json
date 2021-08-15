@@ -1,0 +1,9 @@
+{
+  "usingComponents": {},
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "我的消息",
+  "navigationBarBackgroundColor": "#49ddb8",
+  "backgroundColor": "#fafafa",
+  "enablePullDownRefresh": true,
+  "enableReachBottom": true
+}

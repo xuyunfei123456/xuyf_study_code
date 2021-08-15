@@ -1,0 +1,196 @@
+.container{
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  min-height: 100vh;
+  background-color: #fafafa;
+  padding-bottom: 40px;
+}
+.itemView{
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0px 0px 30px rgba(204, 204, 204, 0.5);
+  margin: 34px 5vw 0 5vw;
+  background-color: white;
+  padding-bottom: 40px;
+}
+.titleview{
+  display: flex;
+  background-color: white;
+  padding-top: 28px;
+  padding-left: 40px;
+}
+.item{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 200px;
+  align-items: center;
+  background-color: white;
+}
+.listItemView{
+  display: flex;
+  flex-direction: row;
+  min-height: 200px;
+  align-items: center;
+  background-color: white;
+}
+.bottonView{
+  display: flex;
+  min-height: 200px;
+  align-items: center;
+  justify-content: center;
+}
+.shopItemView{
+  min-height: 150px;
+}
+.bottonItem{
+  display: block;
+  width: 50px;
+  height: 50px;
+  margin: 0 20px;
+}
+.unselect{
+  width: 40px;
+  height: 40px;
+  margin: 0 27px 0 25px;
+}
+.goods_image{
+  height: 160px;
+  width: 160px;
+  margin: 0 20px 0 20px;
+}
+.shop_image{
+  height: 100px;
+  width: 140px;
+  margin: 0 20px 0 20px;
+}
+.rightView{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  min-height: 198px;
+  background-color: white;
+  border-bottom: 2px solid #fafafa;
+}
+.shopRight{
+    min-height: 148px;
+}
+.goods_name{
+ /* 显示两行： */
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+/* 多出部分显示省略号... */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 450px;
+  color: #333333;
+  font-size: 30px;
+}
+.goods_shop_name{
+   /* 显示两行： */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+/* 多出部分显示省略号... */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 450px;
+  color: #2e2d2d;
+  font-size: 24px;
+  margin-top: 14px;
+}
+.goods_price{
+  display: inline-flex;
+  width: 450px;
+  margin-top: 20px;
+}
+.clearAll{
+  display:flex;
+  position:fixed;
+  font-size:24px;
+  color:#666666;
+  top:50px;
+  right:50px;
+  background-color:rgba(1, 1, 1, 0.1);
+  width:100px;
+  height:100px;
+  border-radius:100px;
+  justify-content:center;
+  align-items:center;
+}
+.emptyView{
+  display:flex;
+  position:fixed;
+  flex-direction: column;
+  font-size:24px;
+  top:25vh;
+  left:0px;
+  width:100vw;
+  height:600px;
+  align-items:center;
+}
+.emptyImage{
+  width: 300px;
+  height: 300px;
+}
+.emptyTitle{
+  display: flex;
+  margin-top: 20px;
+  font-size: 20px;
+  color: #666666;
+}
+.emptyBottom{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  margin-top: 20px;
+  width: 160px;
+  height: 60px;
+  background-color: #49ddb8;
+  border-radius: 5px;
+}
+
+
+.sidebar-bottom{
+  display:flex;
+  height:167px;
+  flex-direction:row;
+  align-items:center;
+  justify-content: center;
+}
+.sidebar-bottom .delete{
+  height:100%;
+  width:50%;
+  position: relative;
+	font-size: 29px;
+  font-weight: normal;
+  background:#ff3301;
+  text-align:center;
+  color:#ffffff;
+}
+.sidebar-bottom .delete:before{
+  content: '删除';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.shop_address{
+   /* 显示两行： */
+   display: -webkit-box;
+   -webkit-line-clamp: 2;
+   -webkit-box-orient: vertical;
+ /* 多出部分显示省略号... */
+   overflow: hidden;
+   text-overflow: ellipsis;
+   width: 450px;
+   color: #999999;
+   font-size: 22px;
+   margin-top: 14px;
+}

@@ -1,0 +1,5 @@
+<!--components/YFWFooterView/YFWFooterView.wxml-->
+<view hidden='{{!isShowFooter}}' class='footer-view'>
+  <image hidden='{{!isLoading}}' class='footer-icon' src='/images/loading_cycle.gif'></image>
+  <view class='footer-title'>{{moreData ? "没有更多了" : "正在加载中..."}}</view>
+</view>

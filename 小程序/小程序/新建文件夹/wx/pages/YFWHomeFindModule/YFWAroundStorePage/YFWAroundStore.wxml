@@ -1,0 +1,56 @@
+<!--pages/YFWHomeFindModule/YFWAroundStorePage/YFWAroundStore.wxml-->
+<view class='container'>
+  <!-- <view class='topView'>
+    <view></view>
+    <image bindtap='switchMapTable' src="{{showingTable?'/images/map.png':'/images/medicine_list.png'}}"></image>
+  </view> -->
+  <view class='around-context'>
+    <view class='{{frameClassMain}}'>
+      <map
+        class='list_view'
+        id="map"
+        style="width: 100%; height: 100%;"
+        latitude="{{latitude}}"
+        longitude="{{longitude}}"
+        markers="{{markers}}"
+        bindmarkertap="makertap"
+        scale='{{scale}}'
+        bindcallouttap="toShopDetaiMethod"
+        show-location
+        >
+      </map>
+      <view></view>
+    </view>
+    <view class='{{frameClassBack}}'>
+      <scroll-view scroll-x="false" scroll-y="true" class='list_view' scroll-top>
+        <block wx:for="{{shops}}" wx:key="{{key}}">
+          <view class='find_near_contextView' bindtap='toShopDetaiMethod' data-item="{{item}}" id="{{item.id}}">
+            <view class='find_near_img'>
+              <image src='{{item.logo_img_url}}' class='find_near_icon' mode='aspectFit'></image>
+            </view>
+            <view class='find_near_context'>
+              <text class='find_shop_title'>{{item.title}}</text>
+              <view class='find_shop_status'>
+                <image src='/images/check_checked.png' class='logistics_status_icon'></image>
+                <text class='logistics_status_text'>  已签约       </text>
+                <image src='/images/findyao/sort_icon_star.png'    class='evaluation_icon'></image>
+                <image src='/images/findyao/sort_icon_star.png'    class='evaluation_icon'></image>
+                <image src='/images/findyao/sort_icon_star.png'    class='evaluation_icon'></image>
+                <image src='/images/findyao/sort_icon_star.png'    class='evaluation_icon'></image>
+                <image src='/images/findyao/sort_icon_star.png'    class='evaluation_icon'></image>
+                <text class='evaluation_text'> {{item.star}}</text>
+                <view class='kind'></view>
+                <text class='find_shop_loaction'>{{item.distance}}</text>
+
+              </view>
+            </view>
+      
+          </view>
+        </block>
+      </scroll-view>
+    </view>
+  </view>
+  <view class='map-tab'>
+    <image bindtap='switchMapTable' src="{{showingTable?'/images/map.png':'/images/medicine_list.png'}}"></image>
+  </view>
+</view>

@@ -1,0 +1,47 @@
+<!--pages/YFWAskModule/myAskAns/myAskAns.wxml-->
+    <view class='topView'>
+    <view class='topSearchView' bindtap='goSearch'>
+      <view class='search_input_view'>
+        <image class='search_icon' src='/images/search.png'></image>
+        <text class='placeholder'>请输入疾病或症状</text>
+      </view>
+      <view class='search-text'>
+        <text>搜索</text>
+      </view>
+    </view>
+    </view>
+<view class='bg-whit clearfix title'>
+  <image src='{{docImg}}' class='hedPort'></image>
+  <view class='telRght'>
+    <view class='isname'>{{pepQuion.profile.real_name || pepQuion.profile.account_name}}</view>
+    <view class='isQuion'>已提问题：
+      <text class='isNum'>{{pepQuion.profile.ask_count}}</text>条</view>
+  </view>
+</view>
+<!-- 热门问题 -->
+ <view class='newQ-All'>
+    <scroll-view class='health-top-view' scroll-x="true" scroll-y="false" scroll-into-view="item-{{selectIndex}}">
+    <block wx:for="{{dataSource}}" wx:for-index="index" wx:key="{{item.id}}">
+      <view class='select-text' bindtap="changeQuestionIndex" data-index='{{index}}'>
+        <YFWTitleView title='{{item.name}}' fontWeight='{{index == selectIndex?"500":"normal"}}' showLine='{{index == selectIndex}}' lineHeight='25'></YFWTitleView>
+      </view>
+    </block>
+  </scroll-view>
+  <!-- <view class='line-view'></view> -->
+    <!-- 个人问题列表 -->
+    <HealthAskQuestionItemView data="{{qusList}}" froms="pharmacist_ask"/>
+  </view>
+<block>
+ 
+  <view class='nomore' wx:if='{{loadhidden}}'> 加载中...</view>
+  <view class='nomore' wx:if='{{hidden}}'>没有更多了</view>
+</block>
+<!-- 没有问题页面 -->
+<!-- <block wx:if="{{qusList.length==0||pageType==0 ? true : false}}">
+  <view class='myFlex noStation'>
+    <view class='myAuto'>
+      <image src='../../../images/empty_page.png' class='noImg' mode='widthFix'></image>
+      <view class='noQ'>您还没有提问过问题</view>
+    </view>
+  </view>
+</block> -->

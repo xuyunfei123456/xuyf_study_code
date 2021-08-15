@@ -1,0 +1,46 @@
+.container{
+    width:100%;
+  }
+
+  .container-name{
+    margin-top:15px;
+    height:60px;
+    background-color:#F5F5F5;
+  }
+  .newName{
+    font-size: 25px;
+    width: 100%;
+    background-color:#FFFFFF;
+    height:120px;
+    margin-top:30px;
+    padding-left:30px;
+  }
+  
+  .address-save{
+    font-size: 30px;
+    margin-top :330px;
+    border-radius: 50px;
+    height:80px;
+    width:94%;
+    margin-right: 3%;
+    background-color:#49ddb8;
+    color:white;
+  }
+  .btnBtom {
+    width: 90%;
+    margin-left: 5%;
+    height: 80px;
+    border-radius: 50px;
+    margin-top :330px;
+    background: linear-gradient(to right, #00c891, #1fdb9b);
+    box-shadow: 0px 8px 30px rgba(31, 219, 155, 0.5);
+    align-items: center;
+    display: flex;
+  }
+  .address-add {
+    width: 100%;
+    color: white;
+    font-size: 34px;
+    font-weight: bold;
+    text-align: center;
+  }

@@ -1,0 +1,71 @@
+
+  <view class='outSkip'>
+    <more_view id='onSkip' />
+    <view class='topViewSBotm'>
+      <view class='iSkip' bindtap='openUtilityMenu'>
+        <image class='moreView' src='/images/more_white.png' mode='aspectFit' id='more_image'></image>
+      </view>
+    </view>
+  </view>
+<view>
+  <view class='Qhead'>
+    <view class='hotCont hotWth'>
+      <view class='hotSon QheadSon' wx:for="{{hotCont}}" wx:key='index' bindtap='itemClick' data-item='{{item}}'>{{item.department_name}}</view>
+    </view>
+    <view class="hotCont hotWth hide{{showView?'show':''}}">
+      <view class='hotSon QheadSon' wx:for="{{hotContTwo}}" wx:key='index' bindtap='itemClick' data-item='{{item}}'>{{item.department_name}}</view>
+    </view>
+    <view>
+      <button class="hide{{showView?'show':''}} btnCol" bindtap="onChangeShowState">
+        <text class='inlMidle'>收起分类</text>
+        <image src='../../../images/arrow_downGren.png' class='mrOn inlMidle' mode='widthFix'></image>
+      </button>
+      <button class="hide{{showView?'':'show'}} btnCol" bindtap="onChangeShowState">
+        <text class='inlMidle'>展开全部分类</text>
+        <image src='../../../images/arrow_upGren.png' class='mrOn inlMidle' mode='widthFix'></image>
+      </button>
+    </view>
+    <view>
+    </view>
+  </view>
+
+
+  <view class='newQAll newMargin'>
+    <!-- 最新问题列表 -->
+    <view class='replyQuey' wx:for='{{replyQuey}}' wx:key='unique' bindtap='replyQuey' data-item='{{item}}'>
+      <view class='replyOne'>{{item.title}}</view>
+      <view class='replyTwo'>
+        <view class='replyNum'>{{item.reply_count}}条回复</view>
+
+        <view class='repState repCol_gray' wx:if="{{item.status==='待回复'}}">
+          <view class='QuesImg'>
+            <image src='../../../images/yfwsk/inf999.png'></image>
+            <view class='Quesname'>{{item.status}}</view>
+            <view class='clearBoth'></view>
+          </view>
+        </view>
+
+        <view class='repState repCol_gren' wx:if="{{item.status==='已回复'}}">
+          <view class='QuesImg'>
+            <image src='../../../images/yfwsk/infgreen.png'></image>
+            <view class='Quesname'>{{item.status}}</view>
+            <view class='clearBoth'></view>
+          </view>
+        </view>
+
+        <view class='repState repCol_red' wx:if="{{item.status==='已采纳'}}">
+          <view class='QuesImg'>
+            <image src='../../../images/yfwsk/caina.png'></image>
+            <view class='Quesname'>{{item.status}}</view>
+            <view class='clearBoth'></view>
+          </view>
+        </view>
+
+        <view class='replyTime'>{{item.update_time}}</view>
+
+      </view>
+    </view>
+  </view>
+  <view class='nomore' wx:if='{{loadhidden}}'> 加载中...</view>
+  <view class='nomore' wx:if='{{hidden}}'>没有更多了</view>
+</view>

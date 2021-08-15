@@ -1,0 +1,127 @@
+
+  
+  .confirm {
+    font-size: 25px;
+    margin-left: 80px;
+    margin-top: 40px;
+  }
+  
+  .phone {
+    font-size: 25px;
+    margin-top: 65px;
+    width: 60%;
+  }
+  
+  .mobile {
+    font-size: 25px;
+  }
+  
+  .show-mobile {
+    float: right;
+    margin-top: -38px;
+    font-size: 25px;
+  }
+  
+  .confirm_pho {
+    font-size: 25px;
+    float: right;
+    margin-right: 370px;
+    margin-top: -32px;
+  }
+  
+  .commit {
+    width: 100%;
+    margin-top: -80px;
+  }
+  
+  .address-commit {
+    font-size: 30px;
+    margin-top: 120px;
+    border-radius: 50px;
+    height: 80px;
+    margin-left: 5%;
+    width: 90%;
+    background-color: #49ddb8;
+    color: white;
+  }
+  
+  .container-name {
+    font-size: 25px;
+    margin-left: 80px;
+    margin-top: 80px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .container{
+    width: 100%;
+    height: 5px;
+}
+  
+  .confirm-code {
+    font-size: 25px;
+    color: #999;
+    background-color: white;
+  }
+  
+  .placeholder-code {
+    font-size: 25px;
+    color: #999;
+  }
+  
+  .get_line {
+    position: absolute;
+    right: 0;
+    margin-right: 25%;
+    font-size: 25px;
+    color: #cdc9c9;
+  }
+  
+  .get_Code {
+    position: absolute;
+    right: 0;
+    margin-right: 5%;
+  }
+  
+  .get-Code_ol {
+    font-size: 25px;
+    color: #49ddb8;
+  }
+  
+  .container .divLine {
+    background: #cdc9c9;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 25px;
+    height: 1px;
+    width: 80%;
+  }
+  
+  .row {
+    font-size: 25px;
+    text-align: center;
+    margin-top: 260px;
+    color: #a8a8a8;
+  }
+  
+  .row-sl {
+    font-size: 25px;
+  }
+  .btnBtom {
+    width: 90%;
+    margin-left: 5%;
+    height: 80px;
+    border-radius: 50px;
+    margin-top :120px;
+    background: linear-gradient(to right, #00c891, #1fdb9b);
+    box-shadow: 0px 8px 30px rgba(31, 219, 155, 0.5);
+    align-items: center;
+    display: flex;
+  }
+  .address-add {
+    width: 100%;
+    color: white;
+    font-size: 34px;
+    font-weight: bold;
+    text-align: center;
+  }

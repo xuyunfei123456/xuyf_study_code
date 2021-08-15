@@ -1,0 +1,157 @@
+/* pages/YFWAskModule/myAskAns/myAskAns.wxss */
+.topView {
+  display: flex;
+  width: 100vw;
+  height: 100px;
+  position: fixed;
+  z-index: 99;
+  top: 0px;
+  background-color: #49ddb8;
+  flex-direction: row;
+  justify-content: space-between
+
+}
+.topSearchView {
+  margin: auto 26px 22px 22px;
+  height: 68px;
+  flex: 1;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+}
+.search_input_view {
+  background-color: white;
+  margin-left: 0px;
+  margin-right: 22px;
+  height: 68px;
+  display: flex;
+  flex: 1;
+  border-radius: 34px;
+  flex-direction: row;
+  align-items: center;
+}
+.search_icon {
+  width: 28px;
+  height: 30px;
+  margin-left: 18px;
+  display: flex;
+}
+.placeholder {
+  color: #cccccc;
+  font-size: 28px;
+  margin-left: 10px;
+  display: flex;
+  max-width: 70%;
+  overflow: hidden; 
+  text-overflow: ellipsis;
+  white-space: nowrap; 
+}
+.search-text {
+  margin-right: 0px;
+  width: 92px;
+  height: 42px;
+  display: flex;
+
+}
+.search-text text {
+  margin-left: 24px;
+  color: #fff;
+  font-size: 28px;
+}
+.myFlex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.noStation {
+  height: 65%;
+}
+
+.title {
+  margin-top: 100px;
+  padding-top: 70px;
+  padding-bottom: 58px;
+  flex-direction: row;
+  align-items: center;
+  display: flex;
+}
+
+.hedPort {
+  width: 120px;
+  height: 120px;
+  margin-left: 46px;
+}
+
+.telRght {
+  margin-left: 36px;
+  flex-direction: column;
+}
+
+.isname {
+  font-weight: 600;
+  font-size: 32px;
+  color: #333333;
+  margin-bottom: 9px;
+}
+
+.isname, .isQuion {
+  font-size: 24px;
+  margin-top: 9px;
+  color: #999999;
+}
+
+
+page {
+  background-color: #f8f8f8;
+  height: 97%;
+}
+
+.myAuto {
+  width: 100%;
+  text-align: center;
+}
+
+.noQ {
+  font-size: 24px;
+  color: #999;
+  width: 100%;
+}
+
+.noImg {
+  width: 33%;
+}
+.newQ-All {
+  background-color:#fff;
+  margin-top:14px;
+  padding-top: 20px;
+
+}
+.health-top-view {
+  height: 68px;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+.select-text {
+  display: inline-flex;
+  width:200px;
+  padding-left:46px;
+  margin-right:13px;
+  justify-content: center
+}
+.line-view {
+  margin-left: 46px;
+  margin-right: 46px;
+  height: 2px;
+  background-color: #f5f5f5
+}
+.nomore{
+  text-align: center;
+  margin-top: 20px;
+}

@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "titleView": "../../../../components/YFWTitleView/YFWTitleView",
+    "YFWSidebar": "../../../../components/YFWSidebar/YFWSidebar",
+    "yfwBaseModal": "../../../../components/YFWBaseModal/YFWBaseModal"
+  },
+  "navigationBarBackgroundColor": "#49ddb8",
+  "navigationBarTitleText": "优惠劵使用记录",
+  "navigationBarTextStyle": "white"
+}

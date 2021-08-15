@@ -1,0 +1,209 @@
+/* myCenter/pages/YFWUserCenterModule/YFWInvitatioReappearancePage/YFWInvitatioReappearance.wxss *//* myCenter/pages/YFWUserCenterModule/YFWInvitationPage/YFWInvitationNewUser.wxss *//* myCenter/pages/YFWUserCenterModule/YFWInvitationPage/YFWInvitationOldUser.wxss *//* myCenter/pages/YFWUserCenterModule/YFWInvitationPage/YFWInvitation.wxss */
+page{
+  margin: 0px;
+  padding: 0px;
+}
+.invitation_page1_top{
+  width: 100%;
+  height: 748rpx;
+}
+.invitation_page1_middle{
+  width: 100%;
+  height: 468rpx;
+  position: relative;
+}
+.invitation_page1_bottom{
+  width: 100%;
+  height: 208rpx;
+  position: fixed;
+  bottom: 0;
+}
+image{
+  height: 100%;
+  width: 100%;
+}
+.invitation_button{
+  position: absolute;
+  top: 492rpx;
+  width: 406rpx;
+  height: 86rpx;
+  text-align: center;
+  color: #d39349;
+  background-size: 100% 100%;
+  line-height: 94rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: bolder;
+  background: none;
+  border-radius: 50rpx;
+}
+.invitation_text{
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+}
+.invitation_page4_down{
+  width: 100%;
+  height:847rpx ;
+}
+.invitation_button_green{
+  position: absolute;
+  top: 590rpx;
+  width: 406rpx;
+  height: 86rpx;
+  text-align: center;
+  color: #d39349;
+  background-size: 100% 100%;
+  line-height: 86rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: bolder;
+  background: none;
+  border-radius: 50rpx;
+}
+.bottom_button{
+  position: absolute;
+  width: 100%;
+  height: 100rpx;
+  bottom: 100rpx;
+  background: none;
+}
+.rule{
+  position: absolute;
+  right: 0;
+  top: 24rpx;
+  width: 132rpx;
+  height: 54rpx;
+}
+.rulebg{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0,.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+}
+.ruletip{
+ background-color: white;
+ width: 702rpx;
+ height: 1084rpx;
+ z-index: 99999;
+}
+.tipText{
+  display: inline-block;
+  padding: 40rpx;
+  font-size: 24rpx;
+  padding-bottom: 0;
+  line-height: 40rpx;
+}
+.tipTextTop{
+  color: white;
+  background: linear-gradient(rgb(255,136,129), rgb(234,80,101), rgb(213,63,106)) !important;
+  font-size: 28rpx;
+  text-align: center;
+  padding: 10rpx 52rpx;
+  margin-left: 50%;
+  transform: translate(-50%);
+  border-radius: 0 0 20rpx 20rpx;
+  display: inline-block;
+}
+.sendTotal{
+  position: absolute;
+  width: 100%;
+  height: 112rpx;
+  top: 0;
+  line-height: 112rpx;
+  display: flex;
+  justify-content: center;
+}
+.tip_text{
+  color: #333333;
+  font-size: 32rpx;
+  font-weight: bolder;
+}
+.tip_text_money{
+  color: #d92b5b;
+  font-size: 48rpx;
+  padding: 0 10rpx;
+  font-weight: bolder;
+}
+.toView{
+  position: absolute;
+  width: 92%;
+  top: 114rpx;
+  height: 324rpx;
+  overflow: hidden;
+  margin-left: 4%;
+}
+.scrollWrapper{
+  height: 100rpx;
+  line-height: 100rpx;
+  display: flex;
+  align-items: center;
+}
+.username{
+  color: #666666;
+  font-size: 24rpx;
+}
+.TotalMoney{
+  color: #d92b5b;
+  padding: 0 10rpx;
+  font-weight: bolder;
+}
+
+.invitation_page4_bottom{
+  width: 87%;
+  margin-left: 6.5%;
+  padding: 0 .64rem;
+  padding-bottom: .96rem;
+  margin: 0 .78222222rem;
+  margin-bottom: .88888889rem;
+  background-color: #fff;
+  box-shadow: inset 0 0 0.81777778rem 0 rgba(222,40,92,.6);
+  border-radius: .53333333rem;
+}
+.hasinvita{
+    margin-top: .71111111rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .64rem;
+    height: 64rpx;
+    padding: 0 1.77777778rem;
+    background-color: #f8e7ea;
+    box-shadow: inset 0 0.01777778rem 0.32rem 0 rgba(183,44,76,.11);
+    border-radius: .26666667rem;
+    color: #666;
+    margin-top: 26rpx;
+}
+.inviterow{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 80rpx;
+  border-bottom: 1px solid #e8e8e8;
+}
+.mobile{
+  color: #666666;
+  font-size: 24rpx;
+  width: 33%;
+  text-align:center;
+}
+.date{
+  color: #666666;
+  font-size: 24rpx;
+  width: 33%;
+  text-align:center;
+}
+.prize{
+  color: #666666;
+  font-size: 24rpx;
+  width: 34%;
+  text-align:center;
+}
+.prize2{
+  width: 34%;
+  text-align:center; 
+}

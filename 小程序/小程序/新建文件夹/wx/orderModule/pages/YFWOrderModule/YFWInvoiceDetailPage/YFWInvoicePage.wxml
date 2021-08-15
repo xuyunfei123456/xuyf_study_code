@@ -1,0 +1,5 @@
+<image class='top_bg' src='https://c1.yaofangwang.net/common/images/miniapp/dingdan_bj.png'></image>
+
+<view class="invoice-content">
+  <image src="{{invoiceImage}}" bindtap="handleLookInovicImage"></image>
+</view>

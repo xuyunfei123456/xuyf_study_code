@@ -1,0 +1,45 @@
+<view class="topwrapper">
+  <view class="tip">
+    <view class="tipText {{mobileSize == 'small'?'fontsmall':''}}">
+      彰显平台规范和监管责任，提高商家服务质量，请如实根据商品包装盒上的【产品批号】填写
+      <text class="explain" bindtap="turnToExplain">查看批号说明</text>
+    </view>
+    <image class="tipArrow" src="/images/icon_arrow_y.png"></image>
+  </view>
+  <view class="step">
+    <view class="stepContent">
+      <image class="stepimg1" src="/images/icon_form.png"></image>
+      <text class="stepText {{mobileSize == 'small'?'fontsmall':''}}">填写批号</text>
+    </view>
+    <view class="stepArrow">></view>
+    <view class="stepContent">
+      <image class="stepimg2" src="/images/icon_receipt.png"></image>
+      <text class="stepText {{mobileSize == 'small'?'fontsmall':''}}">确认收货</text>
+    </view>
+    <view class="stepArrow">></view>
+    <view class="stepContent">
+      <image class="stepimg3" src="/images/icon_award.png"></image>
+      <text class="stepText {{mobileSize == 'small'?'fontsmall':''}}">翻牌抽奖</text>
+    </view>
+  </view>
+  <view class="hasInfo">
+    <scroll-view class="scroll" scroll-y="false">
+      <view wx:for="{{goodsList}}" wx:key="{{index}}">
+        <view class="container">
+          <image class="goodpic" src="{{item.intro_image+'_300x300.jpg'}}"></image>
+          <view class="des">
+            <view class="goodName">{{item.namecn}}</view>
+            <view class="goodSize">{{item.standard}}</view>
+            <input type="text" class="goodInput" placeholder="请如实填写产品批号，若有多个则分开" placeholder-class="placeTip" value="{{item.inputText == 'undefined' ? '':item.inputText}}"  data-index="{{index}}" bindinput="onTextInput"/>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+  <view class='bottom_container'>
+    <view bindtap="add" class='btnBtom'>
+      <view class="address-add">确认收货</view>
+    </view>
+    <view class='bottom_empty'></view>
+  </view>
+</view>

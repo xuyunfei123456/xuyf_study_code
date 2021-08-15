@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    "titleView": "../../../components/YFWTitleView/YFWTitleView",
+    "YFWMessageRedPointView": "/components/YFWMessageRedPointView/YFWMessageRedPointView",
+    "authentication": "/components/YFMauthentication/YFMauthentication"
+  },
+  "navigationBarTitleText": "个人中心",
+  "navigationBarBackgroundColor": "#49ddb8",
+  "navigationBarTextStyle": "white",
+  "enablePullDownRefresh": false,
+  "navigationStyle":"custom"
+}

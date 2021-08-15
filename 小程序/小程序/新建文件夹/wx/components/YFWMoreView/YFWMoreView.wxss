@@ -1,0 +1,64 @@
+/* components/YFWMoreView/YFWMoreView.wxss */
+.modal-back {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: flex-end; */
+  /* align-items: center; */
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0);
+  z-index: 1000;
+}
+
+.modal-space {
+  flex: 1;
+  width: 100%;
+  background-color: transparent;
+}
+.angle{
+  display: block;
+  position: absolute;
+  width: 40rpx;
+  height: 20rpx;
+  right: 15rpx;
+  top:-18rpx;
+}
+.modal-content {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  right: 30rpx;
+  height: 400rpx;
+  width: 250rpx;
+  margin-top:90rpx;
+  box-shadow: 0 0 20rpx #ccc;
+  background-color: #fff;
+  border-radius: 10rpx;
+}
+.modal-content-item {
+  width: 250rpx;
+  height: 80rpx;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+}
+.item-image{
+  display: block;
+  position: absolute;
+  width: 40rpx;
+  height: 40rpx;
+  left: 30rpx;
+  top:18rpx;
+}
+.item-title{
+  display: block;
+  position: absolute;
+  height: 50rpx;
+  left: 100rpx;
+  top:20rpx;
+  text-align: center;
+  font-size: 26rpx;
+}

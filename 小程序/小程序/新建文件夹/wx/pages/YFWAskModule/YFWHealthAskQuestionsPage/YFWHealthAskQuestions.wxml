@@ -1,0 +1,111 @@
+<!--pages/healthy/myQuesion/myQuesion.wxml-->
+  <view class='outSkip'>
+    <more_view id='onSkip' />
+    <view class='topViewSBotm'>
+      <view class='iSkip' bindtap='openUtilityMenu'>
+        <image class='moreView' src='/images/more_white.png' mode='aspectFit' id='more_image'></image>
+      </view>
+    </view>
+  </view>
+<view>
+  <view>
+    <scroll-view>
+    </scroll-view>
+  </view>
+
+  <form bindsubmit="formSubmit">
+    <!-- 标题 -->
+    <view class='headline'>
+      <view class="head-title">
+        <input name="input" placeholder-style="color:#999999" placeholder="请输入标题" class='topViewSearchInput'/>
+      </view>
+    </view>
+    <view class='descr-context' wx:if="{{isShow}}">
+      <view class='descr-view'>
+        <view class='wen'>
+          <image src='/images/yfwsk/wenhao.png'></image>
+          <text>让你的问题清晰明了</text>
+        </view>
+        <view class='wen-view'>
+          <view class='wen-view-icon'></view>
+          <text class='wen-view-text'>请咨询药品名称、功能主治、药品相互作用、用法用量、不良反应，禁忌症等内容</text>
+        </view>
+         <view class='wen-view1'>
+          <view class='wen-view-icon'></view>
+          <text class='wen-view-text'>请不要咨询疾病的诊断和治疗方法，因为不能当面确诊，不做具体问答</text>
+        </view>
+         <view class='wen-view1'>
+          <view class='wen-view-icon'></view>
+          <text class='wen-view-text'>请不要提及个人姓名、电话等个人隐私信息，以免泄露</text>
+        </view>
+        <view class='show' bindtap='clearWenTitle'>
+          <image src='/images/returnTips_close.png'></image>
+        </view>
+      </view>
+    </view>
+    <view class='txtarea'>
+      <textarea name='textarea' placeholder-class="referPlace" placeholder='详细描述您的问题，方便医生诊断。' value='{{formdata}}'>
+      </textarea>
+      <!-- 上传图片 -->
+      <view class='outupimg'>
+
+       <picker range="{{sourceType}}" bindchange="sourceTypeChange" value="{{sourceTypeIndex}}" mode="selector">
+        <view class='upimg' wx:if="{{!uploadimg}}">
+          <image src='{{upimg}}'></image>
+          <view class='upimg_txt'>添加图片</view>
+        </view>
+        <image wx:else src='{{uploadimg}}' data-src='{{uploadimg}}' class="uploadimg"></image>
+        </picker>
+      </view>
+
+
+      <!-- 展示图片 -->
+      <!-- <view class='previewImage'>
+        <block wx:for="{{imageList}}" wx:for-item='image' wx:key='index'>
+          <image src='{{image}}' data-src='{{image}}'></image>
+        </block>
+      </view> -->
+      <view class='clearBoth'></view>
+    </view>
+    <!-- 性别 -->
+    <view class="six-view">
+      <view class='head-text'>性别:</view>
+      <radio-group bindchange="radioChange" name="radiogp">
+
+        <view class='label'>
+          <label class="ui-radio {{item.checked==true?'active':''}}" wx:for="{{items}}">
+            <radio value="{{item.value}}" checked="{{item.checked}}" />
+            <text class="text">{{item.name}}</text>
+          </label>
+          </view>
+        </radio-group>
+    </view>
+    <view class='botmLine'><view></view></view>
+    <!-- 年龄 -->
+    <view class='age-view'>
+      <view class='head-text'>年龄 :</view>
+      <view class="headSection Txtage inlMidle">
+        <input type='number' value="{{sendage}}" name="inputAge" placeholder-style="color:#ccc" placeholder="请输入年龄（0-120岁）" bindinput="bindChange_age" />
+      </view>
+      
+    </view>
+    <view class='botmLine'>
+      <view></view>
+    </view>
+
+    <!-- 选择科室 -->
+
+    <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}" name='mulitKS'>
+      <view class='choseKe'>
+        <view class='head-text'>选择科室 ：
+          <text class='pitchId'>{{pitchName}}</text>
+        </view>
+        <image class='imgPosr' src='{{arRight}}'></image>
+      </view>
+    </picker>
+    <button class="postButton" form-type="submit">
+      <text  class='text'>提交</text>
+    </button>
+  </form>
+
+</view>

@@ -1,0 +1,19 @@
+<view class='container'>
+  <scroll-view class='scroll' scroll-y="true">
+    <view class='topView' wx:if="{{shop_id.length==0}}" bindtap='clickSearchShopMethod'>
+      <view class='topView-context'>
+        <image src='/images/shops.png'></image>
+        <text>搜索“{{keyWords}}”的商家</text>
+      </view>
+      <view class='lineview'></view>
+    </view>
+    <block wx:for="{{data}}" wx:key="{{index}}">
+      <view class='list-view' bindtap='clickHotItemMethod' data-context="{{item}}">
+        <view class='list-context'>
+         <text>{{item}}</text>
+        </view>
+        <view class='lineview'></view>
+      </view>
+    </block>
+  </scroll-view>
+</view>

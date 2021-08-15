@@ -1,0 +1,44 @@
+/* pages/YFWGoodsDetailModule/YFWGoodsAllCommentsPage/YFWGoodsAllComments.wxss */
+.comment {
+  width: 100vw;
+  height: 100vh;
+}
+
+.comment .comment-item {
+  display: flex;
+  flex-direction: column;
+  padding: 30rpx 26rpx;
+}
+
+.comment .comment-item .comment-image {
+  width: 54rpx;
+  height: 54rpx;
+  margin-right: 10rpx;
+  border-radius: 30rpx;
+}
+
+.comment .comment-item .comment-name {
+  font-size: 22rpx;
+  color: #666;
+}
+
+.comment .comment-item .comment-time {
+  font-size: 20rpx;
+  color: #999;
+}
+
+.comment .comment-item .comment-content {
+  font-size: 26rpx;
+  color: #333;
+  margin-top: 20rpx;
+}
+
+.comment .comment-item .comment-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.comment .comment-item .comment-space {
+  justify-content: space-between;
+}

@@ -1,0 +1,25 @@
+<!--myCenter/pages/YFWUserCenterModule/YFWInvitationPage/YFWTxRecord.wxml-->
+<view class="bg">
+  <image src="../../../../images/rankbanner.png" class="bgimg"></image>
+  <view class="topcontent">
+    <view class="top_money">{{valid_balance}}</view>
+    <view class="top_title">可提现金额</view>
+  </view>
+  <view class="topcontent">
+    <view class="top_money">{{Cashback}}</view>
+    <view class="top_title">待奖励金额</view>
+  </view>
+</view>
+<view class='explain_txt' style="color:'#333333;font-size:28rpx">提现记录<view class='under'></view></view>
+<view class="list">
+  <view wx:for="{{dataList}}" class="listItem" style="border-bottom:{{index+1 == dataList.length ? 'none':''}}">
+    <view class="first">
+      <view style="font-size:24rpx;color:#333333">{{item.dict_account_balance_status == 0 ? '处理中' : item.dict_account_balance_status == -1 ? '交易失败':'交易成功'}}</view>
+      <view style="font-size:24rpx;color:rgb(153,153,153)"><text class="tmoney">{{item.total || 0}}</text>元</view>
+    </view>
+    <view class="second">
+      <view style="font-size:24rpx;color:#999999">{{item.apply_time}}</view>
+      <view style="font-size:24rpx;color:#999999">{{item.dict_account_balance_type == 1 ?'提现':'积分兑换'}}</view>
+    </view>
+  </view>
+</view>

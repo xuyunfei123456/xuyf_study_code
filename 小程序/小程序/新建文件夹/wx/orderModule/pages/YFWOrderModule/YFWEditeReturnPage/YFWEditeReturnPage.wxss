@@ -1,0 +1,446 @@
+.topLayout {
+  width: 750rpx;
+  height: 285rpx;
+  background-color: #49ddb8;
+  display: flex;
+  flex-direction: column;
+}
+
+.topReturnTypeLayout {
+  margin-top: 30rpx;
+  width: 700rpx;
+  margin-left: 25rpx;
+  height: 100rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 14rpx;
+  box-shadow: 0rpx 7rpx 15rpx 0rpx rgba(204, 204, 204, 0.6);
+}
+
+.topReturnTypeLayout .tips {
+  font-size: 28rpx;
+  color: #333;
+  font-family: SourceHanSansCN-Normal;
+  margin-left: 40rpx;
+}
+
+.postPicLayout{
+  width: 180rpx;
+  height: 180rpx;
+  display: flex;
+  flex-direction: column;
+  margin-right: 26rpx;
+}
+
+.deletPic{
+  width: 30rpx;
+  height: 30rpx;
+ position: relative;
+ margin-top: -180rpx;
+ margin-left: 150rpx;
+ z-index: 99
+}
+
+.topReturnTypeLayout .typeValue {
+  font-size: 28rpx;
+  color: #999;
+  font-family: SourceHanSansCN-Normal;
+}
+
+.returnGoodsInfo {
+  width: 700rpx;
+  height: auto;
+  margin-left: 25rpx;
+  position: relative;
+  background-color: #fff;
+  border-radius: 14rpx;
+  box-shadow: 0rpx 7rpx 15rpx 0rpx rgba(204, 204, 204, 0.6);
+  margin-top: -135rpx;
+  display: flex;
+  flex-direction: column;
+  padding-top: 50rpx;
+}
+
+.title {
+  margin-left: 40rpx;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 26rpx;
+}
+
+.title .text {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #333;
+  z-index: 99;
+  margin-left: 10rpx;
+}
+
+.title .bottom {
+  width: 205rpx;
+  background-image: linear-gradient(270deg, #4bfdf2 0%, #4bff8f 100%), linear-gradient(#fff, #fff);
+  background-blend-mode: normal, normal;
+  height: 12rpx;
+  margin-top: -8rpx;
+  box-shadow: 0rpx 7rpx 15rpx 0rpx rgba(131, 241, 219, 0.59);
+}
+
+.goodsList {
+  width: 640rpx;
+  margin-left: 15rpx;
+  margin-right: 25rpx;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30rpx;
+}
+
+.goodsListItem {
+  display: flex;
+  flex-direction: row;
+  margin-left: 15rpx;
+  align-items: center;
+}
+
+.checkStatus {
+  width: 45rpx;
+  height: 45rpx;
+  min-width: 45rpx;
+}
+
+.unCheckStatus {
+  width: 45rpx;
+  height: 45rpx;
+  min-width: 45rpx;
+}
+
+.goodsImage {
+  width: 140rpx;
+  height: 140rpx;
+}
+
+.medicienInfoLayout {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-left: 20rpx;
+}
+
+.medicienInfoLayout .top {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.medicienInfoLayout .top .medicien_name {
+  font-size: 26rpx;
+  color: #000;
+  font-family: SourceHanSansCN-Medium;
+  width: 340rpx;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  max-width: 340rpx;
+}
+
+.medicienInfoLayout .top .price {
+  font-size: 26rpx;
+  color: #333;
+  font-family: SourceHanSansCN-Medium;
+}
+
+.medicine_type_icon {
+  width: 52rpx;
+  height: 22rpx;
+  margin-right: 10rpx;
+}
+
+.medicienInfoLayout .bottom {
+  flex: 1;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  margin-top: 30rpx;
+  font-size: 28rpx;
+  color: #999;
+}
+
+.medicienInfoLayout .bottom .quantity {
+  font-size: 28rpx;
+  color: #333;
+  margin-left: 10rpx;
+}
+
+.returnReason {
+  width: 700rpx;
+  height: auto;
+  margin-left: 25rpx;
+  background-color: #fff;
+  border-radius: 14rpx;
+  box-shadow: 0rpx 7rpx 15rpx 0rpx rgba(204, 204, 204, 0.6);
+  display: flex;
+  flex-direction: column;
+  padding-top: 50rpx;
+  margin-top: 35rpx;
+}
+
+.returnReasonType {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+}
+
+.returnReasonType .reasonItem {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.returnReasonType .reasonItem .reasonTitle {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+}
+
+.returnReasonType .reasonItem .reasonTitle .reasonText {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #333;
+  z-index: 99;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex: 1;
+}
+
+.returnReasonType .reasonItem .reasonTitle .reasonBottom {
+  background-image: linear-gradient(270deg, #4bfdf2 0%, #4bff8f 100%), linear-gradient(#fff, #fff);
+  background-blend-mode: normal, normal;
+  box-shadow: 0rpx 7rpx 15rpx 0rpx rgba(131, 241, 219, 0.59);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-left: 40rpx;
+  margin-right: 40rpx;
+  height: 12rpx;
+  margin-top: -8rpx;
+}
+
+.returnDetailReason {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin-top: 20rpx;
+}
+
+.returnDetailReason .ItemLayout {
+  margin-left: 40rpx;
+  margin-right: 40rpx;
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100rpx;
+}
+
+.returnDetailReason .ItemLayout .checkedTips {
+  font-size: 28rpx;
+  color: #333;
+  font-family: SourceHanSansCN-Normal;
+  max-width: 570rpx;
+  width: 570rpx;
+}
+
+.returnDetailReason .ItemLayout .unCheckedTips {
+  font-size: 28rpx;
+  color: #999;
+  font-family: SourceHanSansCN-Normal;
+}
+
+.returnDetailReason .ItemLayout .checkedImage {
+  width: 40rpx;
+  height: 40rpx;
+  margin-left: 10rpx;
+}
+
+.splite {
+  background-color: #E5E5E5;
+  height: 2rpx;
+  flex: 1;
+  margin-left: 40rpx;
+  margin-right: 40rpx;
+}
+
+.upLoadVoucher {
+  width: 700rpx;
+  height: auto;
+  margin-left: 25rpx;
+  background-color: #fff;
+  border-radius: 14rpx;
+  box-shadow: 0rpx 7rpx 15rpx 0rpx rgba(204, 204, 204, 0.6);
+  display: flex;
+  flex-direction: column;
+  padding-top: 50rpx;
+  margin-top: 35rpx;
+}
+
+.upLoadVoucher .tips {
+  font-size: 24rpx;
+  color: #feac4c;
+  margin-left: 40rpx;
+}
+
+.voucherLayout {
+ width: 620rpx;
+  margin-left: 40rpx;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  margin-top: 30rpx;
+  margin-bottom: 70rpx;
+}
+
+.voucherLayout .uploadIcon {
+  width: 180rpx;
+  height: 180rpx;
+}
+
+.moneyInfo {
+  width: 700rpx;
+  height: 200rpx;
+  margin-left: 25rpx;
+  background-color: #fff;
+  border-radius: 14rpx;
+  box-shadow: 0rpx 7rpx 15rpx 0rpx rgba(204, 204, 204, 0.6);
+  display: flex;
+  flex-direction: column;
+  margin-top: 35rpx;
+  padding-bottom: 20rpx;
+}
+
+.moneyInfo .top {
+  display: flex;
+  flex-direction: row;
+  margin-top: 50rpx;
+  margin-left: 40rpx;
+  align-items: center;
+}
+
+.moneyInfo .top .tips {
+  font-size: 28rpx;
+  color: #333;
+  font-family: SourceHanSansCN-Normal;
+  min-width: 150rpx
+}
+
+.moneyInfo .top .value {
+  font-size: 28rpx;
+  color: #f30;
+  font-family: SourceHanSansCN-Normal;
+}
+
+.moneyInfo .top .value-normal {
+  font-size: 28rpx;
+  color: #333;
+  font-family: SourceHanSansCN-Normal;
+}
+
+.moneyInfo .top .but {
+  font-size: 24rpx;
+  color: #999;
+  font-family: SourceHanSansCN-Normal;
+}
+
+.postButton {
+  width: 700rpx;
+  height: 84rpx;
+  background-image: linear-gradient(270deg, #00c891 0%, #1fdb9b 100%), linear-gradient(#fff, #fff);
+  background-blend-mode: normal, normal;
+  box-shadow: 0rpx 7rpx 15rpx 0rpx rgba(31, 219, 155, 0.5);
+  border-radius: 42rpx;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100rpx;
+  margin-left: 25rpx;
+}
+
+.postButton .text {
+  font-size: 34rpx;
+  color: #fff;
+}
+
+.inputHolder {
+  font-size: 28rpx;
+  color: #999;
+}
+
+.editeReturnQty {
+  display: flex;
+  flex-direction: row;
+  width: 180rpx;
+  height: 45rpx;
+  border: #ccc solid 1rpx;
+  border-radius: 6rpx;
+  margin-left: 10rpx;
+}
+
+.Goodsprice {
+  font-size: 28rpx;
+  color: #333;
+  font-weight: bold;
+}
+
+.smallPrice{
+  font-size: 22rpx;
+  color:#333;
+  font-weight: medium
+}
+
+
+.subtract{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex:1;
+  color: #999;
+  font-size: 28rpx;
+}
+
+.numberInput{
+  flex:1;
+  text-align: center;
+  font-size: 28rpx;
+  color: #333;
+}
+
+.add{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex:1;
+  color: #333;
+   font-size: 28rpx;
+}
+
+.editeSplite{
+  width: 2rpx;
+  height: 45rpx;
+  background-color: #ccc
+}
+
+.fillBottom{
+  width: 100%;
+  height: 100rpx;
+}

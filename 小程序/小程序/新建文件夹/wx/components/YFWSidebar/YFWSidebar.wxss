@@ -1,0 +1,24 @@
+.item {
+  position: relative;
+  height: auto;
+}
+.item-top{
+  flex: 1;
+  position: absolute;
+  width: auto;
+  height: auto;
+  background-color: rgb(255, 255, 255);
+  z-index: 0;
+  transition: transform 0.4s ease; 
+  -webkit-transition: transform 0.4s ease;
+}
+.item-bottom{
+  flex: 1;
+  width: auto;
+  height: auto;
+  position: absolute; 
+  display: flex;
+  flex-direction: row-reverse;
+  background-color: rgb(255, 255, 255);
+  z-index: 0;
+}

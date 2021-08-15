@@ -1,0 +1,6 @@
+<view class = "containers">
+  <view class="item_view" bindtap="clickItem">
+    <text class= "title" >注销账号</text>
+    <image class="img_next"  src="/images/uc_next.png"></image> 
+  </view>
+</view>

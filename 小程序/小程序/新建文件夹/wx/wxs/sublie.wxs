@@ -1,0 +1,11 @@
+var sub = function(val) {
+  if (val == undefined || val.length == 0) {
+    return;
+  } else if (val.length > 0) {
+  
+    var arrs = val.split('').slice(0,-3).join('')
+    return arrs
+  }
+}
+
+module.exports.sub = sub;

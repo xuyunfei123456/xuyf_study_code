@@ -1,0 +1,196 @@
+<!--pages/YFWShopCarModule/YFWShopCarPage/YFWShopCar.wxml-->
+<wxs src='../../../wxs/sublie.wxs' module='tools' />
+<wxs src='../../../wxs/subAfter.wxs' module='toAfter' />
+<!-- 头部广告区域 -->
+<view class="activity" wx:if="{{activityItem.content}}" id="activity">
+  <view style="flex-shrink:0">  
+    <image src="{{activityItem.img_url}}" style="height:{{activityItem.img_height || 0}}rpx;width:{{activityItem.img_width || 0}}rpx;margin-left:14rpx;margin-right:6rpx"></image>
+  </view>
+  <text class="activityText">{{activityItem.content}}</text>
+    <image src="/images/icon_arrow_y.png" class="activity_arrow" wx:if="{{activityItem.url}}" bindtap="activityRedirect"></image>
+</view>
+<!-- 底部提示 -->
+<view class="promit" style="bottom:{{tabbarHeight+promitBottom+safeAreaInsetBottom}}px" wx:if="{{prompt_info&&firstRequestFlag}}">{{prompt_info}}</view>
+<view class="container" style="margin-top:{{activityHieght}}px;padding-bottom:{{prompt_info == '' ? safeAreaInsetBottom+tabbarHeight+promitBottom:34+safeAreaInsetBottom+tabbarHeight+promitBottom}}px">
+  <view class="page-body">
+    <!-- 购物车列表 -->
+    <view wx:if="{{data.length > 0}}" class="shop-car-list">
+      <block wx:for="{{data}}" wx:for-index="data" wx:key='{{item.key}}'>
+        <!-- 同一商家的商品 -->
+        <view class="item-shop">
+          <!-- 商家名称 -->
+          <view class="shop-title">
+            <image class='icon-checkbox' bindtap='cilckShopItems' data-key='{{item.key}}' src="{{item.checked?'/images/icon_choose.png':'/images/icon_unchoose.png'}} " />
+            <view style='flex:1'>
+              <text bindtap='jumpToShopDetail' data-item='{{item}}'>{{item.shop_title}}</text>
+            </view>
+            <view wx:if="{{item.coupons_list.length > 0}}" class='hint-gold' bindtap='showCouponModal' data-item='{{item}}'>领券</view>
+          </view>
+          <view style='display: flex;flex-direction: row;'>
+            <view>
+              <!-- 满减 -->
+              <view wx:if="{{item.add_on!=''}}" class="shop-item-top">
+                <view class="addOn">满减</view>
+                <text style='flex:1'>{{item.add_on}}</text>
+              </view>
+              <!-- 包邮 -->
+              <view wx:if="{{item.freepostage!=''}}" class="shop-item-top">
+                <view class="freepostage">包邮</view>
+                <text style='flex:1'>{{item.freepostage}}</text>
+              </view>
+            </view>
+            <view wx:if="{{item.add_on_isshow == 1 || item.freepostage_isshow == 1}}" class='hint-gold' bindtap='addOnItem' data-item='{{item}}'>去凑单</view>
+            <view wx:else style="width:116rpx"/>
+          </view>
+          <!-- 商品或套餐、多件装 -->
+          <block wx:for="{{item.cart_items}}" wx:for-index="cart_items" wx:key='{{item.key}}'>
+            <!-- 单个商品 -->
+            <view wx:if="{{item.type == 'medicines'}}" class="item-medicines-items">
+              <block wx:for="{{item.medicines}}" wx:for-index="sider" wx:key='{{item.key}}'>
+                <view class='medicines-item'>
+                  <YFWSidebar id="d{{data}}c{{cart_items}}s{{sider}}" width="700" bottomWidth="240" height="167" bind:onOpen="onSidebarOpen">
+                    <view slot="top">
+                      <template is="medicinesInfo" data="{{item, isPackage : false}}" />
+                    </view>
+                    <view slot="bottom">
+                      <template is="itemBottom" data="{{item}}" />
+                    </view>
+                  </YFWSidebar>
+                </view>
+              </block>
+            </view>
+            <!-- 套餐、多件装 -->
+            <view wx:else class="item-medicines-items" style='padding-top:0rpx'>
+              <YFWSidebar id="d{{data}}c{{cart_items}}s{{sider}}" width="700" bottomWidth="240" height="{{item.package_medicines.length * 167}}" bind:onOpen="onSidebarOpen">
+                <view slot="top">
+                  <view style="display: flex;flex-direction:row;align-items:center;">
+                    <image data-item='{{item}}' data-type='medicines' class='icon-checkbox' bindtap='cilckItems' src="{{item.checked?'/images/icon_choose.png':'/images/icon_unchoose.png'}} " />
+                    <view style="display:flex;flex-direction:column">
+                      <block wx:for="{{item.package_medicines}}" wx:for-index="sider" wx:key='{{item.key}}'>
+                        <template is="medicinesInfo" data="{{item, isPackage : true}}" />
+                      </block>
+                    </view>
+                  </view>
+                </view>
+                <view slot="bottom">
+                  <template is="itemBottom" data="{{item, height:item.package_medicines.length * 167}}" />
+                </view>
+              </YFWSidebar>
+              <template is="packageItemPriceBar" data="{{item}}" />
+            </view>
+          </block>
+        </view>
+      </block>
+    </view>
+    
+    <!-- 空列表 -->
+    <view wx:if="{{firstRequestFlag && data.length == 0}}" class="shop-car-empty" >
+    <image class="image-no-message" src='https://c1.yaofangwang.net/common/images/miniapp/ic_no_shopcar.png'/>
+    <text class='view-no-message'>您的购物车是空的</text>
+    <view class='button' bindtap='emptyButtonClicked'>{{isLogin?'去首页看看':'去登录'}}</view>
+    </view>
+
+    <!-- 商品推荐列表 -->
+    <view class="recommend-list" wx:if="{{firstRequestFlag}}">
+      <view class='header_line'>
+        <titleView title='精选商品'/>
+      </view>
+      <view class="question-swiper-item">
+        <block wx:for="{{recommendData}}" wx:key="{{item.id}}" >
+          <view class='question-content-item'>
+            <collection_goods data='{{item}}' showcar='{{item.isShowCart}}'></collection_goods>
+          </view> 
+        </block>
+      </view>
+    </view>
+  </view>
+
+  <!-- 底部提交编辑条 -->
+  <view wx:if="{{data.length > 0}}" class='shop-car-bottom-bar' id="promitBottom" style="margin-bottom:{{tabbarHeight+safeAreaInsetBottom}}px">
+    <view class='select'>
+      <image class='icon-checkbox' bindtap='cilckAllItems' src="{{isAllSelected?'/images/icon_choose.png':'/images/icon_unchoose.png'}}" />全选
+    </view>
+    <view class='price-text'>
+      <text class='text'>合计：<text class='text-big'><text class='text-small'>¥</text>{{tools.sub(priceTotal)}}.</text>
+      <text class='text-small'>{{toAfter.subAfter(priceTotal)}}</text></text>
+      <view class='hint'>不含包装费邮费<text wx:if="{{discountTotal!=='0.00'}}" class="shop_bt_discount"> 促销：-¥{{discountTotal}}</text></view>
+    </view>
+    <view class='submit-button' bindtap='jumpToOrderSettlement'>结算({{itemSelectedSize}})</view>
+  </view>
+
+  <!-- loading图 -->
+  <image src='/images/loading_cycle.gif' wx:if="{{loading}}" class='shop-car-loading' />
+  <!-- 优惠券活动弹出层 -->
+  <YFWCouponModal id='couponModal' coupons="{{coupon_list}}" />
+</view>
+
+
+
+<!-- 药品信息模板 -->
+<template name="medicinesInfo">
+  <view class='medicines-info' style="{{isPackage?'width:624rpx':''}}">
+    <image wx:if="{{!isPackage}}" data-item='{{item}}' data-type='medicines' class='icon-checkbox' bindtap='cilckItems' src="{{item.checked?'/images/icon_choose.png':'/images/icon_unchoose.png'}} " />
+    <image class="image" bindtap='jumpToGoodsDetail' data-item='{{item}}' src="{{item.img_url}}"></image>
+    <view class="message" bindtap='jumpToGoodsDetail' data-item='{{item}}'>
+      <view class="title medicine_title" style="{{item.dict_store_medicine_status <= 0?'color:#999999':''}}">
+        <template is="medicineTypeIcon" data="{{item}}"/>
+        <image wx:if="{{item.activity_img_url.length>0}}" src="{{item.activity_img_url}}" class="medicines_ac_url" mode="widthFix"></image>
+        {{item.title}}
+      </view>
+      <view class="standard" style="{{item.dict_store_medicine_status <= 0?'color:#cccccc':''}}">{{item.standard}}</view>
+      <view wx:if='{{!isPackage && item.reserve_desc.length > 0 && item.dict_store_medicine_status > 0}}' class="standard" style="{{'color:#ff3300;padding-top: 0rpx;'}}">{{item.reserve_desc}}</view>
+    </view>
+    <view wx:if='{{item.dict_store_medicine_status > 0 || isPackage}}' class="price" style="{{isPackage?'color:#999999;font-weight: normal;':''}}">
+            <text><text style='font-size:25rpx'>¥</text>{{tools.sub(isPackage?item.price:item.price_old)}}</text>
+            <text style='font-size:25rpx'>.{{toAfter.subAfter(isPackage?item.price:item.price_old)}}</text>
+    </view>
+    <view wx:if="{{this.discount!=''}}" class='discount'>{{item.discount}}</view>
+    <view wx:if='{{isPackage}}' class="quantity-text">x{{item.quantity}}</view>
+    <template wx:if='{{item.dict_store_medicine_status > 0}}' is="quantityInput" data="{{item, quantity:item.quantity, isPackage: false}}" />
+    <view wx:if='{{item.dict_store_medicine_status <= 0}}' class="hint-overdue">失效</view>
+  </view>
+</template>
+
+<!-- 套餐或多件装item底部数量金额显示模板 -->
+<template name="packageItemPriceBar">
+  <view class='package-item-bottom-bar'>
+    <view class='quantity'>
+      <view class="{{item.type=='package'?'package':'treatment'}}">{{item.type=='package'?'套餐':'多件装'}}</view>
+      <view class="title">{{item.package_name}}</view>
+      <template is="quantityInput" data="{{item, quantity:item.count, isPackage: true}}" />
+    </view>
+    <view wx:if='{{ item.reserve_desc.length > 0}}' class="reserve" style="{{'color:#ff3300;padding-top: 0rpx;'}}">{{item.reserve_desc}}</view>
+    <text>合计: <text class='price-text'><text style='font-size:25rpx'>¥</text>{{tools.sub(item.price_old)}}<text style='font-size:25rpx'>.{{toAfter.subAfter(item.price_old)}}</text></text></text>
+  </view>
+</template>
+
+<!-- 输入框模板 -->
+<template name="quantityInput">
+  <view class='view-quantity' style="{{isPackage? 'bottom:;top:12rpx;':''}}">
+    <text class='text' bindtap='subFn' data-item='{{item}}'>-</text>
+    <input class="input" type="number" maxlength="10" bindfocus="onInputFocus" bindinput="bindQuantityInput" data-item='{{item}}' value='{{quantity}}' bindblur='inputConfirm'/>
+    <text class='text' bindtap='plusFn' data-item='{{item}}'>+</text>
+  </view>
+</template>
+
+<!-- 滑动item底部模板 -->
+<template name="itemBottom">
+  <view class='sidebar-bottom' style="height:{{height+'rpx'}}">
+    <view class='collect' data-item='{{item}}' bindtap='onMoveToConllect'/>
+    <view class='delete' data-item='{{item}}' bindtap='onDeleteitem'/>
+  </view>
+</template>
+
+<!-- 药品标题icon -->
+<template name="medicineTypeIcon">
+  <image wx:if="{{item.PrescriptionType == 1}}" src="{{item.dict_store_medicine_status <= 0?'/images/ic_drug_track_label_o.png':'/images/ic_drug_track_label.png' }}" class='medicine_type_icon'>
+  </image>
+  <image wx:if="{{item.PrescriptionType == 2}}" src="{{item.dict_store_medicine_status <= 0?'/images/ic_drug_track_label_o.png':'/images/ic_drug_track_label.png' }}" class='medicine_type_icon'>
+  </image>
+  <image wx:if="{{item.PrescriptionType == 0}}" src="{{item.dict_store_medicine_status <= 0?'/images/ic_OTC_o.png':'/images/ic_drug_OTC.png' }}"  src= class='medicine_type_icon'>
+  </image>
+</template>
+
+<view>
+	<authentication id='authentication' />
+</view>

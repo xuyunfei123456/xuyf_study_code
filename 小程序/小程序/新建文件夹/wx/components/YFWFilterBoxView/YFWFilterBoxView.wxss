@@ -1,0 +1,156 @@
+page {
+  position: relative;
+}
+
+.box-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  overflow: scroll;
+}
+
+.brands-title {
+  margin-top: 58rpx;
+  margin-left: 36rpx;
+  height: 40rpx;
+  font-size: 30rpx;
+  color: #333;
+}
+
+.brands-content {
+  margin-top: 34rpx;
+  /* margin-left: 26rpx;
+  margin-right: 6rpx; */
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.Manufacturers-title {
+  margin-top: 50rpx;
+  margin-left: 36rpx;
+  height: 40rpx;
+  font-size: 30rpx;
+  color: #333;
+  font-weight: bold;
+}
+
+.content {
+  height: 60rpx;
+  width: 28%;
+  background-color: #fafafa;
+  border-radius: 60rpx;
+  border: 1rpx solid #fafafa;
+  margin-left: 3%;
+  margin-top: 20rpx;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #333;
+  font-size: 26rpx;
+  display: flex;
+}
+
+.select {
+  color: #1fdb9b;
+  background-color: #e8fbf5;
+  border: 1rpx solid #1fdb9b;
+}
+
+.more {
+  color: #333;
+  background-color: white;
+  border: 1rpx solid #999;
+}
+
+.top_container {
+  height: 100rpx;
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 1rpx solid #eee;
+  position: fixed;
+  top: 0;
+  z-index: 99;
+  background-color: white;
+}
+
+.top_back {
+  width: 22rpx;
+  height: 40rpx;
+  margin-left: 40rpx;
+  padding: 10rpx 10rpx;
+}
+
+.top_title {
+  flex: 1;
+  text-align: center;
+  font-weight: bold;
+  font-size: 32rpx;
+}
+.center_content {
+  margin-top: 100rpx;
+}
+.cell {
+  height: 100rpx;
+  background-color: white;
+  display: flex;
+  align-items: center;
+}
+
+.cell_title {
+  margin-left: 20rpx;
+  flex: 1;
+  color: #333;
+  font-size: 28rpx;
+}
+
+.cell_title_select {
+  color: #1fdb9b;
+}
+
+.cell_line {
+  background-color: #eee;
+  height: 1px;
+  margin-left: 20rpx;
+  width: 90%;
+}
+
+.cell_select {
+  height: 40rpx;
+  width: 40rpx;
+  margin-right: 30rpx;
+}
+
+.bottom_container {
+  position: fixed;
+  width: 80%;
+  height: 120rpx;
+  display: flex;
+  bottom: 0;
+  flex-direction: row;
+}
+
+.bottom_content {
+  width: 50%;
+  height: 100%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.bottom_left {
+  background-color: white;
+  color: #333;
+  font-size: 34rpx;
+  border-top: 1rpx solid #ccc;
+}
+
+.bottom_right {
+  color: white;
+  font-size: 34rpx;
+  text-align: center;
+  background: linear-gradient(to right, #1fdb9b, #00c891);
+}

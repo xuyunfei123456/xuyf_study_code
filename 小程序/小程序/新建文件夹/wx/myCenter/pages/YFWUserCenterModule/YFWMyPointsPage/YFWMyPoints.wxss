@@ -1,0 +1,79 @@
+
+page{
+  width: 100%;
+  background-color: #fafafa;
+  position: relative;
+}
+.bgc{
+width: 100%;
+height: 200rpx;
+}
+.integral{
+  width: 92%;
+  background-color: #ffffff;
+  border-radius: 20rpx;
+  position: absolute;
+  top: 70rpx;
+  left: 50%;
+  margin-left: -46%;
+    box-shadow: 0rpx 0rpx 30rpx #ccc;
+}
+.integral_F{
+  margin: 76rpx auto;
+  font-size: 32rpx;
+	color:#666666;
+  text-align: center;
+  width: 100%;
+}
+.integral_S{
+  width: 100%;
+  position: relative;
+}
+.integral_S image{
+  display: block;
+  margin: 76rpx auto;
+  width: 40%;
+}
+.integral_Txt{
+  position: absolute;
+  width: 250rpx;
+  text-align: center;
+  top: 87rpx;
+  color: #fffefe;
+  font-size: 47rpx;
+  margin-left: -125rpx;
+  left: 50%;
+}
+.explain{
+  top: 700rpx;
+  padding: 40rpx 40rpx 70rpx 40rpx;
+  box-sizing: border-box;
+}
+.under {
+  width: 110%;
+  height: 16rpx;
+  margin-top: -9rpx;
+  background: linear-gradient(to right, #4bfdf2, #4bff8f);
+  margin-left: -5%;
+}
+.explain_txt{
+  width: auto;
+  color: "#333333";
+  font-size: 32rpx;
+  font-weight: 600;
+  display: inline-block;
+}
+.explain_Del{
+  color: #666666;
+  font-size: 26rpx;
+  line-height: 50rpx;
+  margin-top: 20rpx;
+}
+.rankDetail{
+  font-size: 26rpx;
+  color: #1fdb9b;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  top: 1060rpx;
+}

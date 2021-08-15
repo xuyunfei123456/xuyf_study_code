@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "more_view": "/components/YFWMoreView/YFWMoreView",
+    "HealthAskQuestionItemView": "/components/YFWHealthAskQuestionItemView/YFWHealthAskQuestionItemView",
+    "YFWTitleView": "/components/YFWTitleView/YFWTitleView"
+  },
+        "navigationBarTitleText": "我的问答",
+      "navigationBarBackgroundColor": "#49ddb8",
+      "navigationBarTextStyle": "white",
+        "onReachBottomDistance": 90
+}

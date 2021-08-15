@@ -1,0 +1,156 @@
+<view class='topLayout'></view>
+<scroll-view class="scroll" style="height:{{srcollHeight}}" catchtouchmove='myTouchMove'>
+  <view class="jytip" wx:if="{{jyflag}}">
+    <image class="tippic" src="/images/YFWGoodsDetailModule/goods_deail_notice.png"></image>
+    <view class="tiptext">温馨提示：投诉假药/劣药时，建议持有相关凭证，避免投诉无效，订单无法重复发起投诉。</view>
+  </view>
+  <view class="part {{id==7?'':'pd40'}}">
+    <view class='orderNumLayout' bindtap="showShadow">
+      <view class='type'>
+        <text class="need">*</text>
+        投诉类型
+      </view>
+      <view class='val'>
+        <text class="question">{{defaultname}}</text>
+        <image class="arrow top30" src="/images/uc_next.png"></image>
+      </view>
+    </view>
+    <view class="line {{id==7?'top40':''}}"></view>
+    <view class="orderShopLayout {{id==7?'hide':''}}" bindtap="showShadow2">
+      <view class='type'>
+        <text class="need">*</text>
+        投诉原因
+      </view>
+      <view class='val'>
+        <text class="reason {{defaultReason == '请选择投诉原因'?'':'otherreason'}}">{{defaultReason}}</text>
+        <image class="arrow top30" src="/images/uc_next.png"></image>
+      </view>
+    </view>
+    <view class="jyword" wx:if="{{jyflag}}">
+      <text class="wratext" bindtap="showExp">假药/劣药</text>
+      <image class="ask" src="/images/ask.png" bindtap="showExp"></image>
+    </view>
+  </view>
+  <view class='part mtop'>
+    <view class='orderNumLayout'>
+      <view class='type'>
+        <text class="need">*</text>
+        投诉说明
+      </view>
+    </view>
+    <textarea placeholder-class='tips' class='inputClass' maxlength="200" value="{{inputText}}" placeholder='请描述具体情况，有助于投诉快速处理' bindinput="onTextInput"></textarea>
+    <view class="count">{{len}}/200</view>
+  </view>
+  <view class="part mtop">
+    <view class='orderNumLayout'>
+      <view class='type'>
+        <text class="need" wx:if="{{uploadFlag}}">*</text>
+        上传凭证
+      </view>
+    </view>
+    <view class='postPic'>
+      <block wx:for="{{postPicArray}}" wx:for-index="idx">
+        <view class='postPicLayout'>
+          <image class='addPicIcon' src='{{item}}' bindtap='showBigPic' data-item='{{item}}'></image>
+          <image class='deletPic' src='/images/ic_pic_del.png' bindtap='deletePic' data-index='{{idx}}'></image>
+        </view>
+      </block>
+      <image class='addPicIcon' src='/images/upload.png' bindtap='choosePic' wx:if="{{postPicArray.length<3}}"> </image>
+      <view class="picDescribe" bindtap='choosePic'> 
+          <view class="describtion">上传凭证</view>
+          <view class="describtion pd10">(最多3张)</view>
+      </view>
+    </view>
+    <view class="help">请上传相关凭证，有助于投诉快速处理</view>
+  </view>
+  <view class="part mtop">
+    <view class='mobile'>
+      <view class='type'>
+        <text class="need">*</text>
+        联系电话
+      </view>
+      <input type="text" value='{{mobile}}' bindinput="bindChange_mobile" placeholder="请输入正确的联系电话" placeholder-class='mobile_holder' class="mobilecla" maxlength='11' />
+    </view>
+  </view>
+  <view class='postButton' bindtap='postComplaint'>
+    <view class='text'>提交申请</view>
+  </view>
+  <view class='fillBottom'></view>
+</scroll-view>
+<!-- 投诉类型 -->
+<view hidden='{{shadowFlag}}' class='modal' catchtouchmove='myTouchMove' bindtap='hideAddFlag'></view>
+<view class="contentview {{shadowFlag ? '':'contentshow'}}" catchtouchmove='myTouchMove'>
+  <view class="nameAndclose">
+    <view class="name">投诉类型</view>
+    <view class="close" bindtap='hideAddFlag' data-type='2'>ⅹ</view>
+  </view>
+  <scroll-view scroll-y class='scrollView2'>
+    <view style="display:flex;flex-direction:column;margin-left:33px;margin-right:23px">
+      <block wx:for="{{typeinfo}}">
+        <view class="row" bindtap="gettstype" data-id="{{item.dict_complaints_type}}">
+          <view class="searchResult {{item.choosed ? 'black':''}}">{{item.complaints_name}}</view>
+          <view class="pic" wx:if="{{item.choosed}}">
+            <image class="choosed" src="/images/icon_choose.png"></image>
+          </view>
+        </view>
+      </block>
+    </view>
+  </scroll-view>
+  <view class="operation">
+    <view class="add" bindtap="choosedReason">确定</view>
+  </view>
+</view>
+<!-- 投诉原因 -->
+<view hidden='{{shadowFlag2}}' class='modal' catchtouchmove='myTouchMove' bindtap='hideAddFlag2'></view>
+<view class="contentview {{shadowFlag2 ? '':'contentshow'}}" catchtouchmove='myTouchMove'>
+  <view class="nameAndclose">
+    <view class="name">投诉原因</view>
+    <view class="close" bindtap='hideAddFlag2' data-type='2'>ⅹ</view>
+  </view>
+  <scroll-view scroll-y class='scrollView2'>
+    <view style="display:flex;flex-direction:column;margin-left:33px;margin-right:23px">
+      <block wx:for="{{complainData[id]}}">
+        <view class="row" bindtap="setReason" data-id="{{item.id}}">
+          <view class="searchResult {{item.choosed ? 'black':''}}">{{item.complaints_reason}}</view>
+          <view class="pic" wx:if="{{item.choosed}}">
+            <image class="choosed" src="/images/icon_choose.png"></image>
+          </view>
+        </view>
+      </block>
+    </view>
+  </scroll-view>
+  <view class="operation">
+    <view class="add" bindtap="choosedReason2">确定</view>
+  </view>
+</view>
+<!-- 假药解释 -->
+<view hidden='{{expFlag}}' class='modal' catchtouchmove='myTouchMove' bindtap='hideexp' catchtouchmove='myTouchMove'></view>
+<view class="expcontain {{expFlag ? '':'contentshow'}}">
+  <view class="nameAndclose">
+    <view class="name">假药/劣药说明</view>
+    <view class="close" bindtap='hideexp'>ⅹ</view>
+  </view>
+  <view class="explist">
+    <view class="exptitle">根据《中华人民共和国药品管理法》规定</view>
+    <view class="expsubtitle">有下列情形之一的，为假药：</view>
+    <view class="expcon">
+      <text class="listitem">1. 药品所含成份与国家药品标准规定的成份不符；</text>
+      <text class="listitem"> 2. 以非药品冒充药品或者以他种药品冒充此种药品；</text>
+      <text class="listitem">3. 变质的药品；</text>
+      <text class="listitem"> 4. 药品所标明的适应症或者功能主治超出规定范围。</text>
+    </view>
+    <view class="expsubtitle">有下列情形之一的，为劣药：</view>
+    <view class="expcon">
+      <text class="listitem">1. 药品成份的含量不符合国家药品标准；</text>
+      <text class="listitem">2. 被污染的药品；</text>
+      <text class="listitem">3. 未标明或者更改有效期的药品；</text>
+      <text class="listitem">4. 未注明或者更改产品批号的药品；</text>
+      <text class="listitem">5. 超过有效期的药品；</text>
+      <text class="listitem">6. 擅自添加防腐剂、辅料的药品；</text>
+      <text class="listitem">7. 其他不符合药品标准的药品。</text>
+    </view>
+  </view>
+  <view class="iknow">
+    <view class="add" bindtap="hideexp">我知道了</view>
+  </view>
+</view>

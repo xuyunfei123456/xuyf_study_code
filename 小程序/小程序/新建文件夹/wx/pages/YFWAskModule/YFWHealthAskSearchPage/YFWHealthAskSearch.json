@@ -1,0 +1,7 @@
+{
+  "usingComponents": {},
+  "navigationBarTitleText": "热搜",
+  "navigationBarBackgroundColor": "#49ddb8",
+  "navigationBarTextStyle": "white",
+  "onReachBottomDistance": 90
+}

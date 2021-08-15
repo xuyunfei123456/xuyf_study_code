@@ -1,0 +1,171 @@
+<!-- 顶部输入栏 -->
+<view class="topSearchWrapper">
+  <view class="topSearch" bindtap="searchAction">
+    <image class="top_search_left_icon" src="/images/top_bar_search.png"></image>
+    <text class='top_search_title'>搜索疾病/科普等内容</text>
+  </view>
+  <!-- <image class="top_search_user_photo"
+    src="{{_account_img_url.length>5 ? _account_img_url : '/images/user_icon_default.png'}}"></image> -->
+</view>
+<!-- 轮播图 -->
+<view class="bannerContainer">
+  <swiper class='banner_container' bindchange='bannerChangeAction' circular='true' indicator-dots='{{false}}'
+    autoplay='{{false}}' interval='{{2000}}' duration='{{100}}'>
+    <block wx:for="{{banners}}" wx:key="">
+      <swiper-item>
+        <image src="{{item.img_url}}" class='banner_content' bindtap="bannerClickAction" mdoe="widthFix"
+          data-info="{{item}}"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="banner_dots_container">
+    <block wx:for="{{banners}}" wx:key="">
+      <view wx:if="{{bannerSelectName == item.img_url}}" class="banner_dots_select"></view>
+      <view wx:else class='banner_dots'></view>
+    </block>
+  </view>
+</view>
+<!-- 1拖2 -->
+<view class="oneWithTwo" wx:if="{{oneWithTwoData.data&&oneWithTwoData.data[0]&&oneWithTwoData.data[0].img_url}}">
+  <view class="oneWithTwo_content">
+    <view class="oneWithTwo_content_left" data-info="{{oneWithTwoData.data[0]}}" bindtap="oneWithTwoClick">
+      <image class="oneWithTwo_content_left_img"
+        src="{{oneWithTwoData.data&&oneWithTwoData.data[0]&&oneWithTwoData.data[0].img_url}}"></image>
+    </view>
+    <view class="oneWithTwo_content_right">
+      <view class="oneWithTwo_content_right_top" data-info="{{oneWithTwoData.data[1]}}" bindtap="oneWithTwoClick">
+        <image class="oneWithTwo_content_right_img"
+          src="{{oneWithTwoData.data&&oneWithTwoData.data[1]&&oneWithTwoData.data[1].img_url}}"></image>
+      </view>
+      <view class="oneWithTwo_content_right_bottm" data-info="{{oneWithTwoData.data[2]}}" bindtap="oneWithTwoClick">
+        <image class="oneWithTwo_content_right_img"
+          src="{{oneWithTwoData.data&&oneWithTwoData.data[2]&&oneWithTwoData.data[2].img_url}}"></image>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 热门话题 -->
+<view class="hotTopicWrapper">
+  <view class="hotTopic">
+    <view class="hotTopicTitle">{{hotTopicTitle}}</view>
+    <view class="hotTopicContent">
+      <block wx:for="{{hotTopicContent}}" wx:key="">
+        <view class="hotTopicItem" bindtap="goHotTopicClick" data-info="{{item}}">
+          <text class="hotTopicJing">#</text><text>{{item.name}}</text><text class="hotTopicJing">#</text>
+          <image src="{{item.img_url}}" class="hotTopicPic" wx:if="{{item.img_url.length>0}}"></image>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>
+<view>
+  <!-- 瀑布流 -->
+  <view class="waterFallWrapper">
+    <view class="waterfall_list_left">
+      <block wx:for="{{waterfall_leftData}}" wx:key="">
+        <view wx:if="{{item.widgettype==23}}" class="leftlist noPadding" data-info="{{item}}" bindtap="waterfallClick">
+          <image src="{{item.img_url}}" style="height:{{item.height}}rpx;width:100%;border-radius:14rpx"></image>
+        </view>
+        <view wx:elif="{{item.widgettype==24}}" class="leftlist noPadding" data-info="{{item}}"
+          bindtap="waterfallClick">
+          <view class="videoWrapper" style="height:{{item.height}}rpx;width:340rpx">
+            <image src="{{item.img_url}}" class="videoMaster"></image>
+            <image class="playvideo" src="/images/playvedio.png" data-info="{{item}}" bindtap="playvideo">
+            </image>
+          </view>
+        </view>
+        <view wx:elif="{{item.widgettype==27}}" class="leftlist arPadding" data-info="{{item}}"
+          bindtap="waterfallClick">
+          <view style="height:{{item.height}}rpx;">
+            <image src="{{item.data.upload_img}}" class="articlePic"></image>
+            <view class="articleTitle">{{item.data.title}}</view>
+            <view class="articleSummary">{{item.data.summary}}</view>
+            <view class="articleComment">
+              <view class="commentLeft">
+
+                <view class="commentDel">
+                  <image src="/images/articlehits.png" class="commentIcon"></image>
+                  <text class="commentNum">{{item.data.hits}}</text>
+                </view>
+                <view class="commentCircle"></view>
+                <view class="commentDel commentLike">
+                  <image src="/images/articledianzan.png" class="commentIcon"></image>
+                  <text class="commentNum">{{item.data.likes}}</text>
+                </view>
+
+              </view>
+              <view class="commentTime">{{item.data.update_time}}</view>
+            </view>
+            <scroll-view class="articTop" scroll-x enable-flex="{{true}}" scroll-left="500">
+              <block wx:for="{{item.data.topic_name}}" wx:key="">
+                <view class="articleLabelItem" bindtap="goHotTopicClick" data-info="{{item}}">#{{item}}#</view>
+              </block>
+            </scroll-view>
+          </view>
+        </view>
+        <view wx:else class="noraml_goods leftlist" data-info="{{item}}" bindtap="waterfallClick">
+          <YfwWaterfallGoods imgWrapperHeight="281.334" hasActivity="item.widgettype == 25 ? true:false"
+            postdata="{{item}}" />
+        </view>
+      </block>
+    </view>
+    <view class="waterfall_list_right">
+      <block wx:for="{{waterfall_rightData}}" wx:key="">
+        <view wx:if="{{item.widgettype == 23}}" class="rightlist noPadding" data-info="{{item}}"
+          bindtap="waterfallClick">
+          <image src="{{item.img_url}}" style="height:{{item.height}}rpx;width:100%;border-radius:14rpx">
+          </image>
+        </view>
+        <view wx:elif="{{item.widgettype == 24}}" class="rightlist noPadding" data-info="{{item}}"
+          bindtap="waterfallVideoClick" style="height:{{item.height}}rpx;width:340rpx" id="{{'avideo'+index}}">
+          <view class="videoWrapper" style="height:{{item.height}}rpx;width:340rpx">
+            <image src="{{item.img_url}}" class="videoMaster"></image>
+            <image class="playvideo" src="/images/playvedio.png" data-info="{{item}}" bindtap="playvideo">
+            </image>
+          </view>
+        </view>
+        <view wx:elif="{{item.widgettype==27}}" class="rightlist arPadding" data-info="{{item}}"
+          bindtap="waterfallClick">
+          <view style="height:{{item.height}}rpx;">
+            <image src="{{item.data.upload_img}}" class="articlePic"></image>
+            <view class="articleTitle">{{item.data.title}}</view>
+            <view class="articleSummary">{{item.data.summary}}</view>
+            <view class="articleComment">
+              <view class="commentRight">
+
+                <view class="commentDel">
+                  <image src="/images/articlehits.png" class="commentIcon"></image>
+                  <text class="commentNum">{{item.data.hits}}</text>
+                </view>
+                <view class="commentCircle"></view>
+                <view class="commentDel commentLike">
+                  <image src="/images/articledianzan.png" class="commentIcon"></image>
+                  <text class="commentNum">{{item.data.likes}}</text>
+                </view>
+
+              </view>
+              <view class="commentTime">{{item.data.update_time}}</view>
+            </view>
+            <scroll-view class="articTop" scroll-x enable-flex="{{true}}" scroll-left="500">
+              <view style="display:flex">
+                <block wx:for="{{item.data.topic_name}}" wx:key="">
+                <view class="articleLabelItem" bindtap="goHotTopicClick" data-info="{{item}}">#{{item}}#</view>
+              </block>
+              </view>
+
+            </scroll-view>
+          </view>
+        </view>
+        <view wx:else class="rightlist noraml_goods" data-info="{{item}}" bindtap="waterfallClick">
+          <YfwWaterfallGoods imgWrapperHeight="281.334" hasActivity="item.widgettype == 25 ? true:false"
+            postdata="{{item}}" />
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class="line_sand" wx:if="{{firstRequestOver}}">
+    <view class="line_left"></view>
+    <view class="line_dels">{{hasData ? '正在加载...':'已到底'}}</view>
+    <view class="line_right"></view>
+  </view>
+</view>

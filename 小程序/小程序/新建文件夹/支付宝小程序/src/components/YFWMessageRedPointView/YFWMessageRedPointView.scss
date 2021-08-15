@@ -1,0 +1,28 @@
+.top_content_right {
+    height: 44px;
+    width: 44px;
+    /* margin-right: 26rpx; */
+    position: relative;
+  }
+   .redPoint_view {
+    position: absolute;
+    top: -10px;
+    right: -12px;
+    min-width: 26px;
+    height: 26px;
+    /* padding: 2rpx; */
+    background-color: red;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+  }
+  .messageCount {
+    color: white;
+    display: flex;
+    font-size: 20px;
+  }

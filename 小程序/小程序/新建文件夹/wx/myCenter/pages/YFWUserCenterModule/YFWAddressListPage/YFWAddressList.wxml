@@ -1,0 +1,30 @@
+<image class='top_bg' src='https://c1.yaofangwang.net/common/images/miniapp/dingdan_bj.png'></image>
+<scroll-view class="scroll" scroll-y="true">
+  <view wx:for="{{addressList}}" wx:key="{{item.id}} ">
+
+    <view bindtap='clickItemAction' data-info='{{item}}' style='{{index==0?"margin-top:100rpx;":""}}' class='container'>
+
+      <view class='container-top'>
+        <view class='container-name'>{{item.name}}</view>
+        <view class='container-phone'>{{item.mobile}}</view>
+      </view>
+      <view class='container-detail'>
+        <view wx:if='{{item.dict_bool_default==1}}' class='container-default'>默认</view>
+        <view class='container-address'>{{(item.dict_bool_default==1?' ':'')+item.address_name}}</view>
+      </view>
+
+      <view class="button_parent">
+        <text class="action edite" catchtap='click' data-address_id="{{item.id}}">编辑</text>
+        <text class="action delete" catchtap='delete' data-address_id="{{item.id}}">删除</text>
+      </view>
+
+    </view>
+  </view>
+</scroll-view>
+
+<view class='bottom_container'>
+  <view bindtap="add" class='btnBtom'>
+    <view class="address-add">+新建地址</view>
+  </view>
+  <view class='bottom_empty'></view>
+</view>

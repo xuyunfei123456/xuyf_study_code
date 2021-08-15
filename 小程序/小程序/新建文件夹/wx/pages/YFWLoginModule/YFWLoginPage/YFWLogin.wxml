@@ -1,0 +1,14 @@
+<!--pages/YFWLoginModule/YFWLoginPage/YFWLogin.wxml-->
+
+<view class='container'>
+  <view class='top_view_img'>
+    <image class='top_img' src="https://c1.yaofangwang.net/common/images/miniapp/logo_icon.jpg" mode='aspectFit' />
+  </view>
+  <view class='bottom_view'>
+    <text class="text-login">{{dataText}}</text>
+    <button  class="btn-login" wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 授权登录 </button>
+      <button  class="btn-login" wx:else open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo"> 授权登录 </button>
+  </view>
+    <!-- loading图 -->
+    <image src='/images/loading_cycle.gif' wx:if="{{loading}}" class='shop-car-loading' />
+</view>

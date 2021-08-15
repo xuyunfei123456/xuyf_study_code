@@ -1,0 +1,13 @@
+{
+  "usingComponents": {
+    "collection_goods": "/components/GoodsItemView/CollectionGoodsItem",
+    "more_view": "/components/YFWMoreView/YFWMoreView",
+    "HealthAskQuestionItemView": "/components/YFWHealthAskQuestionItemView/YFWHealthAskQuestionItemView",
+    "HealthAskAssociationItemView": "/components/YFWHealthAskAssociationItemView/YFWHealthAskAssociationItemView"
+    
+  },
+      "navigationBarTitleText": "问题详情",
+      "navigationBarBackgroundColor": "#49ddb8",
+      "navigationBarTextStyle": "white",
+      "onReachBottomDistance": 90
+}

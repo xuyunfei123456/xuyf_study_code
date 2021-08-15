@@ -1,0 +1,39 @@
+<view class='topLayout'>
+  <view class='topReturnTypeLayout'>
+    <text class='tips'>退货类型：<text class='typeValue'>未收到货</text></text>
+  </view>
+</view>
+
+<view class='returnReasonLayout'>
+  <view class='title'>
+    <view class='text'>申请退款原因</view>
+    <view class='bottom'></view>
+  </view>
+  <view class='reasonList'>
+    <block wx:for="{{reasonList}}" wx:for-index="idx" wx:key="{{idx}}">
+      <view class='reasonItem' bindtap='chooseReason' data-index='{{idx}}'>
+        <view class="{{checkedIndex == idx? 'checkedReasonText':'reasonText'}}">{{item.reason}}</view>
+        <image wx:if="{{checkedIndex == idx}}" src='/images/check_checked.png' class='checkedIcon'></image>
+      </view>
+      <view class='splite' wx:if="{{idx!=reasonListLength-1}}"></view>
+    </block>
+    <view class='promptinfo' wx:if="{{havePromptinfo == 'yes'}}">
+      <view class='splite'></view>
+      <view class='promptinfoValue'>
+        <image src='/images/icon_warning.png' class='warning_icon'></image>
+        <view class='tips'>{{reasonList[checkedIndex].promptinfo}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class='returnMoneyLayout'>
+  <text class='tips'>退款金额:<text class='money'>￥{{order_total}}</text></text>
+</view>
+
+
+<view class='postButton' bindtap='postReturnApplay'>
+  <view class='text'>提交</view>
+</view>
+
+<view class='fillBottom'></view>

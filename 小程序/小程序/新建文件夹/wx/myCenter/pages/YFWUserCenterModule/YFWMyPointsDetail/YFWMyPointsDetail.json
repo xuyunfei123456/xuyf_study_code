@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    "titleView": "../../../../components/YFWTitleView/YFWTitleView"
+  },
+
+  "navigationBarBackgroundColor": "#23D397",
+
+
+  "navigationBarTitleText": "积分明细",
+
+  "navigationBarTextStyle": "white"
+}

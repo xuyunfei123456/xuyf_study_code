@@ -1,0 +1,93 @@
+/* pages/YFWMessageModule/YFWMessageHomePage/YFWMessageHome.wxss */
+
+.page-list {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fafafa;
+}
+
+.page-list-item {
+  width: 700px;
+  height: 178px;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 27px;
+  background-color: #fff;
+  box-shadow: 0px 7px 15px 0px rgba(204, 204, 204, 0.1);
+  border-radius: 7px;
+}
+
+.image {
+  width: 85px;
+  height: 86px;
+  margin-left: 29px;
+  border: solid 0px #ccc;
+}
+
+.image-go {
+  display: flex;
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  align-items: center;
+  border: solid 0px #ccc;
+}
+
+.text-view {
+  width: 415px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 32px;
+  margin-right: 32px;
+}
+
+.text {
+  height: 40px;
+  font-weight: bolder;
+  line-height: 29px;
+  font-size: 29px;
+  font-stretch: normal;
+  letter-spacing: 0px;
+  color: #333;
+}
+
+.msg-text {
+  height: 35px;
+  margin-top: 13px;
+  font-size: 25px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  letter-spacing: 0px;
+  color: #999;
+}
+
+.red-point {
+  width: 15px;
+  height: 15px;
+  min-width: 15px;
+  margin-top: 17px;
+  margin-right: 9px;
+  border-radius: 15px;
+  background-image: linear-gradient(-45deg, #fcac64 0%, #fe7737 100%), linear-gradient(#ffffff, #ffffff);
+  background-blend-mode: normal, normal;
+}
+
+.button {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  background: transparent;
+  color: transparent;
+}
+.imgr {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 5px;
+}

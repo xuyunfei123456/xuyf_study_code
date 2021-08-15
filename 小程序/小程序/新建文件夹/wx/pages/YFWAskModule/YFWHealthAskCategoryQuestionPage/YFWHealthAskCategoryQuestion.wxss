@@ -1,0 +1,126 @@
+/* pages/YFWAskModule/allHotQ/allHotQ.wxss */
+
+page {
+  background-color: #f8f8f8;
+}
+.top-view {
+  display: flex;
+  width: 100vw;
+  height: 100rpx;
+  position: fixed;
+  z-index: 99;
+  top: 0rpx;
+  background-color: #49ddb8;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+}
+.kind{
+  flex: 1;
+}
+.officeTop {
+  flex-direction: row;
+  align-items: center;
+  display: flex;
+}
+.right-ask {
+  position: absolute;
+  right: 34rpx;
+  top: 36rpx;
+  font-size: 28rpx;
+  color: white;
+  font-weight: 600
+}
+.mrOn {
+  width: 20rpx;
+  margin-left: 10rpx;
+}
+
+.Qhead {
+  background-color: #fff;
+  /* min-height: 200rpx; */
+  padding-bottom: 20rpx;
+  margin-top: 100rpx;
+}
+
+.hotWth {
+  width: 95%;
+  margin: 22rpx auto;
+}
+
+.QheadSon {
+  margin-left: 24rpx;
+  width: 130rpx;
+  height: 57rpx;
+  margin-right: 0rpx;
+  font-size: 26rpx;
+  line-height: 53rpx;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 0rpx 8rpx;
+  border-radius: 0rpx;
+}
+
+.hide {
+  display: none;
+  
+}
+
+.show {
+  display: block;
+}
+
+.btnCol {
+  color: white;
+  font-size: 34rpx;
+}
+
+.newMargin {
+  margin-top: 15rpx;
+}
+.bottom-button {
+  position: fixed;
+  background-color: #ffffff;
+  width: 100%;
+  height: 116rpx;
+  flex-direction: column;
+  bottom: 0rpx;
+}
+.bottom-button-line {
+  width: 100%;
+  height: 2rpx;
+  background-color: #f8f8f9
+}
+.bottom-button-context {
+  flex-direction: row;
+  align-items: center;
+  height: 114rpx;
+  width: 100%;
+  display: flex;
+}
+.bottom-button-view {
+  align-items: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column
+}
+.bottom-button-view image{
+  width: 44rpx;
+  height: 44rpx;
+}
+.bottom-button-view text {
+  font-size: 24rpx;
+  color: #333333;
+  margin-top: 6rpx;
+}
+.no-more{
+  text-align: center;
+  width: 100%;
+  font-size: 30rpx;
+  color: #999;
+  margin-top: 25rpx;
+  margin-bottom: 141rpx;
+}

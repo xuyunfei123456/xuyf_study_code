@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "goods_view": "/components/GoodsItemView/YFWGoodsListView"
+  },
+  "navigationBarBackgroundColor": "#49ddb8",
+  "navigationBarTitleText": "全部商品",
+  "navigationBarTextStyle": "white",
+  "disableScroll":true  
+}

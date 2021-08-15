@@ -1,0 +1,18 @@
+<!--myCenter/pages/YFWUserCenterModule/YFWInvitationPage/YFWInvitationNewUser.wxml-->
+
+<view style="overflow:hidden">
+  <view class="invitation_page1_top">
+    <image src="https://c1.yaofangwang.net/common/images/invitation/invitation_page1_top.jpg"></image>
+  </view>
+  <view class="invitation_page1_middle">
+    <image src="https://c1.yaofangwang.net/common/images/invitation/invitation_page3_middle.jpg"></image>
+    <button class="invitation_button" bindtap="goHome" >
+      <image src="https://c1.yaofangwang.net/common/images/invitation/invitation_button.png"></image>
+      <text class="invitation_text">立即使用</text>
+    </button>
+    <view class="invitefriend">邀好友赚10000+现金</view>
+  </view>
+  <view class="invitation_page1_bottom">
+    <image src="https://c1.yaofangwang.net/common/images/invitation/invitation_page1_bottom.jpg"></image>
+  </view>
+</view>

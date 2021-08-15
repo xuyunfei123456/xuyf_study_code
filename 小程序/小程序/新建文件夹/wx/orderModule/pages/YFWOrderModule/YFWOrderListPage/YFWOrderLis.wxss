@@ -1,0 +1,513 @@
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.serchLayout {
+  width: 100%;
+  height: 150rpx;
+  background-color: #49ddb8;
+  display: flex;
+}
+
+.serchParent {
+  margin-top: 50rpx;
+  width: 685rpx;
+  height: 70rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 25rpx;
+}
+
+
+.serchParent .serchView {
+  width: 600rpx;
+  height: 70rpx;
+  border-radius: 35rpx;
+  background: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.serchParent .serchView .icon {
+  width: 28rpx;
+  height: 30rpx;
+  margin-left: 18rpx;
+}
+
+
+.serchParent .serchView .tips {
+  font-family: SourceHanSansCN-Normal;
+  font-size: 28rpx;
+  font-weight: normal;
+  font-stretch: normal;
+  letter-spacing: 0rpx;
+  color: #ccc;
+  margin-left: 11rpx;
+}
+
+.serchParent .tips {
+  font-family: SourceHanSansCN-Normal;
+  font-size: 34rpx;
+  font-weight: normal;
+  font-stretch: normal;
+  letter-spacing: 0rpx;
+  color: #fff;
+}
+
+.scroll_tabel {
+  width: 100vw;
+  height: 90rpx;
+  box-sizing: border-box;
+  white-space: nowrap;
+  line-height: 90rpx;
+  font-size: 28rpx;
+  color: #666;
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+  -webkit-overflow-scrolling: touch;
+}
+
+.scroll_tabel .default-item {
+  display: inline-block;
+  text-align: center;
+  font-size: 28rpx;
+  box-sizing: border-box;
+  line-height: 100rpx;
+  width: 150rpx;
+  color: #333;
+  font-weight: bold;
+  z-index: 99
+}
+
+
+.scroll_tabel .tabel_checked .bottom {
+  width: 100rpx;
+  background-image: linear-gradient(270deg, #4bfdf2 0%, #4bff8f 100%), linear-gradient(#fff, #fff);
+  background-blend-mode: normal, normal;
+  height: 12rpx;
+  margin-top: -42rpx;
+  box-shadow: 0rpx 7rpx 15rpx 0rpx rgba(131, 241, 219, 0.59);
+  margin-left: 20rpx
+}
+
+.place-hold {
+  height: 100rpx;
+  width: 100%;
+  background-color: #fff;
+}
+
+.order_list {
+  background-color: #f5f5f5;
+  -webkit-overflow-scrolling: touch;
+}
+
+.order_list .item {
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: top;
+  width: 704rpx;
+  padding: 24rpx;
+  height: auto;
+  margin-top: 20rpx;
+  background-color: #fff;
+}
+
+.order_list .itemWithoutMargintop {
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: top;
+  width: 704rpx;
+  padding: 24rpx;
+  height: auto;
+  background-color: #fff;
+}
+
+
+.order_list .item .shop_title_info {
+  font-size: 28rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.order_list .item .shop_title_info .shop_icon {
+  width: 26rpx;
+  height: 26rpx;
+}
+
+.order_list .item .shop_title_info .shop_title {
+  margin-left: 12rpx;
+  font-weight: bold;
+  display: block;
+  line-height: 40rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 400rpx;
+}
+
+.order_list .item .shop_title_info .order_status_dark {
+  color: #999;
+}
+
+.order_list .item .shop_title_info .order_status_green {
+  color: #1fdb9b;
+}
+
+.order_list .item .medicine_list {
+  display: flex;
+  flex-direction: row;
+}
+
+.order_list .item .medicine_list .medicine_image {
+  width: 134rpx;
+  height: 134rpx;
+  margin-left: 12rpx;
+  margin-top: 20rpx;
+  min-width: 134rpx;
+  min-height: 134rpx;
+}
+
+.order_list .item .medicine_list .medicine_info_top {
+  margin-left: 20rpx;
+  margin-top: 34rpx;
+  display: flex;
+  flex-direction: row;
+  font-size: 26rpx;
+  width: 538rpx;
+}
+
+.medicine_type_icon {
+  width: 52rpx;
+  height: 22rpx;
+  margin-right: 10rpx;
+}
+
+.order_list .item .medicine_list .medicine_info_top .medicien_name {
+  font-weight: bold;
+  color: #333;
+  margin-left: 8rpx;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  max-width: 354rpx;
+}
+
+.order_list .item .medicine_list .medicine_info_bottom .medicine_standard {
+  color: #999;
+}
+
+.order_list .item .medicine_list .medicine_info_right {
+  margin-top: 34rpx;
+  display: flex;
+  flex-direction: column;
+  font-size: 26rpx;
+}
+
+.order_list .item .medicine_list .medicine_info_top .price {
+  font-size: 28rpx;
+  color: #333;
+  font-weight: bold;
+}
+
+.order_list .item .medicine_list .medicine_info_bottom {
+  margin-left: 20rpx;
+  margin-top: 18rpx;
+  display: flex;
+  flex-direction: row;
+  font-size: 26rpx;
+  width: 538rpx;
+  align-items: center;
+}
+
+.order_list .item .medicine_list .medicine_info_bottom .qty {
+  font-size: 26rpx;
+  color: #999;
+}
+
+.loading_text {
+  text-align: center;
+  font-size: 26rpx;
+  color: #999;
+}
+
+.loading {
+  width: 100%;
+  height: 80rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading_image {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.order_list .item .medicine_total {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  margin-top: 40rpx;
+}
+
+.order_list .item .medicine_total .left_text {
+  font-size: 28rpx;
+  color: #333;
+}
+
+.order_list .item .medicine_total .right_text {
+  font-size: 34rpx;
+  color: #f30;
+}
+
+.smallPrice{
+  font-size: 28rpx;
+  color: #f30;
+}
+
+.package_name {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 25rpx;
+  margin-bottom: 15rpx;
+  font-size: 22rpx;
+  margin-left: 40rpx;
+}
+
+.package_name .packge_type_tips {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 84rpx;
+  height: 29rpx;
+  background-image: linear-gradient(-90deg, #ff8881 0%, #ea5065 100%),
+                      linear-gradient(#e5e5e5, #e5e5e5);
+  background-blend-mode: normal, normal;
+  box-shadow: 0rpx 1rpx 3rpx 0rpx rgba(226, 108, 108, 0.3);
+  border-radius: 14rpx;
+  font-size: 21rpx;
+  font-weight: normal;
+  letter-spacing: 0rpx;
+  color: #fff;
+}
+
+.course_costume{
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 84rpx;
+  height: 29rpx;
+  background-image: linear-gradient(-90deg, rgba(72,139,255,1),rgba(122,219,255,1) ),
+                      linear-gradient(#e5e5e5, #e5e5e5);
+  background-blend-mode: normal, normal;
+  box-shadow: 0rpx 1rpx 3rpx 0rpx rgba(226, 108, 108, 0.3);
+  border-radius: 14rpx;
+  font-size: 21rpx;
+  font-weight: normal;
+  letter-spacing: 0rpx;
+  color: #fff;
+}
+
+.package_name .packge_name {
+  color: #666;
+  margin-left: 20rpx;
+}
+
+.listParent {
+  width: auto;
+  height: auto;
+}
+
+.fillView {
+  width: 100%;
+  height: 40rpx;
+}
+
+.payTipsLayout{
+  width: 670rpx;
+  padding-left: 40rpx;
+  padding-right: 40rpx;
+  padding-top: 16rpx;
+  padding-bottom: 16rpx;
+  background-color: #faf8dc;
+  font-size: 26rpx;
+  color: rgb(254,172,76)
+}
+
+.onloading {
+  background-color: #f5f5f5;
+  width: 100%;
+  height: auto;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  font-size: 26rpx;
+  color: #999;
+}
+
+.onloading .load-wrap .loading-icon {
+  animation: onloading-view linear 1.6s 0s infinite;
+  -webkit-animation: onloading-view linear 1.6s 0s infinite;
+  display: inline-block;
+  height: 30rpx;
+  width: 30rpx;
+  position: relative;
+  border-radius: 50%;
+  border: 5rpx solid #0ba756;
+}
+
+.onloading .load-wrap .loading-icon .hide-block {
+  display: inline-block;
+  position: absolute;
+  width: 30rpx;
+  height: 30rpx;
+  top: 0;
+  left: 40%;
+  background-color: #f5f5f5;
+}
+
+.end {
+  background-color: #f5f5f5;
+  width: 750rpx;
+  height: auto;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  font-size: 26rpx;
+  color: #999;
+}
+
+.scheduled_days_itemLayout{
+  width: 700rpx;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  margin-top: 30rpx;
+}
+
+.scheduled_days_itemLayout .tips{
+  font-size: 26rpx;
+  color:#999;
+  margin-left: 20rpx;
+}
+
+.scheduled_days_itemLayout .scheduledButtonLayout{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.scheduled_days_itemLayout .scheduledButtonLayout .buttons{
+  height: 40rpx;
+  border-radius: 20rpx;
+  width: 100rpx;
+  font-size: 24rpx;
+  color:#ccc;
+  border: 2rpx solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 30rpx;
+}
+
+
+.order-list-loading{
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  bottom: calc(50vh - 35rpx);
+  left: calc(50vw - 35rpx);
+  width: 70rpx; 
+	height: 70rpx;
+  z-index: 999;
+	background-color: transparent;
+}
+.sele {
+  display: inline-flex;
+  margin-left: 13rpx;
+  margin-right: 13rpx;
+}
+.confirmReceive{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,.5);
+  top: 0px;
+  z-index: 99999999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.iknow{
+  width: 279px;
+  height: 342px;
+  position: relative;
+}
+.confirmBtn{
+  position: absolute;
+  width: 279px;
+  height: 36px;
+  bottom: 23px;
+}
+.relativeNotice{
+  padding: 12rpx;
+  background-color: #333333;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.relativeText{
+  color: #e6d6c1;
+  font-size: 24rpx;
+}
+.unsetPice{
+  margin-left: 24rpx;
+  margin-right: 10rpx;
+  vertical-align: middle;
+}
+.relativeclose{
+  width: 18rpx;
+  height: 18rpx;
+  margin-right: 20rpx;
+}
+.sendPeople{
+  width: 36rpx;
+  height: 30rpx;
+  margin-left: 24rpx;
+  margin-right: 12rpx;
+}
+.groupbuy{
+  background-image: linear-gradient(90deg, 
+  #ff6e4a 0%, 
+  #ff3300 100%), 
+linear-gradient(
+  #cccccc, 
+  #cccccc);
+  font-size: 22rpx;
+  color: #fff;
+  padding-left: 35rpx;
+  padding-right: 35rpx;
+  padding-top: 4rpx;
+  padding-bottom: 4rpx;
+  border-radius: 22rpx;
+  margin-left: 20rpx;
+}

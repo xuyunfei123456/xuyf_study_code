@@ -1,0 +1,346 @@
+/* pages/YFWStoreModule/YFWShopDetailHomePage/YFWShopDetailHome.wxss */
+.container{
+  width: 100vw;
+  height: 100vh;
+  background-color: #fafafa;
+}
+.containerView{
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: 10;
+}
+.shop_bg_img{
+  z-index: 1;
+  width: 100vw;
+  height: 800rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.topSearchView{
+  display: flex;
+  flex-direction: row;
+  height: 100rpx;
+  align-items: center;
+}
+.topSearchInputView{
+  height: 68rpx;
+  width: 70vw;
+  border-radius: 34rpx;
+  display: flex;
+  flex-direction: row;
+  margin-left: 30rpx;
+  background-color: white;
+  align-items: center;
+}
+.searchIcon{
+  margin-left: 20rpx;
+  width: 40rpx;
+  height: 40rpx;
+}
+.topViewSearchInput{
+  display: block;
+  height: 68rpx;
+  width: 70vw;
+  margin-left: 20rpx;
+  margin-right: 34rpx;
+  background-color: white;  
+}
+.inputplaceholder{
+  color:#cccccc;
+  font-size: 30rpx;
+}
+.topViewMore{
+  display: flex;
+  height: 100rpx;
+  width: 20vw;
+  margin-left: 10rpx;
+  margin-right: 40rpx;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center
+}
+.more{
+  width: 40rpx;
+  height: 10rpx;
+}
+
+.shopInfoView{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 30rpx 30rpx 10rpx 30rpx;
+}
+.shopImage{
+  width: 140rpx;
+  height: 70rpx;
+}
+.shopName{
+  display: inline-flex;
+  width: 350rpx;
+  height: 70rpx;
+  line-height: 35rpx;
+  font-size: 32rpx;
+  color: white;
+  margin-left: 20rpx;
+}
+.collectImg{
+  width: 130rpx;
+  height: 50rpx;
+  margin-left: 85rpx;
+}
+
+.shopRateInfo{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 30rpx 30rpx 10rpx 30rpx;
+}
+.rateView{
+  display: flex;
+  border-radius: 20rpx;
+  overflow: hidden;
+  flex-direction: row;
+  justify-content: space-around;
+  width:100%;
+}
+.rateItem{
+  align-content: center;
+  justify-content: center;
+  background-color: white;
+  padding: 20rpx 0;
+  width:100%;
+}
+.point{
+  display: inline-block;
+  font-size: 30rpx;
+  width: 100%;
+  color: red;
+  text-align: center;
+}
+.point_name{
+  display: inline-block;
+  width: 100%;
+  font-size: 22rpx;
+  text-align: center;
+}
+
+
+.couponView{
+  display: flex;
+  padding: 30rpx 30rpx 10rpx 30rpx;
+
+}
+.couponScroll{
+  display: flex;
+  flex-direction: row;
+  white-space: nowrap;      /* 横向 */
+  -webkit-overflow-scrolling: touch;
+}
+.couponItem{
+  display: inline-flex;/* 允许元素在同一行 */
+  width: 300rpx;
+  height: 120rpx;
+  margin-right: 15rpx;
+  position: relative;
+}
+.couponInfoView{
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  position:absolute;
+  overflow: hidden;
+  left: 0;
+  top: 0;
+  width: 150rpx;
+  height: 120rpx;
+}
+.couponMoney{
+  display: inline-block;
+  width: 100%;
+  font-size: 40rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  color: white;
+  text-align: center;
+}
+.couponTitle{
+  display: inline-block;
+  width: 100%;
+  height: 20rpx;
+  line-height: 20rpx;
+  font-size: 20rpx;
+  text-align: center;
+  color: white;
+  margin-top: -30rpx;
+}
+
+.goodsView {
+  width: 100vw;
+  background-color:rgba(0, 0, 0, 0);
+}
+
+.goodsView-top {
+  height: 100rpx;
+  display: flex;
+  flex-direction: row;
+  white-space: nowrap;
+  background-color: rgba(0, 0, 0, 0);
+  -webkit-overflow-scrolling: touch;
+}
+/*隐藏滚动条*/
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+.goodsView-top-item {
+  /* align-items: center; */
+  justify-content: center;
+  padding: 0 0 0 30rpx;
+  width: 130rpx;
+  height: 100rpx;
+  display: inline-flex;
+  font-size: 30rpx;
+  font-weight: normal;
+  color: white;
+  position: relative;
+}
+.lineRoll{
+  position:absolute;
+  width:60rpx;
+  height:8rpx;
+  top:48rpx;
+  background-color:rgba(0, 0, 0, 0);
+  left:64rpx;
+}
+.selected {
+  background-color: white;
+  /* border-bottom: #1fdb9b */
+}
+
+.goodsView-content {
+  width: 100vw;
+  height: 600rpx;
+  display: flex;
+  position:relative;
+  bottom: 0;
+  /* background-color: skyblue; */
+  -webkit-overflow-scrolling: touch;
+}
+
+.goodsView-swiper-item {
+  display: flex;  
+  width: 100vw;
+  height: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+
+.collectionView{
+  /* background-color: #fafafa; */
+  padding: 7rpx 14rpx 7rpx 28rpx;
+}
+.labelView{
+  display: flex;
+  position: absolute;
+  top:10rpx;
+  right:12rpx;
+  font-size:22rpx;
+  height:32rpx;
+  padding:0 12rpx;
+  border-radius:16rpx;
+  border: solid 2rpx rgb(254,172,76);
+  color: rgb(254,172,76)
+}
+.collectionView .collectionItemView{
+  display: inline-block;
+  vertical-align: top;  
+  flex-direction: column;
+  /* overflow: hidden; */
+  width: 50%;
+  margin: 7rpx 0;
+  border-radius: 20rpx;
+  justify-content: center;
+  position: relative;
+}
+.collectionView .collectionItemView:nth-of-type(odd) {
+  margin-left: -14rpx;
+  margin-right: 14rpx;
+}
+
+.bottomView{
+  width: 100vw;
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-top: solid 2rpx #cccccc;
+  background-color: white;
+  padding-bottom: constant(safe-area-inset-bottom); /*兼容 IOS<11.2*/
+  padding-bottom: env(safe-area-inset-bottom); /*兼容 IOS>11.2*/
+}
+.bottomItem{
+  width: 33.33vw;
+  height: 100rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center
+}
+.bottomImage{
+  width: 40rpx;
+  height: 40rpx;
+}
+.bottomName{
+  display: inline-block;
+  margin-top: 10rpx;
+  color: #333333;
+  font-size: 20rpx;
+  line-height: 20rpx;
+  height: 20rpx;
+}
+
+.onloading {
+  margin-left: -14rpx;
+  border-top: 3rpx solid rgba(0, 0, 0, 0);
+  text-align: center;
+  font-size: 0;
+  padding: 20rpx 0;
+  background-color: rgba(0, 0, 0, 0);
+}
+.onloading .load-wrap .loading-icon {
+  animation: onloading-view linear 1.6s 0s infinite;
+  -webkit-animation: onloading-view linear 1.6s 0s infinite;
+  display: inline-block;
+  height: 23px;
+  width: 23px;
+  position: relative;
+  border-radius: 50%;
+  border: 5rpx solid #0BA756;
+}
+.onloading .load-wrap .loading-icon .hide-block {
+  display: inline-block;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 0;
+  left: 40%;
+  background-color: rgba(0, 0, 0, 0);
+}
+.onloading .load-wrap .loadover {
+  font-size: 24rpx;
+  color: #999999;
+}
+.getCoupon{
+  width: 150rpx;
+  height: 120rpx;
+  position: absolute;
+  right: 0px;
+}

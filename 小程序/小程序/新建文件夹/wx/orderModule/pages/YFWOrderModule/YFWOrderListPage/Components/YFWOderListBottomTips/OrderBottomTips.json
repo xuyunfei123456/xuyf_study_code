@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "CountDownView":"../../../../../../components/YFWCountdownView/YFWCountdownView"
+  }
+}

@@ -1,0 +1,49 @@
+
+<view class='box-content'>
+  <block wx:if='{{!showAll}}'>
+    <text class='Manufacturers-title'>{{brandsName}}</text>
+    <view class='brands-content'>
+      <block wx:for="{{topDrugArray}}">
+        <view bindtap='itemClickAction' data-type='Aliascn' data-info='{{item}}' data-index='{{index}}' class='content {{item.isShowAll?"more":item.select?"select":""}}'>
+          <view>
+            {{item.name}}
+          </view>
+        </view>
+      </block>
+    </view>
+    <text class='Manufacturers-title'>{{manufacturersName}}</text>
+    <view class='brands-content'>
+      <block wx:for="{{topManArray}}">
+        <view bindtap='itemClickAction' data-type='ss' data-info='{{item}}' data-index='{{index}}' class='content {{item.isShowAll?"more":item.select?"select":""}}'>
+          <view>
+            {{item.name}}
+          </view>
+        </view>
+      </block>
+    </view>
+  </block>
+  <block wx:else>
+    <view class='top_container'>
+      <image class='top_back' src='/images/top_back_green.png' bindtap='backAction'>back</image>
+      <view class='top_title'>{{showType=="Aliascn"?brandsName:manufacturersName}}</view>
+    </view>
+    <view class='center_content'>
+      <block wx:for='{{showType=="Aliascn"?drugNameDataArray:manufacturerDataArray}}'>
+        <view bindtap='itemClickAction' data-type='{{showType}}' data-info='{{item}}' data-index='{{index}}' class='cell'>
+          <view class='cell_title {{item.select?"cell_title_select":""}}'>{{item.title}}</view>
+          <image wx:if='{{item.select}}' class='cell_select' src='/images/chooseBtn.png'></image>
+        </view>
+        <view class='cell_line'></view>
+      </block>
+    </view>
+
+  </block>
+</view>
+<view class='bottom_container'>
+  <view bindtap='resetAction' class='bottom_content bottom_left'>
+    <view>重置</view>
+  </view>
+  <view bindtap='confirmAction' class='bottom_content bottom_right'>
+    <view>确定</view>
+  </view>
+</view>

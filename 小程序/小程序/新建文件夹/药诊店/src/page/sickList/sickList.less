@@ -1,0 +1,133 @@
+.sickList{
+    background: #f5f5f5;
+    .sick_tip{
+        background: #fff3da;
+        box-sizing: border-box;
+        padding-left: 19.667px;
+        align-items: center;
+        height: 30px;
+        .radio{
+            height: 12px;
+            width: 11.667px;
+        }
+        .sick_tip_text{
+            font-size: 12px;
+            color: #fc9924;
+            padding-left: 8.667px;
+        }
+    }
+    .scroll{
+        position: absolute;
+        top: 30px;
+        bottom: 52px;
+        padding: 10px 12px 0 12px;
+        justify-content: center;
+        margin-bottom: constant(safe-area-inset-bottom); /*兼容 IOS<11.2*/
+        margin-bottom: env(safe-area-inset-bottom); /*兼容 IOS>11.2*/
+        .list_wrapper{
+            position: relative;
+            height: 100px;
+            width: 351px;
+            background-color: #fff;
+            box-shadow: 0 2px 13.067px 0.267px rgba(0,0,0,0.04);
+            border-radius: 7px;
+            margin-bottom: 10px;
+            padding-left: 27.667px;
+            padding-top: 19.667px;
+            box-sizing: border-box;
+            .edit{
+                position: absolute;
+                width: 47.667px;
+                height: 21.333px;
+                color: #fff;
+                background: linear-gradient(90deg,rgb(40,225,164),rgb(31,219,155));
+                box-shadow: 0 3.333px 7.667px rgba(31,219,155,0.3);
+                text-align: center;
+                font-size: 13px;
+                line-height: 21.33px;
+                border-radius: 10.588px;
+                right: 10px;
+                top: 10px;
+            }
+            .sick_name{
+                font-size: 16px;
+                color: #333;
+                font-weight: bold;
+                margin-bottom: 8.333px;
+            }
+            .sick_info{
+                font-size: 13px;
+                color: #999;
+                margin-bottom: 9.667px;
+                .sex{
+                    padding-right: 8px;
+                }
+                .age{
+                    padding-right: 8px;
+                }
+            }
+            .tags{
+                margin-right: 3.667px;
+            }
+        }
+    }
+    .operation{
+        position: fixed;
+        bottom: 10px;
+        height: 42px;
+        padding-bottom: constant(safe-area-inset-bottom); /*兼容 IOS<11.2*/
+        padding-bottom: env(safe-area-inset-bottom); /*兼容 IOS>11.2*/
+        justify-content: center;
+        width: 100%;
+        .addSick{
+            height: 42px;
+            width: 350.333px;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(270deg,rgb(58,203,143),rgb(0,177,135));
+            border-radius: 20.883px;
+            .add_pic{
+                height: 17px;
+                width: 17px;
+                border: 2px solid #fff;
+                border-radius: 50%;
+                color: white;
+                text-align: center;
+                line-height: 17px;
+                font-weight: bold;
+                margin: 0 6px;
+                margin-top: 3px;
+            }
+            .add_sick_text{
+                font-size: 16.667px;
+                color: #fff;
+                font-weight: 600;
+                letter-spacing: 2px;
+            }
+        }
+    }
+    .rowflex{
+        display: flex;
+        flex-direction: row;
+    }
+    .columnflex{
+        display: flex;
+        flex-direction: column;
+    }
+    .noContetn{
+        align-items: center;
+        position: absolute;
+        top: 30px;
+        bottom: 52px;
+        width: 100%;
+        .noList{
+            width: 250px;
+            height: 250px;
+        }
+        .noContent_text{
+            font-size: 14px;
+            color: #666;
+
+        }
+    }
+}

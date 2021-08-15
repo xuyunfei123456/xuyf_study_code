@@ -1,0 +1,78 @@
+<wxs module="filter">
+  function getImageUrl(url) {
+    if(url.indexOf("default")>=0){
+      return url
+    }else{
+      return url + '_300x300.jpg'
+    }   
+
+  }
+  module.exports = {
+    getImageUrl: getImageUrl
+  }
+</wxs>
+
+<view class='container'>
+  <view class='topView'>
+    <view class='topViewMore' />
+    <view class='topTitleView'></view>
+    <view class='topViewMore'>
+      <text class='eidt' wx:if="{{isEdit}}" bindtap='finishEdit'>完成</text> 
+      <text class='eidt' wx:else bindtap='toEdit'>管理</text> 
+      <image class='more' src='/images/more_white.png'  bindtap='showMore' id="more_image" mode='widthFix'/>
+    </view>
+  </view>
+ <view class='goodsView'>
+      <scroll-view class='goodsView-top' scroll-x="true" scroll-y="false" scroll-into-view="item-{{selectIndex}}">
+        <block wx:for="{{dataSource}}" wx:for-index="index" wx:key="">
+          <view class="goodsView-top-item" bindtap="changeIndex" data-index='{{index}}' id="item-{{index}}">
+            <titleView title="{{item.name}}" showLine="{{index == selectIndex}}"/>
+          </view>
+        </block>
+      </scroll-view>
+      <view class='separate' id = 'separateView'/>
+      <swiper current="{{selectIndex}}" class='goodsView-content' bindchange='swiperChangIndex' style='height:{{listHeight}}rpx'>
+        <block wx:for="{{dataSource}}" wx:key="" wx:for-index="swiperIndex">
+          <swiper-item>
+            <scroll-view class="goodsView-swiper-item" scroll-x="false" scroll-y="true" bindscrolltolower="requestNextPage" >
+              <view class="listItemView {{swiperIndex==1?'shopItemView':''}}" wx:for="{{dataSource[swiperIndex].items}}" wx:key=""  bindtap='itemClick' id="{{index}}"  data-index='{{swiperIndex}}' data-item='{{item}}'>
+                <view class="bottonView {{swiperIndex==1?'shopItemView':''}}" wx:if="{{isEdit}}">
+                  <image class='bottonItem' src="/images/chooseBtn.png" wx:if="{{item.isSelect}}"/>
+                  <image class='bottonItem .unselect' src="/images/radio_off.png" wx:else/>
+                </view>
+                <image class="{{swiperIndex==1?'shop_image':'goods_image'}}" src="{{swiperIndex==1?item.imageUrl:filter.getImageUrl(item.imageUrl)}}" />
+                <view class="rightView {{swiperIndex==1?'shopRight':''}}">
+                  <text class="{{swiperIndex==1?'shop_name':'goods_name'}}" style="color:{{item.is_invalid==1?'#999999':''}}">{{item.name}}</text>
+                  <text class="{{swiperIndex==1?'shop_address':'goods_shop_name'}}"  style="color:{{item.is_invalid==1?'#cccccc':''}}">{{swiperIndex==1?item.address:item.storeName}}</text>
+                  <view class='goods_price' wx:if="{{swiperIndex==0}}">
+                    <priceView price="{{item.price}}" fontSize="34" isInvalid="{{item.is_invalid==1?true:false}}" discount="{{data.goods_discount}}"/>
+                  </view>
+                </view>
+              </view>
+              <view class="onloading">
+                <view class="load-wrap">
+                  <view wx:if="{{pageEnd ? false : true}}" class="loading-icon">
+                    <view class="hide-block"></view>
+                  </view>
+                  <view wx:else class="load-wrap">
+                    <view class="loadover">没有更多数据了~</view>
+                  </view>
+                </view>
+              </view>
+            </scroll-view>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <view class='editBottomView' wx:if="{{isEdit}}">
+      <view class='selectAll' bindtap='toSelectAll'>
+        <image class='bottonItem' src="/images/chooseBtn.png" wx:if="{{isSelectAll}}"/>
+        <image class='bottonItem .unselect' src="/images/radio_off.png" wx:else/>
+        <text class='title'>全选</text>
+      </view>
+      <view class='delete' bindtap='deleteMethod'>
+        <text class='title'>删除</text>
+      </view>
+    </view>
+    <more_view id="moreview" margin_right='20'/>
+</view>

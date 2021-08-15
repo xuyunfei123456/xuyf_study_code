@@ -1,0 +1,100 @@
+/* pages/YFWLoginModule/YFWAuthorLoginPage/YFWAuthorLogin.wxss */
+
+page {
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+}
+
+.top_view_img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.top_img {
+  width: 305px;
+  height: 251px;
+  margin-top: 170rpx;
+}
+
+.bottom_view {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.view-wx-login {
+  height: 82rpx;
+  width: 90%;
+  margin-top: 121rpx;
+  margin-left: 10%;
+  border: 1px #1fdb9b solid;
+  border-radius: 8rpx;
+  display: flex;
+  align-items: center;
+  background-color: #1fdb9b;
+}
+
+.img-wx-login {
+  width: 45rpx;
+  height: 36rpx;
+  position: absolute;
+  left: 27%;
+}
+
+.btn-wx-login {
+  font-size: 30rpx;
+  color: #fff;
+  margin-left: 36%;
+}
+
+.view-phone-login {
+  height: 82rpx;
+  width: 90%;
+  margin-top: 41rpx;
+  margin-left: 10%;
+  border: 1px #1fdb9b solid;
+  border-radius: 8rpx;
+  display: flex;
+  align-items: center;
+}
+
+.img-phone-login {
+  width: 28rpx;
+  height: 48rpx;
+  position: absolute;
+  left: 32%;
+}
+
+.btn-phone-login {
+  font-size: 30rpx;
+  color: #1fdb9b;
+  margin-left: 35%;
+}
+.shop-car-loading{
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  top:42vh;
+  left: calc(50vw - 35rpx);
+  width: 70rpx; 
+	height: 70rpx;
+  z-index: 999;
+	background-color: transparent;
+}
+.loadingbg{
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  position: absolute;
+}
+

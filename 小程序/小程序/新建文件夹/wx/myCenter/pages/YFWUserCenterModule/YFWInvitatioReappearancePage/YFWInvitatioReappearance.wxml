@@ -1,0 +1,66 @@
+<!--myCenter/pages/YFWUserCenterModule/YFWInvitatioReappearancePage/YFWInvitatioReappearance.wxml-->
+<scroll-view  scroll-y='true' style="padding-bottom:{{showbottom?'208':'0'}}rpx;height:{{scrollheight}}px;background-color:#cc104d" bindscroll="mainscroll">
+  <view class="invitation_page1_top">
+    <image src="https://c1.yaofangwang.net/common/images/invitation/invitation_page2_top.jpg"></image>
+    <button class="invitation_button_green" open-type="share" wx:if="{{showbutton}}">
+      <image src="https://c1.yaofangwang.net/common/images/invitation/invitation_button_green.png"></image>
+      <text class="invitation_text" style="color:white">立即邀请</text>
+    </button>
+    <view class="rule" bindtap="rule"></view>
+  </view>
+  <view class="invitation_page1_middle">
+    <image src="https://c1.yaofangwang.net/common/images/invitation/invitation_page4_middle.jpg"></image>
+    <view class="sendTotal">
+      <text class="tip_text">已累计送出</text>
+      <text class="tip_text_money">{{priceTotal}}</text>
+      <text class="tip_text">元现金</text>
+    </view>
+    <view class="toView">
+      <swiper class="swiper_container"  easing-function="linear" vertical="true" autoplay="true" circular="true" duration='3000' interval="500" display-multiple-items="3">
+					<block wx:for="{{top20}}" wx:key='{{index}}'>
+						<swiper-item style="display:flex;align-items:center;height:100rpx;line-height:100rpx">
+              <view style="height:60rpx;width:60rpx;margin:0 5%">
+          <image src="https://c1.yaofangwang.net{{item.intro_image}}"></image>
+        </view>
+        <view class="username">用户{{item.Mobile}}</view>
+        <view class="username" style="margin-left:8%">已提现<text class="TotalMoney">{{item.TotalMoney}}</text>元奖励</view>
+              </swiper-item>
+					</block>
+				</swiper>
+    </view>
+
+  </view>
+  <view class="invitation_page4_down">
+    <image src="https://c1.yaofangwang.net/common/images/invitation/invitation_page4_down.jpg" alt="" />
+  </view>
+  <view class="invitation_page4_bottom">
+    <text class="tipTextTop">我的邀请记录</text>
+    <view style="color:#666666;font-size:32rpx;text-align:center;margin-top:20rpx">累计奖励：<text style="font-size:40rpx;color:#d92b5b;font-weight:bolder">{{total_money}}</text> 元</view>
+    <view bindtap="turnToTx" style="color:#cc104d;text-align:center;text-decoration:underline;margin-top:22rpx">立即提现</view>
+    <view class="hasinvita">
+      <view>邀请的好友数：{{connt_invite}}</view>
+    </view>
+    <view wx:for="{{invite_record}}" class="inviterow">
+      <view class="mobile">{{item.phone}}</view>
+      <view class="date">{{item.create_time}}</view>
+      <view wx:if="{{item.money>0}}" class="prize">奖励 <text style="color:#d92b5b;font-size:24rpx;font-weight:bolder">{{item.money}}</text> 元</view>
+      <view wx:else class="prize2"><text style="color:rgb(75,200,159);font-size:24rpx">{{item.status}}</text></view>
+    </view>
+  </view>
+</scroll-view>
+<view class="invitation_page1_bottom" wx:if="{{showbottom&&showbutton}}">
+    <image src="https://c1.yaofangwang.net/common/images/invitation/invitation_page4_bottom.jpg"></image>
+    <button class="bottom_button"  open-type="share"></button>
+</view>
+<view hidden="{{showrule}}" class="rulebg" catchtap="hiderule">
+  <view class="ruletip" catchtap="ruletip">
+    <text class="tipTextTop">活动规则</text>
+    <text class="tipText">1、点击“立即邀请”按钮，通过微信、QQ、海报等方式发送邀请链接给好友。</text>
+    <text class="tipText">2、若该好友为药房网商城新用户，好友可领取20元新人红包，授权注册登录后即可使用。</text>
+    <text class="tipText">3、每成功邀请一位好友，发起人可以享受该好友长期持续2%现金返现，单人累计可获最高返现500元，邀请人数不限。</text>
+    <text class="tipText">4、现金奖励将在好友订单收货完成后自动发放至个人中心账户，奖励金额可直接提现或抵扣订单金额。</text>
+    <text class="tipText">5、各类药房网商城判定为同一用户的情形，仅被计算为一个有效邀请。药房网商城有权对判定为违规套取奖励的行为视情节进行不予发放奖励 、停用邀请奖励功能、冻结所有通过邀请有奖渠道获得的奖励等方式处理。</text>
+    <text class="tipText">6、活动长期有效，如有其他疑问请咨询药房网商城客服 400-8810-120（9:00-18:00）。</text>
+    <text class="tipText">7、本公司拥有对本活动条款法律许可范围内的解释权</text>
+  </view>
+</view>

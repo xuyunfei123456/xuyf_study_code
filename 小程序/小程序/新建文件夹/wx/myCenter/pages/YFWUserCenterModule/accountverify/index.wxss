@@ -1,0 +1,154 @@
+page {
+  background-color: #faf9f9;
+}
+
+.wrapper {
+  margin-left: 72rpx;
+  margin-right: 72rpx;
+}
+
+.tip {
+  color: #333333;
+  font-size: 30rpx;
+  margin-top: 44rpx;
+}
+
+.confirm {
+  font-size: 30rpx;
+  margin-top: 102rpx;
+}
+
+.phone {
+  font-size: 25rpx;
+  margin-top: 65rpx;
+  width: 60%;
+}
+
+.mobile {
+  font-size: 25rpx;
+}
+
+.show-mobile {
+  float: right;
+  margin-top: -38rpx;
+  font-size: 25rpx;
+}
+
+.confirm_pho {
+  font-size: 25rpx;
+  float: right;
+  margin-right: 370rpx;
+  margin-top: -32rpx;
+}
+
+
+.address-commit {
+  font-size: 34rpx;
+  margin-top: 54rpx;
+  border-radius: 42rpx;
+  height: 86rpx;
+  width: 100%;
+  background-color: #49ddb8;
+  color: white;
+  line-height: 86rpx;
+}
+
+.container-name {
+  margin-top: 84rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 1px solid #cccccc;
+  padding-bottom: 20rpx;
+}
+.container-mobile{
+  border-bottom: 1px solid #cccccc;
+  padding-bottom: 20rpx;
+  margin-top: 102rpx;
+}
+
+.confirm-code {
+  width: 64%;
+}
+
+.placeholder-code {
+  font-size: 25rpx;
+  color: #999;
+}
+
+
+.get_Code {
+  flex: 1;
+  border-left: 2px solid #cccccc;
+  color: #1fdb9b;
+  font-size: 30rpx;
+  padding-left: 10rpx;
+}
+
+.get-Code_ol {
+  font-size: 25rpx;
+  color: #49ddb8;
+}
+
+
+.row {
+  text-align: center;
+  margin-top: 198rpx;
+  font-size: 26rpx;
+  color: #999999;
+}
+.disableClick{
+  color: #999999;
+}
+
+
+.shadow {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999999;
+}
+
+.tipWrapper {
+  width: 638rpx;
+  height: 406rpx;
+  background-color: #ffffff;
+  border-radius: 14rpx;
+  z-index: 9999999;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.tippic {
+  width: 94rpx;
+  height: 94rpx;
+  margin-top: 68rpx;
+  margin-bottom: 52rpx;
+
+}
+
+.tipText {
+  color: #333333;
+  font-size: 26rpx;
+  padding: 0rpx 47px;
+  text-align: center;
+
+}
+
+.tipBtn {
+  color: #1fdb9b;
+  border: 1px solid #1fdb9b;
+  width: 242rpx;
+  height: 62rpx;
+  line-height: 62rpx;
+  text-align: center;
+  margin-top: 60rpx;
+  border-radius: 30rpx;
+
+}

@@ -1,0 +1,18 @@
+{
+  "usingComponents": {
+    "collection_goods": "/components/GoodsItemView/CollectionGoodsItem",
+    "YFWTitleView": "/components/YFWTitleView/YFWTitleView",
+    "refreshView": "/components/YFWRefreshView/YFWRefreshView",
+    "YFWPriceView": "/components/YFWPriceView/YFWPriceView",
+    "YFWMessageRedPointView":"/components/YFWMessageRedPointView/YFWMessageRedPointView",
+    "prompt_view": "/components/YFWPromptView/YFWPromptView",
+    "authentication": "/components/YFMauthentication/YFMauthentication",
+    "YfwNormalGoods": "/components/YfwNormalGoods/YfwNormalGoods",
+    "YfwWaterfallGoods": "/components/YfwWaterfallGoods/YfwWaterfallGoods"
+  },
+  "navigationBarBackgroundColor": "#49ddb8",
+  "navigationBarTextStyle": "white",
+  "enablePullDownRefresh": false,
+  "backgroundColor": "#49ddb8",
+  "navigationStyle":"custom"
+}

@@ -1,0 +1,27 @@
+<view class="articleWrapper">
+  <view wx:if="{{isShowSearchArticleKey}}">
+  <scroll-view class="articleSearchResult" wx:if="{{articleWords.length>0}}" scroll-y="true" bindscrolltolower="requestNextPage">
+<block wx:for="{{articleWords}}">
+  <HealthHuiAtricleCards bind:onClickArticleIKeyMethod="onClickArticleItem" postCardData="{{item}}" data-name="{{item}}"></HealthHuiAtricleCards>
+</block>
+<view class="onloading">
+  <image wx:if="{{pageEnd ? false : true}}" class="loading-icon" src='/images/loading_cycle.gif' />
+      <view wx:else class="loadover">没有更多数据了~</view>
+</view>
+  </scroll-view>
+  <view class="noArticleData" wx:if="{{articleWords.length==0}}">
+        <image src='https://c1.yaofangwang.net/common/images/miniapp/ic_no_goods_shops.png'></image>
+        <text>很抱歉，未找到搜索内容</text>
+  </view>
+</view>
+  <scroll-view scroll-y="true" class="articleRecommend" wx:if="{{articleRecommandWords.length>0}}">
+<view class="head">为你推荐</view>
+<block wx:for="{{articleRecommandWords}}">
+  <HealthHuiAtricleCards bind:onClickArticleIKeyMethod="onClickArticleItem" postCardData="{{item}}" data-name="{{item}}"></HealthHuiAtricleCards>
+</block>
+<view class="onloading">
+  <image wx:if="{{pageEnd ? false : true}}" class="loading-icon" src='/images/loading_cycle.gif' />
+      <view wx:else class="loadover">没有更多数据了~</view>
+</view>
+  </scroll-view>
+</view>

@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "titleView": "/components/YFWTitleView/YFWTitleView",
+    "YFWMessageRedPointView": "/components/YFWMessageRedPointView/YFWMessageRedPointView"
+  },
+  "navigationBarTitleText": "找药",
+  "navigationBarBackgroundColor": "#49ddb8",
+  "navigationBarTextStyle": "white"
+}

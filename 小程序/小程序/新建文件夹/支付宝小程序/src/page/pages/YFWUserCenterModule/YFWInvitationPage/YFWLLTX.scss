@@ -1,0 +1,176 @@
+.wrapper{
+  background-color: #F5F5F5;
+  height: 100vh;
+}
+.bg{
+  width:100%;
+  height:400rpx ;
+}
+.explainWrapper{
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  font-size: 28rpx;
+  padding-top: 26rpx;
+}
+.explain{
+  margin-left: 40rpx;
+}
+.record{
+  margin-right: 40rpx;
+}
+.money{
+  font-size: 40px;
+  color: #fffaa5;
+ margin-top: 40rpx;
+ text-align: center;
+ font-weight: bolder;
+}
+.money_tip{
+  color: #f5f5f5;
+  font-size: 32rpx;
+  text-align: center;
+  margin-top: 34rpx;
+}
+.prizeDetail{
+  color: #f5f5f5;
+  font-size: 26rpx;
+  text-align: center;
+  margin-top: 50rpx;
+  display: flex;
+}
+.waitPrize{
+  width: 50%;
+
+}
+.hasPrized{
+  width: 50%;
+}
+.operation{
+  color: white;
+  display: flex;
+  margin-top: 34rpx;
+  justify-content: space-around;
+}
+.apply{
+  text-align: center;
+  width: 320rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-radius: 14rpx;
+  background: linear-gradient(to right,rgb(31,219,155),rgb(0,200,145));
+}
+.rank{
+  text-align: center;
+  width: 320rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-radius: 14rpx;
+  background: linear-gradient(to right,rgb(248,142,102),rgb(243,59,51));
+}
+.under {
+  width: 10%;
+  height: 12rpx;
+  margin-top: 10rpx;
+  background: linear-gradient(rgb(0,200,145), rgb(31,219,155));
+  margin-left: 45%;
+}
+.explain_txt{
+  width: 100%;
+  color: "#333333";
+  font-size: 32rpx;
+  font-weight: 600;
+  display: inline-block;
+  text-align: center;
+  margin-top: 40rpx;
+}
+.list{
+  width: 90%;
+  margin-left: 5%;
+  background-color: white;
+  height: 490rpx;
+  margin-top: 27rpx;
+  border-radius: 12rpx;
+  overflow-y: scroll;
+}
+.first{
+  display: flex;
+  justify-content: space-between;
+  padding: 0rpx 28rpx;
+  padding-top: 23rpx;
+  width: 100%;
+}
+.second{
+  display: flex;
+  justify-content: space-between;
+  padding: 0rpx 28rpx;
+  width: 100%;
+  padding-top: 10rpx;
+}
+.listItem{
+  width: 90%;
+  margin-left: 5%;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #bfbfbf;
+  height: 107rpx;
+  flex-direction: column;
+  padding-bottom: 10rpx;
+}
+.tmoney{
+  color:#ff3300;
+  font-size:24rpx;
+}
+.showexplain{
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0,.3);
+  display: flex;
+  align-items: center;
+}
+.explain_content{
+  width: 76%;
+  margin-left: 12%;
+  background: #ffffff;
+  height: 800rpx;
+  position: relative;
+}
+.wexplain_title{
+  color: #000000;
+  font-size: 26rpx;
+  text-align: center;
+  margin-top: 16rpx;
+}
+.explain_item{
+  margin: 0 20rpx;
+  color: #000000;
+  font-size: 26rpx;
+  margin-top: 16rpx;
+}
+.explain_item_content{
+  line-height: 46rpx;
+}
+.borderbottom{
+  border-bottom: 1px solid #eae5e591;
+}
+.explain_item_content_orange{
+  line-height: 46rpx;
+  color: orange;
+}
+.attention{
+  margin: 0 20rpx;
+  color: #000000;
+  font-size: 26rpx;
+  margin-top: 16rpx;
+}
+.close{
+  position: absolute;
+  bottom: 0;
+  height: 60rpx;
+  text-align: center;
+  line-height: 60rpx;
+  border-top: 1px solid #eae5e591;
+  width: 100%;
+}

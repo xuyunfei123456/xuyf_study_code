@@ -1,0 +1,159 @@
+page{
+    width: 100%;
+    height: 100%;
+    background-color: white;
+  }
+  .headerview {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .navgationview {
+    position: fixed;
+    height: 0px;
+    background-color: #49ddb8;
+    width: 100%;
+    z-index: 100;
+  }
+  .container-view {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+  }
+  .box {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: row;
+  }
+  .left-list-view {
+    width: 26%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 42px;
+    position: relative;
+  }
+  .left{
+   
+    margin-top: 0px;
+    margin-left: 0px;
+    height: 1000px;
+    position: fixed;
+    left: 0;
+    top: 42px;
+    width: 26%;
+  }
+  .right {
+    width: 100%;
+    flex: 1;
+  }
+  .left-list {
+    width: 26vw;
+    height: 80vh;
+    margin-top: 42px;
+  }
+  .right-list {
+    height: 100vh;
+    width: 74vw;
+  }
+  .right-list-view {
+    height: 100%;
+    width: 74%;
+    display: flex;
+    flex-direction: column
+  }
+  .left-context {
+    display: flex;
+    width: 100%;
+    height: 112px;
+    flex-direction: row;
+    align-items: center;
+  }
+  .leftline-select{
+    width: 12px;
+    height: 100%;
+    background-color: transparent;
+    
+  }
+  .leftline {
+    background-color: rgb(31,219,155);
+  }
+  .left-context view{
+    align-items: center;
+    display: flex;
+    height: 100%;
+    flex-direction: row;
+  }
+  .left-text {
+    width: 100%;
+    font-size: 28px;
+    color: rgb(153,153,153);
+    text-align: center;
+  
+  }
+  .left-text-select {
+    color: rgb(51,51,51)
+  }
+  .context{
+    width: 100%;
+    display: flex;
+  }
+  .context image{
+    margin: 34px 38px 32px 18px;
+    height: 126px;
+  }
+  .class-type{
+    width: 100%;
+    display: flex;
+    margin-top: 0px;
+    flex-direction: column;
+  }
+  .class-type-context {
+    width: 100%;
+    height: 128px;
+    flex-direction: row;
+    align-items: center;
+    display: flex;
+    justify-content: space-between
+  }
+  .class-context-text{
+    
+    margin-left: 32px;
+  }
+  .more-text {
+    font-size: 26px;
+    color: #666666;
+    margin-right: 38px;
+  }
+  .goods-view {
+    flex: 1;
+    margin: 0px 28px 54px 18px;
+    display: flex;
+    flex-flow: row wrap;
+  }
+  .goods-context{
+    width: 33%;
+    height: 210px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+  .goods-context image {
+    width: 120px;
+    height: 120px;
+  }
+  .goods-context text {
+    font-size: 26px;
+    color: #666666;
+    margin: 10px auto;
+    height: 26px;
+  }
+  .container-left {
+    width: 26vw;
+    height: 100vh;
+  }

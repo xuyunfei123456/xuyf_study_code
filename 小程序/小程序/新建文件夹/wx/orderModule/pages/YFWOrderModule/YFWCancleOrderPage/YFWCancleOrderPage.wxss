@@ -1,0 +1,88 @@
+.top_bg {
+  width: 750rpx;
+  height: 285rpx;
+  background-color: #49ddb8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.top_bg .tips {
+  font-size: 28rpx;
+  color: #fff;
+  font-weight: bold;
+  margin-top: 60rpx;
+}
+
+.cancleReasonLayout {
+  width: 700rpx;
+  height: auto;
+  margin-left: 25rpx;
+  position: relative;
+  background-color: #fff;
+  border-radius: 14rpx;
+  box-shadow: 0rpx 7rpx 15rpx 0rpx rgba(204, 204, 204, 0.6);
+  margin-top: -135rpx;
+  display: flex;
+  flex-direction: column;
+  padding-top: 40rpx;
+  padding-bottom: 40rpx;
+}
+
+.cancleReasonList{
+  width: 620rpx;
+  margin-left: 40rpx;
+  margin-right: 40rpx;
+  display: flex;
+  flex-direction: column
+}
+
+.reasonItem{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 100rpx;
+}
+
+.checkedIcon{
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.reasonText{
+  font-size: 28rpx;
+  color: #999999;
+}
+
+.checkedReasonText{
+  font-size: 28rpx;
+  color: #333333;
+}
+
+.splite{
+  height: 2rpx;
+  background-color: #CCC;
+  width: 620rpx;
+}
+
+.postButton {
+  width: 700rpx;
+  height: 84rpx;
+  background-image: linear-gradient(270deg, #00c891 0%, #1fdb9b 100%), linear-gradient(#fff, #fff);
+  background-blend-mode: normal, normal;
+  box-shadow: 0rpx 7rpx 15rpx 0rpx rgba(31, 219, 155, 0.5);
+  border-radius: 42rpx;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 100rpx;
+  left: 25rpx;
+}
+
+.postButton .text {
+  font-size: 34rpx;
+  color: #fff;
+}

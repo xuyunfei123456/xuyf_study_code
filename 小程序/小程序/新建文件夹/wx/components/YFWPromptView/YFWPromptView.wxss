@@ -1,0 +1,75 @@
+.modal-back {
+  display: flex;
+  position: fixed;
+  left: 15%;
+  right: 0;
+  top: 0;
+  background-color: rgba(0,0,0,0);
+  z-index: 100000;
+  margin-top: 25rpx;
+}
+
+.modal-space {
+  flex: 1;
+  width: 100%;
+  background-color: transparent;
+}
+.angle{
+  display: block;
+  position: absolute;
+  width: 40rpx;
+  height: 20rpx;
+  right: 15rpx;
+  top:-18rpx;
+  background-color: red
+}
+.modal-content {
+  display: flex;
+  position: absolute;
+  flex-direction: row;
+  right: 30rpx;
+  height: 150rpx;
+  box-shadow: 0 0 20rpx #666666;
+  background-color: rgba(51, 51, 51, 0.8);
+  border-radius: 10rpx;
+  align-items: center;
+  justify-content: space-between
+}
+.modal-tag{
+  width: 0rpx;
+  height: 0rpx;
+  border: 20rpx solid transparent;
+  border-bottom : 20rpx solid rgba(51, 51, 51, 0.8);
+  position           : absolute;
+  top                : -22px;
+  right               : 50%;
+  margin-right        : -35%;
+
+}
+.modal-view {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1
+
+}
+.context {
+  width: 90%;
+  margin-left: 20rpx;
+  font-size: 30rpx;
+  color: white;
+}
+.image-view {
+  margin-right: 10rpx;
+  width: 40rpx;
+  height: 40rpx;
+  margin-top: -6%;
+
+}
+.image {
+  margin-top: 5rpx;
+  margin-left: 5rpx;
+  width: 30rpx;
+  height: 30rpx;
+}

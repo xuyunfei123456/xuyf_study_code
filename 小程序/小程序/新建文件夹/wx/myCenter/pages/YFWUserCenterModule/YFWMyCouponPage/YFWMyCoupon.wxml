@@ -1,0 +1,137 @@
+
+<wxs module="filter">
+  function getTimeString(startStr,endStr) {
+      var time_start = startStr.split(" ")[0]
+      var time_end = endStr.split(" ")[0]
+      var reg = getRegExp("-", "g");
+      var start_time = time_start.replace(reg,'.')
+      var end_time = time_end.replace(reg,'.')
+      return start_time+'-'+end_time
+  }
+  function setType(type) {
+        if(type == 1){
+          return '店铺'
+        }else if(type == 2){
+          return '单品'
+        }else{
+          return '平台'
+        }
+    }
+  module.exports = {
+    getTimeString: getTimeString,
+    setType: setType
+  }
+</wxs>
+
+<view class='container'>
+  <!-- <view class='topView'>
+    <view class='topViewMore' />
+    <view class='topTitleView'></view>
+    <view class='topViewMore' bindtap='showMore'>
+      <image class='more' src='/images/more_white.png'  id="more_image"/>
+    </view>
+  </view> -->
+ <view class='goodsView'>
+      <scroll-view class='goodsView-top' scroll-x scroll-into-view="item-{{selectIndex}}">
+        <block wx:for="{{dataSource}}" wx:for-index="index" wx:key="">
+          <view class="goodsView-top-item" bindtap="changeIndex" data-index='{{index}}' id="item-{{index}}">
+            <titleView title="{{item.name+'('+item.rowCount+')'}}" fontWeight='500' largeStyle="{{index == selectIndex}}" showLine='{{index == activeIndex}}' lineHeight='25'/>
+          </view>
+        </block>
+      </scroll-view>
+      <view class='separate' id = 'separateView'/>
+      <swiper current="{{selectIndex}}" class='goodsView-content' bindchange='swiperChangIndex' style='height:{{listHeight}}rpx'>
+        <block wx:for="{{dataSource}}" wx:key="" wx:for-index="swiperIndex">
+          <swiper-item>
+            <scroll-view class="goodsView-swiper-item" scroll-x="false" scroll-y="true" bindscrolltolower="requestNextPage" >
+                <!-- <view class='coupon' wx:if="{{item.dict_coupons_type==3}}" wx:for="{{dataSource[swiperIndex].items}}" wx:key="" bindtap='itemClick' data-item='{{item}}'>
+                  <view class='cou_left'>
+                    <image src="{{item.dict_bool_status==0?'../../../images/icon_coupon_backimage.png':'../../../images/quan_zhihui.png'}}"  class='leftImg'></image>
+                    <view class='mony'>
+                      <text>¥</text>{{item.price}}</view>
+                    <view class='fullR'>{{item.use_condition_price_desc}}</view>
+                  </view>
+                  <view class='cou_right'>
+
+                    <view class='rg_one'>
+                      <view class="{{item.dict_bool_status==0?'':'gray'}}">{{filter.setType(item.dict_coupons_type)}}</view>
+                      <view class="rg_oneSec {{item.dict_bool_status==0?'':'sixCol'}}">{{item.description}}</view>
+                      <view class='cear'></view>
+                    </view>
+
+                    <view class='rg_two'>{{item.store_title}}</view>
+                    <view class='rg_three myflex'>
+                      <text class='rg_threeO'>{{filter.getTimeString(item.start_time,item.expire_time)}}</text>
+                      <text class='rg_threeT' wx:if="{{item.dict_bool_status == 0}}">去使用</text>
+                      <text class='rg_threeT grayBgc' wx:else>已使用</text>
+                    </view>
+
+                  </view>
+                  <view class='cear'></view>
+                </view> -->
+                <view class="coupon-context" wx:for="{{dataSource[swiperIndex].items}}" wx:key="" bindtap='itemClick' data-item='{{item}}'>
+                  <image class="bg-image" src="/images/bgquan.png" mode="aspectFit"/>
+                  <view wx:if="{{item.dict_coupons_type==3}}" class="coupons-left">
+                    <view class="coupons-left-view">
+                      <text class="coupons-left-one">¥</text>
+                      <text class="coupons-left-two">{{item.price}}</text>
+                    </view>
+                    <text class="coupons-left-three">{{item.use_condition_price_desc}}</text>
+                  </view>
+                  <view wx:else class="coupons-lefts">
+                    <image mode="aspectFit" src="{{'https://c1.yaofangwang.net'+item.image_url}}"></image>
+                  </view>
+                  <view class="cen-view"> 
+                    <view class="coupon-view">
+                      <text class="coupon-view-text11 coupon-view-fw coupon-one-color" style="margin-bottom: 5rpx">¥</text>
+                      <text class="coupon-view-text20 coupon-view-fw coupon-one-color">{{item.price}}</text>
+                      <view class="coupon-view-text14 coupon-one-color" style="margin-bottom: 5rpx;padding-left:10rpx">{{item.use_condition_price==0?'无门槛券':'满 '+item.use_condition_price+' 减 '+item.price}}</view>
+                    </view>
+                    <view class='rg_one'>
+                      <view class="coupon-view-text11 f-color couponTag">{{filter.setType(item.dict_coupons_type)}}</view>
+                      <text decode="{{true}}" space="{{true}}" class="coupon-name">{{item.dict_coupons_type==3?item.description:(item.dict_coupons_type==2?item.namecn:item.store_title)}}</text>
+                    </view>
+                    <text wx:if="{{item.dict_coupons_type==2&&item.use_condition_price==0}}" class="y-price">领券后 ¥{{item.yhhprice}}</text>
+                    <view class="coupon-time">
+                      <text>{{filter.getTimeString(item.start_time,item.expire_time)}}</text>
+                    </view>
+                  </view>
+                  <view class="coupons-rights">
+                    <view wx:if="{{item.dict_bool_status == 0}}" class='rg_three myflex'>
+                      <text class='rg_threeT' >去使用</text>
+                    </view>
+                    <image wx:if="{{item.dict_bool_status == 1}}" class="on-check" src="/images/coupon_used.png"></image>
+                    <image wx:if="{{item.dict_bool_status == 2}}" class="on-check" src="/images/coupon_overdue.png"></image>
+                  </view>
+                </view>
+              <view wx:if="{{dataSource[swiperIndex].items.length == 0 && getDataFlag}}" style="display:flex;flex-direction:column;align-items:center">
+                <image src="/images/ic_no_coupon.png" style=""></image>
+                <view style="font-size:26rpx;color:#999999">暂无优惠券</view>
+                <view style="font-size:30rpx;color:#666666;padding:10rpx 20rpx;border:1px solid #bbbbbb;margin-top:30rpx;" bindtap="clickedMethod" data-type="1" >前往领券中心></view>
+              </view>
+              <view class="onloading" wx:else>
+                <view class="load-wrap">
+                  <view wx:if="{{pageEnd ? false : true}}" class="loading-icon">
+                    <view class="hide-block"></view>
+                  </view>
+                  <view wx:else class="load-wrap">
+                    <view class="loadover">没有更多了</view>
+                  </view>
+                </view>
+              </view>
+            </scroll-view>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <view class="bottom-view">
+      <view class="ja-center" bindtap="clickedMethod" data-type="0" style="border-right:1px solid #dddddd">
+        <text>优惠券使用记录</text>
+      </view>
+      <view class="ja-center" bindtap="clickedMethod" data-type="1">
+        <text>领券中心</text>
+      </view>
+    </view>
+    <more_view id="moreview" margin_right='20'/>
+</view>
+

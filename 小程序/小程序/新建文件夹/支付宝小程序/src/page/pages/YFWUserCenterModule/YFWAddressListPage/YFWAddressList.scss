@@ -1,0 +1,209 @@
+page {
+    background-color: #fafafa;
+  }
+  
+  .top_bg {
+    position: fixed;
+    width: 100%;
+    height: 340px;
+  }
+  
+  /* 横着的分割View样式 */
+  
+  /*分割线样式*/
+  
+  .divLine {
+    background: #fff;
+    width: 100%;
+    height: 16px;
+  }
+  
+  .scroll {
+    overflow: scroll;
+    position: relative;
+    margin-bottom: 150px;
+    height: 90%;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 92%;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-bottom: 34px;
+    border-radius: 14px;
+    box-shadow: 0px 8px 20px rgba(204, 204, 204, 0.6);
+  }
+  
+  .button_parent {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    align-items: center;
+  }
+  .top_bgs{
+    height: 100%;
+    width: 100%;
+  }
+
+  .default_address_parent {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-bottom: 40px;
+    align-items: center;
+  }
+  
+  .action {
+    font-size: 20px;
+    margin-right: 60px;
+    border-radius: 50px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  .default_address {
+    font-size: 20px;
+    border-radius: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: #16c08e;
+    margin-right: 40px;
+    border: solid #16c08e 1px;
+  }
+
+  .edite {
+    color: #16c08e;
+    margin-right: 40px;
+    border: solid #16c08e 1px;
+  }
+  
+  .delete {
+    color: #666;
+    float: right;
+    border: solid #666 1px;
+  }
+  
+  .container-id {
+    font-size: 25px;
+    margin-left: 10px;
+    margin-top: 20px;
+    width: 20px;
+  }
+  
+  .container-top {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-top: 50px;
+  }
+  
+  .container-name {
+    font-size: 30px;
+    color: #333;
+    margin-left: 30px;
+    float: left;
+    width: 130px;
+    flex-wrap: nowrap;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  
+  .container-phone {
+    font-size: 30px;
+    color: #333;
+  }
+  
+  .container-address-alipay {
+    font-size: 24px;
+    color: #666;
+    flex: 1;
+    margin-top: 4px;
+    margin-right: 20px;
+  }
+
+  .container-address {
+    font-size: 24px;
+    color: #666;
+    flex: 1;
+    margin-right: 20px;
+  }
+  
+  .container-detail {
+    margin-left: 162px;
+    height: 100px;
+    flex-direction: row;
+    display: flex;
+    margin-top: 20px;
+  }
+
+  .container-default {
+    color: #1fdb9b;
+    font-size: 20px;
+    border: solid #1fdb9b 2px;
+    padding-left: 4px;
+    padding-right: 4px;
+    height: 29px;
+    border-radius: 14px;
+    align-items: center;
+  }
+  
+  .container-default-alipay {
+    color: #1fdb9b;
+    font-size: 20px;
+    border: solid #1fdb9b 2px;
+    padding-left: 5px;
+    padding-right: 4px;
+    padding-top: 5px;
+    height: 25px;
+    border-radius: 14px;
+    align-items: center;
+  }
+  
+  .divLine {
+    background: #fcfcfc;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  
+  .address-add {
+    width: 100%;
+    color: white;
+    font-size: 34px;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .btnBtom {
+    width: 90%;
+    margin-left: 5%;
+    height: 80px;
+    border-radius: 50px;
+    background: linear-gradient(to right, #00c891, #1fdb9b);
+    box-shadow: 0px 8px 30px rgba(31, 219, 155, 0.5);
+    align-items: center;
+    display: flex;
+  }
+  
+  .bottom_empty {
+    height: 50px;
+    width: 100%;
+  }
+  
+  .bottom_container {
+    background-color: #fafafa;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+  }
+  

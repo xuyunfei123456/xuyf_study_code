@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+  },
+  "navigationBarTitleText": "注销账号" ,
+  "navigationBarBackgroundColor":"#49ddb8",
+  "navigationBarTextStyle": "white"
+}

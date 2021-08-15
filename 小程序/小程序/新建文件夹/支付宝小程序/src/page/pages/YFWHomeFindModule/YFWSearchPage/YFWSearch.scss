@@ -1,0 +1,102 @@
+page{
+    background-color: white
+}
+.container {
+    width: 100vw;
+    height: 100vh;
+}
+.toSearchView {
+    display: flex;
+    flex-direction: row;
+    background-color: #49ddb8;
+    height: 100px;
+    align-items: center;
+    position: fixed;
+}
+.topSearchInputView{
+    height: 67px;
+    width: 80vw;
+    border-radius: 34px;
+    display: flex;
+    flex-direction: row;
+    margin-left: 25px;
+    background-color: white;
+    align-items: center;
+}
+.searchIcon {
+    margin-left: 18px;
+    width: 38px;
+    height: 30px;
+}
+.topViewSearchInput{
+    // display: block;
+    // height: 32px;
+    // width: 60vw;
+    margin-left: 10px;
+    flex: 1;
+    margin-right: 30px;
+    background-color: white;
+    caret-color: #1fdb9b;
+    color: #666666;
+    font-size: 28px;
+}
+.search-del {
+    display: block;
+    margin-right: 20px;
+    width: 40px;
+    height: 40px;
+    opacity: 0.4;
+}
+.qr_sys {
+    display: block;
+    margin-right: 32px;
+    width: 36px;
+    height: 36px;
+}
+.inputplaceholder {
+    font-size: 28px;
+    color: #cccccc;
+    // display: block;
+    // height: 32px;
+    // width: 60vw;
+}
+.topViewSearchBotton{
+    display: flex;
+    height: 100px;
+    width: 15vw;
+    padding-right: 37px;
+    align-items: center;
+    justify-content: center;
+}
+.topViewSearchBotton text {
+    font-size: 34px;
+    color: white;
+}
+.topViewSearchBotton image {
+    width: 42px;
+    height: 42px;
+}
+.scroll {
+    position: fixed;
+    width: 100%;
+    bottom: 0px;
+    display: flex;
+    top:100px;
+}
+.kind-white{
+    display: flex;
+    height: 100px;
+    width: 15vw;
+  }
+  .kind-text{
+    display: flex;
+    height: 100px;
+    width: 70vw;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  .kind-text text{
+    font-size: 30px;
+    color: white
+  }

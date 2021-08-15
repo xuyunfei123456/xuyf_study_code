@@ -1,0 +1,38 @@
+/* components/YFWStar/YFWStar.wxss */
+.root_view{
+  display: flex;
+  width: auto;
+  height: 24rpx;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position:relative;
+}
+
+.stars_view{
+  display: flex;
+  position: absolute;
+  left: 0;
+  width: 120rpx;
+  height: 24rpx;
+  overflow: hidden;
+  flex-wrap: nowrap;
+  background-color: transparent;
+}
+.total_stars_view{
+  display: flex;
+  position: absolute;
+  left: 0;
+  height: 24rpx;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  background-color: transparent;
+}
+.start{
+  position: absolute;
+  display:inline-block;
+  left: 0;
+  width: 24rpx;
+  height: 24rpx;
+}

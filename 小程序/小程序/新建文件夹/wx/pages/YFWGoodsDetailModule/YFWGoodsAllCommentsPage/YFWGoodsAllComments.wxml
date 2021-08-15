@@ -1,0 +1,16 @@
+<!--pages/YFWGoodsDetailModule/YFWGoodsAllCommentsPage/YFWGoodsAllComments.wxml-->
+<view class='comment'>
+  <block wx:for="{{dataSource}}" wx:key="index">
+    <view class='comment-item'>
+      <view class='comment-row comment-space'>
+        <view class='comment-row'>
+          <image src='{{item.intro_image}}' class='comment-image'></image>
+          <view class='comment-name'>{{item.account_name}}</view>
+        </view>
+        <view class='comment-time'>{{item.create_time}}</view>
+      </view>
+      <view class='comment-content'>{{item.content}}</view>
+    </view>
+  </block>
+  <footerView id="footerRefreshView"/>
+</view>

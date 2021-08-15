@@ -1,0 +1,15 @@
+<scroll-view scroll-x="false" scroll-y="true" style="height:{{destHeight}}rpx;-webkit-overflow-scrolling: touch;" bindscrolltolower="requestNextPage" bindscroll="onScrollListenner" lower-threshold="10">
+
+  <block wx:for="{{dataArray}}" wx:key='key' wx:for-index="idx">
+    <view class="item-container">
+      <view class="title">{{item.title}}</view>
+      <view class="msg bottom20">{{item.timeString}}</view>
+      <view class="msg" wx:if="{{item.detail.type&&item.detail.type.length>0}}">{{'退款类型：'+item.detail.type}}</view>
+      <view class="msg" wx:if="{{item.detail.reason&&item.detail.reason.length>0}}">{{'退款原因：'+item.detail.reason}}</view>
+      <view class="msg" wx:if="{{item.detail.price&&item.detail.price.length>0}}">{{'退款金额：'+item.detail.price}}</view>
+      <view class="msg top20 green" wx:if="{{item.hasVoucheImage}}" bindtap="showImageAction" data-images="{{item.voucher_images}}">查看上传凭证</view>
+      <view class="msg top20 green" wx:if="{{item.hasReportImage}}" bindtap="showImageAction" data-images="{{item.report_images}}">查看检验报告</view>
+    </view>
+  </block>
+  
+</scroll-view>

@@ -1,0 +1,105 @@
+/* pages/YFWLoginModule/YFWAuthorLoginPage/YFWAuthorLogin.wxss */
+
+page {
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  background: #fff
+}
+
+.top_view_img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.top_img {
+  width: 610px;
+  height: 502px;
+  margin-top: 170px;
+}
+
+.bottom_view {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.view-wx-login {
+  height: 82px;
+  width: 90%;
+  margin-top: 41px;
+  margin-left: 10%;
+  border: 2px #1fdb9b solid;
+  background: #1fdb9b;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  font-size: 30px;
+}
+.view-wx-login::after{
+  border: none; 
+}
+.view-ali-login{
+  height: 82px;
+  width: 90%;
+  margin-top: 41px;
+  margin-left: 10%;
+  border: 2px #1fdb9b solid;
+  background: #1fdb9b;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  color: white;
+  justify-content: center;
+  font-size: 30px;
+}
+.view-ali-login::after{
+  border: none; 
+}
+.img-wx-login {
+  width: 45px;
+  height: 36px;
+  position: absolute;
+  left: 30%;
+  margin-top: 1px
+}
+
+.btn-wx-login {
+  font-size: 30px;
+  color: #fff;
+  margin-left: 36%;
+}
+
+.view-phone-login {
+  height: 82px;
+  width: 90%;
+  margin-top: 41px;
+  margin-left: 10%;
+  border: 2px #1fdb9b solid;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.img-phone-login {
+  width: 28px;
+  height: 48px;
+  position: absolute;
+  left: 32%;
+}
+
+.btn-phone-login {
+  font-size: 30px;
+  color: #1fdb9b;
+  margin-left: 35%;
+}
+

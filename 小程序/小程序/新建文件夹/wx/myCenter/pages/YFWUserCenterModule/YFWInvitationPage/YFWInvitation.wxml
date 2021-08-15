@@ -1,0 +1,30 @@
+<!--myCenter/pages/YFWUserCenterModule/YFWInvitationPage/YFWInvitation.wxml-->
+
+<view style="overflow:hidden">
+  <view class="invitation_page1_top">
+    <image src="https://c1.yaofangwang.net/common/images/invitation/invitation_page1_top.jpg"></image>
+  </view>
+  <view class="invitation_page1_middle">
+    <image src="https://c1.yaofangwang.net/common/images/invitation/invitation_page1_middle.jpg"></image>
+    <image class="ava" src="{{avatar}}"></image>
+    <view class="invitation_name">{{name}}</view>
+    <view class="invita_text">邀你领20元新人红包，买药更方便</view>
+    <button wx:if="{{hasLogin == 2&&showbutton}}" class="invitation_button" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">
+      <image src="https://c1.yaofangwang.net/common/images/invitation/invitation_button.png"></image>
+      <text class="invitation_text">立即领取</text>
+    </button>
+    <button wx:if="{{hasLogin == 1&&showbutton}}" class="invitation_button" bindtap="getInvitation" >
+      <image src="https://c1.yaofangwang.net/common/images/invitation/invitation_button.png"></image>
+      <text class="invitation_text">立即领取</text>
+    </button>
+
+  </view>
+  <view class="invitation_page1_bottom">
+    <image src="https://c1.yaofangwang.net/common/images/invitation/invitation_page1_bottom.jpg"></image>
+  </view>
+</view>
+    <!-- loading图 -->
+    <view class="loadingbg" catchtap="handleCatchTap" wx:if="{{loading}}">
+    <image src='/images/loading_cycle.gif'  class='invitation-loading' />
+  </view>
+  <!-- <view style="position:absolute;top:50%;font-size:24rpx;color:blue">{{invite_code}}</view> -->

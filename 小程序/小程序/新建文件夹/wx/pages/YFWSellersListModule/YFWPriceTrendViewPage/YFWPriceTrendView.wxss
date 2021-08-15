@@ -1,0 +1,152 @@
+/* pages/YFWSellersListModule/YFWPriceTrendViewPage/YFWPriceTrendView.wxss */
+.trend-view {
+  width: 100vw;
+  min-height: 100vh;
+  background-color: #fafafa;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 30rpx;
+}
+
+.trend-content {
+  display: flex;
+  margin: 20rpx 26rpx 0 26rpx;
+  padding: 40rpx 54rpx;
+  border-radius: 14rpx;
+  background-color: #fff;
+  flex-direction: column;
+  box-shadow: 0rpx 8rpx 16rpx rgba(204,204,204,0.5);
+}
+
+.trend-store-view {
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  display: flex;
+  margin-top: 4rpx;
+}
+
+.trend-time-view {
+  padding-left: 8rpx;
+  padding-right: 8rpx;
+  border-radius: 6rpx;
+  background: linear-gradient(to right, #ff9a67,#ff605e);
+  color: #fff;
+  margin-left: 10rpx;
+  box-shadow: 0rpx 8rpx 16rpx rgba(255,138,101,0.5);
+}
+
+.trend-count-view {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 60rpx;
+}
+
+.trend-count-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.trend-sort-icon {
+  width: 24rpx;
+  height: 22rpx;
+}
+
+.trend-button-view {
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  display: flex;
+  padding-top: 20rpx;
+}
+
+.trend-button-time {
+  font-size: 24rpx;
+  font-weight: normal;
+  margin-right: 10rpx;
+}
+
+.trend-button-item {
+  border-radius: 14rpx;
+  border: solid 2rpx #1fdb9b;
+  width: 120rpx;
+  padding: 4rpx 0rpx;
+  font-weight: normal;
+  font-size: 24rpx;
+  box-shadow: 0rpx 8rpx 16rpx rgba(31,219,155,0.5);
+  margin-left: 10rpx;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.trend-button-item.button-normal {
+  color: #1fdb9b;
+  background-color: #fff;
+}
+
+.trend-button-item.button-selected {
+  color: #fff;
+  background-color: #1fdb9b;
+}
+
+.trend-charts-view {
+  padding-top: 30rpx;
+  display: flex;
+  flex-direction: column; 
+}
+
+.trend-charts {
+  width: 100%;
+  height: 200px;
+  margin-left: -20rpx;
+}
+
+.trend-desc-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.trend-desview {
+  padding-top: 30rpx;
+}
+
+.trend-buy {
+  border-radius: 20rpx;
+  color: #ff8364;
+  border: solid 2rpx #ff8364;
+  padding: 4rpx 15rpx;
+  font-weight: bold;
+}
+
+.trend-center {
+  justify-content: center;
+  align-items: center;
+}
+
+.trend-title-font {
+  font-size: 30rpx;
+  font-weight: bold;
+}
+
+.trend-subtitle-font {
+  font-size: 20rpx;
+}
+
+.trend-dark {
+  color: #333;
+  
+}
+
+.trend-red {
+  color: #ff3300;
+}
+
+.trend-light {
+  color: #999;
+}

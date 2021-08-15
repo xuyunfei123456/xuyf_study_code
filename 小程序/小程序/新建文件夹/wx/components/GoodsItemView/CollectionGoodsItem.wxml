@@ -1,0 +1,58 @@
+<!-- component/collectionGoodsItem.wxml -->
+<view class='collectionItemView' bindtap='toGoodsDetail' id='father'>
+	<view class='imageView'>
+		<image class='image' src='{{data.goods_image?data.goods_image:data.intro_image}}'></image>
+	</view>
+	<view class='nameView'>
+		<view class='name'>
+			<image wx:if="{{data.activity_img_url.length>0}}" class="name_ac_url" src="{{data.activity_img_url}}" mode="widthFix"></image>
+			{{data.goods_name}}
+		</view>
+	</view>
+	<view style="color:{{dataIndex%3 == 1&&showSpecification2?'#a5953e':dataIndex%3 == 2 &&showSpecification2? '#2f779d':'#999'}}" class="standards" wx:if="{{showstanders}}">
+		{{data.goods_standard}}
+	</view>
+	<view class="listitem" wx:if="{{data.model.trocheType}}">{{data.model.trocheType}}</view>
+	<view class="listitem" wx:if="{{data.model.companyName}}">{{data.model.companyName}}</view>
+	<view class="activity" wx:if='{{data.isShowCart}}'>
+		<view class="freeExpress" wx:if='{{data.model.free_logistics_desc}}'>
+			{{data.model.free_logistics_desc}}
+		</view>
+		<view class="coupon" wx:if='{{data.model.activity_desc}}'>{{data.model.activity_desc}}</view>
+	</view>
+	<view class='bottomView'>
+		<view class='priceView'>
+			<!-- <text class='price'>{{data.goods_price}}</text> -->
+			<priceView price="{{data.goods_price}}" fontSize="34" discount="{{data.goods_discount}}" />
+			<!-- <view class='discountView' wx:if='{{data.goods_discount.length>0?true:false}}'><text class='discount'>{{data.goods_discount}}</text></view> -->
+			<!-- <view class="fxcss" wx:if='{{data.isShowCart&&data.model.originData.price_desc}}'>
+				{{data.model.originData.price_desc}}
+			</view> -->
+		</view>
+		<view class='rightview'>
+			<view class='freeView' wx:if='{{showfree}}'>
+				<text class='free'>包邮</text>
+			</view>
+		</view>
+		<image wx:if='{{data.isShowCart}}' class='shop_car' catchtap='toGoodsDetail' data-info='{{data}}' src='/images/bijia/gwche.png'></image>
+	</view>
+	<view class="couponAndFreeship">
+		<view class="freeShip" wx:if="{{data.model.free_logistics_desc}}">{{data.model.free_logistics_desc}}</view>
+		<view class="couponitem" wx:if="{{data.model.coupons_desc}}">{{data.model.coupons_desc}}</view>
+	</view>
+	<view wx:if='{{data.store_title.length > 0}}' class='shop_container'>
+		<view class='shop_default'>推荐</view>
+		<view class='shop_title'>{{data.store_title}}</view>
+		<block>
+			<view class='shop_more' catchtap='showMoreAction' data-info='{{data}}'>更多</view>
+			<image class='shop_arrow' src='/images/around_detail_icon.png'></image>
+		</block>
+	</view>
+	<view class='store' wx:elif='{{showstore}}'>
+		<text class='storetext'>{{data.goods_stories}}</text>
+		个商家在售
+	</view>
+	<view class='store' wx:if='{{showCompany}}' style="color: black;overflow: hidden;text-overflow: ellipsis; white-space: nowrap;">
+		{{data.model && data.model.title}}
+	</view>
+</view>

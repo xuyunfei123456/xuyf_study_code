@@ -1,0 +1,447 @@
+.topLayout {
+    width: 750px;
+    height: 285px;
+    background-color: #49ddb8;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .topReturnTypeLayout {
+    margin-top: 30px;
+    width: 700px;
+    margin-left: 25px;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 14px;
+    box-shadow: 0px 7px 15px 0px rgba(204, 204, 204, 0.6);
+  }
+  
+  .topReturnTypeLayout .tips {
+    font-size: 28px;
+    color: #333;
+    font-family: SourceHanSansCN-Normal;
+    margin-left: 40px;
+  }
+  
+  .postPicLayout{
+    width: 180px;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    margin-right: 26px;
+  }
+  
+  .deletPic{
+    width: 30px;
+    height: 30px;
+   position: relative;
+   margin-top: -180px;
+   margin-left: 150px;
+   z-index: 99
+  }
+  
+  .topReturnTypeLayout .typeValue {
+    font-size: 28px;
+    color: #999;
+    font-family: SourceHanSansCN-Normal;
+  }
+  
+  .returnGoodsInfo {
+    width: 700px;
+    height: auto;
+    margin-left: 25px;
+    position: relative;
+    background-color: #fff;
+    border-radius: 14px;
+    box-shadow: 0px 7px 15px 0px rgba(204, 204, 204, 0.6);
+    margin-top: -135px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 50px;
+  }
+  
+  .title {
+    margin-left: 40px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 26px;
+  }
+  
+  .title .text {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    z-index: 99;
+    margin-left: 10px;
+  }
+  
+  .title .bottom {
+    width: 205px;
+    background-image: linear-gradient(270deg, #4bfdf2 0%, #4bff8f 100%), linear-gradient(#fff, #fff);
+    background-blend-mode: normal, normal;
+    height: 12px;
+    margin-top: -8px;
+    box-shadow: 0px 7px 15px 0px rgba(131, 241, 219, 0.59);
+    margin-left: 3px;
+  }
+  
+  .goodsList {
+    width: 640px;
+    margin-left: 15px;
+    margin-right: 25px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+  }
+  
+  .goodsListItem {
+    display: flex;
+    flex-direction: row;
+    margin-left: 15px;
+    align-items: center;
+  }
+  
+  .checkStatus {
+    width: 45px;
+    height: 45px;
+    min-width: 45px;
+  }
+  
+  .unCheckStatus {
+    width: 45px;
+    height: 45px;
+    min-width: 45px;
+  }
+  
+  .goodsImage {
+    width: 140px;
+    height: 140px;
+  }
+  
+  .medicienInfoLayout {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+  }
+  
+  .medicienInfoLayout .top {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  
+  .medicienInfoLayout .top .medicien_name {
+    font-size: 26px;
+    color: #000;
+    font-family: SourceHanSansCN-Medium;
+    width: 340px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    max-width: 340px;
+  }
+  
+  .medicienInfoLayout .top .price {
+    font-size: 26px;
+    color: #333;
+    font-family: SourceHanSansCN-Medium;
+  }
+  
+  .medicine_type_icon {
+    width: 52px;
+    height: 22px;
+    margin-right: 10px;
+  }
+  
+  .medicienInfoLayout .bottom {
+    flex: 1;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    margin-top: 30px;
+    font-size: 28px;
+    color: #999;
+  }
+  
+  .medicienInfoLayout .bottom .quantity {
+    font-size: 28px;
+    color: #333;
+    margin-left: 10px;
+  }
+  
+  .returnReason {
+    width: 700px;
+    height: auto;
+    margin-left: 25px;
+    background-color: #fff;
+    border-radius: 14px;
+    box-shadow: 0px 7px 15px 0px rgba(204, 204, 204, 0.6);
+    display: flex;
+    flex-direction: column;
+    padding-top: 50px;
+    margin-top: 35px;
+  }
+  
+  .returnReasonType {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+  }
+  
+  .returnReasonType .reasonItem {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  
+  .returnReasonType .reasonItem .reasonTitle {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+  }
+  
+  .returnReasonType .reasonItem .reasonTitle .reasonText {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    z-index: 99;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex: 1;
+  }
+  
+  .returnReasonType .reasonItem .reasonTitle .reasonBottom {
+    background-image: linear-gradient(270deg, #4bfdf2 0%, #4bff8f 100%), linear-gradient(#fff, #fff);
+    background-blend-mode: normal, normal;
+    box-shadow: 0px 7px 15px 0px rgba(131, 241, 219, 0.59);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-left: 40px;
+    margin-right: 40px;
+    height: 12px;
+    margin-top: -8px;
+  }
+  
+  .returnDetailReason {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-top: 20px;
+  }
+  
+  .returnDetailReason .ItemLayout {
+    margin-left: 40px;
+    margin-right: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100px;
+  }
+  
+  .returnDetailReason .ItemLayout .checkedTips {
+    font-size: 28px;
+    color: #333;
+    font-family: SourceHanSansCN-Normal;
+    max-width: 570px;
+    width: 570px;
+  }
+  
+  .returnDetailReason .ItemLayout .unCheckedTips {
+    font-size: 28px;
+    color: #999;
+    font-family: SourceHanSansCN-Normal;
+  }
+  
+  .returnDetailReason .ItemLayout .checkedImage {
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+  }
+  
+  .splite {
+    background-color: #E5E5E5;
+    height: 2px;
+    flex: 1;
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+  
+  .upLoadVoucher {
+    width: 700px;
+    height: auto;
+    margin-left: 25px;
+    background-color: #fff;
+    border-radius: 14px;
+    box-shadow: 0px 7px 15px 0px rgba(204, 204, 204, 0.6);
+    display: flex;
+    flex-direction: column;
+    padding-top: 50px;
+    margin-top: 35px;
+  }
+  
+  .upLoadVoucher .tips {
+    font-size: 24px;
+    color: #feac4c;
+    margin-left: 40px;
+  }
+  
+  .voucherLayout {
+   width: 620px;
+    margin-left: 40px;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+    margin-bottom: 70px;
+  }
+  
+  .voucherLayout .uploadIcon {
+    width: 180px;
+    height: 180px;
+  }
+  
+  .moneyInfo {
+    width: 700px;
+    height: 200px;
+    margin-left: 25px;
+    background-color: #fff;
+    border-radius: 14px;
+    box-shadow: 0px 7px 15px 0px rgba(204, 204, 204, 0.6);
+    display: flex;
+    flex-direction: column;
+    margin-top: 35px;
+    padding-bottom: 20px;
+  }
+  
+  .moneyInfo .top {
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+    margin-left: 40px;
+    align-items: center;
+  }
+  
+  .moneyInfo .top .tips {
+    font-size: 28px;
+    color: #333;
+    font-family: SourceHanSansCN-Normal;
+    min-width: 150px
+  }
+  
+  .moneyInfo .top .value {
+    font-size: 28px;
+    color: #f30;
+    width: 300px;
+    font-family: SourceHanSansCN-Normal;
+  }
+  
+  .moneyInfo .top .value-normal {
+    font-size: 28px;
+    color: #333;
+    font-family: SourceHanSansCN-Normal;
+  }
+  
+  .moneyInfo .top .but {
+    font-size: 24px;
+    color: #999;
+    font-family: SourceHanSansCN-Normal;
+  }
+  
+  .postButton {
+    width: 700px;
+    height: 84px;
+    background-image: linear-gradient(270deg, #00c891 0%, #1fdb9b 100%), linear-gradient(#fff, #fff);
+    background-blend-mode: normal, normal;
+    box-shadow: 0px 7px 15px 0px rgba(31, 219, 155, 0.5);
+    border-radius: 42px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    margin-left: 25px;
+  }
+  
+  .postButton .text {
+    font-size: 34px;
+    color: #fff;
+  }
+  
+  .inputHolder {
+    font-size: 28px;
+    color: #999;
+  }
+  
+  .editeReturnQty {
+    display: flex;
+    flex-direction: row;
+    width: 180px;
+    height: 45px;
+    border: #ccc solid 1px;
+    border-radius: 6px;
+    margin-left: 10px;
+  }
+  
+  .Goodsprice {
+    font-size: 28px;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  .smallPrice{
+    font-size: 22px;
+    color:#333;
+    font-weight: medium
+  }
+  
+  
+  .subtract{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex:1;
+    color: #999;
+    font-size: 28px;
+  }
+  
+  .numberInput{
+    flex:1;
+    text-align: center;
+    font-size: 28px;
+    color: #333;
+  }
+  
+  .add{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex:1;
+    color: #333;
+     font-size: 28px;
+  }
+  
+  .editeSplite{
+    width: 2px;
+    height: 45px;
+    background-color: #ccc
+  }
+  
+  .fillBottom{
+    width: 100%;
+    height: 100px;
+  }

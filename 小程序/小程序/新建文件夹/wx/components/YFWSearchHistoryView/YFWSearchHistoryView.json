@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "titleView": "/components/YFWTitleView/YFWTitleView"
+  }
+}

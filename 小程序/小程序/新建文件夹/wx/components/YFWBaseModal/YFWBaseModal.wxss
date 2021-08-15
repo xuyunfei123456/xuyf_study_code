@@ -1,0 +1,82 @@
+.modal-mask{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.6);
+  z-index: 999;
+}
+
+.modal-content{
+  display: flex;
+  flex-direction: column;
+  width: 590rpx;
+  height: 280rpx;
+  background-color: #fff;
+  border-radius: 8rpx;
+  text-align: center;
+ 
+}
+
+.main-content{
+  flex: 1;
+  height: 100%;
+  overflow-y: hidden; 
+  max-height: 80vh; 
+  display: flex;
+  flex-direction: column;
+  font-size: 26rpx;
+  color: rgba(51, 51, 51, 1);
+   padding-top: 20rpx;
+  padding-bottom: 20rpx;
+  padding-left: 40rpx;
+  padding-right: 40rpx;
+}
+
+.splite_view{
+  width: 590rpx;
+  height: 2rpx;
+  background-color: #f5f5f5
+}
+
+.modal-footer{
+  display: flex;
+  flex-direction: row;
+  width: 590rpx;
+  height: 80rpx;
+}
+
+.modal-footer .left{
+  flex:1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+  font-size: 28rpx;
+}
+
+.modal-footer .splite{
+  height: 80rpx;
+  width: 2rpx;
+  background-color: #F5F5F5
+}
+
+
+.modal-footer .right{
+  flex:1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #16c08e;
+  font-size: 28rpx;
+}
+
+.tips_text{
+  color: #333333;
+  font-size: 28rpx;
+  margin-top: 20rpx;
+}

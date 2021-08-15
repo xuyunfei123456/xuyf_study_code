@@ -1,0 +1,132 @@
+page{
+    background-color: #F5F5F5
+  }
+  
+  .parent_css {
+    width: 700px;
+    margin-left: 25px;
+    margin-top: 34px;
+    border-radius: 14px;
+    box-shadow: 0px 6px 20px 4px rgba(204, 204, 204, 0.6);
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff
+  }
+  
+  .medicine_info {
+    display: flex;
+    flex-direction: row;
+    margin-left: 28px;
+    margin-right: 28px;
+    margin-top: 28px;
+    align-items: center;
+  }
+  
+  .medicine_info .medicine_image {
+    width: 148px;
+    height: 148px;
+    min-width: 148px;
+  }
+  
+  .medicine_info .info {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    color: #999;
+    font-size: 24px;
+  }
+  
+  .medicine_info .info .order_no {
+    color: #333;
+  }
+  
+  .medicine_info .info .price {
+    font-size: 28px;
+    color: #f30;
+    margin-top: 10px;
+  }
+  
+  .dash_line {
+    width: 644px;
+    margin-left: 28px;
+    height: 1px;
+    background-image: linear-gradient(to right, #ccc 0%, #ccc 50%, transparent 50%);
+    background-size: 8px 8px;
+    background-repeat: repeat-x;
+  }
+  
+  .evaluation_item {
+    margin-top: 40px;
+    margin-left: 58px;
+    margin-right: 58px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .evaluation_item .type_text {
+    font-size: 24px;
+    color: '#333333';
+  }
+  
+  .input_parent {
+    width: 644px;
+    height: 220px;
+    border: #ccc solid 2px;
+    margin-top: 30px;
+    margin-left: 28px;
+  }
+  
+  .input_parent .input_placeholde {
+    font-size: 22px;
+    color: #ccc;
+  }
+  
+  .input_parent .input_edite {
+    font-size: 22px;
+    color: #333;
+    width: 612px;
+    position: static;
+    margin-left: 10px;
+    margin-top: 14px;
+  }
+
+  .input_parent .input_edite_tt {
+    font-size: 22px;
+    color: #333;
+    width: 612px;
+    height: 90%;
+    position: static;
+    margin-left: 10px;
+    margin-top: 14px;
+  }
+  
+  .tips_text {
+    font-size: 20px;
+    color: #ccc;
+    margin-left: 40px;
+    margin-top: 14px;
+    margin-bottom: 28px;
+  }
+  
+  .post_button {
+    margin-top: 185px;
+    width: 700px;
+    height: 84px;
+    background-image: linear-gradient(270deg, #00c891 0%, #1fdb9b 100%), linear-gradient(#fff, #fff);
+    background-blend-mode: normal, normal;
+    box-shadow: 0px 7px 15px 0px rgba(31, 219, 155, 0.5);
+    border-radius: 42px;
+    margin-left: 25px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center
+  }
+  
+  .post_button .text{
+    font-size: 34px;
+    color: #FFFFFF
+  }
+  

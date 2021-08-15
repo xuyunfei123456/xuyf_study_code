@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "titleView": "../../../../components/YFWTitleView/YFWTitleView",
+    "more_view": "/components/YFWMoreView/YFWMoreView",
+    "priceView": "/components/YFWPriceView/YFWPriceView"
+  },
+  "navigationBarBackgroundColor": "#49ddb8",
+  "navigationBarTitleText": "我的收藏",
+  "navigationBarTextStyle": "white"
+}

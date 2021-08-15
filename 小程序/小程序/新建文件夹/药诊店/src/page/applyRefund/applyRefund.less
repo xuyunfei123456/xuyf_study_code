@@ -1,0 +1,96 @@
+.flex{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.applyRefund-wrap{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+    position: relative;
+    padding: 5px 10px 0px 10px;
+    box-sizing: border-box;
+    padding-bottom: constant(safe-area-inset-bottom);
+    /*兼容 IOS<11.2*/
+    padding-bottom: env(safe-area-inset-bottom);
+    .applyRefund-item{
+        width: 100%;
+        border-radius: 7px;
+        background-color: #ffffff;
+        box-shadow: 0px 0px 13px rgba(0, 0, 0, 0.04);
+        box-sizing: border-box;
+        padding: 0px 12px 0px 12px;
+        margin-top: 6px;
+        .applyRefund-item-title{
+            height: 48.333px;
+            line-height: 48.333px;
+            font-size: 15px;
+            color: #333333;
+            font-weight: bold;
+            .flex();
+            justify-content: space-between;
+            .title-right{
+                font-size: 12px;
+                font-weight: normal;
+                .flex();
+                .reason{
+                    color: #999999;
+                }
+                .arrow-right{
+                    width: 7.333px;
+                    height: 15.334px;
+                    margin-left: 6.667px;
+                }
+            }
+        }
+        .applyRefund-item-center{
+            border-top: 0.667px solid #f5f5f5;
+            box-sizing: border-box;
+            padding-top: 4.666px;
+            padding-bottom: 16.667px;
+            .shopList{
+                margin-top: 18.667px;
+            }
+        }
+    }
+    .at-action-sheet__body{
+        .at-action-sheet__item{
+            .flex();
+            justify-content: space-between;
+            padding: 15px 31px 15px 39px;
+            .reason-content{
+                font-size: 14px;
+                color: #333333;
+            }
+            .reason-btn{
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
+    .at-action-sheet__footer{
+        font-size: 14px;
+        color: #333333;
+        padding: 15px 31px 15px 39px;
+    }
+    .at-action-sheet__header{
+        .at-action-sheet__footer();
+        font-size: 16px;
+        font-weight: bold;
+    }
+    .applyRefund-submit-btn{
+        position: fixed;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 24.333px;
+        width: 337.667px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 16px;
+        color: #ffffff;
+        font-weight: bold;
+        text-align: center;
+        border-radius: 20px;
+        background: linear-gradient(to right,#00b187,#3acb8f);
+    }
+}

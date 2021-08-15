@@ -1,0 +1,13 @@
+<view class='modal-back' hidden='{{!isShow}}' bindtap='hideModal' id='father' catchtouchmove='moveAction'>
+
+  <view class='modal-content' catchtap='hideModal'>
+    <view class="modal-tag"></view>
+    <view class="modal-view">
+      <view class="context">点击添加到我的小程序，微信首页下拉即可快速访问药房网商城</view>
+      <view class="image-view" bindtap="del">
+        <image bindtap="del" class="image" src="/images/order_status_icon_failed.png"></image>
+      </view>
+      
+    </view>
+  </view>
+</view>

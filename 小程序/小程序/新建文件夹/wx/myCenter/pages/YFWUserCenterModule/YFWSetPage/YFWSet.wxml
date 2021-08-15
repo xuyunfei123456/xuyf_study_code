@@ -1,0 +1,18 @@
+<view class = "containers">
+  <block wx:for="{{dataInfo}}" wx:key=''>
+    <view class='titleview' wx:if="{{item.isShowHeader}}">
+      <titleView title='{{item.title}}' fontWeight="700" />
+    </view>
+    <block wx:for="{{item.data}}" wx:key=''>
+      <template is="cellItem" data="{{item}}" />
+    </block>
+  </block>
+</view>
+
+<template name="cellItem">
+  <view class="item_view" bindtap="clickItem" data-item='{{item}}' style="margin-top:{{item.key == 'returnLogin' ? '20rpx':'0'}}">
+    <text class= "title" >{{item.title}}</text>
+    <text class="right_text" wx:if="{{item.subtitle}}">{{item.subtitle}}</text>
+    <image class="img_next"  src="/images/uc_next.png"></image> 
+  </view>
+</template>

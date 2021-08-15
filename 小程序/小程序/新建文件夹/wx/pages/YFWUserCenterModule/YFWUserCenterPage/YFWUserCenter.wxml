@@ -1,0 +1,146 @@
+<view class="wrapper">
+<view style="height:{{navHeight}}px;background:#49ddb8"></view>
+<scroll-view class="root_scroll" scroll-x="false" scroll-y="true" bindscrolltolower="nextPage" bindscroll="onScrollListenner" style="padding-bottom:{{safeAreaInsetBottom}}px;height:{{scrollHeight}}px">
+  <image src='/images/personal_center_bg.png' class="top_image_bg"></image>
+  <view class="setting_mssage_parent">
+    <view class='message'>
+      <YFWMessageRedPointView darkstyle='true' messagecount='{{userHeaderInfo.to_view_message_count}}' />
+    </view>
+    <view class="setting_parent" bindtap='toSetting'>
+      <image src="/images/icon_setup.png" class='setting_image_icon'></image>
+      <text class="setting_text">设置</text>
+    </view>
+  </view>
+  <view class="user_info">
+    <image src="{{userHeaderInfo.account_img_url.length>5?userHeaderInfo.account_img_url:'/images/user_icon_default.png'}}" class="user_icon" bindtap='toUserInfoManager'></image>
+    <view class="noLogin" bindtap="dologin" wx:if="{{!loginstatus ||userHeaderInfo.first }}">点击登录</view>
+    <view class="user_account_name" bindtap='toUserInfoManager'>
+      <text class="name_text">{{userHeaderInfo.account_real_name}}</text>
+      <text class="tips_text">{{userHeaderInfo.greeting}}</text>
+    </view>
+    <view class="invite_parent" bindtap='toSign' style="min-width:{{issigntody == 0 ? '190rpx':'150rpx'}}" catchtouchmove='myTouchMove'>
+      <image src="/images/check-in.png" class="icon" ></image>
+      <text class="text" style="color:{{issigntody == 0 ? '#ff9a67':'gray'}}">{{issigntody == 0 ? '签到赢积分':'已签到'}}</text>
+    </view>
+  </view>
+  <view class="usercenter_header_bottom">
+    <view class="item" bindtap='toHistory'>
+      <view class="number">{{recentCount}}</view>
+      <view class="tips">浏览历史</view>
+    </view>
+    <view class="item" bindtap='toFaverate'>
+      <view class="number">{{userHeaderInfo.user_favorite}}</view>
+      <view class="tips">收藏</view>
+    </view>
+    <view class="item" bindtap='toPoint'>
+      <view class="number">{{userHeaderInfo.point}}</view>
+      <view class="tips">积分</view>
+    </view>
+    <view class="item" bindtap='toConpon'>
+      <view class="number">{{userHeaderInfo.coupon_count}}</view>
+      <view class="tips">优惠券</view>
+    </view>
+  </view>
+  <image class="banner_one" wx:if="{{userHeaderInfo.invite_win_cash_items}}" src="{{userHeaderInfo.invite_win_cash_items[0].img_url}}" bindtap='gotoInvite' />
+  <view class='banner_one_empty' wx:else />
+  <view class="usercenter_order_items">
+    <view class="usercenter_order_items_header" bindtap="orderList" data-index='0'>
+      <titleView title="我的订单" />
+      <text class='rightTitle'>全部订单</text>
+      <image class='rightImage' src='/images/uc_next.png' />
+    </view>
+    <view class='usercenter_order'>
+      <view class='order_item' bindtap="orderList" data-index='1'>
+        <image class='order_item_image' src='/images/uc_icon0.png' />
+        <view class='order_item_title'>待付款</view>
+        <view class="order_item_tips" wx:if="{{userHeaderInfo.order_unpaid_count>0}}">
+          {{userHeaderInfo.order_unpaid_count}}
+        </view>
+      </view>
+      <view class='order_item' bindtap="orderList" data-index='2'>
+        <image class='order_item_image' src='/images/uc_icon1.png' />
+        <view class='order_item_title'>待发货</view>
+        <view class="order_item_tips" wx:if="{{userHeaderInfo.order_unsent_count>0}}">
+          {{userHeaderInfo.order_unsent_count}}
+        </view>
+      </view>
+      <view class='order_item' bindtap="orderList" data-index='3'>
+        <image class='order_item_image' src='/images/uc_icon2.png' />
+        <view class='order_item_title'>待收货</view>
+        <view class="order_item_tips" wx:if="{{userHeaderInfo.order_unreceived_count>0}}">
+          {{userHeaderInfo.order_unreceived_count}}
+        </view>
+      </view>
+      <view class='order_item' bindtap="orderList" data-index='4'>
+        <image class='order_item_image' src='/images/uc_icon3.png' />
+        <view class='order_item_title'>待评价</view>
+        <view class="order_item_tips" wx:if="{{userHeaderInfo.order_unevaluated_count>0}}">
+          {{userHeaderInfo.order_unevaluated_count}}
+        </view>
+      </view>
+      <view class='order_item' bindtap="orderList" data-index='5'>
+        <image class='order_item_image' src='/images/uc_icon4.png' />
+        <view class='order_item_title'>退货/款</view>
+        <view class="order_item_tips" wx:if="{{userHeaderInfo.return_goods_count>0}}">
+          {{userHeaderInfo.return_goods_count}}
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='trafficnoview' wx:if="{{trafficnoArray.length>0}}">
+    <view class="trafficnoview_header">
+      <text class='leftTitle'>最新物流</text>
+    </view>
+    <view class='trafficnoview_item' bindtap='toLogistics' data-item="{{trafficnoArray[currentIndex]}}">
+      <image class='trafficnoview_item_image' src="{{trafficnoArray[currentIndex].imageurl.length>0?trafficnoArray[currentIndex].imageurl:'/images/default_img.png'}}" />
+      <view class='trafficnoview_item_info'>
+        <view class='trafficnoview_item_info_header'>
+          <text class='trafficnoview_item_info_status'>
+            {{trafficnoArray[currentIndex].status}}
+          </text>
+          <text class='trafficnoview_item_info_time'>{{trafficnoArray[currentIndex].time}}</text>
+        </view>
+        <text class='trafficnoview_item_info_logistics'>
+          {{trafficnoArray[currentIndex].content}}
+        </text>
+      </view>
+    </view>
+  </view>
+  <view class='separateView' />
+  <view class='usercenter_bottom_bottons'>
+    <view class='bottom_botton_item' bindtap='toAddress'>
+      <image class='bottom_botton_item_image' src='/images/user_icon_shdz.png' />
+      <text class='bottom_botton_item_title'>收货地址</text>
+    </view>
+    <view class='bottom_botton_item' bindtap='toRating'>
+      <image class='bottom_botton_item_image' src='/images/user_icon_wdpj.png' />
+      <text class='bottom_botton_item_title'>我的评价</text>
+    </view>
+    <view class='bottom_botton_item' bindtap='toComplaint'>
+      <image class='bottom_botton_item_image' src='/images/user_icon_wdts.png' />
+      <text class='bottom_botton_item_title'>我的投诉</text>
+    </view>
+    <view class='bottom_botton_item' bindtap='toDrugRemind' wx:if="{{false}}">
+      <image class='bottom_botton_item_image' src='/images/user_icon_yytx.png'/>
+      <text class='bottom_botton_item_title'>用药提醒</text>
+      <text class="bottom_botton_item_tips" wx:if="{{userHeaderInfo.drug_remind_count>0}}">{{userHeaderInfo.drug_remind_count}}</text>
+    </view>
+    <view class='bottom_botton_item' bindtap='toMedicinePerson'>
+      <image class='bottom_botton_item_image' src='/images/user_icon_yyr.png' />
+      <text class='bottom_botton_item_title'>用药人</text>
+    </view>
+    <view class='bottom_botton_item' bindtap='toMyPolicy'>
+      <image class='bottom_botton_item_image' src='/images/bao.png' />
+      <text class='bottom_botton_item_title'>我的保单</text>
+    </view>
+  </view>
+  <image class="banner_two" src="{{userHeaderInfo.customer_join_items[0].img_url}}" bindtap='toStoreSettledIn' data-item='{{userHeaderInfo.customer_join_items[0]}}' />
+  <view style="height:{{0}}px;width100%"></view>
+</scroll-view>
+</view>
+<view>
+	<authentication id='authentication' />
+</view>
+<view bindtap="gotoInvite"   bindtouchmove="inviteMove" bindtouchcancel="inviteOver" bindtouchend="inviteOver" catch:touchmove class="ads_itemImage"   style="left:{{write[0]}}px;top:{{write[1]}}px;transform:translateX({{hasMove?direction == 'right' ? '50%' : '-50%' : 0}});">
+<image src="{{ads_itemImage}}" style="width:100%;height:100%"></image>
+</view>

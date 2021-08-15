@@ -1,0 +1,40 @@
+/* components/YFWTitleView.wxss */
+.root{
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+}
+.text_title{
+  height: 30px;
+  line-height: 30px;  
+  display:inline-block;
+  font-size:30px;
+  // font-weight: bold;
+  color:#333333;
+  margin-bottom: -6px;
+  z-index:10;
+}
+.text_title_alipay{
+  height: 30px;
+  line-height: 30px;  
+  display:inline-block;
+  font: size 2px;;
+  // font-weight: bold;
+  color:#333333;
+  margin-bottom: -6px;
+  z-index:10;
+}
+.text_image{
+  display: flex;
+  height: 16px;
+  width:120%;
+  margin-left: -8%;
+  z-index:1;
+}
+.line_image {
+  height: 8px;
+  width: 60%;
+  margin-left: 20%;
+  margin-top: 16px;
+  z-index: 1;
+}

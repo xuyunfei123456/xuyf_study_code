@@ -1,0 +1,115 @@
+.modal-mask{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.6);
+  z-index: 999;
+}
+/*遮罩内容*/
+.modal-content{
+  display: flex;
+  flex-direction: column;
+  width: 640rpx;
+  background-color: #fff;
+  border-radius: 20rpx;
+  text-align: center;
+}
+/*中间内容*/
+.main-content{
+  flex: 1;
+  height: 100%;
+  overflow-y: hidden; 
+  max-height: 80vh; 
+  display: flex;
+  flex-direction: column;
+  font-size: 26rpx;
+  color: rgba(51, 51, 51, 1)
+}
+
+.main-content .text_one{
+  margin-top: 22rpx;
+}
+
+
+.main-content .text_two{
+  margin-top: 22rpx;
+}
+
+.main-content .text_three{
+  margin-top: 22rpx;
+  color:rgba(153, 153, 153, 1)
+}
+
+
+/*底部按钮*/
+.modal-footer{
+  display: flex;
+  flex-direction: row;
+  margin-top: 90rpx;
+  align-items: center;
+  justify-content: center
+}
+
+.input{
+  position: fixed;
+  top: -100rpx;
+  width: 100rpx;
+  height: 20rpx;
+}
+
+.code_item{
+  width: 30rpx;
+  height: 30rpx;
+  background-color: red
+}
+
+.code_parent{
+  display: flex;
+  flex-direction: row;
+  width: 390rpx;
+  margin-left: 125rpx;
+  margin-top: 48rpx;
+}
+
+.verify-text{
+  float: left;
+  display: block;
+  width: 60rpx;
+  height: 90rpx;
+  border-bottom: 2rpx #999999 solid;
+  color: rgb(51,51,51);
+  text-align: center;
+  font-size: 70rpx;
+}
+
+.confirm_button{
+    color:rgb(31,219,155);
+    font-size:30rpx;
+    font-weight:bold;
+    width: 160rpx;
+    height: 60rpx;
+    border-radius: 30rpx;
+    border: rgb(31,219,155) solid 1rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 52rpx;
+}
+
+.delete_parent{
+  margin-top: 20rpx;
+  flex:1;
+  display: flex;
+  flex-direction: row-reverse;
+  margin-right: 20rpx;
+}
+
+.delete_parent .delete{
+  width: 28rpx;
+  height: 28rpx;
+}

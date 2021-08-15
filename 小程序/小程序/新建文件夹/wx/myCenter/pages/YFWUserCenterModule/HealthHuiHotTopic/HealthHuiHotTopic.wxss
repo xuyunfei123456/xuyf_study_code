@@ -1,0 +1,50 @@
+.articleWrapper{
+  padding-bottom: 50rpx;
+  width: 100vw;
+}
+.articleRecommend{
+  box-sizing: border-box;
+  height: 100vh;
+  width: 100vw;
+  }
+  .article_topic{
+    width: 100%;
+    margin-top: 20rpx;
+    box-sizing: border-box;
+    padding: 0rpx 24rpx;
+    position: relative;
+  }
+  .article_topic_bgc{
+    width: 100%;
+    height: 200rpx;
+    border-radius: 13.333rpx;
+  }
+  .onloading {
+    display: flex;
+    height: 50rpx;
+    width: 100vw;
+    background-color: #ffffff;
+    align-items: center;
+    justify-content: center;
+  }
+  .loading-icon {
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    position: relative;
+  }
+  .loadover {
+    font-size: 24rpx;
+    color: #999999;
+  }
+  .article_topic_name{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 60rpx;
+    top: 0;
+    height: 200rpx;
+    width: 96.8%;
+  }

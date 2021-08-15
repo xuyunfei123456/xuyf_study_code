@@ -1,0 +1,95 @@
+/* pages/YFWLoginModule/YFWBindPhonePage/YFWBindPhone.wxss */
+
+.container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  background: #fff
+}
+
+.view_phone {
+  margin-left: 40px;
+  margin-top: 30px;
+  font-size: 36px;
+  color: #000;
+  font-weight: bold;
+}
+
+.view_input_phone {
+  font-size: 28px;
+  color: #000;
+  margin-top: 100px;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.view_input_yzm {
+  display: flex;
+  flex-direction: row;
+  margin-top: 60px;
+}
+
+.input_yzm {
+  flex: 1;
+  font-size: 28px;
+  color: #000;
+  margin-left: 50px;
+  margin-right: 234px; 
+}
+
+.btn_yzm {
+  height: 60px;
+  width: 160px;
+  position: absolute;
+  right: 0;
+  border-radius: 4px;
+  margin-right: 30px;
+  font-size: 22px; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #ececec;
+}
+.btn_bind {
+  height: 82px;
+  width: 90%;
+  background-color: #1fdb9b;
+  font-size: 32px;
+  color: #fff;
+  margin-top: 130px;
+}
+.bottom_line_1px {
+  height: 1px;
+  margin-top: 10px;
+  background-color: #999;
+}
+.bottom_line {
+  height: 2px;
+  margin-top: 10px;
+  background-color: #999;
+}
+.bottom_view{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.view-phone-login {
+  height: 82px;
+  width: 90%;
+  margin-top: 130px;
+  margin-left: 5%;
+  margin-right: 5%;
+  // border: 2px #1fdb9b solid;
+  background: #1fdb9b;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+}
+.btn-phone-login {
+  font-size: 30px;
+  color: #ffffff;
+  margin-left: 45%;
+}

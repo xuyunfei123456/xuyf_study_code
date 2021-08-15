@@ -1,0 +1,33 @@
+<view wx:if="{{prescImages.length>0}}" class="head">
+  <view class="bg"></view>
+  <view class="presc_card"> 
+    <view class="title">处方图片</view>
+    <scroll-view scroll-x class="scroll">
+      <view class="presc_space"></view>
+      <block wx:for="{{prescImages}}" wx:key="prescImage">
+        <image src="{{item}}" data-item="{{item}}" bindtap="handleLookPrescImage" class="presc_image" mode="aspectFit"></image>
+      </block>
+    </scroll-view>
+  </view>
+</view>
+
+<view wx:if="{{patientInfo.length>0}}" class="presc_list">
+  <view class="presc_title_1"><title-view title="用药人信息" fontSize="30" fontWeight="500" ></title-view></view>
+  <block wx:for="{{patientInfo}}" wx:key="patientInfo">
+    <view class="item">
+      <text class="title">{{item.title}}</text>
+      <text class="content">{{item.content}}</text>
+    </view>
+  </block>
+</view>
+
+<view wx:if="{{prescInfo.length>0}}" class="presc_list">
+  <view class="presc_title_2"><title-view title="审方信息" fontSize="30" fontWeight="500" ></title-view></view>
+  <block wx:for="{{prescInfo}}" wx:key="prescInfo">
+    <view class="item">
+      <text class="title">{{item.title}}</text>
+      <image wx:if="{{item.icon.length>0}}" class="icon" src="{{item.icon}}" mode="widthFix"></image>
+      <text class="content">{{item.content}}</text>
+    </view>
+  </block>
+</view>

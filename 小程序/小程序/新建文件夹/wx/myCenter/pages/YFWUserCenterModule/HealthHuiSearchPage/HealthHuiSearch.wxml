@@ -1,0 +1,18 @@
+<view class="container">
+  <view class='toSearchView'>
+      <view class='topSearchInputView'>
+        <image class='searchIcon' src='/images/YFWStoreModule/top_bar_search.png' mode='aspectFit' />
+        <input placeholder="{{placeholder}}" class='topViewSearchInput' placeholder-class='inputplaceholder' value="{{searchText}}" bindinput='onChangeText' bindblur='onEndEditing' bindconfirm='searchClick' auto-focus='{{focusFlag}}' bindfocus='onFocus' confirm-type='{{search}}'></input>
+        <image class='search-del' wx:if="{{type==2}}" src='/images/search_del.png' bindtap='removeKeywords'></image>
+      </view>
+      <view class='topViewSearchBotton' bindtap="searchClick" data-keyWord='{{searchText}}'>
+        <text>搜索</text>
+      </view>
+    </view>
+    <view wx:if="{{type==1 || type==2}}" class='scroll'>
+      <searchHistoryView hotWords="{{hotWords}}" historyWords="{{historyWords}}" bind:clickHotItemMethod='clickHotItemMethod' bind:clickHistoryItemMethod='clickHistoryItemMethod' bind:clearHistoryMethod='clearHistoryMethod' />
+    </view>
+    <view class="scrollRecommand" wx:if="{{type==3}}" style="{{articleRecommandList&&articleRecommandList.length>0 ? 'position:relative;' : 'position: fixed;'}}">
+<articleModal isShowSearchArticleKey="{{isShowSearchArticleSign}}" pageEnd="{{pageEnd}}" bind:onClickArticleItem="onClickArticleItem" articleWords="{{articleList}}" articleRecommandWords="{{articleRecommandList}}" bind:requestNextPage="requestNextPage"></articleModal>
+    </view>
+</view>

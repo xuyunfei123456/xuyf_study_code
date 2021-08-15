@@ -1,0 +1,126 @@
+.store-back-height {
+  height: 50vh;
+}
+
+.shop-title {
+  font-size: 36px;
+  color: #ffffff;
+}
+
+.shop-more-view {
+  width: 100px;
+  height: 100px;
+}
+
+.shop-more-view .shop-more-icon {
+  width: 40px;
+  height: 8px;
+}
+
+.shop-info-view {
+  padding: 20px;
+}
+
+.shop-info-view .shop-name {
+  display: inline-flex;
+  width: 350px;
+  height: 70px;
+  line-height: 34px;
+  font-size: 30px;
+  color: #333333;
+  font-weight: bold;
+}
+
+.shop-info-view .shop-sign-view {
+  width: 120px;
+  height: 40px;
+  border-radius: 20px;
+  border: solid 2px #1fdb9b;
+}
+
+.shop-address {
+  margin: 0 20px 20px;
+  font-size: 24px;
+  line-height: 34px;
+  color: #666666;
+}
+
+.shop-score-view {
+  padding: 20px 40px;
+}
+
+.shop-score-view .shop-score-item {
+  padding: 10px 0;
+  line-height: 28px;
+}
+
+.shop-score-view .shop-score-item .shop-score-star {
+  width: 24px;
+  height: 24px;
+  margin: 4px 8px 6px 0;
+}
+
+.shop-score-view .shop-score-item .shop-score {
+  color: #ff3300;
+  font-size: 30px;
+  line-height: 34px;
+  margin-left: 50px;
+  margin-right: 20px;
+  width: 80px;
+}
+
+.shop-score-view .shop-score-item .shop-score-width {
+  width: 160px;
+}
+
+.shop-score-view .shop-score-item .shop-score-content {
+  margin-left: 90px;
+}
+
+.shop-sz-title {
+  font-size: 30px;
+  font-weight: bold;
+  color: #333333;
+  margin: 0 3vw 3vw;
+}
+
+.shop-zz-image {
+  width: 40vw;
+  height: 40vw;
+  margin: 3vw 0;
+}
+
+.shop-sj-image {
+  width: 94vw;
+  height: 340px;
+}
+
+.shop-zz-name {
+  font-size: 24px;
+  color: #333333;
+  text-align: center;
+  margin-bottom: 3vw;
+  width: 40vw;
+}
+
+.shop-content {
+  border-radius: 20px;
+  box-shadow: 0px 0px 30px rgba(204, 204, 204, 0.5);
+  margin-left: 3vw;
+  margin-bottom: 3vw;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+}
+
+.shop-width-94 {
+  width: 94vw
+}
+
+.shop-width-45 {
+  width: 45.5vw
+}
+
+.shop-margin-left-25 {
+  margin-left: 50px;
+}

@@ -1,0 +1,223 @@
+/* pages/YFWHomeFindModule/YFWFindYaoPage/YFWFindYao.wxss */
+page{
+  background-color: #FAFAFA;
+}
+.container {
+  width: 100%;
+  height: 100%;
+  background-color: #FAFAFA;
+  display: flex;
+}
+.top_container_another {
+  height: 100rpx;
+  position: fixed;
+  z-index: 99999;
+  width: 100%;
+  background-color: #49ddb8;
+  /* background: linear-gradient(to right,rgb(79,218,206) 0%,rgb(74,221,189) 30%,rgb(69,223,171) 100%); */
+}
+.top_content {
+  margin-top: 20rpx;
+  margin-right: 26rpx;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+}
+.top_search_another {
+  height: 68rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  border-radius: 45rpx;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  flex: 1;
+
+}
+.top_search_left_icon {
+  width: 30rpx;
+  height: 30rpx;
+  margin-left: 18rpx;
+}
+.top_search_title {
+  font-size: 28rpx;
+  color: #ccc;
+  margin-left: 10rpx;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.top_search_right {
+  height: 68rpx;
+  width: 68rpx;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.top_search_scan {
+  height: 32rpx;
+  width: 32rpx;
+}
+
+.scroll_view {
+  flex: 1;
+}
+.list_view {
+  top: 100rpx;
+  z-index: 10;
+  flex: 1;
+  display: flex;
+  width: 100%;
+  position: fixed;
+  bottom: 0rpx;
+  -webkit-overflow-scrolling: touch;
+
+}
+.findyao{
+  flex: 1;
+  margin-left: 30rpx;
+  width: 690rpx;
+  display: flex;
+  flex-flow: row wrap;
+}
+.find_near {
+  flex: 1;
+  margin-left: 40rpx;
+  width: 670rpx;
+  display: flex;
+  flex-flow: row wrap;
+}
+.findyao_disease {
+  flex: 1;
+  margin-left: 40rpx;
+  width: 680rpx;
+  display: flex;
+  flex-flow: row wrap;
+}
+.findyao_next {
+  flex: 1;
+  width: 718rpx;
+  display: flex;
+  flex-flow: row wrap;
+  margin-right: 32rpx;
+}
+.header_view{
+  width: 100%;
+  height:100rpx;
+  flex-direction: row;
+  align-items: center;
+  padding-top: 20rpx;
+  display: flex; 
+  justify-content: space-between;
+  
+}
+.header_text{
+  margin-left: 44rpx;
+  min-width: 160rpx;
+}
+.header_icon {
+  margin-right: 44rpx;
+  width: 30rpx;
+  height: 30rpx;
+}
+.find_class{
+  width: 230rpx;
+  height: 230rpx;
+}
+.find_near_contextView {
+  width: 670rpx;
+  flex: 1;
+  flex-direction: row;
+  align-items: center;
+  display: flex;
+  background-color: white;
+  box-shadow: 0rpx 8rpx 8rpx 0rpx rgba(204, 204, 204, 0.4);
+  border-radius: 14rpx;
+  position: relative;
+  margin-bottom: 16rpx;
+
+}
+.find_near_img {
+}
+.find_near_icon {
+  margin: 22rpx 0rpx 22rpx 22rpx;
+  width: 160rpx;
+  height: 126rpx 
+}
+.find_near_context {
+  flex-direction: column;
+  margin-left: 10rpx;
+  padding-top: 28rpx;
+  padding-bottom: 16rpx;
+  display: flex;
+}
+.find_shop_title {
+  color: #333333;
+  font-size: 30rpx;
+  margin-left: 10rpx;
+  overflow: hidden; 
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 470rpx
+
+}
+.find_shop_loaction {
+  color: #999999;
+  font-size: 26rpx;
+  margin-top: 20rpx;
+  margin-left: 10rpx;
+}
+.find_shop_status {
+  margin-top: 18rpx;
+  margin-left: 10rpx;
+  flex-direction: row;
+  align-items: center;
+  display: flex;
+}
+.logistics_status_icon {
+  width: 26rpx;
+  height: 26rpx;
+}
+.logistics_status_text {
+  font-size: 26rpx;
+  color: #1fdb9b;
+  display: flex;
+  min-width: 100rpx;
+}
+.evaluation_icon {
+  width: 36rpx;
+  height: 36rpx;
+}
+.evaluation_text {
+  font-size: 26rpx;
+  color: #1fdb9b;
+  display: flex;
+  min-width: 34rpx;
+}
+.find_jdkk {
+  position: absolute;
+  right: 0rpx;
+  bottom: 0rpx;
+  width: 140rpx;
+  height: 76rpx;
+}
+.find_jibi {
+  margin-right: 10rpx;
+  margin-bottom: 10rpx;
+  width: 160rpx;
+  height: 160rpx;
+  box-shadow: 0rpx 12rpx 12rpx 0rpx rgba(153, 153, 153, 0.2);
+}
+.find_hot_image {
+  width: 131.5rpx;
+  height: 131.5rpx;
+  margin-left: 40rpx;
+  margin-right: 8rpx;
+  margin-bottom: 28rpx;
+}

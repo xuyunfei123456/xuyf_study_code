@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+   
+  },
+
+  "navigationBarBackgroundColor": "#49ddb8",
+
+
+  "navigationBarTitleText": "我的积分",
+
+  "navigationBarTextStyle": "white"
+}

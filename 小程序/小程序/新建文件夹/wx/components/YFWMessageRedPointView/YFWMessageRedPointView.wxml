@@ -1,0 +1,7 @@
+<!--components/YFWMessageRedPointView/YFWMessageRedPointView.wxml-->
+<view class='top_content_right' catchtap='messageAction'>
+  <image class='top_content_right' mode='aspectFit' src='{{imageSource}}' style="top:{{mtop}}rpx"></image>
+  <view wx:if='{{showCount}}' class='redPoint_view'>
+    <text class='messageCount'>{{count}}</text>
+  </view>
+</view>

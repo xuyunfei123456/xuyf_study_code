@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>axios的默认使用</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.1/axios.min.js"></script>
+</head>
+
+<body>
+    <div>
+        <button>发送 GET 请求</button>
+        <button>发送 POST 请求</button>
+        <button>发送 PUT 请求</button>
+        <button>发送 DELETE 请求</button>
+    </div>
+    <script>
+        const btns = document.querySelectorAll("button");
+        // 默认配置
+        axios.defaults.method='GET' //设置默认的请求类型
+        axios.defaults.baseURL='http://localhost:3000' //设置基础URL
+        // axios.defaults.params={id:1000} //设置默认参数
+        axios.defaults.timeout=3000; //设置默认超时时间
+        // 发送GET请求
+        btns[0].onclick = function () {
+            axios.request({
+                url: '/posts'
+            }).then(res => {
+                console.log(res)
+            })
+        }
+    </script>
+</body>
+
+</html>

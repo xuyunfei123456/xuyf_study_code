@@ -1,0 +1,37 @@
+<!--pages/YFWMessageModule/YFWMessageListPage/YFWMessageList.wxml-->
+<view>
+  <view wx:if="{{!loading && dataArray.length==0}}" class='view-no-message'>
+    <image class="image-no-message" src='https://c1.yaofangwang.net/common/images/miniapp/ic_no_message.png' />
+    <text>暂无消息</text>
+  </view>
+  <view wx:else class="list">
+    <block wx:for="{{dataArray}}" wx:key="key" data-item="{{item}}">
+      <view class="item">
+        <text class="date-text">{{item.create_time}}</text>
+        <view class="message-view" bindtap='clickedItem' data-item="{{item}}">
+          <view style="width: 100%;">
+            <view class="container-row">
+              <view class='hit-text'>{{item.title}}</view>
+            </view>
+            <view wx:if="{{msg_type_id!=3}}" class="container-row">
+              <!-- <view class="red-point"/> -->
+               <rich-text class="message-text" nodes="{{item.content}}" ></rich-text>
+            </view>
+            <image wx:else class="message-image" src='https://c1.yaofangwang.net/{{item.image_file}}_300x300.jpg' mode='aspectFit'>
+              <view wx:if="{{item.is_expired}}" class="message-image.center-text">活动结束</view>
+            </image>
+          </view>
+          <image wx:if="{{item.jumptype!=''}}" class='icon-arrow' src='/images/icon_arrow_right_gary.png' />
+          <!-- <view class="dividing-line"/> -->
+        </view>
+      </view>
+    </block>
+    <view class="foot">
+      <text wx:if='{{showFoot==1}}' class="text">没有更多了</text>
+      <text wx:elif='{{showFoot==2}}' class="text">加载更多...</text>
+      <text wx:else class="text"> </text>
+    </view>
+  </view>
+    <!-- loading图 -->
+  <image src='/images/loading_cycle.gif' wx:if="{{loading}}" class='loading' />
+</view>

@@ -1,0 +1,15 @@
+{
+  "usingComponents": {
+    "searchHistoryView": "/components/YFWSearchHistoryView/YFWSearchHistoryView",
+    "searchRelevantWordsView": "/components/YFWSearchRelevantWordsView/YFWSearchRelevantWordsView",
+    "goods_view": "/components/GoodsItemView/YFWGoodsListView",
+    "searchShopResult": "/components/YFWSearchShopResult/YFWSearchShopResult",
+    "more_view": "/components/YFWMoreView/YFWMoreView",
+    "noGoodsListView": "/components/GoodsItemView/YFWNoGoodsListView",
+    "filterBoxModal": "/components/YFWFilterBoxModal/YFWFilterBoxModal",
+    "articleModal":"/components/YFWArticle/YFWArticle"
+  },
+  "navigationBarTitleText": "搜索",
+  "navigationBarBackgroundColor": "#49ddb8",
+  "navigationBarTextStyle": "white"
+}

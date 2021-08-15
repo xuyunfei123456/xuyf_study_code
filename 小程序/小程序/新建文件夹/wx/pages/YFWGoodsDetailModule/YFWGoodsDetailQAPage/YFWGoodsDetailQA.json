@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "titleView": "/components/YFWTitleView/YFWTitleView"
+  },
+  "navigationBarTitleText": "全部问题"
+}

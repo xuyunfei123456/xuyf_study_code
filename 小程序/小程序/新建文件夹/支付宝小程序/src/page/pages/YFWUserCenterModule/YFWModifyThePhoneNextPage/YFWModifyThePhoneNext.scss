@@ -1,0 +1,126 @@
+page {
+    background-color:'white';
+  }
+  
+  
+  
+  .phone {
+    font-size: 25px;
+    margin-top: 65px;
+    width: 60%;
+  }
+  
+  .mobile {
+    font-size: 25px;
+  }
+  
+  .show-mobile {
+    float: right;
+    margin-top: -38px;
+    font-size: 25px;
+  }
+  
+  .confirm_pho {
+    font-size: 25px;
+    float: right;
+    margin-right: 370px;
+    margin-top: -32px;
+  }
+  
+  .commit {
+    width: 100%;
+    margin-top: 80px;
+  }
+  
+  .address-commit {
+    font-size: 30px;
+    margin-top: 120px;
+    border-radius: 50px;
+    height: 80px;
+    width: 90%;
+    background-color: #49ddb8;
+    color: white;
+  }
+  
+  .container-phone {
+    font-size: 25px;
+    margin-left: 80px;
+    margin-top: 80px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .container-yzm {
+    font-size: 25px;
+    margin-left: 80px;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .confirm-code {
+    font-size: 25px;
+    color: #999;
+  }
+  
+  .placeholder-code {
+    font-size: 25px;
+    color: #999;
+  }
+  
+  .get_line {
+    position: absolute;
+    right: 0;
+    margin-right: 25%;
+    font-size: 25px;
+    color: #cdc9c9;
+  }
+  
+  .get_Code {
+    position: absolute;
+    right: 0;
+    margin-right: 10%;
+  }
+  
+  .get-Code_ol {
+    font-size: 25px;
+    color: #49ddb8;
+  }
+  
+  .divLine {
+    background: #f3f1f1;
+    margin-top: 25px;
+    height: 1px;
+    width: 80%;
+  }
+  
+  .row {
+    font-size: 25px;
+    text-align: center;
+    margin-top: 260px;
+    color: #a8a8a8;
+  }
+  
+  .row-sl {
+    font-size: 25px;
+  }
+  
+  .address-add {
+    width: 100%;
+    color: white;
+    font-size: 34px;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .btnBtom {
+    width: 90%;
+    margin-top: 80px;
+    margin-left: 5%;
+    height: 80px;
+    border-radius: 50px;
+    background: #49ddb8;
+    box-shadow: 0px 8px 30px rgba(31, 219, 155, 0.5);
+    align-items: center;
+    display: flex;
+  }

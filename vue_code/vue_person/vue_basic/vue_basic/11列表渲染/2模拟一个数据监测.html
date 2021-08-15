@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+
+        let data = {
+            name: '尚硅谷',
+            address: '北京',
+        }
+        // 准备一个vm实例
+        let vm = {};
+
+        const obs = new Observable(data);
+        vm._data = data = obs;
+        function Observable(obj) {
+            const keys = Object.keys(obj);
+            keys.forEach((k) => {
+                Object.defineProperty(this, k, {
+                    get() {
+                        return obj[k];
+                    },
+                    set(val) {
+                        console.log(`${k}被change`)
+                        return obj[k] = val;
+                    }
+                })
+            })
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>

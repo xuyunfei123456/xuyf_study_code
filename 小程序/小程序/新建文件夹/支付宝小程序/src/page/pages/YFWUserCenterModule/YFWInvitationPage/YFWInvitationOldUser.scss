@@ -1,0 +1,70 @@
+/* myCenter/pages/YFWUserCenterModule/YFWInvitationPage/YFWInvitationOldUser.wxss *//* myCenter/pages/YFWUserCenterModule/YFWInvitationPage/YFWInvitation.wxss */
+page{
+  margin: 0px;
+  padding: 0px;
+}
+.invitation_page1_top{
+  width: 100%;
+  height: 444rpx;
+}
+.invitation_page1_middle{
+  width: 100%;
+  height: 805rpx;
+  position: relative;
+}
+.invitation_page1_bottom{
+  width: 100%;
+  height: 168rpx;
+}
+image{
+  height: 100%;
+  width: 100%;
+}
+.invitation_button{
+  position: absolute;
+  top: 570rpx;
+  width: 406rpx;
+  height: 86rpx;
+  text-align: center;
+  color: #d39349;
+  background-size: 100% 100%;
+  line-height: 94rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: bolder;
+  background: none;
+  border-radius: 50rpx;
+  border: none;
+}
+.invitation_button_green{
+  position: absolute;
+  top: 408rpx;
+  width: 406rpx;
+  height: 86rpx;
+  text-align: center;
+  color: #d39349;
+  background-size: 100% 100%;
+  line-height: 86rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: bolder;
+  background: none;
+  border-radius: 50rpx;
+  border: none;
+}
+.invitation_text{
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+}
+.invitation_tip{
+  position: absolute;
+  top: 488rpx;
+  width: 406rpx;
+  height: 86rpx;
+  text-align: center;
+  color: white;
+  line-height: 86rpx;
+  width: 100%;
+  font-size: 28rpx;
+}

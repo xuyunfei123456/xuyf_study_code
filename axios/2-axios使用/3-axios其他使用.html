@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>axios的其他使用</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.1/axios.min.js"></script>
+</head>
+
+<body>
+    <div>
+        <button>发送 GET 请求</button>
+        <button>发送 POST 请求</button>
+        <button>发送 PUT 请求</button>
+        <button>发送 DELETE 请求</button>
+    </div>
+    <script>
+        const btns = document.querySelectorAll("button");
+        // 发送GET请求
+        btns[0].onclick = function () {
+            axios.request({
+                method: 'GET',
+                url: 'http://localhost:3000/comments'
+            }).then(res => {
+                console.log(res)
+            })
+        }
+        //发送POST请求
+        btns[1].onclick = function () {
+            axios.post(
+                'http://localhost:3000/comments', 
+                {
+                    "body": "生日快乐",
+                    "postId": 2
+                }
+            ).then(res =>console.log(res))
+        }
+    </script>
+</body>
+
+</html>

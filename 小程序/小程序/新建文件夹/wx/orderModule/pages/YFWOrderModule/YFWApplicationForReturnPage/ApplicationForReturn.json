@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "YFWTitleView":"../../../../components/YFWTitleView/YFWTitleView"
+  },
+  "navigationBarTitleText": "申请退款",
+  "navigationBarBackgroundColor": "#49ddb8",
+  "navigationBarTextStyle": "white"
+}

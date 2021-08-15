@@ -1,0 +1,460 @@
+/* pages/homepage/homepage.wxss */
+page{
+  background-color: #FFFFFF;
+}
+.root_scroll{
+  position: absolute;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  -webkit-overflow-scrolling: touch;
+}
+
+.top_image_bg{
+  width: 100vw;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+}
+
+.setting_mssage_parent{
+  width: 100vw;
+  height: 80px;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.message {
+  margin-right: 26px;
+}
+
+.setting_mssage_parent .message_parent{
+  width: 50px;
+  height: 50px;
+  margin-right: 20px;
+  display: flex;
+  flex-direction: row;
+}
+
+.setting_mssage_parent .message_parent .message_image_icon{
+  width: 36px;
+  height: 36px;
+  margin-top: 6px;
+}
+
+
+.message_tips{
+   background-color: #ff3300;
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 24px;
+  font-size: 20px;
+  color:#FFFFFF;
+  position: absolute;
+  top: 5px;
+  left: 705px;
+  min-width: 24px;
+  min-height: 24px;
+  text-align: center;
+}
+
+
+.setting_mssage_parent .setting_parent{
+  display: flex;
+  flex-direction: row;
+  width: 110px;
+  height: 50px;
+  margin-right: 20px;
+  align-items: center;
+}
+
+.setting_mssage_parent .setting_parent .setting_text{
+  font-size: 26px;
+  color: #333333;
+  min-width: 52px;
+  margin-left: 5px;
+}
+
+.setting_mssage_parent .setting_parent .setting_text_alipay{
+  font-size: 26px;
+  color: #333333;
+  margin-top: 2px;
+  min-width: 52px;
+  margin-left: 5px;
+}
+
+.setting_mssage_parent .setting_parent .setting_image_icon{
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+}
+
+
+.user_info{
+  display: flex;
+  flex-direction: row;
+  width: 710px;
+  position: absolute;
+  top:60px;
+  left:20px;
+  align-items: center
+}
+
+.user_info .user_icon{
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  min-width: 100px;
+}
+
+.user_info .user_account_name{
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  width: 600px;
+}
+
+.user_info .user_account_name .name_text{
+  font-size: 36px;
+  color:#333333;
+  font-weight: bold;
+  margin-left: 14px;
+  margin-top: 10px;
+  max-width: 610px;
+}
+
+.user_info .user_account_name .tips_text{
+  font-size: 22px;
+  color:#333333;
+  margin-left: 14px;
+   display: -webkit-box;
+  -webkit-line-clamp: 2;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical; 
+  overflow: hidden;  
+}
+
+.user_info .invite_parent{
+  display: flex;
+  flex-direction: row;
+  background: #FFFFFF;
+  width: 190px;
+  height: 40px;
+  min-width: 190px;
+  border-radius: 20px;
+  align-items: center;
+}
+
+.user_info .invite_parent .icon{
+  width: 30px;
+  height: 30px;
+  margin-left: 12px;
+}
+
+.user_info .invite_parent .text{
+  font-size: 26px;
+  color: #ff9a67;
+  margin-left: 5px;
+}
+
+
+
+
+.usercenter_header_bottom{
+    display: flex;
+    flex-direction: row;
+    width: 710px;
+    height: 150px;
+    position: absolute;
+    top:202px;
+    left:20px;
+    background-color: #FFFFFF;
+    border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
+    box-shadow: 0px 0px 0px 0px rgba(204, 204, 204, 0.6);
+}
+
+.usercenter_header_bottom .item{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.usercenter_header_bottom .item .number{
+    font-size: 36px;
+    color:#333333;
+    font-weight: bold;
+    height: 40px;
+}
+
+.usercenter_header_bottom .item .tips{
+    font-size: 22px;
+    color: #666666;
+    margin-top: 10px;
+}
+
+.banner_one{
+  width: 100vw;
+  height: 160px;
+}
+.banner_one_empty{
+  width: 100vw;
+  height: 40px;
+  background-color: white
+}
+.banner_two{
+  width: 100vw;
+  height: 160px;
+}
+.usercenter_order_items{
+  height: 230px;
+  width: 100vw;
+}
+.usercenter_order_items_header{
+  height: 80px;
+  width: 100vw;
+  display:flex;
+  flex-direction: row;
+  position:relative;
+}
+
+.usercenter_order_items_header .leftTitle{
+  position: absolute;
+  left: 20px;
+  font-size: 30px;
+  color: #333333;
+}
+.usercenter_order_items_header .rightTitle{
+  position: absolute;
+  right: 50px;
+  font-size: 24px;
+  color: #666666;
+}
+.usercenter_order_items_header .rightImage{
+  position: absolute;
+  right: 20px;
+  height: 26px;
+  width: 15px;
+  top:2px;
+}
+.usercenter_order{
+  width: 100vw;
+  display: flex;
+  flex-direction:row;
+}
+.order_item{
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.order_item_image{
+  width: 80px;
+  height: 80px;
+}
+.order_item_title{
+  margin-top: 10px;
+  color: #333333;
+  font-size: 24px;
+  font-weight:300;
+}
+.order_item_tips{
+   background-color: #ff3300;
+  border-radius: 30px;
+  font-size: 20px;
+  color:#FFFFFF;
+  position: absolute;
+  line-height: 30px;
+  top: -8px;
+  right: 30px;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+}
+
+.order_item_tips_alipay{
+  background-color: #ff3300;
+ border-radius: 30px;
+ font-size: 20px;
+ color:#FFFFFF;
+ position: absolute;
+ line-height: 35px;
+ top: -8px;
+ right: 30px;
+ width: 30px;
+ height: 30px;
+ text-align: center;
+}
+
+
+.order_item_text{
+  line-height: 15px
+}
+
+.order_item_tip{
+  background-color: #ff3300;
+ border-radius: 30px;
+ font-size: 20px;
+ color:#FFFFFF;
+ position: absolute;
+ top: -8px;
+ right: 30px;
+ width: 30px;
+ height: 30px;
+ text-align: center;
+}
+
+.trafficnoview{
+  width: 100vw;
+  height: 250px;
+  margin-top:20px; 
+  position: relative;
+}
+.trafficnoview_header{
+  height: 50px;
+  width: 100vw;
+  display:flex;
+  flex-direction: row;
+  position:relative;
+}
+
+.trafficnoview_header .leftTitle{
+  position: absolute;
+  left: 20px;
+  font-weight: bold;
+  font-size: 30px;
+  color: #333333;
+}
+.trafficnoview_item{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  height: 150px;
+  width: 94%;
+  margin-left: 3%;
+  bottom: 40px;
+  border-radius: 24px;
+  box-shadow: 2px 2px 2px 2px rgba(204, 204, 204, 0.4);
+  /* overflow:hidden; */
+}
+.trafficnoview_item_image{
+  width: 135px;
+  height: 135px;
+}
+.trafficnoview_item_info{
+  height: 150px;
+  width: 500px;
+}
+.trafficnoview_item_info_header{
+  display: flex;
+  flex-direction: row;
+  height: 50px;
+  width: 500px;
+  position: relative;
+}
+.trafficnoview_item_info_status{
+  position: absolute;
+  top: 20px;
+  font-size: 30px;
+  font-weight: 500;
+  color: #33DB9B;
+}
+.trafficnoview_item_info_time{
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 24px;
+}
+.trafficnoview_item_info_logistics{
+  line-height: 28px;
+  color: #333333;
+  font-weight: 300;
+  font-size: 24px;
+  margin-top: 20px;
+  display: -webkit-box;     
+  word-break: break-all;
+  text-overflow: ellipsis;
+  overflow: hidden;           
+  -webkit-box-orient: vertical;   
+  -webkit-line-clamp: 2;   
+}
+
+
+
+.usercenter_bottom_bottons{
+  width: 100vw;
+  display: flex;
+  margin-top: 40px;
+  flex-direction:row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.bottom_botton_item{
+  display: flex;
+  /* flex: 1; */
+  height: 180px;
+  width: 25vw;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.bottom_botton_item_image{
+  width: 104px;
+  height: 104px;
+}
+.bottom_botton_item_title{
+  margin-top: 10px;
+  color: #333333;
+  font-size: 24px;
+  font-weight:200;
+}
+.bottom_botton_item_tips{
+   background-color: #ff3300;
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 24px;
+  font-size: 20px;
+  color:#FFFFFF;
+  position: absolute;
+  top: 8px;
+  right: 45px;
+  min-width: 24px;
+  min-height: 24px;
+  text-align: center;
+}
+.separateView{
+  width: 100vw;
+  height: 30px;
+  background-color: #FAFAFA;
+}
+.loginWrapper{
+  color: balck;
+  font-size: 40px;
+  padding-left: 20px;
+  width:600px;
+}
+.ads_itemImage{
+  position: absolute;
+  top: 84%;
+  right: 0;
+  width: 100rpx;
+  height: 100rpx;
+  transition: all 0.5s;
+}
+.dis_ads_itemImage{
+  position: absolute;
+  top: 84%;
+  right: -50rpx;
+  width: 100rpx;
+  height: 100rpx;
+  transition: all 0.5s;
+}

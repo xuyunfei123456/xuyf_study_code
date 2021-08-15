@@ -1,0 +1,94 @@
+.modal-mask {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 999;
+  }
+  
+  .modal-content {
+    display: flex;
+    flex-direction: column;
+    width: 590px;
+    height: auto;
+    background-color: #fff;
+    border-radius: 14px;
+    align-items: center;
+  }
+  
+  .closeIconLayout {
+    width: 590px;
+    height: 60px;
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  
+  .closeTap {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .closeIcon {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .warnningIcon {
+    width: 120px;
+    height: 120px;
+    margin-top: 10px;
+  }
+  
+  .topTips {
+    font-size: 28px;
+    color: #333;
+    margin-top: 50px;
+  }
+  
+  .bottomTips {
+    font-size: 28px;
+    color: #333;
+    margin-top: 10px;
+  }
+  
+  .buttonLayout {
+    display: flex;
+    flex-direction: row;
+    width: 500px;
+    justify-content: space-between;
+    margin-top: 70px;
+    margin-bottom: 40px;
+  }
+  
+  .leftButton {
+    border-radius: 30px;
+    height: 60px;
+    width: 200px;
+    border: 2px solid #1fdb9b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    color: #1fdb9b;
+  }
+  
+  .rightButton {
+    border-radius: 30px;
+    height: 60px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    color: #FFFFFF;
+    background-color: #1fdb9b
+  }
+  

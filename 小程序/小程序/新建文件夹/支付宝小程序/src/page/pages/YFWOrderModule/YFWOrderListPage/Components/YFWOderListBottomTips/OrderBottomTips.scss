@@ -1,0 +1,56 @@
+.button_list {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+  }
+  
+  .button_list .buton_green {
+    font-size: 22px;
+    color: #1fdb9b;
+    border: #1fdb9b solid 1px;  
+    border-radius: 22px;
+    margin-left: 20px;
+    margin-right: 2px;
+  }
+  
+  .button_pad {
+    padding-left: 35px;
+    padding-right: 35px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  
+  .button_list .buton_dark {
+    font-size: 22px;
+    color: #666;
+    border: #666 solid 1px;
+    padding-left: 35px;
+    padding-right: 35px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 22px;
+    margin-left: 20px;
+    margin-right: 2px;
+  }
+  
+  .button_list .weak_button {
+    font-size: 22px;
+    color: #b0f6de;
+    border: #b0f6de solid 1px;
+    border-radius: 22px;
+    margin-left: 20px;
+  }
+  
+  .hide_button {
+    width: 42px;
+    height: 9px;
+  }
+  
+  .hide_button_parent {
+    width: 100px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  

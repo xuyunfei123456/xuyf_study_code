@@ -1,0 +1,207 @@
+.container {
+  width: 100%;
+  height: 100%;
+}
+
+.back-gray {
+  background-color: #fafafa;
+}
+
+.back-light {
+  background-color: #cccccc;
+}
+
+.back-green {
+  background-color: #49ddb8;
+}
+
+.back-yellow {
+  background-color: #faf8dc;
+}
+
+.back-white {
+  background-color: #ffffff;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-content-between {
+  justify-content: space-between;
+}
+
+.flex-content-evenly {
+  justify-content: space-evenly;
+}
+
+.flex-content-around {
+  justify-content: space-around;
+}
+
+.flex-content-center {
+  justify-content: center;
+}
+
+.flex-content-end { 
+  justify-content: flex-end;
+}
+
+.flex-align-center {
+  align-items: center;
+}
+
+.flex-align-end {
+  align-items: flex-end;
+}
+
+.flex-nowrap {
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.text-15 {
+  font-size: 30px;
+}
+
+.text-14 {
+  font-size: 28px;
+}
+
+.text-13 {
+  font-size: 26px;
+}
+
+.text-12 {
+  font-size: 24px;
+}
+
+.text-11 {
+  font-size: 22px;
+}
+
+.text-10 {
+  font-size: 20px;
+}
+
+.text-height-15 {
+  line-height: 30px;
+}
+
+.text-black {
+  color: #333333;
+}
+
+.text-normal {
+  color: #666666;
+}
+
+.text-light {
+  color: #999999;
+}
+
+.text-red {
+  color: #ff3300;
+}
+
+.text-green {
+  color: #1fdb9b;
+}
+
+.text-orange {
+  color: #feac4c;
+}
+
+.text-white {
+  color: #ffffff;
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
+.text-ellipsis {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.text-line-3 {
+  -webkit-line-clamp: 3;
+}
+
+.text-line-2 {
+  -webkit-line-clamp: 2;
+}
+
+.text-line-1 {
+  -webkit-line-clamp: 1;
+}
+
+.height-50 {
+  height: 100px;
+}
+
+.width-screen {
+  width: 100%;
+}
+
+.margin-right-10 {
+  margin-right: 20px;
+}
+
+.medicine-item {
+  width: 47vw;
+  margin-left: 2vw;
+  margin-bottom: 2vw;
+}
+
+.store-logo {
+  width: 140px;
+  height: auto;
+  max-height: 80px;
+}
+
+.store-back-image {
+  width: 100%;
+  height: 60%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.bottom-action {
+  width: 100%;
+  height: auto;
+  position: fixed;
+  bottom: 0;
+  z-index: 888;
+}
+
+.bottom-line {
+  width: 100%;
+  height: 2px;
+  background-color: #cccccc;
+}
+
+.bottom-ipx {
+  width: 100%;
+  height: 60px;
+  background-color: #ffffff;
+}

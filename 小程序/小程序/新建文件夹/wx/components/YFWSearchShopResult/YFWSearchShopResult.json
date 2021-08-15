@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "titleView": "/components/YFWTitleView/YFWTitleView",
+    "priceView": "/components/YFWPriceView/YFWPriceView"
+  }
+}

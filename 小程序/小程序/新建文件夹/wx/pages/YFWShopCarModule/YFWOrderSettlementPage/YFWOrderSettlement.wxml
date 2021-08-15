@@ -1,0 +1,476 @@
+<!-- pages/YFWShopCarModule/YFWOrderSettlementPage/YFWOrderSettlement.wxml -->
+<wxs src='../../../wxs/sublie.wxs' module='tools' />
+<wxs src='../../../wxs/subAfter.wxs' module='toAfter' />
+<view class="myHeader">
+  <image class="headrBg" src='../../../images/jsBg.png'></image>
+  <view class="headr-title">
+    <text>收货地址</text>
+  </view>
+  <view class="headr-content" bindtap="choseAddressAction">
+    <view style="flex: 1">
+      <view class="headr-content-name">
+        <image class="headr-content-icon" src='/images/zuoB.png'></image>
+        <text class="margin-right-20">{{defaultAddress.name}}</text>
+        <text>{{defaultAddress.mobile}}</text>
+        <image wx:if='{{defaultAddress.is_default == "1"}}' class='address_detault' src='/images/Label_moren.png'></image>
+      </view>
+      <view class="headr-content-address">地址：{{defaultAddress.address}}</view>
+    </view>
+    <image class="headr-content-icon" src='/images/icon_arrow_right_gary.png'></image>
+    <image class="headr-content-line" src='/images/shouhuo_mail.png'></image>
+  </view>
+</view>
+<view wx:if="{{orderInfo.medicate_info_type}}" id="rxview" class="rxview" bindtap="handleInquiryInfo">
+  <view wx:if="{{isCompleteInquiry}}" class="inquiry-view">
+    <image src="/images/rx_info_icon.png" class="info-icon"></image>
+    <view class="inquiry-ct">
+      <text class="inquiry-title">已添加就诊信息</text>
+      <text class="inquiry-desc">医生将根据您的就诊信息提供问诊服务。</text>
+    </view>
+    <text class="inquiry-detail">查看</text>
+    <image src="/images/icon_arrow_right_gary.png" class="detail-icon"></image>
+  </view>
+  <image wx:else class="rx-image" src="http://c1.yaofangwang.net/common/images/yb-minmap-icons/add_drug_gif.gif" mode="widthFix"></image>
+</view>
+
+<view wx:if="{{is_needenrollment}}" class="{{isCompleteYqfk ? 'completeYqfk':'is_needenrollment'}}" bindtap="handleNeedenrollment">
+    <image class="unsign" src="{{!isCompleteYqfk? '../../../images/unsign.png':'../../../images/hassignin.png'}}"></image>
+    <view class="sign_tip">
+      <view style="font-size:24rpx;color:#333333">疫情防控药品登记</view>
+      <view style="font-size:18.6rpx;color:#999999">您购买的药品含疫情防控药品，根据监管部门要求需登记用药人信息后下单</view>
+    </view>
+    <view style="color:#999999;font-size:23.6rpx;flex:1;text-align:right">{{!isCompleteYqfk?'去登记':'已登记'}}</view>
+    <image style="height:30rpx;width:30rpx;margin-right:20rpx" src="../../../images/icon_arrow_right_gary.png"></image>
+</view>
+
+<view class="notice">
+  <text class="">根据GSP相关规定，药品一经售出，无质量问题不退不换</text>
+</view>
+<block wx:for="{{orderInfo.shop_items}}" wx:key="index">
+  <view class='bgTwo bgThree'>
+    <view class='drugCard'>
+      <image src='../../../images/shops.png' mode='widthFix'></image>
+      <text>{{item.shop_title}}</text>
+    </view>
+    <view>
+      <block wx:for="{{item.cart_items}}" wx:key="index">
+        <view wx:if='{{item.type == "medicine"}}' class='drugType'>
+          <view class='clearBoth'></view>
+          <image class='drugPic' mode='widthFix' src='{{item.img_url}}'></image>
+          <view class='cardR'>
+            <view class='cardR_O'>
+              <view style="display:flex;align-items:baseline">
+                <image wx:if='{{item.drugImage.length>0}}' class='goods_type' src='{{item.drugImage}}'></image>
+                <view class="cardR_O_title">{{item.title}}</view>
+              </view>
+              <view class='goods_price'>
+                <YFWPriceView price='{{item.price_old}}' fontSize='26' priceColor='#0000000'></YFWPriceView>
+              </view>
+            </view>
+            <view class='cardR_T'>
+              <text>{{item.standard}}</text>
+              <text>x{{item.quantity}}</text>
+            </view>
+            <!-- <view class='cardR_TH'>¥
+            <text class='priceOne'>{{tools.sub(item.price_old)}}.</text>
+            <text class='priceTwo'>{{toAfter.subAfter(item.price_old)}}</text>
+          </view> -->
+          </view>
+          <view class='cardR'>
+            <text class='mealPay'>
+              <text>共<text class='mealPayNum'>{{item.quantity}}</text>件</text>
+              <text decode="{{true}}">&nbsp;&nbsp;小计：<text class='totalTwo'>¥</text><text class='totalOne'>{{tools.sub(item.medicine_total)}}.</text><text class='totalTwo'>{{toAfter.subAfter(item.medicine_total)}}</text></text>
+            </text>
+          </view>
+          <view class='clearBoth'></view>
+        </view>
+        <view wx:elif='{{item.type == "package"}}' class='drugType'>
+          <view class='clearBoth'></view>
+          <view class='combo'>
+            <text style='{{item.package_type==1?"background:linear-gradient(to right,rgb(122, 219, 255),rgb(72, 139, 255));":""}}'>{{item.package_type==0?'套餐':'多件装'}}</text>
+            <text>{{item.package_name}}</text>
+          </view>
+          <block wx:for="{{item.package_medicines}}">
+            <view class='clearBoth'></view>
+            <image class='drugPic' mode='widthFix' src='{{item.img_url}}'></image>
+            <view class='cardR'>
+              <view class='cardR_O'>
+                <view style="display:flex;align-items:baseline">
+                  <image wx:if='{{item.drugImage.length>0}}' class='goods_type' src='{{item.drugImage}}'></image>
+                  <view class="cardR_O_title">{{item.title}}</view>
+                </view>
+                <view class='goods_price'>
+                <YFWPriceView price='{{item.price}}' fontSize='26' priceColor='#0000000'></YFWPriceView>
+              </view>
+              </view>
+              <view class='cardR_T'>
+                <text>{{item.standard}}</text>
+                <text>x{{item.quantity}}</text>
+              </view>
+            </view>
+            <view class='clearBoth'></view>
+          </block>
+          <view class='cardR'>
+            <text class='mealPay'>
+              <text>共<text class='mealPayNum'>{{item.smp_medicine_packmedicine_count}}</text>件</text>
+              <text decode="{{true}}">&nbsp;&nbsp;小计：<text class='totalTwo'>¥</text><text class='totalOne'>{{tools.sub(item.medicine_total)}}.</text><text class='totalTwo'>{{toAfter.subAfter(item.medicine_total)}}</text></text><text decode="{{true}}">&nbsp;&nbsp;</text><text style='color:gray;text-decoration:line-through;'>¥{{item.smp_medicine_packmedicine_total}}</text>
+            </text>
+          </view>
+          <view class='clearBoth'></view>
+        </view>
+      </block>
+    </view>
+    <view class='isway' data-info='{{item.package_items}}' data-shop-id='{{item.shop_id}}' bindtap='isway'>
+      <view class="packageForm">
+        <text>包装方式</text>
+        <text class="packageName">{{item.selectPackInfo.name}}</text>
+      </view>
+      <view>
+        <view decode="{{true}}" class='packagePrice'>￥{{item.selectPackInfo && item.selectPackInfo.price || '0.00'}}</view>
+        <image src='../../../images/icon_arrow_right_gary.png' mode='widthFix' class='uc_next packagePrice'></image>
+      </view>
+    </view>
+    <view class='isway' bindtap='patchWay' data-info='{{item.logistic_items}}' data-shop-id='{{item.shop_id}}' wx:if='{{item.selectLogisticInfo}}'>
+      <view class="packageForm">
+        <text>配送方式</text>
+        <text class="packageName">{{item.selectLogisticInfo.name}}</text>
+      </view>
+      <view>
+        <text decode="{{true}}">{{'￥'+item.selectLogisticInfo.price}}</text>
+        <image src='../../../images/icon_arrow_right_gary.png' mode='widthFix' class='uc_next packagePrice'></image>
+      </view>
+    </view>
+    <view class='isway' bindtap='noPatchWay' wx:else>
+      <view class="packageForm">
+        <text>配送方式</text>
+        <text class='noPS packageName'>当前地区暂不配送</text>
+      </view>
+      <view>
+        <image src='../../../images/icon_arrow_right_gary.png' mode='widthFix' class='uc_next packagePrice'></image>
+      </view>
+    </view>
+    <view class='isway' data-shop-id='{{item.shop_id}}' data-info='{{item.coupon_items}}' data-un-info="{{item.un_coupon_items}}" bindtap='ondis'>
+      <view class="packageForm">
+        <text>优惠券</text>
+        <text class='packageName'>{{item.selectCouponInfo?item.selectCouponInfo.coupons_desc:'暂无可用优惠券'}}</text>
+      </view>
+      <view>
+        <text wx:if="{{item.selectCouponInfo && item.selectCouponInfo.money !='0.00'}}">-</text>
+        <text decode="{{true}}" class="packagePrice">¥{{item.selectCouponInfo?item.selectCouponInfo.money:'0.00'}}</text>
+        <image src='../../../images/icon_arrow_right_gary.png' mode='widthFix' class='uc_next packagePrice'></image>
+      </view>
+    </view>
+    <view wx:if="{{item.shop_offers_price>0}}" class='isway' data-shop-id='{{item.shop_id}}'>
+      <text>商家优惠</text>
+      <text decode="{{true}}">商家优惠({{item.shop_offers_price?item.shop_offers_price:'0.00'}})元</text>
+    </view>
+    <view wx:if="{{item.return_price_total>0}}" class='isway' data-shop-id='{{item.shop_id}}'>
+      <text>返现</text>
+      <text decode="{{true}}">{{'-¥'+item.return_price_total}}</text>
+    </view>
+    <view class='isway' data-shopId='{{item.shop_id}}' bindtap="handleShowInoviceModal">
+      <view class="packageForm">
+        <text>发票信息</text>
+      </view>
+      <view>
+        <text decode="{{true}}" class="packagePrice">{{invoiceMap[item.shop_id].itemTitle}}</text>
+        <image src='../../../images/icon_arrow_right_gary.png' mode='widthFix' class='uc_next packagePrice'></image>
+      </view>
+    </view>
+    <view class='isway price' style="display:flex;justify-content:flex-end;align-items:center;padding-right:30rpx">
+      <text decode="{{true}}" style="color:#999">共{{item.store_medicine_count_total}}件&nbsp;</text>
+      <text style="padding-right:20rpx;font-size:24rpx">合计:</text>
+      <YFWPriceView price='{{item.totalPrice}}'></YFWPriceView>
+    </view>
+  </view>
+</block>
+<view class='bgTwo bgThree lastTop'>
+  <view class='isway'>
+    <text>付款方式</text>
+    <view class='uc_next uc_height'></view>
+    <text>在线支付</text>
+  </view>
+  <!-- <view class='isway' bindtap='showVio'>
+    <text>发票信息</text>
+    <image src='../../../images/icon_arrow_right_gary.png' mode='widthFix' class='uc_next'></image>
+    <text wx:if='{{showChose}}'>请选择</text>
+    <text wx:if='{{!showChose}}'><text wx:if="{{noVoice}}"></text><text wx:if="{{!noVoice}}">发票抬头：{{nameVal}}</text></text>
+    <block wx:if="{{!showChose}}">
+      <text class="{{invoiceInfo.type == 0 ? 'showVoic' : 'noneVoic'}}" data-index='index'>无需发票</text>
+      <text class="{{invoiceInfo.type == 1 ? 'showVoic' : 'noneVoic'}}" data-index='index'>发票抬头：{{invoiceInfo.title}}</text>
+    </block>
+  </view> -->
+  <view wx:if='{{orderInfo.platform_coupons_items.length>0}}' class='isway' bindtap='formWay'>
+    <text>平台优惠</text>
+    <view>
+      <text>{{orderInfo.selectPlatformCouponsInfo.money+'元'}}</text>
+    <image src='../../../images/icon_arrow_right_gary.png' mode='widthFix' class='uc_next'></image>
+    </view>
+
+  </view>
+  <view wx:if='{{orderInfo.usePoint}}' class='cell'>
+    <text style="color:#000;padding-right:20rpx">积分抵扣</text>
+    <text class='inteLine' style="color:#999">使用{{orderInfo.usePoint}}积分抵用{{orderInfo.usePointMoney}}元</text>
+    <view style='flex:1;'></view>
+    <switch class='right_switch' checked='{{orderInfo.pointEnable}}' bindchange="useInteal" />
+  </view>
+  <view wx:if='{{orderInfo.showBalance}}' class='cell'>
+    <text class='inteLine'>可使用奖励金额{{orderInfo.useBalance}}元</text>
+    <image src='/images/tips_help.png' class='tip_icon' bindtap='tipAction' data-info='{{orderInfo.balance_prompt}}'></image>
+    <view style='flex:1;'></view>
+    <switch class='right_switch' checked='{{orderInfo.balanceEnable}}' bindchange="balanceEnableChange" />
+  </view>
+</view>
+<view style='height:185rpx;'></view>
+<!-- 底部合计 -->
+<view class='bomFix'>
+  <!-- 底部地址 -->
+  <view class='hint foter_addr' wx:if="{{scrollTop>50 ? true : false}}">
+    {{defaultAddress.address}}
+  </view>
+  <view>
+    <view class='total'>
+      <text style="color:gray" wx:if="{{all_total}}">共{{all_total}}件</text>
+      <text class='addTap'>总计:</text>
+      <YFWPriceView price='{{orderInfo.orderTotalPrice}}'></YFWPriceView>
+    </view>
+    <view class='goPay' bindtap='goPay'>去支付</view>
+    <view class='clearBoth'></view>
+  </view>
+</view>
+<!-- 包装方式 -->
+<YFWActionModal id="onpackway" title="包装方式">
+  <view class='packOne'>选择包装方式</view>
+  <block wx:for="{{packs}}" wx:key='index'>
+    <view class="outPack {{item.isSelect ? 'slelectd' : ''}}" bindtap='isClosePack' data-index='{{index}}'>
+      <block wx:if="{{item.isSelect}}">
+        <image src='../../../images/button_card.png' mode='widthFix' class='packBgc'></image>
+        <text class='packTxt'>{{item.name}}</text>
+        <text class='packNum'>¥{{item.price}}</text>
+        <image src='../../../images/chooseBtnWhite@3x.png' mode='widthFix' class='arrOut'></image>
+      </block>
+      <block wx:else>
+        <view class='noCheck'></view>
+        <text class='packTxt nopackTxt'>{{item.name}}</text>
+        <text class='packNum nopackNum'>¥{{item.price}}</text>
+        <image src='../../../images/checkout_unsel.png' mode='widthFix' class='arrOut'></image>
+      </block>
+    </view>
+  </block>
+</YFWActionModal>
+<!-- 配送方式 -->
+<YFWActionModal id="onpatchway" title="配送方式">
+  <view class='packOne'>选择配送方式</view>
+  <block wx:for="{{patchs}}" wx:key='index'>
+    <view class="outPack {{item.isSelect ? 'slelectd' : ''}}" bindtap='isClosePatch' data-index='{{index}}'>
+      <block wx:if="{{item.isSelect}}">
+        <image src='../../../images/button_card.png' mode='widthFix' class='packBgc'></image>
+        <text class='packTxt'>{{item.name}}<text wx:if="{{item.dict_shipping_type == 2 &&item.lname}}">（{{item.lname}}）</text></text>
+        <text class='packNum'>¥{{item.price}}</text>
+        <image src='../../../images/chooseBtnWhite@3x.png' mode='widthFix' class='arrOut'></image>
+      </block>
+      <block wx:else>
+        <view class='noCheck'></view>
+        <text class='packTxt nopackTxt'>{{item.name}}<text wx:if="{{item.dict_shipping_type == 2 &&item.lname}}">（{{item.lname}}）</text></text>
+        <text class='packNum nopackNum'>¥{{item.price}}</text>
+        <image src='../../../images/checkout_unsel.png' mode='widthFix' class='arrOut'></image>
+      </block>
+      <!-- <image src='../../../images/button_card.png' mode='widthFix' class='packBgc'>
+</image>
+<text class='packTxt'>{{item.patchkWay}}</text>
+<text class='packNum'>{{item.patchPay}}</text>
+<image src='../../../images/chooseBtnWhite@3x.png' mode='widthFix' class='arrOut'></image> -->
+    </view>
+  </block>
+</YFWActionModal>
+<!-- 发票类型 -->
+<YFWActionModal id='oninvoway' title='发票类型' class='alignCenter'>
+  <view class='packOne'>发票类型</view>
+  <view class='myFlex myInvo'>
+    <block wx:for='{{isNedVoic}}' wx:key='index'>
+      <view class="invCls {{selectInvoiceType == index ? 'invSelected' : ''}}" bindtap='isCloseInvo' data-index='{{index}}'>
+        {{item.voic}}
+      </view>
+    </block>
+  </view>
+  <block wx:if="{{selectInvoiceType == 1}}">
+    <view class='packOne invoMtop'>发票抬头</view>
+    <view class='geren'>个人</view>
+    <view class='packOne invoMtop'>收票人信息</view>
+    <view class='packOne invoTxt'>
+      <view>收票人姓名</view>
+      <input type="text" class='mycardIn' placeholder='请填写您的真实姓名' value='{{invoiceInfo.title}}' placeholder-class='placss' maxlength="10" bindinput='nameInput' />
+    </view>
+    <view class='packOne invoTxt lastInvo'>
+      <view>身份证信息</view>
+      <input class='mycardIn' type="idcard" placeholder='请填写您的身份证号码' value='{{invoiceInfo.code}}' placeholder-class='placss' maxlength="18" bindinput='codeInput' />
+    </view>
+  </block>
+  <view class='invoCenter' bindtap='onCenter'>确定</view>
+</YFWActionModal>
+<!-- 平台优惠 -->
+<YFWActionModal id="onplatform" title="平台优惠">
+  <view class='packOne'>可用优惠券</view>
+  <block wx:for="{{platforms}}" wx:key='index'>
+    <view class="outPack {{item.isSelect ? 'slelectd' : ''}}" bindtap='isCloseForm' data-index='{{index}}'>
+      <block wx:if="{{item.isSelect}}">
+        <image src='../../../images/button_card.png' mode='widthFix' class='packBgc'></image>
+        <text class='packTxt'>{{item.name}}</text>
+        <text class='packNum'>¥{{item.money}}</text>
+        <image src='../../../images/chooseBtnWhite@3x.png' mode='widthFix' class='arrOut'></image>
+      </block>
+      <block wx:else>
+        <view class='noCheck'></view>
+        <text class='packTxt nopackTxt'>{{item.name}}</text>
+        <text class='packNum nopackNum'>¥{{item.money}}</text>
+        <image src='../../../images/checkout_unsel.png' mode='widthFix' class='arrOut'></image>
+      </block>
+    </view>
+  </block>
+</YFWActionModal>
+<!-- 优惠券 -->
+<YFWActionModal id="ondiscount" title="优惠券" my-class='isMinHeight'>
+  <view class="coupon-container">
+    <view class="tab-container">
+      <view class="{{coupon_select_available?'coupon-select':'coupon-unselect'}}" bindtap="couponSelectChange" data-status="{{true}}">
+        可用优惠券{{coupon_items.length>0?'('+coupon_items.length+')':''}}
+      </view>
+      <view class="select-line" wx:if="{{coupon_select_available}}"></view>
+    </view>
+    <view class="tab-container">
+      <view class="{{coupon_select_available?'coupon-unselect':'coupon-select'}}" bindtap="couponSelectChange" data-status="{{false}}">
+        不可用优惠券{{un_coupon_items.length>0?'('+un_coupon_items.length+')':''}}
+      </view>
+      <view class="select-line" wx:if="{{!coupon_select_available}}"></view>
+    </view>
+  </view>
+  <block wx:if="{{coupon_select_available}}">
+    <block wx:if='{{coupon_items.length == 0}}'>
+      <view class='noDis'>
+        <image src='https://c1.yaofangwang.net/common/images/miniapp/ic_no_coupon.png'></image>
+        <view class='noDis_txt'>暂无可用优惠券</view>
+      </view>
+    </block>
+    <block wx:else>
+      <block wx:for="{{coupon_items}}" wx:key='index'>
+        <view class="{{item.isSelect==index ? 'slelectd' : ''}}" bindtap='isCloseDis' data-index='{{index}}' wx:key='index'>
+          <view class='coupon'>
+            <view class='cou_left'>
+              <block wx:if='{{item.coupon_des!="不使用优惠券"}}'>
+                <image src='../../../images/icon_coupon_backimage.png' class='leftImg'></image>
+                <view class='mony'><text>¥</text>{{item.money}}</view>
+              </block>
+              <block wx:else>
+                <text class='nouseCoun'>不使用优惠券</text>
+              </block>
+            </view>
+            <view class='cou_right'>
+              <block wx:if='{{item.coupon_des!="不使用优惠券"}}'>
+                <view class="rg-container">
+                  <view class="rg_type">{{item.dict_coupons_type==1?'店铺':'单品'}}</view>
+                  <view class='rg_threeO'>{{item.coupon_des}}</view>
+                </view>
+                <view class='rg_Time'>{{item.start_time+'-'+item.expire_time}}</view>
+              </block>
+              <block wx:if="{{item.isSelect}}">
+                <image src='../../../images/chooseBtn.png' mode='widthFix' class='arrCent'></image>
+              </block>
+              <block wx:else>
+                <image src='../../../images/checkout_unsel.png' mode='widthFix' class='arrCent'></image>
+              </block>
+            </view>
+            <view class='cear'></view>
+          </view>
+        </view>
+      </block>
+    </block>
+  </block>
+  <block wx:else>
+    <block wx:if='{{un_coupon_items.length == 0}}'>
+      <view class='noDis'>
+        <image src='https://c1.yaofangwang.net/common/images/miniapp/ic_no_coupon.png'></image>
+        <view class='noDis_txt'>暂无优惠券</view>
+      </view>
+    </block>
+    <block wx:else>
+      <block wx:for="{{un_coupon_items}}" wx:key='index'>
+        <view class="{{item.isSelect==index ? 'slelectd' : ''}}" bindtap='coudanAction' data-index='{{index}}' wx:key='index'>
+          <view class='coupon'>
+            <view class='cou_left'>
+              <image src='../../../images/icon_coupon_backimage.png' class='leftImg'></image>
+              <view class='mony'><text>¥</text>{{item.money}}</view>
+            </view>
+            <view class='cou_right'>
+              <block>
+                <view class="rg-container">
+                  <view class="rg_type">{{item.dict_coupons_type == 1?'店铺':'单品'}}</view>
+                  <view class='rg_threeO'>{{item.coupon_des}}</view>
+                </view>
+                <view class='rg_Time'>{{item.start_time+'-'+item.expire_time}}</view>
+              </block>
+              <view wx:if="{{isBuy}}" bindtap="addCarMoreAction" data-info="{{item}}" class="rg-btn">
+                去凑单
+              </view>
+            </view>
+            <view class='cear'></view>
+          </view>
+        </view>
+        <view class="unavailable-desc">{{item.unavailabledesc}}</view>
+      </block>
+    </block>
+  </block>
+</YFWActionModal>
+<view id="invoice-modal" hidden="{{!invoiceModalShow}}" class="invoice-modal" catchtap="handleCloseInvoiceModal" catchtouchmove="handleCatchTap" animation="{{opacityAnimation}}">
+  <view id="invoice-modal-content" class="invoice-conent" catchtap="handleCatchTap" animation="{{translateAnimation}}" style="height:{{invoice.isNeed?'1110':'500'}}rpx">
+    <view class="invoice-header">
+      <text>填写发票信息</text>
+      <view bindtap="handleCloseInvoiceModal">
+        <image src="/images/returnTips_close.png"></image>
+      </view>
+    </view>
+    <view class="invoice-title">发票选择</view>
+    <view class="invoice-tags">
+      <view class="{{invoice.isNeed ? 'invoice-tag-item' : 'invoice-tag-item invoice-tag-item-active'}}" data-index="0" bindtap="handleNeedInvoiceItemClick">
+        无需发票
+      </view>
+      <view class="{{invoice.isNeed ? 'invoice-tag-item invoice-tag-item-active' : 'invoice-tag-item'}}" data-index="1" bindtap="handleNeedInvoiceItemClick">
+        需要发票
+      </view>
+    </view>
+    <scroll-view wx:if="{{invoice.isNeed}}" scroll-y class="invoice-scroll" catchtouchmove="handleInvoiceMove" style="height:{{invoice.isNeed?'800':'200'}}rpx">
+      <view class="invoice-title">发票类型</view>
+      <view class="invoice-tags">
+        <block wx:for="{{invoice.suportTypes}}" wx:key="invoice">
+          <view class="{{index == activeIndex  ? 'invoice-tag-item invoice-tag-item-active' : 'invoice-tag-item'}}" data-item="{{item}}" bindtap="handleInvoiceTypeClick">
+            {{item.name}}
+          </view>
+        </block>
+      </view>
+      <view class="invoice-desc">
+        <text decode="{{true}}">{{invoice.selectType.desc}}</text>
+      </view>
+      <view class="invoice-title">发票抬头</view>
+      <view class="invoice-tt">个人</view>
+      <view class="invoice-title">开票信息</view>
+      <view class="invoice-info">
+        <text class="invoice-info-tt">身份证号</text>
+        <input value="{{invoice.invoice_code}}" bindinput="handleInvoiceCodeInput" maxlength="18" class="invoice-info-tt invoice-info-ll invoice-info-in" placeholder="请填写个人身份证号" placeholder-style="color: #ccc"></input>
+      </view>
+      <view class="invoice-info">
+        <text class="invoice-info-tt">发票内容</text>
+        <text class="invoice-info-tt invoice-info-ll">商品明细</text>
+      </view>
+      <view class="invoice-cl">
+        <text class="invoice-desc">发票须知：</text>
+        <text class="invoice-desc">1.发票金额不含优惠券、满减、积分等优惠扣减金额；</text>
+        <text class="invoice-desc">2.商家若无法开具电子普通发票，则开具纸质发票，发票随货寄出或者发货后2日内寄出，若未收到可要求商家补开并寄出；</text>
+        <text class="invoice-desc">3.电子发票：</text>
+        <text class="invoice-desc">(1)电子普通发票是税局认可的有效付款凭证，其法律效力、基本用途、基本使用规定同纸质发票，可支持报销入账，如需纸质发票可自行打印下载； </text>
+        <text class="invoice-desc">(2)电子普通发票则在发货后2日内开出，若商家未开出可联系商家开出；</text>
+        <text class="invoice-desc">(3)用户可点击“我的订单-查看发票”查询，分享链接至电脑端下载打印。</text>
+      </view>
+    </scroll-view>
+    <view wx:else class="invoice-scroll" style="height:{{invoice.isNeed?'800':'200'}}rpx"></view>
+    <view class="invoice-action" bindtap="handleInvoiceConfirm">确定</view>
+  </view>
+</view>

@@ -1,0 +1,33 @@
+.emptyViewLayout{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center
+}
+
+.image_icon{
+  margin-top: 200rpx;
+  width: 340rpx;
+  height: 340rpx;
+}
+
+.tips_text{
+  font-size: 26rpx;
+  color: #666666;
+  margin-top: 40rpx;
+}
+
+.jump_button{
+  font-size: 28rpx;
+  width: 180rpx;
+  height: 70rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  background-color: #1fdb9b;
+  border-radius: 6rpx;
+  margin-top: 40rpx;
+}

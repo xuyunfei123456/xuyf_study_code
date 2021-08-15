@@ -1,0 +1,78 @@
+<!--pages/YFWStoreModule/YFWShopDetailIntroPage/YFWShopDetailIntro.wxml-->
+<view class='container'>
+  <view class='containerView'>
+    <view class='topView'>
+      <view class='topViewMore' />
+      <view class='topTitleView'>店铺详情</view>
+      <view class='topViewMore' bindtap='showMore'>
+        <image class='more' src='/images/more_white.png' id='more_image'/>
+      </view>
+    </view>
+    <view class='borderView'>
+      <view class='shopInfoView'>
+        <image class='shopImage' src='{{shopInfo.logo_img_url}}' />
+        <text class='shopName'>{{shopInfo.title}}</text>
+        <view class='borderlabelView'>
+          <text class='borderlabelText'>已签约</text>
+        </view>
+      </view>
+      <text class='address'>{{shopInfo.address}}</text>
+    </view>
+    <view class='borderView'>
+      <view class='rateItem'>
+        <text class='rateText'>服务总评</text>
+        <starScore stars='{{shopInfo.total_star}}' starSize='{{24}}' starSpacing='{{10}}' class='stars' />
+        <text class='rateText'>(共{{shopInfo.evaluation_count}}人参加评分)</text>
+      </view>
+      <view class='rateItem'>
+        <text class='rateText'>客户服务</text>
+        <text class='rateNum'>{{shopInfo.service_star}}分</text>
+        <text class='rateText rateTextDesc'>领先{{shopInfo.service_rate}}的商家</text>
+      </view>
+      <view class='rateItem'>
+        <text class='rateText'>发货速度</text>
+        <text class='rateNum'>{{shopInfo.delivery_star}}分</text>
+        <text class='rateText rateTextDesc'>领先{{shopInfo.send_rate}}的商家</text>
+      </view>
+      <view class='rateItem'>
+        <text class='rateText'>物流速度</text>
+        <text class='rateNum'>{{shopInfo.shipping_star}}分</text>
+        <text class='rateText rateTextDesc'>领先{{shopInfo.logistics_rate}}的商家</text>
+      </view>
+      <view class='rateItem'>
+        <text class='rateText'>商品包装</text>
+        <text class='rateNum'>{{shopInfo.package_star}}分</text>
+        <text class='rateText rateTextDesc'>领先{{shopInfo.package_rate}}的商家</text>
+      </view>
+    </view>
+    <view class='borderView'>
+      <view class='rateItem'>
+        <text class='rateText fixedwidth'>退单率</text>
+        <text class='rateText rateTextRadio'>{{shopInfo.return_rate}}</text>
+      </view>
+      <view class='rateItem'>
+        <text class='rateText fixedwidth'>平均发货时长</text>
+        <text class='rateText rateTextRadio'>{{shopInfo.avg_send_time}}</text>
+      </view>
+    </view>
+    <text class='rateTitle' wx:if="{{qualificationItems.length>0}}">商家资质</text>
+    <block wx:for='{{qualificationItems}}' wx:key=''>
+      <view class='zz_imageView'>
+        <view class='imageView' bindtap='toBigImage' data-images='{{qualificationItems}}' data-current='{{item.image_file}}'>
+          <image class='zz_image' src='{{item.image_file}}'/>
+          <text class='zz_image_name'>{{item.image_name}}</text>
+        </view>
+      </view>
+    </block>
+    <view class='clearView'>
+      <text class='rateTitle' wx:if="{{sceneItems.length>0}}">商家实景</text>
+      <block wx:for='{{sceneItems}}' wx:key=''>
+        <view class='sj_imageView' bindtap='toBigImage' data-images='{{sceneItems}}' data-current='{{item.image_file}}'>
+          <image class='sj_image' src='{{item.image_file}}'/>
+        </view>
+      </block>
+    </view>
+  </view>
+  <image class='shop_bg_img' src='/images/shop_bg.jpg' />
+  <more_view id="moreview"/>
+</view>

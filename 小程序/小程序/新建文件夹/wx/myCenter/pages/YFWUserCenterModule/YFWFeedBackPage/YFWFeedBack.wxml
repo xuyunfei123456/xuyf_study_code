@@ -1,0 +1,11 @@
+<view class="container">
+  <!-- 分割线 -->
+  <view class="divLine"></view>
+  <view class="opinion-back">
+    <textarea class="opinion" bindinput="bindChange_name" maxlength='150' placeholder="您的意见对我非常重要，我们会不断的优化和改善，努力为您带来更好的体验，谢谢！"></textarea>
+  </view>
+
+  <view class="commit">
+    <button class="address-commit" bindtap="commit">提交</button>
+  </view>
+</view>

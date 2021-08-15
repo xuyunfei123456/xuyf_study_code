@@ -1,0 +1,41 @@
+.comment {
+  width: 100%;
+  height: 100%;
+}
+
+.comment .comment-item {
+  display: flex;
+  flex-direction: column;
+  padding: 30px 26px;
+}
+
+.comment .comment-item .comment-image {
+  width: 54px;
+  height: 54px;
+  margin-right: 10px;
+  border-radius: 30px;
+}
+
+.comment .comment-item .comment-name {
+  display: flex;
+  flex: 1;
+  font-size: 22px;
+  color: #666;
+}
+
+.comment .comment-item .comment-time {
+  font-size: 20px;
+  color: #999;
+}
+
+.comment .comment-item .comment-content {
+  font-size: 26px;
+  color: #333;
+  margin-top: 20px;
+}
+
+.comment .comment-item .comment-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}

@@ -1,0 +1,145 @@
+$float-layout-timer: 300ms;
+
+.yfw-apt-layout {
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  visibility: hidden;
+  transition: visibility $float-layout-timer cubic-bezier(0.36, 0.66, 0.04, 1);
+}
+
+.yfw-apt-layout .yfw-apt-layout-back {
+  // position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  opacity: 0;
+  transition: opacity $float-layout-timer ease-in;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.yfw-apt-layout .yfw-apt-layout-body {
+  position: absolute;
+  width: 100%;
+  max-height: 900px;
+  min-height: 600px;
+  z-index: 20;
+  bottom: 0;
+  transform: translate(0, 100%);
+  transition: transform $float-layout-timer ease-in;
+  background-color: #ffffff;
+  padding-bottom: constant(safe-area-inset-bottom); /*兼容 IOS<11.2*/
+  padding-bottom: env(safe-area-inset-bottom); /*兼容 IOS>11.2*/
+}
+
+.yfw-apt-layout .yfw-apt-layout-body .aptitude-modal-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 90px;
+}
+
+.yfw-apt-layout .yfw-apt-layout-body .aptitude-modal-header .aptitude-modal-header-select {
+  margin: 0 30px;
+  border-bottom: solid 4px #1fdb9b;
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: 20px;
+}
+
+.yfw-apt-layout .yfw-apt-layout-body .aptitude-modal-header .aptitude-modal-header-normal {
+  margin: 0 30px;
+  border-bottom: solid 4px #ffffff;
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: 20px;
+}
+
+.yfw-apt-layout .yfw-apt-layout-body .aptitude-modal-header .aptitude-modal-header-title {
+  color: #333333;
+  font-size: 26px;
+  line-height: 30px;
+}
+
+.yfw-apt-layout .yfw-apt-layout-body .aptitude-modal-center {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  // flex: 1;
+  height: 500px;
+  width: 100%;
+}
+
+.yfw-apt-layout .yfw-apt-layout-body .aptitude-modal-empty {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  width: 100%;
+}
+
+.yfw-apt-layout .yfw-apt-layout-body .aptitude-modal-empty .aptitude-modal-empty-image {
+  width: 300px;
+  height: 300px;
+  margin-bottom: 20px;
+}
+
+.yfw-apt-layout .yfw-apt-layout-body .aptitude-modal-empty .aptitude-modal-empty-name {
+  color: #666;
+  font-size: 26px;
+}
+
+.yfw-apt-layout .yfw-apt-layout-body .aptitude-modal-center .aptitude-modal-center-swiper {
+  width: 65vw;
+  height: 450px;
+}
+
+.yfw-apt-layout .yfw-apt-layout-body .aptitude-modal-center .aptitude-modal-center-swiper .aptitude-modal-center-swiper-image {
+  width: 65vw;
+  height: 450px;
+  display: block;
+  margin-top: 20px;
+}
+
+.yfw-apt-layout .yfw-apt-layout-body .aptitude-modal-center .aptitude-modal-center-lr {
+  width: 15vw;
+  height: 200px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.yfw-apt-layout .yfw-apt-layout-body .aptitude-modal-center .aptitude-modal-center-lr .aptitude-modal-center-lr-image {
+  width: 28px;
+  height: 84px;
+}
+
+.yfw-apt-layout .yfw-apt-layout-body .aptitude-modal-bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  background-color: #1fdb9b;
+}
+
+.yfw-apt-layout .yfw-apt-layout-body .aptitude-modal-bottom .aptitude-modal-bottom-title {
+  color: #ffffff;
+  font-size: 26px;
+}
+
+.apt-modal-ipx {
+  width: 100%;
+  height: 60px;
+  background-color: #ffffff;
+}

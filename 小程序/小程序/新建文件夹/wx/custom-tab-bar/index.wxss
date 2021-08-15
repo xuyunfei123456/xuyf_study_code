@@ -1,0 +1,59 @@
+.tab-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 48px;
+  background: white;
+  display: flex;
+  padding-bottom: constant(safe-area-inset-bottom); /*兼容 IOS<11.2*/
+  padding-bottom: env(safe-area-inset-bottom); /*兼容 IOS>11.2*/
+}
+
+.tab-bar-border {
+  background-color: rgba(0, 0, 0, 0.33);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 1px;
+  transform: scaleY(0.5);
+}
+
+.tab-bar-item {
+  flex: 1;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.tab-bar-item image {
+  width: 27px;
+  height: 27px;
+}
+
+.tab-bar-item view {
+  font-size: 10px;
+}
+.carCount{
+  position: absolute;
+  width: 30rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  color: #ffffff;
+  background: #ff3300;
+  border-radius: 50%;
+  top: 10rpx;
+  margin-left: 15%;
+}
+.activityBtn{
+  width: 140.666rpx;
+  height: 148rpx;
+  position: absolute;
+  left: 50%;
+  margin-left: -70.333rpx;
+  top: -74rpx;
+}

@@ -1,0 +1,9 @@
+<!--components/YFWTitleView.wxml-->
+<view class='root'>
+  <text class='text_title' id='title' style='height:{{titleHeight}}rpx;font-size:{{largeStyle?36:fontSize}}rpx;font-weight:{{fontWeight}};color:{{fontColor}}'>{{title}}</text>
+  <block wx:if="{{showbottom}}">
+  <image wx:if='{{largeStyle}}' class='line_image' src='/images/title_bottom_line_another.png' />
+  <image wx:else class='text_image' src='/images/title_bottom_line.png' style="height:{{lineHeight}}rpx;opacity:{{showLine?'1':'0'}}" />
+  </block>
+
+</view>

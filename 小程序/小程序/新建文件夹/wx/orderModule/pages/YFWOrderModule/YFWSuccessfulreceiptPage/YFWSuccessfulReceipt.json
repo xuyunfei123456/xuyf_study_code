@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "recommendList":"../../../../components/GoodsItemView/CollectionGoodsItem"
+  },
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "",
+  "navigationBarBackgroundColor": "#49ddb8",
+  "enablePullDownRefresh": false
+}

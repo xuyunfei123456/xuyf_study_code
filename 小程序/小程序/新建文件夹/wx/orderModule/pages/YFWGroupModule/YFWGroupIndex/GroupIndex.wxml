@@ -1,0 +1,99 @@
+<view class="group-wrapper">
+    <view 
+        wx:if="{{active === '拼团首页'}}" 
+        class="group-home" 
+        style="background-image: url({{activity_map.theme_img_url}})">
+        <view class="group-rule-control">活动规则</view>
+        <image class="group-banner" src="{{activity_map.background_img_url}}" />
+        <view 
+        wx:for="{{medicinelist}}" 
+        wx:key="{{item.id}}" 
+        class="group-goods-item">
+            <image class="group-goods-item-image" src="{{item.img_url}}"></image>
+            <view class="group-goods-item-content">
+                <view class="group-goods-name">{{item.medicine_name}}</view>
+                <view class="group-goods-desc">{{item.medicine_desc}}</view>
+                <view class="group-goods-type">{{item.dict_group_buy_medicine_type_word}}</view>
+                <view class="group-goods-item-content-bottom">
+                <Price 
+                    price="{{item.price}}" 
+                    newPrice="{{item.discount_price}}"></Price>
+                <view class="group-goods-item-content-btn">拼团</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view wx:if="{{active === '我的拼团'}}" class="group-center">
+        <view wx:if="{{userGroupList.length === 0}}" class="group-empty">
+            <image class="group-empty-ico" src="../image/empty.png" />
+            <view class="group-empty-text">暂无拼团</view>
+            <view class="group-empty-btn" 
+            bindtap="handleSetAcivePage" 
+            data-active="拼团首页">前往拼团首页</view>
+        </view>
+        <view wx:else>
+            <view 
+            class="group-relation-item"
+            wx:for="{{userGroupList}}" 
+            wx:key="{{item.id}}">
+                <view class="group-relation-item-header">
+                    <view style="display: flex;">
+                        <view>单号:</view>
+                        <view style="font-weight: bold;">
+                            {{item.orderno}}
+                        </view>
+                    </view>
+                    <view class="{{['group-relation-item-status', item.dict_Group_status]}}">{{item.dict_Group_status_word}}</view>
+                </view>
+                <view class="group-relation-item-main">
+                    <image class="group-relation-item-image" src="{{item.theme_img_url}}"></image>
+                    <view class="group-relation-item-content">
+                        <view class="group-relation-item-title">
+                        {{item.title}}
+                        </view>
+                        <view class="group-relation-item-type">
+                        {{item.dict_group_buy_medicine_type_word}}
+                        </view>
+                        <view class="group-relation-item-price">
+                            <Price 
+                            price="{{item.price}}" 
+                            newPrice="{{item.discount_price}}"></Price>
+                        </view>
+                    </view>
+                </view>
+                <view wx:if="{{item.count_status === 'GROUPNOSUCCESS'}}" class="group-relation-item-footer">
+                    <view>还差<text style="color: #ff0048;font-bold: bold;">{{item.offered_count - item.group_count}}</text>人拼团成功</view>
+                    <view class="group-relation-item-control">
+                        <view class="group-relation-item-btn">查看订单</view>
+                        <view class="group-relation-item-btn on">邀请好友参团</view>
+                    </view>
+                </view>
+                <view wx:if="{{item.count_status === 'GROUPSUCCESS'}}" class="group-relation-item-footer">
+                    <view></view>
+                    <view class="group-relation-item-control">
+                        <view class="group-relation-item-btn">查看订单</view>
+                        <view class="group-relation-item-btn on">继续邀请</view>
+                    </view>
+                </view>
+                <view wx:if="{{item.count_status === 'GROUPFULL'}}" class="group-relation-item-footer">
+                    <view>已拼满<text style="color: #ff0048;font-bold: bold;">10</text>人</view>
+                    <view class="group-relation-item-control">
+                        <view class="group-relation-item-btn">查看订单</view>
+                        <view class="group-relation-item-btn on">再开一团</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <!-- 切换 -->
+    <view class="group-home-nav">
+        <view 
+        wx:for="{{nav}}" 
+        bindtap="handleSetAcivePage"
+        data-active="{{item.name}}"
+        class="{{['group-home-nav-link', active === item.name && 'on']}}">
+            <image class="group-home-nav-ico" src="{{active === item.name ? item.ico.active : item.ico.normal}}"></image>
+            {{item.name}}
+        </view>
+    </view>
+</view>

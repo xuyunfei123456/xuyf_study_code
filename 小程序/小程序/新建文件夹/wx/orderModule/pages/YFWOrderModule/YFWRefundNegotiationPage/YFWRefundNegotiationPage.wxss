@@ -1,0 +1,41 @@
+.item-container {
+  margin-top: 40rpx;
+  margin-left: 25rpx;
+  margin-right: 25rpx;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 14rpx;
+  box-shadow: 0rpx 7rpx 15rpx 0rpx rgba(204, 204, 204, 0.6);
+  position: relative;
+  padding-bottom: 30rpx;
+  padding-top: 30rpx;
+  padding-left: 26rpx;
+}
+
+.item-container .title {
+  color: #333;
+  font-size: 30rpx;
+}
+
+.item-container .msg {
+  color: #999;
+  font-size: 24rpx;
+}
+
+.item-container .green {
+  color: #1fdb9b;
+}
+
+.item-container .bottom20 {
+  margin-bottom: 20rpx;
+}
+
+.item-container .top8 {
+  margin-top: 4rpx;
+}
+
+.item-container .top20 {
+  margin-top: 20rpx;
+}

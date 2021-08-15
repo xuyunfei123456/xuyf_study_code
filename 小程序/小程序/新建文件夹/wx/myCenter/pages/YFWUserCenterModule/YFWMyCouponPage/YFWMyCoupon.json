@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "titleView": "../../../../components/YFWTitleView/YFWTitleView",
+    "more_view": "/components/YFWMoreView/YFWMoreView"
+  },
+  "navigationBarTitleText": "我的优惠券",
+  "navigationBarBackgroundColor": "#49ddb8",
+  "navigationBarTextStyle": "white",
+  "onReachBottomDistance": 90
+}

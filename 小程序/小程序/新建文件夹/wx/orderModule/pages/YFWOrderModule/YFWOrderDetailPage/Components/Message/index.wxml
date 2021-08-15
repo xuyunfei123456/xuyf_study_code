@@ -1,0 +1,17 @@
+<view>
+  <scroll-view class="scroll" scroll-y="false" style="height:{{height}}rpx" scroll-into-view="item{{advisoryList.length}}">
+    <view class="wrapper">
+      <view class="list" wx:for="{{advisoryList}}" wx:key="{{index}}" id="item{{index+1}}">
+        <view class="selfAndTime">
+          <view class="self">{{item.accountid>0?'我':'商家回复'}}</view>
+          <view class="time">{{item.create_time}}</view>
+        </view>
+        <view class="message">{{item.content}}</view>
+      </view>
+    </view>
+  </scroll-view>
+  <view class='bottom_container'>
+    <input type="text" class="input"  placeholder="请输入您的留言" placeholder-class="placeTip" value="{{inputText}}"  bindinput="onTextInput"/>
+    <view class="send {{inputText == ''?'':'hascontent'}}" bindtap="send">发送</view>
+  </view>
+</view>

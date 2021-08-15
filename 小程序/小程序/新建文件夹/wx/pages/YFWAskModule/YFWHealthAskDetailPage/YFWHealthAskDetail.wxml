@@ -1,0 +1,123 @@
+<!--pages/YFWAskModule/progrmDel/progrmDel.wxml-->
+  <view class='out-skip'>
+  <HealthAskAssociationItemView id='AppendButton' bind:formSubmit='formSubmit'/>
+    <view class='topView'>
+      <view class='topSearchView' bindtap='goSearch'>
+        <view class='search_input_view'>
+          <image class='search_icon' src='/images/search.png'></image>
+          <text class='placeholder'>请输入疾病或症状</text>
+        </view>
+        <view class='search-text'>
+          <text>搜索</text>
+        </view>
+      </view>
+    </view>
+  </view>
+<!-- 问题 -->
+<view class='top-view'>
+  <view class='title-view'>
+    <image class='title_icon' ></image>
+    <text>{{qutions.title}}</text>
+    <image class='title_icon1' src='/images/icon_wen.png'></image>
+  </view>
+  <view class='ask-sex'>
+    <image src='{{qutions.account_intro_image}}'></image>
+    <text>{{qutions.dict_sex}}</text>
+    <text class='ask-sex-text'>{{qutions.age}}</text>
+    <text>{{qutions.create_time}}</text>
+  </view>
+
+  <view class='reply-quey'>
+  <view>{{qutions.description}}</view>
+  <image src="{{docImg}}" mode='widthFix' class='hedPort' wx:if='{{isImgshow}}' bindtap='imgUrl'></image>    
+  </view>
+
+</view>
+<view class='rel-view'>
+  <view class='relp-view'>
+    <image class='title_icon' src='../../../images/icon_da.png'></image>
+    <view>医生问答<text class='title_ask-text'>（{{dataInfo.ask_detail.item_ask_reply.length}}条回复）</text></view>    
+  </view>
+  <view class='line-view'></view>
+  <block wx:for='{{dataInfo.ask_detail.item_ask_reply}}' wx:if='{{dataInfo.ask_detail.item_ask_reply.length>0}}'>
+    <view class='doctor-ask'>
+      <view class='doctor-view'>
+        <view class='doctor-item'>
+          <image src='{{item.intro_image}}'></image>
+          <view class='doctor-text' bindtap='getDoctor' data-item='{{item}}'><text>{{item.account_name}}</text></view>
+          <view class='doctor-item-view'>
+            <text style="color:{{item.type==='药师'?'#dab96b':'#ec8028'}}">{{item.type}}</text>
+          </view>
+          <view class='shop-name' bindtap='onHospital' data-item='{{item}}'>{{item.shop_name}}</view>
+        </view>
+            
+      </view>
+      <view class='reply_content'>{{item.desc}}</view>
+      <scroll-view scroll-x="true" scroll-y="false" class='relative-view' wx:if="{{item.relative_goods_item.length>0}}">
+        <block wx:for="{{item.relative_goods_item}}" key="{{index}}">
+          <view class='relative-view-context' bindtap='clickGoodsItemMethod' data-id='{{item.shop_goods_id}}'>
+            <view class='relative-view-context-view'>
+              <image src='{{item.image_file}}'></image>
+              <text class='relative-view-context-text'>{{item.name_cn}}</text>
+            </view>
+          </view>
+        </block>
+      </scroll-view>
+      <view class='append-view' wx:if="{{item.item_ask_append.length>0}}">
+        <block wx:for="{{item.item_ask_append}}" key="{{index}}">
+          <view class='append-view-context'>
+            <text class='append-view-text'>追问：{{item.desc}}</text>
+            <block wx:for="{{item.item_ask_appendreply}}" key="{{index}}" wx:if="{{item.item_ask_appendreply.length>0}}">
+              <view class='appendreply-view'>医生：{{item.desc}}</view>
+            </block>
+          </view>
+        </block>
+      </view>
+      <view class='button-view' wx:if="{{item.buttons.length > 0}}">
+        <view class='button-context'>
+          <view class='button-context-view' bindtap='clickAskAppendButtonMethod' data-item='{{item.buttons[0]}}' data-id='{{item.id}}' id='AppendButton-view'>
+            <text>{{item.buttons[0].name}}</text>
+          </view>
+          <view class='button-context-view' bindtap='clickAskAppendButtonMethod' data-item='{{item.buttons[1]}}' data-id='{{item.id}}'>
+            <text>{{item.buttons[1].name}}</text>
+          </view>
+          <!-- <block wx:for="{{item.buttons}}">
+            <view class='button-context-view' bindtap='clickAskAppendButtonMethod' data-item='{{item}}' data-id=''>
+              <text>{{item.name}}</text>
+            </view>
+          </block> -->
+        </view>
+        <text class='button-context-text'>{{item.time}}</text>
+      </view>
+      <view wx:elif="{{item.status_id==='3'}}" class='button-view'>
+        <view class='button-context mag-button'>
+          <image src='/images/yfwsk/caina.png'></image>
+          <text>{{item.status}}</text>
+        </view>
+        <text class='button-context-text'>{{item.time}}</text>
+      </view>
+      <view wx:else class='button-view justify'>
+        <text class='button-context-text'>{{item.time}}</text>
+      </view>
+    </view>
+  </block>
+ 
+</view>
+<!-- 相关问题 -->
+<view class='rel-view'>
+  <view class='rel-title'>相关问题</view>
+  <view class='botmLine'><view></view></view>
+  <HealthAskQuestionItemView data="{{dataInfo.item_related}}" froms="pharmacist_ask"/>
+</view>
+<!-- 相关产品 -->
+<view class='rel-view'>
+  <view class='rel-title'>相关药品</view>
+  <view class="question-swiper-item">
+    <block wx:for="{{relateProduct}}" wx:key="{{item.id}}">
+      <view class='question-content-item'>
+          <collection_goods data='{{item}}' showcar='{{item.isShowCart}}'></collection_goods>
+      </view>
+    </block>
+  </view>
+</view>
+

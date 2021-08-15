@@ -1,0 +1,329 @@
+@Distance20: 20px;
+@Distance12: 12px;
+@fontSize11: 11px;
+@fontSize13: 13px;
+@fontSize12: 12px;
+@fontSize14: 14px;
+@fontSize20: 20px;
+@color333: #333;
+@color999: #999;
+
+.backgroundImg {
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.flex {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+button::after {
+  border: none;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background-color: #f5f5f5;
+  .recipeStatus {
+    width: 100%;
+    height: 80px;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    z-index: 99;
+    .status_img {
+      width: 100%;
+      height: 80px;
+    }
+    .recipeStatusTxt {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 80px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      font-size: @fontSize12;
+      color: #fff;
+      .recipeStatusIcon {
+        height: 32px;
+        margin-left: 16.333px;
+        margin-right: 16px;
+      }
+      .recipeStatusBig {
+        font-size: @fontSize20;
+        font-weight: 600;
+      }
+
+      .recipeStatusSmall {
+        margin-top: 5px;
+      }
+    }
+  }
+
+  .sort-cont {
+    .flex();
+    justify-content: space-between;
+    padding-left: @Distance20;
+    padding-right: @Distance12;
+
+    background-color: #fff;
+    color: @color999;
+    font-size: @fontSize13;
+
+    .recipeId {
+      line-height: 50px;
+    }
+
+    .orgBtn {
+      border-radius: 13px;
+      border: 1px solid #dddddd;
+      padding: 0px 10px;
+      height: 25px;
+      line-height: 25px;
+      background-color: #fff;
+      font-size: @fontSize12;
+      color: @color333;
+      margin: 0;
+    }
+  }
+
+  .center-view {
+    background-color: #fff;
+    box-sizing: border-box;
+    position: absolute;
+    top: 80px;
+    bottom: 60px;
+    width: 100%;
+    margin-bottom: constant(safe-area-inset-bottom); /*兼容 IOS<11.2*/
+    margin-bottom: env(safe-area-inset-bottom); /*兼容 IOS>11.2*/
+    .center_view_wrapper {
+      .recipeList-head {
+        position: relative;
+        border-bottom: 2px solid #dcdcdc;
+        color: @color333;
+        padding-bottom: 14px;
+        padding-top: 14px;
+        padding-left: @Distance20;
+        padding-right: @Distance12;
+        .recipeList-title {
+          text-align: center;
+          font-size: @fontSize20;
+
+          .title-bold {
+            font-weight: 600;
+          }
+
+          .recipeList-hospital {
+            font-size: @fontSize13;
+            margin-top: 5px;
+          }
+        }
+
+        .recipeList-drug-type {
+          font-size: @fontSize12;
+          width: 45px;
+          text-align: center;
+          background-color: #cccccc;
+          margin: auto;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          right: 12px;
+          padding: 5px;
+
+        }
+      }
+
+      .recipeList-user {
+        border-top: 1px solid #dcdcdc;
+        border-bottom: 1px dashed #dcdcdc;
+        margin-top: 1px;
+        font-size: @fontSize13;
+        color: @color999;
+        padding-bottom: 18px;
+
+        .userItem {
+          .flex();
+          justify-content: space-between;
+          margin-top: 18px;
+
+          .text {
+            color: @color333;
+          }
+        }
+      }
+
+      .recipeList-result {
+        padding-bottom: 23px;
+        border-bottom: 1px dashed #dcdcdc;
+
+        .result-title {
+          margin-top: 18px;
+          color: @color999;
+          font-size: @fontSize13;
+        }
+
+        .result-del {
+          margin-top: 11px;
+          color: @color333;
+          font-size: @fontSize14;
+        }
+      }
+
+      .recipeList-usage {
+        border-bottom: 1px solid #dcdcdc;
+
+        .usage-title {
+          .flex();
+          margin-top: 13px;
+          color: @color999;
+          font-size: @fontSize13;
+          padding-bottom: 20px;
+
+          .usage-ro {
+            width: 20px;
+            height: 20px;
+          }
+
+          .text {
+            margin-left: 6px;
+          }
+        }
+
+        .usageItem {
+          padding-bottom: 20px;
+
+          .goodsDel {
+            .flex();
+            justify-content: space-between;
+            font-size: @fontSize14;
+
+            .goods {
+              color: @color333;
+            }
+
+            .num {
+              color: @color999;
+            }
+          }
+
+          .us-do {
+            color: @color999;
+            font-size: @fontSize11;
+            margin-top: 9px;
+          }
+        }
+      }
+
+      .recipeList-doctor {
+        .flex();
+        height: 40px;
+        line-height: 40px;
+        border-bottom: 1px dashed #dcdcdc;
+        font-size: @fontSize11;
+        color: @color999;
+
+        .senior {
+          margin-left: 21px;
+        }
+
+        .name {
+          color: @color333;
+          margin-left: 3px;
+        }
+      }
+
+      .recipeList-remark {
+        padding-top: 10px;
+        font-size: @fontSize11;
+        color: @color999;
+
+        .remarkItem {
+          height: 16px;
+          line-height: 16px;
+        }
+      }
+
+      .recipeList-hint {
+        font-size: @fontSize12;
+        margin-top: 21px;
+        color: #feac4c;
+        margin-bottom: 10px;
+        padding-left: @Distance20;
+        padding-right: @Distance12;
+      }
+    }
+  }
+  .bottommone {
+    bottom: 0;
+  }
+  .btn_wrapper {
+    position: fixed;
+    bottom: 0;
+    height: 50px;
+    width: 100%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    padding-bottom: constant(safe-area-inset-bottom); /*兼容 IOS<11.2*/
+    padding-bottom: env(safe-area-inset-bottom); /*兼容 IOS>11.2*/
+    .goShopBtn {
+      width: 80%;
+      height: 42px;
+      line-height: 42px;
+      background: linear-gradient(
+        to right,
+        rgb(0, 177, 135),
+        rgb(58, 203, 143)
+      );
+      font-size: 17px;
+      color: #fff;
+      font-weight: bold;
+      text-align: center;
+      border-radius: 21px;
+    }
+  }
+  .line {
+    height: 10px;
+    background: #f5f5f5;
+  }
+  .copy {
+    width: 14px;
+    height: 16px;
+    display: inline-block;
+    margin-left: 10px;
+    vertical-align: middle;
+  }
+  .grayWrapper {
+    padding-left: @Distance20;
+    padding-right: @Distance12;
+  }
+  .opacityCss{
+    opacity: 0.5;
+  }
+  .textShadow{
+    color: transparent;
+    text-shadow: 0 0 5px #000;
+  }
+  .auditWrapper{
+    position:relative;
+    .audit-shadow{
+      position: absolute;
+      top: 0;
+      height:100%;
+      width:100%;
+      background:#fff;
+      opacity:0.7;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight: bolder;
+    }
+  }
+}

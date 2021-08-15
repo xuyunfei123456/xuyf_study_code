@@ -1,0 +1,33 @@
+.side-bar {
+  position: relative;
+  height: auto;
+}
+
+.side-bar .side-bar-top {
+  position: absolute;
+  background-color: #ffffff;
+  z-index: 20;
+  transition: transform 0.4s ease;
+  -webkit-transition: transform 0.4s ease;
+}
+
+.side-bar .side-bar-bottom {
+  position: absolute;
+  z-index: 10;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.side-bar .side-bar-bottom .side-bar-bottom-item {
+  display: flex;
+  width: 18vw;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.side-bar .side-bar-bottom .side-bar-bottom-item .side-bar-bottom-item-title {
+  font-size: 28px;
+  color: #ffffff;
+}

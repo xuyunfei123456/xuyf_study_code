@@ -1,0 +1,236 @@
+<view class="inquiry">
+  <view wx:if="{{rx_mode==3}}" class="inquiry-tab">
+    <view class="tab-item" bindtap="handleTabItem" data-index="1">
+      <titleView title="在线问诊" showLine="{{!isPrescrption}}" fontSize="28" fontWeight="500" />
+    </view>
+    <view class="tab-item" bindtap="handleTabItem" data-index="2">
+      <titleView title="有处方单" showLine="{{isPrescrption}}" fontSize="28" fontWeight="500" />
+    </view>
+  </view>
+
+  <view class="inquiry-notice" bindtap="handleLookPrescRules">
+    <text>{{isPrescrption ? '您订单内处方药必须凭医生开具的正规处方销售    查看 >' : '以下信息仅用于互联网医院为您提供问诊开方业务'}}</text></view>
+  <view class="inquiry-progress">
+    <view>填写信息</view>
+    <image src="../../../images/icon_arrow_more.png" alt="" class='img-right' />
+    <view>提交订单</view>
+    <image src="../../../images/icon_arrow_more.png" alt="" class='img-right' />
+    <view>医院开方</view>
+    <image src="../../../images/icon_arrow_more.png" alt="" class='img-right' />
+    <view>药店审方发货</view>
+  </view>
+
+  <scroll-view scroll-y class="inquiry-content" scroll-top="{{scrollTop}}" scroll-with-animation="true">
+    <view class='useDrugArea'>
+      <view class="useDrugArea-title">
+        <view class='useDrugArea-title-left'><text style="padding-right:4px;color:#ff3300">*</text>用药人（必填）</view>
+        <view class='useDrugArea-title-right' bindtap="handleAddPatient" wx:if="{{patientItems.length>0}}">
+          <text class="patient-add-l">+</text>
+          <text class='useDrugArea-title-right-add'>添加</text>
+        </view>
+      </view>
+      <block wx:if="{{patientItems.length>0}}">
+        <scroll-view class="inquiry-patient-scroll" scroll-x="true" scroll-y="true">
+          <block wx:for="{{patientItems}}" wx:for-index="patientIndex" wx:for-item="patientItem"
+            wx:key="{{patientItem.id}}">
+            <view class="inquiry-patient-item" data-index="{{patientIndex}}" data-item="{{patientItem}}"
+              bindtap="handleSelectPatient">
+              <view
+                class="{{selectPatient.id==patientItem.id ? 'patient-item  patient-item-select' : 'patient-item '}}">
+                <text class="patient-name">{{patientItem.real_name}}</text>
+                <view class="patient-text-gray">
+                  <text>{{patientItem.dict_sex==1 ? '男' : '女'}}</text>
+                  <text style='padding-left:10rpx'>{{patientItem.age}}岁</text>
+                  <text style='padding-left:10rpx'>{{patientItem.secret_mobile}}</text>
+                </view>
+                <image class='write patient-edit' data-item="{{patientItem}}" catchtap="handleEditPatient"
+                  src="../../../images/write.png"></image>
+              </view>
+            </view>
+          </block>
+        </scroll-view>
+      </block>
+      <block wx:else>
+        <view class="patient-empty" bindtap="handleAddPatient">
+          <text class="addsymbol">+</text>
+          <text class='add-text'>添加用药人</text>
+        </view>
+      </block>
+
+
+    </view>
+    <view class="confirmArea">
+      <image class="confirmArea-left" style="border:{{confirmAreaFlag ? 'none':'4rpx solid #ddd'}}"
+        src='{{confirmAreaFlag?"../../../images/sign_checked.png":""}}' bindtap="confirmClick"></image>
+      <view class="confirmArea-right">
+        确认已在实体医院就诊，且服用过订单中药品，无不良反应。
+      </view>
+    </view>
+    <view class="confirmTip" wx:if="{{!confirmAreaFlag}}">
+      根据相关法律规定，用户购买处方药，需先在实体医院完成就诊
+    </view>
+    <block wx:if="{{isPrescrption}}">
+
+      <view class="patient-title-view">
+        <text class="inquiry-title">上传处方图片(必传)</text>
+      </view>
+
+      <view class="inquiry-disease-content">
+        <view class="inquiry-vocher-view">
+          <block wx:for="{{prescrptionImages}}" wx:key="prescImg">
+            <view class="position-re">
+              <image class="vocher-item" src="{{item.localPath}}" data-index="{{index}}" data-item="{{item}}"
+                mode="aspectFill"></image>
+              <view class="inquiry-vocher-delete" data-item="{{item}}" bindtap="handleUploadPrescription">
+                <image src="/images/search_del.png"></image>
+              </view>
+            </view>
+          </block>
+          <image wx:if="{{prescrptionImages.length<3}}" class="vocher-item" src="/images/upload_photo2.png"
+            bindtap="handleUploadPrescription"></image>
+        </view>
+      </view>
+
+    </block>
+    <block wx:if="{{!isPrescrption && confirmAreaFlag}}">
+      <view class="inquiry-disease-content">
+        <view class="patient-title-view">
+          <text class="inquiry-title"><text class="red-color">*</text>请选择确诊疾病</text>
+        </view>
+        <text class="inquiry-subtitle" style="padding-top:15rpx">请您选择在线下确诊的相关疾病</text>
+        <block wx:for="{{medicineDiseaseItems}}" wx:for-index="medicineIndex" wx:for-item="medicineItem"
+          wx:key="medicine">
+          <text class="inquiry-subtitle disease-medicine">[{{medicineItem.medicine_name}}]</text>
+          <view class="disease-tags" style="{{medicineDiseaseItems.length-1==medicineIndex ? 'border-width:0' : ''}}">
+            <view class="disease-tag-point {{medicineItem.active ? 'disease-tag-point-active' : ''}}"></view>
+            <block wx:for="{{medicineItem.diseases}}" wx:for-index="diseaseIndex" wx:for-item="diseaseItem"
+              wx:key="disease">
+              <view class="disease-tag-item {{diseaseItem.active ? 'disease-tag-item-active' : ''}}"
+                bindtap="handleDiseaseTagClick" data-section="{{medicineIndex}}" data-row="{{diseaseIndex}}">
+                {{diseaseItem.name}}</view>
+            </block>
+            <view wx:if="{{medicineItem.showAdd}}" class="disease-tag-item disease-tag-item-add"
+              data-section="{{medicineIndex}}" bindtap="handleDiseaseTagAddClick">+</view>
+          </view>
+        </block>
+      </view>
+      <view class="inquiry-disease-content">
+        <view class="inquiry-disease-detail-title" bindtap="handleShowDiseaseInput">
+          <text class="inquiry-title disease-medicine">请描述确诊疾病症状（选填）</text>
+          <image class="inquiry-disease-detail-icon {{diseaseDescShow ? 'inquiry-disease-detail-icon-up' : ''}}"
+            src="/images/around_detail_icon.png"></image>
+        </view>
+        <view wx:if="{{diseaseDescShow}}" class="inquiry-disease-desc">
+          <textarea class="disease-input" value="{{diseaseDesc}}" placeholder="请描述确诊疾病症状"
+            placeholder-style="color: #ccc" maxlength="200" bindinput="handleDiseaseDescInputChange"></textarea>
+          <text class="desc-count">{{diseaseDesc.length}}/200</text>
+        </view>
+      </view>
+      <view class="inquiry-disease-content">
+        <view class="patient-title-view" bindtap="handleShowVorche">
+          <text class="inquiry-title"><text wx:if="{{isCertificateUpload}}"
+              class="red-color">*</text>请上传复诊凭证<text>（{{isCertificateUpload ? '必填':'选填'}}）</text></text>
+          <image class="inquiry-disease-detail-icon {{vorcheShow ? 'inquiry-disease-detail-icon-up' : ''}}"
+            src="/images/around_detail_icon.png"></image>
+        </view>
+        <block wx:if="{{vorcheShow}}">
+          <text class="inquiry-subtitle">（请您上传用药人的【处方、病历、住院出院记录】仅可上传5张)</text>
+          <view class="inquiry-vocher-view">
+            <block wx:for="{{vorcheImages}}" wx:key="vorcheImg">
+              <view class="position-re">
+                <image class="vocher-item" src="{{item.localPath}}" data-index="{{index}}" data-item="{{item}}"
+                  mode="aspectFit" bindtap="handleLookVorcheBigPic"></image>
+                <view class="inquiry-vocher-delete" data-item="{{item}}" bindtap="handleDeleteVorche">
+                  <image src="/images/search_del.png"></image>
+                </view>
+              </view>
+            </block>
+            <image wx:if="{{vorcheImages.length<5}}" class="vocher-item" src="/images/upload_photo2.png"
+              bindtap="handleUploadVorche"></image>
+          </view>
+          <view class="inquiry-vocher-exmaple">
+            <image src="{{cerExampleAll}}" bindtap="handleLookCertExample"></image>
+            <view>
+              <view class='example-item'>有效凭证，须包含以下信息：</view>
+              <view class='example-item-red'>医疗机构名称/医生姓名/患者姓名/诊断和用药信息</view>
+              <view class='example-item'>(若一张凭证信息不全，可上传多张)</view>
+            </view>
+          </view>
+        </block>
+      </view>
+    </block>
+    <view class="inquiry-space"></view>
+  </scroll-view>
+
+  <view class="inquiry-bottom">
+    <text wx:if="{{!isPrescrption}}" class="bottom-notice">互联网医院问诊并成功开具处方，所需问诊费暂不收取。</text>
+    <view class="inquiry-action" bindtap="handleConfirm">
+      <text>{{!isPrescrption ? '提交就诊信息' : '完成'}}</text>
+    </view>
+  </view>
+
+  <view id='inquiry-modal' hidden="{{!searcheModalShow}}" class="inquiry-modal"
+    catchtap="handleHiddenSearchDiseaseModal" catchtouchmove="handleCatchTap">
+    <view id='inquiry-modal-content' class="inquiry-modal-content" catchtap="handleCatchTap">
+      <view class="inquiry-header">
+        <text>添加确诊疾病</text>
+        <view bindtap="handleHiddenSearchDiseaseModal">
+          <image src="/images/returnTips_close.png"></image>
+        </view>
+      </view>
+      <view class="inquiry-search">
+        <input value="{{searchKey}}" placeholder="请输入疾病名称，支持首字母、模糊搜索" placeholder-style="color: #ccc"
+          bindinput="handleSearchInputChange"></input>
+        <view hidden="{{searchKey.length==0}}" bindtap="handleClearSearchInput">
+          <image src="/images/search_del.png"></image>
+        </view>
+      </view>
+      <block wx:for="{{searcheDiseaseResult}}" wx:key="searchDisease">
+        <view class="inquiry-search-item" data-item="{{item}}" bindtap="handleSearchItemClick">{{item.disease_name}}
+        </view>
+      </block>
+    </view>
+  </view>
+
+  <view id='cert-modal' hidden="{{!certModalShow}}" class="inquiry-modal cert" catchtouchmove="handleCatchTap">
+    <view class="cert-content">
+      <view class="cert-colse" bindtap="handleCertModalClose">
+        <image src="/images/returnTips_close.png"></image>
+      </view>
+      <view class="cert-desc">
+        <image src="/images/icon_warning_complaint.png" class="cert-warn"></image>
+        <text class="font-bold ">注意以下事项</text>
+        <text>·用药人姓名，必须与凭证中一致；</text>
+        <text>·所购药品，必须与凭证中一致；</text>
+        <text class="font-bold ">否则将开方失败</text>
+      </view>
+      <image class="cert-exp-image" bindtap="handleLookCertExample" src="{{cerExampleAll}}" mode="aspectFit"></image>
+      <view class="cert-action" bindtap="handleCertModalClick">立即上传</view>
+    </view>
+  </view>
+
+  <view id='auth-modal' hidden="{{!authModalShow}}" class="inquiry-modal cert" catchtouchmove="handleCatchTap">
+    <view class="cert-content">
+      <view class="cert-colse" bindtap="handleAuthModalClose">
+        <image src="/images/returnTips_close.png"></image>
+      </view>
+      <text class="autho-title">实名认证</text>
+      <text class="autho-desc">根据国家药监局规定，购买处方药需要实名认证！</text>
+      <view class="autho-input">
+        <input value="{{authItem.name}}" maxlength="10" bindinput="handleRealNameInput"
+          bindblur="handleRealNameInputEnd" placeholder="请输入用药人姓名" placeholder-style="color: #ccc"></input>
+      </view>
+      <view class="autho-input">
+        <input value="{{authItem.idcard}}" maxlength="18" bindinput="handleIdCardNumInput" placeholder="请输入身份证号码"
+          placeholder-style="color: #ccc"></input>
+        <view bindtap="handleClearAuthIdCard">
+          <image src="/images/returnTips_close.png"></image>
+        </view>
+      </view>
+      <view class="autho-action-view">
+        <view class="autho-cancel" bindtap="handleAuthModalClose">取 消</view>
+        <view class="autho-sure" bindtap="handleAuthClick">认 证</view>
+      </view>
+    </view>
+  </view>
+</view>

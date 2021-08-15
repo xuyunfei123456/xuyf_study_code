@@ -1,0 +1,412 @@
+@import "~taro-ui/dist/style/components/swipe-action.scss";
+
+.shopcar {
+  width: 100vw;
+  height: 100%;
+  background-color: #fafafa;
+  padding-top: 80rpx;
+  padding-bottom: 60rpx;
+}
+
+.shopcar .shopcar-store-cell {
+  width: 96vw;
+  padding: 0 2vw 2px;
+  background-color: #ffffff;
+  margin-bottom: 30px;
+}
+
+.shopcar .shopcar-store-cell .shopcar-store-name-view {
+  width: 70vw;
+  height: 80px;
+}
+
+.shopcar .shopcar-store-cell .shopcar-store-name-view .shopcar-store-name {
+  width: 70vw;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.shopcar .shopcar-store-cell .shopcar-store-coupon {
+  justify-content: flex-end;
+  width: 12vw;
+  height: 80px;
+  padding-right: 3vw;
+}
+
+.shopcar .shopcar-store-cell .shopcar-store-activity {
+  justify-content: space-between;
+  width: 85vw;
+  margin-left: 11vw;
+}
+
+.shopcar .shopcar-store-cell .shopcar-store-activity .shopcar-store-activity-item {
+  width: 70vw;
+  margin-top: 10px;
+}
+
+.shopcar .shopcar-store-cell .shopcar-store-activity .shopcar-store-activity-item .shopcar-store-activity-item-title {
+  width: 10vw;
+  line-height: 26px;
+  border-radius: 20px;
+  margin-right: 3vw;
+  color: #ffffff;
+  font-size: 20px;
+  text-align: center;
+  padding: 2px 0;
+}
+
+.shopcar .shopcar-store-cell .shopcar-store-activity .shopcar-store-activity-item .shopcar-store-activity-item-content {
+  width: 57vw;
+  line-height: 26px;
+  padding: 2px 0;
+}
+
+.shopcar .shopcar-store-cell .shopcar-store-activity .shopcar-store-activity-button {
+  justify-content: flex-end;
+  width: 12vw;
+  height: 50px;
+  padding-right: 3vw;
+}
+
+.shopcar .shopcar-package-item {
+  border-radius: 20px;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+  overflow: hidden;
+  width: 96vw;
+  padding: 10px 0;
+  box-shadow: 0px 0px 30px rgba(204, 204, 204, 0.5);
+}
+
+.shopcar .shopcar-package-item .shopcar-medicine-view {
+  width: 86vw;
+  padding: 2vw 0;
+  height: 18vw;
+}
+
+.shopcar .shopcar-package-item .shopcar-medicine-view .shopcar-medicine-image {
+  width: 18vw;
+  height: 18vw;
+}
+
+.shopcar .shopcar-package-item .shopcar-medicine-view .shopcar-medicine-center {
+  width: 44vw;
+  padding-left: 2vw;
+}
+
+.shopcar .shopcar-package-item .shopcar-medicine-view .shopcar-medicine-right {
+  width: 20vw;
+  padding-right: 2vw;
+  justify-content: space-between;
+}
+
+.shopcar .shopcar-package-item .shopcar-medicine-view .shopcar-medicine-right .shopcar-right-price {
+  width: 20vw;
+  flex: 1;
+}
+
+.shopcar .shopcar-package-item .shopcar-package-quantity-view {
+  border-bottom: solid 2px #cccccc; 
+  border-top: solid 2px #cccccc; 
+  width: 20vw;
+  height: 6vw;
+  align-items: center;
+  overflow: hidden;
+}
+
+.shopcar .shopcar-package-item .shopcar-package-quantity-view .shopcar-package-quantity-sa {
+  width: 6vw;
+  color: #999999;
+  font-size: 34px;  
+  line-height: 5.4vw;
+  height: 6vw;
+  text-align: center;
+  letter-spacing: 0px;
+  border-left: solid 2px #cccccc;
+  border-right: solid 2px #cccccc;
+}
+
+.shopcar .shopcar-package-item .shopcar-package-quantity-view .shopcar-package-quantity {
+  width: 8vw;
+  color: #333333;
+  font-size: 26px;
+  text-align: center;
+  height: 6vw;
+  padding: 2px 0;
+}
+
+.shopcar .shopcar-package-item .shopcar-package-bottom {
+  width: 83vw;
+  margin-left: 11vw;
+  padding: 2vw 0;
+}
+
+.shopcar .shopcar-package-item .shopcar-package-bottom .shopcar-package-type {
+  width: 12vw;
+  border-radius: 20px;
+  margin-right: 3vw;
+  height: 29px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 21px;
+  color: white;
+  letter-spacing: 0px;
+}
+
+.shopcar .shopcar-package-item .shopcar-package-bottom .shopcar-package-name {
+  width: 47vw;
+  margin-right: 3vw;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.shopcar .shopcar-recommend-item {
+  width: 47vw;
+  margin-left: 2vw;
+  margin-bottom: 2vw;
+}
+
+.shopcar .shopcar-bottom-action {
+  width: 100vw;
+  height: 100px;
+  position: fixed;
+  bottom: 0;
+  background-color: #ffffff;
+  z-index: 888;
+}
+
+.shopcar .shopcar-bottom-action .shopcar-bottom-left {
+  width: 20vw;
+  height: 100%;
+  padding: 0 2vw;
+}
+
+.shopcar .shopcar-bottom-action .shopcar-bottom-center {
+  width: 46vw;
+  height: 100%;
+}
+
+.shopcar .shopcar-bottom-action .shopcar-bottom-right {
+  width: 32vw;
+  height: 100%;
+  margin-left: 2vw;
+  background: linear-gradient(to right, #ff3300,#ff6e4a);
+}
+
+.shopcar .shopcar-check-button {
+  width: 10vw;
+  height: 80px;
+}
+
+.shopcar .shopcar-check-button .shopcar-check-icon {
+  width: 42px;
+  height: 42px;
+}
+
+.shopcar .shopcar-empty-view {
+  padding: 20px 0;
+  margin-bottom: 40px;
+}
+
+.shopcar .shopcar-empty-view .shopcar-empty-image {
+  width: 250px;
+  height: 282px;
+}
+
+.shopcar .shopcar-empty-view .shopcar-empty-button {
+  width: 160px;
+  height: 44px;
+  border: solid 2px #1fdb9b;
+  border-radius: 25px;
+}
+
+.shopcar .shopcar-side {
+  width: 36vw;
+  height: 20vw;
+}
+
+.shopcar-loading {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.shopcar-loading .shopcar-loading-icon {
+  width: 80px;
+  height: 80px;
+}
+
+.shopcar-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.shopcar-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.shopcar-content-center {
+  justify-content: center;
+}
+
+.shopcar-content-end {
+  justify-content: flex-end;
+}
+
+.shopcar-align-center {
+  align-items: center;
+}
+
+.shopcar-align-end {
+  align-items: flex-end;
+}
+
+.shopcar-wrap {
+  flex-wrap: wrap;
+}
+
+.shopcar-dark-text {
+  color: #333333;
+}
+
+.shopcar-normal-text {
+  color: #666666;
+}
+
+.shopcar-light-text {
+  color: #999999;
+}
+
+.shopcar-white-text {
+  color: #ffffff;
+}
+
+.shopcar-yellow-text {
+  color: #feac4c;
+}
+
+.shopcar-red-text {
+  color: #ff3300;
+}
+
+.shopcar-green-text {
+  color: #1fdb9b;
+}
+
+.shopcar-15-text {
+  font-size: 30px;
+}
+
+.shopcar-14-text {
+  font-size: 28px;
+}
+
+.shopcar-13-text {
+  font-size: 26px;
+}
+
+.shopcar-12-text {
+  font-size: 24px;
+  line-height: 30px;
+}
+
+.shopcar-10-text {
+  font-size: 20px;
+  line-height: 20px;
+}
+
+.shopcar-bold-text {
+  font-weight: bold;
+}
+
+.shopcar-yellow-back {
+  background: linear-gradient(to right, #faab81,#fad16e);
+}
+
+.shopcar-blue-back {
+  background: linear-gradient(to right, #2c5cf1,#7c64f7);
+}
+
+.shopcar-red-back {
+  background: linear-gradient(to right, #ff8881,#ea5065);
+}
+
+.shopcar-light-blue-back {
+  background: linear-gradient(to right, #7adbff,#488bff);
+}
+
+.shopcar-gray-back {
+  background-color: #a1a1a1;
+}
+
+.shopcar-bottom-10 {
+  margin-bottom: 20px;
+}
+
+.shopcar-top-10 {
+  margin-top: 20px;
+}
+
+.shopcar-top-5 {
+  margin-top: 10px;
+}
+
+.shopcar-top-2 {
+  margin-top: 4px;
+}
+
+.shopcar-padding-5 {
+  padding: 10px 0;
+}
+
+.shopcar-height-50 {
+  height: 100px;
+}
+
+.shopcar-line-height-15 {
+  line-height: 30px;
+}
+.activity{
+	display: flex;
+	flex-direction: row;
+	padding: 20rpx 0px;
+	background-color: #fdf8c5;
+	position: fixed;
+	top: 0;
+	z-index: 100000;
+	align-items: center;
+	width: 100%;
+  height: 40rpx;
+}
+.activityText{
+	color: #EABD1C;
+	font-size: 24rpx;
+	padding-left: 10rpx;
+}
+.promit{
+	padding: 10px;
+	position: fixed;
+	background-color: #fdf8c5;
+	color: #EABD1C;
+	width: 100%;
+	font-size: 24rpx;
+  height: 40rpx;
+	z-index: 100;
+  bottom: 100px;
+  line-height: 40rpx;
+}

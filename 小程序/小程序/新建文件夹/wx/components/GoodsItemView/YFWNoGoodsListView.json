@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "usingComponents": {
+    "collection_goods": "/components/GoodsItemView/CollectionGoodsItem",
+    "list_goods": "/components/GoodsItemView/ListGoodsItem",
+    "filter_view": "/components/YFWFilterView/YFWFilterView",
+    "titleView": "/components/YFWTitleView/YFWTitleView"
+  }
+}

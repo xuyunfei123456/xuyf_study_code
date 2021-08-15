@@ -1,0 +1,24 @@
+<!--pages/YFWUserCenterModule/YFWModifyThePhoneNextPage/YFWModifyThePhoneNext.wxml-->
+
+<view class="container-phone">
+  <input class="confirm-code" placeholder-class="placeholder-code" type="number" data-name='phone' bindinput="phone_num" placeholder="请输入手机号" maxlength="11" />
+</view>
+<view class="container">
+  <!-- 分割线 -->
+  <view class="divLine"></view>
+</view>
+<view class="container-yzm">
+  <input class="confirm-code" placeholder-class="placeholder-code" type="number" data-name='yzm' bindinput="yzm_num" placeholder="请输入验证码" maxlength="6" />
+
+  <view class="get_Code" bindtap='getCode'>
+    <button disabled='{{disabled}}' class="get-Code_ol">{{getYZMCode}}</button>
+  </view>
+</view>
+<view class="container">
+  <!-- 分割线 -->
+  <view class="divLine"></view>
+</view>
+
+<view class="commit">
+  <button class="address-commit" bindtap="commit">确定</button>
+</view>

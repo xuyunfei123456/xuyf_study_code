@@ -1,0 +1,147 @@
+page {
+  background-color: #faf9f9;
+}
+
+.view-no-data {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fafafa;
+  color: #999;
+  font-size: 22px;
+}
+
+.image-no-data {
+  height: 300px;
+  width: 300px;
+  margin-top: 42%;
+  margin-bottom: 20px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.item {
+  width: 94%;
+  border-radius: 15px;
+  background-color: #fff;
+  margin-top: 34px;
+  padding-bottom: 40px;
+  box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.15);
+}
+
+.view-item {
+  display: flex;
+  flex-direction: column;
+  margin-left: 40px;
+  margin-top: 40px;
+  font-size: 26px;
+  color: #999;
+}
+
+.view-order {
+  display: flex;
+  flex-direction: row;
+}
+
+.text-orderNum {
+  color: #1fdb9b;
+  margin-left: 6px;
+}
+
+.text-order-type {
+  position: absolute;
+  right: 0;
+  margin-right: 8%;
+  color: #999;
+}
+.title_text {
+  color: #333;
+}
+.view-business {
+  margin-top: 18px;
+}
+
+.text-business {
+  color: #333;
+  margin-left: 6px;
+}
+
+.to-jump {
+  position: absolute;
+  right: 0;
+  margin-right: 8%;
+  color: #999;
+}
+
+.item-item {
+  display: flex;
+  margin-top: 20px;
+  flex-direction: column;
+  margin-left: 8px;
+  color: #333;
+}
+
+.item-item .customer-servce {
+  margin-top: 44px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.stars {
+  margin-left: 5px;
+}
+
+.view-comment {
+  margin-top: 51px;
+  display: flex;
+  flex-direction: column;
+}
+
+.text-comment {
+  font-size: 30px;
+  color: #333;
+}
+
+.view-comment .context {
+  font-size: 26px;
+  color: #333;
+  margin-top: 28px;
+  margin-left: 6px
+}
+
+.foot {
+  height: 20px;
+  margin-top: 20px;
+  margin-bottom: 70px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.text {
+  color: #999;
+  font-size: 22px;
+  text-align: center;
+}
+
+.loading {
+  animation: onloading-view linear 1.6s 0s infinite;
+  -webkit-animation: onloading-view linear 1.6s 0s infinite;
+  display: inline-block;
+  height: 70px;
+  width: 70px;
+  position: relative;
+  border-radius: 50%;
+}
+.loading-more {
+  margin-top: 20px;
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+}

@@ -1,0 +1,95 @@
+page {
+  background-color: #fff;
+}
+
+.head {
+  background-color: #fafafa;
+  position: relative;
+  padding: 40rpx 3vw;
+  z-index: 0;
+}
+
+.head .bg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  width: 100vw;
+  height: 120rpx;
+  z-index: -1;
+}
+
+.presc_card {
+  border-radius: 14rpx;
+  background-color: #fff;
+  box-shadow: 0rpx 3rpx 15rpx 0rpx rgba(204, 204, 204, 0.6);
+  width: 94vw;
+  padding-bottom: 30rpx;
+}
+
+.presc_card .title {
+  font-size: 30rpx;
+  font-weight: 500;
+  color: #333;
+  padding: 30rpx 2vw;
+}
+
+.presc_card .scroll {
+  width: 94vw;
+  height: 260rpx;
+  white-space: nowrap;
+}
+
+.presc_card .scroll .presc_space {
+  width: 22.5vw;
+  height: 260rpx;
+  display: inline-block;
+}
+
+.presc_card .scroll .presc_image {
+  width: 45vw;
+  height: 260rpx;
+  margin-right: 2vw;
+}
+
+.presc_list {
+  background-color: #fff;
+}
+
+.presc_list .item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: solid 1rpx #ccc;
+  margin-left: 3vw;
+  width: 87vw;
+  padding: 20rpx 5vw;
+}
+
+.presc_list .item .title {
+  font-size: 26rpx;
+  color: #999;
+  flex: 1;
+}
+
+.presc_list .item .icon {
+  width: 106rpx;
+  height: 28rpx;
+  margin-right: 10rpx;
+}
+
+.presc_list .item .content {
+  font-size: 26rpx;
+  color: #333;
+}
+
+.presc_list .presc_title_1 {
+  width: 210rpx;
+  margin: 20rpx 0 10rpx;
+}
+
+.presc_list .presc_title_2 {
+  width: 180rpx;
+  margin: 40rpx 0 10rpx;
+}

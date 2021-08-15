@@ -1,0 +1,23 @@
+/* orderModule/pages/YFWGroupModule/YFWGroupIndex/component/Price/Price.wxss */
+.price {
+    display: flex;
+    align-items: baseline;
+}
+
+.newPrice {
+    color: #ff0048;
+    font-size: 40rpx;
+}
+
+.newPrice .small {
+    font-size: 32rpx;
+}
+
+.delPrice {
+    margin-left: 0.5em;
+    font-size: 24rpx;
+    font-weight: normal;
+    letter-spacing: -0.6rpx;
+    color: #999999;
+    text-decoration: line-through;
+}

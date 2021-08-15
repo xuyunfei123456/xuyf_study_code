@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "collection_goods": "/components/GoodsItemView/CollectionGoodsItem",
+    "more_view": "/components/YFWMoreView/YFWMoreView",
+    "authentication": "/components/YFMauthentication/YFMauthentication"
+  },
+  "navigationBarBackgroundColor": "#49ddb8",
+  "navigationBarTitleText": "药房网商城",
+  "navigationBarTextStyle": "white"
+}

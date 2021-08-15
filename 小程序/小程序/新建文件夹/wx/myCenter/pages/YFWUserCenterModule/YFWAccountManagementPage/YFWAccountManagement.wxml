@@ -1,0 +1,44 @@
+<view class="containers">
+	<view class="item_view_header" bindtap="clickPortrait">
+		<text class="title title_header">头像</text>
+		<image class="header_img" src='{{intro_image}}' />
+		<image class="img_next img_next_header" src="/images/uc_next.png"></image>
+	</view>
+	<view class="item_view" bindtap="clickSex">
+		<text class="title">性别</text>
+		<text class="right_text">{{text_sex}}</text>
+		<image class="img_next" src="/images/uc_next.png"></image>
+	</view>
+	<view class='separateView' />
+	<view class="item_view" bindtap="certification" style="display:flex">
+		<text class="title">实名认证</text>
+		<view class="flexview">
+			<image class="img_prv" src="/images/certification.png" wx:if="{{userInfoModel.dict_bool_certification == 1}}"></image>
+			<text style="color:#A0A0A0;font-size:25rpx">{{userInfoModel.dict_bool_certification == 1 ? '已实名':'未实名'}}</text>
+			<image class="img_flex_arrow" src="/images/uc_next.png"></image>
+		</view>
+
+	</view>
+
+	<view class='separateView' />
+
+	<view class="item_view" bindtap="clickPhone">
+		<text class="title">手机</text>
+		<text class="right_text">{{userInfoModel.mobile}}</text>
+		<image class="img_next" src="/images/uc_next.png"></image>
+	</view>
+
+	<view class="item_view" bindtap="clickQQ">
+		<text class="title">QQ</text>
+		<text class="right_text">{{userInfoModel.qq}}</text>
+		<image class="img_next" src="/images/uc_next.png"></image>
+	</view>
+	<view class='separateView'/>
+
+  <view class="item_view" bindtap="clickPassword" >
+    <text class= "title" >密码</text>
+    <text class="right_text">修改密码</text>
+    <image class="img_next"  src="/images/uc_next.png"></image> 
+  </view>
+
+</view>

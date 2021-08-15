@@ -1,0 +1,18 @@
+
+<view class='modal-mask' wx:if='{{show}}'>
+  <view class='modal-content'>
+    <view class="closeIconLayout">
+      <view bindtap="closeView" class="closeTap">
+        <image src='../../../../../images/returnTips_close.png' class="closeIcon"></image>
+      </view>
+    </view>
+    <image src="../../../../../images/icon_warning_complaint.png" class="warnningIcon">
+    </image>
+    <view class="topTips">投诉撤销后，无法再发起，</view>
+    <view class="bottomTips">请务必确定您的诉求已得到解决。</view>
+    <view class="buttonLayout">
+      <view class="leftButton" bindtap="cancelComplaint">确定撤销</view>
+      <view class="rightButton" bindtap="closeView">不撤销</view>
+    </view>
+  </view>
+</view>

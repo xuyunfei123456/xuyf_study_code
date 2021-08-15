@@ -1,0 +1,6 @@
+<!--pages/index/taskList.wxml-->
+<view>
+  <block wx:for="{{datasource}}" wx:key="*this">
+    <button bindtap='toDetail' data-item='{{item}}'>{{item.name}}</button>
+  </block>
+</view>

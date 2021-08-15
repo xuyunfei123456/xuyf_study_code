@@ -1,0 +1,78 @@
+<view class='topParent'>
+  <view class='topInfo'>
+    <view class='coverTopView'>
+      <view class='status'>
+        <view class='logo'>
+          <image src='{{logo}}' class='image'></image>
+        </view>
+        <view class='text_tips'>物流状态：{{trafficStatus}}</view>
+      </view>
+      <view class='message'>
+        <view class='parent'>
+          <image wx:if="{{!isInvoice}}" class='image' src='{{medecineImage}}'></image>
+          <view class='detail'>
+            <view class='tarfficeNumParent'>
+              <text class='trafficNumTips'>快递单号：<text class='trafficNumValue'>{{trafficNum}}</text> </text>
+              <image class='fz_icon' src='/images/Wl_icon_fz.png' bindtap='copyNum'></image>
+            </view>
+            <text class='trafficNumTips' bindtap='jumpToQuere'>物流网站：<text class='trafficNumValue'>{{web}}</text> </text>
+          </view>
+          <view style='flex:1'></view>
+          <view class='customerService' bindtap='callSer'>
+            <image src='/images/Wl_icon_kf.png' class='image_icon'></image>
+            <view class='text'>物流客服</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='fillView'>
+</view>
+
+
+<view class='trafficInfoList' wx:if="{{trafficList.length>0}}">
+  <view class='titleParent'>
+    <view class='tips'>物流跟踪
+    </view>
+    <image src='/images/Wl_icon_sx.png' class='refreshIcon' bindtap='refreshMessage'></image>
+  </view>
+  <view class='splite'></view>
+  <view class='trafficListParent'>
+    <block wx:for="{{trafficListIsOpen?trafficList:partOfListData}}" wx:for-index="idx" wx:key="{{item.time}}">
+      <view class='trafficItem'>
+        <view class='left'>
+          <view class="{{idx == 0 ? 'pointLight':'pointDark'}}">
+          </view>
+          <view class='line' wx:if="{{idx != (trafficList.length)}}">
+          </view>
+        </view>
+        <view class='right'>
+          <view class="{{idx == 0 ? 'tipsLight':'tipsDark'}}">{{item.status}} {{item.context}}
+          </view>
+          <view class='times'>{{item.time}}
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+  <view class='bottomTips' wx:if="{{trafficList.length>3}}" bindtap="trafficListChange">
+    <image src="{{trafficListIsOpen?'/images/Wl_icon_dropup.png':'/images/Wl_icon_dropdown.png'}}" class='icon'></image>
+    <view class='text'>{{trafficListIsOpen?'收起快递详情':'点击查看物流详情'}}</view>
+  </view>
+</view>
+<view class='trafficEmptyView' wx:if="{{trafficList.length<=0}}">
+  <image class='image' src='https://c1.yaofangwang.net/common/images/miniapp/ic_no_shipping.png' mode='aspectFit'>
+  </image>
+  <view class='text'>暂无物流信息</view>
+</view>
+<view class='bottom_ads'>
+  <view class='ad_tips_text'>精选商品</view>
+  <view class='ad_tips_text_bottom'></view>
+</view>
+<view></view>
+<view class='collectionView'>
+  <view class='collectionItemView' wx:for="{{recommendData}}" wx:key=''>
+    <recommendList data='{{item}}' showcar="{{false}}" showstore="{{true}}" />
+  </view>
+</view>

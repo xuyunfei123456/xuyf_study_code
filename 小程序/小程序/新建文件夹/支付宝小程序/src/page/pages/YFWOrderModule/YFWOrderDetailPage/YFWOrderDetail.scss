@@ -1,0 +1,655 @@
+page {
+  background: #fff;
+}
+
+.top_status_parent {
+  width: 100%;
+  height: 285px;
+  background-color: #49ddb8;
+  display: flex;
+  flex-direction: column;
+}
+
+.order_status {
+  display: flex;
+  flex-direction: row;
+  margin-top: 45px;
+  align-items: center;
+  justify-content: center;
+}
+
+.order_status .icon {
+  width: 60px;
+  height: 60px;
+}
+
+.order_status .text {
+  font-size: 36px;
+  color: #fff;
+  margin-left: 18px;
+}
+
+.address_info_parent {
+  width: 700px;
+  height: auto;
+  margin-left: 25px;
+  position: relative;
+  background-color: #fff;
+  border-radius: 14px;
+  box-shadow: 0px 7px 15px 0px rgba(204, 204, 204, 0.6);
+  margin-top: -135px;
+  display: flex;
+  flex-direction: column;
+}
+
+.logistics {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 29px;
+  margin-right: 24px;
+  margin-top: 37px;
+}
+
+.logistics .text {
+  font-size: 29px;
+  color: #999;
+}
+
+.logistics .next {
+  width: 13px;
+  height: 24px;
+}
+
+.user_info {
+  margin-top: 56px;
+  margin-left: 29px;
+  margin-right: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.address_icon {
+  width: 27px;
+  height: 27px;
+  margin-right: 25px;
+}
+
+.address_detail {
+  display: flex;
+  flex-direction: column;
+  font-size: 29px;
+  color: #333;
+  font-weight: bold;
+}
+
+.address_detail .top {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.address_detail .top .phone {
+  margin-left: 39px;
+}
+
+.address_detail .bottom {
+  margin-top: 19px;
+  font-size: 25px;
+  margin-left: 49px;
+  color: #999;
+  font-weight: normal;
+}
+
+.bottom_image {
+  width: 695px;
+  margin-left: 2.5px;
+  height: 8px;
+  margin-top: 48px;
+}
+
+.shop_title {
+  display: flex;
+  flex-direction: row;
+  width: 700px;
+  margin-left: 25px;
+  align-items: center;
+  margin-top: 45px;
+}
+
+.shop_title .shop_icon {
+  width: 28px;
+  height: 28px;
+}
+
+.shop_title .shop_name {
+  width: 640px;
+  color: #333;
+  font-size: 29px;
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-weight: bold;
+  margin-left: 12px;
+}
+
+.shop-line-height {
+  line-height: 34px;
+  height: 34px;
+}
+.medicine_list {
+  margin-top: 18px;
+  width: 700px;
+  background-color: #fff;
+  box-shadow: 0px 3px 15px 0px rgba(204, 204, 204, 0.6);
+  border-radius: 14px;
+  margin-left: 25px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 20px;
+}
+
+.traffic_icon {
+  width: 100px;
+  height: 40px;
+}
+
+.traffic_name {
+  font-size: 30px;
+  color: #999;
+  margin-left: 10px;
+  width: 520px;
+  display: block;
+  line-height: 29px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.medicineList_item {
+  margin-left: 15px;
+  margin-top: 25px;
+  margin-right: 25px;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+}
+
+.medecine_image {
+  width: 140px;
+  height: 140px;
+}
+
+.medicine_info {
+  display: flex;
+  flex-direction: column;
+}
+
+.medicine_info .top {
+  margin-left: 20px;
+  width: 500px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.medicine_type_icon {
+  width: 52px;
+  height: 22px;
+  margin-right: 10px;
+}
+
+.medicien_name {
+  font-weight: bold;
+  color: #333;
+  margin-left: 8px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  max-width: 370px;
+  font-size: 26px;
+}
+
+.Goodsprice {
+  font-size: 28px;
+  color: #333;
+  font-weight: bold;
+}
+
+.smallPrice {
+  font-size: 22px;
+  color: #333;
+  font-weight: bold;
+}
+
+.medicine_info .bottom {
+  margin-left: 20px;
+  width: 500px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.medicine_info .periodOfValidity {
+  width: 500px;
+  margin-top: 10px;
+  font-size: 26px;
+  color: #999;
+  display: flex;
+  flex-direction: row;
+  margin-left: 20px;
+}
+
+.medecine_standard {
+  font-size: 26px;
+  color: #999;
+}
+
+.medecine_qty {
+  font-size: 26px;
+  color: #999;
+}
+
+.splite_view {
+  width: 650px;
+  height: 1px;
+  background-color: #f5f5f5;
+  margin-left: 25px;
+  margin-top: 25px;
+}
+
+.packgeParent {
+  display: flex;
+  flex-direction: column;
+}
+
+.packageName {
+  display: flex;
+  flex-direction: row;
+  margin-left: 25px;
+  align-items: center;
+  margin-top: 25px;
+}
+
+.packageType {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 84px;
+  height: 29px;
+  background-image: linear-gradient(-90deg, #ff8881 0%, #ea5065 100%),
+    linear-gradient(#e5e5e5, #e5e5e5);
+  background-blend-mode: normal, normal;
+  box-shadow: 0px 1px 3px 0px rgba(226, 108, 108, 0.3);
+  border-radius: 14px;
+  font-size: 21px;
+  font-weight: normal;
+  letter-spacing: 0px;
+  color: #fff;
+}
+
+.course_costume {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 84px;
+  height: 29px;
+  background-image: linear-gradient(
+      -90deg,
+      rgba(72, 139, 255, 1),
+      rgba(122, 219, 255, 1)
+    ),
+    linear-gradient(#e5e5e5, #e5e5e5);
+  background-blend-mode: normal, normal;
+  box-shadow: 0px 1px 3px 0px rgba(226, 108, 108, 0.3);
+  border-radius: 14px;
+  font-size: 21px;
+  font-weight: normal;
+  letter-spacing: 0px;
+  color: #fff;
+}
+
+.tansButton {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  background: transparent;
+  color: transparent;
+}
+
+.packageName_text {
+  color: #666;
+  margin-left: 20px;
+}
+
+.packageName_text {
+  color: #666;
+  margin-left: 20px;
+  font-size: 20px;
+}
+
+.contactCustomerServic {
+  width: 649px;
+  margin-left: 53px;
+  margin-top: 36px;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.contactCustomerServic .icon {
+  width: 40px;
+  height: 40px;
+}
+
+.contactCustomerServic .tip {
+  width: 170px;
+  height: 28px;
+  font-size: 29px;
+  font-weight: normal;
+  font-stretch: normal;
+  letter-spacing: -1px;
+  color: #333;
+  margin-left: 15px;
+}
+
+.contactCustomerServic .next {
+  width: 13px;
+  height: 24px;
+}
+
+.heightSplite_view {
+  width: 100%;
+  height: 28px;
+  background-color: #f5f5f5;
+}
+
+.receiptInfo {
+  width: 697px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.receiptype {
+  display: flex;
+  flex-direction: row;
+  font-size: 25px;
+  color: #333;
+  justify-content: space-between;
+  width: 650px;
+}
+
+.receiptTypeValue {
+  color: #999;
+}
+
+.receipheader {
+  display: flex;
+  flex-direction: row;
+  font-size: 25px;
+  color: #333;
+  margin-top: 27px;
+}
+
+.priceInfoParent {
+  width: 697px;
+  margin-top: 30px;
+  margin-left: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.priceInfoItem {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 30px;
+}
+
+.priceTypeBold {
+  font-size: 25px;
+  color: #333;
+  font-weight: bold;
+}
+
+.priceSmallPriceBold {
+  font-size: 20px;
+  color: #999;
+  font-weight: bold;
+  margin-right: 20px;
+  line-height: 20px;
+}
+
+.priceSmallPrice {
+  font-size: 20px;
+  color: #999;
+  margin-right: 20px;
+  line-height: 20px;
+}
+
+.priceType {
+  font-size: 25px;
+  color: #333;
+}
+
+.priceBold {
+  font-size: 25px;
+  color: #999;
+  font-weight: bold;
+}
+
+.price {
+  font-size: 25px;
+  color: #999;
+}
+
+.splite {
+  width: 700px;
+  height: 2px;
+  background-color: #e5e5e5;
+}
+
+.orderToatal {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 650px;
+  margin-right: 50px;
+  margin-bottom: 30px;
+}
+
+.orderToatal .tips {
+  font-size: 29px;
+  font-weight: normal;
+  font-stretch: normal;
+  letter-spacing: 0px;
+  color: #333;
+  margin-right: 0px;
+}
+
+.orderToatal .price {
+  font-size: 28px;
+  font-weight: normal;
+  font-stretch: normal;
+  letter-spacing: 0px;
+  color: #f30;
+  margin-right: 0px;
+}
+
+.orderToatal .smallPrice {
+  font-size: 22px;
+  font-weight: normal;
+  font-stretch: normal;
+  letter-spacing: 0px;
+  color: #f30;
+  margin-right: 0px;
+}
+
+.orderStatus {
+  widows: 697px;
+  margin-top: 30px;
+  margin-left: 54px;
+  display: flex;
+  flex-direction: column;
+}
+
+.left {
+  font-size: 25px;
+  font-weight: normal;
+  font-stretch: normal;
+  letter-spacing: 0px;
+  color: #333;
+}
+
+.right {
+  font-size: 25px;
+  font-weight: normal;
+  font-stretch: normal;
+  letter-spacing: 0px;
+  color: #999;
+  margin-right: 47px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.acceptanceCriteria {
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.acceptanceCriteria .dark {
+  font-size: 26px;
+  font-weight: normal;
+  font-stretch: normal;
+  letter-spacing: 0px;
+  color: #333;
+}
+
+.light_text {
+  font-size: 26px;
+  font-weight: normal;
+  letter-spacing: 0px;
+  color: #1fdb9b;
+}
+
+.FillView {
+  width: 100%;
+  height: 120px;
+  background-color: #f5f5f5;
+}
+
+.bottomLayout {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 110px;
+  z-index: 999;
+  background-color: #fff;
+  border-top: 2px solid #e5e5e5;
+  align-items: center;
+  position: fixed;
+  bottom: 0px;
+}
+
+.buttonListLayout {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 110px;
+  z-index: 999;
+  background-color: #fff;
+  justify-content: center;
+}
+
+.scheduled_days_itemLayout {
+  display: flex;
+  flex-direction: column;
+  width: 650px;
+  margin-top: 19px;
+  margin-left: 25px;
+}
+
+.scheduled_days_itemLayout .tipsLayout {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  font-size: 26px;
+}
+
+.scheduled_days_itemLayout .tipsLayout .tips {
+  color: #333;
+  min-width: 140px;
+}
+
+.scheduled_days_itemLayout .tipsLayout .value {
+  color: #999;
+}
+
+.scheduledButtonLayout {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+}
+
+.scheduledButtonLayout .darkbutton {
+  height: 40px;
+  border-radius: 20px;
+  width: 100px;
+  font-size: 24px;
+  color: #666;
+  border: 2px solid #666;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 30px;
+}
+
+.scheduledButtonLayout .light {
+  height: 40px;
+  border-radius: 20px;
+  width: 100px;
+  font-size: 24px;
+  color: #1fdb9b;
+  border: 2px solid #1fdb9b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 30px;
+}
+
+.copyButton {
+  border: 2px solid #1fdb9b;
+  font-size: 22px;
+  color: #1fdb9b;
+  border-radius: 15px;
+  height: 26px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 47px;
+  padding-left: 10px;
+  padding-right: 10px;
+  justify-content: center;
+}
+.next {
+  width: 13rpx;
+  height: 24rpx;
+}

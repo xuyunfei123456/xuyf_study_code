@@ -1,0 +1,19 @@
+<view class="top_bg">
+  <view class='tips'>亲为什么要取消这个订单呢？</view>
+</view>
+
+<view class='cancleReasonLayout'>
+  <view class='cancleReasonList'>
+    <block wx:for="{{cancleReasonList}}" wx:for-index="idx" wx:key="idx">
+      <view class='reasonItem' bindtap='chooseReason' data-index='{{idx}}'>
+        <view class="{{checkedIndex == idx? 'checkedReasonText':'reasonText'}}">{{item}}</view>
+        <image wx:if="{{checkedIndex == idx}}" src='/images/check_checked.png' class='checkedIcon'></image>
+      </view>
+      <view class='splite' wx:if="{{idx!=reasonListLength-1}}"></view>
+    </block>
+  </view>
+</view>
+
+<view class='postButton' bindtap='postCancleReason'>
+  <view class='text'>提交</view>
+</view>

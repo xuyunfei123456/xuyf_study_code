@@ -1,0 +1,32 @@
+<view class='modal-back' catchtouchmove='preventD'>
+  
+  <scroll-view style='overflow-y: scroll;-webkit-overflow-scrolling: touch;' scroll-y scroll-into-view='{{scrollIntoViewID}}' class='modal-content' catchtap='true'>
+    <view class='box-content'>
+      <block >
+        <view class='center_content'>
+          <block wx:for='{{groupArray}}' wx:key='{{index}}'>
+            <view class='section_header' id='{{item.key}}'>{{item.key}}</view>
+            <block wx:for='{{item.data}}' wx:key='{{index}}'>
+              <view bindtap='itemClickAction' data-info='{{item}}' data-index='{{item.index}}' class='cell'>
+                <view class='cell_title {{item.name ==selectData.name?"cell_title_select":""}}'>
+                  {{item.name}}
+                </view>
+                <image wx:if='{{item.name ==selectData.name}}' class='cell_select' src='/images/duihao.png'></image>
+              </view>
+              <view class='cell_line'></view>
+            </block>
+          </block>
+        </view>
+      </block>
+    </view>
+  </scroll-view>
+  <view class='indexes' catchtap='ss'>
+    <view class='indexes_container'>
+      <block wx:for='{{groupArray}}'>
+        <view class='indexes_content' catchtap='indexesSelectAction' data-info='{{item.key}}'>
+          {{item.key}}
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

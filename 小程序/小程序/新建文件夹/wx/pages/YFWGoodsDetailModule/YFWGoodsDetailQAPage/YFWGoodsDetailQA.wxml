@@ -1,0 +1,31 @@
+<!--pages/YFWGoodsDetailModule/YFWGoodsDetailQAPage/YFWGoodsDetailQA.wxml-->
+<view class='question'>
+  <scroll-view class='question-top' scroll-x scroll-into-view="item-{{selectIndex}}">
+    <block wx:for="{{dataSource}}" wx:for-index="index" wx:key="{{item.id}}" >
+      <view class="question-top-item" bindtap="changeQuestionIndex" data-index='{{index}}' id="item-{{index}}">
+        <titleView title='{{item.name}}' fontWeight="bold" largeStyle='{{index == selectIndex}}' showLine="{{index == selectIndex}}"/>
+      </view> 
+    </block>
+  </scroll-view>
+  <swiper current="{{selectIndex}}" class='question-content' style='height:{{contentHeight}}rpx;-webkit-overflow-scrolling: touch;' bindchange='swiperChangIndex'>
+    <block wx:for="{{dataSource}}" wx:key="{{item.id}}">
+      <swiper-item>
+        <scroll-view class="question-swiper-item" style='height:{{contentHeight}}rpx' scroll-x="false" scroll-y="true">
+          <block wx:for="{{item.items}}" wx:key="{{item.id}}" >
+            <view class='question-content-item'>
+              <view class='question-content-view'>
+                <image class='question-content-icon' src='/images/YFWGoodsDetailModule/goods_deail_question_q.png'></image>
+                <text class='question-content-title'>{{item.title}}</text>
+              </view>
+              <view class='question-content-view'>
+                <image class='question-content-icon' src='/images/YFWGoodsDetailModule/goods_deail_question_a.png'></image>
+                <text class='question-content-answer'>{{item.content}}</text>
+              </view>
+            </view> 
+          </block>
+          <view class='question-empty'></view>
+        </scroll-view>
+      </swiper-item>
+    </block>
+  </swiper>  
+</view>

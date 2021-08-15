@@ -1,0 +1,250 @@
+<view class="wrapper">
+  <view class="notice">根据国家药监局规定，购买处方药需要实名认证</view>
+  <scroll-view scroll-y class="scroll" style="height:{{screenHeight}}">
+    <view class="container">
+      <view class="container_name">
+        <view class="customer_left {{_type == 2 ? 'not_input':''}}">用药人姓名</view>
+        <view class="item_right">
+          <input name="name" placeholder-style='placeholdercla' placeholder-class="placeholder" maxlength='20' disabled="{{_type == 2 ? true : false}}" value="{{personalInfo.name}}" bindinput="bindChange_name" placeholder="请输入用药人真实姓名" />
+        </view>
+      </view>
+      <view class="divLine"></view>
+      <view class="container_name">
+        <view class="customer_left {{_type == 2 ? 'not_input':''}}">身份证号码</view>
+        <view class="item_right">
+          <input type='idcard' name="idcard" placeholder-style='placeholdercla' placeholder-class="placeholder" disabled="{{_type == 2 ? true : false}}" maxlength='18' value="{{personalInfo.idcard}}" bindblur="idcardChange" placeholder="请输入用药人身份证号码" />
+        </view>
+      </view>
+      <view class="divLine"></view>
+      <view class="container_name">
+        <view class="customer_left not_input">出生年月</view>
+        <view class="item_right not_input">
+          <input name="idcard" value="{{birthday}}" bindblur="idcardChange" disabled />
+        </view>
+      </view>
+      <view class="divLine"></view>
+      <view class="container_name">
+        <view class="customer_left not_input">性别</view>
+        <view class="item_right not_input sexchoose">
+          <view class="choose1">
+            <image class='icon-checkbox' src="{{sex == 2?'/images/icon_choose.png':'/images/icon_unchoose.png'}} " />
+            <text class="has">男</text>
+          </view>
+          <view class="choose2">
+            <image class='icon-checkbox' src="{{sex == 1?'/images/icon_choose.png':'/images/icon_unchoose.png'}} " />
+            <text class="hasnot">女</text>
+          </view>
+        </view>
+      </view>
+      <view class="divLine"></view>
+      <view class="container_name">
+        <view class="customer_left">体重(Kg)</view>
+        <view class="item_right">
+          <input type='number' name="weight" placeholder-style='placeholdercla' placeholder-class="placeholder" maxlength='3' value="{{personalInfo.weight}}" bindinput="bindChange_weight" placeholder="请填写体重" />
+        </view>
+      </view>
+      <view class="divLine"></view>
+      <view class="container_name">
+        <view class="customer_left">手机号码</view>
+        <view class="item_right">
+          <input type='number' name="mobile" placeholder-style='placeholdercla' placeholder-class="placeholder" maxlength='11' value="{{personalInfo.mobile}}" bindinput="bindChange_mobile" placeholder="用于医生回复时接收短信" />
+        </view>
+      </view>
+      <view class="divLine"></view>
+      <view class="container_name {{nodataFlag ? '':'datasStyle'}}" bindtap='showDiseaseList' data-flag='1'>
+        <view class="customer_left {{nodataFlag ? '':'hasDataFlag'}}">疾病史</view>
+        <view class="item_right">
+          <view class="nodata" wx:if="{{nodataFlag}}">无肝肾异常、过敏史、妊娠</view>
+          <view class="hasData" wx:else>
+            <view class="listdisEase" wx:if="{{_hisdata1.length !=0}}">
+              <text class="aaa">过往病史: {{_hisdata1}}</text>
+            </view>
+            <view class="listdisEase" wx:if="{{_hisdata2.length !=0}}">过敏史: {{_hisdata2}}</view>
+            <view class="listdisEase" wx:if="{{_hisdata3.length !=0}}">家族病史: {{_hisdata3}}</view>
+            <view class="listdisEase" wx:if="{{ganFlag1}}">肝功能异常</view>
+            <view class="listdisEase" wx:if="{{shenFlag1}}">肾功能异常</view>
+            <view class="listdisEase" wx:if="{{rcFlag1}}">有妊娠哺乳</view>
+          </view>
+        </view>
+      </view>
+      <view class="divLine"></view>
+      <view class="container_name">
+        <view class="customer_left">关系标签</view>
+        <view class="item_right">
+          <block wx:for="{{tags}}">
+            <view class="tagcla {{item.choose ? 'tagchoose':''}}" bindtap="tagclick" data-name="{{item.name}}">
+              {{item.name}}
+            </view>
+          </block>
+        </view>
+      </view>
+    </view>
+    <view class="setdrug">
+      <image class='icon-checkbox' bindtap='clickRadioAction' src="{{isDefault?'/images/icon_choose.png':'/images/icon_unchoose.png'}} " />
+      <text class="defualtuse" bindtap='clickRadioAction'>设为默认用药人</text>
+    </view>
+  </scroll-view>
+  <view class='bottom_container'>
+    <view bindtap="save" class='btnBtom'>
+      <view class="address-add" bindtap='saveData'>保存并使用</view>
+    </view>
+  </view>
+  <view hidden='{{bottomHidden}}' class='modal' catchtouchmove='true'>
+    <view class="shadowview" bindtap='showDiseaseList' data-flag='2'></view>
+  </view>
+</view>
+<view class="contentview {{bottomHidden ? '':'contentshow'}}">
+  <view class="nameAndclose">
+    <view class="name">疾病史</view>
+    <view class="close" bindtap='showDiseaseList' data-flag='2'>ⅹ</view>
+  </view>
+  <scroll-view scroll-y class='scrollView'>
+    <view class="historyDisease">
+      <view class="diseaseName">过往病史</view>
+      <view class="choose1">
+        <image class='icon-checkbox' bindtap='diseaseChange' data-type='historyFlag1' data-another='historyFlag2' src="{{historyFlag1?'/images/icon_choose.png':'/images/icon_unchoose.png'}} " />
+        <text class="has">有</text>
+      </view>
+      <view class="choose2">
+        <image class='icon-checkbox' bindtap='diseaseChange' data-type='historyFlag2' data-another='historyFlag1' src="{{historyFlag2?'/images/icon_choose.png':'/images/icon_unchoose.png'}} " />
+        <text class="hasnot">无</text>
+      </view>
+    </view>
+    <view class="resultForChoosed" wx:if="{{historyFlag1}}">
+      <view class="diseaseItem" wx:for="{{historyDiseaseData}}" wx:key="{{item.name}}" bindtap='choosedItem' data-info="{{item}}" data-type='historyDiseaseData'>
+        <text class="{{item.chooseFlag ? 'chooseitemName':'unchooseitemname'}}">{{item.name}}</text>
+      </view>
+      <view class="diseaseItem" bindtap='addDataForDisease' data-type='historyDiseaseData'>
+        <text class="chooseitemName">+</text>
+      </view>
+    </view>
+    <view class="historyDisease">
+      <view class="diseaseName">过敏史</view>
+      <view class="choose1">
+        <image class='icon-checkbox' bindtap='diseaseChange' data-type='gmFlag1' data-another='gmFlag2' src="{{gmFlag1?'/images/icon_choose.png':'/images/icon_unchoose.png'}} " />
+        <text class="has">有</text>
+      </view>
+      <view class="choose2">
+        <image class='icon-checkbox' bindtap='diseaseChange' data-type='gmFlag2' data-another='gmFlag1' src="{{gmFlag2?'/images/icon_choose.png':'/images/icon_unchoose.png'}} " />
+        <text class="hasnot">无</text>
+      </view>
+    </view>
+    <view class="resultForChoosed" wx:if="{{gmFlag1}}">
+      <view class="diseaseItem" wx:for="{{gmDiseaseData}}" wx:key="{{item.name}}" bindtap='choosedItem' data-info="{{item}}" data-type='gmDiseaseData'>
+        <text class="{{item.chooseFlag ? 'chooseitemName':'unchooseitemname'}}">{{item.name}}</text>
+      </view>
+      <view class="diseaseItem" bindtap='addDataForDisease' data-type='gmDiseaseData'>
+        <text class="chooseitemName">+</text>
+      </view>
+    </view>
+    <view class="historyDisease">
+      <view class="diseaseName">家族病史</view>
+      <view class="choose1">
+        <image class='icon-checkbox' bindtap='diseaseChange' data-type='familyFlag1' data-another='familyFlag2' src="{{familyFlag1?'/images/icon_choose.png':'/images/icon_unchoose.png'}} " />
+        <text class="has">有</text>
+      </view>
+      <view class="choose2">
+        <image class='icon-checkbox' bindtap='diseaseChange' data-type='familyFlag2' data-another='familyFlag1' src="{{familyFlag2?'/images/icon_choose.png':'/images/icon_unchoose.png'}} " />
+        <text class="hasnot">无</text>
+      </view>
+    </view>
+    <view class="resultForChoosed" wx:if="{{familyFlag1}}">
+      <view class="diseaseItem" wx:for="{{familyDiseaseData}}" wx:key="{{item.name}}" bindtap='choosedItem' data-info="{{item}}" data-type='familyDiseaseData'>
+        <text class="{{item.chooseFlag ? 'chooseitemName':'unchooseitemname'}}">{{item.name}}</text>
+      </view>
+      <view class="diseaseItem" bindtap='addDataForDisease' data-type='familyDiseaseData'>
+        <text class="chooseitemName">+</text>
+      </view>
+    </view>
+    <view class="historyDisease">
+      <view class="diseaseName">肝功能</view>
+      <view class="choose1">
+        <image class='icon-checkbox' bindtap='diseaseChange' data-type='ganFlag1' data-another='ganFlag2' src="{{ganFlag1?'/images/icon_choose.png':'/images/icon_unchoose.png'}} " />
+        <text class="has">异常</text>
+      </view>
+      <view class="choose2">
+        <image class='icon-checkbox' bindtap='diseaseChange' data-type='ganFlag2' data-another='ganFlag1' src="{{ganFlag2?'/images/icon_choose.png':'/images/icon_unchoose.png'}} " />
+        <text class="hasnot">正常</text>
+      </view>
+    </view>
+    <view class="historyDisease">
+      <view class="diseaseName">肾功能</view>
+      <view class="choose1">
+        <image class='icon-checkbox' bindtap='diseaseChange' data-type='shenFlag1' data-another='shenFlag2' src="{{shenFlag1?'/images/icon_choose.png':'/images/icon_unchoose.png'}} " />
+        <text class="has">异常</text>
+      </view>
+      <view class="choose2">
+        <image class='icon-checkbox' bindtap='diseaseChange' data-type='shenFlag2' data-another='shenFlag1' src="{{shenFlag2?'/images/icon_choose.png':'/images/icon_unchoose.png'}} " />
+        <text class="hasnot">正常</text>
+      </view>
+    </view>
+    <view class="historyDisease">
+      <view class="diseaseName">妊娠哺乳</view>
+      <view class="choose1">
+        <image class='icon-checkbox' bindtap='diseaseChange' data-type='rcFlag1' data-another='rcFlag2' src="{{rcFlag1?'/images/icon_choose.png':'/images/icon_unchoose.png'}} " />
+        <text class="has">有</text>
+      </view>
+      <view class="choose2">
+        <image class='icon-checkbox' bindtap='diseaseChange' data-type='rcFlag2' data-another='rcFlag1' src="{{rcFlag2?'/images/icon_choose.png':'/images/icon_unchoose.png'}} " />
+        <text class="hasnot">无</text>
+      </view>
+    </view>
+  </scroll-view>
+  <view class="operation">
+    <view class="medicine-add" bindtap="completeDisease">{{operationName}}</view>
+  </view>
+</view>
+<view hidden='{{addFlag}}' class='modal2' catchtouchmove='true'>
+  <view class="shadowview" bindtap='hideAddFlag' data-type='2'></view>
+</view>
+<view class="contentview2 {{addFlag ? '':'contentshow2'}}">
+  <view class="nameAndclose">
+    <view class="name">添加疾病</view>
+    <view class="close" bindtap='hideAddFlag' data-type='2'>ⅹ</view>
+  </view>
+  <view class="searchDisease">
+    <input type="text" class="searchInput" value="{{disease_searchValue}}" placeholder="请输入疾病名称、支持首字母、模糊搜索" placeholder-style='placeholdercla' placeholder-class="placeholder" bindinput='searchDisease' />
+  </view>
+  <scroll-view scroll-y class='scrollView2'>
+    <view style="display:flex;flex-direction:column;margin-left:20rpx;margin-right:20rpx">
+      <block wx:for="{{searchlist}}">
+        <view class="searchResult" bindtap='chooseResult' data-item='{{item}}'>
+          {{item.disease_name}}
+        </view>
+      </block>
+    </view>
+  </scroll-view>
+  <view class="operation">
+    <view class="medicine-add">保存并添加</view>
+  </view>
+</view>
+<view class="{{resultFlag ? 'tip':'shownone'}}">
+  <view class="tipwrapper">
+    <view class="tiptext">提示</view>
+    <view class="resultmsg">
+      <text class="alignleft">{{resultMsg}}</text>
+    </view>
+    <view class="confirmR" bindtap="confirmR">确认</view>
+  </view>
+</view>
+<view class="class='{{tzFlag ? 'tzzz':'shownone'}}'">
+  <view class="tzwrapper">
+    <view class="tztext">温馨提示</view>
+    <view class="tzmsg">请确认您的体重信息是否正确，单位公斤(Kg)</view>
+    <view class="tztext" bindtap="tzclose">关闭</view>
+  </view>
+</view>
+<view class="cer_success" wx:if="{{cerFlag}}">
+  <view class="cermodal">
+    <image src="/images/returnTips_close.png" class="returnTips_close" bindtap="closeInfo" />
+    <view class="ver_tip">您已实名信息</view>
+    <view class="cerinfo">
+      <view class="cername">姓名：{{cerinfo.name}}</view>
+      <view class="ceridcard">身份证号：{{cerinfo.idcard}}</view>
+    </view>
+    <view class="ver_success_text">温馨提示：点击“确定”，实名信息自动填入。</view>
+    <view bindtap="know" style="width:30%;margin:15px auto" class='btnBtom'>
+      <view class="cer-add">确定</view>
+    </view>
+  </view>
+</view>

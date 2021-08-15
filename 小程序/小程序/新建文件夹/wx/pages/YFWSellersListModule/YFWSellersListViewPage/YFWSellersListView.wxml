@@ -1,0 +1,330 @@
+<wxs src='../../../wxs/sublie.wxs' module='tools' />
+<wxs src='../../../wxs/subAfter.wxs' module='toAfter' />
+<!-- 同店购 -->
+<view class="sameShop {{showChose ? 'showsame' : 'hidesame'}}">
+  <view class='myFlex comnPic'>
+    <view class='boxPic'>
+      <view></view>
+    </view>
+    <view class='boxPic'></view>
+    <view class='boxPic'></view>
+    <view class='boxPic'></view>
+    <view class='boxPic'></view>
+
+
+  </view>
+  <view class='chosemer' bindtap='onchose'>选择商家</view>
+</view>
+<view class='onTop' wx:if='{{goodsInfo}}'>
+  <view class='clearfix'>
+    <image class='drugPic' src='{{goodsInfo.img_url}}'></image>
+    <view class='drugDel'>
+      <view class='top_drug'>
+        <image wx:if='{{goodsInfo.drugImage.length>0}}' class='goods_type' src='{{goodsInfo.drugImage}}'></image>
+        <view class='drugTitle_txt'>{{goodsInfo.title}}</view>
+      </view>
+
+      <view class='drugPlace' style='{{goodsInfo.isCanSale?"":"color:#999;"}}'>
+        <view>
+          <text>产品规格:</text><text style="color:black">{{goodsInfo.standard}}</text></view>
+          <view>
+          <text>剂型:</text><text style="color:black">{{goodsInfo.troche_type}}</text></view>
+        <view>
+          <text>{{goodsInfo.authorizedTitle}}:</text><text style="color:black">{{goodsInfo.authorized_code}}</text></view>
+        <view>
+          <text>生产企业:</text><text style="color:black;display:inline">{{goodsInfo.mill_title}}</text></view>
+      </view>
+
+      <view wx:if='{{!goodsInfo.isCanSale}}' class='outJoin'>
+        <view class="joinShop hideshow" style='backgroundcolor:#999' bindtap="onChangeShowState">暂不预约</view>
+      </view>
+
+
+    </view>
+  </view>
+  <wxs module="ellipsis" src="/wxs/ellipsis.wxs"></wxs>
+  <view class='effectDrug'>
+        <view class="effectarea1" wx:if="{{effectareaFlag}}"></view>
+        <view class="effectarea2">
+          {{hasSpecification ? ellipsis(goodsInfo.applicability, 45) : goodsInfo.applicability}}
+          <view wx:if="{{hasSpecification}}" style="display: inline-block;vertical-align: text-bottom;" bindtap="showGuideModal">
+            <text class="sellers-medicine-indications-controls">查看说明书</text>
+            <image 
+            lazy-load="{{true}}"  
+            src="../../../images/YFWGoodsDetailModule/goods_deail_arrow_red.png" 
+            style="vertical-align: middle;width:12rpx;height:22rpx;margin-left:10rpx"></image>
+          </view>
+        </view>
+  </view>
+</view>
+<!-- 商品列表 -->
+<view wx:if='{{goodsInfo}}' class='shopList'>
+
+  <view class='shopList_one myFlex'>
+
+    <view class='shopList_oneLft myFlex'>
+      <view class='merNum'>
+        <text style="vertical-align:top">{{goodsInfo.shop_num}}</text> 个商家报价
+      </view>
+      <image bindtap='priceTrendAction' data-id='{{}}' class='expont' src='../../../images/thumb.png' mode='widthFix'></image>
+    </view>
+
+    <view class='shopList_oneRgt myFlex' bindtap='onScale'>
+      <view class='dot'></view>
+      <view class='amount'>{{goodsInfo.standard}}</view>
+      <view class='downLogo'>
+        <image src='../../../images/bijia/down.png' mode='widthFix'></image>
+      </view>
+    </view>
+
+  </view>
+  <view class="shopList_two {{searchFixed ? 'toNavfixed' : 'toNavabsute'}}">
+
+    <view class='myFlex shopList_twoTitle'>
+
+      <!--<view class="twoTitle_first nav_btn {{showDefault==false&&checkType==='' ? 'selected' :'' }}" bindtap='onSelect' data-id=''>
+        <view class="hideDft{{showDefault ? 'showDft':''}}" bindtap="onChangeDefault">
+          <text>默认</text>
+          <image src='../../../images/bijia/triup.png' class='mrOn verMid' mode='widthFix'></image>
+        </view>
+        <view class="hideDft{{showDefault ? '':'showDft'}}" bindtap="onChangeDefault">
+          <text>默认</text>
+          <image src='../../../images/bijia/trion.png' class='mrOn verMid' mode='widthFix'></image>
+        </view>
+      </view>-->
+      <view class="twoTitle_first nav_btn {{checkType ==='1' ? 'selected' :''}}" bindtap='onSelect' data-id='1' data-sort='distance' data-sort-type='asc'>距离</view>
+      <view class="nav_btn {{checkType ==='2' ? 'selected' :''}}" bindtap='onSelect' data-id='2' data-sort='sprice' data-sort-type='asc' wx:if="{{checkType ==='2' ? !isPrice : isPrice}}">
+        <text>价格</text>
+          <image src='../../../images/bijia/price_order_1@2x.png' class='mrOn' mode='widthFix'></image>
+        </view>
+
+      <view wx:if="{{checkType ==='2' ? isPrice : !isPrice}}">
+        <view class="nav_price hideDft{{showPrice ? 'showDft' : ''}}" bindtap="onChangePrice">
+          <text>价格(降)</text>
+          <image src='../../../images/bijia/up.png' class='mrOn' mode='widthFix'></image>
+        </view>
+        <view class="nav_price hideDft{{showPrice ? '' : 'showDft'}}" bindtap="onChangePrice">
+          <text>价格(升)</text>
+          <image src='../../../images/bijia/on.png' class='mrOn' mode='widthFix'></image>
+        </view>
+      </view>
+      <view class="nav_btn {{checkType ==='3' ? 'selected' :''}}" bindtap='onSelect' data-id='3' data-sort='score' data-sort-type='desc'>综合</view>
+      <!-- 包邮 -->
+      <!--<view class='myCheckbox'>
+        <checkbox-group bindchange="checkboxChange">
+          <label class="checkbox" wx:for="{{bYS}}" wx:key="{{index}}">
+            <checkbox value="{{item.checked}}" checked="{{item.checked}}" />{{item.value}}
+          </label>
+        </checkbox-group>
+      </view>-->
+      <view class='topViewItem' bindtap='showModal'>
+        <text class='topViewItemTitleUnselect'>筛选</text>
+        <image class='topViewItemScreenIcon' src='/images/choose_kind.png'></image>
+      </view>
+    </view>
+
+    <!-- 默认列表 -->
+    <view class='rank' wx:if="{{showDefault==false ? isRankTwo : isRank && checkType=='' ? isRank : isRankTwo}}">
+      <view data-sort-type='' data-sort='' bindtap='sortTypeAction'>综合排序</view>
+      <view data-sort='level' data-sort-type='desc' bindtap='sortTypeAction'>评价从高到低</view>
+      <view class='lastRank' data-sort='reserve' data-sort-type='desc' bindtap='sortTypeAction'>库存从高到低</view>
+
+    </view>
+
+  </view>
+  <view class="address">
+    <view style="width:25rpx;height:25rpx;margin-right:16rpx;flex-shrink:0">
+      <image src="/images/icon_dingwei.png" style="width:100%;height:100%;vertical-align:text-top"/>
+    </view>
+    
+      <text>{{locationInfo}}</text>
+  </view>
+  <view class="couponText" wx:if="{{note.content}}">
+    <view style="flex-shrink:0">
+      <image src="{{note.img_url}}" style="width:{{note.img_width || 25}}rpx;height:{{note.img_height || 25}}rpx;vertical-align:middle;margin-right:16rpx"/>
+    </view>
+     
+      <text>{{note.content}}</text>
+  </view>
+  <!-- 遮罩层 -->
+  <view class='myShade' bindtap='closeRank' wx:if="{{showDefault==false ? isRankTwo : isRank && checkType=='' ? isRank : isRankTwo}}" catchtouchmove='true'>
+  </view>
+
+  <!-- 药品列表表单 -->
+  <block wx:for='{{shopInfoArray}}' wx:key='{{index}}'>
+    <view class='pageList' bindtap='clickItemAction' data-info='{{item}}'>
+      <view class='bor_botm'></view>
+      <view class='listOne myFlex'>
+        <view class='listOne_left'>
+          <image wx:if="{{item.promotion_activity_img_url.length>0}}" src="{{item.promotion_activity_img_url}}" class="listOne_lf_ac" mode='widthFix'></image>
+          {{item.title}}
+        </view>
+        <view class='listOne_right'>
+          <YFWPriceView price='{{item.price}}'></YFWPriceView>
+        </view>
+        <!-- <view wx:else catchtap='loginAction' class='login_tip'>价格登录可见</view> -->
+      </view>
+
+      <view class='listTwo myFlex'>
+        <view class='listTwo_left myFlex'>
+          <image src='../../../images/bijia/star.png' class='star' mode='widthFix'></image>
+          <text>{{item.star}}</text>
+          <text>{{item.region}}</text>
+        </view>
+
+        <view class='listTwo_right' wx:if="{{item.shipping_price !='0.00'}}">运费{{item.shipping_price}}元</view>
+        <view class='listTwo_right' wx:else>包邮</view>
+      </view>
+      <view class='listThree myFlex'>
+        <view class='listThree_left)'>
+          <text>库存{{item.reserve}}</text>
+          <text wx:if="{{item.period_to}}">有效期至：{{item.period_to}}</text>
+        </view>
+      </view>
+      <view class='listFour myFlex'>
+        <view class='outLeft'>
+          <view class='listFourLeft myFlex'>
+            <text wx:if='{{item.scheduled_name}}' class='timeIn'>{{item.scheduled_name}}</text>
+            <text wx:if='{{item.logistics_desc}}' class='postage'>{{item.logistics_desc}}</text>
+            <view wx:if='{{item.coupons_desc}}' class='coupons inlMidle'><text style='margin-right:4rpx;'>券</text><view class='line inlMidle'></view>{{item.coupons_desc}}</view>
+            <view wx:if='{{item.activity_desc}}' class='fullR'>
+              <text class='fullReduct'>{{item.activity_desc}}</text>
+              <image class='fullimage' src='../../../images/bijia/sxticket.png' mode='aspectFit'></image>
+            </view>
+
+            <text wx:if='{{item.discount}}' class='fanX'>{{item.discount}}</text>
+
+          </view>
+          <view wx:if='{{item.medicine_package_desc}}' class='listFourBom'>
+            <text>多件装</text>
+            <text decode="{{true}}">{{item.medicine_package_desc}}</text>
+          </view>
+        </view>
+        <image wx:if="{{isLogin&&item.is_add_cart}}" catchtap='addCarAction' data-id='{{item.shop_goods_id}}' class='listFourRight' src="{{'../../../images/bijia/gwche.png'}}" mode='widthFix'></image>
+      </view>
+
+    </view>
+  </block>
+
+</view>
+<view class='nomore' wx:if='{{loadhidden}}'> 加载中...</view>
+<view class='nomore' wx:if='{{hidden}}'>没有更多了</view>
+
+<!-- 滑动到顶部按钮 -->
+<image src='../../../images/bijia/gotop.png' mode='widthFix' class='gotop' bindtap='gotop'></image>
+<!-- 购物车 -->
+<image catchtap='goShopCarAction' src='../../../images/bijia/gwche2.png' mode='widthFix' class='gotop gwcheTwo' bindtap='gwcheTwo'></image>
+<view wx:if='{{shopCarCount&&shopCarCount>0 || shopCarCount == "99+"}}' class='gwNum'>{{shopCarCount}}</view>
+<view class='pageNum'>
+  <text decode="{{true}}">{{currentPageIndex}}</text>/
+  <text decode="{{true}}">{{totalPage}}</text>
+</view>
+<!-- 选择药量 -->
+<YFWActionModal id="onscale" title="" bgcolor='white'>
+  <view style="background-color:white">
+    <view class='onscaleFlex'>
+    <image class='onscaleDrugPic' src='{{goodsInfo.img_url}}'></image>
+    <view class='onscaleDrugDel'>
+      <view class='onscaleTop_drug'>
+        <image wx:if='{{goodsInfo.drugImage.length>0}}' class='onscaleGoods_type' src='{{goodsInfo.drugImage}}'></image>
+        <view class='drugTitle_txt'>{{goodsInfo.title}}</view>
+      </view>
+      <view class='onscaleDrugPlace' style='{{goodsInfo.isCanSale?"":"color:#999;"}}'>
+        <view><text>{{goodsInfo.authorizedTitle}}:</text><text style="color:black">{{goodsInfo.authorized_code}}</text></view>
+      </view>
+    </view>
+  </view>
+  <block wx:for="{{goodsInfo.standards}}" wx:key='index'>
+    <view class="outPack {{item.select ? 'slelectd' : ''}}" bindtap='isClosescal' data-index='{{index}}'>
+
+      <block wx:if="{{item.select}}">
+        <image src='../../../images/button_card.png' mode='widthFix' class='packBgc'>
+        </image>
+        <text class='packTxt'>{{item.standard}}</text>
+        <image src='../../../images/chooseBtnWhite@3x.png' mode='widthFix' class='arrOut'></image>
+      </block>
+
+      <block wx:else>
+        <view class='noCheck'></view>
+        <text class='packTxt nopackTxt'>{{item.standard}}</text>
+        <image src='../../../images/checkout_unsel.png' mode='widthFix' class='arrOut'></image>
+      </block>
+
+    </view>
+  </block>
+    </view>
+
+</YFWActionModal>
+
+<YFWSpecificationModal 
+id="specificationModal" 
+order="{{specificationOrder}}"
+guide="{{goodsInfo.guide}}">
+</YFWSpecificationModal>
+
+<!--筛选条件 暂不使用搜索筛选组件 -->
+<view class='modal-back' hidden='{{!isShow}}' animation="{{animationData}}" bindtap='hideModal' catchtouchmove='preventD'>
+  <view wx:if='{{showAll}}' class='top_container' catchtap='true'>
+    <image class='top_back' src='/images/top_back_green.png' bindtap='backAction'>back</image>
+    <view class='top_title'>{{'所在地'}}</view>
+  </view>
+  <scroll-view style='overflow-y: scroll;-webkit-overflow-scrolling: touch;' scroll-y  class='modal-content' catchtap='true'>
+    <view class='box-content'>
+      <block wx:if='{{!showAll}}'>
+        <text class='Manufacturers-title'>{{'价格区间'}}</text>
+        <view class='brands-content'>
+          <input placeholder='最低价' class='topViewSearchInput' placeholder-class='inputplaceholder' value="{{lowPrice}}" bindinput='PriceChange' confirm-type='{{done}}' data-type='lowPrice' ></input>
+          <text style="margin-left:5%">-</text>
+          <input placeholder='最高价' class='topViewSearchInput' placeholder-class='inputplaceholder' value="{{highPrice}}" bindinput='PriceChange' confirm-type='{{done}}' data-type='highPrice'></input>
+        </view>
+        <text class='Manufacturers-title'>{{'剩余效期'}}</text>
+        <view class='brands-content'>
+          <block wx:for="{{remainingValidity}}" wx:key='{{index}}'>
+            <view bindtap='itemClickAction' data-type='remainingValidity' data-info='{{item}}' data-index='{{index}}' 
+            class='content {{item.select?"select":""}}'>
+              <view>{{item.name}}</view>
+            </view>
+          </block>
+        </view>
+        <text class='Manufacturers-title'>{{'优惠活动'}}</text>
+        <view class='brands-content'>
+          <block wx:for="{{preferentialActivities}}" wx:key='{{index}}'>
+            <view bindtap='itemClickAction' data-type='preferentialActivities' style="width:28%" data-info='{{item}}' data-index='{{index}}' 
+            class='content {{item.select?"select":""}}'>
+              <view>{{item.name}}</view>
+            </view>
+          </block>
+        </view>
+        <text class='Manufacturers-title'>{{'所在地'}}</text>
+        <view class='brands-content'>
+          <block wx:for="{{areaData}}" wx:key='{{index}}'>
+            <view bindtap='itemClickAction' style="width:28%" data-type='areaData' data-info='{{item}}' data-index='{{index}}' class='content {{item.isShowAll?"more":item.select?"select":""}}'>
+              <view>{{item.name}}</view>
+            </view>
+          </block>
+        </view>
+      </block>
+      <block wx:else>
+        <view class='center_content'>
+          <block wx:for='{{provinceArray}}' wx:key='{{index}}'>
+              <view bindtap='itemClickAction' data-type='provinceArray' data-info='{{item}}' data-index='{{item.index}}' class='cell'>
+                <view class='cell_title {{item.select?"cell_title_select":""}}'>
+                  {{item.name}}
+                </view>
+                <image wx:if='{{item.select}}' class='cell_select' src='/images/duihao.png'></image>
+              </view>
+              <view class='cell_line'></view>
+          </block>
+        </view>
+      </block>
+    </view>
+  </scroll-view>
+  <view class='bottom_container' catchtap='true'>
+    <view bindtap='resetAction' class='bottom_content bottom_left'>
+      <view>重置</view>
+    </view>
+    <view bindtap='confirmAction' class='bottom_content bottom_right'>
+      <view>确定</view>
+    </view>
+  </view>
+</view>

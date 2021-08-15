@@ -1,0 +1,18 @@
+<!--pages/YFWHomeFindModule/YFWSubCategoryPage/YFWSubCategory.wxml-->
+<view class='container'>
+  <view class='toSearchView'>
+    <view class='topSearchInputView' bindtap='bindSearchTap'>
+      <image class='searchIcon' src='/images/YFWStoreModule/top_bar_search.png' mode='aspectFit'/>
+      <text class='placeholder'>搜索症状、药品、药店、品牌</text>
+    </view>
+    <view class='topViewSearchBotton' bindtap='openUtilityMenu'>
+      <image class='more-view' src='/images/more_white.png' mode='aspectFit' id='more_image'></image>
+    </view>
+  </view>
+  <view class="scroll">
+    <goods_view bind:changeSortType="changeSortType" bind:requestNextPage="requestNextPage" bind:openControlPanel="openControlPanel" id="goodsView" froms='category' />
+  <more_view id="moreview" />
+  <filterBoxModal bind:changeFilter='changeFilter' id="filterBox" category_id="{{categoryID}}" froms="YFWSubCategoryController" />
+  </view>
+
+</view>

@@ -1,0 +1,28 @@
+.container{
+  width:100%;
+}
+page{
+  background-color: #FAF9F9
+}
+.container-name{
+  margin-top:15rpx;
+  height:60rpx;
+  background-color:#F5F5F5;
+}
+.newName{
+  font-size: 25rpx;
+  background-color:#FFFFFF;
+  height:120rpx;
+  margin-top:30rpx;
+  padding-left:30rpx;
+}
+
+.address-save{
+  font-size: 30rpx;
+  margin-top :330rpx;
+  border-radius: 50rpx;
+  height:80rpx;
+  width:94%;
+  background-color:#49ddb8;
+  color:white;
+}

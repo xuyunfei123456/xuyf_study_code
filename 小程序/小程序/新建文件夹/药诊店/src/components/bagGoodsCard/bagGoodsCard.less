@@ -1,0 +1,86 @@
+.bagGoodsCard {
+  display: flex;
+  flex-direction: row;
+  .card_left {
+    height: 64px;
+    width: 64px;
+    border: 0.667px solid #f0f0f0;
+    display: flex;
+    border-radius: 7px;
+    .goods_pic {
+      width: 54px;
+      height: 54px;
+      margin: auto;
+    }
+  }
+  .card_right {
+    flex: 1;
+    margin-left: 13.333px;
+    margin-top: 2.333px;
+    .goods_name {
+      display: flex;
+      align-items: center;
+      color: #333;
+      font-size: 13px;
+      .goods_type {
+        width: 20px;
+        height: 12px;
+      }
+      .goods_name_text {
+        padding-left: 4.667px;
+      }
+    }
+    .standard {
+      margin-top: 2.667px;
+      color: #999;
+      font-size: 12px;
+      .standard_type {
+        padding-left: 10px;
+      }
+    }
+    .sell {
+      margin-top: 5px;
+      color: #999;
+      font-size: 12px;
+    }
+    .card_bottom {
+      margin-top: 4px;
+      display: flex;
+      justify-content: space-between;
+
+      .good_price {
+        color: #ff3300;
+        font-size: 12px;
+        .priceInt {
+          font-size: 14px;
+          font-weight: bold;
+        }
+        .priceFloat {
+          font-size: 12px;
+          font-weight: bold;
+        }
+      }
+      .operation {
+        display: flex;
+        align-items: center;
+        .plus {
+          width: 20px;
+          height: 20px;
+        }
+        .minus {
+          height: 20px;
+          width: 20px;
+        }
+        .count {
+          padding: 0 10px;
+          font-size: 15px;
+        }
+      }
+    }
+  }
+  .oldPrice {
+    color: #999;
+    font-size: 12px;
+    text-decoration: line-through;
+  }
+}

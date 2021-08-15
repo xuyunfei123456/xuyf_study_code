@@ -1,0 +1,12 @@
+
+<view class='modal' hidden='{{!isShow}}' catchtouchmove='myTouchMove'>
+      <view class="content">
+            <image src="/images/returnTips_close.png" class="returnTips_close" bindtap="closeInfo" />
+             <image class="ava" src="/images/real_name.png"></image>
+             <view class="title">实名认证</view>
+             <view class="tip">根据相关政策要求，购药须进行实名认证，确认此账户是本人使用</view>
+             <view bindtap="certification" class='btnBtom'>
+                <view class="cer-add">立即前往</view>
+             </view>
+      </view>
+</view>

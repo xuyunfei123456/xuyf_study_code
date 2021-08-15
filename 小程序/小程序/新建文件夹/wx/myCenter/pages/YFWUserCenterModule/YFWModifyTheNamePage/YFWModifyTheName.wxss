@@ -1,0 +1,176 @@
+.container{
+  width:100%;
+}
+page{
+  background-color: #fafafa;
+}
+.tip{
+  width: 100%;
+  height: 68rpx;
+  line-height: 68rpx;
+  background-color: #faf8dc;
+  font-size: 24rpx;
+  color: #feac4c;
+  padding-left: 28rpx;
+}
+.name{
+  width: 700rpx;
+	height: 100rpx;
+	border-radius: 14rpx;
+  background-color: #f5f5f5;
+  margin: 0 auto;
+  margin-top: 40rpx;
+  color: #777777;
+  font-size: 26rpx;
+  line-height: 100rpx;
+}
+.idcard{
+  width: 700rpx;
+	height: 100rpx;
+	border-radius: 14rpx;
+  background-color: #f5f5f5;
+  margin: 0 auto;
+  margin-top: 28rpx;
+  color: #777777;
+  font-size: 26rpx;
+  line-height: 100rpx;
+}
+.selfCer{
+  display: flex;
+  flex-direction: row;
+  width: 700rpx;
+  height: 100rpx;
+  background-color: #fff;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 28rpx;
+  border-radius: 14rpx;
+}
+.customer_left{
+  font-size:26rpx;
+  color: #333333;
+  margin-left: 32rpx;
+}
+.placeholdercla{
+  color: #cccccc;
+}
+.placeholder{
+  font-size: 26rpx;
+}
+.btnBtom {
+  width: 90%;
+  margin-left: 5%;
+  height: 80rpx;
+  border-radius: 50rpx;
+  background: linear-gradient(to right, #00c891, #1fdb9b);
+  box-shadow: 0rpx 8rpx 30rpx rgba(31, 219, 155, 0.5);
+  align-items: center;
+  display: flex;
+}
+
+.bottom_empty {
+  height: 50rpx;
+  width: 100%;
+}
+
+.bottom_container {
+  background-color: #fafafa;
+  position: fixed;
+  bottom: 0rpx;
+  width: 100%;
+}
+.cer-add {
+  width: 100%;
+  color: white;
+  font-size: 34rpx;
+  font-weight: bold;
+  text-align: center;
+}
+.cer_success{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.3);
+  top: 0px;
+  z-index: 9999;
+}
+.modal{
+  width: 318.667px;
+  height: 196.667px;
+  border-radius: 7.234px;
+  background-color: #ffffff;
+  margin: 0 auto;
+  margin-top: 130px;
+  position: relative;
+}
+.ver_tip{
+	font-size: 17.353px;
+  color: #333333;
+  padding-top: 50rpx;
+  text-align: center;
+}
+.ver_success_text{
+	font-size: 12.667px;
+  color: #333333;
+  padding-top: 50rpx;
+  text-align: center;
+}
+.icon-checkbox{
+  width: 42rpx;
+  height: 42rpx;
+  min-width: 42rpx;
+  min-height: 42rpx;
+  padding-left:22rpx; 
+  padding-right:13rpx; 
+}
+.druglist{
+  margin-top: 10px;
+}
+.listWrapper{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: white;
+  height: 100rpx;
+  width: 700rpx;
+  margin: 10px auto;
+}
+.listName{
+  font-size: 13.333px;
+  color: black;
+  padding-left: 20px;
+}
+.listsex{
+  font-size: 13.333px;
+  color: #333333;
+  padding-left: 30px;
+}
+.listCard{
+  font-size: 13.333px;
+  color: #333333;
+  padding-left: 30px;
+}
+.returnTips_close{
+  width: 28rpx;
+  height: 28rpx;
+  position: absolute;
+  right: 18.6rpx;
+  top: 22rpx;
+}
+.self{
+  height: 100rpx;
+  line-height: 100rpx;
+  position: relative;
+  text-align: center;
+  font-size: 32rpx;
+  color: #333333;
+}
+.selfCercition{
+  position: absolute;
+  color: #1fdb9b;
+  font-size: 28rpx;
+  top: 0rpx;
+  right: 30rpx;
+}
+
+

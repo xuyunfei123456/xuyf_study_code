@@ -1,0 +1,118 @@
+<wxs src='../../../../wxs/sublie.wxs' module='tools' />
+<wxs src='../../../../wxs/subAfter.wxs' module='toAfter' />
+<!-- <view class='return_reason_parent'>
+  <view class='title'>
+    <view class='text'>申请退款原因</view>
+    <view class='bottom'></view>
+  </view>
+  <view class='reasonList'>
+    <block wx:for="{{reasonList}}"  wx:for-index="idx"  wx:key="{{idx}}">
+      <view class='reasonItem' bindtap='chooseReason' data-index='{{idx}}'>
+        <view class="{{checkedIndex == idx? 'checkedReasonText':'reasonText'}}">{{item.reason}}</view>
+        <image wx:if="{{checkedIndex == idx}}" src='/images/check_checked.png' class='checkedIcon'></image>
+      </view>
+    </block>
+  </view>
+</view>
+
+<view class='returnMoneyLayout'>
+  <text class='tips'>退款金额:<text class='money'>{{returnMoney}}</text></text>
+</view> -->
+<view class="container">
+  <scroll-view class='scroll-view' scroll-y>
+    <view class="return-title">
+      <YFWTitleView fontWeight='500' title='退货商品' lineHeight='25'></YFWTitleView>
+    </view>
+    <view class="list">
+      <block wx:for="{{goodsDataArray}}" wx:key="index">
+        <view class='medicineList_item'>
+          <image class="medecine_image" src="{{item.image+'_300x300.jpg'}}" mode='aspectFit'>
+          </image>
+          <view class='medicine_info'>
+            <view class='top'>
+              <rich-text class='medicien_name'>
+                 <image wx:if="{{item.dict_medicine_type>0}}" src='/images/ic_drug_track_label.png' class='medicine_type_icon'>
+                </image>{{item.name + '(' + item.standard + ')'}}</rich-text>
+              <view style="flex:1"></view>
+              <text class='smallPrice'>¥<text class='Goodsprice'>{{tools.sub(item.price+'')}}.</text>
+              <text class='smallPrice'>{{toAfter.subAfter(item.price+'')}}</text></text>
+            </view>
+            <view class='bottom'>
+              <view class='medecine_standard'>{{item.standard}}
+              </view>
+              <view style='flex:1'></view>
+              <view class='medecine_qty'>x{{item.quantity}}
+              </view>
+            </view>
+          </view>
+        </view>
+        <view wx:if="{{index < goodsDataArray.length-1}}" class="splitView"></view>
+      </block>
+    </view>
+    <view class="list desc-view">
+      <view style="flex:1">
+        <view class="align-center">
+          <image class="wen-view" src="/images/tip.png"/>
+          <text class="wen-title">温馨提示</text>
+        </view>
+        <block wx:for="{{descArray}}" wx:key="index">
+          <view class="tip-view">
+            <view class="tip-line"></view>
+            <text>{{item}}</text>
+          </view>
+        </block>
+      </view>
+    </view>
+    <view class="list reason-view" bindtap="showReasonAlert">
+      <view class="reason-context">
+        <text class="reason-title">退款原因</text>
+        <view class="price-view">
+          <text>{{reason.length>0?reason:'请选择'}}</text>
+          <image src="/images/icon_arrow_right_gary.png" class="arrow-icon" mode='aspectFit'/>
+        </view>
+      </view>
+    </view>
+    <view class="amount-view">
+      <view class="amount-context">
+        <text class="reason-title">退款金额:</text>
+        <view class="amount-price-view">
+          <text class="amount-text">{{returnMoney}}</text>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+<view class='bottomLayout'>
+  <!-- <view class='tipsLayout'>
+    <image src='/images/icon_warning.png' class='warning_icon'></image>
+    <view class='tips'>{{reasonList[checkedIndex].promptinfo}}</view>
+  </view> -->
+  <view class='post_button' bindtap='post'>
+  <view class='text'>提交</view>
+  </view>
+</view>
+<view hidden='{{!isShowReturnModal}}' class='modal'  catchtouchmove='true'>
+  <view class='modal-back' bindtap='hideReturnModal' animation="{{opacityAnimation}}"></view>
+  <view class='modal-content' animation="{{translateAnimation}}" catchtap='true'>
+    <view class='modal-return-head'>
+      <view class="modal-view"></view>
+      <view class="modal-title">退货/款原因</view>
+      <view bindtap="hideReturnModal" class="modal-view">
+        <image class="modal-close" src='/images/search_del.png'/>
+      </view>
+    </view>
+    <scroll-view class='modal-center-view' scroll-y>
+      <block wx:for="{{reasonList}}" wx:for-index="idx"  wx:key="{{idx}}">
+        <view class="select-view" bindtap='chooseReason' data-index='{{idx}}'>
+          <text>{{item.reason}}</text>
+          <image src="{{checkedIndex == idx?'/images/chooseBtn.png':'/images/radio_off.png'}}"/>
+        </view>
+      </block>
+    </scroll-view>
+    <view class='bottomLayout'>
+      <view class='post_button' bindtap='onComfire'>
+        <view class='text'>确定</view>
+        </view>
+      </view>
+    </view>
+</view>
