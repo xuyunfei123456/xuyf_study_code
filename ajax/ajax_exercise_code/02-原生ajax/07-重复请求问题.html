@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>重复请求问题</title>
+  </head>
+  <body>
+    <button>开始请求</button>
+    <script>
+      const btn = document.querySelectorAll("button");
+      let xhr = null,
+        //标示变量
+        isSending = false; //控制是否在发送请求
+      btn[0].addEventListener("click", function () {
+        if (isSending) xhr.abort(); //如果正在发送请求，取消该请求，并创建一个新的请求
+        xhr = new XMLHttpRequest();
+        isSending = true; //修改标示变量
+        xhr.open("GET", "http://172.16.16.87:8000/delay");
+        xhr.send();
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState === 4) {
+            isSending = false;
+          }
+        };
+      });
+    </script>
+  </body>
+</html>

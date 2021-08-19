@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>POST请求</title>
+    <title>IE缓存问题</title>
     <style>
       #result {
         width: 200px;
@@ -14,22 +14,19 @@
     </style>
   </head>
   <body>
+    <button>点击发送请求</button>
     <div id="result"></div>
     <script>
       const result = document.getElementById("result");
-      result.addEventListener("mouseover", function () {
+      const btn = document.getElementsByTagName("button")[0];
+      btn.addEventListener("click", function () {
         const xhr = new XMLHttpRequest();
-        xhr.open("POST", "http://172.16.16.87:8000/server");
-        xhr.setRequestHeader(
-          "Content-Type",
-          "application/x-www-form-urlencoded"
-        );
-        xhr.setRequestHeader("name", "xuyf");
-        xhr.send("a:100&b:200&c:300");
+        xhr.open("GET", "http://172.16.16.87:8000/ie?t=" + new Date());
+        xhr.send();
         xhr.onreadystatechange = function () {
           if (xhr.readyState === 4) {
             if (xhr.status >= 200 && xhr.status < 300) {
-              console.log(xhr.response);
+              result.innerHTML = xhr.response;
             }
           }
         };
