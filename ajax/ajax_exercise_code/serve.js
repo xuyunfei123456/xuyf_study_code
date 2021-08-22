@@ -50,6 +50,24 @@ app.all("/jquery-server", (request, response) => {
   response.setHeader("Access-Control-Allow-Headers", "*");
   // response.send('Hello jQuery AJAX');
   const data = { name: "xuyf" };
+    response.send(JSON.stringify(data));
+});
+//axios 服务
+app.all('/axios-server', (request, response) => {
+  //设置响应头  设置允许跨域
+  response.setHeader('Access-Control-Allow-Origin', '*');
+  response.setHeader('Access-Control-Allow-Headers', '*');
+  // response.send('Hello jQuery AJAX');
+  const data = {name:'xuyf'};
+  response.send(JSON.stringify(data));
+});
+//fetch 服务
+app.all('/fetch-server', (request, response) => {
+  //设置响应头  设置允许跨域
+  response.setHeader('Access-Control-Allow-Origin', '*');
+  response.setHeader('Access-Control-Allow-Headers', '*');
+  // response.send('Hello jQuery AJAX');
+  const data = {name:'xuyf'};
   response.send(JSON.stringify(data));
 });
 app.listen("8000", () => {
