@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>实践</title>
+  </head>
+  <body>
+    用户名: <input type="text" id="username" />
+    <p></p>
+    <script>
+      const input = document.querySelector("input");
+      const p = document.querySelector("p");
+      function handle(data) {
+        input.style.border = "solid 1px #f00";
+        p.innerHTML = data.msg;
+      }
+      input.onblur = function () {
+        //获取用户的输入值
+        let username = this.value;
+        let script = document.createElement("script");
+        script.src = "http://172.16.16.87:8000/check-username";
+        document.body.appendChild(script);
+      };
+    </script>
+  </body>
+</html>
