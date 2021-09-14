@@ -4,10 +4,9 @@
       webpack 会将打包结果输出出去
       npx webpack-dev-server 只会在内存中编译打包，没有输出
 */
-
-const { resolve } = require("path");
+// join是webpack5新增的配置
+const { resolve, join } = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-
 module.exports = {
   entry: "./src/js/index.js",
   output: {
@@ -51,7 +50,6 @@ module.exports = {
         loader: "file-loader",
         options: {
           name: "[hash:10].[ext]",
-          esModule: false,
           outputPath: "media",
         },
         type: "javascript/auto", //解決webpack5用file-loader打包后出现资源重复
@@ -65,10 +63,18 @@ module.exports = {
     }),
   ],
   mode: "development",
+  // 开发服务器 devServer：用来自动化（自动编译，自动打开浏览器，自动刷新浏览器~~）
+  // 特点：只会在内存中编译打包，不会有任何输出
+  // 启动devServer指令为：npx webpack-serve (webpack5之后的启动命令)
   devServer: {
-    contentBase: resolve(__dirname, "build"),
+    // 项目构建后路径，webpack5之后 webpack-dev-server4已删除contentBase，改用static配置路径
+    static: {
+      directory: join(__dirname, "build"),
+    },
+    // 启动gzip压缩
     compress: true,
     port: 3000,
+    // 自动打开浏览器
     open: true,
   },
 };
