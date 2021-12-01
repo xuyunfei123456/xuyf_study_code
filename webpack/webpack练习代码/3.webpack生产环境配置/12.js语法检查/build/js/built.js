@@ -15,7 +15,7 @@
   \*************************/
 /***/ (function() {
 
-eval("function add(a,b) {\r\n    return a + b\r\n}\r\nconsole.log(add(1, 2))\n\n//# sourceURL=webpack:///./src/js/index.js?");
+eval("function add(a, b) {\r\n    return a + b\r\n}\r\nconsole.log(add(1, 2))\n\n//# sourceURL=webpack:///./src/js/index.js?");
 
 /***/ })
 
