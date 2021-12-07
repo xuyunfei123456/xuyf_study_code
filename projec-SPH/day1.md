@@ -1,4 +1,4 @@
-1:vue-cli 脚手架初始化项目。 (1)安装 vue-cli：npm install -g @vue/cli or yarn global add @vue/cli 安装完成后查看版本 vue -version (2)初始化项目 vue create app[项目名称]
+1):vue-cli 脚手架初始化项目。 (1)安装 vue-cli：npm install -g @vue/cli or yarn global add @vue/cli 安装完成后查看版本 vue -version (2)初始化项目 vue create app[项目名称]
 node+webpack+淘宝镜像
 
 node_module 文件夹：项目依赖文件夹
@@ -21,7 +21,7 @@ package-lock.json：缓存性文件
 
 README.md：说明性的文件
 
-2：项目的其他配置
+2)：项目的其他配置
 
 2.1 项目运行起来的时候，让浏览器自动打开
 ---package.json
@@ -50,7 +50,7 @@ jsconfig.json 配置别名@提示【@代表的是 src 文件夹，这样将来�
 "exclude":["node_modules","dist"]
 }
 
-3：项目路由分析
+3)：项目路由分析
 vue-router
 前端所谓路由：kv 键值对。
 key：URL（地址栏中的路径）
@@ -63,7 +63,7 @@ Home 首页路由组件、Search 路由组件、login 登录路由、Refister �
 Header【首页、搜索页】
 Footer【在首页、搜索页】，但是在登录|注册页面是没有
 
-4.完成非路由组件 Header 与 Footer 业务
+4).完成非路由组件 Header 与 Footer 业务
 在咱们项目当中，不在以 HTML+CSS 为主，主要搞业务、逻辑
 在开发新项目的时候：
 1：书写静态页面（HTML+CSS）
@@ -79,3 +79,51 @@ Footer【在首页、搜索页】，但是在登录|注册页面是没有
 注意 3：如果想让组件识别 less 样式，需要在 style 标签的身上加上 lang=less
 
 4.1 使用组件的步骤（非路由组件） -创建或定义 -引入 -注册 -使用
+
+5).路由组件的搭建
+vue-router
+在上面分析的时候，路由组件有四个：Home、Search、Login、Register
+-components 文件夹：经常放置非路由组件（共用全局组件）
+-pages|views 文件夹：经常放置路由组件
+5.1 配置路由
+项目当中的配置的路由。放置在 router 文件夹
+
+5.2 总结
+路由组件与非路由组件的区别？
+1：路由组件一般放置在 pages|views 文件夹，非路由组件一般放置在 components 文件夹中
+2：路由组件一般需要在 router 文件夹中进行注册（使用的即为组件的名字），非路由组件在使用的时候，一般都是以标签的形式使用
+3：注册完路由，不管是路由组件、还是非路由组件身上都有$route、$router 属性
+$route：一般获取路由信息【路径、query、params等等】
+$router：一般进行编程式导航进行路由跳转【push|replace】
+
+5.3 路由的跳转？
+路由的跳转有两种形式：
+声明式导航 router-link,可以进行路由的跳转
+编程式导航 push|replace,可以进行路由的跳转
+
+编程式导航:声明式导航能做的，编程式导航都能做，
+但是编程式导航除了可以进行路由跳转，还可以做一下其他的业务逻辑
+
+6).Footer 组件的显示与隐藏
+显示或者隐藏组件：v-if|v-show
+Footer 组件：在 Home、Search 显示 Footer 组件
+Footer 组件：在登录、注册的时候隐藏
+
+6.1 我们可以根据组件身上的$route 获取当前路由的信息，通过路由路径判断 Footer 的显示或隐藏
+6.2 配置路由的时候，可以给路由添加路由元信息【meta】，路由需要配置对象，它的 key 不能乱写
+
+8)路由传参
+8.1：路由跳转有几种方式？
+比如 A-B
+声明式导航 router-link（务必有 to 属性）,可以进行路由的跳转
+编程式导航 push|replace,可以进行路由的跳转（可以书写组件的一些业务）
+
+8.2：路由传参，参数有几种写法？
+params 参数：属于路径当中的一部分，需要注意，在配置路由的时候，需要占位
+query 参数：不属于路径当中的一部分，类似于 ajax 中的 queryString /home?k=v&k=v,不需要占位
+
+9)路由传参相关面试题
+1：路由传参（对象写法）path 是否可以结合 params 参数一起使用？
+2：如何指定 params 参数可传可不传？
+3：如何指定 params 参数可传可不传，但是如果传递是空串，如何解决？
+4：路由组件能不能传递 props 数据？

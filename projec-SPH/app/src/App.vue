@@ -1,7 +1,10 @@
 <template>
   <div id="app">
     <Header></Header>
-    <Footer></Footer>
+    <!-- 路由组件出口的地方 -->
+    <router-view></router-view>
+    <!-- 在Home、Search显示，在登录，注册的时候隐藏 -->
+    <Footer v-show="$route.meta.show"></Footer>
   </div>
 </template>
 
