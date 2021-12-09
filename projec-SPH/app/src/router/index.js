@@ -35,6 +35,7 @@ VueRouter.prototype.replace = function (location, resolve, reject) {
 //配置路由
 //暴露VueRouter的实例
 export default new VueRouter({
+    mode: "history",
     //配置路由
     routes: [{
             path: "/home",
@@ -56,12 +57,12 @@ export default new VueRouter({
             //对象写法：额外的给路由组件传递一些props
             // props:{a:1,b:2}
             //常用：函数写法：可以把params、query参数，通过props传递给路由组件
-            props: ($route) => {
-                return {
-                    keyword: $route.params.keyword,
-                    k: $route.query.k
-                }
-            }
+            // props: ($route) => {
+            //     return {
+            //         keyword: $route.params.keyword,
+            //         k: $route.query.k
+            //     }
+            // }
         },
         {
             path: "/login",
