@@ -4,10 +4,14 @@
     <div class="sortList clearfix">
       <div class="center">
         <!--banner轮播-->
-        <div class="swiper-container" id="mySwiper">
+        <div class="swiper-container" ref="mySwiper">
           <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <img src="./images/banner1.jpg" />
+            <div
+              class="swiper-slide"
+              v-for="(carousel, index) in bannerList"
+              :key="carousel.id"
+            >
+              <img :src="carousel.imgUrl" />
             </div>
           </div>
           <!-- 如果需要分页器 -->
@@ -92,8 +96,46 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
+import Swiper from "swiper";
 export default {
   name: "",
+  mounted() {
+    //派发action:通知Vuex发起AJAX请求，将数据存储在仓库中
+    this.$store.dispatch("getBannerList");
+    //在new Swiper实例之前，页面中结构必须得有【现在把new Swiper实例放在mounted这里发现不行】
+    //为什么：因为dispatch当中涉及到异步语句，导致v-for遍历的时候结构还不完整
+  },
+  computed: {
+    ...mapState({
+      bannerList: (state) => state.home.bannerList,
+    }),
+  },
+  watch: {
+    //监听bannerList数据的变化：因为这条数据发生过变化---由空数组变为数组里面有四个元素
+    bannerList: {
+      handler(newValue, oldValue) {
+        //watch监听bannerList值的变化
+        //如果执行handler方法，代表组件实例身上这个属性的属性已经有了
+        //当前这个函数执行，只能保证bannerList数据已经有了，但是你没办法保证v-for已经执行结束了
+        //v-for执行完毕，才有结构【现在在watch当中没办法保证的】
+        // nextTick:在下次DOM更新  循环结束之后 执行延迟函数。  在 修改数据之后  立即使用这个方法 获取更新后的DOM
+        this.$nextTick(() => {
+          var mySwiper = new Swiper(".swiper-container", {
+            loop: true,
+            pagination: {
+              el: ".swiper-pagination",
+              clickable: true,
+            },
+            navigation: {
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            },
+          });
+        });
+      },
+    },
+  },
 };
 </script>
 
@@ -270,3 +312,6 @@ export default {
   }
 }
 </style>
+// 第一步：引包（相应js|css）
+// 第二步：页面中结构务必要有
+// 第三步：new Swiper实例【轮播图添加动态效果】

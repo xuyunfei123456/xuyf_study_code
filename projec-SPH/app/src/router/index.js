@@ -35,7 +35,7 @@ VueRouter.prototype.replace = function (location, resolve, reject) {
 //配置路由
 //暴露VueRouter的实例
 export default new VueRouter({
-    mode: "history",
+    // mode: "history",
     //配置路由
     routes: [{
             path: "/home",

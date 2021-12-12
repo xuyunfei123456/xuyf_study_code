@@ -8,6 +8,12 @@ Vue.component(TypeNav.name, TypeNav)
 import router from '@/router'
 //引入仓库
 import store from '@/store'
+// console.log(this)  this是undefined 在vue中vue组件都以.vue为后缀名
+
+//引入MockServer.js ---mock数据
+import '@/mock/mockServe'
+//引入swiper样式
+import 'swiper/css/swiper.css'
 new Vue({
   render: h => h(App),
   //注册路由：底下的写法kv一致省略

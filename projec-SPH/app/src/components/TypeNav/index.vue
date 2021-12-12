@@ -3,7 +3,7 @@
   <div class="type-nav">
     <div class="container">
       <!-- 利用事件委派把子元素的事件传给父元素，这样当鼠标移入全部商品分类标题的时候，背景色还在 -->
-      <div @mouseleave="leaveShow()" @mouseenter="enterShow">
+      <div @mouseleave="leaveShow" @mouseenter="enterShow">
         <h2 class="all">全部商品分类</h2>
         <!-- 过渡动画 -->
         <transition name="sort">
@@ -19,7 +19,6 @@
               >
                 <h3 @mouseenter="changeIndex(index)">
                   <a
-                    href=""
                     :data-categoryName="c1.categoryName"
                     :data-category1Id="c1.categoryId"
                     >{{ c1.categoryName }}</a
@@ -38,7 +37,6 @@
                     <dl class="fore">
                       <dt>
                         <a
-                          href=""
                           :data-categoryName="c2.categoryName"
                           :data-category2Id="c2.categoryId"
                           >{{ c2.categoryName }}</a
@@ -47,7 +45,6 @@
                       <dd>
                         <em v-for="c3 in c2.categoryChild" :key="c3.categoryId">
                           <a
-                            href=""
                             :data-categoryName="c3.categoryName"
                             :data-category3Id="c3.categoryId"
                             >{{ c3.categoryName }}</a
@@ -94,7 +91,7 @@ export default {
   //组件挂载完毕：可以向服务器发请求
   mounted() {
     //通知Vuex发请求，获取数据，存储于仓库当中
-    this.$store.dispatch("categoryList");
+    // this.$store.dispatch("getCategoryList");
     //当组件挂载完毕，让show变为false
     // 如果不是Home路由组件，将typeNav进行隐藏
     if (this.$route.path != "/home") {
@@ -121,9 +118,9 @@ export default {
     leaveShow() {
       //鼠标移出currentIndex,变为-1
       if (this.$route.path != "/home") {
-        this.currentIndex = -1;
         this.show = false;
       }
+      this.currentIndex = -1;
     },
     enterShow() {
       this.show = true;
@@ -152,9 +149,13 @@ export default {
         } else {
           query.category3Id = category3id;
         }
-        //整理完参数
-        location.query = query;
-        this.$router.push(location);
+        //判断：如果路由跳转的时候，带有params参数，捎带脚传递过去
+        if (this.$route.params) {
+          location.params = this.$route.params;
+          //整理完参数
+          location.query = query;
+          this.$router.push(location);
+        }
       }
     },
   },
