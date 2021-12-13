@@ -4,6 +4,8 @@ import App from './App.vue'
 import TypeNav from '@/components/TypeNav'
 //注册组件  第一个参数：全局组件的名字；第二个参数：哪一个组件
 Vue.component(TypeNav.name, TypeNav)
+import Carsousel from '@/components/Carousel'
+Vue.component(Carsousel.name, Carsousel)
 //引入路由
 import router from '@/router'
 //引入仓库

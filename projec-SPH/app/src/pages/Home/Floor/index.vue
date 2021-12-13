@@ -29,23 +29,7 @@
             </div>
             <div class="floorBanner">
               <!-- 轮播图 -->
-              <div class="swiper-container" id="floor1Swiper">
-                <div class="swiper-wrapper" ref="cur">
-                  <div
-                    class="swiper-slide"
-                    v-for="(carousel, index) in list.carouselList"
-                    :key="carousel.id"
-                  >
-                    <img :src="carousel.imgUrl" />
-                  </div>
-                </div>
-                <!-- 如果需要分页器 -->
-                <div class="swiper-pagination"></div>
-
-                <!-- 如果需要导航按钮 -->
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
-              </div>
+              <Carousel :list="list.carouselList" />
             </div>
             <div class="split">
               <span class="floor-x-line"></span>
@@ -76,23 +60,22 @@
 </template>
 
 <script>
-import Swiper from "swiper";
 export default {
   name: "",
   props: ["list"],
   mounted() {
     //现在的这种写法为什么可以：因为请求是父组件发的，父组件通过props传递过来的，而且结构以及有了的情况下执行mounted
-    var mySwiper = new Swiper(this.$refs.cur, {
-      loop: true,
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-    });
+    // var mySwiper = new Swiper(this.$refs.cur, {
+    //   loop: true,
+    //   pagination: {
+    //     el: ".swiper-pagination",
+    //     clickable: true,
+    //   },
+    //   navigation: {
+    //     nextEl: ".swiper-button-next",
+    //     prevEl: ".swiper-button-prev",
+    //   },
+    // });
   },
 };
 </script>
