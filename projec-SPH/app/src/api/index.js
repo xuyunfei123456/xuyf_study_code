@@ -32,3 +32,9 @@ export const reqGetSearchInfo = (params) => requsets({
     method: 'post',
     data: params
 })
+
+//获取产品信息详情的接口 URL : /api/item/{ skuId }  请求方式：get
+export const reqGoodsInfo = (skuId) => requsets({
+    url: `/item/${ skuId }`,
+    method: 'get'
+})

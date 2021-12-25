@@ -3,7 +3,11 @@
     <button :disabled="pageNo == 1" @click="$emit('getPageNo', pageNo - 1)">
       上一页
     </button>
-    <button v-if="startNumAndEndNum.start > 1" @click="$emit('getPageNo', 1)">
+    <button
+      v-if="startNumAndEndNum.start > 1"
+      @click="$emit('getPageNo', 1)"
+      :class="{ active: pageNo == 1 }"
+    >
       1
     </button>
 
@@ -14,6 +18,7 @@
       :key="index"
       v-if="page >= startNumAndEndNum.start"
       @click="$emit('getPageNo', page)"
+      :class="{ active: pageNo == page }"
     >
       {{ page }}
     </button>
@@ -22,12 +27,14 @@
     <button
       v-if="startNumAndEndNum.end < totalPage"
       @click="$emit('getPageNo', totalPage)"
+      :class="{ active: pageNo == totalPage }"
     >
       {{ totalPage }}
     </button>
     <button
       :disabled="pageNo == totalPage"
       @click="$emit('getPageNo', pageNo + 1)"
+      :class="{ active: pageNo == totalPage }"
     >
       下一页
     </button>
@@ -78,6 +85,9 @@ export default {
 </script>
 
 <style lang="less" scoped>
+.active {
+  background-color: skyblue !important;
+}
 .pagination {
   button {
     margin: 0 5px;
