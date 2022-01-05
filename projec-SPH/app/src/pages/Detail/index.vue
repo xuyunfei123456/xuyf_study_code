@@ -106,12 +106,23 @@
             </div>
             <div class="cartWrap">
               <div class="controls">
-                <input autocomplete="off" class="itxt" />
-                <a href="javascript:" class="plus">+</a>
-                <a href="javascript:" class="mins">-</a>
+                <input
+                  autocomplete="off"
+                  class="itxt"
+                  v-model="skuNum"
+                  @change="changeSkuNum"
+                />
+                <a href="javascript:" class="plus" @click="skuNum++">+</a>
+                <a
+                  href="javascript:"
+                  class="mins"
+                  @click="skuNum > 1 ? skuNum-- : (skuNum = 1)"
+                  >-</a
+                >
               </div>
               <div class="add">
-                <a href="javascript:">加入购物车</a>
+                <!-- 以前路由跳转，从A路由跳到B路由，这里在假如购物车，进行路由跳转之前，发请求把你购买的产品的信息通过请求的形式通知服务器，服务器进行相应的存储 -->
+                <a @click="addShopCar">加入购物车</a>
               </div>
             </div>
           </div>
@@ -355,7 +366,12 @@ import Zoom from "./Zoom/Zoom";
 import { mapGetters } from "vuex";
 export default {
   name: "Detail",
-
+  data() {
+    return {
+      //购买产品的个数
+      skuNum: 1,
+    };
+  },
   components: {
     ImageList,
     Zoom,
@@ -382,6 +398,45 @@ export default {
       });
       //点击的那个售卖属性值
       spuSaleAttrValue.isChecked = 1;
+    },
+    //表单元素修改元素个数
+    changeSkuNum(event) {
+      //用户输入进来的文本*1
+      let value = event.target.value * 1;
+      //如果用户输入进来的非法，出现NaN或者小于1
+      if (isNaN(value) || value < 1) {
+        this.skuNum = 1;
+      } else {
+        //出现小数
+        this.skuNum = parseInt(value);
+      }
+    },
+    //加入购物车的回调函数
+    async addShopCar() {
+      // 1:发请求---将产品加入到数据库
+      /*当前这里派发一个action，也想服务器发请求，判断加入购物车是成功还是失败，进行相应的操作。
+      this.$store.dispatch('addOrUpdateShopCart',{skuId:this.$route.params.skuid,skuNum:this.skuNum})
+      上面这行代码调用仓库中的addOrUpdateShopCart，这个方法加上async，返回一定是一个Promise
+      */
+      try {
+        await this.$store.dispatch("addOrUpdateShopCart", {
+          skuId: this.$route.params.skuid,
+          skuNum: this.skuNum,
+        });
+        //进行路由跳转并传参
+        //一些简单的数据skuNum，通过query形式给路由组件传递过去
+        //产品信息的数据【比较复杂skuInfo】，通过会话存储（不持久化，会话结束消失）
+        //本地存储和会话存储，一般存储的是字符串
+        sessionStorage.setItem("SKUINFO", JSON.stringify(this.skuInfo));
+        this.$router.push({
+          name: "addCartSuccess",
+          query: { skuNum: this.skuNum },
+        });
+      } catch (error) {
+        console.log(error);
+      }
+      // 2:服务器存储成功---进行路由跳转
+      // 3:失败，给用户提示
     },
   },
 };
