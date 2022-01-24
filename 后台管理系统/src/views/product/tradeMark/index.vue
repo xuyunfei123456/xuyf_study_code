@@ -48,10 +48,10 @@ export default {
       const { page, limit } = this;
       let res = await this.$API.trademark.reqTradeMarkList(page, limit);
       console.log(res, "res");
-      // if (res.code == 200) {
-      //   this.total = res.data.total;
-      //   this.list = res.data.records;
-      // }
+      if (res.code == 200) {
+        this.total = res.data.total;
+        this.list = res.data.records;
+      }
     },
   },
 };
