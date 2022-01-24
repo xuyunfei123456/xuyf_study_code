@@ -87,3 +87,34 @@ export const reqLogout = () => requsets({
     url: "/user/passport/logout",
     method: 'get'
 })
+//获取用户地址信息 /api/user/userAddress/auth/findUserAddressList  GET
+export const reqAddressInfo = () => requsets({
+    url: "/user/userAddress/auth/findUserAddressList",
+    method: 'get'
+})
+//获取商品清单 /api/order/auth/trade  GET
+export const reqOrderInfo = () => requsets({
+    url: "/order/auth/trade",
+    method: 'get'
+})
+//提交订单的接口 /api/order/auth/submitOrder?tradeNo={tradeNo}  POST
+export const reqSubmitOrder = (traderNo, data) => requsets({
+    url: `/order/auth/submitOrder?tradeNo=${traderNo}`,
+    data,
+    method: 'post'
+})
+//获取支付信息 /api/payment/weixin/createNative/{orderId}   GET
+export const reqPayInfo = (orderId) => requsets({
+    url: `/payment/weixin/createNative/${orderId}`,
+    method: 'get'
+})
+//获取支付订单状态 /api/payment/weixin/queryPayStatus/{orderId}  GET
+export const reqPayStatus = (orderId) => requsets({
+    url: `/payment/weixin/queryPayStatus/${orderId}`,
+    method: 'get'
+})
+//获取个人中心的数据 /api/order/auth/{page}/{limit}
+export const reqMyOrderList = (page, limit) => requsets({
+    url: `/order/auth/${page}/${limit}`,
+    method: 'get'
+})
