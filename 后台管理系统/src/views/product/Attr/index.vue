@@ -1,5 +1,7 @@
 <template>
-  <div>Attr</div>
+  <el-card style="margin: 20px 0px">
+    <CategorySelect />
+  </el-card>
 </template>
 
 <script>

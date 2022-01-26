@@ -36,7 +36,8 @@ Vue.use(ElementUI, {
 })
 // 如果想要中文版 element-ui，按如下方式声明
 // Vue.use(ElementUI)
-
+import CategorySelect from '@/components/CategorySelect'
+Vue.component(CategorySelect.name, CategorySelect)
 Vue.config.productionTip = false
 import API from '@/api'
 Vue.prototype.$API = API
