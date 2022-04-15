@@ -11,6 +11,7 @@
     />
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   </head>
+
   <body>
     <button class="btn btn-primary">GET</button>
     <button class="btn btn-danger">POST</button>
@@ -20,8 +21,11 @@
         .eq(0)
         .on("click", function () {
           $.get(
-            "http://172.16.16.87:8000/jquery-server",
-            { a: 100, b: 200 },
+            "http://192.168.1.9:8000/jquery-server",
+            {
+              a: 100,
+              b: 200,
+            },
             function (data) {
               console.log(data);
             },
@@ -32,12 +36,46 @@
         .eq(1)
         .on("click", function () {
           $.post(
-            "http://172.16.16.87:8000/jquery-server",
-            { a: 100, b: 200 },
+            "http://192.168.1.9:8000/jquery-server",
+            {
+              a: 100,
+              b: 200,
+            },
             function (data) {
               console.log(data);
             }
           );
+        });
+      $("button")
+        .eq(2)
+        .on("click", function () {
+          $.ajax({
+            url: "http://192.168.1.9:8000/jquery-server",
+            // 参数
+            data: {
+              a: 100,
+              b: 200,
+            },
+            // 请求类型
+            type: "GET",
+            // 响应体结果
+            dataType: "json",
+            //成功回调
+            success: function (data) {
+              console.log(data);
+            },
+            //超时时间
+            timeout: 2000,
+            // 失败回调
+            error: function () {
+              console.log("出错啦！");
+            },
+            //头信息
+            // headers: {
+            //   c: 300,
+            //   d: 400
+            // }
+          });
         });
     </script>
   </body>

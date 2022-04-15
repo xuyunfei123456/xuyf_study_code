@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fetch 发送 AJAX请求</title>
+</head>
+
+<body>
+    <button>AJAX请求</button>
+    <script>
+        const btn = document.querySelector('button');
+        btn.onclick = function () {
+            fetch('http://192.168.1.9:8000/fetch-server?vip=10', {
+                //请求方法
+                method: 'POST',
+                //请求头
+                headers: {
+                    name: 'atshanghai'
+                },
+                //请求体
+                body: 'username=admin&password=admin'
+            }).then(res => {
+                return res.text()
+            }).then(res => {
+                console.log(res)
+            })
+        }
+    </script>
+</body>
+
+</html>

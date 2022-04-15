@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>axios 发送 AJAX请求</title>
+    <script crossorigin="anonymous" src="https://cdn.bootcdn.net/ajax/libs/axios/0.19.2/axios.js"></script>
+</head>
+
+<body>
+    <button>GET</button>
+    <button>POST</button>
+    <button>AJAX</button>
+    <script>
+        const btns = document.querySelectorAll("button");
+        //配置baseURL
+        axios.defaults.baseURL = "http://192.168.1.9:8000"
+        btns[0].onclick = function () {
+            //GET 请求
+            axios.get('/axios-server', {
+                //url 参数
+                params: {
+                    id: 100,
+                    vip: 7
+                },
+                //请求头信息
+                headers: {
+                    name: 'atguigu',
+                    age: 20
+                }
+            }).then(value => {
+                console.log(value, 'value');
+            });
+        };
+        btns[1].onclick = function () {
+            //POST请求
+            axios.post('/axios-server', {
+                //请求体
+                username: 'admin',
+                password: 'admin'
+            }, {
+                //url参数
+                params: {
+                    id: 200,
+                    vip: 9
+                },
+                //请求头参数
+                headers: {
+                    height: 180,
+                    weight: 180,
+                }
+            })
+        }
+        btns[2].onclick = function () {
+            axios({
+                //请求方式
+                method: 'POST',
+                //请求地址
+                url:'/axios-server',
+                //url参数
+                params: {
+                    vip: 20,
+                    level: 10
+                },
+                //请求头参数
+                headers: {
+                    height: 180,
+                    weight: 180,
+                },
+                //请求体参数
+                data:{
+                    username: 'admin',
+                    password: 'admin'
+                }
+            }).then(res=>{
+                console.log(res)
+            })
+        }
+    </script>
+</body>
+
+</html>
